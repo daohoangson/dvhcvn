@@ -4,18 +4,18 @@ set -e
 
 _dir=$( cd $( dirname $BASH_SOURCE[0] ) && pwd )
 
-_fullJson='data/full.json'
-_gisJson='data/gis.json'
+_gsoPath='data/dvhcvn.json'
+_gisPath='data/gis.json'
 
-if [ ! -f $_fullJson ]; then
-  echo "Generating $_fullJson..."
-  php "$_dir/01_dmhc2015.php" >$_fullJson
+if [ ! -f $_gsoPath ]; then
+  echo "Generating $_gsoPath..."
+  php "$_dir/01_gso.gov.vn.php" >$_gsoPath
 fi
 
-if [ ! -f $_gisJson ]; then
-  echo "Generating $_gisJson..."
-  php "$_dir/02_gis.php" <$_fullJson >$_gisJson
+if [ ! -f $_gisPath ]; then
+  echo "Generating $_gisPath..."
+  php "$_dir/02_gis.chinhphu.vn.php" <$_gsoPath >$_gisPath
 
-  echo "Compressing $_gisJson..."
-  gzip --best --force --keep $_gisJson
+  echo "Compressing $_gisPath..."
+  gzip --best --force --keep $_gisPath
 fi

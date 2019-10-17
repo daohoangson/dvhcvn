@@ -4,7 +4,7 @@ Dữ liệu được cập nhật từ trang [Đơn vị hành chính](https://w
 
 ## Sử dụng
 
-- [full.json](/data/full.json): thông tin 3 cấp trả về từ [web service của TCTK](https://www.gso.gov.vn/dmhc2015/WebService.aspx):
+- [dvhcvn.json](/data/dvhcvn.json): thông tin 3 cấp trả về từ [web service của TCTK](https://www.gso.gov.vn/dmhc2015/WebService.aspx):
   - Tỉnh thành:
     - `level1_id` string
     - `name` string
