@@ -19,7 +19,7 @@ Dữ liệu được cập nhật từ trang [Đơn vị hành chính](https://w
     - `level3_id` string
     - `name` string
     - `type`: Phường | Xã | Thị trấn
-- [gis.json.gz](/data/gis.json.gz): thông tin toạ độ trích xuất từ [Hệ thống bản đồ hành chính](http://gis.chinhphu.vn) cho 2 cấp: tỉnh thành và quận huyện. Mỗi đơn vị hành chính có các thông tin:
+- [gis.json.gz](/data/gis.json.gz): thông tin toạ độ trích xuất từ [Hệ thống bản đồ hành chính](http://gis.chinhphu.vn) cho 2 cấp: tỉnh thành và quận huyện. Mỗi đơn vị hành chính có các thông tin:
   - `coordinates` array
   - `bbox` array
   - `type`: MultiPolygon | Polygon
