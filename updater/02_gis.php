@@ -69,7 +69,7 @@ function main()
         ],
     ];
 
-    echo(json_encode($output, JSON_PRETTY_PRINT));
+    echo(json_encode($output, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
 function _requestData(string $areaCode): array
