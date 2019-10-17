@@ -24,6 +24,11 @@ Dữ liệu được cập nhật từ trang [Đơn vị hành chính](https://w
   - `bbox` array
   - `type`: MultiPolygon | Polygon
 
+## Nhưng... tại sao?!
+
+Bộ dữ liệu này được tạo ra vì các dự án tương tự trên mạng Internet cung cấp thông tin không đầy đủ hoặc không được cập nhật thường xuyên.
+Để tránh việc tương tự xảy ra với dự án này, một [daily cron](/firebase/functions/src/cron.ts) sẽ đối chiếu ngày hiệu lực của [nghị định mới nhất](https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx) và ngày cập nhật dữ liệu lần cuối trên GitHub để cảnh báo qua Telegram.
+
 ## Tự cập nhật
 
 Nếu vì lý do nào đó bạn không muốn dùng dữ liệu có sẵn tại đây và muốn tự tải về trực tiếp từ nguồn, thực hiện các câu lệnh như sau:
