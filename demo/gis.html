@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>http://dvhcvn.local.hoangson.vn/gis.html</title>
+    <style>
+      #map {
+        height: 100%;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAY3HLteXhcFbaU8dIUo062IlZoO63qpk"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script>
+      (async () => {
+        const gis = await fetch("./data/gis.json").then(r => r.json());
+
+        const level2Id = !!window.location.hash
+          ? window.location.hash.substr(1)
+          : "568";
+        var level1, level2;
+        gis.data.forEach(e1 => {
+          e1.level2s.forEach(e2 => {
+            if (e2.level2_id === level2Id) {
+              level1 = e1;
+              level2 = e2;
+
+              console.log(`level1: ${level1.level1_id} ${level1.name}`);
+              console.log(`level2: ${level2.level2_id} ${level2.name}`);
+            }
+          });
+        });
+        if (!level1 || !level2) return console.error("Data missing");
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: {
+            lat: (level2.bbox[1] + level2.bbox[3]) / 2,
+            lng: (level2.bbox[0] + level2.bbox[2]) / 2
+          },
+          styles: [
+            {
+              featureType: "all",
+              elementType: "labels",
+              stylers: [{ visibility: "off" }]
+            }
+          ],
+          zoom: 9
+        });
+
+        const polygon = (e, color) =>
+          (e.type === "Polygon" ? [e.coordinates] : e.coordinates).map(c0 =>
+            c0.map(
+              c1 =>
+                new google.maps.Polygon({
+                  paths: c1.map(c2 => ({ lat: c2[1], lng: c2[0] })),
+                  strokeColor: color,
+                  strokeWeight: 0.5,
+                  fillColor: color,
+                  map
+                })
+            )
+          );
+        polygon(level1, "#00f");
+        polygon(level2, "#f00");
+
+        const bbox = (e, color) =>
+          new google.maps.Rectangle({
+            strokeColor: color,
+            strokeWeight: 2,
+            fillOpacity: 0,
+            map: map,
+            bounds: {
+              north: e.bbox[1],
+              south: e.bbox[3],
+              east: e.bbox[2],
+              west: e.bbox[0]
+            }
+          });
+        bbox(level1, "#aaa");
+        bbox(level2, "#000");
+      })();
+    </script>
+  </body>
+</html>
