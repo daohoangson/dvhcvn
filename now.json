@@ -6,7 +6,8 @@
   ],
   "routes": [
     { "src": "/data/(.*)", "dest": "/data/$1" },
-    { "src": "/(.*)", "dest": "/demo/$1" }
+    { "src": "/(.*)", "dest": "/demo/$1" },
+    { "src": "/", "dest": "/demo" }
   ],
   "version": 2
 }
