@@ -4,10 +4,5 @@
     { "src": "data/**/*.json", "use": "@now/static" },
     { "src": "demo/*.html", "use": "@now/static" }
   ],
-  "routes": [
-    { "src": "/data/(.*)", "dest": "/data/$1" },
-    { "src": "/(.*)", "dest": "/demo/$1" },
-    { "src": "/", "dest": "/demo" }
-  ],
   "version": 2
 }
