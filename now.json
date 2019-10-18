@@ -1,5 +1,4 @@
 {
-  "alias": "dvhcvn",
   "builds": [
     { "src": "data/**/*.json", "use": "@now/static" },
     { "src": "demo/*.html", "use": "@now/static" }
