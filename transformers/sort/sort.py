@@ -27,7 +27,7 @@ def processName(e):
 
 
 def sortByNormalized(l):
-    return sorted(l, key=lambda k: k[3])
+    return sorted(l, key=lambda k: "%03d" % int(k[3]) if k[3].isnumeric() else k[3])
 
 
 def serializeJson(data):
