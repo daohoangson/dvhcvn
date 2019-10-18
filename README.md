@@ -48,10 +48,10 @@ Ví dụ:
   ]
 ```
 
-### [gis.json.gz](/data/gis.json.gz)
+### [gis/*.json](/data/gis/)
 
 Thông tin địa giới trích xuất từ [Hệ thống bản đồ hành chính](http://gis.chinhphu.vn) cho 2 cấp: tỉnh thành và quận huyện.
-Do tập tin lớn nên đã được nén lại trước khi đưa lên GitHub.
+Do nhiều dữ liệu nên mỗi tỉnh thành được tách ra một tập riêng lưu tại `data/gis/<level1_id>.json`.
 
 Mỗi đơn vị hành chính có các thông tin:
 
@@ -59,7 +59,7 @@ Mỗi đơn vị hành chính có các thông tin:
 - `bbox` array
 - `type`: MultiPolygon | Polygon
 
-Ví dụ:
+Ví dụ `data/gis/56.json`:
 
 ```json
 {
@@ -115,7 +115,10 @@ cd dvhcvn
 rm -rf ./data
 
 # bắt đầu tải
-./updater/updater.sh
+./downloader/download.sh
+
+# chạy các đoạn mã chuyển đổi
+./transformers/transform-all.sh
 ```
 
 ## Nguồn tham khảo

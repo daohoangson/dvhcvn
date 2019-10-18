@@ -3,41 +3,130 @@
   <head>
     <title>http://dvhcvn.local.hoangson.vn/gis.html</title>
     <style>
-      #map {
-        height: 100%;
-      }
       html,
       body {
         height: 100%;
         margin: 0;
         padding: 0;
+        position: relative;
+      }
+
+      #map {
+        height: 100%;
+      }
+
+      #nav {
+        z-index: 9999;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        padding: 10px;
+      }
+      #navTrigger {
+        cursor: pointer;
       }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAY3HLteXhcFbaU8dIUo062IlZoO63qpk"></script>
   </head>
   <body>
+    <nav id="nav"></nav>
     <div id="map"></div>
 
     <script>
-      (async () => {
-        const gis = await fetch("./data/gis.json").then(r => r.json());
+      const getQueryValue = (key, defaultValue) => {
+        let value = defaultValue;
+        if (!window.location.search) return value;
+        window.location.search.split(/[?&]/).forEach(s => {
+          const parts = s.split("=").map(decodeURIComponent);
+          if (parts[0] !== key) return;
+          value = parts[1];
+        });
+        return value;
+      };
 
-        const level2Id = !!window.location.hash
-          ? window.location.hash.substr(1)
-          : "568";
-        var level1, level2;
-        gis.data.forEach(e1 => {
-          e1.level2s.forEach(e2 => {
-            if (e2.level2_id === level2Id) {
-              level1 = e1;
-              level2 = e2;
+      const populateNav = async (initialLevel1Id, initialLevel2Id) => {
+        const nav = document.getElementById("nav");
 
-              console.log(`level1: ${level1.level1_id} ${level1.name}`);
-              console.log(`level2: ${level2.level2_id} ${level2.name}`);
-            }
+        const data = await fetch("./data/dvhcvn.json").then(r => r.json());
+        if (!data || !data.data) return console.error("Unexpected", data);
+
+        const names = {};
+        data.data.forEach((level1, index1) => {
+          names[level1.name] = { index1, level2s: {} };
+          level1.level2s.forEach((level2, index2) => {
+            names[level1.name].level2s[level2.name] = { index2 };
           });
         });
+
+        const select1 = document.createElement("SELECT");
+        Object.keys(names)
+          .sort()
+          .forEach(name1 => {
+            const { index1 } = names[name1];
+            const level1 = data.data[index1];
+            const option1 = document.createElement("OPTION");
+            option1.innerText = level1.name;
+            option1.value = level1.level1_id;
+            option1.selected = option1.value === initialLevel1Id;
+            select1.appendChild(option1);
+          });
+        select1.onchange = _ => updateSelect2();
+
+        const select2 = document.createElement("SELECT");
+        const updateSelect2 = level2Id => {
+          select2.innerHTML = "";
+
+          const option2Zero = document.createElement("OPTION");
+          select2.appendChild(option2Zero);
+
+          data.data.forEach(level1 => {
+            if (level1.level1_id !== select1.value) return;
+            Object.keys(names[level1.name].level2s)
+              .sort()
+              .forEach(name2 => {
+                const { index2 } = names[level1.name].level2s[name2];
+                const level2 = level1.level2s[index2];
+                const option2 = document.createElement("OPTION");
+                option2.innerText = level2.name;
+                option2.value = level2.level2_id;
+                option2.selected = option2.value === level2Id;
+                select2.appendChild(option2);
+              });
+          });
+        };
+        select2.onchange = _ =>
+          (window.location = `/gis.html?level1_id=${select1.value}&level2_id=${select2.value}`);
+
+        nav.appendChild(select1);
+        nav.appendChild(select2);
+        updateSelect2(initialLevel2Id);
+      };
+
+      (async () => {
+        const level1Id = getQueryValue("level1_id", "56");
+        const level2Id = getQueryValue("level2_id", "568");
+        console.log(`ids: ${level1Id} -> ${level2Id}`);
+
+        const jsonPath = `./data/gis/${level1Id}.json`;
+        const e1 = await fetch(jsonPath).then(
+          r => r.json(),
+          reason => console.error(reason)
+        );
+        if (!e1 || !e1.level2s) return console.error("Unexpected data", e1);
+
+        let level1, level2;
+        e1.level2s.forEach(e2 => {
+          if (e2.level2_id === level2Id) {
+            level1 = e1;
+            level2 = e2;
+
+            console.log(`names: ${level1.name} -> ${level2.name}`);
+          }
+        });
         if (!level1 || !level2) return console.error("Data missing");
+        populateNav(level1Id, level2Id);
 
         const map = new google.maps.Map(document.getElementById("map"), {
           center: {
