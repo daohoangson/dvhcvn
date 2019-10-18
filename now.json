@@ -1,7 +1,7 @@
 {
   "alias": "dvhcvn",
   "builds": [
-    { "src": "data", "use": "@now/static" },
+    { "src": "data/**/*.json", "use": "@now/static" },
     { "src": "demo/*.html", "use": "@now/static" }
   ],
   "routes": [
