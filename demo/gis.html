@@ -14,7 +14,7 @@
         height: 100%;
       }
 
-      #nav {
+      nav {
         z-index: 9999;
         position: absolute;
         right: 0;
@@ -22,9 +22,6 @@
         left: 0;
 
         padding: 25px;
-      }
-      #navTrigger {
-        cursor: pointer;
       }
     </style>
     <!-- 
@@ -35,7 +32,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAY3HLteXhcFbaU8dIUo062IlZoO63qpk"></script>
   </head>
   <body>
-    <nav id="nav"></nav>
+    <nav>
+      <select id="level1"></select>
+      <select id="level2"></select>
+    </nav>
     <div id="map"></div>
 
     <script>
@@ -51,60 +51,43 @@
       };
 
       const populateNav = async (initialLevel1Id, initialLevel2Id) => {
-        const nav = document.getElementById("nav");
+        const sorted = await fetch("/data/sorted.json").then(r => r.json());
+        if (!sorted) return console.error("Unexpected data", sorted);
 
-        const data = await fetch("/data/dvhcvn.json").then(r => r.json());
-        if (!data || !data.data) return console.error("Unexpected", data);
-
-        const names = {};
-        data.data.forEach((level1, index1) => {
-          names[level1.name] = { index1, level2s: {} };
-          level1.level2s.forEach((level2, index2) => {
-            names[level1.name].level2s[level2.name] = { index2 };
-          });
+        const select1 = document.getElementById("level1");
+        sorted.forEach(level1 => {
+          const option1 = document.createElement("OPTION");
+          option1.value = level1[0];
+          option1.innerText = `${level1[2]} ${level1[1]}`;
+          option1.selected = option1.value === initialLevel1Id;
+          select1.appendChild(option1);
         });
-
-        const select1 = document.createElement("SELECT");
-        Object.keys(names)
-          .sort()
-          .forEach(name1 => {
-            const { index1 } = names[name1];
-            const level1 = data.data[index1];
-            const option1 = document.createElement("OPTION");
-            option1.innerText = level1.name;
-            option1.value = level1.level1_id;
-            option1.selected = option1.value === initialLevel1Id;
-            select1.appendChild(option1);
-          });
         select1.onchange = _ => updateSelect2();
 
-        const select2 = document.createElement("SELECT");
+        const select2 = document.getElementById("level2");
         const updateSelect2 = level2Id => {
           select2.innerHTML = "";
 
           const option2Zero = document.createElement("OPTION");
           select2.appendChild(option2Zero);
 
-          data.data.forEach(level1 => {
-            if (level1.level1_id !== select1.value) return;
-            Object.keys(names[level1.name].level2s)
-              .sort()
-              .forEach(name2 => {
-                const { index2 } = names[level1.name].level2s[name2];
-                const level2 = level1.level2s[index2];
-                const option2 = document.createElement("OPTION");
-                option2.innerText = level2.name;
-                option2.value = level2.level2_id;
-                option2.selected = option2.value === level2Id;
-                select2.appendChild(option2);
-              });
+          sorted.forEach(level1 => {
+            if (level1[0] !== select1.value) return;
+            level1[4].forEach(level2 => {
+              const option2 = document.createElement("OPTION");
+              option2.value = level2[0];
+              option2.innerText = `${level2[2]} ${level2[1]}`;
+              option2.selected = option2.value === level2Id;
+              select2.appendChild(option2);
+            });
           });
         };
         select2.onchange = _ =>
-          (window.location = `/demo/gis.html?level1_id=${select1.value}&level2_id=${select2.value}`);
+          (window.location =
+            `/demo/gis.html` +
+            `?level1_id=${select1.value}` +
+            `&level2_id=${select2.value}`);
 
-        nav.appendChild(select1);
-        nav.appendChild(select2);
         updateSelect2(initialLevel2Id);
       };
 

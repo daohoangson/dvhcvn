@@ -98,6 +98,40 @@ Huyện Trường Sa thuộc tỉnh Khánh Hoà nên khoanh vùng của tỉnh v
 
 Đa số các đơn vị hành chính có dữ liệu địa giới dạng `MultiPolygon` nhưng một số ít, như huyện Ha Nang, có địa giới dạng `Polygon`.
 
+### [sorted.json](/data/sorted.json)
+
+Thông tin 3 cấp đơn vị hành chính đã được sắp xếp theo tên riêng.
+Để tiết kiệm dung lượng, mỗi đơn vị hành chính là một mảng có các thành phần theo thứ tự như sau:
+
+0. Mã đơn vị
+1. Tên riêng
+2. Tiền tố
+3. Tên riêng không dấu
+4. Các đơn vị trực thuộc
+
+Ví dụ:
+
+```json
+[
+  [
+    "89", "An Giang", "Tỉnh", "An Giang",
+    [
+      [
+        "886", "An Phú", "Huyện", "An Phu",
+        [
+          ["30337", "An Phú", "Thị trấn", "An Phu"],
+          ["30373", "Đa Phước", "Xã", "Da Phuoc"],
+          ["30340", "Khánh An", "Xã", "Khanh An"],
+          "...",
+        ]
+      ],
+      "..."
+    ]
+  ],
+  "..."
+]
+```
+
 ## Nhưng... tại sao?!
 
 Bộ dữ liệu này được tạo ra vì các dự án tương tự trên mạng Internet cung cấp thông tin không đầy đủ hoặc không được cập nhật thường xuyên.
