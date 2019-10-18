@@ -1,0 +1,7 @@
+{
+  "builds": [
+    { "src": "data/**/*.json", "use": "@now/static" },
+    { "src": "demo/*.html", "use": "@now/static" }
+  ],
+  "version": 2
+}

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>http://dvhcvn.local.hoangson.vn/gis.html</title>
     <style>
       html,
       body {
@@ -28,6 +27,11 @@
         cursor: pointer;
       }
     </style>
+    <!-- 
+      This Google api key has been restricted to these URLs only:
+      http://dvhcvn.local.hoangson.vn/demo/gis.html
+      or https://*.daohoangson.now.sh/demo/gis.html
+    -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAY3HLteXhcFbaU8dIUo062IlZoO63qpk"></script>
   </head>
   <body>
@@ -49,7 +53,7 @@
       const populateNav = async (initialLevel1Id, initialLevel2Id) => {
         const nav = document.getElementById("nav");
 
-        const data = await fetch("./data/dvhcvn.json").then(r => r.json());
+        const data = await fetch("/data/dvhcvn.json").then(r => r.json());
         if (!data || !data.data) return console.error("Unexpected", data);
 
         const names = {};
@@ -97,7 +101,7 @@
           });
         };
         select2.onchange = _ =>
-          (window.location = `/gis.html?level1_id=${select1.value}&level2_id=${select2.value}`);
+          (window.location = `/demo/gis.html?level1_id=${select1.value}&level2_id=${select2.value}`);
 
         nav.appendChild(select1);
         nav.appendChild(select2);
@@ -109,7 +113,7 @@
         const level2Id = getQueryValue("level2_id", "568");
         console.log(`ids: ${level1Id} -> ${level2Id}`);
 
-        const jsonPath = `./data/gis/${level1Id}.json`;
+        const jsonPath = `/data/gis/${level1Id}.json`;
         const e1 = await fetch(jsonPath).then(
           r => r.json(),
           reason => console.error(reason)
