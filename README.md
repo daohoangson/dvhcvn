@@ -59,7 +59,7 @@ Mỗi đơn vị hành chính có các thông tin:
 - `bbox` array
 - `type`: MultiPolygon | Polygon
 
-Ví dụ `data/gis/56.json`:
+Ví dụ tập dữ liệu của Khánh Hoà, [data/gis/56.json](/data/gis/56.json), có nội dung như sau:
 
 ```json
 {
@@ -86,13 +86,13 @@ Ví dụ `data/gis/56.json`:
 }
 ```
 
-#### Nha Trang, Khánh Hoà
+#### Nha Trang, Khánh Hoà ([xem](https://dvhcvn.daohoangson.now.sh/demo/gis.html?level1_id=56&level2_id=568))
 
 ![GIS demo: Nha Trang, Khánh Hoà](/demo/gis/56/568.png)
 
 Huyện Trường Sa thuộc tỉnh Khánh Hoà nên khoanh vùng của tỉnh vượt về phía bên phải (đi ra biển Đông).
 
-#### Ha Nang, Tuyên Quang
+#### Ha Nang, Tuyên Quang ([xem](https://dvhcvn.daohoangson.now.sh/demo/gis.html?level1_id=08&level2_id=072))
 
 ![GIS demo: Ha Nang, Tuyên Quang](/demo/gis/08/072.png)
 
