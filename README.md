@@ -4,23 +4,23 @@ Dữ liệu được cập nhật từ trang [Đơn vị hành chính](https://w
 
 ## Các tập dữ liệu
 
-### [dvhcvn.json](/data/dvhcvn.json)
+### dvhcvn.json
 
 Thông tin 3 cấp đơn vị hành chính trả về từ [web service của TCTK](https://www.gso.gov.vn/dmhc2015/WebService.aspx):
 
 - Tỉnh thành:
-  - `level1_id` string
-  - `name` string
+  - `level1_id`
+  - `name`
   - `type`: Thành phố Trung ương | Tỉnh
-  - `level2s` array
+  - `level2s`
 - Quận huyện
-  - `level2_id` string
-  - `name` string
+  - `level2_id`
+  - `name`
   - `type`: Quận | Huyện | Thành phố | Thị xã
-  - `level3s` array
+  - `level3s`
 - Phường xã
-  - `level3_id` string
-  - `name` string
+  - `level3_id`
+  - `name`
   - `type`: Phường | Xã | Thị trấn
 
 Ví dụ:
@@ -55,8 +55,8 @@ Do nhiều dữ liệu nên mỗi tỉnh thành được tách ra một tập ri
 
 Mỗi đơn vị hành chính có các thông tin:
 
-- `coordinates` array
-- `bbox` array
+- `coordinates`
+- `bbox`
 - `type`: MultiPolygon | Polygon
 
 Ví dụ tập dữ liệu của Khánh Hoà, [data/gis/56.json](/data/gis/56.json), có nội dung như sau:
@@ -85,18 +85,6 @@ Ví dụ tập dữ liệu của Khánh Hoà, [data/gis/56.json](/data/gis/56.js
   "type": "MultiPolygon"
 }
 ```
-
-#### Nha Trang, Khánh Hoà ([xem](https://dvhcvn.daohoangson.now.sh/demo/gis.html?level1_id=56&level2_id=568))
-
-![GIS demo: Nha Trang, Khánh Hoà](/demo/gis/56/568.png)
-
-Huyện Trường Sa thuộc tỉnh Khánh Hoà nên khoanh vùng của tỉnh vượt về phía bên phải (đi ra biển Đông).
-
-#### Ha Nang, Tuyên Quang ([xem](https://dvhcvn.daohoangson.now.sh/demo/gis.html?level1_id=08&level2_id=072))
-
-![GIS demo: Ha Nang, Tuyên Quang](/demo/gis/08/072.png)
-
-Đa số các đơn vị hành chính có dữ liệu địa giới dạng `MultiPolygon` nhưng một số ít, như huyện Ha Nang, có địa giới dạng `Polygon`.
 
 ### [sorted.json](/data/sorted.json)
 
