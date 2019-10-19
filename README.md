@@ -123,7 +123,7 @@ Ví dụ:
 ## Nhưng... tại sao?!
 
 Bộ dữ liệu này được tạo ra vì các dự án tương tự trên mạng Internet cung cấp thông tin không đầy đủ hoặc không được cập nhật thường xuyên.
-Để tránh việc tương tự xảy ra với dự án này, một [daily cron](/firebase/functions/src/cron.ts) sẽ đối chiếu ngày hiệu lực của [nghị định mới nhất](https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx) và ngày cập nhật dữ liệu lần cuối trên GitHub để cảnh báo qua Telegram.
+Để tránh việc tương tự xảy ra với dự án này, một [daily cron](/firebase/functions/src/cron.ts) sẽ đối chiếu ngày hiệu lực của [nghị định mới nhất](https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx) và ngày cập nhật dữ liệu để cảnh báo qua [Telegram group](https://t.me/dvhcvn).
 
 ## Tự tải về
 
