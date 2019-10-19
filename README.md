@@ -48,18 +48,20 @@ Ví dụ:
   ]
 ```
 
-### [gis/*.json](/data/gis/)
+### [gis/\*.json](/data/gis/)
 
 Thông tin địa giới trích xuất từ [Hệ thống bản đồ hành chính](http://gis.chinhphu.vn) cho 2 cấp: tỉnh thành và quận huyện.
-Do nhiều dữ liệu nên mỗi tỉnh thành được tách ra một tập riêng lưu tại `data/gis/<level1_id>.json`.
 
-Mỗi đơn vị hành chính có các thông tin:
+#### <level1_id>.json
+
+Do nhiều dữ liệu nên mỗi tỉnh thành được tách ra một tập riêng.
+Trong đó, mỗi đơn vị hành chính (tỉnh thành hoặc quận huyện) có các thông tin:
 
 - `coordinates`
 - `bbox`
 - `type`: MultiPolygon | Polygon
 
-Ví dụ tập dữ liệu của Khánh Hoà, [data/gis/56.json](/data/gis/56.json), có nội dung như sau:
+Ví dụ [tập dữ liệu của Khánh Hoà](/data/gis/56.json), có nội dung như sau:
 
 ```json
 {
@@ -83,6 +85,22 @@ Ví dụ tập dữ liệu của Khánh Hoà, [data/gis/56.json](/data/gis/56.js
   "coordinates": ["... (khoảng 50 đa giác)"],
   "bbox": [108.669676534, 7.89146445900019, 115.836420367, 12.86823071],
   "type": "MultiPolygon"
+}
+```
+
+#### level1s_bbox.json
+
+Riêng dữ liệu `bbox` của tỉnh thành được lưu riêng với nội dung như sau:
+
+```json
+{
+  "01": [
+    105.28500419,
+    20.5642508770001,
+    106.020154616,
+    21.3855144820001
+  ],
+  "..."
 }
 ```
 
@@ -110,7 +128,7 @@ Ví dụ:
           ["30337", "An Phú", "Thị trấn", "An Phu"],
           ["30373", "Đa Phước", "Xã", "Da Phuoc"],
           ["30340", "Khánh An", "Xã", "Khanh An"],
-          "...",
+          "..."
         ]
       ],
       "..."

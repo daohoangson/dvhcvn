@@ -24,10 +24,11 @@
         padding: 25px;
       }
     </style>
+    <script src="/demo/demo.js"></script>
     <!-- 
       This Google api key has been restricted to these URLs only:
-      http://dvhcvn.local.hoangson.vn/demo/gis.html
-      or https://*.daohoangson.now.sh/demo/gis.html
+      dvhcvn.local.hoangson.vn/*
+      or *.daohoangson.now.sh/*
     -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAY3HLteXhcFbaU8dIUo062IlZoO63qpk"></script>
   </head>
@@ -39,17 +40,6 @@
     <div id="map"></div>
 
     <script>
-      const getQueryValue = (key, defaultValue) => {
-        let value = defaultValue;
-        if (!window.location.search) return value;
-        window.location.search.split(/[?&]/).forEach(s => {
-          const parts = s.split("=").map(decodeURIComponent);
-          if (parts[0] !== key) return;
-          value = parts[1];
-        });
-        return value;
-      };
-
       const populateNav = async (initialLevel1Id, initialLevel2Id) => {
         const sorted = await fetch("/data/sorted.json").then(r => r.json());
         if (!sorted) return console.error("Unexpected data", sorted);
@@ -84,7 +74,7 @@
         };
         select2.onchange = _ =>
           (window.location =
-            `/demo/gis.html` +
+            `/demo/map.html` +
             `?level1_id=${select1.value}` +
             `&level2_id=${select2.value}`);
 

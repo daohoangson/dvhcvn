@@ -2,7 +2,8 @@
   "builds": [
     { "src": "data/gis/*.json", "use": "@now/static" },
     { "src": "data/sorted.json", "use": "@now/static" },
-    { "src": "demo/*.html", "use": "@now/static" }
+    { "src": "demo/*.html", "use": "@now/static" },
+    { "src": "demo/*.js", "use": "@now/static" }
   ],
   "version": 2
 }

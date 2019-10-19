@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/demo/demo.js"></script>
+    <script src="https://unpkg.com/geolib@3.0.4/lib/index.js"></script>
+  </head>
+  <body>
+    <form action="/demo/geolocation.html" method="GET">
+      <label>
+        Latitude
+        <input id="lat" type="number" step="any" name="lat" />
+      </label>
+
+      <label>
+        Longitude
+        <input id="lng" type="number" step="any" name="lng" />
+      </label>
+
+      <input type="submit" value="Resolve" />
+    </form>
+
+    <h3>navigator.geolocation</h3>
+    <button onclick="getCurrentPosition()">.getCurrentPosition()</button>
+
+    <div id="result" style="display: none">
+      <h3>Result</h3>
+      <pre id="output"></pre>
+    </div>
+
+    <script>
+      const getCurrentPosition = () => {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            document.getElementById("lat").value = position.coords.latitude;
+            document.getElementById("lng").value = position.coords.longitude;
+          },
+          reason => console.error(reason)
+        );
+      };
+
+      const isPointInBbox = (point, bbox) => {
+        if (!point || !bbox) return false;
+
+        const [lng, lat] = point;
+        const [west, north, east, south] = bbox;
+
+        if (lng < west || lng > east) return false;
+        if (lat < north || lat > south) return false;
+
+        return true;
+      };
+
+      const isPointInMultiPolygon = (point, coords) => {
+        let result = false;
+        if (!point || !coords) return result;
+
+        const [longitude, latitude] = point;
+        const libPoint = { latitude, longitude };
+
+        coords.forEach(c0 => {
+          c0.forEach(c1 => {
+            const libPolygon = c1.map(c2 => ({
+              latitude: c2[1],
+              longitude: c2[0]
+            }));
+
+            if (geolib.isPointInPolygon(libPoint, libPolygon)) result = true;
+          });
+        });
+
+        return result;
+      };
+
+      (async () => {
+        const lat = getQueryValue("lat");
+        const lng = getQueryValue("lng");
+        console.log(`coords: ${lat}, ${lng}`);
+        if (!lat || !lng) return;
+        const point = [lng, lat];
+
+        document.getElementById("result").style.display = "block";
+        const output = document.getElementById("output");
+        const log = message => {
+          output.innerHTML = `${output.innerHTML}${message}\n`;
+        };
+        log(`Latitude: ${lat}\nLongitude: ${lng}\n`);
+
+        const level1sBboxPath = `/data/gis/level1s_bbox.json`;
+        const level1sBbox = await fetch(level1sBboxPath).then(
+          r => r.json(),
+          reason => log(reason)
+        );
+        if (!level1sBbox) return log("Unexpected data", level1sBbox);
+
+        Object.keys(level1sBbox).forEach(async level1Id => {
+          const bbox = level1sBbox[level1Id];
+          if (!isPointInBbox(point, bbox)) return;
+
+          const jsonPath = `/data/gis/${level1Id}.json`;
+          const e1 = await fetch(jsonPath).then(
+            r => r.json(),
+            reason => log(reason)
+          );
+          if (!e1 || !e1.level2s) return log("Unexpected data", e1);
+          log(`${e1.name}...`);
+
+          e1.level2s.forEach(level2 => {
+            const coords =
+              level2.type === "Polygon"
+                ? [level2.coordinates]
+                : level2.coordinates;
+            if (isPointInMultiPolygon(point, coords)) {
+              log(`✅ ${level2.name}`);
+            } else {
+              log(`❌ ${level2.name}`);
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
