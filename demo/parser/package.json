@@ -2,6 +2,7 @@
   "name": "parser",
   "main": "parse.ts",
   "scripts": {
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "parse": "ts-node parse.ts",
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
@@ -10,8 +11,14 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.11.2",
     "@types/unidecode": "^0.1.1",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
     "chai": "^4.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "mocha": "^6.2.2",
+    "prettier": "^1.18.2",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.4"
   },
