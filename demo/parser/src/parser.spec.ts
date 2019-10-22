@@ -63,7 +63,7 @@ describe("Parser", () => {
       "421 Đường Phạm Văn Chí, phường 7, Hồ Chí Minh, Việt Nam": [
         "Thành phố Hồ Chí Minh"
       ],
-      "98/5 cmt8. Bien hoa. Đồng Nai": ["Thành phố Biên Hoà", "Tỉnh Đồng Nai"],
+      "98/5 cmt8. Bien hoa. Đồng Nai": ["Thành phố Biên Hòa", "Tỉnh Đồng Nai"],
       "quận Phú Nhuận, Hồ Chí Minh, Việt Nam": [
         "Quận Phú Nhuận",
         "Thành phố Hồ Chí Minh"
@@ -74,6 +74,8 @@ describe("Parser", () => {
         "Thành phố Hồ Chí Minh"
       ],
       "345/17 Tân Kỳ Tân Quý, quận tân Phú, Hồ Chí Minh, Việt Nam": [
+        // TODO
+        "Phường Tân Quý",
         "Quận Tân Phú",
         "Thành phố Hồ Chí Minh"
       ],
