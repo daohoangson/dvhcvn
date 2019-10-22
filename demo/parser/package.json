@@ -1,0 +1,21 @@
+{
+  "name": "parser",
+  "main": "parse.ts",
+  "scripts": {
+    "parse": "ts-node parse.ts",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.2",
+    "@types/unidecode": "^0.1.1",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "unidecode": "^0.1.8"
+  }
+}
