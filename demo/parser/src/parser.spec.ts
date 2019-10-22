@@ -1,12 +1,12 @@
-import Parser, { ResultUnit } from "./parser";
+import Parser from "./parser";
 import { expect } from "chai";
 
 describe("Parser", () => {
   describe("parse", () => {
     const p = new Parser();
     const parse = (address: string) => {
-      const units = p.parse(address);
-      return units.map(unit => unit.toString());
+      const results = p.parse(address);
+      return results.map(result => `${result.type} ${result.name}`);
     };
 
     const map = {

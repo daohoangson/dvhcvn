@@ -10,16 +10,23 @@ const typeTranslations = {
 };
 
 class Match {
+  private id: string | undefined;
+  private name: string | number;
+  private type: string | undefined;
+
   private match: string;
-  private unit: Unit;
 
   constructor(unit: Unit, match: string) {
+    this.id = unit.id;
+    this.name = unit.name;
+    this.type = unit.type;
+
     this.match = match;
-    this.unit = unit;
   }
 
-  getUnit() {
-    return this.unit;
+  getResults() {
+    const { id, name, type } = this;
+    return { id, name, type };
   }
 
   length() {
@@ -28,29 +35,6 @@ class Match {
 
   toString() {
     return this.match;
-  }
-}
-
-export class ResultUnit {
-  id: string | undefined;
-  name: string | number;
-  type: string | undefined;
-
-  private constructor() {
-    // intentionally left empty
-  }
-
-  static fromMatch(match: Match) {
-    const unit = match.getUnit();
-    const resultUnit = new ResultUnit();
-    resultUnit.id = unit.id;
-    resultUnit.name = unit.name;
-    resultUnit.type = unit.type;
-    return resultUnit;
-  }
-
-  toString() {
-    return `${this.type} ${this.name}`;
   }
 }
 
@@ -186,42 +170,105 @@ const tryToMatch = (address: string, candidate: Unit) => {
   return new Match(candidate, match0);
 };
 
-type ResolveNextFound = {
-  candidates: { [id: string]: Unit };
-  match: Match;
+type ResolveOption = {
+  matches: Match[];
+  matched: string;
+  score: number;
 };
 
-type ResolveSkippingFound = {
-  matchesArr: Match[];
-  matchesStr: string;
-  sameLengthCount: number;
-};
+class ResolveOptions {
+  private resolveId: number;
+  private count: { [score: number]: number } = {};
+  private options: { [score: number]: ResolveOption } = {};
+
+  constructor(resolveId: number) {
+    this.resolveId = resolveId;
+  }
+
+  best() {
+    const score = this.bestScore();
+    if (!score) return null;
+    return this.options[score];
+  }
+
+  bestScore() {
+    return Object.keys(this.count).map(s => parseInt(s))
+      .reduce((best, score) => {
+        if (this.count[score] > 1) return best;
+        if (!best || best < score) return score;
+        return best;
+      }, 0);
+  }
+
+  getResolveId() { return this.resolveId; }
+
+  update = (parents: Match[], resolved: Match[], skip: Unit) => {
+    if (!(resolved.length > parents.length)) return;
+
+    const slice = resolved.slice(parents.length);
+    const matches = skip ? [new Match(skip, ""), ...slice] : slice;
+    let matched = '';
+    let skipped = 0;
+    matches.forEach(m => {
+      if (m.length() > 0) {
+        matched += m.toString();
+      } else {
+        skipped++;
+      }
+    })
+    const score = matched.length * 10 - skipped;
+    const self = { matches, matched, score };
+
+    if (typeof this.count[score] === 'number') {
+      this.count[score]++;
+      delete this.options[score];
+    } else {
+      this.count[score] = 1;
+      this.options[score] = self;
+    }
+  }
+}
+
+type ParserOptions = {
+  debug?: boolean
+}
 
 export default class Parser {
+  private debug = false;
   private root: Unit;
+  private resolveCount = 0;
 
-  constructor() {
+  constructor(options?: ParserOptions) {
     const sorted = require("../../../data/sorted") as any[];
     this.root = new Unit(
       [undefined, "Việt Nam", undefined, undefined, sorted],
       0
     );
+
+    if (options) {
+      this.debug = !!options.debug;
+    }
   }
 
-  parse(address: string): ResultUnit[] {
+  parse(address: string) {
     if (address.indexOf("@") > -1) return [];
     if (address.match(/^[0-9\s]+$/)) return [];
 
     const matches = this.resolveNext(address, [this.root], []);
-    const units = matches.map(m => ResultUnit.fromMatch(m));
+    const results = matches.map(m => m.getResults());
 
     // remove the root unit
-    if (units.length > 0 && units[0].id === undefined) units.shift();
+    if (results.length > 0 && results[0].id === undefined) results.shift();
 
     // reverse it for more logical result
-    const reversed = units.reverse();
+    const reversed = results.reverse();
 
     return reversed;
+  }
+
+  private log(message: string, ...args) {
+    if (!this.debug) return;
+    console.log.apply(console, [message, ...args]);
   }
 
   private resolveNext(
@@ -231,89 +278,62 @@ export default class Parser {
   ): Match[] {
     address = address.replace(/[ .,-]+$/, "");
 
-    let found: ResolveNextFound | undefined;
+    const options = new ResolveOptions(this.resolveCount++);
     candidates.forEach(candidate => {
       const match = tryToMatch(address, candidate);
-      if (match === null) return;
+      if (match !== null) {
+        const addressTruncated = address.substr(0, address.length - match.length());
+        const children = candidate.getChildren();
+        const parentsAndMatch = [...parents, match];
+        const resolved = children.length > 0
+          ? this.resolveNext(addressTruncated, children, parentsAndMatch)
+          : parentsAndMatch;
 
-      let updateFound = false;
-      if (found === undefined) {
-        updateFound = true;
-      } else {
-        if (found.match.length() < match.length()) {
-          updateFound = true;
-        } else if (found.match.length() === match.length()) {
-          found.candidates[candidate.id] = candidate;
-        }
-      }
-      if (updateFound) {
-        found = {
-          candidates: { [candidate.id]: candidate },
-          match
-        };
+        options.update(parents, resolved, null);
       }
     });
 
-    if (found === undefined) {
-      return this.resolveSkipping(address, candidates, parents);
+    const bestBefore = options.best();
+    if (bestBefore) this.log('resolveNext: %s -> #%d, bestBefore=', address, options.getResolveId(), bestBefore);
+
+    const skippingResolved = this.resolveSkipping(address, candidates, parents);
+    options.update(parents, skippingResolved, null);
+    const bestAfter = options.best();
+    if (bestAfter) {
+      if (bestAfter !== bestBefore) {
+        this.log('resolveNext: %s -> #%d, bestAfter=', address, options.getResolveId(), bestAfter);
+      } else {
+        this.log('resolveNext: %s -> #%d, bestAfter == bestBefore', address, options.getResolveId());
+      }
     }
 
-    const addressTruncated = address.substr(
-      0,
-      address.length - found.match.length()
-    );
-    const candidateIds = Object.keys(found.candidates);
-
-    if (candidateIds.length === 1) {
-      const matches = [...parents, found.match];
-      const children = found.match.getUnit().getChildren();
-      if (children.length === 0) return matches;
-
-      return this.resolveNext(addressTruncated, children, matches);
+    if (!bestAfter) {
+      if (!bestBefore) {
+        return parents;
+      } else {
+        return [...parents, ...bestBefore.matches];
+      }
+    } else {
+      return [...parents, ...bestAfter.matches];
     }
-
-    return this.resolveSkipping(
-      addressTruncated,
-      Object.values(found.candidates),
-      parents
-    );
   }
 
   private resolveSkipping(address: string, skips: Unit[], parents: Match[]) {
-    let found: ResolveSkippingFound | undefined;
+    const options = new ResolveOptions(this.resolveCount++);
     skips.forEach(skip => {
       const candidates = skip.getChildren();
       if (candidates.length === 0) return;
 
-      const tmp = this.resolveNext(address, candidates, parents);
-      if (tmp.length < parents.length) return;
+      const resolved = this.resolveNext(address, candidates, parents);
 
-      const matches = tmp.slice(parents.length);
-      let matchesStr = "";
-      matches.forEach(m => (matchesStr += m.toString()));
+      const bestBefore = options.best();
+      options.update(parents, resolved, skip);
+      const bestAfter = options.best();
 
-      let updateFound = false;
-      if (found === undefined) {
-        updateFound = true;
-      } else {
-        if (found.matchesStr.length < matchesStr.length) {
-          updateFound = true;
-        } else if (found.matchesStr.length === matchesStr.length) {
-          found.sameLengthCount++;
-        }
-      }
-      if (updateFound) {
-        found = {
-          matchesArr: [new Match(skip, ""), ...matches],
-          matchesStr,
-          sameLengthCount: 1
-        };
-      }
+      if (bestAfter !== bestBefore) this.log('resolveSkipping: %s -> #%d, best=', address, options.getResolveId(), bestAfter);
     });
 
-    if (found === undefined) return parents;
-    if (found.sameLengthCount > 1) return parents;
-
-    return [...parents, ...found.matchesArr];
+    const best = options.best();
+    return best ? [...parents, ...best.matches] : parents;
   }
 }
