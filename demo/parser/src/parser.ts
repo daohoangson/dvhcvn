@@ -56,6 +56,7 @@ export class ResultUnit {
 
 class Unit {
   id: string | undefined;
+  level: number;
   name: string | number;
   type: string | undefined;
 
@@ -64,12 +65,13 @@ class Unit {
 
   private children: Unit[];
 
-  constructor(json: any) {
+  constructor(json: any, level: number) {
     if (typeof json[1] !== "string") {
       throw Error("Invalid json");
     }
 
     this.id = json[0];
+    this.level = level;
     this.name = json[1];
     this.type = json[2];
 
@@ -78,7 +80,7 @@ class Unit {
     }
 
     if (json[4]) {
-      this.children = (json[4] as any[]).map(j => new Unit(j));
+      this.children = (json[4] as any[]).map(j => new Unit(j, level + 1));
     } else {
       this.children = [];
     }
@@ -112,7 +114,7 @@ class Unit {
       patterns.push(name);
       this.asciiNames.push(getAsciiAccent(this.name));
 
-      if (this.isLevel1() && name.indexOf(" ") > -1) {
+      if (this.level === 1 && name.indexOf(" ") > -1) {
         nameInitials = getInitials(name);
         patterns.push(nameInitials);
         this.asciiNames.push(getAsciiAccent(getInitials(this.name)));
@@ -164,10 +166,6 @@ class Unit {
 
     return { regExp: this.regExp, asciiNames: this.asciiNames };
   }
-
-  isLevel1() {
-    return this.type === "Tỉnh" || this.type === "Thành phố";
-  }
 }
 
 const tryToMatch = (address: string, candidate: Unit) => {
@@ -188,12 +186,26 @@ const tryToMatch = (address: string, candidate: Unit) => {
   return new Match(candidate, match0);
 };
 
+type ResolveNextFound = {
+  candidates: { [id: string]: Unit };
+  match: Match;
+};
+
+type ResolveSkippingFound = {
+  matchesArr: Match[];
+  matchesStr: string;
+  sameLengthCount: number;
+};
+
 export default class Parser {
   private root: Unit;
 
   constructor() {
     const sorted = require("../../../data/sorted") as any[];
-    this.root = new Unit([undefined, "Việt Nam", undefined, undefined, sorted]);
+    this.root = new Unit(
+      [undefined, "Việt Nam", undefined, undefined, sorted],
+      0
+    );
   }
 
   parse(address: string): ResultUnit[] {
@@ -219,12 +231,7 @@ export default class Parser {
   ): Match[] {
     address = address.replace(/[ .,-]+$/, "");
 
-    let found:
-      | {
-          candidates: { [id: string]: Unit };
-          match: Match;
-        }
-      | undefined;
+    let found: ResolveNextFound | undefined;
     candidates.forEach(candidate => {
       const match = tryToMatch(address, candidate);
       if (match === null) return;
@@ -273,13 +280,7 @@ export default class Parser {
   }
 
   private resolveSkipping(address: string, skips: Unit[], parents: Match[]) {
-    let found:
-      | {
-          matchesArr: Match[];
-          matchesStr: string;
-          sameLengthCount: number;
-        }
-      | undefined;
+    let found: ResolveSkippingFound | undefined;
     skips.forEach(skip => {
       const candidates = skip.getChildren();
       if (candidates.length === 0) return;
