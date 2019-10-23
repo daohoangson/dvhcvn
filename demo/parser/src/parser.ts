@@ -248,7 +248,9 @@ export default class Parser {
 
   parse(address: string) {
     if (address.indexOf("@") > -1) return [];
-    if (address.match(/^[0-9\s]+$/)) return [];
+
+    // remove phone number, post code, etc.
+    address = address.replace(/[0-9]{4,}/g, "");
 
     const matches = this.resolveNext(address, [this.root], []);
     const results = matches.map(m => m.getResults());

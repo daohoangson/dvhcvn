@@ -186,7 +186,6 @@ describe("Parser", () => {
       ],
       "Cộng Hòa, Tân Bình": ["Quận Tân Bình", "Thành phố Hồ Chí Minh"],
       "204 Hồ Tùng Mậu, Cầu Diễn, Cầu Giấy, Hà Nội 100000": [
-        "Phường Cầu Diễn",
         "Quận Cầu Giấy",
         "Thành phố Hà Nội"
       ],
