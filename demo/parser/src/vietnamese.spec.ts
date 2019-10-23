@@ -1,7 +1,7 @@
-import { getAsciiAccent } from "./vietnamese";
+import { normalize } from "./vietnamese";
 import { expect } from "chai";
 
-describe("getAsciiAccent", () => {
+describe("normalize", () => {
   const map = {
     "con lươn nó luồn qua lườn em": "con lu*o*n no' luo^n` qua lu*o*n` em",
     "lính lệ leo lên lầu lấy lưỡi lê lấy lộn lại leo lên lấy lại":
@@ -26,7 +26,7 @@ describe("getAsciiAccent", () => {
 
   Object.keys(map).forEach(input =>
     it(input, () => {
-      const result = getAsciiAccent(input);
+      const result = normalize(input);
       expect(result).to.equal(map[input]);
     })
   );

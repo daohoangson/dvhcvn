@@ -1,7 +1,7 @@
 import unidecode from "unidecode";
 
 import Entity from "./entity";
-import { getAsciiAccent } from "./vietnamese";
+import { normalize } from "./vietnamese";
 
 export class Match {
   private id: string | undefined;
@@ -36,13 +36,13 @@ type ResolveOption = {
 
 export const tryToMatch = (address: string, candidate: Entity) => {
   const address2 = (unidecode(address) as string).toLowerCase();
-  const { expectedMatches, regExp } = candidate.prepare();
+  const { names, regExp } = candidate.prepare();
   const regExpMatch = address2.match(regExp);
   if (regExpMatch === null) return null;
 
   const match = address.substr(address.length - regExpMatch[0].length);
-  const match2 = getAsciiAccent(match);
-  const found = expectedMatches.reduce((prev, m) => {
+  const match2 = normalize(match);
+  const found = names.reduce((prev, m) => {
     if (prev.length > m.length) return prev;
     if (match2.indexOf(m) > -1) return m;
     return prev;

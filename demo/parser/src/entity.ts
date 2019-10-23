@@ -1,6 +1,6 @@
 import unidecode from "unidecode";
 
-import { getAsciiAccent, getInitials } from "./vietnamese";
+import { initials, normalize } from "./vietnamese";
 
 const typeTranslations = {
   tinh: ["province"],
@@ -16,7 +16,7 @@ export default class Entity {
   type: string | undefined;
 
   private regExp: RegExp | undefined;
-  private expectedMatches: string[] | undefined;
+  private names: string[] | undefined;
 
   private _children: Entity[] | undefined;
 
@@ -45,9 +45,9 @@ export default class Entity {
   }
 
   prepare() {
-    if (this.regExp !== undefined && this.expectedMatches !== undefined)
+    if (this.regExp !== undefined && this.names !== undefined)
       return {
-        expectedMatches: this.expectedMatches,
+        names: this.names,
         regExp: this.regExp
       };
 
@@ -58,21 +58,21 @@ export default class Entity {
         : undefined;
     const typeInitialGlue = "[. ]*";
 
-    this.expectedMatches = [];
+    this.names = [];
     const patterns: string[] = [];
     let nameInitials: string | undefined;
 
     if (typeof this.name === "number") {
-      this.expectedMatches.push(name.toString());
+      this.names.push(name.toString());
     } else {
       patterns.push(name);
-      this.expectedMatches.push(name.toLowerCase());
-      this.expectedMatches.push(getAsciiAccent(this.name));
+      this.names.push(name.toLowerCase());
+      this.names.push(normalize(this.name));
 
       if (name.indexOf(" ") > -1) {
-        nameInitials = getInitials(name);
+        nameInitials = initials(name);
         patterns.push(nameInitials);
-        this.expectedMatches.push(getAsciiAccent(getInitials(this.name)));
+        this.names.push(normalize(initials(this.name)));
       }
 
       const nameWithoutSpace = name.replace(/\s/g, "");
@@ -80,8 +80,8 @@ export default class Entity {
         patterns.push(nameWithoutSpace);
         patterns.push(`${type} ${nameWithoutSpace}`);
 
-        this.expectedMatches.push(getAsciiAccent(this.name.replace(/\s/g, "")));
-        this.expectedMatches.push(nameWithoutSpace.toLowerCase());
+        this.names.push(normalize(this.name.replace(/\s/g, "")));
+        this.names.push(nameWithoutSpace.toLowerCase());
       }
     }
 
@@ -96,12 +96,12 @@ export default class Entity {
           patterns.push(nameWithType2);
 
           if (nameInitials !== undefined) {
-            patterns.push(getInitials(nameWithType2));
+            patterns.push(initials(nameWithType2));
           }
         });
       }
 
-      const typeInitials = [getInitials(type)];
+      const typeInitials = [initials(type)];
       if (typeInitials[0] === "p") {
         // special case: phường -> "p" or "f"
         typeInitials.push("f");
@@ -119,6 +119,6 @@ export default class Entity {
       (patterns.length > 1 ? "(" + patterns.join("|") + ")" : patterns[0]) + "$"
     );
 
-    return { regExp: this.regExp, expectedMatches: this.expectedMatches };
+    return { regExp: this.regExp, names: this.names };
   }
 }
