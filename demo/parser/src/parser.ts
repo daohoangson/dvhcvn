@@ -44,7 +44,7 @@ class Unit {
   type: string | undefined;
 
   private regExp: RegExp | undefined;
-  private asciiNames: string[] | undefined;
+  private expectedMatches: string[] | undefined;
 
   private _children: Unit[] | undefined;
 
@@ -71,10 +71,10 @@ class Unit {
   }
 
   prepare() {
-    if (this.regExp !== undefined && this.asciiNames !== undefined)
+    if (this.regExp !== undefined && this.expectedMatches !== undefined)
       return {
-        regExp: this.regExp,
-        asciiNames: this.asciiNames
+        expectedMatches: this.expectedMatches,
+        regExp: this.regExp
       };
 
     const name = (unidecode(`${this.name}`) as string).toLowerCase();
@@ -84,20 +84,21 @@ class Unit {
         : undefined;
     const typeInitialGlue = "[. ]*";
 
+    this.expectedMatches = [];
     const patterns: string[] = [];
-    this.asciiNames = [];
     let nameInitials: string | undefined;
 
     if (typeof this.name === "number") {
-      this.asciiNames.push(name);
+      this.expectedMatches.push(name.toString());
     } else {
       patterns.push(name);
-      this.asciiNames.push(getAsciiAccent(this.name));
+      this.expectedMatches.push(name.toLowerCase());
+      this.expectedMatches.push(getAsciiAccent(this.name));
 
       if (name.indexOf(" ") > -1) {
         nameInitials = getInitials(name);
         patterns.push(nameInitials);
-        this.asciiNames.push(getAsciiAccent(getInitials(this.name)));
+        this.expectedMatches.push(getAsciiAccent(getInitials(this.name)));
       }
 
       const nameWithoutSpace = name.replace(/\s/g, "");
@@ -105,8 +106,8 @@ class Unit {
         patterns.push(nameWithoutSpace);
         patterns.push(`${type} ${nameWithoutSpace}`);
 
-        this.asciiNames.push(getAsciiAccent(this.name.replace(/\s/g, "")));
-        this.asciiNames.push(nameWithoutSpace);
+        this.expectedMatches.push(getAsciiAccent(this.name.replace(/\s/g, "")));
+        this.expectedMatches.push(nameWithoutSpace.toLowerCase());
       }
     }
 
@@ -144,27 +145,9 @@ class Unit {
       (patterns.length > 1 ? "(" + patterns.join("|") + ")" : patterns[0]) + "$"
     );
 
-    return { regExp: this.regExp, asciiNames: this.asciiNames };
+    return { regExp: this.regExp, expectedMatches: this.expectedMatches };
   }
 }
-
-const tryToMatch = (address: string, candidate: Unit) => {
-  const address2 = (unidecode(address) as string).toLowerCase();
-  const { regExp, asciiNames } = candidate.prepare();
-  const regExpMatch = address2.match(regExp);
-  if (regExpMatch === null) return null;
-
-  const match0 = address.substr(address.length - regExpMatch[0].length);
-  const matchAscii = getAsciiAccent(match0);
-  const matchAsciiFound = asciiNames.reduce((prev, asciiName) => {
-    if (prev.length > asciiName.length) return prev;
-    if (matchAscii.indexOf(asciiName) > -1) return asciiName;
-    return prev;
-  }, "");
-  if (matchAsciiFound === null) return null;
-
-  return new Match(candidate, match0);
-};
 
 type ResolveOption = {
   matches: Match[];
@@ -278,7 +261,7 @@ export default class Parser {
 
     const options = new ResolveOptions(this.resolveCount++);
     candidates.forEach(candidate => {
-      const match = tryToMatch(address, candidate);
+      const match = this.tryToMatch(address, candidate);
       if (match !== null) {
         const addressTruncated = address.substr(
           0,
@@ -358,5 +341,39 @@ export default class Parser {
 
     const best = options.best();
     return best ? [...parents, ...best.matches] : parents;
+  }
+
+  tryToMatch(address: string, candidate: Unit) {
+    const address2 = (unidecode(address) as string).toLowerCase();
+    const { expectedMatches, regExp } = candidate.prepare();
+    const regExpMatch = address2.match(regExp);
+    if (regExpMatch === null) return null;
+
+    const match = address.substr(address.length - regExpMatch[0].length);
+    const match2 = getAsciiAccent(match);
+    const found = expectedMatches.reduce((prev, m) => {
+      if (prev.length > m.length) return prev;
+      if (match2.indexOf(m) > -1) return m;
+      return prev;
+    }, "");
+    if (found === "") {
+      this.log(
+        "tryToMatch: %s =/= %d %s",
+        match2,
+        candidate.id,
+        candidate.type,
+        expectedMatches
+      );
+      return null;
+    }
+
+    this.log(
+      "tryToMatch: %s === %d %s %s",
+      match,
+      candidate.id,
+      candidate.type,
+      candidate.name
+    );
+    return new Match(candidate, match);
   }
 }

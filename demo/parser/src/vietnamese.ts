@@ -80,6 +80,10 @@ const asciiAccentRegExp = new RegExp(
 const asciiAccentReplacer = (m: string): string => asciiAccentMap[m];
 
 const asciiMarks = ["`", "'", ".", "?", "~"];
+const asciiMarkOnlyRegExp = new RegExp(
+  `[${asciiMarks.map(m => `\\${m}`).join("")}]`,
+  "g"
+);
 const asciiMarkRegExp = new RegExp(
   `^(.*)([${asciiMarks.map(m => `\\${m}`).join("")}])(.*)$`
 );
@@ -87,7 +91,10 @@ const asciiMarkCallback = (w: string): string =>
   w.replace(asciiMarkRegExp, "$1$3$2");
 
 export const getAsciiAccent = (text: string): string => {
-  const ascii = text.replace(asciiAccentRegExp, asciiAccentReplacer);
+  const ascii = text
+    .toLowerCase()
+    .replace(asciiMarkOnlyRegExp, " ")
+    .replace(asciiAccentRegExp, asciiAccentReplacer);
   const reorderedMark = ascii
     .split(/\s+/)
     .map(asciiMarkCallback)
