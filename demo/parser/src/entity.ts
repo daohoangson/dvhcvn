@@ -1,6 +1,8 @@
 import { deaccent, initials, normalize } from "./vietnamese";
 
-const typeTranslations = {
+const typeInitialGlue = "[. ]*";
+
+const typeTranslations: { [key: string]: string[] } = {
   tinh: ["province"],
   "thanh pho": ["city"],
   quan: ["district", "dist"],
@@ -8,15 +10,15 @@ const typeTranslations = {
 };
 
 export default class Entity {
-  id: string | undefined;
+  id: string;
   level: number;
   name: string | number;
-  type: string | undefined;
+  type: string;
 
-  private regExp: RegExp | undefined;
-  private names: string[] | undefined;
+  private regExp: RegExp;
+  private names: string[];
 
-  private _children: Entity[] | undefined;
+  private _children: Entity[];
 
   constructor(json: any, level = 0) {
     const [id, name, type, _, children] = json;
@@ -30,8 +32,8 @@ export default class Entity {
     this.type = type;
 
     this._children = children
-      ? (json[4] as any[]).map(j => new Entity(j, level + 1))
-      : undefined;
+      ? (children as any[]).map(j => new Entity(j, level + 1))
+      : null;
   }
 
   children() {
@@ -39,59 +41,62 @@ export default class Entity {
   }
 
   hasChildren() {
-    return this._children !== undefined && this._children.length > 0;
+    return this._children && this._children.length > 0;
   }
 
   prepare() {
-    if (this.regExp !== undefined && this.names !== undefined)
+    if (this.regExp && this.names)
       return {
         names: this.names,
         regExp: this.regExp
       };
 
     const name = deaccent(this.name.toString());
-    const type = this.type !== undefined ? deaccent(this.type) : undefined;
-    const typeInitialGlue = "[. ]*";
+    const type = this.type ? deaccent(this.type) : null;
 
     this.names = [];
     const patterns: string[] = [];
-    let nameInitials: string | undefined;
+    let nameInitials: string;
 
     if (typeof this.name === "number") {
       this.names.push(name.toString());
     } else {
       patterns.push(name);
       this.names.push(name.toLowerCase());
-      this.names.push(normalize(this.name));
 
-      if (name.indexOf(" ") > -1) {
+      const nameNormalized = normalize(this.name);
+      this.names.push(nameNormalized);
+
+      if (this.level < 3 && name.indexOf(" ") > -1) {
         nameInitials = initials(name);
         patterns.push(nameInitials);
-        this.names.push(normalize(initials(this.name)));
+        this.names.push(nameInitials);
       }
 
       const nameWithoutSpace = name.replace(/\s/g, "");
       if (nameWithoutSpace !== name) {
         patterns.push(nameWithoutSpace);
-        patterns.push(`${type} ${nameWithoutSpace}`);
+        if (type) {
+          patterns.push(`${type} ${nameWithoutSpace}`);
+        }
 
-        this.names.push(normalize(this.name.replace(/\s/g, "")));
-        this.names.push(nameWithoutSpace.toLowerCase());
+        this.names.push(nameWithoutSpace);
+        this.names.push(nameNormalized.replace(/\s/g, ""));
       }
     }
 
-    if (type !== undefined) {
+    if (type) {
       patterns.push(`${type} ${name}`);
 
       if (typeof typeTranslations[type] !== "undefined") {
-        (typeTranslations[type] as string[]).forEach(type2 => {
-          patterns.push(`${type2} ${name}`);
+        typeTranslations[type].forEach(translation => {
+          patterns.push(`${translation} ${name}`);
 
-          const nameWithType2 = `${name} ${type2}`;
-          patterns.push(nameWithType2);
+          const nameWithTranslation = `${name} ${translation}`;
+          patterns.push(nameWithTranslation);
 
-          if (nameInitials !== undefined) {
-            patterns.push(initials(nameWithType2));
+          if (nameInitials) {
+            patterns.push(initials(nameWithTranslation));
           }
         });
       }
@@ -104,7 +109,7 @@ export default class Entity {
       typeInitials.forEach(typeInitial => {
         patterns.push(`${typeInitial}${typeInitialGlue}${name}`);
 
-        if (nameInitials !== undefined) {
+        if (nameInitials) {
           patterns.push(`${typeInitial}${typeInitialGlue}${nameInitials}`);
         }
       });
