@@ -40,41 +40,37 @@ class Match {
 
 class Unit {
   id: string | undefined;
-  level: number;
   name: string | number;
   type: string | undefined;
 
   private regExp: RegExp | undefined;
   private asciiNames: string[] | undefined;
 
-  private children: Unit[];
+  private _children: Unit[] | undefined;
 
-  constructor(json: any, level: number) {
-    if (typeof json[1] !== "string") {
-      throw Error("Invalid json");
-    }
+  constructor(json: any) {
+    const [id, name, type, _, children] = json;
+    this.id = id;
 
-    this.id = json[0];
-    this.level = level;
-    this.name = json[1];
-    this.type = json[2];
+    if (typeof name !== "string") throw Error("Invalid name in json: " + name);
+    this.name = name.match(/^[0-9]+$/) ? parseInt(name) : name;
 
-    if (this.name.match(/^[0-9]+$/)) {
-      this.name = parseInt(this.name);
-    }
+    this.type = type;
 
-    if (json[4]) {
-      this.children = (json[4] as any[]).map(j => new Unit(j, level + 1));
-    } else {
-      this.children = [];
-    }
+    this._children = children
+      ? (json[4] as any[]).map(j => new Unit(j))
+      : undefined;
   }
 
-  getChildren() {
-    return this.children;
+  children() {
+    return this._children || [];
   }
 
-  getRegExp() {
+  hasChildren() {
+    return this._children !== undefined && this._children.length > 0;
+  }
+
+  prepare() {
     if (this.regExp !== undefined && this.asciiNames !== undefined)
       return {
         regExp: this.regExp,
@@ -98,7 +94,7 @@ class Unit {
       patterns.push(name);
       this.asciiNames.push(getAsciiAccent(this.name));
 
-      if (this.level === 1 && name.indexOf(" ") > -1) {
+      if (name.indexOf(" ") > -1) {
         nameInitials = getInitials(name);
         patterns.push(nameInitials);
         this.asciiNames.push(getAsciiAccent(getInitials(this.name)));
@@ -154,7 +150,7 @@ class Unit {
 
 const tryToMatch = (address: string, candidate: Unit) => {
   const address2 = (unidecode(address) as string).toLowerCase();
-  const { regExp, asciiNames } = candidate.getRegExp();
+  const { regExp, asciiNames } = candidate.prepare();
   const regExpMatch = address2.match(regExp);
   if (regExpMatch === null) return null;
 
@@ -192,7 +188,8 @@ class ResolveOptions {
   }
 
   bestScore() {
-    return Object.keys(this.count).map(s => parseInt(s))
+    return Object.keys(this.count)
+      .map(s => parseInt(s))
       .reduce((best, score) => {
         if (this.count[score] > 1) return best;
         if (!best || best < score) return score;
@@ -200,14 +197,16 @@ class ResolveOptions {
       }, 0);
   }
 
-  getResolveId() { return this.resolveId; }
+  getResolveId() {
+    return this.resolveId;
+  }
 
   update = (parents: Match[], resolved: Match[], skip: Unit) => {
     if (!(resolved.length > parents.length)) return;
 
     const slice = resolved.slice(parents.length);
     const matches = skip ? [new Match(skip, ""), ...slice] : slice;
-    let matched = '';
+    let matched = "";
     let skipped = 0;
     matches.forEach(m => {
       if (m.length() > 0) {
@@ -215,23 +214,23 @@ class ResolveOptions {
       } else {
         skipped++;
       }
-    })
+    });
     const score = matched.length * 10 - skipped;
     const self = { matches, matched, score };
 
-    if (typeof this.count[score] === 'number') {
+    if (typeof this.count[score] === "number") {
       this.count[score]++;
       delete this.options[score];
     } else {
       this.count[score] = 1;
       this.options[score] = self;
     }
-  }
+  };
 }
 
 type ParserOptions = {
-  debug?: boolean
-}
+  debug?: boolean;
+};
 
 export default class Parser {
   private debug = false;
@@ -240,10 +239,7 @@ export default class Parser {
 
   constructor(options?: ParserOptions) {
     const sorted = require("../../../data/sorted") as any[];
-    this.root = new Unit(
-      [undefined, "Việt Nam", undefined, undefined, sorted],
-      0
-    );
+    this.root = new Unit([undefined, "Việt Nam", undefined, undefined, sorted]);
 
     if (options) {
       this.debug = !!options.debug;
@@ -282,11 +278,17 @@ export default class Parser {
     candidates.forEach(candidate => {
       const match = tryToMatch(address, candidate);
       if (match !== null) {
-        const addressTruncated = address.substr(0, address.length - match.length());
-        const children = candidate.getChildren();
+        const addressTruncated = address.substr(
+          0,
+          address.length - match.length()
+        );
         const parentsAndMatch = [...parents, match];
-        const resolved = children.length > 0
-          ? this.resolveNext(addressTruncated, children, parentsAndMatch)
+        const resolved = candidate.hasChildren()
+          ? this.resolveNext(
+              addressTruncated,
+              candidate.children(),
+              parentsAndMatch
+            )
           : parentsAndMatch;
 
         options.update(parents, resolved, null);
@@ -294,16 +296,31 @@ export default class Parser {
     });
 
     const bestBefore = options.best();
-    if (bestBefore) this.log('resolveNext: %s -> #%d, bestBefore=', address, options.getResolveId(), bestBefore);
+    if (bestBefore)
+      this.log(
+        "resolveNext: %s -> #%d, bestBefore=",
+        address,
+        options.getResolveId(),
+        bestBefore
+      );
 
     const skippingResolved = this.resolveSkipping(address, candidates, parents);
     options.update(parents, skippingResolved, null);
     const bestAfter = options.best();
     if (bestAfter) {
       if (bestAfter !== bestBefore) {
-        this.log('resolveNext: %s -> #%d, bestAfter=', address, options.getResolveId(), bestAfter);
+        this.log(
+          "resolveNext: %s -> #%d, bestAfter=",
+          address,
+          options.getResolveId(),
+          bestAfter
+        );
       } else {
-        this.log('resolveNext: %s -> #%d, bestAfter == bestBefore', address, options.getResolveId());
+        this.log(
+          "resolveNext: %s -> #%d, bestAfter == bestBefore",
+          address,
+          options.getResolveId()
+        );
       }
     }
 
@@ -321,16 +338,20 @@ export default class Parser {
   private resolveSkipping(address: string, skips: Unit[], parents: Match[]) {
     const options = new ResolveOptions(this.resolveCount++);
     skips.forEach(skip => {
-      const candidates = skip.getChildren();
-      if (candidates.length === 0) return;
-
-      const resolved = this.resolveNext(address, candidates, parents);
+      if (!skip.hasChildren()) return;
+      const resolved = this.resolveNext(address, skip.children(), parents);
 
       const bestBefore = options.best();
       options.update(parents, resolved, skip);
       const bestAfter = options.best();
 
-      if (bestAfter !== bestBefore) this.log('resolveSkipping: %s -> #%d, best=', address, options.getResolveId(), bestAfter);
+      if (bestAfter !== bestBefore)
+        this.log(
+          "resolveSkipping: %s -> #%d, best=",
+          address,
+          options.getResolveId(),
+          bestAfter
+        );
     });
 
     const best = options.best();
