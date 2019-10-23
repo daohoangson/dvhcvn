@@ -14,13 +14,17 @@ class Match {
   private name: string | number;
   private type: string | undefined;
 
-  private match: string;
+  length: number;
+  level: number;
+  match: string;
 
   constructor(unit: Unit, match: string) {
     this.id = unit.id;
     this.name = unit.name;
     this.type = unit.type;
 
+    this.length = match.length;
+    this.level = unit.level;
     this.match = match;
   }
 
@@ -28,18 +32,11 @@ class Match {
     const { id, name, type } = this;
     return { id, name, type };
   }
-
-  length() {
-    return this.match.length;
-  }
-
-  toString() {
-    return this.match;
-  }
 }
 
 class Unit {
   id: string | undefined;
+  level: number;
   name: string | number;
   type: string | undefined;
 
@@ -48,9 +45,11 @@ class Unit {
 
   private _children: Unit[] | undefined;
 
-  constructor(json: any) {
+  constructor(json: any, level = 0) {
     const [id, name, type, _, children] = json;
     this.id = id;
+
+    this.level = level;
 
     if (typeof name !== "string") throw Error("Invalid name in json: " + name);
     this.name = name.match(/^[0-9]+$/) ? parseInt(name) : name;
@@ -58,7 +57,7 @@ class Unit {
     this.type = type;
 
     this._children = children
-      ? (json[4] as any[]).map(j => new Unit(j))
+      ? (json[4] as any[]).map(j => new Unit(j, level + 1))
       : undefined;
   }
 
@@ -192,8 +191,8 @@ class ResolveOptions {
     let matched = "";
     let skipped = 0;
     matches.forEach(m => {
-      if (m.length() > 0) {
-        matched += m.toString();
+      if (m.length > 0) {
+        matched += m.match;
       } else {
         skipped++;
       }
@@ -263,7 +262,7 @@ export default class Parser {
     candidates.forEach(candidate => {
       const match = this.tryToMatch(address, candidate);
       if (match !== null) {
-        const addressNext = address.substr(0, address.length - match.length());
+        const addressNext = address.substr(0, address.length - match.length);
         const parentsNext = [...parents, match];
         const resolved = candidate.hasChildren()
           ? this.resolveNext(addressNext, candidate.children(), parentsNext)
@@ -314,8 +313,14 @@ export default class Parser {
   }
 
   private resolveSkipping(address: string, skips: Unit[], parents: Match[]) {
+    const lastParent = parents.length > 0 ? parents[parents.length - 1] : null;
+    const lastLevel = lastParent ? lastParent.level : -1;
+
     const options = new ResolveOptions(this.resolveCount++);
     skips.forEach(skip => {
+      // do not skip too far from the latest parent
+      if (skip.level > lastLevel + 2) return;
+
       if (!skip.hasChildren()) return;
       const resolved = this.resolveNext(address, skip.children(), parents);
 
