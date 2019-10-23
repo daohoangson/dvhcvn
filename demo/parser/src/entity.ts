@@ -1,6 +1,4 @@
-import unidecode from "unidecode";
-
-import { initials, normalize } from "./vietnamese";
+import { deaccent, initials, normalize } from "./vietnamese";
 
 const typeTranslations = {
   tinh: ["province"],
@@ -51,11 +49,8 @@ export default class Entity {
         regExp: this.regExp
       };
 
-    const name = (unidecode(`${this.name}`) as string).toLowerCase();
-    const type =
-      this.type !== undefined
-        ? (unidecode(this.type) as string).toLowerCase()
-        : undefined;
+    const name = deaccent(this.name.toString());
+    const type = this.type !== undefined ? deaccent(this.type) : undefined;
     const typeInitialGlue = "[. ]*";
 
     this.names = [];

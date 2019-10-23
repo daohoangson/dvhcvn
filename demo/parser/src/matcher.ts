@@ -1,7 +1,5 @@
-import unidecode from "unidecode";
-
 import Entity from "./entity";
-import { normalize } from "./vietnamese";
+import { deaccent, normalize } from "./vietnamese";
 
 export class Match {
   private id: string | undefined;
@@ -35,7 +33,7 @@ type ResolveOption = {
 };
 
 export const tryToMatch = (address: string, candidate: Entity) => {
-  const address2 = (unidecode(address) as string).toLowerCase();
+  const address2 = deaccent(address);
   const { names, regExp } = candidate.prepare();
   const regExpMatch = address2.match(regExp);
   if (regExpMatch === null) return null;
