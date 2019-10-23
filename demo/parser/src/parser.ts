@@ -263,18 +263,11 @@ export default class Parser {
     candidates.forEach(candidate => {
       const match = this.tryToMatch(address, candidate);
       if (match !== null) {
-        const addressTruncated = address.substr(
-          0,
-          address.length - match.length()
-        );
-        const parentsAndMatch = [...parents, match];
+        const addressNext = address.substr(0, address.length - match.length());
+        const parentsNext = [...parents, match];
         const resolved = candidate.hasChildren()
-          ? this.resolveNext(
-              addressTruncated,
-              candidate.children(),
-              parentsAndMatch
-            )
-          : parentsAndMatch;
+          ? this.resolveNext(addressNext, candidate.children(), parentsNext)
+          : parentsNext;
 
         options.update(parents, resolved, null);
       }
