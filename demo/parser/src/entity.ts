@@ -1,7 +1,7 @@
 import { deaccent, initials, normalize } from "./vietnamese";
 
-export const delims = "[ .,-]+";
-const typeInitialGlue = "[. ]*";
+export const delims = "[ _.,-]+";
+const typeGlue = "[ .:]*";
 
 const typeTranslations: { [key: string]: string[] } = {
   tinh: ["province"],
@@ -61,11 +61,14 @@ export default class Entity {
     this.names = [];
     const patterns: string[] = [];
     let nameInitials: string;
+    let namePattern: string;
 
     if (typeof this.name === "number") {
+      namePattern = '0*' + name.toString();
       this.names.push(name.toString());
     } else {
-      patterns.push(name);
+      namePattern = name;
+      patterns.push(namePattern);
       this.names.push(name.toLowerCase());
 
       const nameNormalized = normalize(this.name);
@@ -76,8 +79,9 @@ export default class Entity {
         // Hà Nội -> HN
         // Hồ Chí Minh -> HCM
         nameInitials = initials(name);
-        patterns.push(nameInitials);
+        patterns.push('\\s' + nameInitials);
         this.names.push(nameInitials);
+        this.names.push(normalize(initials(this.name)));
       }
 
       const nameWithoutSpace = name.replace(/\s/g, "");
@@ -93,17 +97,17 @@ export default class Entity {
     }
 
     if (type) {
-      patterns.push(`${type} ${name}`);
+      patterns.push(`${type}${typeGlue}${namePattern}`);
 
       if (typeof typeTranslations[type] !== "undefined") {
         typeTranslations[type].forEach(translation => {
-          patterns.push(`${translation} ${name}`);
+          patterns.push(`${translation}${typeGlue}${namePattern}`);
 
-          const nameWithTranslation = `${name} ${translation}`;
+          const nameWithTranslation = `${namePattern}${typeGlue}${translation}`;
           patterns.push(nameWithTranslation);
 
           if (nameInitials) {
-            patterns.push(initials(nameWithTranslation));
+            patterns.push('\\s' + initials(nameWithTranslation));
           }
         });
       }
@@ -114,22 +118,15 @@ export default class Entity {
         typeInitials.push("f");
       }
       typeInitials.forEach(typeInitial => {
-        patterns.push(`${typeInitial}${typeInitialGlue}${name}`);
+        patterns.push(`${typeInitial}${typeGlue}${namePattern}`);
 
         if (nameInitials) {
-          patterns.push(`${typeInitial}${typeInitialGlue}${nameInitials}`);
+          patterns.push(`${typeInitial}${typeGlue}${nameInitials}`);
         }
       });
     }
 
-    let pattern =
-      patterns.length > 1 ? "(" + patterns.join("|") + ")" : patterns[0];
-    if (this.level === 1) {
-      // special case: duplicated appearance of level 1s
-      pattern = `(${pattern}${delims})?${pattern}`;
-    }
-
-    this.regExp = new RegExp(pattern + "$");
+    this.regExp = new RegExp((patterns.length > 1 ? `(${patterns.join("|")})` : patterns[0]) + "$");
 
     return { regExp: this.regExp, names: this.names };
   }

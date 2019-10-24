@@ -63,10 +63,19 @@ export default class Parser {
       if (!current) return;
       this.log("next[%d] ->", id, current.last());
 
-      const resolved = e.hasChildren()
+      let resolved = e.hasChildren()
         ? this.next(current.address(), e.children(), current)
         : current;
-      matcher.update(resolved);
+
+      if (resolved === current && e.level === 1) {
+        const dedupMatcher = new Matcher(current.address(), current);
+        const dedup = dedupMatcher.try(e);
+        if (dedup) {
+          resolved = this.next(dedup.address(), e.children(), dedup);
+        }
+      }
+
+      return matcher.update(resolved);
     });
 
     const before = matcher.best();
