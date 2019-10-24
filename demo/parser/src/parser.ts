@@ -2,10 +2,10 @@ import Entity from "./entity";
 import Matcher, { Matches } from "./matcher";
 
 const numberRegExp = new RegExp("[0-9]{4,}", "g");
+const spaceRegExp = new RegExp("\\s{2,}", "g");
 const alternateRegExp1Parentheses = new RegExp("\\([^)]+\\)$");
 const alternateRegExp2Slash = new RegExp("/[^/]+$");
 const alternateRegExp3Dash = new RegExp("-[^-]+$");
-const alternateRegExp4Comma = new RegExp(",[^,]+$");
 
 type ParserOptions = {
   debug?: boolean;
@@ -25,8 +25,8 @@ export default class Parser {
   }
 
   parse(address: string) {
-    // remove phone number, post code, etc.
     address = address.replace(numberRegExp, "");
+    address = address.replace(spaceRegExp, " ");
 
     const nada = new Matches();
     const matcher = new Matcher(address, nada);
@@ -40,7 +40,6 @@ export default class Parser {
     resolveAlternate(alternateRegExp1Parentheses);
     resolveAlternate(alternateRegExp2Slash);
     resolveAlternate(alternateRegExp3Dash);
-    resolveAlternate(alternateRegExp4Comma);
 
     const best = matcher.best();
     return best ? best.results() : [];

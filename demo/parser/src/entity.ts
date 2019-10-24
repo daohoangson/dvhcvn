@@ -1,6 +1,6 @@
 import { deaccent, initials, normalize } from "./vietnamese";
 
-export const delims = "[ _.,-]+";
+export const delims = "[ _.,/–-]+";
 const typeGlue = "[ .:]*";
 
 const typeTranslations: { [key: string]: string[] } = {
