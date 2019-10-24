@@ -167,7 +167,9 @@ describe("Parser", () => {
         "Quận 7",
         "Thành phố Hồ Chí Minh"
       ],
-      "9 Đinh Tiên Hoàng, pĐakao, q1 - Toà nhà SFC": [],
+      "9 Đinh Tiên Hoàng, pĐakao, q1 - Toà nhà SFC": [
+        // TODO
+      ],
       "36 Trịnh Đình Thảo (Chung cư Lotus Garden), P.Hòa Thạnh, Q.Tân Phú": [
         "Phường Hòa Thạnh",
         "Quận Tân Phú",
@@ -251,7 +253,9 @@ describe("Parser", () => {
         "Quận Thanh Xuân",
         "Thành phố Hà Nội"
       ],
-      "172/194/35, An Dương Vương, Q8, gần ngã 4 Võ Văn Kiệt-An Dương Vương": [],
+      "172/194/35, An Dương Vương, Q8, gần ngã 4 Võ Văn Kiệt-An Dương Vương": [
+        // TODO
+      ],
       "nhà văn hoá từ liêm, bắc từ liêm, hà nội": [
         "Quận Bắc Từ Liêm",
         "Thành phố Hà Nội"
@@ -279,6 +283,79 @@ describe("Parser", () => {
         "Phường Tân Thành",
         "Quận Tân Phú",
         "Thành phố Hồ Chí Minh"
+      ],
+      "Đường Đỗ Pháp Thuận, An Phú, Ho Chi Minh, Vietnam": [
+        // TODO
+        // - phường An Phú, quận 2
+        // - xã An Phú, Củ Chi
+        "Thành phố Hồ Chí Minh"
+      ],
+      "Số 92 Đường Tứ Hiệp, TT Văn Điển, Thanh Trì, Hà Nội ( Gần Trung Tâm Thương Mại Huyện Thanh Trì )": [
+        // TODO
+      ],
+      "B716 CC Hòa Bình F14 Q10 - đi hẻm 666 đường 3/2 vào": [
+        // TODO
+      ],
+      "3.04 Chung cư Res III - Phú Mỹ - Quận 7/ Đối diện FV - Gần Cresent Mall": [
+        // TODO
+      ],
+      "181/18 đường 3/2 phường 11 quận 10 (đối diện cổng khách sạn kỳ hòa)": [
+        // TODO
+      ],
+      "370/6d lê hồng phong bình dương ( Ngay Trường ĐH Bình Dương )": [
+        // TODO
+      ],
+      "15/135 Cát Bi, Hai Phong, Haiphong, Vietnam": [
+        "Phường Cát Bi",
+        "Quận Hải An",
+        "Thành phố Hải Phòng"
+      ],
+      "20 Trần Văn Hoàng P9 Q.TB (Gần ĐH Bách Khoa-Lý thuong kiệt Q10)": [
+        // TODO
+      ],
+      "Ngã 4 lạc long quân , q. tân bình , hcm ( nhà trong hẻm )": [
+        // TODO
+      ],
+      "413 Lê Văn Sỹ, Hô Chi Minh, Vietnam": [
+        // TODO
+      ],
+      "số 69 Trung Liệt Thái Hà Đông Đa": [
+        // TODO
+      ],
+      "139/18 Khương Thượng !": [
+        // TODO
+      ],
+      "Số 2 Ngõ 508 Đường Láng,Đống Đa.(Cách Ngã Tư Sở 1km)": [
+        // TODO
+      ],
+      "33 Đường Dân Lập – Lê Chân - Hải Phòng ( Đối Diện Cổng Trường ĐH DÂN LẬP)": [
+        // TODO
+      ],
+      "Số 3 ngõ 267 Hồ Tùng Mậu- Cầu Diễn-Từ Liêm-HN": [
+        // TODO
+      ],
+      "63 Võ Văn Kiệt, phường An Lạc, Ho Chi Minh City, Ho Chi Minh, Vietnam": [
+        "Phường An Lạc",
+        "Quận Bình Tân",
+        "Thành phố Hồ Chí Minh"
+      ],
+      "42/48 Chu Văn An, f12, quận Bình Thạnh,, Ho Chi Minh City, Ho Chi Minh, Vietnam": [
+        "Phường 12",
+        "Quận Bình Thạnh",
+        "Thành phố Hồ Chí Minh"
+      ],
+      "Tiên Du District, Bac Ninh Province, Vietnam": [
+        "Huyện Tiên Du",
+        "Tỉnh Bắc Ninh"
+      ],
+      "Hà nội, liên hệ 0983.808.779": [
+        // TODO
+      ],
+      "48TT8B Khu đô Thị Văn Quán Hà Noi": [
+        // TODO
+      ],
+      "phố Linh Đường - Hoàng Mai ( đối diện bx Nước Ngầm)": [
+        // TODO
       ]
     };
 
@@ -288,11 +365,5 @@ describe("Parser", () => {
         expect(result).to.deep.equal(map[input]);
       })
     );
-
-    // const only = '137 bến bãi sậy f4 q6 hcmc';
-    // it.only(only, () => {
-    //   const result = parse(only);
-    //   expect(result).to.deep.equal(['Phường 4', 'Quận 6', 'Thành phố Hồ Chí Minh']);
-    // })
   });
 });

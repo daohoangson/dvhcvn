@@ -25,12 +25,8 @@ export default class Parser {
     // remove phone number, post code, etc.
     address = address.replace(/[0-9]{4,}/g, "");
 
-    const results = this.next(address, [this.root], new Matches()).results();
-
-    // remove the root unit
-    if (results.length > 0 && !results[0].id) results.shift();
-
-    return results.reverse();
+    const nada = new Matches();
+    return this.next(address, [this.root], nada).results() || [];
   }
 
   private log(message: string, ...args) {

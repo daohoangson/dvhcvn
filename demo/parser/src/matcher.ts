@@ -1,4 +1,4 @@
-import Entity from "./entity";
+import Entity, { delims } from "./entity";
 import { deaccent, normalize } from "./vietnamese";
 
 type Match = {
@@ -29,22 +29,21 @@ export class Matches {
   }
 
   address() {
-    if (!this.matches || !this.matches.length) return "";
+    if (this.matches.length < 1) return "";
     const { address, match } = this.matches[this.matches.length - 1];
     return address.substr(0, address.length - match.length);
   }
 
   last = () =>
-    this.matches && this.matches.length > 0
-      ? this.matches[this.matches.length - 1]
-      : null;
+    this.matches.length > 0 ? this.matches[this.matches.length - 1] : null;
 
   results = () =>
-    this.matches.map(m => ({
-      id: m.id,
-      name: m.name,
-      type: m.type
-    }));
+    this.matches.length > 0
+      ? this.matches
+          .map(({ id, name, type }) => ({ id, name, type }))
+          .filter(r => !!r.id)
+          .reverse()
+      : null;
 
   score() {
     let matched = "";
@@ -73,6 +72,7 @@ export class Matches {
 }
 
 let matcherCount = 0;
+const delimsRegExp = new RegExp(delims + "$");
 
 export default class Matcher {
   id = ++matcherCount;
@@ -89,7 +89,7 @@ export default class Matcher {
   private parents: Matches;
 
   constructor(address: string, parents: Matches) {
-    this.address = address.replace(/[ .,-]+$/, "");
+    this.address = address.replace(delimsRegExp, "");
     this.address2 = deaccent(this.address);
 
     this.parents = parents;

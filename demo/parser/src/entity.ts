@@ -1,11 +1,13 @@
 import { deaccent, initials, normalize } from "./vietnamese";
 
+export const delims = "[ .,-]+";
 const typeInitialGlue = "[. ]*";
 
 const typeTranslations: { [key: string]: string[] } = {
   tinh: ["province"],
   "thanh pho": ["city"],
   quan: ["district", "dist"],
+  huyen: ["district", "dist"],
   phuong: ["ward"]
 };
 
@@ -27,7 +29,7 @@ export default class Entity {
     this.level = level;
 
     if (typeof name !== "string") throw Error("Invalid name in json: " + name);
-    this.name = name.match(/^[0-9]+$/) ? parseInt(name) : name;
+    this.name = name.match(/^[0-9]+$/) ? parseInt(name) : name.trim();
 
     this.type = type;
 
@@ -68,6 +70,9 @@ export default class Entity {
       this.names.push(nameNormalized);
 
       if (this.level < 3 && name.indexOf(" ") > -1) {
+        // special case: name initials for level 1+2
+        // Hà Nội -> HN
+        // Hồ Chí Minh -> HCM
         nameInitials = initials(name);
         patterns.push(nameInitials);
         this.names.push(nameInitials);
@@ -115,9 +120,14 @@ export default class Entity {
       });
     }
 
-    this.regExp = new RegExp(
-      (patterns.length > 1 ? "(" + patterns.join("|") + ")" : patterns[0]) + "$"
-    );
+    let pattern =
+      patterns.length > 1 ? "(" + patterns.join("|") + ")" : patterns[0];
+    if (this.level === 1) {
+      // special case: duplicated appearance of level 1s
+      pattern = `(${pattern}${delims})?${pattern}`;
+    }
+
+    this.regExp = new RegExp(pattern + "$");
 
     return { regExp: this.regExp, names: this.names };
   }
