@@ -6,11 +6,7 @@ const parser = new Parser();
 
 const lines = readFileSync(0).toString().split("\n");
 
-lines.forEach(line => {
-  line = line.trim();
-  if (line.length < 1) return;
-
-  const parsed = parser.parse(line);
-  if (parsed.length > 1) return;
-  console.log(line, parsed);
+lines.forEach(input => {
+  const output = parser.parse(input);
+  console.log(JSON.stringify({ input, output }));
 });
