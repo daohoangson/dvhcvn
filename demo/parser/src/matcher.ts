@@ -107,20 +107,30 @@ export default class Matcher {
   }
 
   try(entity: Entity) {
+    const { address, address2, parents } = this;
     const { names, regExp } = entity.prepare();
-    const m = this.address2.match(regExp);
-    if (!m) return null;
 
-    const match = this.address.substr(this.address.length - m[0].length);
-    const match2 = normalize(match);
+    const m = address2.match(regExp);
+    if (!m) return null;
+    const { length } = m[0];
+
+    if (entity.name2) {
+      const match2 = address2.substr(address2.length - length);
+      if (match2.indexOf(entity.name2) > -1) {
+        return parents.withMatch(newMatch(entity, address, match2));
+      }
+    }
+
+    const match = address.substr(address.length - length);
+    const matchNormalized = normalize(match);
     const found = names.reduce((prev, m) => {
       if (prev.length > m.length) return prev;
-      if (match2.indexOf(m) > -1) return m;
+      if (matchNormalized.indexOf(m) > -1) return m;
       return prev;
     }, "");
     if (found === "") return null;
 
-    return this.parents.withMatch(newMatch(entity, this.address, match));
+    return parents.withMatch(newMatch(entity, address, match));
   }
 
   update(resolved: Matches, skippedEntity: Entity = null) {

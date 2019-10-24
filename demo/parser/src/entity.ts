@@ -15,6 +15,7 @@ export default class Entity {
   id: string;
   level: number;
   name: string | number;
+  name2: string;
   type: string;
 
   private regExp: RegExp;
@@ -30,6 +31,7 @@ export default class Entity {
 
     if (typeof name !== "string") throw Error("Invalid name in json: " + name);
     this.name = name.match(/^[0-9]+$/) ? parseInt(name) : name.trim();
+    this.name2 = typeof this.name === "string" ? deaccent(this.name) : null;
 
     this.type = type;
 

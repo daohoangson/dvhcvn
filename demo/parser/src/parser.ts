@@ -1,17 +1,23 @@
 import Entity from "./entity";
 import Matcher, { Matches } from "./matcher";
 
+const numberRegExp = new RegExp("[0-9]{4,}", "g");
+const alternateRegExp1Parentheses = new RegExp("\\([^)]+\\)$");
+const alternateRegExp2Slash = new RegExp("/[^/]+$");
+const alternateRegExp3Dash = new RegExp("-[^-]+$");
+const alternateRegExp4Comma = new RegExp(",[^,]+$");
+
 type ParserOptions = {
   debug?: boolean;
 };
 
 export default class Parser {
   private debug = false;
-  private root: Entity;
+  private entities: Entity[];
 
   constructor(options?: ParserOptions) {
     const sorted = require("../../../data/sorted") as any[];
-    this.root = new Entity([null, "Việt Nam", null, null, sorted]);
+    this.entities = [new Entity([null, "Việt Nam", null, null, sorted])];
 
     if (options) {
       this.debug = !!options.debug;
@@ -23,10 +29,33 @@ export default class Parser {
     if (address.indexOf("@") > -1) return [];
 
     // remove phone number, post code, etc.
-    address = address.replace(/[0-9]{4,}/g, "");
+    address = address.replace(numberRegExp, "");
 
     const nada = new Matches();
-    return this.next(address, [this.root], nada).results() || [];
+    return (
+      this.next(address, this.entities, nada).results() ||
+      this.next(
+        address.replace(alternateRegExp1Parentheses, ""),
+        this.entities,
+        nada
+      ).results() ||
+      this.next(
+        address.replace(alternateRegExp2Slash, ""),
+        this.entities,
+        nada
+      ).results() ||
+      this.next(
+        address.replace(alternateRegExp3Dash, ""),
+        this.entities,
+        nada
+      ).results() ||
+      this.next(
+        address.replace(alternateRegExp4Comma, ""),
+        this.entities,
+        nada
+      ).results() ||
+      []
+    );
   }
 
   private log(message: string, ...args) {
