@@ -15,12 +15,13 @@ export default class Entity {
   id: string;
   level: number;
   name: string | number;
-  name2: string;
   parent: Entity;
   type: string;
 
   private regExp: RegExp;
   private names: string[];
+  private names2: string[];
+  private initials: string[];
 
   private _children: Entity[];
 
@@ -33,8 +34,6 @@ export default class Entity {
 
     if (typeof name !== "string") throw Error("Invalid name in json: " + name);
     this.name = name.match(/^[0-9]+$/) ? parseInt(name) : name.trim();
-    this.name2 = typeof this.name === "string" ? deaccent(this.name) : null;
-
 
     this._children = children
       ? (children as any[]).map(j => new Entity(j, this))
@@ -50,50 +49,57 @@ export default class Entity {
   }
 
   prepare() {
-    if (this.regExp && this.names)
+    if (this.regExp)
       return {
+        initials: this.initials,
         names: this.names,
+        names2: this.names2,
         regExp: this.regExp
       };
 
-    const name = deaccent(this.name.toString());
+    const name2 = deaccent(this.name.toString());
     const type = this.type ? deaccent(this.type) : null;
 
+    this.initials = [];
     this.names = [];
+    this.names2 = [];
     const patterns: string[] = [];
     let nameInitials: string;
     let namePattern: string;
 
     if (typeof this.name === "number") {
-      namePattern = '0*' + name.toString();
-      this.names.push(name.toString());
+      namePattern = `0*${this.name}`;
+      this.names.push(this.name.toString());
     } else {
-      namePattern = name;
+      namePattern = name2;
       patterns.push(namePattern);
-      this.names.push(name.toLowerCase());
-
       const nameNormalized = normalize(this.name);
       this.names.push(nameNormalized);
+      this.names2.push(name2.toLowerCase());
 
-      if (this.level < 3 && name.indexOf(" ") > -1) {
+      if (this.level < 3 && this.name.indexOf(" ") > -1) {
         // special case: name initials for level 1+2
         // Hà Nội -> HN
         // Hồ Chí Minh -> HCM
-        nameInitials = initials(name);
-        patterns.push('\\s' + nameInitials);
-        this.names.push(nameInitials);
-        this.names.push(normalize(initials(this.name)));
+        nameInitials = initials(this.name);
+        patterns.push("\\s" + deaccent(nameInitials));
+
+        this.initials.push(nameInitials);
+        const nameInitials2 = deaccent(nameInitials).toUpperCase();
+        if (nameInitials2 !== nameInitials) {
+          this.initials.push(nameInitials2);
+        }
       }
 
-      const nameWithoutSpace = name.replace(/\s/g, "");
-      if (nameWithoutSpace !== name) {
-        patterns.push(nameWithoutSpace);
+      const name2WithoutSpace = name2.replace(/\s/g, "");
+      if (name2WithoutSpace !== name2) {
+        patterns.push(name2WithoutSpace);
         if (type) {
-          patterns.push(`${type} ${nameWithoutSpace}`);
+          patterns.push(`${type} ${name2WithoutSpace}`);
         }
 
-        this.names.push(nameWithoutSpace);
         this.names.push(nameNormalized.replace(/\s/g, ""));
+        this.names2.push(name2WithoutSpace);
       }
     }
 
@@ -108,7 +114,7 @@ export default class Entity {
           patterns.push(nameWithTranslation);
 
           if (nameInitials) {
-            patterns.push('\\s' + initials(nameWithTranslation));
+            patterns.push("\\s" + initials(nameWithTranslation));
           }
         });
       }
@@ -127,8 +133,15 @@ export default class Entity {
       });
     }
 
-    this.regExp = new RegExp((patterns.length > 1 ? `(${patterns.join("|")})` : patterns[0]) + "$");
+    this.regExp = new RegExp(
+      (patterns.length > 1 ? `(${patterns.join("|")})` : patterns[0]) + "$"
+    );
 
-    return { regExp: this.regExp, names: this.names };
+    return {
+      initials: this.initials,
+      names: this.names,
+      names2: this.names2,
+      regExp: this.regExp
+    };
   }
 }

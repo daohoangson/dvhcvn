@@ -25,9 +25,6 @@ export default class Parser {
   }
 
   parse(address: string) {
-    // ignore email address
-    if (address.indexOf("@") > -1) return [];
-
     // remove phone number, post code, etc.
     address = address.replace(numberRegExp, "");
 
@@ -39,7 +36,7 @@ export default class Parser {
       const alt = address.replace(regExp, "");
       if (alt === address) return;
       matcher.update(this.next(alt, this.entities, nada));
-    }
+    };
     resolveAlternate(alternateRegExp1Parentheses);
     resolveAlternate(alternateRegExp2Slash);
     resolveAlternate(alternateRegExp3Dash);

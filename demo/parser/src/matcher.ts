@@ -1,6 +1,11 @@
 import Entity, { delims } from "./entity";
 import { deaccent, normalize } from "./vietnamese";
 
+const scorePerChar = 10;
+const scoreDeltaSkip = -5;
+const scoreDeltaInitials = -2;
+const scoreDeltaName2 = -1;
+
 type Match = {
   id: string;
   level: number;
@@ -10,9 +15,15 @@ type Match = {
 
   address: string;
   match: string;
+  scoreDelta: number;
 };
 
-const newMatch = (entity: Entity, address = "", match = ""): Match => ({
+const newMatch = (
+  entity: Entity,
+  address: string,
+  match: string,
+  scoreDelta: number
+): Match => ({
   id: entity.id,
   level: entity.level,
   name: entity.name,
@@ -20,7 +31,8 @@ const newMatch = (entity: Entity, address = "", match = ""): Match => ({
   type: entity.type,
 
   address: address,
-  match: match
+  match: match,
+  scoreDelta: scoreDelta
 });
 
 export class Matches {
@@ -49,26 +61,34 @@ export class Matches {
 
   score() {
     let matched = "";
-    let skipped = 0;
+    let delta = 0;
     this.matches.forEach(m => {
-      if (m.match.length > 0) {
-        matched += m.match;
-      } else {
-        skipped++;
-      }
+      matched += m.match;
+      delta += m.scoreDelta;
     });
-    return matched.length * 10 - skipped;
+    return matched.length * scorePerChar + delta;
   }
 
   slice(parents: Matches, skippedEntity: Entity = null) {
     if (this.matches.length <= parents.matches.length) return;
 
     const slice = this.matches.slice(parents.matches.length);
-    const matches = skippedEntity ? [newMatch(skippedEntity), ...slice] : slice;
+    const matches = skippedEntity
+      ? [newMatch(skippedEntity, "", "", scoreDeltaSkip), ...slice]
+      : slice;
     return new Matches(matches);
   }
 
-  withMatch = (match: Match) => new Matches([...this.matches, match]);
+  withMatch = (
+    entity: Entity,
+    address: string,
+    match: string,
+    scoreDelta: number
+  ) =>
+    new Matches([
+      ...this.matches,
+      newMatch(entity, address, match, scoreDelta)
+    ]);
 
   with = (other: Matches) => new Matches([...this.matches, ...other.matches]);
 }
@@ -110,29 +130,39 @@ export default class Matcher {
 
   try(entity: Entity) {
     const { address, address2, parents } = this;
-    const { names, regExp } = entity.prepare();
+    const { initials, names, names2, regExp } = entity.prepare();
 
-    const m = address2.match(regExp);
-    if (!m) return null;
-    const { length } = m[0];
-
-    if (entity.name2) {
-      const match2 = address2.substr(address2.length - length);
-      if (match2.indexOf(entity.name2) > -1) {
-        return parents.withMatch(newMatch(entity, address, match2));
-      }
-    }
+    const regExpMatch = address2.match(regExp);
+    if (!regExpMatch) return null;
+    const { length } = regExpMatch[0];
 
     const match = address.substr(address.length - length);
     const matchNormalized = normalize(match);
-    const found = names.reduce((prev, m) => {
-      if (prev.length > m.length) return prev;
-      if (matchNormalized.indexOf(m) > -1) return m;
+    const nameFound = names.reduce((prev, n) => {
+      if (prev && prev.length > n.length) return prev;
+      if (matchNormalized.indexOf(n) > -1) return n;
       return prev;
-    }, "");
-    if (found === "") return null;
+    }, null);
+    if (nameFound) return parents.withMatch(entity, address, match, 0);
 
-    return parents.withMatch(newMatch(entity, address, match));
+    const initialsFound = initials.reduce((prev, i) => {
+      if (prev && prev.length > i.length) return prev;
+      if (match.indexOf(i) > -1) return i;
+      return prev;
+    }, null);
+    if (initialsFound)
+      return parents.withMatch(entity, address, match, scoreDeltaInitials);
+
+    const match2 = address2.substr(address2.length - length);
+    const name2Found = names2.reduce((prev, n) => {
+      if (prev && prev.length > n.length) return prev;
+      if (match2.indexOf(n) > -1) return n;
+      return prev;
+    }, null);
+    if (name2Found)
+      return parents.withMatch(entity, address, match2, scoreDeltaName2);
+
+    return null;
   }
 
   update(resolved: Matches, skippedEntity: Entity = null) {
