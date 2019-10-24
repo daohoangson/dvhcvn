@@ -32,30 +32,21 @@ export default class Parser {
     address = address.replace(numberRegExp, "");
 
     const nada = new Matches();
-    return (
-      this.next(address, this.entities, nada).results() ||
-      this.next(
-        address.replace(alternateRegExp1Parentheses, ""),
-        this.entities,
-        nada
-      ).results() ||
-      this.next(
-        address.replace(alternateRegExp2Slash, ""),
-        this.entities,
-        nada
-      ).results() ||
-      this.next(
-        address.replace(alternateRegExp3Dash, ""),
-        this.entities,
-        nada
-      ).results() ||
-      this.next(
-        address.replace(alternateRegExp4Comma, ""),
-        this.entities,
-        nada
-      ).results() ||
-      []
-    );
+    const matcher = new Matcher(address, nada);
+    matcher.update(this.next(address, this.entities, nada));
+
+    const resolveAlternate = (regExp: RegExp) => {
+      const alt = address.replace(regExp, "");
+      if (alt === address) return;
+      matcher.update(this.next(alt, this.entities, nada));
+    }
+    resolveAlternate(alternateRegExp1Parentheses);
+    resolveAlternate(alternateRegExp2Slash);
+    resolveAlternate(alternateRegExp3Dash);
+    resolveAlternate(alternateRegExp4Comma);
+
+    const best = matcher.best();
+    return best ? best.results() : [];
   }
 
   private log(message: string, ...args) {

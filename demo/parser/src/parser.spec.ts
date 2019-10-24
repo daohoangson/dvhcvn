@@ -368,6 +368,8 @@ describe("Parser", () => {
       ],
       "phố Linh Đường - Hoàng Mai ( đối diện bx Nước Ngầm)": [
         // TODO
+        // - quận Hoàng Mai, Hà Nội
+        // - thị xã Hoàng Mai, Nghệ An
       ]
     };
 
