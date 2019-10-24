@@ -68,7 +68,7 @@ export default class Parser {
         const dedupMatcher = new Matcher(current.address(), current);
         const dedup = dedupMatcher.try(e);
         if (dedup) {
-          resolved = this.next(dedup.address(), e.children(), dedup);
+          resolved = this.next(dedup.address(), e.children(), current);
         }
       }
 

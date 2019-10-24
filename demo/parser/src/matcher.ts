@@ -174,8 +174,10 @@ export default class Matcher {
 
     if (typeof this.count[score] === "number") {
       const thisParentId = matches.last().parentId;
-      const otherParentId = this.histories[score].matches.last().parentId;
-      if (thisParentId && thisParentId === otherParentId) {
+      const otherParentId = this.histories[score]
+        ? this.histories[score].matches.last().parentId
+        : null;
+      if (otherParentId && thisParentId === otherParentId) {
         // special case: one parent has more than one entity
         // with the same name -> keep the first one that matched
       } else {

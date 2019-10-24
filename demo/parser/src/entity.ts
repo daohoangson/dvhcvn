@@ -64,7 +64,7 @@ export default class Entity {
     this.names = [];
     this.names2 = [];
     const patterns: string[] = [];
-    let nameInitials: string;
+    let nameInitials2: string;
     let namePattern: string;
 
     if (typeof this.name === "number") {
@@ -81,13 +81,17 @@ export default class Entity {
         // special case: name initials for level 1+2
         // Hà Nội -> HN
         // Hồ Chí Minh -> HCM
-        nameInitials = initials(this.name);
-        patterns.push("\\s" + deaccent(nameInitials));
+        const nameInitials = initials(this.name);
+        nameInitials2 = deaccent(nameInitials);
+        patterns.push("\\s" + nameInitials2);
 
         this.initials.push(nameInitials);
-        const nameInitials2 = deaccent(nameInitials).toUpperCase();
-        if (nameInitials2 !== nameInitials) {
+        this.initials.push(nameInitials.toLowerCase());
+
+        const nameInitials2Uppercase = nameInitials2.toUpperCase();
+        if (nameInitials2Uppercase !== nameInitials) {
           this.initials.push(nameInitials2);
+          this.initials.push(nameInitials2Uppercase);
         }
       }
 
@@ -110,12 +114,10 @@ export default class Entity {
         typeTranslations[type].forEach(translation => {
           patterns.push(`${translation}${typeGlue}${namePattern}`);
 
-          const nameWithTranslation = `${namePattern}${typeGlue}${translation}`;
-          patterns.push(nameWithTranslation);
+          patterns.push(`${namePattern}${typeGlue}${translation}`);
 
-          if (nameInitials) {
-            patterns.push("\\s" + initials(nameWithTranslation));
-          }
+          if (nameInitials2)
+            patterns.push("\\s" + initials(`${namePattern} ${translation}`));
         });
       }
 
@@ -127,8 +129,8 @@ export default class Entity {
       typeInitials.forEach(typeInitial => {
         patterns.push(`${typeInitial}${typeGlue}${namePattern}`);
 
-        if (nameInitials) {
-          patterns.push(`${typeInitial}${typeGlue}${nameInitials}`);
+        if (nameInitials2) {
+          patterns.push(`${typeInitial}${typeGlue}${nameInitials2}`);
         }
       });
     }
