@@ -16,6 +16,7 @@ export default class Entity {
   level: number;
   name: string | number;
   name2: string;
+  parent: Entity;
   type: string;
 
   private regExp: RegExp;
@@ -23,20 +24,20 @@ export default class Entity {
 
   private _children: Entity[];
 
-  constructor(json: any, level = 0) {
+  constructor(json: any, parent: Entity = null) {
     const [id, name, type, _, children] = json;
     this.id = id;
-
-    this.level = level;
+    this.level = parent ? parent.level + 1 : 0;
+    this.parent = parent;
+    this.type = type;
 
     if (typeof name !== "string") throw Error("Invalid name in json: " + name);
     this.name = name.match(/^[0-9]+$/) ? parseInt(name) : name.trim();
     this.name2 = typeof this.name === "string" ? deaccent(this.name) : null;
 
-    this.type = type;
 
     this._children = children
-      ? (children as any[]).map(j => new Entity(j, level + 1))
+      ? (children as any[]).map(j => new Entity(j, this))
       : null;
   }
 

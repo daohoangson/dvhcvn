@@ -5,6 +5,7 @@ type Match = {
   id: string;
   level: number;
   name: string | number;
+  parentId: string;
   type: string;
 
   address: string;
@@ -15,6 +16,7 @@ const newMatch = (entity: Entity, address = "", match = ""): Match => ({
   id: entity.id,
   level: entity.level,
   name: entity.name,
+  parentId: entity.parent ? entity.parent.id : null,
   type: entity.type,
 
   address: address,
@@ -141,8 +143,15 @@ export default class Matcher {
     const self = { matches, score };
 
     if (typeof this.count[score] === "number") {
-      this.count[score]++;
-      delete this.histories[score];
+      const thisParentId = matches.last().parentId;
+      const otherParentId = this.histories[score].matches.last().parentId;
+      if (thisParentId && thisParentId === otherParentId) {
+        // special case: one parent has more than one entity
+        // with the same name -> keep the first one that matched
+      } else {
+        this.count[score]++;
+        delete this.histories[score];
+      }
     } else {
       this.count[score] = 1;
       this.histories[score] = self;
