@@ -8,10 +8,13 @@ _gsoPath='data/dvhcvn.json'
 _gsoDatePath='data/date.txt'
 _gisPath='data/gis.json'
 
+# 767/NQ-UBTVQH14 @ https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx
+_date=11/09/2019
+
 if [ ! -f $_gsoPath ]; then
   echo "Generating $_gsoPath..."
-  php "$_dir/01_gso.gov.vn.php" >$_gsoPath
-  cat $_gsoPath | jq -r .data_date >$_gsoDatePath
+  php "$_dir/01_gso.gov.vn.php" $_date >$_gsoPath
+  echo $_date >$_gsoDatePath
 fi
 
 if [ ! -f $_gisPath ]; then
