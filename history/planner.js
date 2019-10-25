@@ -55,7 +55,8 @@ _([
   `_date=""`,
   `_message=""`,
   `_pathKey=./key.txt`,
-  `_pathJson=./data.json`
+  `_pathJson=./data.json`,
+  `_pathMerged=./merged.json`
 ]);
 
 _([
@@ -99,6 +100,7 @@ Promise.all([getData(), getKey()]).then(([data, key]) =>
         `_diff=$( git diff $_pathJson )`,
         `if [ ! -z "$_diff" ]; then`,
         `  echo ${dataKey} >$_pathKey && git add $_pathKey`,
+        `  _merged=$( php merger.php ) && echo "$_merged" >$_pathMerged && git add $_pathMerged`,
         `  git add $_pathJson`,
         `  export GIT_AUTHOR_DATE="${year}-${month}-${day} 00:00:00"`,
         `  export GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE`,
