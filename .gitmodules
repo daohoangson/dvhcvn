@@ -1,0 +1,3 @@
+[submodule "history/data"]
+	path = history/data
+	url = https://github.com/daohoangson/dvhcvn-historical-data.git
