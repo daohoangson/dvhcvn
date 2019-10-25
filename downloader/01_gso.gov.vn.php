@@ -8,13 +8,17 @@ function main()
     $level3Count = 0;
 
     $level1Data = getLevel1();
+    $level2DataAll = getLevel2();
     foreach ($level1Data as &$level1) {
         $level1Count++;
-        $level2Data = getLevel2($level1['level1_id']);
+        $level1Id = $level1['level1_id'];
+        $level2Data = isset($level2DataAll[$level1Id]) ? $level2DataAll[$level1Id] : [];
+        $level3DataAll = getLevel3($level1Id);
 
         foreach ($level2Data as &$level2) {
             $level2Count++;
-            $level3Data = getLevel3($level1['level1_id'], $level2['level2_id']);
+            $level2Id = $level2['level2_id'];
+            $level3Data = isset($level3DataAll[$level2Id]) ? $level3DataAll[$level2Id] : [];
             $level2['level3s'] = $level3Data;
 
             $level3Count += count($level3Data);
@@ -59,14 +63,14 @@ function getLevel1(): array
     return $data;
 }
 
-function getLevel2(string $level1Id): array
+function getLevel2(): array
 {
-    $rows = _request('DanhMucQuanHuyen', ['Tinh' => $level1Id]);
+    $rows = _request('DanhMucQuanHuyen');
     $data = [];
 
     /** @var SimpleXMLElement $row */
     foreach ($rows as $row) {
-        $data[] = [
+        $data[strval($row->MaTinh)][] = [
             'level2_id' => strval($row->MaQuanHuyen),
             'name' => strval($row->TenQuanHuyen),
             'type' => strval($row->LoaiHinh),
@@ -76,14 +80,14 @@ function getLevel2(string $level1Id): array
     return $data;
 }
 
-function getLevel3(string $level1Id, string $level2Id): array
+function getLevel3(string $level1Id): array
 {
-    $rows = _request('DanhMucPhuongXa', ['Tinh' => $level1Id, 'QuanHuyen' => $level2Id]);
+    $rows = _request('DanhMucPhuongXa', ['Tinh' => $level1Id]);
     $data = [];
 
     /** @var SimpleXMLElement $row */
     foreach ($rows as $row) {
-        $data[] = [
+        $data[strval($row->MaQuanHuyen)][] = [
             'level3_id' => strval($row->MaPhuongXa),
             'name' => strval($row->TenPhuongXa),
             'type' => strval($row->LoaiHinh),
