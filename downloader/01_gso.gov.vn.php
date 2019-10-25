@@ -2,6 +2,13 @@
 
 function main()
 {
+    $date = $GLOBALS['argv'][1];
+    if (!is_string($date) || preg_match('#^\d{2}/\d{2}/\d{4}$#', $date) !== 1) {
+        fwrite(STDERR, 'Required param: date');
+        exit(1);
+    }
+    define('GSO_DATE', $date);
+
     $startTime = microtime(true);
     $level1Count = 0;
     $level2Count = 0;
@@ -33,7 +40,7 @@ function main()
 
     $output = [
         'data' => $level1Data,
-        'data_date' => _getDate(),
+        'data_date' => GSO_DATE,
         'generate_date' => time(),
         'stats' => [
             'elapsed_time' => microtime(true) - $startTime,
@@ -97,12 +104,6 @@ function getLevel3(string $level1Id): array
     return $data;
 }
 
-function _getDate(): string
-{
-    // https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx
-    return '11/09/2019'; // 767/NQ-UBTVQH14
-}
-
 function _request($soapAction, array $params = []): array
 {
     $stderrPrefix = sprintf('%s(%s): ', $soapAction, join(', ', $params));
@@ -112,7 +113,7 @@ function _request($soapAction, array $params = []): array
     };
 
     $soapBody = '';
-    $params['DenNgay'] = _getDate();
+    $params['DenNgay'] = GSO_DATE;
     foreach ($params as $paramKey => $paramValue) {
         $soapBody .= "<$paramKey>$paramValue</$paramKey>";
     }
