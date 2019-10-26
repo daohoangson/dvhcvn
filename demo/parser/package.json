@@ -5,6 +5,7 @@
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
   "devDependencies": {
+    "@now/node": "^1.0.2",
     "@types/chai": "^4.2.3",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.11.2",
