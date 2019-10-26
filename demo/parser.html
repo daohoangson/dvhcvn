@@ -19,25 +19,30 @@
       const input = document.getElementById("input");
       const output = document.getElementById("output");
 
+      const parse = value =>
+        fetch("/demo/parser/api", {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          body: value
+        }).then(
+          parsed => {
+            console.log("parse(%s)", value, parsed);
+            if (value !== input.value) return;
+
+            output.innerHTML = JSON.stringify(data, null, "  ");
+          },
+          reason => {
+            console.log("parse(%s)", value, reason);
+            if (value !== input.value) return;
+
+            output.innerHTML = `${reason}`;
+          }
+        );
+
       let timeout = null;
       input.onkeyup = e => {
         clearTimeout(timeout);
-        timeout = setTimeout(() => {
-          fetch("/demo/parser/api", {
-            method: "POST",
-            headers: { "Content-Type": "text/plain" },
-            body: input.value
-          }).then(
-            resp => {
-              console.log(resp);
-              output.innerHTML = JSON.stringify(data, null, "  ");
-            },
-            reason => {
-              console.error(reason);
-              output.innerHTML = `${reason}`;
-            }
-          );
-        }, 200);
+        timeout = setTimeout(() => parse(input.value), 200);
       };
     </script>
   </body>
