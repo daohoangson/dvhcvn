@@ -397,13 +397,14 @@ describe("Parser", () => {
       ],
       "Số 30/294 lê lợi - TP Bắc Giang : ĐT 0985858180": "TODO",
       "Mỹ Đình 2, Từ Liêm, Hà Nội, Việt Nam": [
-        // TODO
+        "Phường Mỹ Đình 2",
+        "Quận Nam Từ Liêm",
         "Thành phố Hà Nội"
       ],
       "cầu Sài Gòn": "TODO",
       "Đông Anh_Hà Nội": ["Huyện Đông Anh", "Thành phố Hà Nội"],
       "280 Trần Cung - Từ Liêm - Hà Nội": [
-        // TODO
+        "Quận Nam Từ Liêm",
         "Thành phố Hà Nội"
       ],
       "Cao Lãnh, Đồng Tháp": ["Thành phố Cao Lãnh", "Tỉnh Đồng Tháp"],
@@ -466,7 +467,8 @@ describe("Parser", () => {
         "Tỉnh Tây Ninh"
       ],
       "Mỹ Đình, Mỹ Đình 1, Từ Liêm, Hanoi, Vietnam": [
-        // TODO
+        "Phường Mỹ Đình 1",
+        "Quận Nam Từ Liêm",
         "Thành phố Hà Nội"
       ],
 

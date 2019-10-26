@@ -55,7 +55,7 @@ export class Matches {
     this.matches.length > 0
       ? this.matches
           .map(({ id, name, type }) => ({ id, name, type }))
-          .filter(r => !!r.id)
+          .filter(r => r.id !== "root")
           .reverse()
       : null;
 
@@ -131,6 +131,7 @@ export default class Matcher {
   try(entity: Entity) {
     const { address, address2, parents } = this;
     const { initials, names, names2, regExp } = entity.prepare();
+    if (!regExp) return null;
 
     const regExpMatch = address2.match(regExp);
     if (!regExpMatch) return null;
@@ -173,11 +174,15 @@ export default class Matcher {
     const self = { matches, score };
 
     if (typeof this.count[score] === "number") {
-      const thisParentId = matches.last().parentId;
-      const otherParentId = this.histories[score]
-        ? this.histories[score].matches.last().parentId
+      const thisLast = matches.last();
+      const otherLast = this.histories[score]
+        ? this.histories[score].matches.last()
         : null;
-      if (otherParentId && thisParentId === otherParentId) {
+      if (
+        otherLast &&
+        thisLast.name == otherLast.name &&
+        thisLast.parentId === otherLast.parentId
+      ) {
         // special case: one parent has more than one entity
         // with the same name -> keep the first one that matched
       } else {

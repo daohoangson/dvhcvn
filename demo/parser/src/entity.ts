@@ -1,6 +1,9 @@
 import { deaccent, initials, normalize } from "./vietnamese";
 
 export const delims = "[ _.,/–-]+";
+
+const nameNumericRegExp = new RegExp("^[0-9]+$");
+
 const typeGlue = "[ .:]*";
 
 const typeTranslations: { [key: string]: string[] } = {
@@ -11,6 +14,13 @@ const typeTranslations: { [key: string]: string[] } = {
   phuong: ["ward"]
 };
 
+const typeRegExp = new RegExp(
+  "^(Huyện|Nước|Phường|Quận|Thành phố|Thị trấn|Thị xã|Tỉnh|Xã)\\s+(.+)$",
+  "i"
+);
+
+type EntityJson = [string[], { [key: string]: EntityJson }];
+
 export default class Entity {
   id: string;
   level: number;
@@ -18,25 +28,24 @@ export default class Entity {
   parent: Entity;
   type: string;
 
-  private regExp: RegExp;
+  private fullNames: string[];
+  private initials: string[];
   private names: string[];
   private names2: string[];
-  private initials: string[];
+  private regExp: RegExp;
 
   private _children: Entity[];
 
-  constructor(json: any, parent: Entity = null) {
-    const [id, name, type, _, children] = json;
+  constructor(id: string, json: EntityJson, parent: Entity = null) {
     this.id = id;
     this.level = parent ? parent.level + 1 : 0;
     this.parent = parent;
-    this.type = type;
 
-    if (typeof name !== "string") throw Error("Invalid name in json: " + name);
-    this.name = name.match(/^[0-9]+$/) ? parseInt(name) : name.trim();
+    const [fullNames, children] = json;
+    this.fullNames = fullNames;
 
     this._children = children
-      ? (children as any[]).map(j => new Entity(j, this))
+      ? Object.entries(children).map(([i, j]) => new Entity(i, j, this))
       : null;
   }
 
@@ -57,13 +66,39 @@ export default class Entity {
         regExp: this.regExp
       };
 
-    const name2 = deaccent(this.name.toString());
-    const type = this.type ? deaccent(this.type) : null;
-
     this.initials = [];
     this.names = [];
     this.names2 = [];
+    const patterns = this.fullNames.reduce((p, n) => [...p, ...this.p(n)], []);
+    if (patterns.length === 0) {
+      console.error("Cannot prepare Entity", this);
+      return {};
+    }
+
+    this.regExp = new RegExp(`(${patterns.join("|")})$`);
+
+    return {
+      initials: this.initials,
+      names: this.names,
+      names2: this.names2,
+      regExp: this.regExp
+    };
+  }
+
+  private p(fullName: string) {
     const patterns: string[] = [];
+
+    const m = fullName.match(typeRegExp);
+    if (!m) {
+      console.error("Cannot extract type from Entity full name: %s", fullName);
+      return patterns;
+    }
+
+    this.type = m[1];
+    this.name = m[2].match(nameNumericRegExp) ? parseInt(m[2]) : m[2].trim();
+    const name2 = deaccent(this.name.toString());
+    const type = deaccent(this.type);
+
     let nameInitials2: string;
     let namePattern: string;
 
@@ -135,15 +170,6 @@ export default class Entity {
       });
     }
 
-    this.regExp = new RegExp(
-      (patterns.length > 1 ? `(${patterns.join("|")})` : patterns[0]) + "$"
-    );
-
-    return {
-      initials: this.initials,
-      names: this.names,
-      names2: this.names2,
-      regExp: this.regExp
-    };
+    return patterns;
   }
 }

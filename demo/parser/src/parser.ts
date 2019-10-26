@@ -16,8 +16,9 @@ export default class Parser {
   private entities: Entity[];
 
   constructor(options?: ParserOptions) {
-    const sorted = require("../../../data/sorted") as any[];
-    this.entities = [new Entity([null, "Việt Nam", null, null, sorted])];
+    // eslint-disable-next-line
+    const sorted = require("../../../history/data/tree");
+    this.entities = [new Entity("root", [["Nước Việt Nam"], sorted])];
 
     if (options) {
       this.debug = !!options.debug;
@@ -54,6 +55,7 @@ export default class Parser {
     const matcher = new Matcher(address, parents);
     const { id } = matcher;
 
+    let before = matcher.best();
     entities.forEach(e => {
       const current = matcher.try(e);
       if (!current) return;
@@ -71,11 +73,16 @@ export default class Parser {
         }
       }
 
-      return matcher.update(resolved);
+      matcher.update(resolved);
+      const best = matcher.best();
+      if (best === before) {
+        this.log("next[%d]: no change", id);
+      } else {
+        this.log("next[%d]: best=", id, best);
+      }
+      before = best;
     });
 
-    const before = matcher.best();
-    if (before) this.log("next[%d]: before=", id, before);
     matcher.update(this.skipOneLevel(address, entities, parents));
 
     const after = matcher.best();
