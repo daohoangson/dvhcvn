@@ -24,20 +24,22 @@
           method: "POST",
           headers: { "Content-Type": "text/plain" },
           body: value
-        }).then(
-          parsed => {
-            console.log("parse(%s)", value, parsed);
-            if (value !== input.value) return;
+        })
+          .then(r => r.json())
+          .then(
+            parsed => {
+              console.log("parse(%s)", value, parsed);
+              if (value !== input.value) return;
 
-            output.innerHTML = JSON.stringify(data, null, "  ");
-          },
-          reason => {
-            console.log("parse(%s)", value, reason);
-            if (value !== input.value) return;
+              output.innerHTML = JSON.stringify(data, null, "  ");
+            },
+            reason => {
+              console.log("parse(%s)", value, reason);
+              if (value !== input.value) return;
 
-            output.innerHTML = `${reason}`;
-          }
-        );
+              output.innerHTML = `${reason}`;
+            }
+          );
 
       let timeout = null;
       input.onkeyup = e => {
