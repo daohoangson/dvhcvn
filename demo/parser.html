@@ -31,7 +31,7 @@
               console.log("parse(%s)", value, parsed);
               if (value !== input.value) return;
 
-              output.innerHTML = JSON.stringify(data, null, "  ");
+              output.innerHTML = JSON.stringify(parsed, null, "  ");
             },
             reason => {
               console.log("parse(%s)", value, reason);
