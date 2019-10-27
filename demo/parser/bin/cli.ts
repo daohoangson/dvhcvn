@@ -11,16 +11,27 @@ const argv = yargs
     boolean: true,
     description: "Run with debug output"
   })
+  .option("json", {
+    boolean: true,
+    description: "Json decode input before parsing"
+  })
   .alias("h", "help").argv;
 
-const parser = new Parser({
-  debug: argv.debug
-});
+const { debug, json } = argv;
+const parser = new Parser({ debug });
 
-const parseInput = input =>
+const parseInput = input => {
+  if (json) {
+    const decoded = JSON.parse(input);
+    if (decoded && typeof decoded.input === "string") {
+      input = decoded.input;
+    }
+  }
+
   process.stdout.write(
     JSON.stringify({ input, output: parser.parse(input) }) + "\n"
   );
+};
 
 const inputs = argv._;
 if (inputs.length > 0) {
