@@ -2,7 +2,7 @@ import Entity, { delims, getEntityById } from "./entity";
 import { deaccent, normalize } from "./vietnamese";
 
 const scorePerChar = 10;
-const scoreDeltaSkip = -5;
+const scoreDeltaSkip = -3;
 const scoreDeltaInitials = -2;
 const scoreDeltaName2 = -1;
 
@@ -43,7 +43,7 @@ const delimsRegExp = new RegExp(delims + "$");
 export default class Matcher {
   id = ++matcherCount;
 
-  private address: string;
+  address: string;
   private address2: string;
   private count: { [score: number]: number } = {};
   private histories: { [score: number]: Matches } = {};
@@ -57,14 +57,9 @@ export default class Matcher {
   }
 
   best() {
-    const score = Object.keys(this.count)
-      .map(s => parseInt(s))
-      .reduce((best, score) => {
-        if (this.count[score] > 1) return best;
-        if (!best || best < score) return score;
-        return best;
-      }, 0);
-    return score > 0 ? this.histories[score] : null;
+    const scores = Object.keys(this.count).map(s => parseInt(s));
+    const score = scores.length > 0 ? Math.max(...scores) : 0;
+    return score > 0 && this.count[score] > 1 ? null : this.histories[score];
   }
 
   try(entity: Entity) {
@@ -145,7 +140,8 @@ export default class Matcher {
     _.scores = [
       ...scores,
       match.length * scorePerChar,
-      scoreDelta + (entity.parent != previous.entity ? scoreDeltaSkip : 0)
+      scoreDelta +
+        (entity.parent != previous.entity ? scoreDeltaSkip * entity.level : 0)
     ];
 
     return _;

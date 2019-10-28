@@ -51,8 +51,13 @@ export default class Parser {
     console.log(...args.map(v => (v && v.describe ? v.describe() : v)));
   }
 
-  private resolve(address: string, entities: Entity[], matches: Matches) {
-    const matcher = new Matcher(address, matches);
+  private resolve(
+    input: string | Matcher,
+    entities: Entity[],
+    matches: Matches
+  ) {
+    const matcher =
+      typeof input === "string" ? new Matcher(input, matches) : input;
     const { id } = matcher;
 
     let before = matcher.best();
@@ -79,18 +84,19 @@ export default class Parser {
       before = best;
     });
 
-    matcher.update(this.skipOneLevel(address, entities, matches));
+    matcher.update(this.skipOneLevel(matcher.address, entities, matches));
 
     const b = matcher.best();
     if (!b) return before || matches;
-    if (b !== before) this.log("next[%d]: skipped", id, b.entity.parent, b);
+    if (b !== before && b !== matches)
+      this.log("next[%d]: skipped", id, b.entity.parent, b);
     return b;
   }
 
   private skipOneLevel(address: string, entities: Entity[], matches: Matches) {
     const matcher = new Matcher(address, matches);
     const { id } = matcher;
-    const parent = matches.entity ? matches.entity.parent : null;
+    const parent = matches.entity ? matches.entity : null;
     const level = parent ? parent.level : -1;
 
     entities.forEach(e => {
@@ -99,7 +105,7 @@ export default class Parser {
       if (!e.hasChildren()) return;
 
       const before = matcher.best();
-      matcher.update(this.resolve(address, e.children(), matches));
+      this.resolve(matcher, e.children(), matches);
 
       const b = matcher.best();
       if (b !== before) this.log("skipOneLevel[%d]: new best", id, e.parent, b);
