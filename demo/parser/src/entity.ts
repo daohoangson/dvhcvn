@@ -2,6 +2,13 @@ import { deaccent, initials, normalize } from "./vietnamese";
 
 export const delims = "[ _.,/–-]+";
 
+const entitiesById: { [id: string]: Entity[] } = {};
+
+export const getEntityById = (id: string) =>
+  entitiesById[id]
+    ? entitiesById[id].reduce((p, e) => (p ? p : e.status ? p : e), null)
+    : null;
+
 const nameNumericRegExp = new RegExp("^[0-9]+$");
 
 const typeGlue = "[ .:]*";
@@ -19,13 +26,14 @@ const typeRegExp = new RegExp(
   "i"
 );
 
-type EntityJson = [string[], { [key: string]: EntityJson }];
+type EntityJson = [string[], { [key: string]: EntityJson }, string];
 
 export default class Entity {
   id: string;
   level: number;
   name: string | number;
   parent: Entity;
+  status: "Deleted" | "Moved" | undefined;
   type: string;
 
   private fullNames: string[];
@@ -41,16 +49,30 @@ export default class Entity {
     this.level = parent ? parent.level + 1 : 0;
     this.parent = parent;
 
-    const [fullNames, children] = json;
+    const [fullNames, children, status] = json;
     this.fullNames = fullNames;
 
     this._children = children
       ? Object.entries(children).map(([i, j]) => new Entity(i, j, this))
       : null;
+
+    switch (status) {
+      case "Deleted":
+      case "Moved":
+        this.status = status;
+    }
+
+    entitiesById[this.id] = entitiesById[this.id] || [];
+    entitiesById[this.id].push(this);
   }
 
   children() {
     return this._children || [];
+  }
+
+  describe() {
+    if (!this.name) this.prepare();
+    return `#${this.id} ${this.type} ${this.name}`;
   }
 
   hasChildren() {
@@ -145,7 +167,7 @@ export default class Entity {
     if (type) {
       patterns.push(`${type}${typeGlue}${namePattern}`);
 
-      if (typeof typeTranslations[type] !== "undefined") {
+      if (typeTranslations[type]) {
         typeTranslations[type].forEach(translation => {
           patterns.push(`${translation}${typeGlue}${namePattern}`);
 

@@ -490,7 +490,10 @@ describe("Parser", () => {
         // TODO
         "Tỉnh Bình Dương"
       ],
-      "25 ngô quyền, hoàn kiếm": ["Quận Hoàn Kiếm", "Thành phố Hà Nội"]
+      "25 ngô quyền, hoàn kiếm": ["Quận Hoàn Kiếm", "Thành phố Hà Nội"],
+      "Chung cư Viện Bỏng - Hà Đông": ["Quận Hà Đông", "Thành phố Hà Nội"],
+      "Hà Đông, Hà Tây": ["Quận Hà Đông", "Thành phố Hà Nội"],
+      "Hà Tây": ["Tỉnh Hà Tây"]
     };
 
     Object.keys(map).forEach(input =>

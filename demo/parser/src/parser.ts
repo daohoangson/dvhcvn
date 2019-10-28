@@ -18,7 +18,7 @@ export default class Parser {
   constructor(options?: ParserOptions) {
     // eslint-disable-next-line
     const sorted = require("../../../history/data/tree");
-    this.entities = [new Entity("root", [["Nước Việt Nam"], sorted])];
+    this.entities = [new Entity("root", [["Nước Việt Nam"], sorted, ""])];
 
     if (options) {
       this.debug = !!options.debug;
@@ -29,14 +29,14 @@ export default class Parser {
     address = address.replace(numberRegExp, "");
     address = address.replace(spaceRegExp, " ");
 
-    const nada = new Matches();
+    const nada = new Matches(address);
     const matcher = new Matcher(address, nada);
-    matcher.update(this.next(address, this.entities, nada));
+    matcher.update(this.resolve(address, this.entities, nada));
 
     const resolveAlternate = (regExp: RegExp) => {
-      const alt = address.replace(regExp, "");
-      if (alt === address) return;
-      matcher.update(this.next(alt, this.entities, nada));
+      const alternate = address.replace(regExp, "");
+      if (alternate === address) return;
+      matcher.update(this.resolve(alternate, this.entities, nada));
     };
     resolveAlternate(alternateRegExp1Parentheses);
     resolveAlternate(alternateRegExp2Slash);
@@ -46,55 +46,51 @@ export default class Parser {
     return best ? best.results() : [];
   }
 
-  private log(message: string, ...args) {
+  private log(...args: any[]) {
     if (!this.debug) return;
-    console.log.apply(console, [message, ...args]);
+    console.log(...args.map(v => (v && v.describe ? v.describe() : v)));
   }
 
-  private next(address: string, entities: Entity[], parents: Matches) {
-    const matcher = new Matcher(address, parents);
+  private resolve(address: string, entities: Entity[], matches: Matches) {
+    const matcher = new Matcher(address, matches);
     const { id } = matcher;
 
     let before = matcher.best();
     entities.forEach(e => {
       const current = matcher.try(e);
       if (!current) return;
-      this.log("next[%d] ->", id, current.last());
+      this.log("resolve[%d]: matched", id, entities[0].parent, current);
 
       let resolved = e.hasChildren()
-        ? this.next(current.address(), e.children(), current)
+        ? this.resolve(current.address, e.children(), current)
         : current;
 
       if (resolved === current && e.level === 1) {
-        const dedupMatcher = new Matcher(current.address(), current);
+        const dedupMatcher = new Matcher(current.address, current);
         const dedup = dedupMatcher.try(e);
         if (dedup) {
-          resolved = this.next(dedup.address(), e.children(), current);
+          resolved = this.resolve(dedup.address, e.children(), current);
         }
       }
 
       matcher.update(resolved);
       const best = matcher.best();
-      if (best === before) {
-        this.log("next[%d]: no change", id);
-      } else {
-        this.log("next[%d]: best=", id, best);
-      }
+      if (best !== before) this.log("resolve[%d]: new best", id, e, best);
       before = best;
     });
 
-    matcher.update(this.skipOneLevel(address, entities, parents));
+    matcher.update(this.skipOneLevel(address, entities, matches));
 
-    const after = matcher.best();
-    if (!after) return before ? parents.with(before) : parents;
-    if (after !== before) this.log("next[%d]: after=", id, after);
-    return parents.with(after);
+    const b = matcher.best();
+    if (!b) return before || matches;
+    if (b !== before) this.log("next[%d]: skipped", id, b.entity.parent, b);
+    return b;
   }
 
-  private skipOneLevel(address: string, entities: Entity[], parents: Matches) {
-    const matcher = new Matcher(address, parents);
+  private skipOneLevel(address: string, entities: Entity[], matches: Matches) {
+    const matcher = new Matcher(address, matches);
     const { id } = matcher;
-    const parent = parents.last();
+    const parent = matches.entity ? matches.entity.parent : null;
     const level = parent ? parent.level : -1;
 
     entities.forEach(e => {
@@ -103,13 +99,12 @@ export default class Parser {
       if (!e.hasChildren()) return;
 
       const before = matcher.best();
-      matcher.update(this.next(address, e.children(), parents), e);
+      matcher.update(this.resolve(address, e.children(), matches));
 
-      const after = matcher.best();
-      if (after !== before) this.log("skipOneLevel[%d]: best=", id, after);
+      const b = matcher.best();
+      if (b !== before) this.log("skipOneLevel[%d]: new best", id, e.parent, b);
     });
 
-    const best = matcher.best();
-    return best ? parents.with(best) : parents;
+    return matcher.best() || matches;
   }
 }

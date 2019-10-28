@@ -1,4 +1,4 @@
-import Entity, { delims } from "./entity";
+import Entity, { delims, getEntityById } from "./entity";
 import { deaccent, normalize } from "./vietnamese";
 
 const scorePerChar = 10;
@@ -6,91 +6,35 @@ const scoreDeltaSkip = -5;
 const scoreDeltaInitials = -2;
 const scoreDeltaName2 = -1;
 
-type Match = {
-  id: string;
-  level: number;
-  name: string | number;
-  parentId: string;
-  type: string;
-
-  address: string;
-  match: string;
-  scoreDelta: number;
-};
-
-const newMatch = (
-  entity: Entity,
-  address: string,
-  match: string,
-  scoreDelta: number
-): Match => ({
-  id: entity.id,
-  level: entity.level,
-  name: entity.name,
-  parentId: entity.parent ? entity.parent.id : null,
-  type: entity.type,
-
-  address: address,
-  match: match,
-  scoreDelta: scoreDelta
-});
-
 export class Matches {
-  private matches: Match[];
+  address: string;
+  entity: Entity = null;
+  matches: string[] = [];
+  scores: number[] = [];
 
-  constructor(matches: Match[] = []) {
-    this.matches = matches;
+  constructor(address: string) {
+    this.address = address;
   }
 
-  address() {
-    if (this.matches.length < 1) return "";
-    const { address, match } = this.matches[this.matches.length - 1];
-    return address.substr(0, address.length - match.length);
+  describe = () => ({
+    match: this.entity ? [this.entity.describe(), this.scores] : undefined,
+    address: [this.address, ...this.matches]
+  });
+
+  results() {
+    const results = [];
+
+    let entity = this.entity;
+    while (entity && entity.id !== "root") {
+      const { id, name, type } = entity;
+      results.push({ id, name, type });
+      entity = entity.parent;
+    }
+
+    return results;
   }
 
-  last = () =>
-    this.matches.length > 0 ? this.matches[this.matches.length - 1] : null;
-
-  results = () =>
-    this.matches.length > 0
-      ? this.matches
-          .map(({ id, name, type }) => ({ id, name, type }))
-          .filter(r => r.id !== "root")
-          .reverse()
-      : null;
-
-  score() {
-    let matched = "";
-    let delta = 0;
-    this.matches.forEach(m => {
-      matched += m.match;
-      delta += m.scoreDelta;
-    });
-    return matched.length * scorePerChar + delta;
-  }
-
-  slice(parents: Matches, skippedEntity: Entity = null) {
-    if (this.matches.length <= parents.matches.length) return;
-
-    const slice = this.matches.slice(parents.matches.length);
-    const matches = skippedEntity
-      ? [newMatch(skippedEntity, "", "", scoreDeltaSkip), ...slice]
-      : slice;
-    return new Matches(matches);
-  }
-
-  withMatch = (
-    entity: Entity,
-    address: string,
-    match: string,
-    scoreDelta: number
-  ) =>
-    new Matches([
-      ...this.matches,
-      newMatch(entity, address, match, scoreDelta)
-    ]);
-
-  with = (other: Matches) => new Matches([...this.matches, ...other.matches]);
+  score = () => this.scores.reduce((sum, s) => sum + s, 0);
 }
 
 let matcherCount = 0;
@@ -102,19 +46,14 @@ export default class Matcher {
   private address: string;
   private address2: string;
   private count: { [score: number]: number } = {};
-  private histories: {
-    [score: number]: {
-      matches: Matches;
-      score: number;
-    };
-  } = {};
-  private parents: Matches;
+  private histories: { [score: number]: Matches } = {};
+  private previous: Matches;
 
-  constructor(address: string, parents: Matches) {
+  constructor(address: string, matches: Matches) {
     this.address = address.replace(delimsRegExp, "");
     this.address2 = deaccent(this.address);
 
-    this.parents = parents;
+    this.previous = matches;
   }
 
   best() {
@@ -125,11 +64,11 @@ export default class Matcher {
         if (!best || best < score) return score;
         return best;
       }, 0);
-    return score > 0 ? this.histories[score].matches : null;
+    return score > 0 ? this.histories[score] : null;
   }
 
   try(entity: Entity) {
-    const { address, address2, parents } = this;
+    const { address, address2 } = this;
     const { initials, names, names2, regExp } = entity.prepare();
     if (!regExp) return null;
 
@@ -144,7 +83,7 @@ export default class Matcher {
       if (matchNormalized.indexOf(n) > -1) return n;
       return prev;
     }, null);
-    if (nameFound) return parents.withMatch(entity, address, match, 0);
+    if (nameFound) return this.ok(address, entity, match);
 
     const initialsFound = initials.reduce((prev, i) => {
       if (prev && prev.length > i.length) return prev;
@@ -152,7 +91,7 @@ export default class Matcher {
       return prev;
     }, null);
     if (initialsFound)
-      return parents.withMatch(entity, address, match, scoreDeltaInitials);
+      return this.ok(address, entity, match, scoreDeltaInitials);
 
     const match2 = address2.substr(address2.length - length);
     const name2Found = names2.reduce((prev, n) => {
@@ -160,28 +99,23 @@ export default class Matcher {
       if (match2.indexOf(n) > -1) return n;
       return prev;
     }, null);
-    if (name2Found)
-      return parents.withMatch(entity, address, match2, scoreDeltaName2);
+    if (name2Found) return this.ok(address, entity, match2, scoreDeltaName2);
 
     return null;
   }
 
-  update(resolved: Matches, skippedEntity: Entity = null) {
-    const matches = resolved.slice(this.parents, skippedEntity);
-    if (!matches) return;
-
+  update(matches: Matches) {
     const score = matches.score();
-    const self = { matches, score };
 
     if (typeof this.count[score] === "number") {
-      const thisLast = matches.last();
+      const thisLast = matches.entity;
       const otherLast = this.histories[score]
-        ? this.histories[score].matches.last()
+        ? this.histories[score].entity
         : null;
       if (
         otherLast &&
         thisLast.name == otherLast.name &&
-        thisLast.parentId === otherLast.parentId
+        thisLast.parent === otherLast.parent
       ) {
         // special case: one parent has more than one entity
         // with the same name -> keep the first one that matched
@@ -191,7 +125,29 @@ export default class Matcher {
       }
     } else {
       this.count[score] = 1;
-      this.histories[score] = self;
+      this.histories[score] = matches;
     }
+  }
+
+  private ok(address: string, entity: Entity, match: string, scoreDelta = 0) {
+    const { previous } = this;
+    const { matches, scores } = previous;
+    const addressLeft = address.substr(0, address.length - match.length);
+    const _ = new Matches(addressLeft);
+
+    if (entity.status) {
+      const goodEntity = getEntityById(entity.id);
+      if (goodEntity) entity = goodEntity;
+    }
+    _.entity = entity;
+
+    _.matches = [...matches, match];
+    _.scores = [
+      ...scores,
+      match.length * scorePerChar,
+      scoreDelta + (entity.parent != previous.entity ? scoreDeltaSkip : 0)
+    ];
+
+    return _;
   }
 }
