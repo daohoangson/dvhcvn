@@ -9,7 +9,7 @@ const scoreDeltaName2 = -1;
 export class Matches {
   address: string;
   entity: Entity = null;
-  matches: string[] = [];
+  matches: string[][] = [];
   scores: number[] = [];
 
   constructor(address: string) {
@@ -78,7 +78,7 @@ export default class Matcher {
       if (matchNormalized.indexOf(n) > -1) return n;
       return prev;
     }, null);
-    if (nameFound) return this.ok(address, entity, match);
+    if (nameFound) return this.ok(address, entity, [match, nameFound]);
 
     const initialsFound = initials.reduce((prev, i) => {
       if (prev && prev.length > i.length) return prev;
@@ -86,7 +86,12 @@ export default class Matcher {
       return prev;
     }, null);
     if (initialsFound)
-      return this.ok(address, entity, match, scoreDeltaInitials);
+      return this.ok(
+        address,
+        entity,
+        [match, initialsFound],
+        scoreDeltaInitials
+      );
 
     const match2 = address2.substr(address2.length - length);
     const name2Found = names2.reduce((prev, n) => {
@@ -94,7 +99,8 @@ export default class Matcher {
       if (match2.indexOf(n) > -1) return n;
       return prev;
     }, null);
-    if (name2Found) return this.ok(address, entity, match2, scoreDeltaName2);
+    if (name2Found)
+      return this.ok(address, entity, [match2, name2Found], scoreDeltaName2);
 
     return null;
   }
@@ -124,10 +130,11 @@ export default class Matcher {
     }
   }
 
-  private ok(address: string, entity: Entity, match: string, scoreDelta = 0) {
+  private ok(address: string, entity: Entity, found: string[], scoreDelta = 0) {
     const { previous } = this;
     const { matches, scores } = previous;
-    const addressLeft = address.substr(0, address.length - match.length);
+    const [full, name] = found;
+    const addressLeft = address.substr(0, address.length - full.length);
     const _ = new Matches(addressLeft);
 
     if (entity.status) {
@@ -136,12 +143,13 @@ export default class Matcher {
     }
     _.entity = entity;
 
-    _.matches = [...matches, match];
+    _.matches = [...matches, found];
     _.scores = [
       ...scores,
-      match.length * scorePerChar,
-      scoreDelta +
-        (entity.parent != previous.entity ? scoreDeltaSkip * entity.level : 0)
+      full.length,
+      name.length * scorePerChar,
+      scoreDelta,
+      entity.parent != previous.entity ? scoreDeltaSkip * entity.level : 0
     ];
 
     return _;

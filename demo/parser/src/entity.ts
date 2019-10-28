@@ -97,7 +97,7 @@ export default class Entity {
       return {};
     }
 
-    this.regExp = new RegExp(`(${patterns.join("|")})$`);
+    this.regExp = new RegExp(`(?<=([^a-z]|^))(${patterns.join("|")})$`);
 
     return {
       initials: this.initials,
@@ -119,6 +119,7 @@ export default class Entity {
     this.type = m[1];
     this.name = m[2].match(nameNumericRegExp) ? parseInt(m[2]) : m[2].trim();
     const name2 = deaccent(this.name.toString());
+    const name2WithoutSpace = name2.replace(/\s/g, "");
     const type = deaccent(this.type);
 
     let nameInitials2: string;
@@ -140,7 +141,7 @@ export default class Entity {
         // Hồ Chí Minh -> HCM
         const nameInitials = initials(this.name);
         nameInitials2 = deaccent(nameInitials);
-        patterns.push("\\s" + nameInitials2);
+        patterns.push(nameInitials2);
 
         this.initials.push(nameInitials);
         this.initials.push(nameInitials.toLowerCase());
@@ -152,7 +153,6 @@ export default class Entity {
         }
       }
 
-      const name2WithoutSpace = name2.replace(/\s/g, "");
       if (name2WithoutSpace !== name2) {
         patterns.push(name2WithoutSpace);
         if (type) {
@@ -174,7 +174,7 @@ export default class Entity {
           patterns.push(`${namePattern}${typeGlue}${translation}`);
 
           if (nameInitials2)
-            patterns.push("\\s" + initials(`${namePattern} ${translation}`));
+            patterns.push(initials(`${namePattern} ${translation}`));
         });
       }
 
@@ -188,6 +188,10 @@ export default class Entity {
 
         if (nameInitials2) {
           patterns.push(`${typeInitial}${typeGlue}${nameInitials2}`);
+        }
+
+        if (name2WithoutSpace !== name2) {
+          patterns.push(`${typeInitial}${typeGlue}${name2WithoutSpace}`);
         }
       });
     }

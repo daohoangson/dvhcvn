@@ -493,7 +493,30 @@ describe("Parser", () => {
       "25 ngô quyền, hoàn kiếm": ["Quận Hoàn Kiếm", "Thành phố Hà Nội"],
       "Chung cư Viện Bỏng - Hà Đông": ["Quận Hà Đông", "Thành phố Hà Nội"],
       "Hà Đông, Hà Tây": ["Quận Hà Đông", "Thành phố Hà Nội"],
-      "Hà Tây": ["Tỉnh Hà Tây"]
+      "Hà Tây": ["Tỉnh Hà Tây"],
+      "290 Bình Long, Phú Thạnh,Tân Phú,Hồ Chí Minh, Tân Phú, Việt Nam": [
+        // TODO
+        // - Huyện Tân Phú, Đồng Nai
+        // - Quận Tân Phú, tp. Hồ Chí Minh
+      ],
+      "290 Bình Long, Phú Thạnh,Tân Phú,Hồ Chí Minh": [
+        "Phường Phú Thạnh",
+        "Quận Tân Phú",
+        "Thành phố Hồ Chí Minh"
+      ],
+      "220/50A/50C XVNT QBT": [
+        // TODO
+        // - Quận Bình Thạnh, tp. Hồ Chí Minh
+        // - Quận Bình Tân, tp. Hồ Chí Minh
+        // - Quận Bình Thuỷ, Cần Thơ
+      ],
+      "Ngõ 86, Cầu Diễn": [],
+      "Ngõ 86, Cầu Diễn, Việt Nam": [
+        "Phường Cầu Diễn",
+        "Quận Nam Từ Liêm",
+        "Thành phố Hà Nội"
+      ],
+      "49 vũ tông phan": []
     };
 
     Object.keys(map).forEach(input =>
