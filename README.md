@@ -152,7 +152,7 @@ git clone https://github.com/daohoangson/dvhcvn.git
 cd dvhcvn
 
 # xoá dữ liệu có sẵn
-rm -rf ./data
+rm -rf ./data/*
 
 # bắt đầu tải
 ./downloader/download.sh
