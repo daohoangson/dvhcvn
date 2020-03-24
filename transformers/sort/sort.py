@@ -10,6 +10,8 @@ def processName(e):
         prefix = "Thành phố"
     if e["type"] == "Thị xã" or e["type"] == "Huyện":
         prefix = "(Thị xã|Huyện)"
+    if e["type"] == "Xã" or e["type"] == "Phường":
+        prefix = "(Xã|Phường)"
 
     pattern = "^{} ".format(prefix)
     match = re.match(pattern, e['name'], re.IGNORECASE)
