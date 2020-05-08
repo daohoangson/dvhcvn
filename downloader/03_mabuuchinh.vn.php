@@ -41,6 +41,7 @@ function main()
                 'level2_id' => $_level2['level2_id'],
                 'name' => $_level2['name'],
                 'postcode' => $level2Postcode,
+                'level3s' => [],
             ];
 
             foreach ($_level2['level3s'] as $_level3) {
@@ -82,13 +83,19 @@ function main()
     echo(json_encode($output, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-function _request($textSearch): int
+function _request($textSearch)
 {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://mabuuchinh.vn/API/serviceApi/v1/MBC');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    $postFields = http_build_query(['textsearch' => $textSearch]);
+
+    $transliterator = Transliterator::createFromRules(
+        ':: Any-Latin; :: Latin-ASCII; :: NFD; :: [:Nonspacing Mark:] Remove; :: Lower(); :: NFC;',
+        Transliterator::FORWARD
+    );
+    $textSearchSafe = $transliterator->transliterate($textSearch);
+    $postFields = http_build_query(['textsearch' => substr($textSearchSafe, 0, 45)]);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
     curl_setopt($ch, CURLOPT_POST, true);
 
@@ -102,15 +109,16 @@ function _request($textSearch): int
     }
 
     foreach ($data as $found) {
-        if (!is_array($found) || !isset($found['id']) || !isset($found['name'])) {
+        if (!is_array($found) || !isset($found['name'])) {
             continue;
         }
 
-        if (preg_match('/^(\d+) - ' . preg_quote($textSearch, '/') . '$/i', $found['name'], $matches) !== 1) {
+        $nameSafe = $transliterator->transliterate($found['name']);
+        if (preg_match('/^([\d-]+) - ' . preg_quote($textSearchSafe, '/') . '$/', $nameSafe, $matches) !== 1) {
             continue;
         }
 
-        return intval($matches[1]);
+        return is_numeric($matches[1]) ? intval($matches[1]) : $matches[1];
     }
 
     return 0;
