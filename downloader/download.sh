@@ -7,6 +7,7 @@ _dir=$( cd $( dirname $BASH_SOURCE[0] ) && pwd )
 _gsoPath='data/dvhcvn.json'
 _gsoDatePath='data/date.txt'
 _gisPath='data/gis.json'
+_postcodePath='data/postcode.json'
 
 # 895/NQ-UBTVQH14 @ https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx
 _date=01/03/2020
@@ -20,4 +21,9 @@ fi
 if [ ! -f $_gisPath ]; then
   echo "Generating $_gisPath..."
   php "$_dir/02_gis.chinhphu.vn.php" <$_gsoPath >$_gisPath
+fi
+
+if [ ! -f $_postcodePath ]; then
+  echo "Generating $_postcodePath..."
+  php "$_dir/03_mabuuchinh.vn.php" <$_gsoPath >$_postcodePath
 fi
