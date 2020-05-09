@@ -18,7 +18,7 @@ function main()
 
     foreach ($level1Data as $_level1) {
         $level1Count++;
-        $level1Postcode = _request($_level1['name']);
+        $level1Postcode = _request($_level1['name'], 1, '');
         if ($level1Postcode > 0) {
             $level1PostcodeCount++;
         }
@@ -32,7 +32,7 @@ function main()
 
         foreach ($_level1['level2s'] as $_level2) {
             $level2Count++;
-            $level2Postcode = _request("{$_level2['name']} {$_level1['name']}");
+            $level2Postcode = _request("{$_level2['name']} {$_level1['name']}", 2, $level1Postcode);
             if ($level2Postcode > 0) {
                 $level2PostcodeCount++;
             }
@@ -46,7 +46,11 @@ function main()
 
             foreach ($_level2['level3s'] as $_level3) {
                 $level3Count++;
-                $level3Postcode = _request("{$_level3['name']} {$_level2['name']} {$_level1['name']}");
+                $level3Postcode = _request(
+                    "{$_level3['name']} {$_level2['name']} {$_level1['name']}",
+                    3,
+                    $level2Postcode
+                );
                 if ($level3Postcode > 0) {
                     $level3PostcodeCount++;
                 }
@@ -83,12 +87,33 @@ function main()
     echo(json_encode($output, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-function _request($textSearch)
+function _postcodeHasPrefix($postcode, $prefixes): bool
 {
+    if (!is_array($prefixes)) {
+        $prefixes = [$prefixes];
+    }
+
+    foreach ($prefixes as $prefix) {
+        if (substr($postcode, 0, strlen($prefix)) === $prefix) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function _request($textSearch, $level, $parentPostcode)
+{
+    static $expectedPostcodeLength = [1 => 2, 2 => 3, 3 => 5];
+
+    if ($level > 1 && empty($parentPostcode)) {
+        fwrite(STDERR, "Skipped searching for $textSearch without parent postcode\n");
+        return '';
+    }
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://mabuuchinh.vn/API/serviceApi/v1/MBC');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
 
     $transliterator = Transliterator::createFromRules(
         ':: Any-Latin; :: Latin-ASCII; :: NFD; :: [:Nonspacing Mark:] Remove; :: Lower(); :: NFC;',
@@ -104,24 +129,60 @@ function _request($textSearch)
 
     $data = @json_decode($json, true);
     if (!is_array($data)) {
-        fwrite(STDERR, "Data could not be extracted for $textSearch (error=1, json=$json)\n");
-        return 0;
+        fwrite(STDERR, "Data could not be extracted for $textSearch json=$json\n");
+        return '';
     }
 
+    $pattern = '/^(\d+' . ($level === 1 ? '(-\d+)?' : '') . ') - .+$/';
+    $postcode = null;
+    $maxSimilarityPct = null;
     foreach ($data as $found) {
         if (!is_array($found) || !isset($found['name'])) {
             continue;
         }
 
         $nameSafe = $transliterator->transliterate($found['name']);
-        if (preg_match('/^([\d-]+) - ' . preg_quote($textSearchSafe, '/') . '$/', $nameSafe, $matches) !== 1) {
+        if (preg_match($pattern, $nameSafe, $matches) !== 1) {
             continue;
         }
 
-        return is_numeric($matches[1]) ? intval($matches[1]) : $matches[1];
+        if (is_numeric($matches[1])) {
+            $foundPostcode = $matches[1];
+            if (strlen($foundPostcode) !== $expectedPostcodeLength[$level]) {
+                continue;
+            }
+        } else {
+            $foundPostcode = [];
+            $range = array_map('intval', explode('-', $matches[1]));
+            for ($i = $range[0]; $i < $range[1]; $i++) {
+                $foundPostcode[] = str_pad(strval($i), 2, '0', STR_PAD_LEFT);
+            }
+        }
+
+        if (is_array($foundPostcode)) {
+            if ($level !== 1) {
+                // ignore range if level > 1
+                continue;
+            }
+        } else {
+            if (!_postcodeHasPrefix($foundPostcode, $parentPostcode)) {
+                // ignore postcode with wrong prefix
+                continue;
+            }
+        }
+
+        similar_text($textSearchSafe, $nameSafe, $similarityPct);
+        if ($postcode === null || $similarityPct > $maxSimilarityPct) {
+            $postcode = $foundPostcode;
+            $maxSimilarityPct = $similarityPct;
+        }
     }
 
-    return 0;
+    if ($postcode !== null) {
+        return $postcode;
+    }
+
+    return '';
 }
 
 main();
