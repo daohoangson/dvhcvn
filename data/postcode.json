@@ -7,7 +7,8 @@
                 "10",
                 "11",
                 "12",
-                "13"
+                "13",
+                "14"
             ],
             "level2s": [
                 {
@@ -13468,7 +13469,8 @@
             "level1_id": "22",
             "name": "Tỉnh Quảng Ninh",
             "postcode": [
-                "01"
+                "01",
+                "02"
             ],
             "level2s": [
                 {
@@ -13825,57 +13827,57 @@
                 {
                     "level2_id": "196",
                     "name": "Thành phố Uông Bí",
-                    "postcode": "",
+                    "postcode": "023",
                     "level3s": [
                         {
                             "level3_id": "06808",
                             "name": "Phường Vàng Danh",
-                            "postcode": ""
+                            "postcode": "02309"
                         },
                         {
                             "level3_id": "06811",
                             "name": "Phường Thanh Sơn",
-                            "postcode": ""
+                            "postcode": "02306"
                         },
                         {
                             "level3_id": "06814",
                             "name": "Phường Bắc Sơn",
-                            "postcode": ""
+                            "postcode": "02308"
                         },
                         {
                             "level3_id": "06817",
                             "name": "Phường Quang Trung",
-                            "postcode": ""
+                            "postcode": "02307"
                         },
                         {
                             "level3_id": "06820",
                             "name": "Phường Trưng Vương",
-                            "postcode": ""
+                            "postcode": "02315"
                         },
                         {
                             "level3_id": "06823",
                             "name": "Phường Nam Khê",
-                            "postcode": ""
+                            "postcode": "02316"
                         },
                         {
                             "level3_id": "06826",
                             "name": "Phường Yên Thanh",
-                            "postcode": ""
+                            "postcode": "02313"
                         },
                         {
                             "level3_id": "06829",
                             "name": "Xã Thượng Yên Công",
-                            "postcode": ""
+                            "postcode": "02310"
                         },
                         {
                             "level3_id": "06832",
                             "name": "Phường Phương Đông",
-                            "postcode": ""
+                            "postcode": "02311"
                         },
                         {
                             "level3_id": "06835",
                             "name": "Phường Phương Nam",
-                            "postcode": ""
+                            "postcode": "02312"
                         }
                     ]
                 },
@@ -14100,47 +14102,47 @@
                 {
                     "level2_id": "202",
                     "name": "Huyện Ba Chẽ",
-                    "postcode": "",
+                    "postcode": "020",
                     "level3s": [
                         {
                             "level3_id": "06970",
                             "name": "Thị trấn Ba Chẽ",
-                            "postcode": ""
+                            "postcode": "02006"
                         },
                         {
                             "level3_id": "06973",
                             "name": "Xã Thanh Sơn",
-                            "postcode": ""
+                            "postcode": "02008"
                         },
                         {
                             "level3_id": "06976",
                             "name": "Xã Thanh Lâm",
-                            "postcode": ""
+                            "postcode": "02009"
                         },
                         {
                             "level3_id": "06979",
                             "name": "Xã Đạp Thanh",
-                            "postcode": ""
+                            "postcode": "02012"
                         },
                         {
                             "level3_id": "06982",
                             "name": "Xã Nam Sơn",
-                            "postcode": ""
+                            "postcode": "02007"
                         },
                         {
                             "level3_id": "06985",
                             "name": "Xã Lương Mông",
-                            "postcode": ""
+                            "postcode": "02010"
                         },
                         {
                             "level3_id": "06988",
                             "name": "Xã Đồn Đạc",
-                            "postcode": ""
+                            "postcode": "02013"
                         },
                         {
                             "level3_id": "06991",
                             "name": "Xã Minh Cầm",
-                            "postcode": ""
+                            "postcode": "02011"
                         }
                     ]
                 },
@@ -14214,214 +14216,214 @@
                 {
                     "level2_id": "205",
                     "name": "Thị xã Đông Triều",
-                    "postcode": "",
+                    "postcode": "024",
                     "level3s": [
                         {
                             "level3_id": "07069",
                             "name": "Phường Mạo Khê",
-                            "postcode": ""
+                            "postcode": "02411"
                         },
                         {
                             "level3_id": "07072",
                             "name": "Phường Đông Triều",
-                            "postcode": ""
+                            "postcode": "02406"
                         },
                         {
                             "level3_id": "07075",
                             "name": "Xã An Sinh",
-                            "postcode": ""
+                            "postcode": "02419"
                         },
                         {
                             "level3_id": "07078",
                             "name": "Xã Tràng Lương",
-                            "postcode": ""
+                            "postcode": "02417"
                         },
                         {
                             "level3_id": "07081",
                             "name": "Xã Bình Khê",
-                            "postcode": ""
+                            "postcode": "02418"
                         },
                         {
                             "level3_id": "07084",
                             "name": "Xã Việt Dân",
-                            "postcode": ""
+                            "postcode": "02421"
                         },
                         {
                             "level3_id": "07087",
                             "name": "Xã Tân Việt",
-                            "postcode": ""
+                            "postcode": "02420"
                         },
                         {
                             "level3_id": "07090",
                             "name": "Xã Bình Dương",
-                            "postcode": ""
+                            "postcode": "02422"
                         },
                         {
                             "level3_id": "07093",
                             "name": "Phường Đức Chính",
-                            "postcode": ""
+                            "postcode": "02407"
                         },
                         {
                             "level3_id": "07096",
                             "name": "Phường Tràng An",
-                            "postcode": ""
+                            "postcode": "02409"
                         },
                         {
                             "level3_id": "07099",
                             "name": "Xã Nguyễn Huệ",
-                            "postcode": ""
+                            "postcode": "02423"
                         },
                         {
                             "level3_id": "07102",
                             "name": "Xã Thủy An",
-                            "postcode": ""
+                            "postcode": "02424"
                         },
                         {
                             "level3_id": "07105",
                             "name": "Phường Xuân Sơn",
-                            "postcode": ""
+                            "postcode": "02409"
                         },
                         {
                             "level3_id": "07108",
                             "name": "Xã Hồng Thái Tây",
-                            "postcode": ""
+                            "postcode": "02415"
                         },
                         {
                             "level3_id": "07111",
                             "name": "Xã Hồng Thái Đông",
-                            "postcode": ""
+                            "postcode": "02416"
                         },
                         {
                             "level3_id": "07114",
                             "name": "Phường Hoàng Quế",
-                            "postcode": ""
+                            "postcode": "02414"
                         },
                         {
                             "level3_id": "07117",
                             "name": "Phường Yên Thọ",
-                            "postcode": ""
+                            "postcode": "02412"
                         },
                         {
                             "level3_id": "07120",
                             "name": "Phường Hồng Phong",
-                            "postcode": ""
+                            "postcode": "02425"
                         },
                         {
                             "level3_id": "07123",
                             "name": "Phường Kim Sơn",
-                            "postcode": ""
+                            "postcode": "02410"
                         },
                         {
                             "level3_id": "07126",
                             "name": "Phường Hưng Đạo",
-                            "postcode": ""
+                            "postcode": "02426"
                         },
                         {
                             "level3_id": "07129",
                             "name": "Xã Yên Đức",
-                            "postcode": ""
+                            "postcode": "02413"
                         }
                     ]
                 },
                 {
                     "level2_id": "206",
                     "name": "Thị xã Quảng Yên",
-                    "postcode": "",
+                    "postcode": "022",
                     "level3s": [
                         {
                             "level3_id": "07132",
                             "name": "Phường Quảng Yên",
-                            "postcode": ""
+                            "postcode": "02206"
                         },
                         {
                             "level3_id": "07135",
                             "name": "Phường Đông Mai",
-                            "postcode": ""
+                            "postcode": "02212"
                         },
                         {
                             "level3_id": "07138",
                             "name": "Phường Minh Thành",
-                            "postcode": ""
+                            "postcode": "02211"
                         },
                         {
                             "level3_id": "07144",
                             "name": "Xã Sông Khoai",
-                            "postcode": ""
+                            "postcode": "02213"
                         },
                         {
                             "level3_id": "07147",
                             "name": "Xã Hiệp Hòa",
-                            "postcode": ""
+                            "postcode": "02215"
                         },
                         {
                             "level3_id": "07150",
                             "name": "Phường Cộng Hòa",
-                            "postcode": ""
+                            "postcode": "02214"
                         },
                         {
                             "level3_id": "07153",
                             "name": "Xã Tiền An",
-                            "postcode": ""
+                            "postcode": "02210"
                         },
                         {
                             "level3_id": "07156",
                             "name": "Xã Hoàng Tân",
-                            "postcode": ""
+                            "postcode": "02208"
                         },
                         {
                             "level3_id": "07159",
                             "name": "Phường Tân An",
-                            "postcode": ""
+                            "postcode": "02209"
                         },
                         {
                             "level3_id": "07162",
                             "name": "Phường Yên Giang",
-                            "postcode": ""
+                            "postcode": "02216"
                         },
                         {
                             "level3_id": "07165",
                             "name": "Phường Nam Hoà",
-                            "postcode": ""
+                            "postcode": "02217"
                         },
                         {
                             "level3_id": "07168",
                             "name": "Phường Hà An",
-                            "postcode": ""
+                            "postcode": "02207"
                         },
                         {
                             "level3_id": "07171",
                             "name": "Xã Cẩm La",
-                            "postcode": ""
+                            "postcode": "02224"
                         },
                         {
                             "level3_id": "07174",
                             "name": "Phường Phong Hải",
-                            "postcode": ""
+                            "postcode": "02223"
                         },
                         {
                             "level3_id": "07177",
                             "name": "Phường Yên Hải",
-                            "postcode": ""
+                            "postcode": "02218"
                         },
                         {
                             "level3_id": "07180",
                             "name": "Xã Liên Hòa",
-                            "postcode": ""
+                            "postcode": "02222"
                         },
                         {
                             "level3_id": "07183",
                             "name": "Phường Phong Cốc",
-                            "postcode": ""
+                            "postcode": "02219"
                         },
                         {
                             "level3_id": "07186",
                             "name": "Xã Liên Vị",
-                            "postcode": ""
+                            "postcode": "02220"
                         },
                         {
                             "level3_id": "07189",
                             "name": "Xã Tiền Phong",
-                            "postcode": ""
+                            "postcode": "02221"
                         }
                     ]
                 },
@@ -19507,7 +19509,8 @@
             "level1_id": "31",
             "name": "Thành phố Hải Phòng",
             "postcode": [
-                "04"
+                "04",
+                "05"
             ],
             "level2s": [
                 {
@@ -19818,37 +19821,37 @@
                 {
                     "level2_id": "308",
                     "name": "Quận Đồ Sơn",
-                    "postcode": "",
+                    "postcode": "050",
                     "level3s": [
                         {
                             "level3_id": "11455",
                             "name": "Phường Ngọc Xuyên",
-                            "postcode": ""
+                            "postcode": "05006"
                         },
                         {
                             "level3_id": "11458",
                             "name": "Phường Hải Sơn",
-                            "postcode": ""
+                            "postcode": "05011"
                         },
                         {
                             "level3_id": "11461",
                             "name": "Phường Vạn Hương",
-                            "postcode": ""
+                            "postcode": "05010"
                         },
                         {
                             "level3_id": "11465",
                             "name": "Phường Minh Đức",
-                            "postcode": ""
+                            "postcode": "05008"
                         },
                         {
                             "level3_id": "11467",
                             "name": "Phường Bàng La",
-                            "postcode": ""
+                            "postcode": "05009"
                         },
                         {
                             "level3_id": "11737",
                             "name": "Phường Hợp Đức",
-                            "postcode": ""
+                            "postcode": "05007"
                         }
                     ]
                 },
@@ -20263,440 +20266,440 @@
                 {
                     "level2_id": "314",
                     "name": "Huyện Kiến Thuỵ",
-                    "postcode": "",
+                    "postcode": "051",
                     "level3s": [
                         {
                             "level3_id": "11680",
                             "name": "Thị trấn Núi Đối",
-                            "postcode": ""
+                            "postcode": "05106"
                         },
                         {
                             "level3_id": "11695",
                             "name": "Xã Đông Phương",
-                            "postcode": ""
+                            "postcode": "05109"
                         },
                         {
                             "level3_id": "11698",
                             "name": "Xã Thuận Thiên",
-                            "postcode": ""
+                            "postcode": "05111"
                         },
                         {
                             "level3_id": "11701",
                             "name": "Xã Hữu Bằng",
-                            "postcode": ""
+                            "postcode": "05110"
                         },
                         {
                             "level3_id": "11704",
                             "name": "Xã Đại Đồng",
-                            "postcode": ""
+                            "postcode": "05108"
                         },
                         {
                             "level3_id": "11710",
                             "name": "Xã Ngũ Phúc",
-                            "postcode": ""
+                            "postcode": "05113"
                         },
                         {
                             "level3_id": "11713",
                             "name": "Xã Kiến Quốc",
-                            "postcode": ""
+                            "postcode": "05114"
                         },
                         {
                             "level3_id": "11716",
                             "name": "Xã Du Lễ",
-                            "postcode": ""
+                            "postcode": "05112"
                         },
                         {
                             "level3_id": "11719",
                             "name": "Xã Thuỵ Hương",
-                            "postcode": ""
+                            "postcode": "05115"
                         },
                         {
                             "level3_id": "11722",
                             "name": "Xã Thanh Sơn",
-                            "postcode": ""
+                            "postcode": "05116"
                         },
                         {
                             "level3_id": "11725",
                             "name": "Xã Minh Tân",
-                            "postcode": ""
+                            "postcode": "05107"
                         },
                         {
                             "level3_id": "11728",
                             "name": "Xã Đại Hà",
-                            "postcode": ""
+                            "postcode": "05117"
                         },
                         {
                             "level3_id": "11731",
                             "name": "Xã Ngũ Đoan",
-                            "postcode": ""
+                            "postcode": "05123"
                         },
                         {
                             "level3_id": "11734",
                             "name": "Xã Tân Phong",
-                            "postcode": ""
+                            "postcode": "05122"
                         },
                         {
                             "level3_id": "11743",
                             "name": "Xã Tân Trào",
-                            "postcode": ""
+                            "postcode": "05118"
                         },
                         {
                             "level3_id": "11746",
                             "name": "Xã Đoàn Xá",
-                            "postcode": ""
+                            "postcode": "05119"
                         },
                         {
                             "level3_id": "11749",
                             "name": "Xã Tú Sơn",
-                            "postcode": ""
+                            "postcode": "05121"
                         },
                         {
                             "level3_id": "11752",
                             "name": "Xã Đại Hợp",
-                            "postcode": ""
+                            "postcode": "05120"
                         }
                     ]
                 },
                 {
                     "level2_id": "315",
                     "name": "Huyện Tiên Lãng",
-                    "postcode": "",
+                    "postcode": "052",
                     "level3s": [
                         {
                             "level3_id": "11755",
                             "name": "Thị trấn Tiên Lãng",
-                            "postcode": ""
+                            "postcode": "05206"
                         },
                         {
                             "level3_id": "11758",
                             "name": "Xã Đại Thắng",
-                            "postcode": ""
+                            "postcode": "05209"
                         },
                         {
                             "level3_id": "11761",
                             "name": "Xã Tiên Cường",
-                            "postcode": ""
+                            "postcode": "05210"
                         },
                         {
                             "level3_id": "11764",
                             "name": "Xã Tự Cường",
-                            "postcode": ""
+                            "postcode": "05208"
                         },
                         {
                             "level3_id": "11770",
                             "name": "Xã Quyết Tiến",
-                            "postcode": ""
+                            "postcode": "05207"
                         },
                         {
                             "level3_id": "11773",
                             "name": "Xã Khởi Nghĩa",
-                            "postcode": ""
+                            "postcode": "05212"
                         },
                         {
                             "level3_id": "11776",
                             "name": "Xã Tiên Thanh",
-                            "postcode": ""
+                            "postcode": "05213"
                         },
                         {
                             "level3_id": "11779",
                             "name": "Xã Cấp Tiến",
-                            "postcode": ""
+                            "postcode": "05214"
                         },
                         {
                             "level3_id": "11782",
                             "name": "Xã Kiến Thiết",
-                            "postcode": ""
+                            "postcode": "05215"
                         },
                         {
                             "level3_id": "11785",
                             "name": "Xã Đoàn Lập",
-                            "postcode": ""
+                            "postcode": "05216"
                         },
                         {
                             "level3_id": "11788",
                             "name": "Xã Bạch Đằng",
-                            "postcode": ""
+                            "postcode": "05217"
                         },
                         {
                             "level3_id": "11791",
                             "name": "Xã Quang Phục",
-                            "postcode": ""
+                            "postcode": "05228"
                         },
                         {
                             "level3_id": "11794",
                             "name": "Xã Toàn Thắng",
-                            "postcode": ""
+                            "postcode": "05227"
                         },
                         {
                             "level3_id": "11797",
                             "name": "Xã Tiên Thắng",
-                            "postcode": ""
+                            "postcode": "05226"
                         },
                         {
                             "level3_id": "11800",
                             "name": "Xã Tiên Minh",
-                            "postcode": ""
+                            "postcode": "05218"
                         },
                         {
                             "level3_id": "11803",
                             "name": "Xã Bắc Hưng",
-                            "postcode": ""
+                            "postcode": "05225"
                         },
                         {
                             "level3_id": "11806",
                             "name": "Xã Nam Hưng",
-                            "postcode": ""
+                            "postcode": "05219"
                         },
                         {
                             "level3_id": "11809",
                             "name": "Xã Hùng Thắng",
-                            "postcode": ""
+                            "postcode": "05224"
                         },
                         {
                             "level3_id": "11812",
                             "name": "Xã Tây Hưng",
-                            "postcode": ""
+                            "postcode": "05220"
                         },
                         {
                             "level3_id": "11815",
                             "name": "Xã Đông Hưng",
-                            "postcode": ""
+                            "postcode": "05221"
                         },
                         {
                             "level3_id": "11821",
                             "name": "Xã Vinh Quang",
-                            "postcode": ""
+                            "postcode": "05223"
                         }
                     ]
                 },
                 {
                     "level2_id": "316",
                     "name": "Huyện Vĩnh Bảo",
-                    "postcode": "",
+                    "postcode": "053",
                     "level3s": [
                         {
                             "level3_id": "11824",
                             "name": "Thị trấn Vĩnh Bảo",
-                            "postcode": ""
+                            "postcode": "05306"
                         },
                         {
                             "level3_id": "11827",
                             "name": "Xã Dũng Tiến",
-                            "postcode": ""
+                            "postcode": "05311"
                         },
                         {
                             "level3_id": "11830",
                             "name": "Xã Giang Biên",
-                            "postcode": ""
+                            "postcode": "05310"
                         },
                         {
                             "level3_id": "11833",
                             "name": "Xã Thắng Thuỷ",
-                            "postcode": ""
+                            "postcode": "05313"
                         },
                         {
                             "level3_id": "11836",
                             "name": "Xã Trung Lập",
-                            "postcode": ""
+                            "postcode": "05312"
                         },
                         {
                             "level3_id": "11839",
                             "name": "Xã Việt Tiến",
-                            "postcode": ""
+                            "postcode": "05308"
                         },
                         {
                             "level3_id": "11842",
                             "name": "Xã Vĩnh An",
-                            "postcode": ""
+                            "postcode": "05309"
                         },
                         {
                             "level3_id": "11845",
                             "name": "Xã Vĩnh Long",
-                            "postcode": ""
+                            "postcode": "05314"
                         },
                         {
                             "level3_id": "11848",
                             "name": "Xã Hiệp Hoà",
-                            "postcode": ""
+                            "postcode": "05315"
                         },
                         {
                             "level3_id": "11851",
                             "name": "Xã Hùng Tiến",
-                            "postcode": ""
+                            "postcode": "05316"
                         },
                         {
                             "level3_id": "11854",
                             "name": "Xã An Hoà",
-                            "postcode": ""
+                            "postcode": "05318"
                         },
                         {
                             "level3_id": "11857",
                             "name": "Xã Tân Hưng",
-                            "postcode": ""
+                            "postcode": "05317"
                         },
                         {
                             "level3_id": "11860",
                             "name": "Xã Tân Liên",
-                            "postcode": ""
+                            "postcode": "05307"
                         },
                         {
                             "level3_id": "11863",
                             "name": "Xã Nhân Hoà",
-                            "postcode": ""
+                            "postcode": "05334"
                         },
                         {
                             "level3_id": "11866",
                             "name": "Xã Tam Đa",
-                            "postcode": ""
+                            "postcode": "05335"
                         },
                         {
                             "level3_id": "11869",
                             "name": "Xã Hưng Nhân",
-                            "postcode": ""
+                            "postcode": "05319"
                         },
                         {
                             "level3_id": "11872",
                             "name": "Xã Vinh Quang",
-                            "postcode": ""
+                            "postcode": "05333"
                         },
                         {
                             "level3_id": "11875",
                             "name": "Xã Đồng Minh",
-                            "postcode": ""
+                            "postcode": "05320"
                         },
                         {
                             "level3_id": "11878",
                             "name": "Xã Thanh Lương",
-                            "postcode": ""
+                            "postcode": "05324"
                         },
                         {
                             "level3_id": "11881",
                             "name": "Xã Liên Am",
-                            "postcode": ""
+                            "postcode": "05325"
                         },
                         {
                             "level3_id": "11884",
                             "name": "Xã Lý Học",
-                            "postcode": ""
+                            "postcode": "05332"
                         },
                         {
                             "level3_id": "11887",
                             "name": "Xã Tam Cường",
-                            "postcode": ""
+                            "postcode": "05327"
                         },
                         {
                             "level3_id": "11890",
                             "name": "Xã Hoà Bình",
-                            "postcode": ""
+                            "postcode": "05331"
                         },
                         {
                             "level3_id": "11893",
                             "name": "Xã Tiền Phong",
-                            "postcode": ""
+                            "postcode": "05321"
                         },
                         {
                             "level3_id": "11896",
                             "name": "Xã Vĩnh Phong",
-                            "postcode": ""
+                            "postcode": "05322"
                         },
                         {
                             "level3_id": "11899",
                             "name": "Xã Cộng Hiền",
-                            "postcode": ""
+                            "postcode": "05323"
                         },
                         {
                             "level3_id": "11902",
                             "name": "Xã Cao Minh",
-                            "postcode": ""
+                            "postcode": "05326"
                         },
                         {
                             "level3_id": "11905",
                             "name": "Xã Cổ Am",
-                            "postcode": ""
+                            "postcode": "05328"
                         },
                         {
                             "level3_id": "11908",
                             "name": "Xã Vĩnh Tiến",
-                            "postcode": ""
+                            "postcode": "05329"
                         },
                         {
                             "level3_id": "11911",
                             "name": "Xã Trấn Dương",
-                            "postcode": ""
+                            "postcode": "05330"
                         }
                     ]
                 },
                 {
                     "level2_id": "317",
                     "name": "Huyện Cát Hải",
-                    "postcode": "",
+                    "postcode": "054",
                     "level3s": [
                         {
                             "level3_id": "11914",
                             "name": "Thị trấn Cát Bà",
-                            "postcode": ""
+                            "postcode": "05406"
                         },
                         {
                             "level3_id": "11917",
                             "name": "Thị trấn Cát Hải",
-                            "postcode": ""
+                            "postcode": "05414"
                         },
                         {
                             "level3_id": "11920",
                             "name": "Xã Nghĩa Lộ",
-                            "postcode": ""
+                            "postcode": "05411"
                         },
                         {
                             "level3_id": "11923",
                             "name": "Xã Đồng Bài",
-                            "postcode": ""
+                            "postcode": "05410"
                         },
                         {
                             "level3_id": "11926",
                             "name": "Xã Hoàng Châu",
-                            "postcode": ""
+                            "postcode": "05412"
                         },
                         {
                             "level3_id": "11929",
                             "name": "Xã Văn Phong",
-                            "postcode": ""
+                            "postcode": "05413"
                         },
                         {
                             "level3_id": "11932",
                             "name": "Xã Phù Long",
-                            "postcode": ""
+                            "postcode": "05409"
                         },
                         {
                             "level3_id": "11935",
                             "name": "Xã Gia Luận",
-                            "postcode": ""
+                            "postcode": "05408"
                         },
                         {
                             "level3_id": "11938",
                             "name": "Xã Hiền Hào",
-                            "postcode": ""
+                            "postcode": "05415"
                         },
                         {
                             "level3_id": "11941",
                             "name": "Xã Trân Châu",
-                            "postcode": ""
+                            "postcode": "05417"
                         },
                         {
                             "level3_id": "11944",
                             "name": "Xã Việt Hải",
-                            "postcode": ""
+                            "postcode": "05407"
                         },
                         {
                             "level3_id": "11947",
                             "name": "Xã Xuân Đám",
-                            "postcode": ""
+                            "postcode": "05416"
                         }
                     ]
                 },
                 {
                     "level2_id": "318",
                     "name": "Huyện Bạch Long Vĩ",
-                    "postcode": "",
+                    "postcode": "055",
                     "level3s": []
                 }
             ]
@@ -25660,7 +25663,8 @@
             "name": "Tỉnh Thanh Hóa",
             "postcode": [
                 "40",
-                "41"
+                "41",
+                "42"
             ],
             "level2s": [
                 {
@@ -25947,7 +25951,7 @@
                 {
                     "level2_id": "384",
                     "name": "Huyện Mường Lát",
-                    "postcode": "",
+                    "postcode": "421",
                     "level3s": [
                         {
                             "level3_id": "14845",
@@ -26188,7 +26192,7 @@
                 {
                     "level2_id": "387",
                     "name": "Huyện Quan Sơn",
-                    "postcode": "",
+                    "postcode": "420",
                     "level3s": [
                         {
                             "level3_id": "14995",
@@ -26233,7 +26237,7 @@
                         {
                             "level3_id": "15016",
                             "name": "Thị trấn Sơn Lư",
-                            "postcode": ""
+                            "postcode": "42011"
                         },
                         {
                             "level3_id": "15019",
@@ -27121,7 +27125,7 @@
                 {
                     "level2_id": "396",
                     "name": "Huyện Thường Xuân",
-                    "postcode": "",
+                    "postcode": "422",
                     "level3s": [
                         {
                             "level3_id": "15607",
@@ -27181,7 +27185,7 @@
                         {
                             "level3_id": "15649",
                             "name": "Xã Xuân Dương",
-                            "postcode": ""
+                            "postcode": "42207"
                         },
                         {
                             "level3_id": "15652",
@@ -27958,7 +27962,7 @@
                 {
                     "level2_id": "402",
                     "name": "Huyện Như Xuân",
-                    "postcode": "",
+                    "postcode": "425",
                     "level3s": [
                         {
                             "level3_id": "16174",
@@ -28045,7 +28049,7 @@
                 {
                     "level2_id": "403",
                     "name": "Huyện Như Thanh",
-                    "postcode": "",
+                    "postcode": "424",
                     "level3s": [
                         {
                             "level3_id": "16228",
@@ -28122,7 +28126,7 @@
                 {
                     "level2_id": "404",
                     "name": "Huyện Nông Cống",
-                    "postcode": "",
+                    "postcode": "423",
                     "level3s": [
                         {
                             "level3_id": "16279",
@@ -28132,7 +28136,7 @@
                         {
                             "level3_id": "16282",
                             "name": "Xã Tân Phúc",
-                            "postcode": ""
+                            "postcode": "42319"
                         },
                         {
                             "level3_id": "16285",
@@ -28351,12 +28355,12 @@
                 {
                     "level2_id": "406",
                     "name": "Huyện Quảng Xương",
-                    "postcode": "",
+                    "postcode": "426",
                     "level3s": [
                         {
                             "level3_id": "16438",
                             "name": "Thị trấn Tân Phong",
-                            "postcode": ""
+                            "postcode": "42606"
                         },
                         {
                             "level3_id": "16447",
@@ -28466,7 +28470,7 @@
                         {
                             "level3_id": "16549",
                             "name": "Xã Tiên Trang",
-                            "postcode": ""
+                            "postcode": "42611"
                         },
                         {
                             "level3_id": "16552",
@@ -28488,7 +28492,7 @@
                 {
                     "level2_id": "407",
                     "name": "Huyện Tĩnh Gia",
-                    "postcode": "",
+                    "postcode": "427",
                     "level3s": [
                         {
                             "level3_id": "16561",
@@ -28653,7 +28657,8 @@
             "level1_id": "40",
             "name": "Tỉnh Nghệ An",
             "postcode": [
-                "43"
+                "43",
+                "44"
             ],
             "level2s": [
                 {
@@ -28833,7 +28838,7 @@
                 {
                     "level2_id": "414",
                     "name": "Thị xã Thái Hoà",
-                    "postcode": "",
+                    "postcode": "448",
                     "level3s": [
                         {
                             "level3_id": "16939",
@@ -28885,7 +28890,7 @@
                 {
                     "level2_id": "415",
                     "name": "Huyện Quế Phong",
-                    "postcode": "",
+                    "postcode": "440",
                     "level3s": [
                         {
                             "level3_id": "16738",
@@ -28915,7 +28920,7 @@
                         {
                             "level3_id": "16753",
                             "name": "Xã Nậm Giải",
-                            "postcode": ""
+                            "postcode": "44068"
                         },
                         {
                             "level3_id": "16756",
@@ -28925,7 +28930,7 @@
                         {
                             "level3_id": "16759",
                             "name": "Xã Châu Kim",
-                            "postcode": ""
+                            "postcode": "44058"
                         },
                         {
                             "level3_id": "16763",
@@ -28957,12 +28962,12 @@
                 {
                     "level2_id": "416",
                     "name": "Huyện Quỳ Châu",
-                    "postcode": "",
+                    "postcode": "440",
                     "level3s": [
                         {
                             "level3_id": "16777",
                             "name": "Thị trấn Tân Lạc",
-                            "postcode": ""
+                            "postcode": "44006"
                         },
                         {
                             "level3_id": "16780",
@@ -28972,7 +28977,7 @@
                         {
                             "level3_id": "16783",
                             "name": "Xã Châu Thuận",
-                            "postcode": ""
+                            "postcode": "44011"
                         },
                         {
                             "level3_id": "16786",
@@ -28982,7 +28987,7 @@
                         {
                             "level3_id": "16789",
                             "name": "Xã Châu Nga",
-                            "postcode": ""
+                            "postcode": "44008"
                         },
                         {
                             "level3_id": "16792",
@@ -29024,7 +29029,7 @@
                 {
                     "level2_id": "417",
                     "name": "Huyện Kỳ Sơn",
-                    "postcode": "",
+                    "postcode": "444",
                     "level3s": [
                         {
                             "level3_id": "16813",
@@ -29136,12 +29141,12 @@
                 {
                     "level2_id": "418",
                     "name": "Huyện Tương Dương",
-                    "postcode": "",
+                    "postcode": "443",
                     "level3s": [
                         {
                             "level3_id": "16876",
                             "name": "Thị trấn Thạch Giám",
-                            "postcode": ""
+                            "postcode": "44357"
                         },
                         {
                             "level3_id": "16879",
@@ -29634,7 +29639,7 @@
                 {
                     "level2_id": "422",
                     "name": "Huyện Con Cuông",
-                    "postcode": "",
+                    "postcode": "443",
                     "level3s": [
                         {
                             "level3_id": "17227",
@@ -29694,7 +29699,7 @@
                         {
                             "level3_id": "17260",
                             "name": "Xã Lục Dạ",
-                            "postcode": ""
+                            "postcode": "44311"
                         },
                         {
                             "level3_id": "17263",
@@ -29823,7 +29828,7 @@
                 {
                     "level2_id": "424",
                     "name": "Huyện Anh Sơn",
-                    "postcode": "",
+                    "postcode": "442",
                     "level3s": [
                         {
                             "level3_id": "17329",
@@ -30329,7 +30334,7 @@
                 {
                     "level2_id": "427",
                     "name": "Huyện Đô Lương",
-                    "postcode": "",
+                    "postcode": "441",
                     "level3s": [
                         {
                             "level3_id": "17617",
@@ -30501,7 +30506,7 @@
                 {
                     "level2_id": "428",
                     "name": "Huyện Thanh Chương",
-                    "postcode": "",
+                    "postcode": "447",
                     "level3s": [
                         {
                             "level3_id": "17713",
@@ -30561,7 +30566,7 @@
                         {
                             "level3_id": "17749",
                             "name": "Xã Đại Đồng",
-                            "postcode": ""
+                            "postcode": "44708"
                         },
                         {
                             "level3_id": "17752",
@@ -30850,7 +30855,7 @@
                 {
                     "level2_id": "430",
                     "name": "Huyện Nam Đàn",
-                    "postcode": "",
+                    "postcode": "446",
                     "level3s": [
                         {
                             "level3_id": "17932",
@@ -30910,7 +30915,7 @@
                         {
                             "level3_id": "17968",
                             "name": "Xã Thượng Tân Lộc",
-                            "postcode": ""
+                            "postcode": "44615"
                         },
                         {
                             "level3_id": "17971",
@@ -30940,7 +30945,7 @@
                         {
                             "level3_id": "17989",
                             "name": "Xã Trung Phúc Cường",
-                            "postcode": ""
+                            "postcode": "44623"
                         },
                         {
                             "level3_id": "17998",
@@ -30952,7 +30957,7 @@
                 {
                     "level2_id": "431",
                     "name": "Huyện Hưng Nguyên",
-                    "postcode": "",
+                    "postcode": "445",
                     "level3s": [
                         {
                             "level3_id": "18001",
@@ -30967,7 +30972,7 @@
                         {
                             "level3_id": "18007",
                             "name": "Xã Hưng Yên",
-                            "postcode": ""
+                            "postcode": "44508"
                         },
                         {
                             "level3_id": "18008",
@@ -31017,7 +31022,7 @@
                         {
                             "level3_id": "18037",
                             "name": "Xã Hưng Nghĩa",
-                            "postcode": ""
+                            "postcode": "44515"
                         },
                         {
                             "level3_id": "18040",
@@ -31027,29 +31032,29 @@
                         {
                             "level3_id": "18043",
                             "name": "Xã Long Xá",
-                            "postcode": ""
+                            "postcode": "44515"
                         },
                         {
                             "level3_id": "18052",
                             "name": "Xã Châu Nhân",
-                            "postcode": ""
+                            "postcode": "44528"
                         },
                         {
                             "level3_id": "18055",
                             "name": "Xã Xuân Lam",
-                            "postcode": ""
+                            "postcode": "44523"
                         },
                         {
                             "level3_id": "18064",
                             "name": "Xã Hưng Thành",
-                            "postcode": ""
+                            "postcode": "44512"
                         }
                     ]
                 },
                 {
                     "level2_id": "432",
                     "name": "Thị xã Hoàng Mai",
-                    "postcode": "",
+                    "postcode": "449",
                     "level3s": [
                         {
                             "level3_id": "17104",
@@ -31109,7 +31114,8 @@
             "level1_id": "42",
             "name": "Tỉnh Hà Tĩnh",
             "postcode": [
-                "45"
+                "45",
+                "46"
             ],
             "level2s": [
                 {
@@ -31699,7 +31705,7 @@
                 {
                     "level2_id": "444",
                     "name": "Huyện Hương Khê",
-                    "postcode": "",
+                    "postcode": "460",
                     "level3s": [
                         {
                             "level3_id": "18496",
@@ -31709,7 +31715,7 @@
                         {
                             "level3_id": "18499",
                             "name": "Xã Điền Mỹ",
-                            "postcode": ""
+                            "postcode": "46012"
                         },
                         {
                             "level3_id": "18502",
@@ -31928,7 +31934,7 @@
                 {
                     "level2_id": "446",
                     "name": "Huyện Cẩm Xuyên",
-                    "postcode": "",
+                    "postcode": "461",
                     "level3s": [
                         {
                             "level3_id": "18673",
@@ -31943,7 +31949,7 @@
                         {
                             "level3_id": "18679",
                             "name": "Xã Yên Hòa",
-                            "postcode": ""
+                            "postcode": "46112"
                         },
                         {
                             "level3_id": "18682",
@@ -31983,7 +31989,7 @@
                         {
                             "level3_id": "18712",
                             "name": "Xã Nam Phúc Thăng",
-                            "postcode": ""
+                            "postcode": "46107"
                         },
                         {
                             "level3_id": "18715",
@@ -32050,7 +32056,7 @@
                 {
                     "level2_id": "447",
                     "name": "Huyện Kỳ Anh",
-                    "postcode": "",
+                    "postcode": "463",
                     "level3s": [
                         {
                             "level3_id": "18757",
@@ -32140,7 +32146,7 @@
                         {
                             "level3_id": "18838",
                             "name": "Xã Lâm Hợp",
-                            "postcode": ""
+                            "postcode": "46321"
                         },
                         {
                             "level3_id": "18844",
@@ -32224,12 +32230,12 @@
                 {
                     "level2_id": "449",
                     "name": "Thị xã Kỳ Anh",
-                    "postcode": "",
+                    "postcode": "462",
                     "level3s": [
                         {
                             "level3_id": "18754",
                             "name": "Phường Hưng Trí",
-                            "postcode": ""
+                            "postcode": "46206"
                         },
                         {
                             "level3_id": "18781",
@@ -34945,7 +34951,8 @@
             "level1_id": "49",
             "name": "Tỉnh Quảng Nam",
             "postcode": [
-                "51"
+                "51",
+                "52"
             ],
             "level2s": [
                 {
@@ -35495,7 +35502,7 @@
                 {
                     "level2_id": "509",
                     "name": "Huyện Quế Sơn",
-                    "postcode": "",
+                    "postcode": "521",
                     "level3s": [
                         {
                             "level3_id": "20641",
@@ -35520,7 +35527,7 @@
                         {
                             "level3_id": "20651",
                             "name": "Thị trấn Hương An",
-                            "postcode": ""
+                            "postcode": "52111"
                         },
                         {
                             "level3_id": "20659",
@@ -35535,7 +35542,7 @@
                         {
                             "level3_id": "20665",
                             "name": "Xã Quế Mỹ",
-                            "postcode": ""
+                            "postcode": "52112"
                         },
                         {
                             "level3_id": "20677",
@@ -35634,7 +35641,7 @@
                 {
                     "level2_id": "511",
                     "name": "Huyện Phước Sơn",
-                    "postcode": "",
+                    "postcode": "523",
                     "level3s": [
                         {
                             "level3_id": "20722",
@@ -35701,7 +35708,7 @@
                 {
                     "level2_id": "512",
                     "name": "Huyện Hiệp Đức",
-                    "postcode": "",
+                    "postcode": "522",
                     "level3s": [
                         {
                             "level3_id": "20758",
@@ -35741,7 +35748,7 @@
                         {
                             "level3_id": "20779",
                             "name": "Thị trấn Tân Bình",
-                            "postcode": ""
+                            "postcode": "52206"
                         },
                         {
                             "level3_id": "20782",
@@ -35880,7 +35887,7 @@
                 {
                     "level2_id": "514",
                     "name": "Huyện Tiên Phước",
-                    "postcode": "",
+                    "postcode": "526",
                     "level3s": [
                         {
                             "level3_id": "20854",
@@ -35962,7 +35969,7 @@
                 {
                     "level2_id": "515",
                     "name": "Huyện Bắc Trà My",
-                    "postcode": "",
+                    "postcode": "525",
                     "level3s": [
                         {
                             "level3_id": "20899",
@@ -36034,7 +36041,7 @@
                 {
                     "level2_id": "516",
                     "name": "Huyện Nam Trà My",
-                    "postcode": "",
+                    "postcode": "524",
                     "level3s": [
                         {
                             "level3_id": "20935",
@@ -36091,7 +36098,7 @@
                 {
                     "level2_id": "517",
                     "name": "Huyện Núi Thành",
-                    "postcode": "",
+                    "postcode": "528",
                     "level3s": [
                         {
                             "level3_id": "20965",
@@ -36183,7 +36190,7 @@
                 {
                     "level2_id": "518",
                     "name": "Huyện Phú Ninh",
-                    "postcode": "",
+                    "postcode": "527",
                     "level3s": [
                         {
                             "level3_id": "20364",
@@ -36245,7 +36252,7 @@
                 {
                     "level2_id": "519",
                     "name": "Huyện Nông Sơn",
-                    "postcode": "",
+                    "postcode": "520",
                     "level3s": [
                         {
                             "level3_id": "20656",
@@ -36255,7 +36262,7 @@
                         {
                             "level3_id": "20668",
                             "name": "Xã Ninh Phước",
-                            "postcode": ""
+                            "postcode": "52009"
                         },
                         {
                             "level3_id": "20669",
@@ -36285,7 +36292,8 @@
             "level1_id": "51",
             "name": "Tỉnh Quảng Ngãi",
             "postcode": [
-                "53"
+                "53",
+                "54"
             ],
             "level2s": [
                 {
@@ -36917,7 +36925,7 @@
                 {
                     "level2_id": "532",
                     "name": "Huyện Nghĩa Hành",
-                    "postcode": "",
+                    "postcode": "540",
                     "level3s": [
                         {
                             "level3_id": "21364",
@@ -36977,14 +36985,14 @@
                         {
                             "level3_id": "21397",
                             "name": "Xã Hành Tín  Đông",
-                            "postcode": ""
+                            "postcode": "54014"
                         }
                     ]
                 },
                 {
                     "level2_id": "533",
                     "name": "Huyện Mộ Đức",
-                    "postcode": "",
+                    "postcode": "541",
                     "level3s": [
                         {
                             "level3_id": "21400",
@@ -37138,7 +37146,7 @@
                 {
                     "level2_id": "535",
                     "name": "Huyện Ba Tơ",
-                    "postcode": "",
+                    "postcode": "542",
                     "level3s": [
                         {
                             "level3_id": "21484",
@@ -37240,7 +37248,7 @@
                 {
                     "level2_id": "536",
                     "name": "Huyện Lý Sơn",
-                    "postcode": "",
+                    "postcode": "544",
                     "level3s": [
                         {
                             "level3_id": "21541",
@@ -41194,7 +41202,8 @@
             "level1_id": "64",
             "name": "Tỉnh Gia Lai",
             "postcode": [
-                "61"
+                "61",
+                "62"
             ],
             "level2s": [
                 {
@@ -41317,7 +41326,7 @@
                 {
                     "level2_id": "623",
                     "name": "Thị xã An Khê",
-                    "postcode": "",
+                    "postcode": "625",
                     "level3s": [
                         {
                             "level3_id": "23614",
@@ -41379,7 +41388,7 @@
                 {
                     "level2_id": "624",
                     "name": "Thị xã Ayun Pa",
-                    "postcode": "",
+                    "postcode": "620",
                     "level3s": [
                         {
                             "level3_id": "24041",
@@ -41426,7 +41435,7 @@
                 {
                     "level2_id": "625",
                     "name": "Huyện KBang",
-                    "postcode": "",
+                    "postcode": "626",
                     "level3s": [
                         {
                             "level3_id": "23638",
@@ -41441,7 +41450,7 @@
                         {
                             "level3_id": "23644",
                             "name": "Xã Đăk Roong",
-                            "postcode": ""
+                            "postcode": "62610"
                         },
                         {
                             "level3_id": "23647",
@@ -41491,7 +41500,7 @@
                         {
                             "level3_id": "23671",
                             "name": "Xã Kông Pla",
-                            "postcode": ""
+                            "postcode": "62617"
                         },
                         {
                             "level3_id": "23674",
@@ -41744,7 +41753,7 @@
                 {
                     "level2_id": "629",
                     "name": "Huyện Mang Yang",
-                    "postcode": "",
+                    "postcode": "627",
                     "level3s": [
                         {
                             "level3_id": "23794",
@@ -41811,7 +41820,7 @@
                 {
                     "level2_id": "630",
                     "name": "Huyện Kông Chro",
-                    "postcode": "",
+                    "postcode": "623",
                     "level3s": [
                         {
                             "level3_id": "23824",
@@ -41836,7 +41845,7 @@
                         {
                             "level3_id": "23836",
                             "name": "Xã Đăk Tơ Pang",
-                            "postcode": ""
+                            "postcode": "62308"
                         },
                         {
                             "level3_id": "23839",
@@ -42134,7 +42143,7 @@
                 {
                     "level2_id": "634",
                     "name": "Huyện Đăk Pơ",
-                    "postcode": "",
+                    "postcode": "624",
                     "level3s": [
                         {
                             "level3_id": "23989",
@@ -42181,7 +42190,7 @@
                 {
                     "level2_id": "635",
                     "name": "Huyện Ia Pa",
-                    "postcode": "",
+                    "postcode": "622",
                     "level3s": [
                         {
                             "level3_id": "24013",
@@ -42216,7 +42225,7 @@
                         {
                             "level3_id": "24031",
                             "name": "Xã Ia Ma Rơn",
-                            "postcode": ""
+                            "postcode": "62209"
                         },
                         {
                             "level3_id": "24034",
@@ -42233,7 +42242,7 @@
                 {
                     "level2_id": "637",
                     "name": "Huyện Krông Pa",
-                    "postcode": "",
+                    "postcode": "621",
                     "level3s": [
                         {
                             "level3_id": "24076",
@@ -42278,7 +42287,7 @@
                         {
                             "level3_id": "24100",
                             "name": "Xã Ia HDreh",
-                            "postcode": ""
+                            "postcode": "62118"
                         },
                         {
                             "level3_id": "24103",
@@ -42422,7 +42431,8 @@
             "level1_id": "66",
             "name": "Tỉnh Đắk Lắk",
             "postcode": [
-                "63"
+                "63",
+                "64"
             ],
             "level2s": [
                 {
@@ -42540,7 +42550,7 @@
                 {
                     "level2_id": "644",
                     "name": "Thị Xã Buôn Hồ",
-                    "postcode": "",
+                    "postcode": "640",
                     "level3s": [
                         {
                             "level3_id": "24305",
@@ -43061,7 +43071,7 @@
                 {
                     "level2_id": "652",
                     "name": "Huyện M'Đrắk",
-                    "postcode": "",
+                    "postcode": "645",
                     "level3s": [
                         {
                             "level3_id": "24412",
@@ -43096,7 +43106,7 @@
                         {
                             "level3_id": "24430",
                             "name": "Xã Ea M' Doal",
-                            "postcode": ""
+                            "postcode": "64514"
                         },
                         {
                             "level3_id": "24433",
@@ -43133,7 +43143,7 @@
                 {
                     "level2_id": "653",
                     "name": "Huyện Krông Bông",
-                    "postcode": "",
+                    "postcode": "644",
                     "level3s": [
                         {
                             "level3_id": "24448",
@@ -43297,54 +43307,54 @@
                 {
                     "level2_id": "655",
                     "name": "Huyện Krông A Na",
-                    "postcode": "",
+                    "postcode": "642",
                     "level3s": [
                         {
                             "level3_id": "24538",
                             "name": "Thị trấn Buôn Trấp",
-                            "postcode": ""
+                            "postcode": "64206"
                         },
                         {
                             "level3_id": "24556",
                             "name": "Xã Dray Sáp",
-                            "postcode": ""
+                            "postcode": "64213"
                         },
                         {
                             "level3_id": "24559",
                             "name": "Xã Ea Na",
-                            "postcode": ""
+                            "postcode": "64212"
                         },
                         {
                             "level3_id": "24565",
                             "name": "Xã Ea Bông",
-                            "postcode": ""
+                            "postcode": "64211"
                         },
                         {
                             "level3_id": "24568",
                             "name": "Xã Băng A Drênh",
-                            "postcode": ""
+                            "postcode": "64210"
                         },
                         {
                             "level3_id": "24571",
                             "name": "Xã Dur KMăl",
-                            "postcode": ""
+                            "postcode": "64209"
                         },
                         {
                             "level3_id": "24574",
                             "name": "Xã Bình Hòa",
-                            "postcode": ""
+                            "postcode": "64207"
                         },
                         {
                             "level3_id": "24577",
                             "name": "Xã Quảng Điền",
-                            "postcode": ""
+                            "postcode": "64208"
                         }
                     ]
                 },
                 {
                     "level2_id": "656",
                     "name": "Huyện Lắk",
-                    "postcode": "",
+                    "postcode": "643",
                     "level3s": [
                         {
                             "level3_id": "24580",
@@ -43406,7 +43416,7 @@
                 {
                     "level2_id": "657",
                     "name": "Huyện Cư Kuin",
-                    "postcode": "",
+                    "postcode": "641",
                     "level3s": [
                         {
                             "level3_id": "24540",
@@ -47788,7 +47798,8 @@
                 "70",
                 "71",
                 "72",
-                "73"
+                "73",
+                "74"
             ],
             "level2s": [
                 {
@@ -49575,7 +49586,8 @@
             "level1_id": "80",
             "name": "Tỉnh Long An",
             "postcode": [
-                "82"
+                "82",
+                "83"
             ],
             "level2s": [
                 {
@@ -49658,7 +49670,7 @@
                 {
                     "level2_id": "795",
                     "name": "Thị xã Kiến Tường",
-                    "postcode": "",
+                    "postcode": "830",
                     "level3s": [
                         {
                             "level3_id": "27787",
@@ -49705,7 +49717,7 @@
                 {
                     "level2_id": "796",
                     "name": "Huyện Tân Hưng",
-                    "postcode": "",
+                    "postcode": "833",
                     "level3s": [
                         {
                             "level3_id": "27721",
@@ -49772,7 +49784,7 @@
                 {
                     "level2_id": "797",
                     "name": "Huyện Vĩnh Hưng",
-                    "postcode": "",
+                    "postcode": "832",
                     "level3s": [
                         {
                             "level3_id": "27757",
@@ -49829,7 +49841,7 @@
                 {
                     "level2_id": "798",
                     "name": "Huyện Mộc Hóa",
-                    "postcode": "",
+                    "postcode": "831",
                     "level3s": [
                         {
                             "level3_id": "27796",
@@ -49854,7 +49866,7 @@
                         {
                             "level3_id": "27814",
                             "name": "Thị trấn Bình Phong Thạnh",
-                            "postcode": ""
+                            "postcode": "83112"
                         },
                         {
                             "level3_id": "27820",
@@ -49871,7 +49883,7 @@
                 {
                     "level2_id": "799",
                     "name": "Huyện Tân Thạnh",
-                    "postcode": "",
+                    "postcode": "834",
                     "level3s": [
                         {
                             "level3_id": "27826",
@@ -50256,7 +50268,7 @@
                 {
                     "level2_id": "804",
                     "name": "Huyện Thủ Thừa",
-                    "postcode": "",
+                    "postcode": "835",
                     "level3s": [
                         {
                             "level3_id": "28036",
@@ -50316,7 +50328,7 @@
                         {
                             "level3_id": "28072",
                             "name": "Xã Tân Long",
-                            "postcode": ""
+                            "postcode": "83508"
                         }
                     ]
                 },
@@ -55296,7 +55308,8 @@
             "level1_id": "91",
             "name": "Tỉnh Kiên Giang",
             "postcode": [
-                "91"
+                "91",
+                "92"
             ],
             "level2s": [
                 {
@@ -55654,7 +55667,7 @@
                 {
                     "level2_id": "906",
                     "name": "Huyện Giồng Riềng",
-                    "postcode": "",
+                    "postcode": "923",
                     "level3s": [
                         {
                             "level3_id": "30904",
@@ -55756,7 +55769,7 @@
                 {
                     "level2_id": "907",
                     "name": "Huyện Gò Quao",
-                    "postcode": "",
+                    "postcode": "922",
                     "level3s": [
                         {
                             "level3_id": "30952",
@@ -55932,7 +55945,7 @@
                 {
                     "level2_id": "910",
                     "name": "Huyện Vĩnh Thuận",
-                    "postcode": "",
+                    "postcode": "921",
                     "level3s": [
                         {
                             "level3_id": "31051",
@@ -55979,7 +55992,7 @@
                 {
                     "level2_id": "911",
                     "name": "Huyện Phú Quốc",
-                    "postcode": "",
+                    "postcode": "925",
                     "level3s": [
                         {
                             "level3_id": "31078",
@@ -56036,7 +56049,7 @@
                 {
                     "level2_id": "912",
                     "name": "Huyện Kiên Hải",
-                    "postcode": "",
+                    "postcode": "924",
                     "level3s": [
                         {
                             "level3_id": "31108",
@@ -56063,7 +56076,7 @@
                 {
                     "level2_id": "913",
                     "name": "Huyện U Minh Thượng",
-                    "postcode": "",
+                    "postcode": "920",
                     "level3s": [
                         {
                             "level3_id": "31012",
@@ -58640,7 +58653,7 @@
     "stats": {
         "elapsed_time": 2773.206398010254,
         "level1_postcode_count": 63,
-        "level2_postcode_count": 620,
-        "level3_postcode_count": 10230
+        "level2_postcode_count": 693,
+        "level3_postcode_count": 10422
     }
 }

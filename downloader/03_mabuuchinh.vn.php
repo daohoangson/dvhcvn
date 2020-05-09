@@ -154,7 +154,7 @@ function _request($textSearch, $level, $parentPostcode)
         } else {
             $foundPostcode = [];
             $range = array_map('intval', explode('-', $matches[1]));
-            for ($i = $range[0]; $i < $range[1]; $i++) {
+            for ($i = $range[0]; $i <= $range[1]; $i++) {
                 $foundPostcode[] = str_pad(strval($i), 2, '0', STR_PAD_LEFT);
             }
         }
