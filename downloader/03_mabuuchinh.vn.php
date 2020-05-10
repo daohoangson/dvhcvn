@@ -120,6 +120,7 @@ function _postcodeHasPrefix($postcode, $prefixes): bool
 function _request($textSearch, $level, $parentPostcode)
 {
     static $expectedPostcodeLength = [1 => 2, 2 => 3, 3 => 5];
+    static $queryMaxLength = 45;
     static $postOfficePrefix = 'buu cuc trung tam ';
 
     if ($level > 1 && empty($parentPostcode)) {
@@ -136,8 +137,12 @@ function _request($textSearch, $level, $parentPostcode)
         Transliterator::FORWARD
     );
     $textSearchSafe = $transliterator->transliterate($textSearch);
-    $postFields = http_build_query(['textsearch' => substr($textSearchSafe, 0, 45)]);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+    $query = $textSearchSafe;
+    if ($level === 2 && strlen($query) < ($queryMaxLength - strlen($postOfficePrefix))) {
+        $query = $postOfficePrefix . $query;
+    }
+    $query = substr($query, 0, $queryMaxLength);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(['textsearch' => $query]));
     curl_setopt($ch, CURLOPT_POST, true);
 
     $json = curl_exec($ch);
