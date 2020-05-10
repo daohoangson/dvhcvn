@@ -19,7 +19,7 @@ function main()
     foreach ($level1Data as $_level1) {
         $level1Count++;
         $level1Postcode = _request($_level1['name'], 1, '');
-        if ($level1Postcode > 0) {
+        if (!empty($level1Postcode)) {
             $level1PostcodeCount++;
         }
 
@@ -33,7 +33,7 @@ function main()
         foreach ($_level1['level2s'] as $_level2) {
             $level2Count++;
             $level2Postcode = _request("{$_level2['name']} {$_level1['name']}", 2, $level1Postcode);
-            if ($level2Postcode > 0) {
+            if (!empty($level2Postcode)) {
                 $level2PostcodeCount++;
             }
 
@@ -51,7 +51,7 @@ function main()
                     3,
                     $level2Postcode
                 );
-                if ($level3Postcode > 0) {
+                if (!empty($level3Postcode)) {
                     $level3PostcodeCount++;
                 }
 
