@@ -90,7 +90,7 @@ Promise.all([getData(), getKey()]).then(([data, key]) =>
         `else`,
         `  if [ ! -f $_stdout ]; then`,
         `    echo Downloading $_date...`,
-        `    php ../downloader/01_gso.gov.vn.php $_date >$_stdout 2>$_stderr`,
+        `    php ../../downloader/01_gso.gov.vn.php $_date >$_stdout 2>$_stderr`,
         `  else`,
         `    echo Skipped downloading $_date`,
         `  fi`,

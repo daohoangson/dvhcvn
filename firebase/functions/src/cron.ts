@@ -63,10 +63,6 @@ export default functions.
     if (source === repo) {
       const logMessage = `✅ ${repo}`;
       console.log(logMessage);
-
-      // TODO: stop sending this via Telegram (after 2w?) to avoid overly noisy logging
-      await sendMessage(logMessage);
-
       return;
     }
 
