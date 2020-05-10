@@ -105,6 +105,7 @@ function _postcodeHasPrefix($postcode, $prefixes): bool
 function _request($textSearch, $level, $parentPostcode)
 {
     static $expectedPostcodeLength = [1 => 2, 2 => 3, 3 => 5];
+    static $postOfficePrefix = 'buu cuc trung tam ';
 
     if ($level > 1 && empty($parentPostcode)) {
         fwrite(STDERR, "Skipped searching for $textSearch without parent postcode\n");
@@ -133,7 +134,7 @@ function _request($textSearch, $level, $parentPostcode)
         return '';
     }
 
-    $pattern = '/^(\d+' . ($level === 1 ? '(-\d+)?' : '') . ') - .+$/';
+    $pattern = '/^(?<postcode>\d+' . ($level === 1 ? '(-\d+)?' : '') . ') - (?<name>.+)$/';
     $postcode = null;
     $maxSimilarityPct = null;
     foreach ($data as $found) {
@@ -141,19 +142,28 @@ function _request($textSearch, $level, $parentPostcode)
             continue;
         }
 
-        $nameSafe = $transliterator->transliterate($found['name']);
-        if (preg_match($pattern, $nameSafe, $matches) !== 1) {
+        if (preg_match($pattern, $transliterator->transliterate($found['name']), $matches) !== 1) {
             continue;
         }
+        $foundName = $matches['name'];
 
-        if (is_numeric($matches[1])) {
-            $foundPostcode = $matches[1];
+        if (is_numeric($matches['postcode'])) {
+            $foundPostcode = $matches['postcode'];
+
+            if ($level === 2 &&
+                substr($foundPostcode, -2) === '00' &&
+                substr($foundName, 0, strlen($postOfficePrefix)) == $postOfficePrefix
+            ) {
+                $foundPostcode = substr($foundPostcode, 0, -2);
+                $foundName = substr($foundName, strlen($postOfficePrefix));
+            }
+
             if (strlen($foundPostcode) !== $expectedPostcodeLength[$level]) {
                 continue;
             }
         } else {
             $foundPostcode = [];
-            $range = array_map('intval', explode('-', $matches[1]));
+            $range = array_map('intval', explode('-', $matches['postcode']));
             for ($i = $range[0]; $i <= $range[1]; $i++) {
                 $foundPostcode[] = str_pad(strval($i), 2, '0', STR_PAD_LEFT);
             }
@@ -171,7 +181,7 @@ function _request($textSearch, $level, $parentPostcode)
             }
         }
 
-        similar_text($textSearchSafe, $nameSafe, $similarityPct);
+        similar_text($textSearchSafe, $foundName, $similarityPct);
         if ($postcode === null || $similarityPct > $maxSimilarityPct) {
             $postcode = $foundPostcode;
             $maxSimilarityPct = $similarityPct;
