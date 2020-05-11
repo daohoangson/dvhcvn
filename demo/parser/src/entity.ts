@@ -26,6 +26,29 @@ const typeRegExp = new RegExp(
   "i"
 );
 
+const typos = Object.entries({
+  i: "y",
+  l: "n",
+  s: "x"
+}).map(typo => {
+  const regExp0 = RegExp(typo[0], "g");
+  const regExp1 = RegExp(typo[1], "g");
+
+  return (names: string[], name: string, patterns: string[], name2: string) => {
+    const typo01 = name.replace(regExp0, typo[1]);
+    if (typo01 !== name) {
+      names.push(typo01);
+      patterns.push(name2.replace(regExp0, typo[1]));
+    }
+
+    const typo10 = name.replace(regExp1, typo[0]);
+    if (typo10 !== name) {
+      names.push(typo10);
+      patterns.push(name2.replace(regExp1, typo[0]));
+    }
+  };
+});
+
 type EntityJson = [string[], { [key: string]: EntityJson }, string];
 
 export default class Entity {
@@ -133,7 +156,9 @@ export default class Entity {
       patterns.push(namePattern);
       const nameNormalized = normalize(this.name);
       this.names.push(nameNormalized);
-      this.names2.push(name2.toLowerCase());
+      this.names2.push(name2);
+
+      typos.forEach(f => f(this.names, nameNormalized, patterns, name2));
 
       if (this.level < 3 && this.name.indexOf(" ") > -1) {
         // special case: name initials for level 1+2
