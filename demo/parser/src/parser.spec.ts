@@ -517,13 +517,14 @@ describe("Parser", () => {
         "Thành phố Hà Nội"
       ],
       "49 vũ tông phan": [],
-      "Quy Nhơn Bình Định": ["Thành phố Qui Nhơn", "Tỉnh Bình Định"],
+      "tp. Quy Nhơn Bình Định": ["Thành phố Qui Nhơn", "Tỉnh Bình Định"],
       "Hà Lội": ["Thành phố Hà Nội"],
       "Xài Đồng, Long Biên": [
         "Phường Sài Đồng",
         "Quận Long Biên",
         "Thành phố Hà Nội"
-      ]
+      ],
+      "phường 12 quận x": ["Phường 12", "Quận 10", "Thành phố Hồ Chí Minh"]
     };
 
     Object.keys(map).forEach(input =>

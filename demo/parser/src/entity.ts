@@ -11,6 +11,20 @@ export const getEntityById = (id: string) =>
 
 const nameNumericRegExp = new RegExp("^[0-9]+$");
 
+const romanNumbers = [
+  "",
+  "i",
+  "ii",
+  "iii",
+  "iv",
+  "v",
+  "vi",
+  "vii",
+  "viii",
+  "ix",
+  "x"
+];
+
 const typeGlue = "[ .:]*";
 
 const typeTranslations: { [key: string]: string[] } = {
@@ -146,19 +160,30 @@ export default class Entity {
     const type = deaccent(this.type);
 
     let nameInitials2: string;
-    let namePattern: string;
+    const namePatterns: string[] = [];
 
     if (typeof this.name === "number") {
-      namePattern = `0*${this.name}`;
+      namePatterns.push(`0*${this.name}`);
       this.names.push(this.name.toString());
+
+      const romanNumber = romanNumbers[this.name];
+      if (romanNumber) {
+        namePatterns.push(romanNumber);
+        this.names.push(romanNumber);
+      }
     } else {
-      namePattern = name2;
-      patterns.push(namePattern);
+      namePatterns.push(name2);
+      patterns.push(name2);
       const nameNormalized = normalize(this.name);
       this.names.push(nameNormalized);
       this.names2.push(name2);
 
-      typos.forEach(f => f(this.names, nameNormalized, patterns, name2));
+      const typoPatterns: string[] = []
+      typos.forEach(f => f(this.names, nameNormalized, typoPatterns, name2));
+      typoPatterns.forEach(p => {
+        namePatterns.push(p);
+        patterns.push(p);
+      });
 
       if (this.level < 3 && this.name.indexOf(" ") > -1) {
         // special case: name initials for level 1+2
@@ -190,6 +215,7 @@ export default class Entity {
     }
 
     if (type) {
+      const namePattern = `(${namePatterns.join("|")})`;
       patterns.push(`${type}${typeGlue}${namePattern}`);
 
       if (typeTranslations[type]) {
@@ -199,7 +225,7 @@ export default class Entity {
           patterns.push(`${namePattern}${typeGlue}${translation}`);
 
           if (nameInitials2)
-            patterns.push(initials(`${namePattern} ${translation}`));
+            patterns.push(initials(`${this.names2[0]} ${translation}`));
         });
       }
 
