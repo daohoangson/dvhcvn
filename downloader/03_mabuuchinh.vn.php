@@ -152,7 +152,8 @@ function _request(array $entities, int $level, string $parentPostcode)
 
     $pattern = '/^(?<postcode>\d+' . ($level === 1 ? '(-\d+)?' : '') . ') - (?<name>.+)$/';
     $postcode = null;
-    $similarityMax = strlen($namesSafe);
+    $similarity1Threshold = intval(strlen($namesSafe) * .9);
+    $similarityMax = $similarity1Threshold;
     foreach ($data as $found) {
         if (!is_array($found) || !isset($found['name'])) {
             continue;
@@ -198,15 +199,25 @@ function _request(array $entities, int $level, string $parentPostcode)
         }
 
         $foundNameSafe = $transliterator->transliterate($foundName);
-        $similarity = similar_text($fullNamesSafe, $foundNameSafe);
-        if ($similarity > $similarityMax) {
-            if (_verify($entities, $foundName)) {
-                $postcode = $foundPostcode;
-                $similarityMax = $similarity;
-            } else {
-                continue;
-            }
+        $similarity1 = similar_text($namesSafe, $foundNameSafe);
+        if ($similarity1 < $similarity1Threshold) {
+            // ignore low similarity with names
+            continue;
         }
+
+        $similarity2 = similar_text($fullNamesSafe, $foundNameSafe);
+        if ($similarity2 <= $similarityMax) {
+            // ignore low similarity with full names
+            continue;
+        }
+
+        if (!_verify($entities, $foundName)) {
+            // ignore failed verification
+            continue;
+        }
+
+        $postcode = $foundPostcode;
+        $similarityMax = $similarity2;
     }
 
     if ($postcode !== null) {
