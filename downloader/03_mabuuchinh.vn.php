@@ -211,7 +211,7 @@ function _request(array $entities, int $level, string $parentPostcode)
             continue;
         }
 
-        if (!_verify($entities, $foundName)) {
+        if (!_verify($entities, $found['name'])) {
             // ignore failed verification
             continue;
         }
