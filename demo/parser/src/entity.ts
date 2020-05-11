@@ -156,7 +156,6 @@ export default class Entity {
     this.type = m[1];
     this.name = m[2].match(nameNumericRegExp) ? parseInt(m[2]) : m[2].trim();
     const name2 = deaccent(this.name.toString());
-    const name2WithoutSpace = name2.replace(/\s/g, "");
     const type = deaccent(this.type);
 
     let nameInitials2: string;
@@ -203,29 +202,28 @@ export default class Entity {
         }
       }
 
+      const name2WithoutSpace = name2.replace(/\s/g, "");
       if (name2WithoutSpace !== name2) {
-        patterns.push(name2WithoutSpace);
-        if (type) {
-          patterns.push(`${type} ${name2WithoutSpace}`);
-        }
-
         this.names.push(nameNormalized.replace(/\s/g, ""));
         this.names2.push(name2WithoutSpace);
+        namePatterns.push(name2WithoutSpace);
+        patterns.push(name2WithoutSpace);
       }
     }
 
     if (type) {
-      const namePattern = `(${namePatterns.join("|")})`;
-      patterns.push(`${type}${typeGlue}${namePattern}`);
+      const typePatterns: string[] = [type];
+      const typeRightPatterns: string[] = [];
 
       if (typeTranslations[type]) {
         typeTranslations[type].forEach(translation => {
-          patterns.push(`${translation}${typeGlue}${namePattern}`);
+          typePatterns.push(translation);
+          typeRightPatterns.push(translation);
 
-          patterns.push(`${namePattern}${typeGlue}${translation}`);
-
-          if (nameInitials2)
+          if (nameInitials2) {
+            // example: "hcmc"
             patterns.push(initials(`${this.names2[0]} ${translation}`));
+          }
         });
       }
 
@@ -235,16 +233,19 @@ export default class Entity {
         typeInitials.push("f");
       }
       typeInitials.forEach(typeInitial => {
-        patterns.push(`${typeInitial}${typeGlue}${namePattern}`);
+        typePatterns.push(typeInitial);
 
         if (nameInitials2) {
+          // example: tp. hcm
           patterns.push(`${typeInitial}${typeGlue}${nameInitials2}`);
         }
-
-        if (name2WithoutSpace !== name2) {
-          patterns.push(`${typeInitial}${typeGlue}${name2WithoutSpace}`);
-        }
       });
+
+      const namePattern = `(${namePatterns.join("|")})`;
+      patterns.push(`(${typePatterns.join("|")})${typeGlue}${namePattern}`);
+      if (typeRightPatterns.length > 0) {
+        patterns.push(`${namePattern}${typeGlue}(${typeRightPatterns.join("|")})`);
+      }
     }
 
     return patterns;
