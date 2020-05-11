@@ -37069,7 +37069,7 @@
                         {
                             "level3_id": "21439",
                             "name": "Phường Nguyễn Nghiêm",
-                            "postcode": ""
+                            "postcode": "54306"
                         },
                         {
                             "level3_id": "21442",
@@ -37277,112 +37277,112 @@
                 {
                     "level2_id": "540",
                     "name": "Thành phố Qui Nhơn",
-                    "postcode": "",
+                    "postcode": "551",
                     "level3s": [
                         {
                             "level3_id": "21550",
                             "name": "Phường Nhơn Bình",
-                            "postcode": ""
+                            "postcode": "55117"
                         },
                         {
                             "level3_id": "21553",
                             "name": "Phường Nhơn Phú",
-                            "postcode": ""
+                            "postcode": "55118"
                         },
                         {
                             "level3_id": "21556",
                             "name": "Phường Đống Đa",
-                            "postcode": ""
+                            "postcode": "55116"
                         },
                         {
                             "level3_id": "21559",
                             "name": "Phường Trần Quang Diệu",
-                            "postcode": ""
+                            "postcode": "55119"
                         },
                         {
                             "level3_id": "21562",
                             "name": "Phường Hải Cảng",
-                            "postcode": ""
+                            "postcode": "55114"
                         },
                         {
                             "level3_id": "21565",
                             "name": "Phường Quang Trung",
-                            "postcode": ""
+                            "postcode": "55112"
                         },
                         {
                             "level3_id": "21568",
                             "name": "Phường Thị Nại",
-                            "postcode": ""
+                            "postcode": "55115"
                         },
                         {
                             "level3_id": "21571",
                             "name": "Phường Lê Hồng Phong",
-                            "postcode": ""
+                            "postcode": "55110"
                         },
                         {
                             "level3_id": "21574",
                             "name": "Phường Trần Hưng Đạo",
-                            "postcode": ""
+                            "postcode": "55108"
                         },
                         {
                             "level3_id": "21577",
                             "name": "Phường Ngô Mây",
-                            "postcode": ""
+                            "postcode": "55111"
                         },
                         {
                             "level3_id": "21580",
                             "name": "Phường Lý Thường Kiệt",
-                            "postcode": ""
+                            "postcode": "55109"
                         },
                         {
                             "level3_id": "21583",
                             "name": "Phường Lê Lợi",
-                            "postcode": ""
+                            "postcode": "55107"
                         },
                         {
                             "level3_id": "21586",
                             "name": "Phường Trần Phú",
-                            "postcode": ""
+                            "postcode": "55106"
                         },
                         {
                             "level3_id": "21589",
                             "name": "Phường Bùi Thị Xuân",
-                            "postcode": ""
+                            "postcode": "55120"
                         },
                         {
                             "level3_id": "21592",
                             "name": "Phường Nguyễn Văn Cừ",
-                            "postcode": ""
+                            "postcode": "55113"
                         },
                         {
                             "level3_id": "21595",
                             "name": "Phường Ghềnh Ráng",
-                            "postcode": ""
+                            "postcode": "55121"
                         },
                         {
                             "level3_id": "21598",
                             "name": "Xã Nhơn Lý",
-                            "postcode": ""
+                            "postcode": "55124"
                         },
                         {
                             "level3_id": "21601",
                             "name": "Xã Nhơn Hội",
-                            "postcode": ""
+                            "postcode": "55123"
                         },
                         {
                             "level3_id": "21604",
                             "name": "Xã Nhơn Hải",
-                            "postcode": ""
+                            "postcode": "55122"
                         },
                         {
                             "level3_id": "21607",
                             "name": "Xã Nhơn Châu",
-                            "postcode": ""
+                            "postcode": "55126"
                         },
                         {
                             "level3_id": "21991",
                             "name": "Xã Phước Mỹ",
-                            "postcode": ""
+                            "postcode": "55125"
                         }
                     ]
                 },
@@ -45658,7 +45658,7 @@
                         {
                             "level3_id": "25630",
                             "name": "Phường Long Hoa",
-                            "postcode": ""
+                            "postcode": "80606"
                         },
                         {
                             "level3_id": "25633",
@@ -58653,7 +58653,7 @@
     "stats": {
         "elapsed_time": 2773.206398010254,
         "level1_postcode_count": 63,
-        "level2_postcode_count": 705,
-        "level3_postcode_count": 10603
+        "level2_postcode_count": 706,
+        "level3_postcode_count": 10626
     }
 }
