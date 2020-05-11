@@ -517,6 +517,7 @@ describe("Parser", () => {
         "Thành phố Hà Nội"
       ],
       "49 vũ tông phan": [],
+      "Quy Nhon Binh Dinh": ["Thành phố Qui Nhơn", "Tỉnh Bình Định"],
       "tp. Quy Nhơn Bình Định": ["Thành phố Qui Nhơn", "Tỉnh Bình Định"],
       "Hà Lội": ["Thành phố Hà Nội"],
       "Xài Đồng, Long Biên": [

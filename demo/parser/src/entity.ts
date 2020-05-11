@@ -48,17 +48,17 @@ const typos = Object.entries({
   const regExp0 = RegExp(typo[0], "g");
   const regExp1 = RegExp(typo[1], "g");
 
-  return (names: string[], name: string, patterns: string[], name2: string) => {
+  return (names: string[], name: string, names2: string[], name2: string) => {
     const typo01 = name.replace(regExp0, typo[1]);
     if (typo01 !== name) {
       names.push(typo01);
-      patterns.push(name2.replace(regExp0, typo[1]));
+      names2.push(name2.replace(regExp0, typo[1]));
     }
 
     const typo10 = name.replace(regExp1, typo[0]);
     if (typo10 !== name) {
       names.push(typo10);
-      patterns.push(name2.replace(regExp1, typo[0]));
+      names2.push(name2.replace(regExp1, typo[0]));
     }
   };
 });
@@ -177,11 +177,12 @@ export default class Entity {
       this.names.push(nameNormalized);
       this.names2.push(name2);
 
-      const typoPatterns: string[] = []
-      typos.forEach(f => f(this.names, nameNormalized, typoPatterns, name2));
-      typoPatterns.forEach(p => {
-        namePatterns.push(p);
-        patterns.push(p);
+      const typoNames2: string[] = [];
+      typos.forEach(f => f(this.names, nameNormalized, typoNames2, name2));
+      typoNames2.forEach(n => {
+        namePatterns.push(n);
+        patterns.push(n);
+        this.names2.push(n);
       });
 
       if (this.level < 3 && this.name.indexOf(" ") > -1) {
@@ -244,7 +245,9 @@ export default class Entity {
       const namePattern = `(${namePatterns.join("|")})`;
       patterns.push(`(${typePatterns.join("|")})${typeGlue}${namePattern}`);
       if (typeRightPatterns.length > 0) {
-        patterns.push(`${namePattern}${typeGlue}(${typeRightPatterns.join("|")})`);
+        patterns.push(
+          `${namePattern}${typeGlue}(${typeRightPatterns.join("|")})`
+        );
       }
     }
 
