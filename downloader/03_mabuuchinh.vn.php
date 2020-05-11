@@ -18,8 +18,8 @@ function main()
 
     foreach ($level1Data as $_level1) {
         $level1Count++;
-        $level1NameWithoutType = _nameWithoutType($_level1);
-        $level1Postcode = _request($level1NameWithoutType, 1, '');
+        $level1Name = _splitName($_level1, 1);
+        $level1Postcode = _request([$level1Name], 1, '');
         if (!empty($level1Postcode)) {
             $level1PostcodeCount++;
         }
@@ -33,9 +33,9 @@ function main()
 
         foreach ($_level1['level2s'] as $_level2) {
             $level2Count++;
-            $level2NameWithoutType = _nameWithoutType($_level2);
-            $textSearch = "$level2NameWithoutType $level1NameWithoutType";
-            $level2Postcode = _request($textSearch, 2, $level1Postcode);
+            $level2Name = _splitName($_level2, 2);
+            $level2Names = [$level2Name, $level1Name];
+            $level2Postcode = _request($level2Names, 2, $level1Postcode);
             if (!empty($level2Postcode)) {
                 $level2PostcodeCount++;
             }
@@ -49,9 +49,9 @@ function main()
 
             foreach ($_level2['level3s'] as $_level3) {
                 $level3Count++;
-                $level3NameWithoutType = _nameWithoutType($_level3);
-                $textSearch = "$level3NameWithoutType $level2NameWithoutType $level1NameWithoutType";;
-                $level3Postcode = _request($textSearch, 3, $level2Postcode);
+                $level3Name = _splitName($_level3, 3);
+                $level3Names = [$level3Name, $level2Name, $level1Name];
+                $level3Postcode = _request($level3Names, 3, $level2Postcode);
                 if (!empty($level3Postcode)) {
                     $level3PostcodeCount++;
                 }
@@ -88,20 +88,6 @@ function main()
     echo(json_encode($output, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-function _nameWithoutType($data): string
-{
-    return trim(str_replace([
-        'Huyện',
-        'Quận',
-        'Phường',
-        'Thành phố',
-        'Thị trấn',
-        'Thị xã',
-        'Tỉnh',
-        'Xã',
-    ], '', $data['name']));
-}
-
 function _postcodeHasPrefix($postcode, $prefixes): bool
 {
     if (!is_array($prefixes)) {
@@ -117,27 +103,37 @@ function _postcodeHasPrefix($postcode, $prefixes): bool
     return false;
 }
 
-function _request($textSearch, $level, $parentPostcode)
+function _request(array $entities, int $level, string $parentPostcode)
 {
     static $expectedPostcodeLength = [1 => 2, 2 => 3, 3 => 5];
     static $queryMaxLength = 45;
     static $postOfficePrefix = 'buu cuc trung tam ';
 
+    $namesArray = [];
+    $fullNamesArray = [];
+    foreach ($entities as $name) {
+        $namesArray[] = $name['name'];
+        $fullNamesArray[] = $name[0];
+    }
+    $names = implode(' ', $namesArray);
+    $fullNames = implode(' ', $fullNamesArray);
     if ($level > 1 && empty($parentPostcode)) {
-        fwrite(STDERR, "Skipped searching for $textSearch without parent postcode\n");
+        fwrite(STDERR, "Skipped searching for '$fullNames' without parent postcode\n");
         return '';
     }
-
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'http://mabuuchinh.vn/API/serviceApi/v1/MBC');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
     $transliterator = Transliterator::createFromRules(
         ':: Any-Latin; :: Latin-ASCII; :: NFD; :: [:Nonspacing Mark:] Remove; :: Lower(); :: NFC;',
         Transliterator::FORWARD
     );
-    $textSearchSafe = $transliterator->transliterate($textSearch);
-    $query = $textSearchSafe;
+    $namesSafe = $transliterator->transliterate($names);
+    $fullNamesSafe = $transliterator->transliterate($fullNames);
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'http://mabuuchinh.vn/API/serviceApi/v1/MBC');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $query = $namesSafe;
     if ($level === 2 && strlen($query) < ($queryMaxLength - strlen($postOfficePrefix))) {
         $query = $postOfficePrefix . $query;
     }
@@ -150,13 +146,13 @@ function _request($textSearch, $level, $parentPostcode)
 
     $data = @json_decode($json, true);
     if (!is_array($data)) {
-        fwrite(STDERR, "Data could not be extracted for $textSearch json=$json\n");
+        fwrite(STDERR, "Data could not be extracted for '$query' json=$json\n");
         return '';
     }
 
     $pattern = '/^(?<postcode>\d+' . ($level === 1 ? '(-\d+)?' : '') . ') - (?<name>.+)$/';
     $postcode = null;
-    $maxSimilarityPct = null;
+    $similarityMax = strlen($namesSafe);
     foreach ($data as $found) {
         if (!is_array($found) || !isset($found['name'])) {
             continue;
@@ -201,11 +197,12 @@ function _request($textSearch, $level, $parentPostcode)
             }
         }
 
-        similar_text($textSearchSafe, $foundName, $similarityPct);
-        if ($postcode === null || $similarityPct > $maxSimilarityPct) {
-            if (_verify($textSearch, $foundName)) {
+        $foundNameSafe = $transliterator->transliterate($foundName);
+        $similarity = similar_text($fullNamesSafe, $foundNameSafe);
+        if ($similarity > $similarityMax) {
+            if (_verify($entities, $foundName)) {
                 $postcode = $foundPostcode;
-                $maxSimilarityPct = $similarityPct;
+                $similarityMax = $similarity;
             } else {
                 continue;
             }
@@ -219,7 +216,18 @@ function _request($textSearch, $level, $parentPostcode)
     return '';
 }
 
-function _verify(string $textSearch, string $foundName): bool
+function _splitName(array $data, int $level): array
+{
+    $name = $data['name'];
+    $pattern = '/^(?<type>(Huyện|Quận|Phường|Thành phố|Thị (trấn|xã)|Tỉnh|Xã))\s+(?<name>.+)$/';
+    if (preg_match($pattern, $name, $matches) !== 1) {
+        return [$name];
+    }
+
+    return $matches + ['id' => $data["level{$level}_id"]];
+}
+
+function _verify(array $entities, string $foundName): bool
 {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://dvhcvn-git-demo-parser.daohoangson.now.sh/demo/parser/api');
@@ -233,16 +241,21 @@ function _verify(string $textSearch, string $foundName): bool
 
     $data = @json_decode($json, true);
     if (!is_array($data)) {
-        fwrite(STDERR, "Verification could not be done for $textSearch json=$json\n");
+        fwrite(STDERR, "Verification could not be done for '$foundName' json=$json\n");
         return false;
     }
 
-    $names = [];
-    foreach ($data as $tmp) {
-        $names[] = $tmp['name'];
+    if (count($entities) !== count($data)) {
+        return false;
     }
 
-    return implode(' ', $names) === $textSearch;
+    for ($i = 0; $i < count($entities); $i++) {
+        if ($entities[$i]['id'] !== $data[$i]['id']) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 main();
