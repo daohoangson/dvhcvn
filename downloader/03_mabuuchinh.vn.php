@@ -95,11 +95,20 @@ function _postcodeHasPrefix($postcode, $prefixes): bool
     return false;
 }
 
-function _request(array $entities, int $level, string $parentPostcode)
+function _request(array $entities, int $level, string $parentPostcode, array $options = [])
 {
     static $expectedPostcodeLength = [1 => 2, 2 => 3, 3 => 5];
     static $queryMaxLength = 45;
     static $postOfficePrefix = 'buu cuc trung tam ';
+
+    if (!isset($options['useFullNames'])) {
+        $useFullNamesFalse = _request($entities, $level, $parentPostcode, $options + ['useFullNames' => false]);
+        if (!empty($useFullNamesFalse)) {
+            return $useFullNamesFalse;
+        }
+
+        return _request($entities, $level, $parentPostcode, $options + ['useFullNames' => true]);
+    }
 
     $namesArray = [];
     $fullNamesArray = [];
@@ -125,7 +134,7 @@ function _request(array $entities, int $level, string $parentPostcode)
     curl_setopt($ch, CURLOPT_URL, 'http://mabuuchinh.vn/API/serviceApi/v1/MBC');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    $query = $namesSafe;
+    $query = $options['useFullNames'] ? $fullNamesSafe : $namesSafe;
     if ($level === 2 && strlen($query) < ($queryMaxLength - strlen($postOfficePrefix))) {
         $query = $postOfficePrefix . $query;
     }
@@ -234,16 +243,25 @@ function _splitName(array $data, int $level): array
 
 function _verify(array $entities, string $foundName): bool
 {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://dvhcvn-git-demo-parser.daohoangson.now.sh/demo/parser/api');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: text/plain']);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $foundName);
-    curl_setopt($ch, CURLOPT_POST, true);
+    static $caches = [];
 
-    fwrite(STDERR, 'v');
-    $json = curl_exec($ch);
-    curl_close($ch);
+    if (!isset($caches[$foundName])) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://dvhcvn-git-demo-parser.daohoangson.now.sh/demo/parser/api');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: text/plain']);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $foundName);
+        curl_setopt($ch, CURLOPT_POST, true);
+
+        fwrite(STDERR, 'v');
+        $json = curl_exec($ch);
+        curl_close($ch);
+
+        $caches[$foundName] = $json;
+    } else {
+        $json = $caches[$foundName];
+        fwrite(STDERR, "Using cached verification data for '$foundName'\n");
+    }
 
     $data = @json_decode($json, true);
     if (!is_array($data)) {
