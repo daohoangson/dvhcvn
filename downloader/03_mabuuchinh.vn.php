@@ -14,63 +14,55 @@ function main()
     $level1PostcodeCount = 0;
     $level2PostcodeCount = 0;
     $level3PostcodeCount = 0;
+
     $data = [];
+    if ($GLOBALS['argc'] > 1) {
+        $data = json_decode(file_get_contents($GLOBALS['argv'][1]), true)['data'];
+    }
 
     foreach ($level1Data as $_level1) {
         $level1Count++;
         $level1Name = _splitName($_level1, 1);
-        $level1Postcode = _request([$level1Name], 1, '');
+        $level1Postcode = !empty($data[$_level1['level1_id']])
+            ? $data[$_level1['level1_id']]
+            : _request([$level1Name], 1, '');
         if (!empty($level1Postcode)) {
             $level1PostcodeCount++;
         }
 
-        $level1 = [
-            'level1_id' => $_level1['level1_id'],
-            'name' => $_level1['name'],
-            'postcode' => $level1Postcode,
-            'level2s' => [],
-        ];
+        $data[$_level1['level1_id']] = $level1Postcode;
 
         foreach ($_level1['level2s'] as $_level2) {
             $level2Count++;
             $level2Name = _splitName($_level2, 2);
             $level2Names = [$level2Name, $level1Name];
-            $level2Postcode = _request($level2Names, 2, $level1Postcode);
+            $level2Postcode = !empty($data[$_level2['level2_id']])
+                ? $data[$_level2['level2_id']]
+                : _request($level2Names, 2, $level1Postcode);
             if (!empty($level2Postcode)) {
                 $level2PostcodeCount++;
             }
 
-            $level2 = [
-                'level2_id' => $_level2['level2_id'],
-                'name' => $_level2['name'],
-                'postcode' => $level2Postcode,
-                'level3s' => [],
-            ];
+            $data[$_level2['level2_id']] = $level2Postcode;
 
             foreach ($_level2['level3s'] as $_level3) {
                 $level3Count++;
                 $level3Name = _splitName($_level3, 3);
                 $level3Names = [$level3Name, $level2Name, $level1Name];
-                $level3Postcode = _request($level3Names, 3, $level2Postcode);
+                $level3Postcode = !empty($data[$_level3['level3_id']])
+                    ? $data[$_level3['level3_id']]
+                    : _request($level3Names, 3, $level2Postcode);
                 if (!empty($level3Postcode)) {
                     $level3PostcodeCount++;
                 }
 
-                $level2['level3s'][] = [
-                    'level3_id' => $_level3['level3_id'],
-                    'name' => $_level3['name'],
-                    'postcode' => $level3Postcode,
-                ];
+                $data[$_level3['level3_id']] = $level3Postcode;
 
                 if ($level3Count % 10 === 0) {
                     fwrite(STDERR, sprintf('%.1f%% ', $level3Count / $level3FullCount * 100));
                 }
             }
-
-            $level1['level2s'][] = $level2;
         }
-
-        $data[] = $level1;
     }
 
     $output = [
@@ -141,6 +133,7 @@ function _request(array $entities, int $level, string $parentPostcode)
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(['textsearch' => $query]));
     curl_setopt($ch, CURLOPT_POST, true);
 
+    fwrite(STDERR, 'r');
     $json = curl_exec($ch);
     curl_close($ch);
 
@@ -150,6 +143,7 @@ function _request(array $entities, int $level, string $parentPostcode)
         return '';
     }
 
+    $ignored = [];
     $pattern = '/^(?<postcode>\d+' . ($level === 1 ? '(-\d+)?' : '') . ') - (?<name>.+)$/';
     $postcode = null;
     $similarityMax = strlen($namesSafe);
@@ -159,6 +153,7 @@ function _request(array $entities, int $level, string $parentPostcode)
         }
 
         if (preg_match($pattern, $transliterator->transliterate($found['name']), $matches) !== 1) {
+            $ignored[] = "Ignored pattern: {$found['name']}";
             continue;
         }
         $foundName = $matches['name'];
@@ -175,6 +170,7 @@ function _request(array $entities, int $level, string $parentPostcode)
             }
 
             if (strlen($foundPostcode) !== $expectedPostcodeLength[$level]) {
+                $ignored[] = "Ignored postcode length: {$found['name']}";
                 continue;
             }
         } else {
@@ -188,11 +184,13 @@ function _request(array $entities, int $level, string $parentPostcode)
         if (is_array($foundPostcode)) {
             if ($level !== 1) {
                 // ignore range if level > 1
+                $ignored[] = "Ignored range at level $level: {$found['name']}";
                 continue;
             }
         } else {
             if (!_postcodeHasPrefix($foundPostcode, $parentPostcode)) {
                 // ignore postcode with wrong prefix
+                $ignored[] = "Ignored wrong prefix: {$found['name']}";
                 continue;
             }
         }
@@ -201,11 +199,13 @@ function _request(array $entities, int $level, string $parentPostcode)
         $similarity = similar_text($fullNamesSafe, $foundNameSafe);
         if ($similarity <= $similarityMax) {
             // ignore low similarity with full names
+            $ignored[] = "Ignored low similarity: {$found['name']} ($fullNamesSafe, $foundNameSafe, $similarity / $similarityMax)";
             continue;
         }
 
         if (!_verify($entities, $found['name'])) {
             // ignore failed verification
+            $ignored[] = "Ignored failed verification: {$found['name']}";
             continue;
         }
 
@@ -217,6 +217,7 @@ function _request(array $entities, int $level, string $parentPostcode)
         return $postcode;
     }
 
+    fwrite(STDERR, "$fullNames:\n\t" . implode("\n\t", $ignored) . "\n\n");
     return '';
 }
 
@@ -240,6 +241,7 @@ function _verify(array $entities, string $foundName): bool
     curl_setopt($ch, CURLOPT_POSTFIELDS, $foundName);
     curl_setopt($ch, CURLOPT_POST, true);
 
+    fwrite(STDERR, 'v');
     $json = curl_exec($ch);
     curl_close($ch);
 

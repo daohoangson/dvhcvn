@@ -8,6 +8,7 @@ _gsoPath='data/dvhcvn.json'
 _gsoDatePath='data/date.txt'
 _gisPath='data/gis.json'
 _postcodePath='data/postcode.json'
+_postcodeTmpPath='data/postcode.tmp.json'
 
 # 895/NQ-UBTVQH14 @ https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx
 _date=01/03/2020
@@ -26,4 +27,8 @@ fi
 if [ ! -f $_postcodePath ]; then
   echo "Generating $_postcodePath..."
   php "$_dir/03_mabuuchinh.vn.php" <$_gsoPath >$_postcodePath
+else
+  echo "Updating $_postcodePath..."
+  php "$_dir/03_mabuuchinh.vn.php" $_postcodePath <$_gsoPath >$_postcodeTmpPath
+  mv -f $_postcodeTmpPath $_postcodePath
 fi
