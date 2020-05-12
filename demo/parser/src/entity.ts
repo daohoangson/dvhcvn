@@ -41,6 +41,7 @@ const typeRegExp = new RegExp(
 );
 
 const typos = Object.entries({
+  ch: "tr",
   i: "y",
   l: "n",
   s: "x"

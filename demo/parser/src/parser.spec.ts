@@ -525,7 +525,12 @@ describe("Parser", () => {
         "Quận Long Biên",
         "Thành phố Hà Nội"
       ],
-      "phường 12 quận x": ["Phường 12", "Quận 10", "Thành phố Hồ Chí Minh"]
+      "phường 12 quận x": ["Phường 12", "Quận 10", "Thành phố Hồ Chí Minh"],
+      "Phường Duyệt Chung thành phố Cao Bằng tỉnh Cao Bằng": [
+        "Phường Duyệt Trung",
+        "Thành phố Cao Bằng",
+        "Tỉnh Cao Bằng"
+      ]
     };
 
     Object.keys(map).forEach(input =>
