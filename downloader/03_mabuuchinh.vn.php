@@ -161,8 +161,9 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
             continue;
         }
 
-        if (preg_match($pattern, $transliterator->transliterate($found['name']), $matches) !== 1) {
-            $ignored[] = "Ignored pattern: {$found['name']}";
+        $foundNameFullSafe = $transliterator->transliterate($found['name']);
+        if (preg_match($pattern, $foundNameFullSafe, $matches) !== 1) {
+            $ignored[] = "Ignored pattern: $foundNameFullSafe";
             continue;
         }
         $foundName = $matches['name'];
@@ -179,7 +180,7 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
             }
 
             if (strlen($foundPostcode) !== $expectedPostcodeLength[$level]) {
-                $ignored[] = "Ignored postcode length: {$found['name']}";
+                $ignored[] = "Ignored postcode length: $foundNameFullSafe";
                 continue;
             }
         } else {
@@ -193,13 +194,13 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
         if (is_array($foundPostcode)) {
             if ($level !== 1) {
                 // ignore range if level > 1
-                $ignored[] = "Ignored range at level $level: {$found['name']}";
+                $ignored[] = "Ignored range at level $level: $foundNameFullSafe";
                 continue;
             }
         } else {
             if (!_postcodeHasPrefix($foundPostcode, $parentPostcode)) {
                 // ignore postcode with wrong prefix
-                $ignored[] = "Ignored wrong prefix: {$found['name']}";
+                $ignored[] = "Ignored wrong prefix: $foundNameFullSafe";
                 continue;
             }
         }
@@ -208,13 +209,13 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
         $similarity = similar_text($fullNamesSafe, $foundNameSafe);
         if ($similarity <= $similarityMax) {
             // ignore low similarity with full names
-            $ignored[] = "Ignored low similarity: {$found['name']} ($fullNamesSafe, $foundNameSafe, $similarity / $similarityMax)";
+            $ignored[] = "Ignored low similarity: $foundNameFullSafe ($fullNamesSafe, $foundNameSafe, $similarity / $similarityMax)";
             continue;
         }
 
         if (!_verify($entities, $found['name'])) {
             // ignore failed verification
-            $ignored[] = "Ignored failed verification: {$found['name']}";
+            $ignored[] = "Ignored failed verification: $foundNameFullSafe";
             continue;
         }
 
@@ -226,7 +227,7 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
         return $postcode;
     }
 
-    fwrite(STDERR, "$fullNames:\n\t" . implode("\n\t", $ignored) . "\n\n");
+    fwrite(STDERR, "$query:\n\t" . implode("\n\t", $ignored) . "\n\n");
     return '';
 }
 
