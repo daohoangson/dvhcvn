@@ -25,7 +25,7 @@ const romanNumbers = [
   "x"
 ];
 
-const typeGlue = "[ .:]*";
+export const typeGlue = "[ .:]*";
 
 const typeTranslations: { [key: string]: string[] } = {
   tinh: ["province"],
@@ -55,6 +55,7 @@ export default class Entity {
   private names: string[];
   private names2: string[];
   private regExp: RegExp;
+  private typePatterns: string[];
 
   private _children: Entity[];
 
@@ -103,12 +104,14 @@ export default class Entity {
         initials: this.initials,
         names: this.names,
         names2: this.names2,
-        regExp: this.regExp
+        regExp: this.regExp,
+        typePatterns: this.typePatterns
       };
 
     this.initials = [];
     this.names = [];
     this.names2 = [];
+    this.typePatterns = [];
     const patterns = this.fullNames.reduce((p, n) => [...p, ...this.p(n)], []);
     if (patterns.length === 0) {
       console.error("Cannot prepare Entity", this);
@@ -121,7 +124,8 @@ export default class Entity {
       initials: this.initials,
       names: this.names,
       names2: this.names2,
-      regExp: this.regExp
+      regExp: this.regExp,
+      typePatterns: this.typePatterns
     };
   }
 
@@ -216,7 +220,9 @@ export default class Entity {
       });
 
       const namePattern = `(${namePatterns.join("|")})`;
-      patterns.push(`(${typePatterns.join("|")})${typeGlue}${namePattern}`);
+      const typePatternsJoined = typePatterns.join("|");
+      this.typePatterns.push(typePatternsJoined);
+      patterns.push(`(${typePatternsJoined})${typeGlue}${namePattern}`);
       if (typeRightPatterns.length > 0) {
         patterns.push(
           `${namePattern}${typeGlue}(${typeRightPatterns.join("|")})`

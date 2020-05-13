@@ -1,5 +1,5 @@
 import { similar_text as similarText } from "locutus/php/strings";
-import Entity, { delims, getEntityById } from "./entity";
+import Entity, { delims, getEntityById, typeGlue } from "./entity";
 import { deaccent, normalize } from "./vietnamese";
 
 const scorePerChar = 10;
@@ -100,7 +100,7 @@ export default class Matcher {
 
   try(entity: Entity) {
     const { address, address2, previous } = this;
-    const { initials, names, names2, regExp } = entity.prepare();
+    const { initials, names, names2, regExp, typePatterns } = entity.prepare();
     if (!regExp) return null;
 
     const regExpMatch = address2.match(regExp);
@@ -111,11 +111,18 @@ export default class Matcher {
         // this cpu intensive processing works as a last resort to catch typos etc.
         const nameSimilarity = deaccent(`${entity.name}`);
         const matchSimilarityArray = address2.match(
-          `([^a-z]| |^)([a-z ]{1,${nameSimilarity.length + 2}})$`
+          `([^a-z]| |^)(((${typePatterns.join(
+            "|"
+          )})${typeGlue})?([a-z ]{1,${nameSimilarity.length + 2}}))$`
         );
         if (matchSimilarityArray) {
           const matchSimilarity = matchSimilarityArray[2].trimLeft();
-          const similarity = similarText(nameSimilarity, matchSimilarity, true);
+          const matchSimilarityName = matchSimilarityArray[5].trimLeft();
+          const similarity = similarText(
+            nameSimilarity,
+            matchSimilarityName,
+            true
+          );
           if (similarity > 80) {
             return this.done(
               entity,

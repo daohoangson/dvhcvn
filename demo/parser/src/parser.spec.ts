@@ -476,7 +476,7 @@ describe("Parser", () => {
 
       "133 tran hung dao quan5": ["Quận 5", "Thành phố Hồ Chí Minh"],
       "số 8 trần nhân tông , p thanh sơn , tp phan rang tháp chàm , ninh thuận": [
-        // TODO
+        "Phường Thanh Sơn",
         "Thành phố Phan Rang-Tháp Chàm",
         "Tỉnh Ninh Thuận"
       ],
@@ -538,6 +538,11 @@ describe("Parser", () => {
         "Thị trấn Pác Miầu",
         "Huyện Bảo Lâm",
         "Tỉnh Cao Bằng"
+      ],
+      "Xã Yên Trung huyện Thạnh Thất thành phố Hà Nội": [
+        "Xã Yên Trung",
+        "Huyện Thạch Thất",
+        "Thành phố Hà Nội"
       ]
     };
 
