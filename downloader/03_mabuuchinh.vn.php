@@ -118,10 +118,6 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
     }
     $names = implode(' ', $namesArray);
     $fullNames = implode(' ', $fullNamesArray);
-    if ($level > 1 && empty($parentPostcode)) {
-        fwrite(STDERR, "Skipped searching for '$fullNames' without parent postcode\n");
-        return '';
-    }
 
     $transliterator = Transliterator::createFromRules(
         ':: Any-Latin; :: Latin-ASCII; :: NFD; :: [:Nonspacing Mark:] Remove; :: Lower(); :: NFC;',
@@ -129,6 +125,10 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
     );
     $namesSafe = $transliterator->transliterate($names);
     $fullNamesSafe = $transliterator->transliterate($fullNames);
+    if ($level > 1 && empty($parentPostcode)) {
+        fwrite(STDERR, "Skipped searching for '$fullNamesSafe' without parent postcode\n");
+        return '';
+    }
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://mabuuchinh.vn/API/serviceApi/v1/MBC');
@@ -261,7 +261,6 @@ function _verify(array $entities, string $foundName): bool
         $caches[$foundName] = $json;
     } else {
         $json = $caches[$foundName];
-        fwrite(STDERR, "Using cached verification data for '$foundName'\n");
     }
 
     $data = @json_decode($json, true);
