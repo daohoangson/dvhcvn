@@ -233,7 +233,7 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
 function _splitName(array $data, int $level): array
 {
     $name = $data['name'];
-    $pattern = '/^(?<type>(Huyện|Quận|Phường|Thành phố|Thị (trấn|xã)|Tỉnh|Xã))\s+(?<name>.+)$/';
+    $pattern = '/^(?<type>(Huyện|Quận|Phường|Thành phố|Thị (trấn|xã)|Tỉnh|Xã))\s+(?<name>.+)$/i';
     if (preg_match($pattern, $name, $matches) !== 1) {
         return [$name];
     }
