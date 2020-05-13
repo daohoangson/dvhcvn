@@ -95,7 +95,7 @@ function _postcodeHasPrefix($postcode, $prefixes): bool
     return false;
 }
 
-function _request(array $entities, int $level, string $parentPostcode, array $options = [])
+function _request(array $entities, int $level, $parentPostcode, array $options = [])
 {
     static $expectedPostcodeLength = [1 => 2, 2 => 3, 3 => 5];
     static $queryMaxLength = 45;
