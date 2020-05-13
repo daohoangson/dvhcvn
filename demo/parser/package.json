@@ -8,6 +8,7 @@
   "devDependencies": {
     "@now/node": "^1.0.2",
     "@types/chai": "^4.2.3",
+    "@types/locutus": "0.0.5",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.11.2",
     "@types/unidecode": "^0.1.1",
@@ -24,6 +25,7 @@
     "typescript": "^3.6.4"
   },
   "dependencies": {
+    "locutus": "^2.0.11",
     "yargs": "^14.2.0"
   }
 }

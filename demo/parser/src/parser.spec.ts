@@ -211,6 +211,7 @@ describe("Parser", () => {
       "214 Hưng Phú, p8 q8": ["Phường 8", "Quận 8", "Thành phố Hồ Chí Minh"],
       "Hai Bà Trưng HN": ["Quận Hai Bà Trưng", "Thành phố Hà Nội"],
       "40 phùng chí kiên hoàng văn thụ tp lạng sơn": [
+        "Phường Hoàng Văn Thụ",
         "Thành phố Lạng Sơn",
         "Tỉnh Lạng Sơn"
       ],
@@ -360,7 +361,8 @@ describe("Parser", () => {
       ],
       "Liên ấp 123, vĩnh lộc B, Bình Tân": "TODO",
       "Số 4 phố Vọng Đức, Hàng Bài, Hà Nội": [
-        // TODO
+        "Phường Hàng Bài",
+        "Quận Hoàn Kiếm",
         "Thành phố Hà Nội"
       ],
       "30E Ky Con P.Ng.Thai Binh, Q.1": [
@@ -475,10 +477,12 @@ describe("Parser", () => {
       "133 tran hung dao quan5": ["Quận 5", "Thành phố Hồ Chí Minh"],
       "số 8 trần nhân tông , p thanh sơn , tp phan rang tháp chàm , ninh thuận": [
         // TODO
+        "Thành phố Phan Rang-Tháp Chàm",
         "Tỉnh Ninh Thuận"
       ],
       "Số 44 KV1, P. Ba Láng, Q. Cái Răng, Tp. Cần Thơ": [
-        // TODO
+        "Phường Ba Láng",
+        "Quận Cái Răng",
         "Thành phố Cần Thơ"
       ],
       "số 2 tôn thất thuyết/phường mỹ đình 2/quận nam từ liêm/thành phố hà nội": [
@@ -519,7 +523,6 @@ describe("Parser", () => {
       "49 vũ tông phan": [],
       "Quy Nhon Binh Dinh": ["Thành phố Qui Nhơn", "Tỉnh Bình Định"],
       "tp. Quy Nhơn Bình Định": ["Thành phố Qui Nhơn", "Tỉnh Bình Định"],
-      "Hà Lội": ["Thành phố Hà Nội"],
       "Xài Đồng, Long Biên": [
         "Phường Sài Đồng",
         "Quận Long Biên",
@@ -529,6 +532,11 @@ describe("Parser", () => {
       "Phường Duyệt Chung thành phố Cao Bằng tỉnh Cao Bằng": [
         "Phường Duyệt Trung",
         "Thành phố Cao Bằng",
+        "Tỉnh Cao Bằng"
+      ],
+      "Thị trấn Pác Mi Ầu huyện Bảo Lâm tỉnh Cao Bằng": [
+        "Thị trấn Pác Miầu",
+        "Huyện Bảo Lâm",
         "Tỉnh Cao Bằng"
       ]
     };

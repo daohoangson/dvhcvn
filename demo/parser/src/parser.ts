@@ -88,8 +88,7 @@ export default class Parser {
 
     const b = matcher.best();
     if (!b) return before || matches;
-    if (b !== before && b !== matches)
-      this.log("next[%d]: skipped", id, b.entity.parent, b);
+    if (b !== before && b !== matches) this.log("next[%d]: skipped", id, b);
     return b;
   }
 
@@ -99,16 +98,17 @@ export default class Parser {
     const parent = matches.entity ? matches.entity : null;
     const level = parent ? parent.level : -1;
 
+    let before = matches;
     entities.forEach(e => {
       // do not skip too far from the last parent
       if (e.level > level + 2) return;
       if (!e.hasChildren()) return;
 
-      const before = matcher.best();
       this.resolve(matcher, e.children(), matches);
 
       const b = matcher.best();
       if (b !== before) this.log("skipOneLevel[%d]: new best", id, e.parent, b);
+      before = b;
     });
 
     return matcher.best() || matches;

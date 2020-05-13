@@ -40,30 +40,6 @@ const typeRegExp = new RegExp(
   "i"
 );
 
-const typos = Object.entries({
-  ch: "tr",
-  i: "y",
-  l: "n",
-  s: "x"
-}).map(typo => {
-  const regExp0 = RegExp(typo[0], "g");
-  const regExp1 = RegExp(typo[1], "g");
-
-  return (names: string[], name: string, names2: string[], name2: string) => {
-    const typo01 = name.replace(regExp0, typo[1]);
-    if (typo01 !== name) {
-      names.push(typo01);
-      names2.push(name2.replace(regExp0, typo[1]));
-    }
-
-    const typo10 = name.replace(regExp1, typo[0]);
-    if (typo10 !== name) {
-      names.push(typo10);
-      names2.push(name2.replace(regExp1, typo[0]));
-    }
-  };
-});
-
 type EntityJson = [string[], { [key: string]: EntityJson }, string];
 
 export default class Entity {
@@ -109,8 +85,12 @@ export default class Entity {
   }
 
   describe() {
-    if (!this.name) this.prepare();
-    return `#${this.id} ${this.type} ${this.name}`;
+    const { id, name, parent } = this;
+    if (!name) this.prepare();
+
+    const parentStr =
+      parent && parent.id !== "root" ? ` ${parent.describe()}` : "";
+    return `#${id} ${name}${parentStr}`;
   }
 
   hasChildren() {
@@ -177,14 +157,6 @@ export default class Entity {
       const nameNormalized = normalize(this.name);
       this.names.push(nameNormalized);
       this.names2.push(name2);
-
-      const typoNames2: string[] = [];
-      typos.forEach(f => f(this.names, nameNormalized, typoNames2, name2));
-      typoNames2.forEach(n => {
-        namePatterns.push(n);
-        patterns.push(n);
-        this.names2.push(n);
-      });
 
       if (this.level < 3 && this.name.indexOf(" ") > -1) {
         // special case: name initials for level 1+2

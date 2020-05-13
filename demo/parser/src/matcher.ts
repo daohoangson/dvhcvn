@@ -1,10 +1,22 @@
+import { similar_text as similarText } from "locutus/php/strings";
 import Entity, { delims, getEntityById } from "./entity";
 import { deaccent, normalize } from "./vietnamese";
 
 const scorePerChar = 10;
+const scoreDeltaSimilarity = -30;
 const scoreDeltaSkip = -3;
 const scoreDeltaInitials = -2;
 const scoreDeltaName2 = -1;
+
+function substrByDeaccentLength(str: string, length: number) {
+  const lMax = str.length;
+  for (let l = length; l < lMax; l++) {
+    const substr = str.substr(lMax - l);
+    if (deaccent(substr).length == length) return substr;
+  }
+
+  return str;
+}
 
 export class Matches {
   address: string;
@@ -17,7 +29,8 @@ export class Matches {
   }
 
   describe = () => ({
-    match: this.entity ? [this.entity.describe(), this.scores] : undefined,
+    match: this.entity ? this.entity.describe() : undefined,
+    scores: this.scores,
     address: [this.address, ...this.matches]
   });
 
@@ -56,29 +69,75 @@ export default class Matcher {
     this.previous = matches;
   }
 
-  best() {
-    const scores = Object.keys(this.count).map(s => parseInt(s));
-    const score = scores.length > 0 ? Math.max(...scores) : 0;
-    return score > 0 && this.count[score] > 1 ? null : this.histories[score];
+  best(): Matches {
+    let scoreMaxFloat = 0.0;
+    let scoreMaxString = "";
+    Object.keys(this.count).forEach(score => {
+      const scoreFloat = parseFloat(score);
+      if (scoreFloat > scoreMaxFloat) {
+        scoreMaxFloat = scoreFloat;
+        scoreMaxString = score;
+      }
+    });
+
+    if (!scoreMaxString) return null;
+
+    if (this.count[scoreMaxString] > 1) {
+      const { previous } = this;
+      if (previous.entity) {
+        return this.done(
+          previous.entity,
+          ["", ""],
+          scoreMaxFloat - previous.score()
+        );
+      } else {
+        return null;
+      }
+    }
+
+    return this.histories[scoreMaxString];
   }
 
   try(entity: Entity) {
-    const { address, address2 } = this;
+    const { address, address2, previous } = this;
     const { initials, names, names2, regExp } = entity.prepare();
     if (!regExp) return null;
 
     const regExpMatch = address2.match(regExp);
-    if (!regExpMatch) return null;
-    const { length } = regExpMatch[0];
+    if (!regExpMatch) {
+      const { entity: pe } = previous;
+      if (pe && pe.level === entity.level - 1) {
+        // perform fuzzy match if there's a direct parent match
+        // this cpu intensive processing works as a last resort to catch typos etc.
+        const nameSimilarity = deaccent(`${entity.name}`);
+        const matchSimilarityArray = address2.match(
+          `([^a-z]| |^)([a-z ]{1,${nameSimilarity.length + 2}})$`
+        );
+        if (matchSimilarityArray) {
+          const matchSimilarity = matchSimilarityArray[2].trimLeft();
+          const similarity = similarText(nameSimilarity, matchSimilarity, true);
+          if (similarity > 80) {
+            return this.done(
+              entity,
+              [matchSimilarity, nameSimilarity],
+              scoreDeltaSimilarity + similarity / 100
+            );
+          }
+        }
+      }
 
-    const match = address.substr(address.length - length);
+      return null;
+    }
+
+    const { length } = regExpMatch[0];
+    const match = substrByDeaccentLength(address, length);
     const matchNormalized = normalize(match);
     const nameFound = names.reduce((prev, n) => {
       if (prev && prev.length > n.length) return prev;
       if (matchNormalized.indexOf(n) > -1) return n;
       return prev;
     }, null);
-    if (nameFound) return this.ok(address, entity, [match, nameFound]);
+    if (nameFound) return this.done(entity, [match, nameFound]);
 
     const initialsFound = initials.reduce((prev, i) => {
       if (prev && prev.length > i.length) return prev;
@@ -86,12 +145,7 @@ export default class Matcher {
       return prev;
     }, null);
     if (initialsFound)
-      return this.ok(
-        address,
-        entity,
-        [match, initialsFound],
-        scoreDeltaInitials
-      );
+      return this.done(entity, [match, initialsFound], scoreDeltaInitials);
 
     const match2 = address2.substr(address2.length - length);
     const name2Found = names2.reduce((prev, n) => {
@@ -100,7 +154,7 @@ export default class Matcher {
       return prev;
     }, null);
     if (name2Found)
-      return this.ok(address, entity, [match2, name2Found], scoreDeltaName2);
+      return this.done(entity, [match2, name2Found], scoreDeltaName2);
 
     return null;
   }
@@ -130,10 +184,10 @@ export default class Matcher {
     }
   }
 
-  private ok(address: string, entity: Entity, found: string[], scoreDelta = 0) {
-    const { previous } = this;
+  private done(entity: Entity, found: string[], scoreDelta = 0) {
+    const { address, previous } = this;
     const { matches, scores } = previous;
-    const [full, name] = found;
+    const [full] = found;
     const addressLeft = address.substr(0, address.length - full.length);
     const _ = new Matches(addressLeft);
 
@@ -146,8 +200,7 @@ export default class Matcher {
     _.matches = [...matches, found];
     _.scores = [
       ...scores,
-      full.length,
-      name.length * scorePerChar,
+      full.length * scorePerChar,
       scoreDelta,
       entity.parent != previous.entity ? scoreDeltaSkip * entity.level : 0
     ];
