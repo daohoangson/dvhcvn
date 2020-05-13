@@ -135,7 +135,7 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
     $query = $options['useFullNames'] ? $fullNamesSafe : $namesSafe;
-    if ($level === 2 && strlen($query) < ($queryMaxLength - strlen($postOfficePrefix))) {
+    if (!$options['useFullNames'] && $level === 2 && strlen($query) < ($queryMaxLength - strlen($postOfficePrefix))) {
         $query = $postOfficePrefix . $query;
     }
     $query = substr($query, 0, $queryMaxLength);
