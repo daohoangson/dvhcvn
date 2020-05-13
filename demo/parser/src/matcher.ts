@@ -180,7 +180,11 @@ export default class Matcher {
         thisLast.parent === otherLast.parent
       ) {
         // special case: one parent has more than one entity
-        // with the same name -> keep the first one that matched
+        if (otherLast.status) {
+          // replace if it was deleted / moved
+          this.histories[score] = matches;
+        }
+        // otherwise keep the first one
       } else {
         this.count[score]++;
         delete this.histories[score];

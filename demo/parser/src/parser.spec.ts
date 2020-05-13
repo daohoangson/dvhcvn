@@ -554,5 +554,11 @@ describe("Parser", () => {
         expect(result).to.deep.equal(map[input]);
       })
     );
+
+    it("ignore deleted entity", () => {
+      const results = p.parse("Xã Trung Thịnh huyện Xín Mần tỉnh Hà Giang");
+      const ids = results.map(result => result.id);
+      expect(ids).to.deep.equal(["01117", "033", "02"]);
+    });
   });
 });
