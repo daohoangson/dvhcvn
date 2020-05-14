@@ -11458,14 +11458,16 @@
         "32242": "98911",
         "32244": "98906",
         "32245": "98907",
-        "32248": "98912"
+        "32248": "98912",
+        "01402": "",
+        "01420": "21208"
     },
-    "stdin_md5": "be2ea3d0db5001bb138cdb183bf62b5c",
-    "generate_date": 1589386625,
+    "stdin_md5": "e08af23bf56f70d3433c6332ae9155c4",
+    "generate_date": 1589422350,
     "stats": {
-        "elapsed_time": 371.6594970226288,
+        "elapsed_time": 300.12781405448914,
         "level1_postcode_count": 61,
         "level2_postcode_count": 684,
-        "level3_postcode_count": 10182
+        "level3_postcode_count": 10152
     }
 }
