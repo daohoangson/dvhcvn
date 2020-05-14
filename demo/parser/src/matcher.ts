@@ -1,8 +1,9 @@
 import { similar_text as similarText } from "locutus/php/strings";
-import Entity, { delims, getEntityById, typeGlue } from "./entity";
+import Entity, { delims, getEntityById } from "./entity";
 import { deaccent, normalize } from "./vietnamese";
 
 const scorePerChar = 10;
+const scoreDeltaType = 9;
 const scoreDeltaSimilarity = -30;
 const scoreDeltaSkip = -3;
 const scoreDeltaInitials = -2;
@@ -113,7 +114,7 @@ export default class Matcher {
         const matchSimilarityArray = address2.match(
           `([^a-z]| |^)(((${typePatterns.join(
             "|"
-          )})${typeGlue})?([a-z ]{1,${nameSimilarity.length + 2}}))$`
+          )})[ .:])?([a-z ]{1,${nameSimilarity.length + 2}}))$`
         );
         if (matchSimilarityArray) {
           const matchSimilarity = matchSimilarityArray[2].trimLeft();
@@ -138,13 +139,19 @@ export default class Matcher {
 
     const { length } = regExpMatch[0];
     const match = substrByDeaccentLength(address, length);
+    const match2 = address2.substr(address2.length - length);
+    const scoreDeltaType_ = match2.match(`^(${typePatterns.join("|")})`)
+      ? scoreDeltaType
+      : 0;
+
     const matchNormalized = normalize(match);
     const nameFound = names.reduce((prev, n) => {
       if (prev && prev.length > n.length) return prev;
       if (matchNormalized.indexOf(n) > -1) return n;
       return prev;
     }, null);
-    if (nameFound) return this.done(entity, [match, nameFound]);
+    if (nameFound)
+      return this.done(entity, [match, nameFound], scoreDeltaType_);
 
     const initialsFound = initials.reduce((prev, i) => {
       if (prev && prev.length > i.length) return prev;
@@ -154,14 +161,17 @@ export default class Matcher {
     if (initialsFound)
       return this.done(entity, [match, initialsFound], scoreDeltaInitials);
 
-    const match2 = address2.substr(address2.length - length);
     const name2Found = names2.reduce((prev, n) => {
       if (prev && prev.length > n.length) return prev;
       if (match2.indexOf(n) > -1) return n;
       return prev;
     }, null);
     if (name2Found)
-      return this.done(entity, [match2, name2Found], scoreDeltaName2);
+      return this.done(
+        entity,
+        [match2, name2Found],
+        scoreDeltaName2 + scoreDeltaType_
+      );
 
     return null;
   }

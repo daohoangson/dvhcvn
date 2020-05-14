@@ -543,6 +543,11 @@ describe("Parser", () => {
         "Xã Yên Trung",
         "Huyện Thạch Thất",
         "Thành phố Hà Nội"
+      ],
+      "Phường Tràng Minh huyện Kiến An thành phố Hải Phòng": [
+        "Phường Tràng Minh",
+        "Quận Kiến An",
+        "Thành phố Hải Phòng"
       ]
     };
 

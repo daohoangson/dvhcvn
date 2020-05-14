@@ -25,7 +25,7 @@ const romanNumbers = [
   "x"
 ];
 
-export const typeGlue = "[ .:]*";
+const typeGlue = "[ .:]*";
 
 const typeTranslations: { [key: string]: string[] } = {
   tinh: ["province"],
@@ -35,8 +35,15 @@ const typeTranslations: { [key: string]: string[] } = {
   phuong: ["ward"]
 };
 
+const types: string[][] = [
+  ["Nước"],
+  ["Tỉnh", "Thành phố"],
+  ["Quận", "Huyện", "Thành phố", "Thị xã"],
+  ["Phường", "Thị trấn", "Xã"]
+];
+
 const typeRegExp = new RegExp(
-  "^(Huyện|Nước|Phường|Quận|Thành phố|Thị trấn|Thị xã|Tỉnh|Xã)\\s+(.+)$",
+  "^(" + types.map(ts => ts.join("|")).join("|") + ")\\s+(.+)$",
   "i"
 );
 
@@ -141,7 +148,6 @@ export default class Entity {
     this.type = m[1];
     this.name = m[2].match(nameNumericRegExp) ? parseInt(m[2]) : m[2].trim();
     const name2 = deaccent(this.name.toString());
-    const type = deaccent(this.type);
 
     let nameInitials2: string;
     const namePatterns: string[] = [];
@@ -189,45 +195,52 @@ export default class Entity {
       }
     }
 
-    if (type) {
-      const typePatterns: string[] = [type];
-      const typeRightPatterns: string[] = [];
+    const sameLevelTypePatterns: string[] = [];
+    const sameLevelTypeRightPatterns: string[] = [];
+    const thisType2 = deaccent(this.type);
+    types[this.level].forEach(type => {
+      const type2 = deaccent(type);
+      const pushTypePattern = (t: string) => {
+        sameLevelTypePatterns.push(t);
+        if (type2 === thisType2) this.typePatterns.push(t);
+      };
+      pushTypePattern(type2);
 
-      if (typeTranslations[type]) {
-        typeTranslations[type].forEach(translation => {
-          typePatterns.push(translation);
-          typeRightPatterns.push(translation);
+      if (typeTranslations[type2]) {
+        typeTranslations[type2].forEach(translation => {
+          pushTypePattern(translation);
+          sameLevelTypeRightPatterns.push(translation);
 
           if (nameInitials2) {
             // example: "hcmc"
-            patterns.push(initials(`${this.names2[0]} ${translation}`));
+            patterns.push(initials(`${name2} ${translation}`));
           }
         });
       }
 
-      const typeInitials = [initials(type)];
+      const typeInitials = [initials(type2)];
       if (typeInitials[0] === "p") {
         // special case: phường -> "p" or "f"
         typeInitials.push("f");
       }
       typeInitials.forEach(typeInitial => {
-        typePatterns.push(typeInitial);
+        pushTypePattern(typeInitial);
 
         if (nameInitials2) {
           // example: tp. hcm
           patterns.push(`${typeInitial}${typeGlue}${nameInitials2}`);
         }
       });
+    });
 
-      const namePattern = `(${namePatterns.join("|")})`;
-      const typePatternsJoined = typePatterns.join("|");
-      this.typePatterns.push(typePatternsJoined);
-      patterns.push(`(${typePatternsJoined})${typeGlue}${namePattern}`);
-      if (typeRightPatterns.length > 0) {
-        patterns.push(
-          `${namePattern}${typeGlue}(${typeRightPatterns.join("|")})`
-        );
-      }
+    const namePattern = `(${namePatterns.join("|")})`;
+    patterns.push(
+      `(${sameLevelTypePatterns.join("|")})${typeGlue}${namePattern}`
+    );
+    if (sameLevelTypeRightPatterns.length > 0) {
+      patterns.push(
+        `${namePattern}${typeGlue}(${sameLevelTypeRightPatterns.join("|")})`
+      );
     }
 
     return patterns;
