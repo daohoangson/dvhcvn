@@ -3,13 +3,17 @@ import { expect } from "chai";
 
 describe("Parser", () => {
   describe("parse", () => {
-    const p = new Parser();
-    const parse = (address: string) => {
+    const p = new Parser({ debug: !!process.env["PARSER_DEBUG"] });
+    const parseForFullNames = (address: string) => {
       const results = p.parse(address);
       return results.map(result => `${result.type} ${result.name}`);
     };
+    const parseForIds = (address: string) => {
+      const results = p.parse(address);
+      return results.map(result => result.id);
+    };
 
-    const map = {
+    const map: { [key: string]: string[] } = {
       "123 3 Tháng 2, phường 12, Quận 10, Ho Chi Minh City, Vietnam": [
         "Phường 12",
         "Quận 10",
@@ -113,7 +117,7 @@ describe("Parser", () => {
         "Thành phố Hồ Chí Minh"
       ],
       "Đường Tân Vĩnh, Quận 4, TP.HCM": ["Quận 4", "Thành phố Hồ Chí Minh"],
-      "373/22/10/20 Hà Huy Giáp, thạnh xuân, quận 12. Tp. Hcm": "TODO",
+      "373/22/10/20 Hà Huy Giáp, thạnh xuân, quận 12. Tp. Hcm": ["TODO"],
       "Ba Đình, Hà Nội, Việt Nam": ["Quận Ba Đình", "Thành phố Hà Nội"],
       "Bắc Ninh, Việt Nam": ["Tỉnh Bắc Ninh"],
       "Lương Yên, Hà Nội, Việt Nam": ["Thành phố Hà Nội"],
@@ -325,7 +329,7 @@ describe("Parser", () => {
       ],
       "413 Lê Văn Sỹ, Hô Chi Minh, Vietnam": ["Thành phố Hồ Chí Minh"],
       "số 69 Trung Liệt Thái Hà Đông Đa": ["Quận Đống Đa", "Thành phố Hà Nội"],
-      "139/18 Khương Thượng !": "TODO",
+      "139/18 Khương Thượng !": ["TODO"],
       "Số 2 Ngõ 508 Đường Láng,Đống Đa.(Cách Ngã Tư Sở 1km)": [
         "Quận Đống Đa",
         "Thành phố Hà Nội"
@@ -334,7 +338,7 @@ describe("Parser", () => {
         "Quận Lê Chân",
         "Thành phố Hải Phòng"
       ],
-      "Số 3 ngõ 267 Hồ Tùng Mậu- Cầu Diễn-Từ Liêm-HN": "TODO",
+      "Số 3 ngõ 267 Hồ Tùng Mậu- Cầu Diễn-Từ Liêm-HN": ["TODO"],
       "63 Võ Văn Kiệt, phường An Lạc, Ho Chi Minh City, Ho Chi Minh, Vietnam": [
         "Phường An Lạc",
         "Quận Bình Tân",
@@ -359,7 +363,7 @@ describe("Parser", () => {
         // - quận Hoàng Mai, Hà Nội
         // - thị xã Hoàng Mai, Nghệ An
       ],
-      "Liên ấp 123, vĩnh lộc B, Bình Tân": "TODO",
+      "Liên ấp 123, vĩnh lộc B, Bình Tân": ["TODO"],
       "Số 4 phố Vọng Đức, Hàng Bài, Hà Nội": [
         "Phường Hàng Bài",
         "Quận Hoàn Kiếm",
@@ -397,13 +401,13 @@ describe("Parser", () => {
         "Quận Thanh Xuân",
         "Thành phố Hà Nội"
       ],
-      "Số 30/294 lê lợi - TP Bắc Giang : ĐT 0985858180": "TODO",
+      "Số 30/294 lê lợi - TP Bắc Giang : ĐT 0985858180": ["TODO"],
       "Mỹ Đình 2, Từ Liêm, Hà Nội, Việt Nam": [
         "Phường Mỹ Đình 2",
         "Quận Nam Từ Liêm",
         "Thành phố Hà Nội"
       ],
-      "cầu Sài Gòn": "TODO",
+      "cầu Sài Gòn": ["TODO"],
       "Đông Anh_Hà Nội": ["Huyện Đông Anh", "Thành phố Hà Nội"],
       "280 Trần Cung - Từ Liêm - Hà Nội": [
         "Quận Nam Từ Liêm",
@@ -548,22 +552,25 @@ describe("Parser", () => {
         "Phường Tràng Minh",
         "Quận Kiến An",
         "Thành phố Hải Phòng"
-      ]
+      ],
+      "Xã Trung Thịnh huyện Xín Mần tỉnh Hà Giang": ["01117", "033", "02"],
+      "Huyện Kỳ Anh tỉnh Hà Tĩnh": ["447", "42"],
+      "Thị xã Kỳ Anh tỉnh Hà Tĩnh": ["449", "42"]
     };
 
     Object.keys(map).forEach(input =>
       it(input, function() {
-        if (map[input] === "TODO") return this.skip();
+        const expected = map[input];
+        let parse = parseForFullNames;
 
-        const result = parse(input);
-        expect(result).to.deep.equal(map[input]);
+        if (expected.length > 0) {
+          if (expected[0] === "TODO") return this.skip();
+          if (expected[0].match(/^[0-9]+$/)) parse = parseForIds;
+        }
+
+        const actual = parse(input);
+        expect(actual).to.deep.equal(expected);
       })
     );
-
-    it("ignore deleted entity", () => {
-      const results = p.parse("Xã Trung Thịnh huyện Xín Mần tỉnh Hà Giang");
-      const ids = results.map(result => result.id);
-      expect(ids).to.deep.equal(["01117", "033", "02"]);
-    });
   });
 });

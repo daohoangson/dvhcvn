@@ -140,9 +140,6 @@ export default class Matcher {
     const { length } = regExpMatch[0];
     const match = substrByDeaccentLength(address, length);
     const match2 = address2.substr(address2.length - length);
-    const scoreDeltaType_ = match2.match(`^(${typePatterns.join("|")})`)
-      ? scoreDeltaType
-      : 0;
 
     const matchNormalized = normalize(match);
     const nameFound = names.reduce((prev, n) => {
@@ -151,7 +148,11 @@ export default class Matcher {
       return prev;
     }, null);
     if (nameFound)
-      return this.done(entity, [match, nameFound], scoreDeltaType_);
+      return this.done(
+        entity,
+        [match, nameFound],
+        this.calculateScoreDeltaType(typePatterns, match2)
+      );
 
     const initialsFound = initials.reduce((prev, i) => {
       if (prev && prev.length > i.length) return prev;
@@ -170,7 +171,7 @@ export default class Matcher {
       return this.done(
         entity,
         [match2, name2Found],
-        scoreDeltaName2 + scoreDeltaType_
+        scoreDeltaName2 + this.calculateScoreDeltaType(typePatterns, match2)
       );
 
     return null;
@@ -203,6 +204,22 @@ export default class Matcher {
       this.count[score] = 1;
       this.histories[score] = matches;
     }
+  }
+
+  private calculateScoreDeltaType(
+    typePatterns: string[],
+    match2: string
+  ): number {
+    let score = scoreDeltaType;
+    const step = score / typePatterns.length / 2;
+
+    for (let i = 0; i < typePatterns.length; i++) {
+      if (match2.startsWith(typePatterns[i])) return score;
+
+      score -= step;
+    }
+
+    return score;
   }
 
   private done(entity: Entity, found: string[], scoreDelta = 0) {

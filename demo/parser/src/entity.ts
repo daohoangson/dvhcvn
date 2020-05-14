@@ -119,7 +119,9 @@ export default class Entity {
     this.names = [];
     this.names2 = [];
     this.typePatterns = [];
-    const patterns = this.fullNames.reduce((p, n) => [...p, ...this.p(n)], []);
+    const patterns = this.fullNames
+      .reverse()
+      .reduce((p, n) => [...p, ...this.p(n)], []);
     if (patterns.length === 0) {
       console.error("Cannot prepare Entity", this);
       return {};
@@ -145,18 +147,22 @@ export default class Entity {
       return patterns;
     }
 
-    this.type = m[1];
-    this.name = m[2].match(nameNumericRegExp) ? parseInt(m[2]) : m[2].trim();
-    const name2 = deaccent(this.name.toString());
+    const thisType = m[1];
+    const thisName = m[2].match(nameNumericRegExp)
+      ? parseInt(m[2])
+      : m[2].trim();
+    if (!this.type) this.type = thisType;
+    if (!this.name) this.name = thisName;
+    const name2 = deaccent(thisName.toString());
 
     let nameInitials2: string;
     const namePatterns: string[] = [];
 
-    if (typeof this.name === "number") {
-      namePatterns.push(`0*${this.name}`);
-      this.names.push(this.name.toString());
+    if (typeof thisName === "number") {
+      namePatterns.push(`0*${thisName}`);
+      this.names.push(thisName.toString());
 
-      const romanNumber = romanNumbers[this.name];
+      const romanNumber = romanNumbers[thisName];
       if (romanNumber) {
         namePatterns.push(romanNumber);
         this.names.push(romanNumber);
@@ -164,15 +170,15 @@ export default class Entity {
     } else {
       namePatterns.push(name2);
       patterns.push(name2);
-      const nameNormalized = normalize(this.name);
+      const nameNormalized = normalize(thisName);
       this.names.push(nameNormalized);
       this.names2.push(name2);
 
-      if (this.level < 3 && this.name.indexOf(" ") > -1) {
+      if (this.level < 3 && thisName.indexOf(" ") > -1) {
         // special case: name initials for level 1+2
         // Hà Nội -> HN
         // Hồ Chí Minh -> HCM
-        const nameInitials = initials(this.name);
+        const nameInitials = initials(thisName);
         nameInitials2 = deaccent(nameInitials);
         patterns.push(nameInitials2);
 
@@ -197,7 +203,7 @@ export default class Entity {
 
     const sameLevelTypePatterns: string[] = [];
     const sameLevelTypeRightPatterns: string[] = [];
-    const thisType2 = deaccent(this.type);
+    const thisType2 = deaccent(thisType);
     types[this.level].forEach(type => {
       const type2 = deaccent(type);
       const pushTypePattern = (t: string) => {

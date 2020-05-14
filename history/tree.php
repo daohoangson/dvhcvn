@@ -24,9 +24,7 @@ function main()
             $output[$level1Id] = [[], []];
         }
         $level1Ref =& $output[$level1Id];
-        if (!in_array($level1['name'], $level1Ref[0], true)) {
-            $level1Ref[0][] = $level1['name'];
-        }
+        appendName($level1Ref[0], $level1['name']);
 
         if (empty($level1['level2s'])) {
             continue;
@@ -39,9 +37,7 @@ function main()
                 $level1Ref[1][$level2Id] = [[], []];
             }
             $level2Ref =& $level1Ref[1][$level2Id];
-            if (!in_array($level2['name'], $level2Ref[0], true)) {
-                $level2Ref[0][] = $level2['name'];
-            }
+            appendName($level2Ref[0], $level2['name']);
 
             if (empty($level2['level3s'])) {
                 continue;
@@ -54,9 +50,7 @@ function main()
                     $level2Ref[1][$level3Id] = [[]];
                 }
                 $level3Ref =& $level2Ref[1][$level3Id];
-                if (!in_array($level3['name'], $level3Ref[0], true)) {
-                    $level3Ref[0][] = $level3['name'];
-                }
+                appendName($level3Ref[0], $level3['name']);
             }
         }
     }
@@ -79,6 +73,17 @@ function main()
     $json = preg_replace('/\[\s+(\[[^]]+\])\s+\]/', '[$1]', $json);
 
     echo($json);
+}
+
+function appendName(array &$namesRef, string $name): void
+{
+    $key = array_search($name, $namesRef, true);
+    if ($key !== null) {
+        unset($namesRef[$key]);
+    }
+
+    $namesRef[] = $name;
+    $namesRef = array_values($namesRef);
 }
 
 function savePath(array &$pathsRef, $level1Id, $level2Id = null, $level3Id = null): void
