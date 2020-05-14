@@ -87,7 +87,7 @@ function _postcodeHasPrefix($postcode, $prefixes): bool
     }
 
     foreach ($prefixes as $prefix) {
-        if (substr($postcode, 0, strlen($prefix)) === $prefix) {
+        if (substr($postcode, 0, 2) === substr($prefix, 0, 2)) {
             return true;
         }
     }
