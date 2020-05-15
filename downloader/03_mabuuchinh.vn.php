@@ -213,7 +213,7 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
             continue;
         }
 
-        if (!_verify($entities, $found['name'])) {
+        if (!_verify($entities, $foundName)) {
             // ignore failed verification
             $ignored[] = "Ignored failed verification: $foundNameFullSafe";
             continue;
