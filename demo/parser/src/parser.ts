@@ -11,6 +11,10 @@ type ParserOptions = {
   debug?: boolean;
 };
 
+type ResolveOptions = {
+  fromId: number;
+};
+
 export default class Parser {
   private debug = false;
   private entities: Entity[];
@@ -54,45 +58,61 @@ export default class Parser {
   private resolve(
     input: string | Matcher,
     entities: Entity[],
-    matches: Matches
+    matches: Matches,
+    opts: ResolveOptions = { fromId: 0 }
   ) {
     const matcher =
       typeof input === "string" ? new Matcher(input, matches) : input;
     const { id } = matcher;
+    const nextOptions = { fromId: id };
 
     let before = matcher.best();
     entities.forEach(e => {
       const current = matcher.try(e);
       if (!current) return;
-      this.log("resolve[%d]: matched", id, entities[0].parent, current);
+      this.log("resolve[%d->%d]: matched", opts.fromId, id, current);
 
       let resolved = e.hasChildren()
-        ? this.resolve(current.address, e.children(), current)
+        ? this.resolve(current.address, e.children(), current, nextOptions)
         : current;
 
       if (resolved === current && e.level === 1) {
         const dedupMatcher = new Matcher(current.address, current);
         const dedup = dedupMatcher.try(e);
         if (dedup) {
-          resolved = this.resolve(dedup.address, e.children(), current);
+          resolved = this.resolve(
+            dedup.address,
+            e.children(),
+            current,
+            nextOptions
+          );
         }
       }
 
       matcher.update(resolved);
       const best = matcher.best();
-      if (best !== before) this.log("resolve[%d]: new best", id, e, best);
+      if (best !== before)
+        this.log("resolve[%d->%d]: best@loop", opts.fromId, id, e, best);
       before = best;
     });
 
-    matcher.update(this.skipOneLevel(matcher.address, entities, matches));
+    matcher.update(
+      this.skipOneLevel(matcher.address, entities, matches, nextOptions)
+    );
 
     const b = matcher.best();
     if (!b) return before || matches;
-    if (b !== before && b !== matches) this.log("next[%d]: skipped", id, b);
+    if (b !== before && b !== matches)
+      this.log("resolve[%d->%d]: best@after", opts.fromId, id, b);
     return b;
   }
 
-  private skipOneLevel(address: string, entities: Entity[], matches: Matches) {
+  private skipOneLevel(
+    address: string,
+    entities: Entity[],
+    matches: Matches,
+    opts: ResolveOptions
+  ) {
     const matcher = new Matcher(address, matches);
     const { id } = matcher;
     const parent = matches.entity ? matches.entity : null;
@@ -104,10 +124,11 @@ export default class Parser {
       if (e.level > level + 2) return;
       if (!e.hasChildren()) return;
 
-      this.resolve(matcher, e.children(), matches);
+      this.resolve(matcher, e.children(), matches, opts);
 
       const b = matcher.best();
-      if (b !== before) this.log("skipOneLevel[%d]: new best", id, e.parent, b);
+      if (b !== before)
+        this.log("skipOneLevel[%d->%d]: best@loop", opts.fromId, id, e, b);
       before = b;
     });
 

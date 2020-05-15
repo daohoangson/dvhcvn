@@ -154,14 +154,6 @@ export default class Matcher {
         this.calculateScoreDeltaType(typePatterns, match2)
       );
 
-    const initialsFound = initials.reduce((prev, i) => {
-      if (prev && prev.length > i.length) return prev;
-      if (match.indexOf(i) > -1) return i;
-      return prev;
-    }, null);
-    if (initialsFound)
-      return this.done(entity, [match, initialsFound], scoreDeltaInitials);
-
     const name2Found = names2.reduce((prev, n) => {
       if (prev && prev.length > n.length) return prev;
       if (match2.indexOf(n) > -1) return n;
@@ -173,6 +165,14 @@ export default class Matcher {
         [match2, name2Found],
         scoreDeltaName2 + this.calculateScoreDeltaType(typePatterns, match2)
       );
+
+    const initialsFound = initials.reduce((prev, i) => {
+      if (prev && prev.length > i.length) return prev;
+      if (match.indexOf(i) > -1) return i;
+      return prev;
+    }, null);
+    if (initialsFound)
+      return this.done(entity, [match, initialsFound], scoreDeltaInitials);
 
     return null;
   }
