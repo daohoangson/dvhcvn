@@ -114,7 +114,7 @@ export default class Matcher {
         const matchSimilarityArray = address2.match(
           `([^a-z]| |^)(((${typePatterns.join(
             "|"
-          )})[ .:])?([a-z ]{1,${nameSimilarity.length + 2}}))$`
+          )})[ .:])?([a-z\- ]{1,${nameSimilarity.length + 2}}))$`
         );
         if (matchSimilarityArray) {
           const matchSimilarity = matchSimilarityArray[2].trimLeft();

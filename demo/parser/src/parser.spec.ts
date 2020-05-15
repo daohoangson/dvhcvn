@@ -554,6 +554,7 @@ describe("Parser", () => {
         "Thành phố Hải Phòng"
       ],
       "Tỉnh Thừa Thiên - Huế": ["Tỉnh Thừa Thiên Huế"],
+      "49 - Tỉnh Thừa Thiên - Huế": ["Tỉnh Thừa Thiên Huế"],
       "Xã Trung Thịnh huyện Xín Mần tỉnh Hà Giang": ["01117", "033", "02"],
       "Huyện Kỳ Anh tỉnh Hà Tĩnh": ["447", "42"],
       "Thị xã Kỳ Anh tỉnh Hà Tĩnh": ["449", "42"]
