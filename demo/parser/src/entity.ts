@@ -1,7 +1,5 @@
 import { deaccent, initials, normalize } from "./vietnamese";
 
-export const delims = "[ _.,/–-]+";
-
 const entitiesById: { [id: string]: Entity[] } = {};
 
 export const getEntityById = (id: string) =>

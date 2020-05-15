@@ -1,5 +1,5 @@
 import { similar_text as similarText } from "locutus/php/strings";
-import Entity, { delims, getEntityById } from "./entity";
+import Entity, { getEntityById } from "./entity";
 import { deaccent, normalize } from "./vietnamese";
 
 const scorePerChar = 10;
@@ -52,7 +52,7 @@ export class Matches {
 }
 
 let matcherCount = 0;
-const delimsRegExp = new RegExp(delims + "$");
+const delimsRegExp = new RegExp("[ _.,/–-]+$");
 
 export default class Matcher {
   id = ++matcherCount;
@@ -107,10 +107,10 @@ export default class Matcher {
     const regExpMatch = address2.match(regExp);
     if (!regExpMatch) {
       const { entity: pe } = previous;
-      if (pe && pe.level === entity.level - 1) {
-        // perform fuzzy match if there's a direct parent match
+      const nameSimilarity = deaccent(`${entity.name}`);
+      if (nameSimilarity.length > 12 || (pe && pe.level === entity.level - 1)) {
+        // perform fuzzy match if: (1) name is lengthy or (2) there's a direct parent match
         // this cpu intensive processing works as a last resort to catch typos etc.
-        const nameSimilarity = deaccent(`${entity.name}`);
         const matchSimilarityArray = address2.match(
           `([^a-z]| |^)(((${typePatterns.join(
             "|"
