@@ -162,21 +162,23 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
         }
 
         $foundNameFullSafe = $transliterator->transliterate($found['name']);
-        if (preg_match($pattern, $foundNameFullSafe, $matches) !== 1) {
+        if (preg_match($pattern, $found['name'], $matches) !== 1) {
             $ignored[] = "Ignored pattern: $foundNameFullSafe";
             continue;
         }
         $foundName = $matches['name'];
+        $foundNameSafe = $transliterator->transliterate($foundName);
 
         if (is_numeric($matches['postcode'])) {
             $foundPostcode = $matches['postcode'];
 
             if ($level === 2 &&
                 substr($foundPostcode, -2) === '00' &&
-                substr($foundName, 0, strlen($postOfficePrefix)) == $postOfficePrefix
+                substr($foundNameSafe, 0, strlen($postOfficePrefix)) == $postOfficePrefix
             ) {
                 $foundPostcode = substr($foundPostcode, 0, -2);
-                $foundName = substr($foundName, strlen($postOfficePrefix));
+                $foundName = mb_substr($foundName, strlen($postOfficePrefix));
+                $foundNameSafe = substr($foundNameSafe, strlen($postOfficePrefix));
             }
 
             if (strlen($foundPostcode) !== $expectedPostcodeLength[$level]) {
@@ -204,8 +206,7 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
                 continue;
             }
         }
-
-        $foundNameSafe = $transliterator->transliterate($foundName);
+        
         $similarity = similar_text($fullNamesSafe, $foundNameSafe);
         if ($similarity <= $similarityMax) {
             // ignore low similarity with full names
