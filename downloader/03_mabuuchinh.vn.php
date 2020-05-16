@@ -15,6 +15,9 @@ function main()
     $level2PostcodeCount = 0;
     $level3PostcodeCount = 0;
 
+    $treeJsonPath = __DIR__ . '/../history/data/tree.json';
+    $tree = json_decode(file_get_contents($treeJsonPath), true);
+
     $data = [];
     if ($GLOBALS['argc'] > 1) {
         $data = json_decode(file_get_contents($GLOBALS['argv'][1]), true)['data'];
@@ -22,7 +25,8 @@ function main()
 
     foreach ($level1Data as $_level1) {
         $level1Count++;
-        $level1Name = _splitName($_level1, 1);
+        $level1Tree = !empty($tree[$_level1['level1_id']]) ? $tree[$_level1['level1_id']] : [];
+        $level1Name = _splitName($_level1, 1, $level1Tree);
         $level1Postcode = !empty($data[$_level1['level1_id']])
             ? $data[$_level1['level1_id']]
             : _request([$level1Name], 1, '');
@@ -34,7 +38,8 @@ function main()
 
         foreach ($_level1['level2s'] as $_level2) {
             $level2Count++;
-            $level2Name = _splitName($_level2, 2);
+            $level2Tree = !empty($level1Tree[1][$_level2['level2_id']]) ? $level1Tree[1][$_level2['level2_id']] : [];
+            $level2Name = _splitName($_level2, 2, $level2Tree);
             $level2Names = [$level2Name, $level1Name];
             $level2Postcode = !empty($data[$_level2['level2_id']])
                 ? $data[$_level2['level2_id']]
@@ -47,7 +52,8 @@ function main()
 
             foreach ($_level2['level3s'] as $_level3) {
                 $level3Count++;
-                $level3Name = _splitName($_level3, 3);
+                $level3Tree = !empty($level2Tree[1][$_level3['level3_id']]) ? $level2Tree[1][$_level3['level3_id']] : [];
+                $level3Name = _splitName($_level3, 3, $level3Tree);
                 $level3Names = [$level3Name, $level2Name, $level1Name];
                 $level3Postcode = !empty($data[$_level3['level3_id']])
                     ? $data[$_level3['level3_id']]
@@ -95,29 +101,57 @@ function _postcodeHasPrefix($postcode, $prefixes): bool
     return false;
 }
 
-function _request(array $entities, int $level, $parentPostcode, array $options = [])
+function _request(array $entities, int $level, $parentPostcode)
+{
+    $ids = [];
+    $combinations = [['name' => [], 0 => []]];
+    foreach ($entities as $entity) {
+        $ids[] = $entity['id'];
+
+        $before = $combinations;
+        $combinations = [];
+        foreach (array_reverse($entity['names']) as $name) {
+            foreach ($before as $b) {
+                $combination = $b;
+                $combination['name'][] = $name['name'];
+                $combination[0][] = $name[0];
+                $combinations[] = $combination;
+            }
+        }
+    }
+
+    foreach ($combinations as $combination) {
+        $postcode = __request(
+            $ids,
+            implode(' ', $combination['name']),
+            implode(' ', $combination['0']),
+            $level,
+            $parentPostcode
+        );
+
+        if (!empty($postcode)) {
+            return $postcode;
+        }
+    }
+
+    return '';
+}
+
+function __request(array $ids, string $names, string $fullNames, int $level, $parentPostcode, array $options = [])
 {
     static $expectedPostcodeLength = [1 => 2, 2 => 3, 3 => 5];
     static $queryMaxLength = 45;
     static $postOfficePrefix = 'buu cuc trung tam ';
 
     if (!isset($options['useFullNames'])) {
-        $useFullNamesFalse = _request($entities, $level, $parentPostcode, $options + ['useFullNames' => false]);
+        $useFullNamesFalse = __request($ids, $names, $fullNames, $level, $parentPostcode,
+            $options + ['useFullNames' => false]);
         if (!empty($useFullNamesFalse)) {
             return $useFullNamesFalse;
         }
 
-        return _request($entities, $level, $parentPostcode, $options + ['useFullNames' => true]);
+        return __request($ids, $names, $fullNames, $level, $parentPostcode, $options + ['useFullNames' => true]);
     }
-
-    $namesArray = [];
-    $fullNamesArray = [];
-    foreach ($entities as $name) {
-        $namesArray[] = $name['name'];
-        $fullNamesArray[] = $name[0];
-    }
-    $names = implode(' ', $namesArray);
-    $fullNames = implode(' ', $fullNamesArray);
 
     $transliterator = Transliterator::createFromRules(
         ':: Any-Latin; :: Latin-ASCII; :: NFD; :: [:Nonspacing Mark:] Remove; :: Lower(); :: NFC;',
@@ -206,7 +240,7 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
                 continue;
             }
         }
-        
+
         $similarity = similar_text($fullNamesSafe, $foundNameSafe);
         if ($similarity <= $similarityMax) {
             // ignore low similarity with full names
@@ -214,7 +248,7 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
             continue;
         }
 
-        if (!_verify($entities, $foundName)) {
+        if (!_verify($ids, $foundName)) {
             // ignore failed verification
             $ignored[] = "Ignored failed verification: $foundNameFullSafe";
             continue;
@@ -232,18 +266,25 @@ function _request(array $entities, int $level, $parentPostcode, array $options =
     return '';
 }
 
-function _splitName(array $data, int $level): array
+function _splitName(array $data, int $level, array $tree): array
 {
-    $name = $data['name'];
-    $pattern = '/^(?<type>(Huyện|Quận|Phường|Thành phố|Thị (trấn|xã)|Tỉnh|Xã))\s+(?<name>.+)$/i';
-    if (preg_match($pattern, $name, $matches) !== 1) {
-        return [$name];
+    static $pattern = '/^(?<type>(Huyện|Quận|Phường|Thành phố|Thị (trấn|xã)|Tỉnh|Xã))\s+(?<name>.+)$/i';
+
+    $names = !empty($tree[0]) ? $tree[0] : [$data['name']];
+    $output = ['id' => $data["level{$level}_id"], 'names' => []];
+    foreach ($names as $name) {
+        if (preg_match($pattern, $name, $matches) !== 1) {
+            fwrite(STDERR, "Could not split name: $name\n");
+            exit(1);
+        }
+
+        $output['names'][] = $matches;
     }
 
-    return $matches + ['id' => $data["level{$level}_id"]];
+    return $output;
 }
 
-function _verify(array $entities, string $foundName): bool
+function _verify(array $ids, string $foundName): bool
 {
     static $caches = [];
 
@@ -270,12 +311,12 @@ function _verify(array $entities, string $foundName): bool
         return false;
     }
 
-    if (count($entities) !== count($data)) {
+    if (count($ids) !== count($data)) {
         return false;
     }
 
-    for ($i = 0; $i < count($entities); $i++) {
-        if ($entities[$i]['id'] !== $data[$i]['id']) {
+    for ($i = 0; $i < count($ids); $i++) {
+        if ($ids[$i] !== $data[$i]['id']) {
             return false;
         }
     }
