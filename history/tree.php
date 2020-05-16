@@ -78,7 +78,7 @@ function main()
 function appendName(array &$namesRef, string $name): void
 {
     $key = array_search($name, $namesRef, true);
-    if ($key !== null) {
+    if ($key !== false) {
         unset($namesRef[$key]);
     }
 
