@@ -241,6 +241,11 @@ function __request(array $ids, string $names, string $fullNames, int $level, $pa
             }
         }
 
+        if (preg_match('/^(buu cuc|hoi dong nhan dan|huyen uy|uy ban|quan uy)/', $foundNameSafe) === 1) {
+            $ignored[] = "Ignored blacklist: $foundNameFullSafe";
+            continue;
+        }
+
         $similarity = similar_text($fullNamesSafe, $foundNameSafe);
         if ($similarity <= $similarityMax) {
             // ignore low similarity with full names
