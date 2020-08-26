@@ -19,8 +19,8 @@ _dateVersion=$( cat $_datePath | tr '/' " " | awk '{ for (i=NF; i>1; i--) printf
 
 { \
   echo 'name: dvhcvn'; \
-  echo "version: 1.2.$_dateVersion"; \
-  echo "description: \"Vietnam's administrative units (last update: $_date)\""; \
+  echo "version: 1.3.$_dateVersion"; \
+  echo "description: \"Three tiers of Vietnam's administrative units (last update: $_date)\""; \
   echo 'homepage: https://github.com/daohoangson/dvhcvn'; \
   echo ''; \
   echo 'environment:'; \
