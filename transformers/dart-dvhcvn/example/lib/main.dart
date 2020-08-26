@@ -5,5 +5,5 @@ void main() {
   final baDinh = haNoi.findLevel2ById('001');
   final phucXa = baDinh.findLevel3ById('00001');
 
-  print('$phucXa'); // Thành phố Hà Nội > Quận Ba Đình > Phường Phúc Xá
+  print(phucXa); // Thành phố Hà Nội > Quận Ba Đình > Phường Phúc Xá
 }
