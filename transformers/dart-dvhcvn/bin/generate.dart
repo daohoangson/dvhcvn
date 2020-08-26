@@ -13,20 +13,11 @@ const types = {
   'Thị xã': 'thi_xa',
 };
 
-final typeEntries = types.entries.toList(growable: false);
-
 void main(List<String> args) {
   stdout.writeln("import 'model.dart';");
-
-  for (var i = 0; i < typeEntries.length; i++) {
-    if (typeEntries[i].value != 'tptw') {
-      stdout.writeln("const s$i = '${typeEntries[i].key}';");
-    }
-
-    stdout.writeln('const t$i = Type.${typeEntries[i].value};');
-  }
   stdout.writeln();
 
+  stdout.writeln('/// Level 1 entities.');
   stdout.write('const level1s = [');
 
   final txt = File(args[0]).readAsStringSync();
@@ -45,31 +36,9 @@ String _getString(String str) {
   return "'${str.replaceAll("'", "\\'")}'";
 }
 
-String _getStringName(String str) {
-  var prefixFound = false;
-  for (var i = 0; i < typeEntries.length; i++) {
-    final prefix = typeEntries[i].key.toLowerCase();
-    if (str.toLowerCase().startsWith(prefix)) {
-      str = '\$s$i' + str.substring(prefix.length);
-      prefixFound = true;
-    }
-  }
-
-  if (!prefixFound) {
-    stderr.writeln('No prefix found: $str');
-    exit(1);
-  }
-
-  return _getString(str);
-}
-
 // ignore: missing_return
 String _getType(String str) {
-  for (var i = 0; i < typeEntries.length; i++) {
-    if (typeEntries[i].key == str) {
-      return 't$i';
-    }
-  }
+  if (types.containsKey(str)) return 'Type.${types[str]}';
 
   stderr.writeln('Type not found: $str');
   exit(1);
@@ -77,7 +46,7 @@ String _getType(String str) {
 
 void _processLevel1(int level1Index, Map level1) {
   final id = _getString(level1['level1_id']);
-  final name = _getStringName(level1['name']);
+  final name = _getString(level1['name']);
   final type = _getType(level1['type']);
   stdout.write("Level1($id, $name, $type, [");
 
@@ -91,7 +60,7 @@ void _processLevel1(int level1Index, Map level1) {
 
 void _processLevel2(int level1Index, int level2Index, Map level2) {
   final id = _getString(level2['level2_id']);
-  final name = _getStringName(level2['name']);
+  final name = _getString(level2['name']);
   final type = _getType(level2['type']);
   stdout.write("Level2($level1Index, $id, $name, $type, [");
 
@@ -105,7 +74,7 @@ void _processLevel2(int level1Index, int level2Index, Map level2) {
 
 void _processLevel3(int level1Index, int level2Index, Map level3) {
   final id = _getString(level3['level3_id']);
-  final name = _getStringName(level3['name']);
+  final name = _getString(level3['name']);
   final type = _getType(level3['type']);
   stdout.writeln("Level3($level1Index, $level2Index, $id, $name, $type),");
 }
