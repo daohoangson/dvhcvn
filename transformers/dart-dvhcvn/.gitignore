@@ -1,0 +1,5 @@
+*.iml
+.dart_tool
+.packages
+data.dart
+pubspec.*
