@@ -20,8 +20,14 @@ void main() {
     expect(level1.id, equals('01'));
   });
 
-  group('L1', () {
+  group('Level1', () {
     final haNoi = findLevel1ById('01');
+
+    test('parent returns null', () {
+      // ignore: unnecessary_cast
+      final entity = haNoi as dvhcvn.Entity;
+      expect(entity.parent, isNull);
+    });
 
     test('findLevel2ById returns', () {
       final level2 = haNoi.findLevel2ById('001');
@@ -36,9 +42,11 @@ void main() {
     });
   });
 
-  group('L2', () {
+  group('Level2', () {
     final haNoi = findLevel1ById('01');
     final baDinh = haNoi.findLevel2ById('001');
+
+    test('parent returns', () => expect(baDinh.parent, equals(haNoi)));
 
     test('findLevel3ById returns', () {
       final level3 = baDinh.findLevel3ById('00001');
@@ -51,5 +59,13 @@ void main() {
       expect(level3, isNotNull);
       expect(level3.id, equals('00001'));
     });
+  });
+
+  group('Level3', () {
+    final haNoi = findLevel1ById('01');
+    final baDinh = haNoi.findLevel2ById('001');
+    final phucXa = baDinh.findLevel3ById('00001');
+
+    test('parent returns', () => expect(phucXa.parent, equals(baDinh)));
   });
 }

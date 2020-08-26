@@ -32,8 +32,8 @@ void main(List<String> args) {
   final txt = File(args[0]).readAsStringSync();
   final json = jsonDecode(txt) as Map;
   final data = json['data'] as List;
-  for (final level1 in data) {
-    _processLevel1(level1);
+  for (var i = 0; i < data.length; i++) {
+    _processLevel1(i, data[i]);
   }
 
   stdout.write('];');
@@ -75,37 +75,37 @@ String _getType(String str) {
   exit(1);
 }
 
-void _processLevel1(Map level1) {
+void _processLevel1(int level1Index, Map level1) {
   final id = _getString(level1['level1_id']);
   final name = _getStringName(level1['name']);
   final type = _getType(level1['type']);
   stdout.write("Level1($id, $name, $type, [");
 
   final level2s = level1['level2s'] as List;
-  for (final level2 in level2s) {
-    _processLevel2(level2);
+  for (var i = 0; i < level2s.length; i++) {
+    _processLevel2(level1Index, i, level2s[i]);
   }
 
   stdout.writeln(']),');
 }
 
-void _processLevel2(Map level2) {
+void _processLevel2(int level1Index, int level2Index, Map level2) {
   final id = _getString(level2['level2_id']);
   final name = _getStringName(level2['name']);
   final type = _getType(level2['type']);
-  stdout.write("Level2($id, $name, $type, [");
+  stdout.write("Level2($level1Index, $id, $name, $type, [");
 
   final level3s = level2['level3s'] as List;
   for (final level3 in level3s) {
-    _processLevel3(level3);
+    _processLevel3(level1Index, level2Index, level3);
   }
 
   stdout.writeln(']),');
 }
 
-void _processLevel3(Map level3) {
+void _processLevel3(int level1Index, int level2Index, Map level3) {
   final id = _getString(level3['level3_id']);
   final name = _getStringName(level3['name']);
   final type = _getType(level3['type']);
-  stdout.writeln("Level3($id, $name, $type),");
+  stdout.writeln("Level3($level1Index, $level2Index, $id, $name, $type),");
 }
