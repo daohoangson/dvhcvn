@@ -1,7 +1,7 @@
 name: dvhcvn
-version: 1.1.20200601
-description: Bộ dữ liệu các đơn vị hành chính Việt Nam (cập nhật 01/06/2020)
-homepage: https://github.com/daohoangson/dvhcvn/tree/master/transformers/dart-dvhcvn
+version: 1.2.20200601
+description: "Vietnam's administrative units (last update: 01/06/2020)"
+homepage: https://github.com/daohoangson/dvhcvn
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
