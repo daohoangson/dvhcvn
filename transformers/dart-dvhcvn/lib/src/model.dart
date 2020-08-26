@@ -20,6 +20,12 @@ abstract class Entity<ParentType, ChildType> {
 
   /// Creates an entity.
   const Entity(this.id, this.name, this.type, [this.children]);
+
+  @override
+  String toString() {
+    final parent = this.parent?.toString();
+    return parent != null ? '$parent > $name' : name;
+  }
 }
 
 /// A level 1 entity.

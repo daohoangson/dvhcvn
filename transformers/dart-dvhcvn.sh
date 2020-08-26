@@ -19,7 +19,7 @@ _dateVersion=$( cat $_datePath | tr '/' " " | awk '{ for (i=NF; i>1; i--) printf
 
 { \
   echo 'name: dvhcvn'; \
-  echo "version: 1.0.$_dateVersion"; \
+  echo "version: 1.1.$_dateVersion"; \
   echo "description: Bộ dữ liệu các đơn vị hành chính Việt Nam (cập nhật $_date)"; \
   echo 'homepage: https://github.com/daohoangson/dvhcvn/tree/master/transformers/dart-dvhcvn'; \
   echo ''; \
