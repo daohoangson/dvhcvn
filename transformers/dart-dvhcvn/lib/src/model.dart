@@ -21,6 +21,31 @@ abstract class Entity<ParentType, ChildType> {
   /// Creates an entity.
   const Entity(this.id, this.name, this.type, [this.children]);
 
+  /// Returns type as Vietnamese string.
+  // ignore: missing_return
+  String get typeAsString {
+    switch (type) {
+      case Type.huyen:
+        return 'Huyện';
+      case Type.quan:
+        return 'Quận';
+      case Type.phuong:
+        return 'Phường';
+      case Type.thi_tran:
+        return 'Thị trấn';
+      case Type.thi_xa:
+        return 'Thị xã';
+      case Type.tinh:
+        return 'Tỉnh';
+      case Type.tp:
+        return 'Thành phố';
+      case Type.tptw:
+        return 'Thành phố trực thuộc Trung ương';
+      case Type.xa:
+        return 'Xã';
+    }
+  }
+
   @override
   String toString() {
     final parent = this.parent?.toString();
