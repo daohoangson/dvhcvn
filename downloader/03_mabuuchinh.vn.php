@@ -295,7 +295,7 @@ function _verify(array $ids, string $foundName): bool
 
     if (!isset($caches[$foundName])) {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://dvhcvn-git-demo-parser.daohoangson.now.sh/demo/parser/api');
+        curl_setopt($ch, CURLOPT_URL, 'https://dvhcvn.now.sh/demo/parser/api');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: text/plain']);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $foundName);
