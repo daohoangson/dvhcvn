@@ -1,0 +1,31 @@
+{
+  "name": "parser",
+  "scripts": {
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "now-build": "/bin/bash ./api/now-build.sh",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+  },
+  "devDependencies": {
+    "@now/node": "^1.0.2",
+    "@types/chai": "^4.2.3",
+    "@types/locutus": "0.0.5",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.2",
+    "@types/unidecode": "^0.1.1",
+    "@types/yargs": "^13.0.3",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "mocha": "^6.2.2",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "locutus": "^2.0.11",
+    "yargs": "^14.2.0"
+  }
+}

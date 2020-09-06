@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/demo/demo.js"></script>
+  </head>
+  <body>
+    <form action="/demo/parser/api" method="POST">
+      <label>
+        Input
+        <input id="input" type="address" name="input" />
+      </label>
+
+      <pre id="output"></pre>
+
+      <input type="submit" value="Parse" />
+    </form>
+
+    <script>
+      const input = document.getElementById("input");
+      const output = document.getElementById("output");
+
+      const parse = value =>
+        fetch("/demo/parser/api", {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          body: value
+        })
+          .then(r => r.json())
+          .then(
+            parsed => {
+              console.log("parse(%s)", value, parsed);
+              if (value !== input.value) return;
+
+              output.innerHTML = JSON.stringify(parsed, null, "  ");
+            },
+            reason => {
+              console.log("parse(%s)", value, reason);
+              if (value !== input.value) return;
+
+              output.innerHTML = `${reason}`;
+            }
+          );
+
+      let timeout = null;
+      input.onkeyup = e => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => parse(input.value), 200);
+      };
+    </script>
+  </body>
+</html>
