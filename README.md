@@ -1,12 +1,12 @@
 # Các đơn vị hành chính Việt Nam
 
-Dữ liệu được cập nhật từ trang [Đơn vị hành chính](https://www.gso.gov.vn/dmhc2015/) của Tổng cục thống kê và [Hệ thống bản đồ hành chính](http://gis.chinhphu.vn) của Cổng thông tin điện tử Chính phủ.
+Dữ liệu được cập nhật từ trang [Danh mục hành chính](https://danhmuchanhchinh.gso.gov.vn/) của Tổng cục thống kê và [Hệ thống bản đồ hành chính](http://gis.chinhphu.vn) của Cổng thông tin điện tử Chính phủ.
 
 ## Các tập dữ liệu
 
 ### dvhcvn.json
 
-Thông tin 3 cấp đơn vị hành chính trả về từ [web service của TCTK](https://www.gso.gov.vn/dmhc2015/WebService.aspx):
+Thông tin 3 cấp đơn vị hành chính trả về từ [web service của TCTK](https://danhmuchanhchinh.gso.gov.vn/DMDVHC.asmx):
 
 - Tỉnh thành:
   - `level1_id`
@@ -155,7 +155,7 @@ Ví dụ:
 ## Nhưng... tại sao?!
 
 Bộ dữ liệu này được tạo ra vì các dự án tương tự trên mạng Internet cung cấp thông tin không đầy đủ hoặc không được cập nhật thường xuyên.
-Để tránh việc tương tự xảy ra với dự án này, một [daily cron](/firebase/functions/src/cron.ts) sẽ đối chiếu ngày hiệu lực của [nghị định mới nhất](https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx) và ngày cập nhật dữ liệu để cảnh báo qua [Telegram group](https://t.me/dvhcvn).
+Để tránh việc tương tự xảy ra với dự án này, một [daily cron](/firebase/functions/src/cron.ts) sẽ đối chiếu ngày hiệu lực của [nghị định mới nhất](https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx) và ngày cập nhật dữ liệu để cảnh báo qua [Telegram group](https://t.me/dvhcvn).
 
 ## Tự tải về
 
@@ -177,7 +177,7 @@ rm -rf ./data/*
 
 ## Nguồn tham khảo
 
-- Tổng cục thống kê https://www.gso.gov.vn/dmhc2015/
+- Tổng cục thống kê https://danhmuchanhchinh.gso.gov.vn
 - Cổng thông tin điện tử chính phủ http://gis.chinhphu.vn
 - https://github.com/linhmtran168/vietnam-gis-crawler
 - https://github.com/madnh/hanhchinhvn

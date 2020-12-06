@@ -7,7 +7,7 @@ import { send } from './telegram';
 const getDateFromSource = async () => {
   const browser = await launch({ args: ['--no-sandbox'] });
   const page = await browser.newPage();
-  await page.goto("https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx");
+  await page.goto("https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx");
 
   const date = await page.evaluate(() => {
     const dateCell = document.querySelector('#ctl00_PlaceHolderMain_ASPxGridView1_DXDataRow0 > td:nth-child(3)');

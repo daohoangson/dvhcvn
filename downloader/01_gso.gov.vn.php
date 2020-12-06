@@ -129,7 +129,7 @@ function _request($soapAction, array $params = []): array
 EOF;
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://www.gso.gov.vn/dmhc2015/DMDVHC.asmx');
+    curl_setopt($ch, CURLOPT_URL, 'https://danhmuchanhchinh.gso.gov.vn/DMDVHC.asmx');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $xmlRequest);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, true);

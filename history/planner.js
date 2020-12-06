@@ -4,7 +4,7 @@ const puppeteer = require("puppeteer");
 const getData = async () => {
   const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
   const page = await browser.newPage();
-  await page.goto("https://www.gso.gov.vn/dmhc2015/NghiDinh.aspx");
+  await page.goto("https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx");
 
   const data = await page.evaluate(() => {
     const className = "dxgvDataRow_Office2003_Blue";
