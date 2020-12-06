@@ -14,7 +14,7 @@ export const send = (text: string, options: { png?: Buffer } = {}) => {
   data.append('chat_id', chatId);
 
   let action = 'sendMessage';
-  if (options.png == undefined) {
+  if (options.png === undefined) {
     data.append('text', text);
   } else {
     action = 'sendPhoto';
