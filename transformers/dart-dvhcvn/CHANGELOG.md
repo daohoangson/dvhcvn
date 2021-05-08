@@ -1,3 +1,9 @@
+## 1.3.20210701
+
+* 1260/NQ-UBTVQH14: Thành lập thị trấn Quý Lộc và thị trấn Yên Lâm thuộc huyện Yên Định, tỉnh Thanh Hóa;
+* 1261/NQ-UBTVQH14: Thành lập thị trân Long Giao thuộc huyện Cẩm Mỹ, tỉnh Đồng Nai;
+* 1262/NQ-UBTVQH14: Điều chỉnh địa giới hành chính cấp huyện, cấp xã và thành lập các thị trấn thuộc tỉnh Tuyên Quang;
+
 ## 1.3.20210201
 
 * 1189/NQ-UBTVQH14: Thành lập phường Quỳnh Lâm và phường Trung Minh thuộc thành phố Hòa Bình, tỉnh Hòa Bình;
