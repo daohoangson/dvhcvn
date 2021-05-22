@@ -1,6 +1,6 @@
 {
   "builds": [
-    { "src": "api/*/index.ts", "use": "@now/node" },
+    { "src": "api/*/index.ts", "use": "@now/node" }
   ],
   "version": 2
 }
