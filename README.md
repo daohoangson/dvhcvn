@@ -146,7 +146,7 @@ Ví dụ:
 
 - [geolocation](https://dvhcvn.vercel.app/demo/geolocation.html): xác định dvhc từ kinh độ, vĩ độ
 - [map](https://dvhcvn.vercel.app/demo/map.html): hiển thị dvhc trên bản đồ
-- [parser](https://dvhcvn.vercel.appdemo/parser.html): xác định dvhc từ địa chỉ (xem parser API bên dưới)
+- [parser](https://dvhcvn.vercel.app/demo/parser.html): xác định dvhc từ địa chỉ (xem parser API bên dưới)
 - [parser API](https://dvhcvn.vercel.app/demo/parser/api):
   - Cách 1: `curl https://dvhcvn.vercel.app/demo/parser/api -d input=hanoi` -> chỉ trả về tên các dvhc "**Thành phố Hà Nội**"
   - Cách 2: `curl https://dvhcvn.vercel.app/demo/parser/api -H 'Content-Type: text/plain' -d hanoi` -> trả về thông tin chi tiết
