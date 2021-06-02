@@ -133,15 +133,49 @@
               id,
               type: 'fill',
               source: id,
-              layout: {},
               paint: {
                 'fill-color': color,
                 'fill-opacity': .5
               }
-            })
-          }
+            });
+          };
           polygon(level1, "#00f");
           polygon(level2, "#f00");
+
+          const bbox = (e, color) => {
+            const id = `bbox-${e.level1_id}`;
+            const { bbox: [west, north, east, south] } = e;
+
+            map.addSource(id, {
+              type: 'geojson',
+              data: {
+                type: 'Feature',
+                geometry: {
+                  type: 'Polygon',
+                  coordinates: [
+                    [
+                      [west, north],
+                      [east, north],
+                      [east, south],
+                      [west, south],
+                      [west, north]
+                    ]
+                  ]
+                }
+              }
+            });
+            map.addLayer({
+              id,
+              type: 'line',
+              source: id,
+              paint: {
+                'line-color': color,
+                'line-width': 2
+              }
+            });
+          };
+          bbox(level1, "#aaa");
+          bbox(level2, "#000");
         });
       })();
     </script>
