@@ -1,10 +1,8 @@
 import { NowRequest, NowResponse } from "@now/node";
 
-import Parser from "../src/parser";
-
 const { data } = require("../../data/dvhcvn");
 
-export default function (req: NowRequest, res: NowResponse) {
+export default function (_: NowRequest, res: NowResponse) {
   const level1s = [];
 
   for (const level1 of data) {
