@@ -25,12 +25,11 @@
       }
     </style>
     <script src="/demo/demo.js"></script>
-    <!-- 
-      This Google api key has been restricted to these URLs only:
-      - dvhcvn.local.hoangson.vn/*
-      - dvhcvn.vercel.app/*
-    -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAY3HLteXhcFbaU8dIUo062IlZoO63qpk"></script>
+
+    <!-- https://docs.goong.io/example/geojson-polygon/ -->
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.6/dist/goong-js.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.6/dist/goong-js.css" rel="stylesheet" />
   </head>
   <body>
     <nav>
@@ -105,52 +104,75 @@
         if (!level1 || !level2) return console.error("Data missing");
         populateNav(level1Id, level2Id);
 
-        const map = new google.maps.Map(document.getElementById("map"), {
-          center: {
-            lat: (level2.bbox[1] + level2.bbox[3]) / 2,
-            lng: (level2.bbox[0] + level2.bbox[2]) / 2
-          },
-          styles: [
-            {
-              featureType: "all",
-              elementType: "labels",
-              stylers: [{ visibility: "off" }]
-            }
+        /*
+          The Maptiles key has been restricted to these domains:
+          - http://dvhcvn.local.hoangson.vn/*
+          - dvhcvn.vercel.app/*
+          - *-daohoangson.vercel.app/*
+        */
+        goongjs.accessToken = "84HpwEr9FSs9EURBGcBuOaK9bTFMrKzPQI7d1pdh";
+        const map = new goongjs.Map({
+          container: "map",
+          center: [
+            (level2.bbox[0] + level2.bbox[2]) / 2,
+            (level2.bbox[1] + level2.bbox[3]) / 2
           ],
-          zoom: 9
+          style: "https://tiles.goong.io/assets/goong_map_web.json",
+          zoom: 8
         });
 
-        const polygon = (e, color) =>
-          (e.type === "Polygon" ? [e.coordinates] : e.coordinates).map(c0 =>
-            c0.map(
-              c1 =>
-                new google.maps.Polygon({
-                  paths: c1.map(c2 => ({ lat: c2[1], lng: c2[0] })),
-                  strokeColor: color,
-                  strokeWeight: 0.5,
-                  fillColor: color,
-                  map
-                })
-            )
-          );
-        polygon(level1, "#00f");
-        polygon(level2, "#f00");
+        map.on("load", () => {
+          const polygon = (data, color) => {
+            const id = `polygon-${data.level1_id}`;
+            map.addSource(id, { type: "geojson", data });
+            map.addLayer({
+              id,
+              type: "fill",
+              source: id,
+              paint: {
+                "fill-color": color,
+                "fill-opacity": .5
+              }
+            });
+          };
+          polygon(level1, "#00f");
+          polygon(level2, "#f00");
 
-        const bbox = (e, color) =>
-          new google.maps.Rectangle({
-            strokeColor: color,
-            strokeWeight: 2,
-            fillOpacity: 0,
-            map: map,
-            bounds: {
-              north: e.bbox[1],
-              south: e.bbox[3],
-              east: e.bbox[2],
-              west: e.bbox[0]
-            }
-          });
-        bbox(level1, "#aaa");
-        bbox(level2, "#000");
+          const bbox = (e, color) => {
+            const id = `bbox-${e.level1_id}`;
+            const { bbox: [west, north, east, south] } = e;
+
+            map.addSource(id, {
+              type: "geojson",
+              data: {
+                type: "Feature",
+                geometry: {
+                  type: "Polygon",
+                  coordinates: [
+                    [
+                      [west, north],
+                      [east, north],
+                      [east, south],
+                      [west, south],
+                      [west, north]
+                    ]
+                  ]
+                }
+              }
+            });
+            map.addLayer({
+              id,
+              type: "line",
+              source: id,
+              paint: {
+                "line-color": color,
+                "line-width": 2
+              }
+            });
+          };
+          bbox(level1, "#aaa");
+          bbox(level2, "#000");
+        });
       })();
     </script>
   </body>
