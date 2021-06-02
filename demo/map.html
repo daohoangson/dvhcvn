@@ -110,32 +110,28 @@
           - dvhcvn.vercel.app/*
           - *-daohoangson.vercel.app/*
         */
-        goongjs.accessToken = '84HpwEr9FSs9EURBGcBuOaK9bTFMrKzPQI7d1pdh';
-        const center = [
-          (level2.bbox[0] + level2.bbox[2]) / 2,
-          (level2.bbox[1] + level2.bbox[3]) / 2
-        ];
+        goongjs.accessToken = "84HpwEr9FSs9EURBGcBuOaK9bTFMrKzPQI7d1pdh";
         const map = new goongjs.Map({
-          container: 'map',
-          center,
-          style: 'https://tiles.goong.io/assets/goong_map_web.json',
+          container: "map",
+          center: [
+            (level2.bbox[0] + level2.bbox[2]) / 2,
+            (level2.bbox[1] + level2.bbox[3]) / 2
+          ],
+          style: "https://tiles.goong.io/assets/goong_map_web.json",
           zoom: 8
         });
 
-        map.on('load', () => {
-          const polygon = (e, color) => {
-            const id = `polygon-${e.level1_id}`;
-            const { type, coordinates } = e;
-            const data = { type, coordinates };
-
-            map.addSource(id, { type: 'geojson', data });
+        map.on("load", () => {
+          const polygon = (data, color) => {
+            const id = `polygon-${data.level1_id}`;
+            map.addSource(id, { type: "geojson", data });
             map.addLayer({
               id,
-              type: 'fill',
+              type: "fill",
               source: id,
               paint: {
-                'fill-color': color,
-                'fill-opacity': .5
+                "fill-color": color,
+                "fill-opacity": .5
               }
             });
           };
@@ -147,11 +143,11 @@
             const { bbox: [west, north, east, south] } = e;
 
             map.addSource(id, {
-              type: 'geojson',
+              type: "geojson",
               data: {
-                type: 'Feature',
+                type: "Feature",
                 geometry: {
-                  type: 'Polygon',
+                  type: "Polygon",
                   coordinates: [
                     [
                       [west, north],
@@ -166,11 +162,11 @@
             });
             map.addLayer({
               id,
-              type: 'line',
+              type: "line",
               source: id,
               paint: {
-                'line-color': color,
-                'line-width': 2
+                "line-color": color,
+                "line-width": 2
               }
             });
           };
