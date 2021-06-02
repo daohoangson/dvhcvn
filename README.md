@@ -144,13 +144,13 @@ Ví dụ:
 
 ## Demo
 
-- [geolocation](https://dvhcvn.now.sh/demo/geolocation.html): xác định dvhc từ kinh độ, vĩ độ
-- [map](https://dvhcvn.now.sh/demo/map.html): hiển thị dvhc trên bản đồ
-- [parser](https://dvhcvn.now.sh/demo/parser.html): xác định dvhc từ địa chỉ (xem parser API bên dưới)
-- [parser API](https://dvhcvn.now.sh/demo/parser/api):
-  - Cách 1: `curl https://dvhcvn.now.sh/demo/parser/api -d input=hanoi` -> chỉ trả về tên các dvhc "**Thành phố Hà Nội**"
-  - Cách 2: `curl https://dvhcvn.now.sh/demo/parser/api -H 'Content-Type: text/plain' -d hanoi` -> trả về thông tin chi tiết
-  - Ví dụ: `curl https://dvhcvn.now.sh/demo/parser/api -H 'Content-Type: text/plain' -d 'trung tu, dong da, ha noi'` trả về `[{"id":"00226","name":"Trung Tự","type":"Phường"},{"id":"006","name":"Đống Đa","type":"Quận"},{"id":"01","name":"Hà Nội","type":"Thành phố"}]`
+- [geolocation](https://dvhcvn.vercel.app/demo/geolocation.html): xác định dvhc từ kinh độ, vĩ độ
+- [map](https://dvhcvn.vercel.app/demo/map.html): hiển thị dvhc trên bản đồ [Goong.io](https://goong.io)
+- [parser](https://dvhcvn.vercel.app/demo/parser.html): xác định dvhc từ địa chỉ (xem parser API bên dưới)
+- [parser API](https://dvhcvn.vercel.app/demo/parser/api):
+  - Cách 1: `curl https://dvhcvn.vercel.app/demo/parser/api -d input=hanoi` -> chỉ trả về tên các dvhc "**Thành phố Hà Nội**"
+  - Cách 2: `curl https://dvhcvn.vercel.app/demo/parser/api -H 'Content-Type: text/plain' -d hanoi` -> trả về thông tin chi tiết
+  - Ví dụ: `curl https://dvhcvn.vercel.app/demo/parser/api -H 'Content-Type: text/plain' -d 'trung tu, dong da, ha noi'` trả về `[{"id":"00226","name":"Trung Tự","type":"Phường"},{"id":"006","name":"Đống Đa","type":"Quận"},{"id":"01","name":"Hà Nội","type":"Thành phố"}]`
 
 ## Nhưng... tại sao?!
 
