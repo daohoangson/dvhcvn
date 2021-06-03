@@ -21,9 +21,9 @@ interface Level3 {
   type: string
 }
 
-const { data } = require("../../data/dvhcvn");
+const dvhcvn = require("../../data/dvhcvn") as { data: Level1[] };
+export const data = dvhcvn.data;
 
-export default data as Level1[];
 
 export function prepareLevel1(req: VercelRequest, level1: Level1) {
   const { level1_id: id, name, type } = level1

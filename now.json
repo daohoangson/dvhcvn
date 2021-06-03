@@ -3,8 +3,8 @@
     { "src": "api/*.ts", "use": "@now/node" }
   ],
   "rewrites": [
-    { "source": "/api/:level1Id", "destination": "/api/level2s.ts" },
-    { "source": "/api/:level1Id/:level2Id", "destination": "/api/level3s.ts" }
+    { "source": "/api/:level1Id", "destination": "/api/level1.ts" },
+    { "source": "/api/:level1Id/:level2Id", "destination": "/api/level2.ts" }
   ],
   "version": 2
 }

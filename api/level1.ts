@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
-import data, { prepareLevel1, prepareLevel2 } from './utils/data';
+import { data, prepareLevel1, prepareLevel2 } from './utils/data';
 
 export default function (req: VercelRequest, res: VercelResponse) {
   const { level1Id } = req.query;
