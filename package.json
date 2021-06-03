@@ -1,0 +1,33 @@
+{
+  "name": "dvhcvn",
+  "version": "1.0.0",
+  "description": "Three tiers of Vietnam's administrative units",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daohoangson/dvhcvn.git"
+  },
+  "keywords": [
+    "vietnam",
+    "provinces",
+    "cities",
+    "districts",
+    "json",
+    "gis"
+  ],
+  "author": "Dao Hoang Son <daohoangson@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/daohoangson/dvhcvn/issues"
+  },
+  "homepage": "https://github.com/daohoangson/dvhcvn#readme",
+  "devDependencies": {
+    "@types/node": "^15.6.2",
+    "vercel": "^23.0.0"
+  },
+  "dependencies": {
+    "@vercel/node": "^1.11.0"
+  },
+  "scripts": {
+    "start": "vercel dev"
+  }
+}
