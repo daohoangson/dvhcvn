@@ -21,9 +21,13 @@
   },
   "homepage": "https://github.com/daohoangson/dvhcvn#readme",
   "devDependencies": {
-    "@types/node": "^15.6.2"
+    "@types/node": "^15.6.2",
+    "vercel": "^23.0.0"
   },
   "dependencies": {
-    "@now/node": "^1.8.5"
+    "@vercel/node": "^1.11.0"
+  },
+  "scripts": {
+    "start": "vercel dev"
   }
 }
