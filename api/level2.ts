@@ -15,8 +15,8 @@ export default function (req: VercelRequest, res: VercelResponse) {
       }
 
       return res.send({
-        level1: prepareLevel1(req, level1),
-        level2: prepareLevel2(req, level1, level2),
+        level1: prepareLevel1(level1),
+        level2: prepareLevel2(level2),
         level3s
       });
     }

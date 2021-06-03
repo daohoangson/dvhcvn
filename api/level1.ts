@@ -9,11 +9,11 @@ export default function (req: VercelRequest, res: VercelResponse) {
   for (const level1 of data) {
     if (level1.level1_id !== level1Id) continue;
     for (const level2 of level1.level2s) {
-      level2s.push(prepareLevel2(req, level1, level2))
+      level2s.push(prepareLevel2(level2, { req, level1 }))
     }
 
     return res.send({
-      level1: prepareLevel1(req, level1),
+      level1: prepareLevel1(level1),
       level2s
     });
   }
