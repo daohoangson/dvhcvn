@@ -2,9 +2,17 @@
   "name": "dvhcvn",
   "version": "1.0.0",
   "description": "Three tiers of Vietnam's administrative units (last update: 01/07/2021)",
+  "files": [
+    "lib/src/*"
+  ],
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prebuild": "npm run generate",
+    "generate": "ts-node bin/generate.ts ../../data/dvhcvn.json > src/data.ts",
+    "postgenerate": "npx ts-standard --fix src/data.ts",
+    "lint": "ts-standard",
+    "test": "jest --config jestconfig.json"
   },
   "repository": {
     "type": "git",
@@ -23,6 +31,12 @@
   },
   "homepage": "https://github.com/daohoangson/dvhcvn#readme",
   "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.6.2",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "ts-standard": "^10.0.0",
     "typescript": "^4.3.5"
   }
 }
