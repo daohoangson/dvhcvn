@@ -3,16 +3,20 @@
   "version": "1.0.0",
   "description": "Three tiers of Vietnam's administrative units (last update: 01/07/2021)",
   "files": [
-    "lib/src/*"
+    "lib/*"
   ],
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "rollup -c",
     "prebuild": "npm run generate",
     "generate": "ts-node bin/generate.ts ../../data/dvhcvn.json > src/data.ts",
     "postgenerate": "npx ts-standard --fix src/data.ts",
     "lint": "ts-standard",
-    "test": "jest --config jestconfig.json"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "test": "jest --config jestconfig.json",
+    "preversion": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -34,6 +38,8 @@
     "@types/jest": "^27.0.1",
     "@types/node": "^16.6.2",
     "jest": "^27.0.6",
+    "rollup": "^2.56.2",
+    "rollup-plugin-ts": "^1.4.0",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
     "ts-standard": "^10.0.0",
