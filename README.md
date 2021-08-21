@@ -141,6 +141,7 @@ Ví dụ:
 ## Thư viện hỗ trợ
 
 - Dart [pub.dev](https://pub.dev/packages/dvhcvn)
+- JavaScript [npm](https://www.npmjs.com/package/dvhcvn)
 
 ## Demo
 
