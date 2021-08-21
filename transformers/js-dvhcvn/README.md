@@ -7,11 +7,11 @@ Dữ liệu được cập nhật từ [daohoangson/dvhcvn](https://github.com/d
 ### JavaScript
 
 ```js
-import { level1s } from 'dvhcvn'
+import { findLevel1ById } from 'dvhcvn'
 
 // ...
 
-const haNoi = dvhcvn.findLevel1ById('01')
+const haNoi = findLevel1ById('01')
 const baDinh = haNoi?.findLevel2ById('001')
 const phucXa = baDinh?.findLevel3ById('00001')
 
