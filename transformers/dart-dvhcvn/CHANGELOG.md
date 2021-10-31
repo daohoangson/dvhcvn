@@ -1,3 +1,7 @@
+## 1.3.20211101
+
+* 387/NQ-UBTVQH15: Thành lập thành phố Từ Sơn thuộc tỉnh Bắc Ninh;
+
 ## 1.3.20210701
 
 * 1260/NQ-UBTVQH14: Thành lập thị trấn Quý Lộc và thị trấn Yên Lâm thuộc huyện Yên Định, tỉnh Thanh Hóa;
