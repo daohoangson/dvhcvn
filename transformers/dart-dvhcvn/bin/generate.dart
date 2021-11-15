@@ -37,7 +37,7 @@ String _getString(String str) {
 }
 
 // ignore: missing_return
-String _getType(String str) {
+String? _getType(String str) {
   if (types.containsKey(str)) return 'Type.${types[str]}';
 
   stderr.writeln('Type not found: $str');
