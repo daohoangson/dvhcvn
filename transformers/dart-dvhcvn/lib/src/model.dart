@@ -62,10 +62,10 @@ class Level1 extends Entity<void, Level2> {
   void get parent => null;
 
   /// Finds sub-entity by ID.
-  Level2? findLevel2ById(String id) => findById<Level2>(children, id);
+  Level2? findLevel2ById(String id) => findById(children, id);
 
   /// Finds sub-entity by name.
-  Level2? findLevel2ByName(String name) => findByName<Level2>(children, name);
+  Level2? findLevel2ByName(String name) => findByName(children, name);
 }
 
 /// A level 2 entity.
@@ -81,10 +81,10 @@ class Level2 extends Entity<Level1, Level3> {
   Level1 get parent => level1s[_level1Index];
 
   /// Finds sub-entity by ID.
-  Level3? findLevel3ById(String id) => findById<Level3>(children, id);
+  Level3? findLevel3ById(String id) => findById(children, id);
 
   /// Finds sub-entity by name.
-  Level3? findLevel3ByName(String name) => findByName<Level3>(children, name);
+  Level3? findLevel3ByName(String name) => findByName(children, name);
 }
 
 /// A level 3 entity.
