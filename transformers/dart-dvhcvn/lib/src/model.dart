@@ -48,7 +48,7 @@ abstract class Entity<ParentType, ChildType> {
 
   @override
   String toString() {
-    final String? parent = this.parent?.toString();
+    final parent = this.parent?.toString();
     return parent != null ? '$parent > $name' : name;
   }
 }
