@@ -1,3 +1,7 @@
+## 2.0.20211101
+
+* Migrate to null safety (#23, authored by @definev)
+
 ## 1.3.20211101
 
 * 387/NQ-UBTVQH15: Thành lập thành phố Từ Sơn thuộc tỉnh Bắc Ninh;
