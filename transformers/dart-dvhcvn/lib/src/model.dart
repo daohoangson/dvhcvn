@@ -22,7 +22,6 @@ abstract class Entity<ParentType, ChildType> {
   const Entity(this.id, this.name, this.type, [this.children = const []]);
 
   /// Returns type as Vietnamese string.
-  // ignore: missing_return
   String get typeAsString {
     switch (type) {
       case Type.huyen:
@@ -31,9 +30,9 @@ abstract class Entity<ParentType, ChildType> {
         return 'Quận';
       case Type.phuong:
         return 'Phường';
-      case Type.thi_tran:
+      case Type.thiTran:
         return 'Thị trấn';
-      case Type.thi_xa:
+      case Type.thiXa:
         return 'Thị xã';
       case Type.tinh:
         return 'Tỉnh';
@@ -59,7 +58,8 @@ class Level1 extends Entity<void, Level2> {
   const Level1(String id, String name, Type type, List<Level2> children)
       : super(id, name, type, children);
 
-  void get parent => null;
+  @override
+  void get parent {}
 
   /// Finds sub-entity by ID.
   Level2? findLevel2ById(String id) => findById(children, id);
@@ -73,9 +73,13 @@ class Level2 extends Entity<Level1, Level3> {
   final int _level1Index;
 
   /// Creates a level 2 entity.
-  const Level2(this._level1Index, String id, String name, Type type,
-      List<Level3> children)
-      : super(id, name, type, children);
+  const Level2(
+    this._level1Index,
+    String id,
+    String name,
+    Type type,
+    List<Level3> children,
+  ) : super(id, name, type, children);
 
   @override
   Level1 get parent => level1s[_level1Index];
@@ -94,8 +98,12 @@ class Level3 extends Entity<Level2, void> {
 
   /// Creates a level 3 entity.
   const Level3(
-      this._level1Index, this._level2Index, String id, String name, Type type)
-      : super(id, name, type);
+    this._level1Index,
+    this._level2Index,
+    String id,
+    String name,
+    Type type,
+  ) : super(id, name, type);
 
   @override
   Level2 get parent => level1s[_level1Index].children[_level2Index];
@@ -113,10 +121,10 @@ enum Type {
   phuong,
 
   /// Thị trấn
-  thi_tran,
+  thiTran,
 
   /// Thị xã
-  thi_xa,
+  thiXa,
 
   /// Tỉnh
   tinh,

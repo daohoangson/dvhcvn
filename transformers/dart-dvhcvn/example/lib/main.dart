@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:dvhcvn/dvhcvn.dart' as dvhcvn;
 
 void main() {

@@ -1,7 +1,6 @@
+import 'package:dvhcvn/dvhcvn.dart' as dvhcvn;
 import 'package:dvhcvn/src/util.dart';
 import 'package:test/test.dart';
-
-import 'package:dvhcvn/dvhcvn.dart' as dvhcvn;
 
 void main() {
   test('level1s is not empty', () {
@@ -81,11 +80,6 @@ void main() {
 
   group('Level1', () {
     final haNoi = findLevel1ById('01');
-
-    test('parent returns null', () {
-      final entity = haNoi as dvhcvn.Entity;
-      expect(entity.parent, isNull);
-    });
 
     test('findLevel2ById returns', () {
       final level2 = haNoi?.findLevel2ById('001');

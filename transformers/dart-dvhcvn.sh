@@ -24,9 +24,10 @@ _dateVersion=$( cat $_datePath | tr '/' " " | awk '{ for (i=NF; i>1; i--) printf
   echo 'homepage: https://github.com/daohoangson/dvhcvn'; \
   echo ''; \
   echo 'environment:'; \
-  echo '  sdk: ">=2.7.0 <3.0.0"'; \
+  echo '  sdk: ">=2.12.0 <3.0.0"'; \
   echo ''; \
   echo 'dev_dependencies:'; \
+  echo '  lint: ^1.7.2'; \
   echo '  test:'; \
 } >"$_dartPath/pubspec.yaml"
 echo 'Generated pubspec'
@@ -39,6 +40,11 @@ fi
 dart "$_dir/dart-dvhcvn/bin/generate.dart" $_jsonPath >$_dataDartPath
 echo 'Generated OK'
 
-dartfmt -w $_dataDartPath
+dart format $_dataDartPath
 
-( cd  "$_dir/dart-dvhcvn" && pub get && pub run test )
+( \
+  cd  "$_dir/dart-dvhcvn" && \
+  pub get && \
+  dart analyze && \
+  pub run test \
+)
