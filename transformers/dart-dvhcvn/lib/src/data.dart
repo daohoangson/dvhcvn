@@ -148,7 +148,7 @@ const level1s = [
       Level3(0, 8, '00373', 'Phường Kim Giang', Type.phuong),
     ]),
     Level2(0, '016', 'Huyện Sóc Sơn', Type.huyen, [
-      Level3(0, 9, '00376', 'Thị trấn Sóc Sơn', Type.thi_tran),
+      Level3(0, 9, '00376', 'Thị trấn Sóc Sơn', Type.thiTran),
       Level3(0, 9, '00379', 'Xã Bắc Sơn', Type.xa),
       Level3(0, 9, '00382', 'Xã Minh Trí', Type.xa),
       Level3(0, 9, '00385', 'Xã Hồng Kỳ', Type.xa),
@@ -176,7 +176,7 @@ const level1s = [
       Level3(0, 9, '00451', 'Xã Xuân Thu', Type.xa),
     ]),
     Level2(0, '017', 'Huyện Đông Anh', Type.huyen, [
-      Level3(0, 10, '00454', 'Thị trấn Đông Anh', Type.thi_tran),
+      Level3(0, 10, '00454', 'Thị trấn Đông Anh', Type.thiTran),
       Level3(0, 10, '00457', 'Xã Xuân Nộn', Type.xa),
       Level3(0, 10, '00460', 'Xã Thuỵ Lâm', Type.xa),
       Level3(0, 10, '00463', 'Xã Bắc Hồng', Type.xa),
@@ -202,7 +202,7 @@ const level1s = [
       Level3(0, 10, '00523', 'Xã Đông Hội', Type.xa),
     ]),
     Level2(0, '018', 'Huyện Gia Lâm', Type.huyen, [
-      Level3(0, 11, '00526', 'Thị trấn Yên Viên', Type.thi_tran),
+      Level3(0, 11, '00526', 'Thị trấn Yên Viên', Type.thiTran),
       Level3(0, 11, '00529', 'Xã Yên Thường', Type.xa),
       Level3(0, 11, '00532', 'Xã Yên Viên', Type.xa),
       Level3(0, 11, '00535', 'Xã Ninh Hiệp', Type.xa),
@@ -215,7 +215,7 @@ const level1s = [
       Level3(0, 11, '00556', 'Xã Đặng Xá', Type.xa),
       Level3(0, 11, '00559', 'Xã Phú Thị', Type.xa),
       Level3(0, 11, '00562', 'Xã Kim Sơn', Type.xa),
-      Level3(0, 11, '00565', 'Thị trấn Trâu Quỳ', Type.thi_tran),
+      Level3(0, 11, '00565', 'Thị trấn Trâu Quỳ', Type.thiTran),
       Level3(0, 11, '00568', 'Xã Dương Quang', Type.xa),
       Level3(0, 11, '00571', 'Xã Dương Xá', Type.xa),
       Level3(0, 11, '00574', 'Xã Đông Dư', Type.xa),
@@ -238,7 +238,7 @@ const level1s = [
       Level3(0, 12, '00637', 'Phường Trung Văn', Type.phuong),
     ]),
     Level2(0, '020', 'Huyện Thanh Trì', Type.huyen, [
-      Level3(0, 13, '00640', 'Thị trấn Văn Điển', Type.thi_tran),
+      Level3(0, 13, '00640', 'Thị trấn Văn Điển', Type.thiTran),
       Level3(0, 13, '00643', 'Xã Tân Triều', Type.xa),
       Level3(0, 13, '00646', 'Xã Thanh Liệt', Type.xa),
       Level3(0, 13, '00649', 'Xã Tả Thanh Oai', Type.xa),
@@ -271,13 +271,13 @@ const level1s = [
       Level3(0, 14, '00620', 'Phường Phúc Diễn', Type.phuong),
     ]),
     Level2(0, '250', 'Huyện Mê Linh', Type.huyen, [
-      Level3(0, 15, '08973', 'Thị trấn Chi Đông', Type.thi_tran),
+      Level3(0, 15, '08973', 'Thị trấn Chi Đông', Type.thiTran),
       Level3(0, 15, '08974', 'Xã Đại Thịnh', Type.xa),
       Level3(0, 15, '08977', 'Xã Kim Hoa', Type.xa),
       Level3(0, 15, '08980', 'Xã Thạch Đà', Type.xa),
       Level3(0, 15, '08983', 'Xã Tiến Thắng', Type.xa),
       Level3(0, 15, '08986', 'Xã Tự Lập', Type.xa),
-      Level3(0, 15, '08989', 'Thị trấn Quang Minh', Type.thi_tran),
+      Level3(0, 15, '08989', 'Thị trấn Quang Minh', Type.thiTran),
       Level3(0, 15, '08992', 'Xã Thanh Lâm', Type.xa),
       Level3(0, 15, '08995', 'Xã Tam Đồng', Type.xa),
       Level3(0, 15, '08998', 'Xã Liên Mạc', Type.xa),
@@ -309,7 +309,7 @@ const level1s = [
       Level3(0, 16, '10117', 'Phường Đồng Mai', Type.phuong),
       Level3(0, 16, '10123', 'Phường Biên Giang', Type.phuong),
     ]),
-    Level2(0, '269', 'Thị xã Sơn Tây', Type.thi_xa, [
+    Level2(0, '269', 'Thị xã Sơn Tây', Type.thiXa, [
       Level3(0, 17, '09574', 'Phường Lê Lợi', Type.phuong),
       Level3(0, 17, '09577', 'Phường Phú Thịnh', Type.phuong),
       Level3(0, 17, '09580', 'Phường Ngô Quyền', Type.phuong),
@@ -327,7 +327,7 @@ const level1s = [
       Level3(0, 17, '09616', 'Xã Cổ Đông', Type.xa),
     ]),
     Level2(0, '271', 'Huyện Ba Vì', Type.huyen, [
-      Level3(0, 18, '09619', 'Thị trấn Tây Đằng', Type.thi_tran),
+      Level3(0, 18, '09619', 'Thị trấn Tây Đằng', Type.thiTran),
       Level3(0, 18, '09625', 'Xã Phú Cường', Type.xa),
       Level3(0, 18, '09628', 'Xã Cổ Đô', Type.xa),
       Level3(0, 18, '09631', 'Xã Tản Hồng', Type.xa),
@@ -360,7 +360,7 @@ const level1s = [
       Level3(0, 18, '09712', 'Xã Khánh Thượng', Type.xa),
     ]),
     Level2(0, '272', 'Huyện Phúc Thọ', Type.huyen, [
-      Level3(0, 19, '09715', 'Thị trấn Phúc Thọ', Type.thi_tran),
+      Level3(0, 19, '09715', 'Thị trấn Phúc Thọ', Type.thiTran),
       Level3(0, 19, '09718', 'Xã Vân Hà', Type.xa),
       Level3(0, 19, '09721', 'Xã Vân Phúc', Type.xa),
       Level3(0, 19, '09724', 'Xã Vân Nam', Type.xa),
@@ -383,7 +383,7 @@ const level1s = [
       Level3(0, 19, '09781', 'Xã Liên Hiệp', Type.xa),
     ]),
     Level2(0, '273', 'Huyện Đan Phượng', Type.huyen, [
-      Level3(0, 20, '09784', 'Thị trấn Phùng', Type.thi_tran),
+      Level3(0, 20, '09784', 'Thị trấn Phùng', Type.thiTran),
       Level3(0, 20, '09787', 'Xã Trung Châu', Type.xa),
       Level3(0, 20, '09790', 'Xã Thọ An', Type.xa),
       Level3(0, 20, '09793', 'Xã Thọ Xuân', Type.xa),
@@ -401,7 +401,7 @@ const level1s = [
       Level3(0, 20, '09829', 'Xã Song Phượng', Type.xa),
     ]),
     Level2(0, '274', 'Huyện Hoài Đức', Type.huyen, [
-      Level3(0, 21, '09832', 'Thị trấn Trạm Trôi', Type.thi_tran),
+      Level3(0, 21, '09832', 'Thị trấn Trạm Trôi', Type.thiTran),
       Level3(0, 21, '09835', 'Xã Đức Thượng', Type.xa),
       Level3(0, 21, '09838', 'Xã Minh Khai', Type.xa),
       Level3(0, 21, '09841', 'Xã Dương Liễu', Type.xa),
@@ -424,7 +424,7 @@ const level1s = [
     ]),
     Level2(0, '275', 'Huyện Quốc Oai', Type.huyen, [
       Level3(0, 22, '04939', 'Xã Đông Xuân', Type.xa),
-      Level3(0, 22, '09895', 'Thị trấn Quốc Oai', Type.thi_tran),
+      Level3(0, 22, '09895', 'Thị trấn Quốc Oai', Type.thiTran),
       Level3(0, 22, '09898', 'Xã Sài Sơn', Type.xa),
       Level3(0, 22, '09901', 'Xã Phượng Cách', Type.xa),
       Level3(0, 22, '09904', 'Xã Yên Sơn', Type.xa),
@@ -449,7 +449,7 @@ const level1s = [
       Level3(0, 23, '04927', 'Xã Yên Trung', Type.xa),
       Level3(0, 23, '04930', 'Xã Yên Bình', Type.xa),
       Level3(0, 23, '04936', 'Xã Tiến Xuân', Type.xa),
-      Level3(0, 23, '09955', 'Thị trấn Liên Quan', Type.thi_tran),
+      Level3(0, 23, '09955', 'Thị trấn Liên Quan', Type.thiTran),
       Level3(0, 23, '09958', 'Xã Đại Đồng', Type.xa),
       Level3(0, 23, '09961', 'Xã Cẩm Yên', Type.xa),
       Level3(0, 23, '09964', 'Xã Lại Thượng', Type.xa),
@@ -471,8 +471,8 @@ const level1s = [
       Level3(0, 23, '10012', 'Xã Đồng Trúc', Type.xa),
     ]),
     Level2(0, '277', 'Huyện Chương Mỹ', Type.huyen, [
-      Level3(0, 24, '10015', 'Thị trấn Chúc Sơn', Type.thi_tran),
-      Level3(0, 24, '10018', 'Thị trấn Xuân Mai', Type.thi_tran),
+      Level3(0, 24, '10015', 'Thị trấn Chúc Sơn', Type.thiTran),
+      Level3(0, 24, '10018', 'Thị trấn Xuân Mai', Type.thiTran),
       Level3(0, 24, '10021', 'Xã Phụng Châu', Type.xa),
       Level3(0, 24, '10024', 'Xã Tiên Phương', Type.xa),
       Level3(0, 24, '10027', 'Xã Đông Sơn', Type.xa),
@@ -505,7 +505,7 @@ const level1s = [
       Level3(0, 24, '10111', 'Xã Phú Nam An', Type.xa),
     ]),
     Level2(0, '278', 'Huyện Thanh Oai', Type.huyen, [
-      Level3(0, 25, '10114', 'Thị trấn Kim Bài', Type.thi_tran),
+      Level3(0, 25, '10114', 'Thị trấn Kim Bài', Type.thiTran),
       Level3(0, 25, '10120', 'Xã Cự Khê', Type.xa),
       Level3(0, 25, '10126', 'Xã Bích Hòa', Type.xa),
       Level3(0, 25, '10129', 'Xã Mỹ Hưng', Type.xa),
@@ -528,7 +528,7 @@ const level1s = [
       Level3(0, 25, '10180', 'Xã Hồng Dương', Type.xa),
     ]),
     Level2(0, '279', 'Huyện Thường Tín', Type.huyen, [
-      Level3(0, 26, '10183', 'Thị trấn Thường Tín', Type.thi_tran),
+      Level3(0, 26, '10183', 'Thị trấn Thường Tín', Type.thiTran),
       Level3(0, 26, '10186', 'Xã Ninh Sở', Type.xa),
       Level3(0, 26, '10189', 'Xã Nhị Khê', Type.xa),
       Level3(0, 26, '10192', 'Xã Duyên Thái', Type.xa),
@@ -559,8 +559,8 @@ const level1s = [
       Level3(0, 26, '10267', 'Xã Minh Cường', Type.xa),
     ]),
     Level2(0, '280', 'Huyện Phú Xuyên', Type.huyen, [
-      Level3(0, 27, '10270', 'Thị trấn Phú Minh', Type.thi_tran),
-      Level3(0, 27, '10273', 'Thị trấn Phú Xuyên', Type.thi_tran),
+      Level3(0, 27, '10270', 'Thị trấn Phú Minh', Type.thiTran),
+      Level3(0, 27, '10273', 'Thị trấn Phú Xuyên', Type.thiTran),
       Level3(0, 27, '10276', 'Xã Hồng Minh', Type.xa),
       Level3(0, 27, '10279', 'Xã Phượng Dực', Type.xa),
       Level3(0, 27, '10282', 'Xã Nam Tiến', Type.xa),
@@ -588,7 +588,7 @@ const level1s = [
       Level3(0, 27, '10351', 'Xã Minh Tân', Type.xa),
     ]),
     Level2(0, '281', 'Huyện Ứng Hòa', Type.huyen, [
-      Level3(0, 28, '10354', 'Thị trấn Vân Đình', Type.thi_tran),
+      Level3(0, 28, '10354', 'Thị trấn Vân Đình', Type.thiTran),
       Level3(0, 28, '10357', 'Xã Viên An', Type.xa),
       Level3(0, 28, '10360', 'Xã Viên Nội', Type.xa),
       Level3(0, 28, '10363', 'Xã Hoa Sơn', Type.xa),
@@ -619,7 +619,7 @@ const level1s = [
       Level3(0, 28, '10438', 'Xã Hồng Quang', Type.xa),
     ]),
     Level2(0, '282', 'Huyện Mỹ Đức', Type.huyen, [
-      Level3(0, 29, '10441', 'Thị trấn Đại Nghĩa', Type.thi_tran),
+      Level3(0, 29, '10441', 'Thị trấn Đại Nghĩa', Type.thiTran),
       Level3(0, 29, '10444', 'Xã Đồng Tâm', Type.xa),
       Level3(0, 29, '10447', 'Xã Thượng Lâm', Type.xa),
       Level3(0, 29, '10450', 'Xã Tuy Lai', Type.xa),
@@ -655,10 +655,10 @@ const level1s = [
       Level3(1, 0, '00949', 'Xã Phương Thiện', Type.xa),
     ]),
     Level2(1, '026', 'Huyện Đồng Văn', Type.huyen, [
-      Level3(1, 1, '00712', 'Thị trấn Phó Bảng', Type.thi_tran),
+      Level3(1, 1, '00712', 'Thị trấn Phó Bảng', Type.thiTran),
       Level3(1, 1, '00715', 'Xã Lũng Cú', Type.xa),
       Level3(1, 1, '00718', 'Xã Má Lé', Type.xa),
-      Level3(1, 1, '00721', 'Thị trấn Đồng Văn', Type.thi_tran),
+      Level3(1, 1, '00721', 'Thị trấn Đồng Văn', Type.thiTran),
       Level3(1, 1, '00724', 'Xã Lũng Táo', Type.xa),
       Level3(1, 1, '00727', 'Xã Phố Là', Type.xa),
       Level3(1, 1, '00730', 'Xã Thài Phìn Tủng', Type.xa),
@@ -676,7 +676,7 @@ const level1s = [
       Level3(1, 1, '00766', 'Xã Sủng Trái', Type.xa),
     ]),
     Level2(1, '027', 'Huyện Mèo Vạc', Type.huyen, [
-      Level3(1, 2, '00769', 'Thị trấn Mèo Vạc', Type.thi_tran),
+      Level3(1, 2, '00769', 'Thị trấn Mèo Vạc', Type.thiTran),
       Level3(1, 2, '00772', 'Xã Thượng Phùng', Type.xa),
       Level3(1, 2, '00775', 'Xã Pải Lủng', Type.xa),
       Level3(1, 2, '00778', 'Xã Xín Cái', Type.xa),
@@ -696,7 +696,7 @@ const level1s = [
       Level3(1, 2, '00817', 'Xã Niêm Sơn', Type.xa),
     ]),
     Level2(1, '028', 'Huyện Yên Minh', Type.huyen, [
-      Level3(1, 3, '00820', 'Thị trấn Yên Minh', Type.thi_tran),
+      Level3(1, 3, '00820', 'Thị trấn Yên Minh', Type.thiTran),
       Level3(1, 3, '00823', 'Xã Thắng Mố', Type.xa),
       Level3(1, 3, '00826', 'Xã Phú Lũng', Type.xa),
       Level3(1, 3, '00829', 'Xã Sủng Tráng', Type.xa),
@@ -716,7 +716,7 @@ const level1s = [
       Level3(1, 3, '00871', 'Xã Du Già', Type.xa),
     ]),
     Level2(1, '029', 'Huyện Quản Bạ', Type.huyen, [
-      Level3(1, 4, '00874', 'Thị trấn Tam Sơn', Type.thi_tran),
+      Level3(1, 4, '00874', 'Thị trấn Tam Sơn', Type.thiTran),
       Level3(1, 4, '00877', 'Xã Bát Đại Sơn', Type.xa),
       Level3(1, 4, '00880', 'Xã Nghĩa Thuận', Type.xa),
       Level3(1, 4, '00883', 'Xã Cán Tỷ', Type.xa),
@@ -734,8 +734,8 @@ const level1s = [
       Level3(1, 5, '00703', 'Xã Kim Thạch', Type.xa),
       Level3(1, 5, '00706', 'Xã Phú Linh', Type.xa),
       Level3(1, 5, '00709', 'Xã Kim Linh', Type.xa),
-      Level3(1, 5, '00913', 'Thị trấn Vị Xuyên', Type.thi_tran),
-      Level3(1, 5, '00916', 'Thị trấn Nông Trường Việt Lâm', Type.thi_tran),
+      Level3(1, 5, '00913', 'Thị trấn Vị Xuyên', Type.thiTran),
+      Level3(1, 5, '00916', 'Thị trấn Nông Trường Việt Lâm', Type.thiTran),
       Level3(1, 5, '00919', 'Xã Minh Tân', Type.xa),
       Level3(1, 5, '00922', 'Xã Thuận Hoà', Type.xa),
       Level3(1, 5, '00925', 'Xã Tùng Bá', Type.xa),
@@ -760,7 +760,7 @@ const level1s = [
       Level3(1, 6, '00982', 'Xã Minh Sơn', Type.xa),
       Level3(1, 6, '00985', 'Xã Giáp Trung', Type.xa),
       Level3(1, 6, '00988', 'Xã Yên Định', Type.xa),
-      Level3(1, 6, '00991', 'Thị trấn Yên Phú', Type.thi_tran),
+      Level3(1, 6, '00991', 'Thị trấn Yên Phú', Type.thiTran),
       Level3(1, 6, '00994', 'Xã Minh Ngọc', Type.xa),
       Level3(1, 6, '00997', 'Xã Yên Phong', Type.xa),
       Level3(1, 6, '01000', 'Xã Lạc Nông', Type.xa),
@@ -772,7 +772,7 @@ const level1s = [
       Level3(1, 6, '01018', 'Xã Phiêng Luông', Type.xa),
     ]),
     Level2(1, '032', 'Huyện Hoàng Su Phì', Type.huyen, [
-      Level3(1, 7, '01021', 'Thị trấn Vinh Quang', Type.thi_tran),
+      Level3(1, 7, '01021', 'Thị trấn Vinh Quang', Type.thiTran),
       Level3(1, 7, '01024', 'Xã Bản Máy', Type.xa),
       Level3(1, 7, '01027', 'Xã Thàng Tín', Type.xa),
       Level3(1, 7, '01030', 'Xã Thèn Chu Phìn', Type.xa),
@@ -798,7 +798,7 @@ const level1s = [
       Level3(1, 7, '01093', 'Xã Nậm Khòa', Type.xa),
     ]),
     Level2(1, '033', 'Huyện Xín Mần', Type.huyen, [
-      Level3(1, 8, '01096', 'Thị trấn Cốc Pài', Type.thi_tran),
+      Level3(1, 8, '01096', 'Thị trấn Cốc Pài', Type.thiTran),
       Level3(1, 8, '01099', 'Xã Nàn Xỉn', Type.xa),
       Level3(1, 8, '01102', 'Xã Bản Díu', Type.xa),
       Level3(1, 8, '01105', 'Xã Chí Cà', Type.xa),
@@ -818,8 +818,8 @@ const level1s = [
       Level3(1, 8, '01150', 'Xã Khuôn Lùng', Type.xa),
     ]),
     Level2(1, '034', 'Huyện Bắc Quang', Type.huyen, [
-      Level3(1, 9, '01153', 'Thị trấn Việt Quang', Type.thi_tran),
-      Level3(1, 9, '01156', 'Thị trấn Vĩnh Tuy', Type.thi_tran),
+      Level3(1, 9, '01153', 'Thị trấn Việt Quang', Type.thiTran),
+      Level3(1, 9, '01156', 'Thị trấn Vĩnh Tuy', Type.thiTran),
       Level3(1, 9, '01159', 'Xã Tân Lập', Type.xa),
       Level3(1, 9, '01162', 'Xã Tân Thành', Type.xa),
       Level3(1, 9, '01165', 'Xã Đồng Tiến', Type.xa),
@@ -848,7 +848,7 @@ const level1s = [
       Level3(1, 10, '01228', 'Xã Tân Nam', Type.xa),
       Level3(1, 10, '01231', 'Xã Bản Rịa', Type.xa),
       Level3(1, 10, '01234', 'Xã Yên Thành', Type.xa),
-      Level3(1, 10, '01237', 'Thị trấn Yên Bình', Type.thi_tran),
+      Level3(1, 10, '01237', 'Thị trấn Yên Bình', Type.thiTran),
       Level3(1, 10, '01240', 'Xã Tân Trịnh', Type.xa),
       Level3(1, 10, '01243', 'Xã Tân Bắc', Type.xa),
       Level3(1, 10, '01246', 'Xã Bằng Lang', Type.xa),
@@ -875,7 +875,7 @@ const level1s = [
       Level3(2, 0, '01720', 'Xã Chu Trinh', Type.xa),
     ]),
     Level2(2, '042', 'Huyện Bảo Lâm', Type.huyen, [
-      Level3(2, 1, '01290', 'Thị trấn Pác Miầu', Type.thi_tran),
+      Level3(2, 1, '01290', 'Thị trấn Pác Miầu', Type.thiTran),
       Level3(2, 1, '01291', 'Xã Đức Hạnh', Type.xa),
       Level3(2, 1, '01294', 'Xã Lý Bôn', Type.xa),
       Level3(2, 1, '01296', 'Xã Nam Cao', Type.xa),
@@ -890,7 +890,7 @@ const level1s = [
       Level3(2, 1, '01318', 'Xã Yên Thổ', Type.xa),
     ]),
     Level2(2, '043', 'Huyện Bảo Lạc', Type.huyen, [
-      Level3(2, 2, '01321', 'Thị trấn Bảo Lạc', Type.thi_tran),
+      Level3(2, 2, '01321', 'Thị trấn Bảo Lạc', Type.thiTran),
       Level3(2, 2, '01324', 'Xã Cốc Pàng', Type.xa),
       Level3(2, 2, '01327', 'Xã Thượng Hà', Type.xa),
       Level3(2, 2, '01330', 'Xã Cô Ba', Type.xa),
@@ -909,7 +909,7 @@ const level1s = [
       Level3(2, 2, '01360', 'Xã Sơn Lộ', Type.xa),
     ]),
     Level2(2, '045', 'Huyện Hà Quảng', Type.huyen, [
-      Level3(2, 3, '01363', 'Thị trấn Thông Nông', Type.thi_tran),
+      Level3(2, 3, '01363', 'Thị trấn Thông Nông', Type.thiTran),
       Level3(2, 3, '01366', 'Xã Cần Yên', Type.xa),
       Level3(2, 3, '01367', 'Xã Cần Nông', Type.xa),
       Level3(2, 3, '01372', 'Xã Lương Thông', Type.xa),
@@ -918,7 +918,7 @@ const level1s = [
       Level3(2, 3, '01381', 'Xã Yên Sơn', Type.xa),
       Level3(2, 3, '01384', 'Xã Lương Can', Type.xa),
       Level3(2, 3, '01387', 'Xã Thanh Long', Type.xa),
-      Level3(2, 3, '01392', 'Thị trấn Xuân Hòa', Type.thi_tran),
+      Level3(2, 3, '01392', 'Thị trấn Xuân Hòa', Type.thiTran),
       Level3(2, 3, '01393', 'Xã Lũng Nặm', Type.xa),
       Level3(2, 3, '01399', 'Xã Trường Hà', Type.xa),
       Level3(2, 3, '01402', 'Xã Cải Viên', Type.xa),
@@ -932,14 +932,14 @@ const level1s = [
       Level3(2, 3, '01438', 'Xã Ngọc Đào', Type.xa),
     ]),
     Level2(2, '047', 'Huyện Trùng Khánh', Type.huyen, [
-      Level3(2, 4, '01447', 'Thị trấn Trà Lĩnh', Type.thi_tran),
+      Level3(2, 4, '01447', 'Thị trấn Trà Lĩnh', Type.thiTran),
       Level3(2, 4, '01453', 'Xã Tri Phương', Type.xa),
       Level3(2, 4, '01456', 'Xã Quang Hán', Type.xa),
       Level3(2, 4, '01462', 'Xã Xuân Nội', Type.xa),
       Level3(2, 4, '01465', 'Xã Quang Trung', Type.xa),
       Level3(2, 4, '01468', 'Xã Quang Vinh', Type.xa),
       Level3(2, 4, '01471', 'Xã Cao Chương', Type.xa),
-      Level3(2, 4, '01477', 'Thị trấn Trùng Khánh', Type.thi_tran),
+      Level3(2, 4, '01477', 'Thị trấn Trùng Khánh', Type.thiTran),
       Level3(2, 4, '01480', 'Xã Ngọc Khê', Type.xa),
       Level3(2, 4, '01481', 'Xã Ngọc Côn', Type.xa),
       Level3(2, 4, '01483', 'Xã Phong Nậm', Type.xa),
@@ -963,7 +963,7 @@ const level1s = [
       Level3(2, 5, '01549', 'Xã Kim Loan', Type.xa),
       Level3(2, 5, '01552', 'Xã Quang Long', Type.xa),
       Level3(2, 5, '01555', 'Xã An Lạc', Type.xa),
-      Level3(2, 5, '01558', 'Thị trấn Thanh Nhật', Type.thi_tran),
+      Level3(2, 5, '01558', 'Thị trấn Thanh Nhật', Type.thiTran),
       Level3(2, 5, '01561', 'Xã Vinh Quý', Type.xa),
       Level3(2, 5, '01564', 'Xã Thống Nhất', Type.xa),
       Level3(2, 5, '01567', 'Xã Cô Ngân', Type.xa),
@@ -971,7 +971,7 @@ const level1s = [
     ]),
     Level2(2, '049', 'Huyện Quảng Hòa', Type.huyen, [
       Level3(2, 6, '01474', 'Xã Quốc Toản', Type.xa),
-      Level3(2, 6, '01576', 'Thị trấn Quảng Uyên', Type.thi_tran),
+      Level3(2, 6, '01576', 'Thị trấn Quảng Uyên', Type.thiTran),
       Level3(2, 6, '01579', 'Xã Phi Hải', Type.xa),
       Level3(2, 6, '01582', 'Xã Quảng Hưng', Type.xa),
       Level3(2, 6, '01594', 'Xã Độc Lập', Type.xa),
@@ -982,16 +982,16 @@ const level1s = [
       Level3(2, 6, '01615', 'Xã Hồng Quang', Type.xa),
       Level3(2, 6, '01618', 'Xã Ngọc Động', Type.xa),
       Level3(2, 6, '01624', 'Xã Hạnh Phúc', Type.xa),
-      Level3(2, 6, '01627', 'Thị trấn Tà Lùng', Type.thi_tran),
+      Level3(2, 6, '01627', 'Thị trấn Tà Lùng', Type.thiTran),
       Level3(2, 6, '01630', 'Xã Bế Văn Đàn', Type.xa),
       Level3(2, 6, '01636', 'Xã Cách Linh', Type.xa),
       Level3(2, 6, '01639', 'Xã Đại Sơn', Type.xa),
       Level3(2, 6, '01645', 'Xã Tiên Thành', Type.xa),
-      Level3(2, 6, '01648', 'Thị trấn Hoà Thuận', Type.thi_tran),
+      Level3(2, 6, '01648', 'Thị trấn Hoà Thuận', Type.thiTran),
       Level3(2, 6, '01651', 'Xã Mỹ Hưng', Type.xa),
     ]),
     Level2(2, '051', 'Huyện Hoà An', Type.huyen, [
-      Level3(2, 7, '01654', 'Thị trấn Nước Hai', Type.thi_tran),
+      Level3(2, 7, '01654', 'Thị trấn Nước Hai', Type.thiTran),
       Level3(2, 7, '01657', 'Xã Dân Chủ', Type.xa),
       Level3(2, 7, '01660', 'Xã Nam Tuấn', Type.xa),
       Level3(2, 7, '01666', 'Xã Đại Tiến', Type.xa),
@@ -1008,8 +1008,8 @@ const level1s = [
       Level3(2, 7, '01723', 'Xã Hồng Nam', Type.xa),
     ]),
     Level2(2, '052', 'Huyện Nguyên Bình', Type.huyen, [
-      Level3(2, 8, '01726', 'Thị trấn Nguyên Bình', Type.thi_tran),
-      Level3(2, 8, '01729', 'Thị trấn Tĩnh Túc', Type.thi_tran),
+      Level3(2, 8, '01726', 'Thị trấn Nguyên Bình', Type.thiTran),
+      Level3(2, 8, '01729', 'Thị trấn Tĩnh Túc', Type.thiTran),
       Level3(2, 8, '01732', 'Xã Yên Lạc', Type.xa),
       Level3(2, 8, '01735', 'Xã Triệu Nguyên', Type.xa),
       Level3(2, 8, '01738', 'Xã Ca Thành', Type.xa),
@@ -1027,7 +1027,7 @@ const level1s = [
       Level3(2, 8, '01783', 'Xã Hưng Đạo', Type.xa),
     ]),
     Level2(2, '053', 'Huyện Thạch An', Type.huyen, [
-      Level3(2, 9, '01786', 'Thị trấn Đông Khê', Type.thi_tran),
+      Level3(2, 9, '01786', 'Thị trấn Đông Khê', Type.thiTran),
       Level3(2, 9, '01789', 'Xã Canh Tân', Type.xa),
       Level3(2, 9, '01792', 'Xã Kim Đồng', Type.xa),
       Level3(2, 9, '01795', 'Xã Minh Khai', Type.xa),
@@ -1067,7 +1067,7 @@ const level1s = [
       Level3(3, 1, '01885', 'Xã Cao Tân', Type.xa),
     ]),
     Level2(3, '061', 'Huyện Ba Bể', Type.huyen, [
-      Level3(3, 2, '01888', 'Thị trấn Chợ Rã', Type.thi_tran),
+      Level3(3, 2, '01888', 'Thị trấn Chợ Rã', Type.thiTran),
       Level3(3, 2, '01891', 'Xã Bành Trạch', Type.xa),
       Level3(3, 2, '01894', 'Xã Phúc Lộc', Type.xa),
       Level3(3, 2, '01897', 'Xã Hà Hiệu', Type.xa),
@@ -1084,7 +1084,7 @@ const level1s = [
       Level3(3, 2, '01933', 'Xã Đồng Phúc', Type.xa),
     ]),
     Level2(3, '062', 'Huyện Ngân Sơn', Type.huyen, [
-      Level3(3, 3, '01936', 'Thị trấn Nà Phặc', Type.thi_tran),
+      Level3(3, 3, '01936', 'Thị trấn Nà Phặc', Type.thiTran),
       Level3(3, 3, '01939', 'Xã Thượng Ân', Type.xa),
       Level3(3, 3, '01942', 'Xã Bằng Vân', Type.xa),
       Level3(3, 3, '01945', 'Xã Cốc Đán', Type.xa),
@@ -1096,7 +1096,7 @@ const level1s = [
       Level3(3, 3, '01963', 'Xã Thuần Mang', Type.xa),
     ]),
     Level2(3, '063', 'Huyện Bạch Thông', Type.huyen, [
-      Level3(3, 4, '01969', 'Thị trấn Phủ Thông', Type.thi_tran),
+      Level3(3, 4, '01969', 'Thị trấn Phủ Thông', Type.thiTran),
       Level3(3, 4, '01975', 'Xã Vi Hương', Type.xa),
       Level3(3, 4, '01978', 'Xã Sĩ Bình', Type.xa),
       Level3(3, 4, '01981', 'Xã Vũ Muộn', Type.xa),
@@ -1112,7 +1112,7 @@ const level1s = [
       Level3(3, 4, '02017', 'Xã Quang Thuận', Type.xa),
     ]),
     Level2(3, '064', 'Huyện Chợ Đồn', Type.huyen, [
-      Level3(3, 5, '02020', 'Thị trấn Bằng Lũng', Type.thi_tran),
+      Level3(3, 5, '02020', 'Thị trấn Bằng Lũng', Type.thiTran),
       Level3(3, 5, '02023', 'Xã Xuân Lạc', Type.xa),
       Level3(3, 5, '02026', 'Xã Nam Cường', Type.xa),
       Level3(3, 5, '02029', 'Xã Đồng Lạc', Type.xa),
@@ -1134,7 +1134,7 @@ const level1s = [
       Level3(3, 5, '02083', 'Xã Yên Phong', Type.xa),
     ]),
     Level2(3, '065', 'Huyện Chợ Mới', Type.huyen, [
-      Level3(3, 6, '02086', 'Thị trấn Đồng Tâm', Type.thi_tran),
+      Level3(3, 6, '02086', 'Thị trấn Đồng Tâm', Type.thiTran),
       Level3(3, 6, '02089', 'Xã Tân Sơn', Type.xa),
       Level3(3, 6, '02092', 'Xã Thanh Vận', Type.xa),
       Level3(3, 6, '02095', 'Xã Mai Lạp', Type.xa),
@@ -1155,7 +1155,7 @@ const level1s = [
       Level3(3, 7, '02143', 'Xã Lương Thượng', Type.xa),
       Level3(3, 7, '02146', 'Xã Kim Hỷ', Type.xa),
       Level3(3, 7, '02152', 'Xã Cường Lợi', Type.xa),
-      Level3(3, 7, '02155', 'Thị trấn Yến Lạc', Type.thi_tran),
+      Level3(3, 7, '02155', 'Thị trấn Yến Lạc', Type.thiTran),
       Level3(3, 7, '02158', 'Xã Kim Lư', Type.xa),
       Level3(3, 7, '02161', 'Xã Sơn Thành', Type.xa),
       Level3(3, 7, '02170', 'Xã Văn Minh', Type.xa),
@@ -1191,7 +1191,7 @@ const level1s = [
       Level3(4, 1, '02233', 'Xã Phúc Yên', Type.xa),
       Level3(4, 1, '02242', 'Xã Xuân Lập', Type.xa),
       Level3(4, 1, '02251', 'Xã Khuôn Hà', Type.xa),
-      Level3(4, 1, '02266', 'Thị trấn Lăng Can', Type.thi_tran),
+      Level3(4, 1, '02266', 'Thị trấn Lăng Can', Type.thiTran),
       Level3(4, 1, '02269', 'Xã Thượng Lâm', Type.xa),
       Level3(4, 1, '02290', 'Xã Bình An', Type.xa),
       Level3(4, 1, '02293', 'Xã Hồng Quang', Type.xa),
@@ -1200,7 +1200,7 @@ const level1s = [
       Level3(4, 1, '02302', 'Xã Minh Quang', Type.xa),
     ]),
     Level2(4, '072', 'Huyện Na Hang', Type.huyen, [
-      Level3(4, 2, '02221', 'Thị trấn Na Hang', Type.thi_tran),
+      Level3(4, 2, '02221', 'Thị trấn Na Hang', Type.thiTran),
       Level3(4, 2, '02227', 'Xã Sinh Long', Type.xa),
       Level3(4, 2, '02230', 'Xã Thượng Giáp', Type.xa),
       Level3(4, 2, '02239', 'Xã Thượng Nông', Type.xa),
@@ -1214,7 +1214,7 @@ const level1s = [
       Level3(4, 2, '02284', 'Xã Thanh Tương', Type.xa),
     ]),
     Level2(4, '073', 'Huyện Chiêm Hóa', Type.huyen, [
-      Level3(4, 3, '02287', 'Thị trấn Vĩnh Lộc', Type.thi_tran),
+      Level3(4, 3, '02287', 'Thị trấn Vĩnh Lộc', Type.thiTran),
       Level3(4, 3, '02305', 'Xã Trung Hà', Type.xa),
       Level3(4, 3, '02308', 'Xã Tân Mỹ', Type.xa),
       Level3(4, 3, '02311', 'Xã Hà Lang', Type.xa),
@@ -1240,7 +1240,7 @@ const level1s = [
       Level3(4, 3, '02371', 'Xã Bình Nhân', Type.xa),
     ]),
     Level2(4, '074', 'Huyện Hàm Yên', Type.huyen, [
-      Level3(4, 4, '02374', 'Thị trấn Tân Yên', Type.thi_tran),
+      Level3(4, 4, '02374', 'Thị trấn Tân Yên', Type.thiTran),
       Level3(4, 4, '02377', 'Xã Yên Thuận', Type.xa),
       Level3(4, 4, '02380', 'Xã Bạch Xa', Type.xa),
       Level3(4, 4, '02383', 'Xã Minh Khương', Type.xa),
@@ -1274,7 +1274,7 @@ const level1s = [
       Level3(4, 5, '02464', 'Xã Tứ Quận', Type.xa),
       Level3(4, 5, '02467', 'Xã Đạo Viện', Type.xa),
       Level3(4, 5, '02470', 'Xã Tân Long', Type.xa),
-      Level3(4, 5, '02473', 'Thị trấn Yên Sơn', Type.thi_tran),
+      Level3(4, 5, '02473', 'Thị trấn Yên Sơn', Type.thiTran),
       Level3(4, 5, '02476', 'Xã Kim Quan', Type.xa),
       Level3(4, 5, '02479', 'Xã Lang Quán', Type.xa),
       Level3(4, 5, '02482', 'Xã Phú Thịnh', Type.xa),
@@ -1290,7 +1290,7 @@ const level1s = [
       Level3(4, 5, '02533', 'Xã Đội Bình', Type.xa),
     ]),
     Level2(4, '076', 'Huyện Sơn Dương', Type.huyen, [
-      Level3(4, 6, '02536', 'Thị trấn Sơn Dương', Type.thi_tran),
+      Level3(4, 6, '02536', 'Thị trấn Sơn Dương', Type.thiTran),
       Level3(4, 6, '02539', 'Xã Trung Yên', Type.xa),
       Level3(4, 6, '02542', 'Xã Minh Thanh', Type.xa),
       Level3(4, 6, '02545', 'Xã Tân Trào', Type.xa),
@@ -1344,7 +1344,7 @@ const level1s = [
       Level3(5, 0, '02746', 'Xã Cốc San', Type.xa),
     ]),
     Level2(5, '082', 'Huyện Bát Xát', Type.huyen, [
-      Level3(5, 1, '02683', 'Thị trấn Bát Xát', Type.thi_tran),
+      Level3(5, 1, '02683', 'Thị trấn Bát Xát', Type.thiTran),
       Level3(5, 1, '02686', 'Xã A Mú Sung', Type.xa),
       Level3(5, 1, '02689', 'Xã Nậm Chạc', Type.xa),
       Level3(5, 1, '02692', 'Xã A Lù', Type.xa),
@@ -1370,7 +1370,7 @@ const level1s = [
       Level3(5, 2, '02752', 'Xã Pha Long', Type.xa),
       Level3(5, 2, '02755', 'Xã Tả Ngải Chồ', Type.xa),
       Level3(5, 2, '02758', 'Xã Tung Chung Phố', Type.xa),
-      Level3(5, 2, '02761', 'Thị trấn Mường Khương', Type.thi_tran),
+      Level3(5, 2, '02761', 'Thị trấn Mường Khương', Type.thiTran),
       Level3(5, 2, '02764', 'Xã Dìn Chin', Type.xa),
       Level3(5, 2, '02767', 'Xã Tả Gia Khâu', Type.xa),
       Level3(5, 2, '02770', 'Xã Nậm Chảy', Type.xa),
@@ -1388,7 +1388,7 @@ const level1s = [
       Level3(5, 3, '02800', 'Xã Nàn Sán', Type.xa),
       Level3(5, 3, '02803', 'Xã Thào Chư Phìn', Type.xa),
       Level3(5, 3, '02806', 'Xã Bản Mế', Type.xa),
-      Level3(5, 3, '02809', 'Thị trấn Si Ma Cai', Type.thi_tran),
+      Level3(5, 3, '02809', 'Thị trấn Si Ma Cai', Type.thiTran),
       Level3(5, 3, '02812', 'Xã Sán Chải', Type.xa),
       Level3(5, 3, '02818', 'Xã Lùng Thẩn', Type.xa),
       Level3(5, 3, '02821', 'Xã Cán Cấu', Type.xa),
@@ -1397,7 +1397,7 @@ const level1s = [
       Level3(5, 3, '02836', 'Xã Nàn Xín', Type.xa),
     ]),
     Level2(5, '085', 'Huyện Bắc Hà', Type.huyen, [
-      Level3(5, 4, '02839', 'Thị trấn Bắc Hà', Type.thi_tran),
+      Level3(5, 4, '02839', 'Thị trấn Bắc Hà', Type.thiTran),
       Level3(5, 4, '02842', 'Xã Lùng Cải', Type.xa),
       Level3(5, 4, '02848', 'Xã Lùng Phình', Type.xa),
       Level3(5, 4, '02851', 'Xã Tả Van Chư', Type.xa),
@@ -1418,9 +1418,9 @@ const level1s = [
       Level3(5, 4, '02899', 'Xã Bản Cái', Type.xa),
     ]),
     Level2(5, '086', 'Huyện Bảo Thắng', Type.huyen, [
-      Level3(5, 5, '02902', 'Thị trấn N.T Phong Hải', Type.thi_tran),
-      Level3(5, 5, '02905', 'Thị trấn Phố Lu', Type.thi_tran),
-      Level3(5, 5, '02908', 'Thị trấn Tằng Loỏng', Type.thi_tran),
+      Level3(5, 5, '02902', 'Thị trấn N.T Phong Hải', Type.thiTran),
+      Level3(5, 5, '02905', 'Thị trấn Phố Lu', Type.thiTran),
+      Level3(5, 5, '02908', 'Thị trấn Tằng Loỏng', Type.thiTran),
       Level3(5, 5, '02911', 'Xã Bản Phiệt', Type.xa),
       Level3(5, 5, '02914', 'Xã Bản Cầm', Type.xa),
       Level3(5, 5, '02917', 'Xã Thái Niên', Type.xa),
@@ -1434,7 +1434,7 @@ const level1s = [
       Level3(5, 5, '02944', 'Xã Phú Nhuận', Type.xa),
     ]),
     Level2(5, '087', 'Huyện Bảo Yên', Type.huyen, [
-      Level3(5, 6, '02947', 'Thị trấn Phố Ràng', Type.thi_tran),
+      Level3(5, 6, '02947', 'Thị trấn Phố Ràng', Type.thiTran),
       Level3(5, 6, '02950', 'Xã Tân Tiến', Type.xa),
       Level3(5, 6, '02953', 'Xã Nghĩa Đô', Type.xa),
       Level3(5, 6, '02956', 'Xã Vĩnh Yên', Type.xa),
@@ -1452,7 +1452,7 @@ const level1s = [
       Level3(5, 6, '02992', 'Xã Lương Sơn', Type.xa),
       Level3(5, 6, '02998', 'Xã Phúc Khánh', Type.xa),
     ]),
-    Level2(5, '088', 'Thị xã Sa Pa', Type.thi_xa, [
+    Level2(5, '088', 'Thị xã Sa Pa', Type.thiXa, [
       Level3(5, 7, '03001', 'Phường Sa Pa', Type.phuong),
       Level3(5, 7, '03002', 'Phường Sa Pả', Type.phuong),
       Level3(5, 7, '03003', 'Phường Ô Quý Hồ', Type.phuong),
@@ -1471,7 +1471,7 @@ const level1s = [
       Level3(5, 7, '03052', 'Xã Liên Minh', Type.xa),
     ]),
     Level2(5, '089', 'Huyện Văn Bàn', Type.huyen, [
-      Level3(5, 8, '03055', 'Thị trấn Khánh Yên', Type.thi_tran),
+      Level3(5, 8, '03055', 'Thị trấn Khánh Yên', Type.thiTran),
       Level3(5, 8, '03061', 'Xã Võ Lao', Type.xa),
       Level3(5, 8, '03064', 'Xã Sơn Thuỷ', Type.xa),
       Level3(5, 8, '03067', 'Xã Nậm Mả', Type.xa),
@@ -1510,7 +1510,7 @@ const level1s = [
       Level3(6, 0, '03325', 'Xã Mường Phăng', Type.xa),
       Level3(6, 0, '03326', 'Xã Pá Khoang', Type.xa),
     ]),
-    Level2(6, '095', 'Thị Xã Mường Lay', Type.thi_xa, [
+    Level2(6, '095', 'Thị Xã Mường Lay', Type.thiXa, [
       Level3(6, 1, '03148', 'Phường Sông Đà', Type.phuong),
       Level3(6, 1, '03151', 'Phường Na Lay', Type.phuong),
       Level3(6, 1, '03184', 'Xã Lay Nưa', Type.xa),
@@ -1529,7 +1529,7 @@ const level1s = [
       Level3(6, 2, '03177', 'Xã Huổi Lếnh', Type.xa),
     ]),
     Level2(6, '097', 'Huyện Mường Chà', Type.huyen, [
-      Level3(6, 3, '03172', 'Thị Trấn Mường Chà', Type.thi_tran),
+      Level3(6, 3, '03172', 'Thị Trấn Mường Chà', Type.thiTran),
       Level3(6, 3, '03178', 'Xã Xá Tổng', Type.xa),
       Level3(6, 3, '03181', 'Xã Mường Tùng', Type.xa),
       Level3(6, 3, '03190', 'Xã Hừa Ngài', Type.xa),
@@ -1543,7 +1543,7 @@ const level1s = [
       Level3(6, 3, '03202', 'Xã Mường Mươn', Type.xa),
     ]),
     Level2(6, '098', 'Huyện Tủa Chùa', Type.huyen, [
-      Level3(6, 4, '03217', 'Thị trấn Tủa Chùa', Type.thi_tran),
+      Level3(6, 4, '03217', 'Thị trấn Tủa Chùa', Type.thiTran),
       Level3(6, 4, '03220', 'Xã Huổi Só', Type.xa),
       Level3(6, 4, '03223', 'Xã Xín Chải', Type.xa),
       Level3(6, 4, '03226', 'Xã Tả Sìn Thàng', Type.xa),
@@ -1557,7 +1557,7 @@ const level1s = [
       Level3(6, 4, '03250', 'Xã Mường Báng', Type.xa),
     ]),
     Level2(6, '099', 'Huyện Tuần Giáo', Type.huyen, [
-      Level3(6, 5, '03253', 'Thị trấn Tuần Giáo', Type.thi_tran),
+      Level3(6, 5, '03253', 'Thị trấn Tuần Giáo', Type.thiTran),
       Level3(6, 5, '03259', 'Xã Phình Sáng', Type.xa),
       Level3(6, 5, '03260', 'Xã Rạng Đông', Type.xa),
       Level3(6, 5, '03262', 'Xã Mùn Chung', Type.xa),
@@ -1601,7 +1601,7 @@ const level1s = [
       Level3(6, 6, '03368', 'Xã Phu Luông', Type.xa),
     ]),
     Level2(6, '101', 'Huyện Điện Biên Đông', Type.huyen, [
-      Level3(6, 7, '03203', 'Thị trấn Điện Biên Đông', Type.thi_tran),
+      Level3(6, 7, '03203', 'Thị trấn Điện Biên Đông', Type.thiTran),
       Level3(6, 7, '03205', 'Xã Na Son', Type.xa),
       Level3(6, 7, '03208', 'Xã Phì Nhừ', Type.xa),
       Level3(6, 7, '03211', 'Xã Chiềng Sơ', Type.xa),
@@ -1617,7 +1617,7 @@ const level1s = [
       Level3(6, 7, '03385', 'Xã Háng Lìa', Type.xa),
     ]),
     Level2(6, '102', 'Huyện Mường Ảng', Type.huyen, [
-      Level3(6, 8, '03256', 'Thị trấn Mường Ảng', Type.thi_tran),
+      Level3(6, 8, '03256', 'Thị trấn Mường Ảng', Type.thiTran),
       Level3(6, 8, '03286', 'Xã Mường Đăng', Type.xa),
       Level3(6, 8, '03287', 'Xã Ngối Cáy', Type.xa),
       Level3(6, 8, '03292', 'Xã Ẳng Tở', Type.xa),
@@ -1657,7 +1657,7 @@ const level1s = [
       Level3(7, 0, '03409', 'Xã San Thàng', Type.xa),
     ]),
     Level2(7, '106', 'Huyện Tam Đường', Type.huyen, [
-      Level3(7, 1, '03390', 'Thị trấn Tam Đường', Type.thi_tran),
+      Level3(7, 1, '03390', 'Thị trấn Tam Đường', Type.thiTran),
       Level3(7, 1, '03394', 'Xã Thèn Sin', Type.xa),
       Level3(7, 1, '03400', 'Xã Tả Lèng', Type.xa),
       Level3(7, 1, '03405', 'Xã Giang Ma', Type.xa),
@@ -1672,7 +1672,7 @@ const level1s = [
       Level3(7, 1, '03430', 'Xã Khun Há', Type.xa),
     ]),
     Level2(7, '107', 'Huyện Mường Tè', Type.huyen, [
-      Level3(7, 2, '03433', 'Thị trấn Mường Tè', Type.thi_tran),
+      Level3(7, 2, '03433', 'Thị trấn Mường Tè', Type.thiTran),
       Level3(7, 2, '03436', 'Xã Thu Lũm', Type.xa),
       Level3(7, 2, '03439', 'Xã Ka Lăng', Type.xa),
       Level3(7, 2, '03440', 'Xã Tá Bạ', Type.xa),
@@ -1688,7 +1688,7 @@ const level1s = [
       Level3(7, 2, '03469', 'Xã Kan Hồ', Type.xa),
     ]),
     Level2(7, '108', 'Huyện Sìn Hồ', Type.huyen, [
-      Level3(7, 3, '03478', 'Thị trấn Sìn Hồ', Type.thi_tran),
+      Level3(7, 3, '03478', 'Thị trấn Sìn Hồ', Type.thiTran),
       Level3(7, 3, '03487', 'Xã Chăn Nưa', Type.xa),
       Level3(7, 3, '03493', 'Xã Pa Tần', Type.xa),
       Level3(7, 3, '03496', 'Xã Phìn Hồ', Type.xa),
@@ -1714,7 +1714,7 @@ const level1s = [
     Level2(7, '109', 'Huyện Phong Thổ', Type.huyen, [
       Level3(7, 4, '03391', 'Xã Lả Nhì Thàng', Type.xa),
       Level3(7, 4, '03490', 'Xã Huổi Luông', Type.xa),
-      Level3(7, 4, '03549', 'Thị trấn Phong Thổ', Type.thi_tran),
+      Level3(7, 4, '03549', 'Thị trấn Phong Thổ', Type.thiTran),
       Level3(7, 4, '03550', 'Xã Sì Lở Lầu', Type.xa),
       Level3(7, 4, '03553', 'Xã Mồ Sì San', Type.xa),
       Level3(7, 4, '03559', 'Xã Pa Vây Sử', Type.xa),
@@ -1731,7 +1731,7 @@ const level1s = [
       Level3(7, 4, '03592', 'Xã Sin Suối Hồ', Type.xa),
     ]),
     Level2(7, '110', 'Huyện Than Uyên', Type.huyen, [
-      Level3(7, 5, '03595', 'Thị trấn Than Uyên', Type.thi_tran),
+      Level3(7, 5, '03595', 'Thị trấn Than Uyên', Type.thiTran),
       Level3(7, 5, '03618', 'Xã Phúc Than', Type.xa),
       Level3(7, 5, '03619', 'Xã Mường Than', Type.xa),
       Level3(7, 5, '03625', 'Xã Mường Mít', Type.xa),
@@ -1745,7 +1745,7 @@ const level1s = [
       Level3(7, 5, '03643', 'Xã Khoen On', Type.xa),
     ]),
     Level2(7, '111', 'Huyện Tân Uyên', Type.huyen, [
-      Level3(7, 6, '03598', 'Thị trấn Tân Uyên', Type.thi_tran),
+      Level3(7, 6, '03598', 'Thị trấn Tân Uyên', Type.thiTran),
       Level3(7, 6, '03601', 'Xã Mường Khoa', Type.xa),
       Level3(7, 6, '03602', 'Xã Phúc Khoa', Type.xa),
       Level3(7, 6, '03604', 'Xã Thân Thuộc', Type.xa),
@@ -1757,7 +1757,7 @@ const level1s = [
       Level3(7, 6, '03622', 'Xã Tà Mít', Type.xa),
     ]),
     Level2(7, '112', 'Huyện Nậm Nhùn', Type.huyen, [
-      Level3(7, 7, '03434', 'Thị trấn Nậm Nhùn', Type.thi_tran),
+      Level3(7, 7, '03434', 'Thị trấn Nậm Nhùn', Type.thiTran),
       Level3(7, 7, '03460', 'Xã Hua Bun', Type.xa),
       Level3(7, 7, '03472', 'Xã Mường Mô', Type.xa),
       Level3(7, 7, '03473', 'Xã Nậm Chà', Type.xa),
@@ -1799,7 +1799,7 @@ const level1s = [
       Level3(8, 1, '03718', 'Xã Chiềng Khoang', Type.xa),
     ]),
     Level2(8, '119', 'Huyện Thuận Châu', Type.huyen, [
-      Level3(8, 2, '03721', 'Thị trấn Thuận Châu', Type.thi_tran),
+      Level3(8, 2, '03721', 'Thị trấn Thuận Châu', Type.thiTran),
       Level3(8, 2, '03724', 'Xã Phổng Lái', Type.xa),
       Level3(8, 2, '03727', 'Xã Mường é', Type.xa),
       Level3(8, 2, '03730', 'Xã Chiềng Pha', Type.xa),
@@ -1830,7 +1830,7 @@ const level1s = [
       Level3(8, 2, '03805', 'Xã Bản Lầm', Type.xa),
     ]),
     Level2(8, '120', 'Huyện Mường La', Type.huyen, [
-      Level3(8, 3, '03808', 'Thị trấn Ít Ong', Type.thi_tran),
+      Level3(8, 3, '03808', 'Thị trấn Ít Ong', Type.thiTran),
       Level3(8, 3, '03811', 'Xã Nậm Giôn', Type.xa),
       Level3(8, 3, '03814', 'Xã Chiềng Lao', Type.xa),
       Level3(8, 3, '03817', 'Xã Hua Trai', Type.xa),
@@ -1848,7 +1848,7 @@ const level1s = [
       Level3(8, 3, '03853', 'Xã Mường Chùm', Type.xa),
     ]),
     Level2(8, '121', 'Huyện Bắc Yên', Type.huyen, [
-      Level3(8, 4, '03856', 'Thị trấn Bắc Yên', Type.thi_tran),
+      Level3(8, 4, '03856', 'Thị trấn Bắc Yên', Type.thiTran),
       Level3(8, 4, '03859', 'Xã Phiêng Ban', Type.xa),
       Level3(8, 4, '03862', 'Xã Hang Chú', Type.xa),
       Level3(8, 4, '03865', 'Xã Xím Vàng', Type.xa),
@@ -1866,7 +1866,7 @@ const level1s = [
       Level3(8, 4, '03895', 'Xã Chiềng Sại', Type.xa),
     ]),
     Level2(8, '122', 'Huyện Phù Yên', Type.huyen, [
-      Level3(8, 5, '03898', 'Thị trấn Phù Yên', Type.thi_tran),
+      Level3(8, 5, '03898', 'Thị trấn Phù Yên', Type.thiTran),
       Level3(8, 5, '03901', 'Xã Suối Tọ', Type.xa),
       Level3(8, 5, '03904', 'Xã Mường Thải', Type.xa),
       Level3(8, 5, '03907', 'Xã Mường Cơi', Type.xa),
@@ -1895,8 +1895,8 @@ const level1s = [
       Level3(8, 5, '03976', 'Xã Bắc Phong', Type.xa),
     ]),
     Level2(8, '123', 'Huyện Mộc Châu', Type.huyen, [
-      Level3(8, 6, '03979', 'Thị trấn Mộc Châu', Type.thi_tran),
-      Level3(8, 6, '03982', 'Thị trấn NT Mộc Châu', Type.thi_tran),
+      Level3(8, 6, '03979', 'Thị trấn Mộc Châu', Type.thiTran),
+      Level3(8, 6, '03982', 'Thị trấn NT Mộc Châu', Type.thiTran),
       Level3(8, 6, '03985', 'Xã Chiềng Sơn', Type.xa),
       Level3(8, 6, '03988', 'Xã Tân Hợp', Type.xa),
       Level3(8, 6, '03991', 'Xã Qui Hướng', Type.xa),
@@ -1912,7 +1912,7 @@ const level1s = [
       Level3(8, 6, '04045', 'Xã Lóng Sập', Type.xa),
     ]),
     Level2(8, '124', 'Huyện Yên Châu', Type.huyen, [
-      Level3(8, 7, '04060', 'Thị trấn Yên Châu', Type.thi_tran),
+      Level3(8, 7, '04060', 'Thị trấn Yên Châu', Type.thiTran),
       Level3(8, 7, '04063', 'Xã Chiềng Đông', Type.xa),
       Level3(8, 7, '04066', 'Xã Sập Vạt', Type.xa),
       Level3(8, 7, '04069', 'Xã Chiềng Sàng', Type.xa),
@@ -1929,7 +1929,7 @@ const level1s = [
       Level3(8, 7, '04102', 'Xã Chiềng Tương', Type.xa),
     ]),
     Level2(8, '125', 'Huyện Mai Sơn', Type.huyen, [
-      Level3(8, 8, '04105', 'Thị trấn Hát Lót', Type.thi_tran),
+      Level3(8, 8, '04105', 'Thị trấn Hát Lót', Type.thiTran),
       Level3(8, 8, '04108', 'Xã Chiềng Sung', Type.xa),
       Level3(8, 8, '04111', 'Xã Mường Bằng', Type.xa),
       Level3(8, 8, '04114', 'Xã Chiềng Chăn', Type.xa),
@@ -1953,7 +1953,7 @@ const level1s = [
       Level3(8, 8, '04165', 'Xã Tà Hộc', Type.xa),
     ]),
     Level2(8, '126', 'Huyện Sông Mã', Type.huyen, [
-      Level3(8, 9, '04168', 'Thị trấn Sông Mã', Type.thi_tran),
+      Level3(8, 9, '04168', 'Thị trấn Sông Mã', Type.thiTran),
       Level3(8, 9, '04171', 'Xã Bó Sinh', Type.xa),
       Level3(8, 9, '04174', 'Xã Pú Pẩu', Type.xa),
       Level3(8, 9, '04177', 'Xã Chiềng Phung', Type.xa),
@@ -2018,7 +2018,7 @@ const level1s = [
       Level3(9, 0, '04546', 'Phường Hợp Minh', Type.phuong),
       Level3(9, 0, '04558', 'Xã Văn Phú', Type.xa),
     ]),
-    Level2(9, '133', 'Thị xã Nghĩa Lộ', Type.thi_xa, [
+    Level2(9, '133', 'Thị xã Nghĩa Lộ', Type.thiXa, [
       Level3(9, 1, '04282', 'Phường Pú Trạng', Type.phuong),
       Level3(9, 1, '04285', 'Phường Trung Tâm', Type.phuong),
       Level3(9, 1, '04288', 'Phường Tân An', Type.phuong),
@@ -2035,7 +2035,7 @@ const level1s = [
       Level3(9, 1, '04684', 'Xã Thạch Lương', Type.xa),
     ]),
     Level2(9, '135', 'Huyện Lục Yên', Type.huyen, [
-      Level3(9, 2, '04303', 'Thị trấn Yên Thế', Type.thi_tran),
+      Level3(9, 2, '04303', 'Thị trấn Yên Thế', Type.thiTran),
       Level3(9, 2, '04306', 'Xã Tân Phượng', Type.xa),
       Level3(9, 2, '04309', 'Xã Lâm Thượng', Type.xa),
       Level3(9, 2, '04312', 'Xã Khánh Thiện', Type.xa),
@@ -2061,7 +2061,7 @@ const level1s = [
       Level3(9, 2, '04372', 'Xã Trung Tâm', Type.xa),
     ]),
     Level2(9, '136', 'Huyện Văn Yên', Type.huyen, [
-      Level3(9, 3, '04375', 'Thị trấn Mậu A', Type.thi_tran),
+      Level3(9, 3, '04375', 'Thị trấn Mậu A', Type.thiTran),
       Level3(9, 3, '04378', 'Xã Lang Thíp', Type.xa),
       Level3(9, 3, '04381', 'Xã Lâm Giang', Type.xa),
       Level3(9, 3, '04384', 'Xã Châu Quế Thượng', Type.xa),
@@ -2088,7 +2088,7 @@ const level1s = [
       Level3(9, 3, '04453', 'Xã Nà Hẩu', Type.xa),
     ]),
     Level2(9, '137', 'Huyện Mù Căng Chải', Type.huyen, [
-      Level3(9, 4, '04456', 'Thị trấn Mù Căng Chải', Type.thi_tran),
+      Level3(9, 4, '04456', 'Thị trấn Mù Căng Chải', Type.thiTran),
       Level3(9, 4, '04459', 'Xã Hồ Bốn', Type.xa),
       Level3(9, 4, '04462', 'Xã Nậm Có', Type.xa),
       Level3(9, 4, '04465', 'Xã Khao Mang', Type.xa),
@@ -2104,7 +2104,7 @@ const level1s = [
       Level3(9, 4, '04495', 'Xã Nậm Khắt', Type.xa),
     ]),
     Level2(9, '138', 'Huyện Trấn Yên', Type.huyen, [
-      Level3(9, 5, '04498', 'Thị trấn Cổ Phúc', Type.thi_tran),
+      Level3(9, 5, '04498', 'Thị trấn Cổ Phúc', Type.thiTran),
       Level3(9, 5, '04501', 'Xã Tân Đồng', Type.xa),
       Level3(9, 5, '04504', 'Xã Báo Đáp', Type.xa),
       Level3(9, 5, '04507', 'Xã Đào Thịnh', Type.xa),
@@ -2127,7 +2127,7 @@ const level1s = [
       Level3(9, 5, '04582', 'Xã Vân Hội', Type.xa),
     ]),
     Level2(9, '139', 'Huyện Trạm Tấu', Type.huyen, [
-      Level3(9, 6, '04585', 'Thị trấn Trạm Tấu', Type.thi_tran),
+      Level3(9, 6, '04585', 'Thị trấn Trạm Tấu', Type.thiTran),
       Level3(9, 6, '04588', 'Xã Túc Đán', Type.xa),
       Level3(9, 6, '04591', 'Xã Pá Lau', Type.xa),
       Level3(9, 6, '04594', 'Xã Xà Hồ', Type.xa),
@@ -2141,8 +2141,8 @@ const level1s = [
       Level3(9, 6, '04618', 'Xã Hát Lìu', Type.xa),
     ]),
     Level2(9, '140', 'Huyện Văn Chấn', Type.huyen, [
-      Level3(9, 7, '04621', 'Thị trấn NT Liên Sơn', Type.thi_tran),
-      Level3(9, 7, '04627', 'Thị trấn NT Trần Phú', Type.thi_tran),
+      Level3(9, 7, '04621', 'Thị trấn NT Liên Sơn', Type.thiTran),
+      Level3(9, 7, '04627', 'Thị trấn NT Trần Phú', Type.thiTran),
       Level3(9, 7, '04630', 'Xã Tú Lệ', Type.xa),
       Level3(9, 7, '04633', 'Xã Nậm Búng', Type.xa),
       Level3(9, 7, '04636', 'Xã Gia Hội', Type.xa),
@@ -2155,7 +2155,7 @@ const level1s = [
       Level3(9, 7, '04657', 'Xã Suối Giàng', Type.xa),
       Level3(9, 7, '04666', 'Xã Nghĩa Sơn', Type.xa),
       Level3(9, 7, '04669', 'Xã Suối Bu', Type.xa),
-      Level3(9, 7, '04672', 'Thị trấn Sơn Thịnh', Type.thi_tran),
+      Level3(9, 7, '04672', 'Thị trấn Sơn Thịnh', Type.thiTran),
       Level3(9, 7, '04687', 'Xã Đại Lịch', Type.xa),
       Level3(9, 7, '04690', 'Xã Đồng Khê', Type.xa),
       Level3(9, 7, '04693', 'Xã Cát Thịnh', Type.xa),
@@ -2167,8 +2167,8 @@ const level1s = [
       Level3(9, 7, '04711', 'Xã Nghĩa Tâm', Type.xa),
     ]),
     Level2(9, '141', 'Huyện Yên Bình', Type.huyen, [
-      Level3(9, 8, '04714', 'Thị trấn Yên Bình', Type.thi_tran),
-      Level3(9, 8, '04717', 'Thị trấn Thác Bà', Type.thi_tran),
+      Level3(9, 8, '04714', 'Thị trấn Yên Bình', Type.thiTran),
+      Level3(9, 8, '04717', 'Thị trấn Thác Bà', Type.thiTran),
       Level3(9, 8, '04720', 'Xã Xuân Long', Type.xa),
       Level3(9, 8, '04726', 'Xã Cảm Nhân', Type.xa),
       Level3(9, 8, '04729', 'Xã Ngọc Chấn', Type.xa),
@@ -2216,7 +2216,7 @@ const level1s = [
       Level3(10, 0, '04921', 'Xã Độc Lập', Type.xa),
     ]),
     Level2(10, '150', 'Huyện Đà Bắc', Type.huyen, [
-      Level3(10, 1, '04831', 'Thị trấn Đà Bắc', Type.thi_tran),
+      Level3(10, 1, '04831', 'Thị trấn Đà Bắc', Type.thiTran),
       Level3(10, 1, '04834', 'Xã Nánh Nghê', Type.xa),
       Level3(10, 1, '04840', 'Xã Giáp Đắt', Type.xa),
       Level3(10, 1, '04846', 'Xã Mường Chiềng', Type.xa),
@@ -2235,7 +2235,7 @@ const level1s = [
       Level3(10, 1, '04891', 'Xã Vầy Nưa', Type.xa),
     ]),
     Level2(10, '152', 'Huyện Lương Sơn', Type.huyen, [
-      Level3(10, 2, '04924', 'Thị trấn Lương Sơn', Type.thi_tran),
+      Level3(10, 2, '04924', 'Thị trấn Lương Sơn', Type.thiTran),
       Level3(10, 2, '04942', 'Xã Lâm Sơn', Type.xa),
       Level3(10, 2, '04945', 'Xã Hòa Sơn', Type.xa),
       Level3(10, 2, '04951', 'Xã Tân Vinh', Type.xa),
@@ -2248,7 +2248,7 @@ const level1s = [
       Level3(10, 2, '05047', 'Xã Thanh Cao', Type.xa),
     ]),
     Level2(10, '153', 'Huyện Kim Bôi', Type.huyen, [
-      Level3(10, 3, '04978', 'Thị trấn Bo', Type.thi_tran),
+      Level3(10, 3, '04978', 'Thị trấn Bo', Type.thiTran),
       Level3(10, 3, '04984', 'Xã Đú Sáng', Type.xa),
       Level3(10, 3, '04987', 'Xã Hùng Sơn', Type.xa),
       Level3(10, 3, '04990', 'Xã Bình Sơn', Type.xa),
@@ -2267,7 +2267,7 @@ const level1s = [
       Level3(10, 3, '05086', 'Xã Nuông Dăm', Type.xa),
     ]),
     Level2(10, '154', 'Huyện Cao Phong', Type.huyen, [
-      Level3(10, 4, '05089', 'Thị trấn Cao Phong', Type.thi_tran),
+      Level3(10, 4, '05089', 'Thị trấn Cao Phong', Type.thiTran),
       Level3(10, 4, '05092', 'Xã Bình Thanh', Type.xa),
       Level3(10, 4, '05095', 'Xã Thung Nai', Type.xa),
       Level3(10, 4, '05098', 'Xã Bắc Phong', Type.xa),
@@ -2279,7 +2279,7 @@ const level1s = [
       Level3(10, 4, '05125', 'Xã Thạch Yên', Type.xa),
     ]),
     Level2(10, '155', 'Huyện Tân Lạc', Type.huyen, [
-      Level3(10, 5, '05128', 'Thị trấn Mãn Đức', Type.thi_tran),
+      Level3(10, 5, '05128', 'Thị trấn Mãn Đức', Type.thiTran),
       Level3(10, 5, '05134', 'Xã Suối Hoa', Type.xa),
       Level3(10, 5, '05137', 'Xã Phú Vinh', Type.xa),
       Level3(10, 5, '05140', 'Xã Phú Cường', Type.xa),
@@ -2298,7 +2298,7 @@ const level1s = [
     ]),
     Level2(10, '156', 'Huyện Mai Châu', Type.huyen, [
       Level3(10, 6, '04882', 'Xã Tân Thành', Type.xa),
-      Level3(10, 6, '05200', 'Thị trấn Mai Châu', Type.thi_tran),
+      Level3(10, 6, '05200', 'Thị trấn Mai Châu', Type.thiTran),
       Level3(10, 6, '05206', 'Xã Sơn Thủy', Type.xa),
       Level3(10, 6, '05209', 'Xã Pà Cò', Type.xa),
       Level3(10, 6, '05212', 'Xã Hang Kia', Type.xa),
@@ -2315,7 +2315,7 @@ const level1s = [
       Level3(10, 6, '05263', 'Xã Vạn Mai', Type.xa),
     ]),
     Level2(10, '157', 'Huyện Lạc Sơn', Type.huyen, [
-      Level3(10, 7, '05266', 'Thị trấn Vụ Bản', Type.thi_tran),
+      Level3(10, 7, '05266', 'Thị trấn Vụ Bản', Type.thiTran),
       Level3(10, 7, '05269', 'Xã Quý Hòa', Type.xa),
       Level3(10, 7, '05272', 'Xã Miền Đồi', Type.xa),
       Level3(10, 7, '05275', 'Xã Mỹ Thành', Type.xa),
@@ -2341,7 +2341,7 @@ const level1s = [
       Level3(10, 7, '05350', 'Xã Ngọc Lâu', Type.xa),
     ]),
     Level2(10, '158', 'Huyện Yên Thủy', Type.huyen, [
-      Level3(10, 8, '05353', 'Thị trấn Hàng Trạm', Type.thi_tran),
+      Level3(10, 8, '05353', 'Thị trấn Hàng Trạm', Type.thiTran),
       Level3(10, 8, '05356', 'Xã Lạc Sỹ', Type.xa),
       Level3(10, 8, '05362', 'Xã Lạc Lương', Type.xa),
       Level3(10, 8, '05365', 'Xã Bảo Hiệu', Type.xa),
@@ -2354,8 +2354,8 @@ const level1s = [
       Level3(10, 8, '05389', 'Xã Ngọc Lương', Type.xa),
     ]),
     Level2(10, '159', 'Huyện Lạc Thủy', Type.huyen, [
-      Level3(10, 9, '04981', 'Thị trấn Ba Hàng Đồi', Type.thi_tran),
-      Level3(10, 9, '05392', 'Thị trấn Chi Nê', Type.thi_tran),
+      Level3(10, 9, '04981', 'Thị trấn Ba Hàng Đồi', Type.thiTran),
+      Level3(10, 9, '05392', 'Thị trấn Chi Nê', Type.thiTran),
       Level3(10, 9, '05395', 'Xã Phú Nghĩa', Type.xa),
       Level3(10, 9, '05398', 'Xã Phú Thành', Type.xa),
       Level3(10, 9, '05404', 'Xã Hưng Thi', Type.xa),
@@ -2414,7 +2414,7 @@ const level1s = [
       Level3(11, 1, '05533', 'Xã Bá Xuyên', Type.xa),
     ]),
     Level2(11, '167', 'Huyện Định Hóa', Type.huyen, [
-      Level3(11, 2, '05536', 'Thị trấn Chợ Chu', Type.thi_tran),
+      Level3(11, 2, '05536', 'Thị trấn Chợ Chu', Type.thiTran),
       Level3(11, 2, '05539', 'Xã Linh Thông', Type.xa),
       Level3(11, 2, '05542', 'Xã Lam Vỹ', Type.xa),
       Level3(11, 2, '05545', 'Xã Quy Kỳ', Type.xa),
@@ -2439,8 +2439,8 @@ const level1s = [
       Level3(11, 2, '05605', 'Xã Bình Thành', Type.xa),
     ]),
     Level2(11, '168', 'Huyện Phú Lương', Type.huyen, [
-      Level3(11, 3, '05608', 'Thị trấn Giang Tiên', Type.thi_tran),
-      Level3(11, 3, '05611', 'Thị trấn Đu', Type.thi_tran),
+      Level3(11, 3, '05608', 'Thị trấn Giang Tiên', Type.thiTran),
+      Level3(11, 3, '05611', 'Thị trấn Đu', Type.thiTran),
       Level3(11, 3, '05614', 'Xã Yên Ninh', Type.xa),
       Level3(11, 3, '05617', 'Xã Yên Trạch', Type.xa),
       Level3(11, 3, '05620', 'Xã Yên Đổ', Type.xa),
@@ -2456,8 +2456,8 @@ const level1s = [
       Level3(11, 3, '05650', 'Xã Cổ Lũng', Type.xa),
     ]),
     Level2(11, '169', 'Huyện Đồng Hỷ', Type.huyen, [
-      Level3(11, 4, '05656', 'Thị trấn Sông Cầu', Type.thi_tran),
-      Level3(11, 4, '05662', 'Thị trấn Trại Cau', Type.thi_tran),
+      Level3(11, 4, '05656', 'Thị trấn Sông Cầu', Type.thiTran),
+      Level3(11, 4, '05662', 'Thị trấn Trại Cau', Type.thiTran),
       Level3(11, 4, '05665', 'Xã Văn Lăng', Type.xa),
       Level3(11, 4, '05668', 'Xã Tân Long', Type.xa),
       Level3(11, 4, '05671', 'Xã Hòa Bình', Type.xa),
@@ -2473,7 +2473,7 @@ const level1s = [
       Level3(11, 4, '05707', 'Xã Nam Hòa', Type.xa),
     ]),
     Level2(11, '170', 'Huyện Võ Nhai', Type.huyen, [
-      Level3(11, 5, '05716', 'Thị trấn Đình Cả', Type.thi_tran),
+      Level3(11, 5, '05716', 'Thị trấn Đình Cả', Type.thiTran),
       Level3(11, 5, '05719', 'Xã Sảng Mộc', Type.xa),
       Level3(11, 5, '05722', 'Xã Nghinh Tường', Type.xa),
       Level3(11, 5, '05725', 'Xã Thần Xa', Type.xa),
@@ -2490,8 +2490,8 @@ const level1s = [
       Level3(11, 5, '05758', 'Xã Bình Long', Type.xa),
     ]),
     Level2(11, '171', 'Huyện Đại Từ', Type.huyen, [
-      Level3(11, 6, '05761', 'Thị trấn Hùng Sơn', Type.thi_tran),
-      Level3(11, 6, '05764', 'Thị trấn Quân Chu', Type.thi_tran),
+      Level3(11, 6, '05761', 'Thị trấn Hùng Sơn', Type.thiTran),
+      Level3(11, 6, '05764', 'Thị trấn Quân Chu', Type.thiTran),
       Level3(11, 6, '05767', 'Xã Phúc Lương', Type.xa),
       Level3(11, 6, '05770', 'Xã Minh Tiến', Type.xa),
       Level3(11, 6, '05773', 'Xã Yên Lãng', Type.xa),
@@ -2521,7 +2521,7 @@ const level1s = [
       Level3(11, 6, '05848', 'Xã Cát Nê', Type.xa),
       Level3(11, 6, '05851', 'Xã Quân Chu', Type.xa),
     ]),
-    Level2(11, '172', 'Thị xã Phổ Yên', Type.thi_xa, [
+    Level2(11, '172', 'Thị xã Phổ Yên', Type.thiXa, [
       Level3(11, 7, '05854', 'Phường Bãi Bông', Type.phuong),
       Level3(11, 7, '05857', 'Phường Bắc Sơn', Type.phuong),
       Level3(11, 7, '05860', 'Phường Ba Hàng', Type.phuong),
@@ -2542,7 +2542,7 @@ const level1s = [
       Level3(11, 7, '05905', 'Xã Thuận Thành', Type.xa),
     ]),
     Level2(11, '173', 'Huyện Phú Bình', Type.huyen, [
-      Level3(11, 8, '05908', 'Thị trấn Hương Sơn', Type.thi_tran),
+      Level3(11, 8, '05908', 'Thị trấn Hương Sơn', Type.thiTran),
       Level3(11, 8, '05911', 'Xã Bàn Đạt', Type.xa),
       Level3(11, 8, '05917', 'Xã Tân Khánh', Type.xa),
       Level3(11, 8, '05920', 'Xã Tân Kim', Type.xa),
@@ -2576,7 +2576,7 @@ const level1s = [
       Level3(12, 0, '05992', 'Xã Mai Pha', Type.xa),
     ]),
     Level2(12, '180', 'Huyện Tràng Định', Type.huyen, [
-      Level3(12, 1, '05995', 'Thị trấn Thất Khê', Type.thi_tran),
+      Level3(12, 1, '05995', 'Thị trấn Thất Khê', Type.thiTran),
       Level3(12, 1, '05998', 'Xã Khánh Long', Type.xa),
       Level3(12, 1, '06001', 'Xã Đoàn Kết', Type.xa),
       Level3(12, 1, '06004', 'Xã Quốc Khánh', Type.xa),
@@ -2615,13 +2615,13 @@ const level1s = [
       Level3(12, 2, '06103', 'Xã Hòa Bình', Type.xa),
       Level3(12, 2, '06106', 'Xã Mông Ân', Type.xa),
       Level3(12, 2, '06109', 'Xã Tân Hòa', Type.xa),
-      Level3(12, 2, '06112', 'Thị trấn Bình Gia', Type.thi_tran),
+      Level3(12, 2, '06112', 'Thị trấn Bình Gia', Type.thiTran),
       Level3(12, 2, '06115', 'Xã Hồng Thái', Type.xa),
       Level3(12, 2, '06118', 'Xã Bình La', Type.xa),
       Level3(12, 2, '06121', 'Xã Tân Văn', Type.xa),
     ]),
     Level2(12, '182', 'Huyện Văn Lãng', Type.huyen, [
-      Level3(12, 3, '06124', 'Thị trấn Na Sầm', Type.thi_tran),
+      Level3(12, 3, '06124', 'Thị trấn Na Sầm', Type.thiTran),
       Level3(12, 3, '06127', 'Xã Trùng Khánh', Type.xa),
       Level3(12, 3, '06133', 'Xã Bắc La', Type.xa),
       Level3(12, 3, '06136', 'Xã Thụy Hùng', Type.xa),
@@ -2640,8 +2640,8 @@ const level1s = [
       Level3(12, 3, '06181', 'Xã Nhạc Kỳ', Type.xa),
     ]),
     Level2(12, '183', 'Huyện Cao Lộc', Type.huyen, [
-      Level3(12, 4, '06184', 'Thị trấn Đồng Đăng', Type.thi_tran),
-      Level3(12, 4, '06187', 'Thị trấn Cao Lộc', Type.thi_tran),
+      Level3(12, 4, '06184', 'Thị trấn Đồng Đăng', Type.thiTran),
+      Level3(12, 4, '06187', 'Thị trấn Cao Lộc', Type.thiTran),
       Level3(12, 4, '06190', 'Xã Bảo Lâm', Type.xa),
       Level3(12, 4, '06193', 'Xã Thanh Lòa', Type.xa),
       Level3(12, 4, '06196', 'Xã Cao Lâu', Type.xa),
@@ -2664,7 +2664,7 @@ const level1s = [
       Level3(12, 4, '06250', 'Xã Tân Thành', Type.xa),
     ]),
     Level2(12, '184', 'Huyện Văn Quan', Type.huyen, [
-      Level3(12, 5, '06253', 'Thị trấn Văn Quan', Type.thi_tran),
+      Level3(12, 5, '06253', 'Thị trấn Văn Quan', Type.thiTran),
       Level3(12, 5, '06256', 'Xã Trấn Ninh', Type.xa),
       Level3(12, 5, '06268', 'Xã Liên Hội', Type.xa),
       Level3(12, 5, '06274', 'Xã Hòa Bình', Type.xa),
@@ -2683,7 +2683,7 @@ const level1s = [
       Level3(12, 5, '06322', 'Xã Hữu Lễ', Type.xa),
     ]),
     Level2(12, '185', 'Huyện Bắc Sơn', Type.huyen, [
-      Level3(12, 6, '06325', 'Thị trấn Bắc Sơn', Type.thi_tran),
+      Level3(12, 6, '06325', 'Thị trấn Bắc Sơn', Type.thiTran),
       Level3(12, 6, '06328', 'Xã Long Đống', Type.xa),
       Level3(12, 6, '06331', 'Xã Vạn Thủy', Type.xa),
       Level3(12, 6, '06337', 'Xã Đồng ý', Type.xa),
@@ -2703,7 +2703,7 @@ const level1s = [
       Level3(12, 6, '06382', 'Xã Nhất Tiến', Type.xa),
     ]),
     Level2(12, '186', 'Huyện Hữu Lũng', Type.huyen, [
-      Level3(12, 7, '06385', 'Thị trấn Hữu Lũng', Type.thi_tran),
+      Level3(12, 7, '06385', 'Thị trấn Hữu Lũng', Type.thiTran),
       Level3(12, 7, '06388', 'Xã Hữu Liên', Type.xa),
       Level3(12, 7, '06391', 'Xã Yên Bình', Type.xa),
       Level3(12, 7, '06394', 'Xã Quyết Thắng', Type.xa),
@@ -2729,8 +2729,8 @@ const level1s = [
       Level3(12, 7, '06460', 'Xã Hòa Thắng', Type.xa),
     ]),
     Level2(12, '187', 'Huyện Chi Lăng', Type.huyen, [
-      Level3(12, 8, '06463', 'Thị trấn Đồng Mỏ', Type.thi_tran),
-      Level3(12, 8, '06466', 'Thị trấn Chi Lăng', Type.thi_tran),
+      Level3(12, 8, '06463', 'Thị trấn Đồng Mỏ', Type.thiTran),
+      Level3(12, 8, '06466', 'Thị trấn Chi Lăng', Type.thiTran),
       Level3(12, 8, '06469', 'Xã Vân An', Type.xa),
       Level3(12, 8, '06472', 'Xã Vân Thủy', Type.xa),
       Level3(12, 8, '06475', 'Xã Gia Lộc', Type.xa),
@@ -2751,8 +2751,8 @@ const level1s = [
       Level3(12, 8, '06523', 'Xã Chi Lăng', Type.xa),
     ]),
     Level2(12, '188', 'Huyện Lộc Bình', Type.huyen, [
-      Level3(12, 9, '06526', 'Thị trấn Na Dương', Type.thi_tran),
-      Level3(12, 9, '06529', 'Thị trấn Lộc Bình', Type.thi_tran),
+      Level3(12, 9, '06526', 'Thị trấn Na Dương', Type.thiTran),
+      Level3(12, 9, '06529', 'Thị trấn Lộc Bình', Type.thiTran),
       Level3(12, 9, '06532', 'Xã Mẫu Sơn', Type.xa),
       Level3(12, 9, '06541', 'Xã Yên Khoái', Type.xa),
       Level3(12, 9, '06544', 'Xã Khánh Xuân', Type.xa),
@@ -2774,8 +2774,8 @@ const level1s = [
       Level3(12, 9, '06610', 'Xã Ái Quốc', Type.xa),
     ]),
     Level2(12, '189', 'Huyện Đình Lập', Type.huyen, [
-      Level3(12, 10, '06613', 'Thị trấn Đình Lập', Type.thi_tran),
-      Level3(12, 10, '06616', 'Thị trấn NT Thái Bình', Type.thi_tran),
+      Level3(12, 10, '06613', 'Thị trấn Đình Lập', Type.thiTran),
+      Level3(12, 10, '06616', 'Thị trấn NT Thái Bình', Type.thiTran),
       Level3(12, 10, '06619', 'Xã Bắc Xa', Type.xa),
       Level3(12, 10, '06622', 'Xã Bính Xá', Type.xa),
       Level3(12, 10, '06625', 'Xã Kiên Mộc', Type.xa),
@@ -2874,7 +2874,7 @@ const level1s = [
       Level3(13, 3, '06835', 'Phường Phương Nam', Type.phuong),
     ]),
     Level2(13, '198', 'Huyện Bình Liêu', Type.huyen, [
-      Level3(13, 4, '06838', 'Thị trấn Bình Liêu', Type.thi_tran),
+      Level3(13, 4, '06838', 'Thị trấn Bình Liêu', Type.thiTran),
       Level3(13, 4, '06841', 'Xã Hoành Mô', Type.xa),
       Level3(13, 4, '06844', 'Xã Đồng Tâm', Type.xa),
       Level3(13, 4, '06847', 'Xã Đồng Văn', Type.xa),
@@ -2883,7 +2883,7 @@ const level1s = [
       Level3(13, 4, '06859', 'Xã Húc Động', Type.xa),
     ]),
     Level2(13, '199', 'Huyện Tiên Yên', Type.huyen, [
-      Level3(13, 5, '06862', 'Thị trấn Tiên Yên', Type.thi_tran),
+      Level3(13, 5, '06862', 'Thị trấn Tiên Yên', Type.thiTran),
       Level3(13, 5, '06865', 'Xã Hà Lâu', Type.xa),
       Level3(13, 5, '06868', 'Xã Đại Dực', Type.xa),
       Level3(13, 5, '06871', 'Xã Phong Dụ', Type.xa),
@@ -2896,7 +2896,7 @@ const level1s = [
       Level3(13, 5, '06892', 'Xã Đồng Rui', Type.xa),
     ]),
     Level2(13, '200', 'Huyện Đầm Hà', Type.huyen, [
-      Level3(13, 6, '06895', 'Thị trấn Đầm Hà', Type.thi_tran),
+      Level3(13, 6, '06895', 'Thị trấn Đầm Hà', Type.thiTran),
       Level3(13, 6, '06898', 'Xã Quảng Lâm', Type.xa),
       Level3(13, 6, '06901', 'Xã Quảng An', Type.xa),
       Level3(13, 6, '06904', 'Xã Tân Bình', Type.xa),
@@ -2907,7 +2907,7 @@ const level1s = [
       Level3(13, 6, '06919', 'Xã Đại Bình', Type.xa),
     ]),
     Level2(13, '201', 'Huyện Hải Hà', Type.huyen, [
-      Level3(13, 7, '06922', 'Thị trấn Quảng Hà', Type.thi_tran),
+      Level3(13, 7, '06922', 'Thị trấn Quảng Hà', Type.thiTran),
       Level3(13, 7, '06925', 'Xã Quảng Đức', Type.xa),
       Level3(13, 7, '06928', 'Xã Quảng Sơn', Type.xa),
       Level3(13, 7, '06931', 'Xã Quảng Thành', Type.xa),
@@ -2920,7 +2920,7 @@ const level1s = [
       Level3(13, 7, '06967', 'Xã Cái Chiên', Type.xa),
     ]),
     Level2(13, '202', 'Huyện Ba Chẽ', Type.huyen, [
-      Level3(13, 8, '06970', 'Thị trấn Ba Chẽ', Type.thi_tran),
+      Level3(13, 8, '06970', 'Thị trấn Ba Chẽ', Type.thiTran),
       Level3(13, 8, '06973', 'Xã Thanh Sơn', Type.xa),
       Level3(13, 8, '06976', 'Xã Thanh Lâm', Type.xa),
       Level3(13, 8, '06979', 'Xã Đạp Thanh', Type.xa),
@@ -2930,7 +2930,7 @@ const level1s = [
       Level3(13, 8, '06991', 'Xã Minh Cầm', Type.xa),
     ]),
     Level2(13, '203', 'Huyện Vân Đồn', Type.huyen, [
-      Level3(13, 9, '06994', 'Thị trấn Cái Rồng', Type.thi_tran),
+      Level3(13, 9, '06994', 'Thị trấn Cái Rồng', Type.thiTran),
       Level3(13, 9, '06997', 'Xã Đài Xuyên', Type.xa),
       Level3(13, 9, '07000', 'Xã Bình Dân', Type.xa),
       Level3(13, 9, '07003', 'Xã Vạn Yên', Type.xa),
@@ -2943,7 +2943,7 @@ const level1s = [
       Level3(13, 9, '07024', 'Xã Quan Lạn', Type.xa),
       Level3(13, 9, '07027', 'Xã Ngọc Vừng', Type.xa),
     ]),
-    Level2(13, '205', 'Thị xã Đông Triều', Type.thi_xa, [
+    Level2(13, '205', 'Thị xã Đông Triều', Type.thiXa, [
       Level3(13, 10, '07069', 'Phường Mạo Khê', Type.phuong),
       Level3(13, 10, '07072', 'Phường Đông Triều', Type.phuong),
       Level3(13, 10, '07075', 'Xã An Sinh', Type.xa),
@@ -2966,7 +2966,7 @@ const level1s = [
       Level3(13, 10, '07126', 'Phường Hưng Đạo', Type.phuong),
       Level3(13, 10, '07129', 'Xã Yên Đức', Type.xa),
     ]),
-    Level2(13, '206', 'Thị xã Quảng Yên', Type.thi_xa, [
+    Level2(13, '206', 'Thị xã Quảng Yên', Type.thiXa, [
       Level3(13, 11, '07132', 'Phường Quảng Yên', Type.phuong),
       Level3(13, 11, '07135', 'Phường Đông Mai', Type.phuong),
       Level3(13, 11, '07138', 'Phường Minh Thành', Type.phuong),
@@ -2988,7 +2988,7 @@ const level1s = [
       Level3(13, 11, '07189', 'Xã Tiền Phong', Type.xa),
     ]),
     Level2(13, '207', 'Huyện Cô Tô', Type.huyen, [
-      Level3(13, 12, '07192', 'Thị trấn Cô Tô', Type.thi_tran),
+      Level3(13, 12, '07192', 'Thị trấn Cô Tô', Type.thiTran),
       Level3(13, 12, '07195', 'Xã Đồng Tiến', Type.xa),
       Level3(13, 12, '07198', 'Xã Thanh Lân', Type.xa),
     ]),
@@ -3029,13 +3029,13 @@ const level1s = [
       Level3(14, 1, '07279', 'Xã Hương Vĩ', Type.xa),
       Level3(14, 1, '07282', 'Xã Đồng Kỳ', Type.xa),
       Level3(14, 1, '07285', 'Xã An Thượng', Type.xa),
-      Level3(14, 1, '07288', 'Thị trấn Phồn Xương', Type.thi_tran),
+      Level3(14, 1, '07288', 'Thị trấn Phồn Xương', Type.thiTran),
       Level3(14, 1, '07291', 'Xã Tân Sỏi', Type.xa),
-      Level3(14, 1, '07294', 'Thị trấn Bố Hạ', Type.thi_tran),
+      Level3(14, 1, '07294', 'Thị trấn Bố Hạ', Type.thiTran),
     ]),
     Level2(14, '216', 'Huyện Tân Yên', Type.huyen, [
       Level3(14, 2, '07303', 'Xã Lan Giới', Type.xa),
-      Level3(14, 2, '07306', 'Thị trấn Nhã Nam', Type.thi_tran),
+      Level3(14, 2, '07306', 'Thị trấn Nhã Nam', Type.thiTran),
       Level3(14, 2, '07309', 'Xã Tân Trung', Type.xa),
       Level3(14, 2, '07312', 'Xã Đại Hóa', Type.xa),
       Level3(14, 2, '07315', 'Xã Quang Tiến', Type.xa),
@@ -3046,7 +3046,7 @@ const level1s = [
       Level3(14, 2, '07330', 'Xã Hợp Đức', Type.xa),
       Level3(14, 2, '07333', 'Xã Lam Cốt', Type.xa),
       Level3(14, 2, '07336', 'Xã Cao Xá', Type.xa),
-      Level3(14, 2, '07339', 'Thị trấn Cao Thượng', Type.thi_tran),
+      Level3(14, 2, '07339', 'Thị trấn Cao Thượng', Type.thiTran),
       Level3(14, 2, '07342', 'Xã Việt Ngọc', Type.xa),
       Level3(14, 2, '07345', 'Xã Song Vân', Type.xa),
       Level3(14, 2, '07348', 'Xã Ngọc Châu', Type.xa),
@@ -3058,7 +3058,7 @@ const level1s = [
       Level3(14, 2, '07366', 'Xã Quế Nham', Type.xa),
     ]),
     Level2(14, '217', 'Huyện Lạng Giang', Type.huyen, [
-      Level3(14, 3, '07375', 'Thị trấn Vôi', Type.thi_tran),
+      Level3(14, 3, '07375', 'Thị trấn Vôi', Type.thiTran),
       Level3(14, 3, '07378', 'Xã Nghĩa Hòa', Type.xa),
       Level3(14, 3, '07381', 'Xã Nghĩa Hưng', Type.xa),
       Level3(14, 3, '07384', 'Xã Quang Thịnh', Type.xa),
@@ -3066,7 +3066,7 @@ const level1s = [
       Level3(14, 3, '07390', 'Xã Đào Mỹ', Type.xa),
       Level3(14, 3, '07393', 'Xã Tiên Lục', Type.xa),
       Level3(14, 3, '07396', 'Xã An Hà', Type.xa),
-      Level3(14, 3, '07399', 'Thị trấn Kép', Type.thi_tran),
+      Level3(14, 3, '07399', 'Thị trấn Kép', Type.thiTran),
       Level3(14, 3, '07402', 'Xã Mỹ Hà', Type.xa),
       Level3(14, 3, '07405', 'Xã Hương Lạc', Type.xa),
       Level3(14, 3, '07408', 'Xã Dương Đức', Type.xa),
@@ -3081,7 +3081,7 @@ const level1s = [
       Level3(14, 3, '07438', 'Xã Thái Đào', Type.xa),
     ]),
     Level2(14, '218', 'Huyện Lục Nam', Type.huyen, [
-      Level3(14, 4, '07444', 'Thị trấn Đồi Ngô', Type.thi_tran),
+      Level3(14, 4, '07444', 'Thị trấn Đồi Ngô', Type.thiTran),
       Level3(14, 4, '07450', 'Xã Đông Hưng', Type.xa),
       Level3(14, 4, '07453', 'Xã Đông Phú', Type.xa),
       Level3(14, 4, '07456', 'Xã Tam Dị', Type.xa),
@@ -3108,7 +3108,7 @@ const level1s = [
       Level3(14, 4, '07522', 'Xã Đan Hội', Type.xa),
     ]),
     Level2(14, '219', 'Huyện Lục Ngạn', Type.huyen, [
-      Level3(14, 5, '07525', 'Thị trấn Chũ', Type.thi_tran),
+      Level3(14, 5, '07525', 'Thị trấn Chũ', Type.thiTran),
       Level3(14, 5, '07528', 'Xã Cấm Sơn', Type.xa),
       Level3(14, 5, '07531', 'Xã Tân Sơn', Type.xa),
       Level3(14, 5, '07534', 'Xã Phong Minh', Type.xa),
@@ -3139,8 +3139,8 @@ const level1s = [
       Level3(14, 5, '07612', 'Xã Phượng Sơn', Type.xa),
     ]),
     Level2(14, '220', 'Huyện Sơn Động', Type.huyen, [
-      Level3(14, 6, '07615', 'Thị trấn An Châu', Type.thi_tran),
-      Level3(14, 6, '07616', 'Thị trấn Tây Yên Tử', Type.thi_tran),
+      Level3(14, 6, '07615', 'Thị trấn An Châu', Type.thiTran),
+      Level3(14, 6, '07616', 'Thị trấn Tây Yên Tử', Type.thiTran),
       Level3(14, 6, '07621', 'Xã Vân Sơn', Type.xa),
       Level3(14, 6, '07624', 'Xã Hữu Sản', Type.xa),
       Level3(14, 6, '07627', 'Xã Đại Sơn', Type.xa),
@@ -3158,8 +3158,8 @@ const level1s = [
       Level3(14, 6, '07678', 'Xã Thanh Luận', Type.xa),
     ]),
     Level2(14, '221', 'Huyện Yên Dũng', Type.huyen, [
-      Level3(14, 7, '07681', 'Thị trấn Nham Biền', Type.thi_tran),
-      Level3(14, 7, '07682', 'Thị trấn Tân An', Type.thi_tran),
+      Level3(14, 7, '07681', 'Thị trấn Nham Biền', Type.thiTran),
+      Level3(14, 7, '07682', 'Thị trấn Tân An', Type.thiTran),
       Level3(14, 7, '07684', 'Xã Lão Hộ', Type.xa),
       Level3(14, 7, '07690', 'Xã Hương Gián', Type.xa),
       Level3(14, 7, '07702', 'Xã Quỳnh Sơn', Type.xa),
@@ -3184,13 +3184,13 @@ const level1s = [
       Level3(14, 8, '07768', 'Xã Minh Đức', Type.xa),
       Level3(14, 8, '07771', 'Xã Hương Mai', Type.xa),
       Level3(14, 8, '07774', 'Xã Tự Lạn', Type.xa),
-      Level3(14, 8, '07777', 'Thị trấn Bích Động', Type.thi_tran),
+      Level3(14, 8, '07777', 'Thị trấn Bích Động', Type.thiTran),
       Level3(14, 8, '07780', 'Xã Trung Sơn', Type.xa),
       Level3(14, 8, '07783', 'Xã Hồng Thái', Type.xa),
       Level3(14, 8, '07786', 'Xã Tiên Sơn', Type.xa),
       Level3(14, 8, '07789', 'Xã Tăng Tiến', Type.xa),
       Level3(14, 8, '07792', 'Xã Quảng Minh', Type.xa),
-      Level3(14, 8, '07795', 'Thị trấn Nếnh', Type.thi_tran),
+      Level3(14, 8, '07795', 'Thị trấn Nếnh', Type.thiTran),
       Level3(14, 8, '07798', 'Xã Ninh Sơn', Type.xa),
       Level3(14, 8, '07801', 'Xã Vân Trung', Type.xa),
       Level3(14, 8, '07804', 'Xã Vân Hà', Type.xa),
@@ -3206,7 +3206,7 @@ const level1s = [
       Level3(14, 9, '07831', 'Xã Ngọc Sơn', Type.xa),
       Level3(14, 9, '07834', 'Xã Thái Sơn', Type.xa),
       Level3(14, 9, '07837', 'Xã Hòa Sơn', Type.xa),
-      Level3(14, 9, '07840', 'Thị trấn Thắng', Type.thi_tran),
+      Level3(14, 9, '07840', 'Thị trấn Thắng', Type.thiTran),
       Level3(14, 9, '07843', 'Xã Quang Minh', Type.xa),
       Level3(14, 9, '07846', 'Xã Lương Phong', Type.xa),
       Level3(14, 9, '07849', 'Xã Hùng Sơn', Type.xa),
@@ -3249,7 +3249,7 @@ const level1s = [
       Level3(15, 0, '08506', 'Xã Chu Hóa', Type.xa),
       Level3(15, 0, '08515', 'Xã Thanh Đình', Type.xa),
     ]),
-    Level2(15, '228', 'Thị xã Phú Thọ', Type.thi_xa, [
+    Level2(15, '228', 'Thị xã Phú Thọ', Type.thiXa, [
       Level3(15, 1, '07942', 'Phường Hùng Vương', Type.phuong),
       Level3(15, 1, '07945', 'Phường Phong Châu', Type.phuong),
       Level3(15, 1, '07948', 'Phường Âu Cơ', Type.phuong),
@@ -3261,7 +3261,7 @@ const level1s = [
       Level3(15, 1, '07966', 'Phường Thanh Vinh', Type.phuong),
     ]),
     Level2(15, '230', 'Huyện Đoan Hùng', Type.huyen, [
-      Level3(15, 2, '07969', 'Thị trấn Đoan Hùng', Type.thi_tran),
+      Level3(15, 2, '07969', 'Thị trấn Đoan Hùng', Type.thiTran),
       Level3(15, 2, '07975', 'Xã Hùng Xuyên', Type.xa),
       Level3(15, 2, '07981', 'Xã Bằng Luân', Type.xa),
       Level3(15, 2, '07984', 'Xã Vân Du', Type.xa),
@@ -3285,7 +3285,7 @@ const level1s = [
       Level3(15, 2, '08050', 'Xã Ca Đình', Type.xa),
     ]),
     Level2(15, '231', 'Huyện Hạ Hoà', Type.huyen, [
-      Level3(15, 3, '08053', 'Thị trấn Hạ Hoà', Type.thi_tran),
+      Level3(15, 3, '08053', 'Thị trấn Hạ Hoà', Type.thiTran),
       Level3(15, 3, '08056', 'Xã Đại Phạm', Type.xa),
       Level3(15, 3, '08062', 'Xã Đan Thượng', Type.xa),
       Level3(15, 3, '08065', 'Xã Hà Lương', Type.xa),
@@ -3307,7 +3307,7 @@ const level1s = [
       Level3(15, 3, '08143', 'Xã Vĩnh Chân', Type.xa),
     ]),
     Level2(15, '232', 'Huyện Thanh Ba', Type.huyen, [
-      Level3(15, 4, '08152', 'Thị trấn Thanh Ba', Type.thi_tran),
+      Level3(15, 4, '08152', 'Thị trấn Thanh Ba', Type.thiTran),
       Level3(15, 4, '08156', 'Xã Vân Lĩnh', Type.xa),
       Level3(15, 4, '08158', 'Xã Đông Lĩnh', Type.xa),
       Level3(15, 4, '08161', 'Xã Đại An', Type.xa),
@@ -3328,7 +3328,7 @@ const level1s = [
       Level3(15, 4, '08227', 'Xã Lương Lỗ', Type.xa),
     ]),
     Level2(15, '233', 'Huyện Phù Ninh', Type.huyen, [
-      Level3(15, 5, '08230', 'Thị trấn Phong Châu', Type.thi_tran),
+      Level3(15, 5, '08230', 'Thị trấn Phong Châu', Type.thiTran),
       Level3(15, 5, '08233', 'Xã Phú Mỹ', Type.xa),
       Level3(15, 5, '08234', 'Xã Lệ Mỹ', Type.xa),
       Level3(15, 5, '08236', 'Xã Liên Hoa', Type.xa),
@@ -3347,7 +3347,7 @@ const level1s = [
       Level3(15, 5, '08278', 'Xã Phù Ninh', Type.xa),
     ]),
     Level2(15, '234', 'Huyện Yên Lập', Type.huyen, [
-      Level3(15, 6, '08290', 'Thị trấn Yên Lập', Type.thi_tran),
+      Level3(15, 6, '08290', 'Thị trấn Yên Lập', Type.thiTran),
       Level3(15, 6, '08293', 'Xã Mỹ Lung', Type.xa),
       Level3(15, 6, '08296', 'Xã Mỹ Lương', Type.xa),
       Level3(15, 6, '08299', 'Xã Lương Sơn', Type.xa),
@@ -3366,7 +3366,7 @@ const level1s = [
       Level3(15, 6, '08338', 'Xã Ngọc Đồng', Type.xa),
     ]),
     Level2(15, '235', 'Huyện Cẩm Khê', Type.huyen, [
-      Level3(15, 7, '08341', 'Thị trấn Cẩm Khê', Type.thi_tran),
+      Level3(15, 7, '08341', 'Thị trấn Cẩm Khê', Type.thiTran),
       Level3(15, 7, '08344', 'Xã Tiên Lương', Type.xa),
       Level3(15, 7, '08347', 'Xã Tuy Lộc', Type.xa),
       Level3(15, 7, '08350', 'Xã Ngô Xá', Type.xa),
@@ -3392,7 +3392,7 @@ const level1s = [
       Level3(15, 7, '08431', 'Xã Đồng Lương', Type.xa),
     ]),
     Level2(15, '236', 'Huyện Tam Nông', Type.huyen, [
-      Level3(15, 8, '08434', 'Thị trấn Hưng Hoá', Type.thi_tran),
+      Level3(15, 8, '08434', 'Thị trấn Hưng Hoá', Type.thiTran),
       Level3(15, 8, '08440', 'Xã Hiền Quan', Type.xa),
       Level3(15, 8, '08443', 'Xã Bắc Sơn', Type.xa),
       Level3(15, 8, '08446', 'Xã Thanh Uyên', Type.xa),
@@ -3406,9 +3406,9 @@ const level1s = [
       Level3(15, 8, '08491', 'Xã Dân Quyền', Type.xa),
     ]),
     Level2(15, '237', 'Huyện Lâm Thao', Type.huyen, [
-      Level3(15, 9, '08494', 'Thị trấn Lâm Thao', Type.thi_tran),
+      Level3(15, 9, '08494', 'Thị trấn Lâm Thao', Type.thiTran),
       Level3(15, 9, '08497', 'Xã Tiên Kiên', Type.xa),
-      Level3(15, 9, '08498', 'Thị trấn Hùng Sơn', Type.thi_tran),
+      Level3(15, 9, '08498', 'Thị trấn Hùng Sơn', Type.thiTran),
       Level3(15, 9, '08500', 'Xã Xuân Lũng', Type.xa),
       Level3(15, 9, '08509', 'Xã Xuân Huy', Type.xa),
       Level3(15, 9, '08512', 'Xã Thạch Sơn', Type.xa),
@@ -3420,7 +3420,7 @@ const level1s = [
       Level3(15, 9, '08539', 'Xã Bản Nguyên', Type.xa),
     ]),
     Level2(15, '238', 'Huyện Thanh Sơn', Type.huyen, [
-      Level3(15, 10, '08542', 'Thị trấn Thanh Sơn', Type.thi_tran),
+      Level3(15, 10, '08542', 'Thị trấn Thanh Sơn', Type.thiTran),
       Level3(15, 10, '08563', 'Xã Sơn Hùng', Type.xa),
       Level3(15, 10, '08572', 'Xã Địch Quả', Type.xa),
       Level3(15, 10, '08575', 'Xã Giáp Lai', Type.xa),
@@ -3449,7 +3449,7 @@ const level1s = [
       Level3(15, 11, '08665', 'Xã Thạch Đồng', Type.xa),
       Level3(15, 11, '08668', 'Xã Xuân Lộc', Type.xa),
       Level3(15, 11, '08671', 'Xã Tân Phương', Type.xa),
-      Level3(15, 11, '08674', 'Thị trấn Thanh Thủy', Type.thi_tran),
+      Level3(15, 11, '08674', 'Thị trấn Thanh Thủy', Type.thiTran),
       Level3(15, 11, '08677', 'Xã Sơn Thủy', Type.xa),
       Level3(15, 11, '08680', 'Xã Bảo Yên', Type.xa),
       Level3(15, 11, '08683', 'Xã Đoan Hạ', Type.xa),
@@ -3502,13 +3502,13 @@ const level1s = [
       Level3(16, 1, '08758', 'Phường Tiền Châu', Type.phuong),
     ]),
     Level2(16, '246', 'Huyện Lập Thạch', Type.huyen, [
-      Level3(16, 2, '08761', 'Thị trấn Lập Thạch', Type.thi_tran),
+      Level3(16, 2, '08761', 'Thị trấn Lập Thạch', Type.thiTran),
       Level3(16, 2, '08764', 'Xã Quang Sơn', Type.xa),
       Level3(16, 2, '08767', 'Xã Ngọc Mỹ', Type.xa),
       Level3(16, 2, '08770', 'Xã Hợp Lý', Type.xa),
       Level3(16, 2, '08785', 'Xã Bắc Bình', Type.xa),
       Level3(16, 2, '08788', 'Xã Thái Hòa', Type.xa),
-      Level3(16, 2, '08789', 'Thị trấn Hoa Sơn', Type.thi_tran),
+      Level3(16, 2, '08789', 'Thị trấn Hoa Sơn', Type.thiTran),
       Level3(16, 2, '08791', 'Xã Liễn Sơn', Type.xa),
       Level3(16, 2, '08794', 'Xã Xuân Hòa', Type.xa),
       Level3(16, 2, '08797', 'Xã Vân Trục', Type.xa),
@@ -3524,7 +3524,7 @@ const level1s = [
       Level3(16, 2, '08866', 'Xã Sơn Đông', Type.xa),
     ]),
     Level2(16, '247', 'Huyện Tam Dương', Type.huyen, [
-      Level3(16, 3, '08869', 'Thị trấn Hợp Hòa', Type.thi_tran),
+      Level3(16, 3, '08869', 'Thị trấn Hợp Hòa', Type.thiTran),
       Level3(16, 3, '08872', 'Xã Hoàng Hoa', Type.xa),
       Level3(16, 3, '08875', 'Xã Đồng Tĩnh', Type.xa),
       Level3(16, 3, '08878', 'Xã Kim Long', Type.xa),
@@ -3539,33 +3539,33 @@ const level1s = [
       Level3(16, 3, '08905', 'Xã Hợp Thịnh', Type.xa),
     ]),
     Level2(16, '248', 'Huyện Tam Đảo', Type.huyen, [
-      Level3(16, 4, '08908', 'Thị trấn Tam Đảo', Type.thi_tran),
-      Level3(16, 4, '08911', 'Thị trấn Hợp Châu', Type.thi_tran),
+      Level3(16, 4, '08908', 'Thị trấn Tam Đảo', Type.thiTran),
+      Level3(16, 4, '08911', 'Thị trấn Hợp Châu', Type.thiTran),
       Level3(16, 4, '08914', 'Xã Đạo Trù', Type.xa),
       Level3(16, 4, '08917', 'Xã Yên Dương', Type.xa),
       Level3(16, 4, '08920', 'Xã Bồ Lý', Type.xa),
-      Level3(16, 4, '08923', 'Thị trấn Đại Đình', Type.thi_tran),
+      Level3(16, 4, '08923', 'Thị trấn Đại Đình', Type.thiTran),
       Level3(16, 4, '08926', 'Xã Tam Quan', Type.xa),
       Level3(16, 4, '08929', 'Xã Hồ Sơn', Type.xa),
       Level3(16, 4, '08932', 'Xã Minh Quang', Type.xa),
     ]),
     Level2(16, '249', 'Huyện Bình Xuyên', Type.huyen, [
-      Level3(16, 5, '08935', 'Thị trấn Hương Canh', Type.thi_tran),
-      Level3(16, 5, '08936', 'Thị trấn Gia Khánh', Type.thi_tran),
+      Level3(16, 5, '08935', 'Thị trấn Hương Canh', Type.thiTran),
+      Level3(16, 5, '08936', 'Thị trấn Gia Khánh', Type.thiTran),
       Level3(16, 5, '08938', 'Xã Trung Mỹ', Type.xa),
-      Level3(16, 5, '08944', 'Thị trấn Bá Hiến', Type.thi_tran),
+      Level3(16, 5, '08944', 'Thị trấn Bá Hiến', Type.thiTran),
       Level3(16, 5, '08947', 'Xã Thiện Kế', Type.xa),
       Level3(16, 5, '08950', 'Xã Hương Sơn', Type.xa),
       Level3(16, 5, '08953', 'Xã Tam Hợp', Type.xa),
       Level3(16, 5, '08956', 'Xã Quất Lưu', Type.xa),
       Level3(16, 5, '08959', 'Xã Sơn Lôi', Type.xa),
-      Level3(16, 5, '08962', 'Thị trấn Đạo Đức', Type.thi_tran),
+      Level3(16, 5, '08962', 'Thị trấn Đạo Đức', Type.thiTran),
       Level3(16, 5, '08965', 'Xã Tân Phong', Type.xa),
-      Level3(16, 5, '08968', 'Thị trấn Thanh Lãng', Type.thi_tran),
+      Level3(16, 5, '08968', 'Thị trấn Thanh Lãng', Type.thiTran),
       Level3(16, 5, '08971', 'Xã Phú Xuân', Type.xa),
     ]),
     Level2(16, '251', 'Huyện Yên Lạc', Type.huyen, [
-      Level3(16, 6, '09025', 'Thị trấn Yên Lạc', Type.thi_tran),
+      Level3(16, 6, '09025', 'Thị trấn Yên Lạc', Type.thiTran),
       Level3(16, 6, '09028', 'Xã Đồng Cương', Type.xa),
       Level3(16, 6, '09031', 'Xã Đồng Văn', Type.xa),
       Level3(16, 6, '09034', 'Xã Bình Định', Type.xa),
@@ -3584,7 +3584,7 @@ const level1s = [
       Level3(16, 6, '09073', 'Xã Trung Hà', Type.xa),
     ]),
     Level2(16, '252', 'Huyện Vĩnh Tường', Type.huyen, [
-      Level3(16, 7, '09076', 'Thị trấn Vĩnh Tường', Type.thi_tran),
+      Level3(16, 7, '09076', 'Thị trấn Vĩnh Tường', Type.thiTran),
       Level3(16, 7, '09079', 'Xã Kim Xá', Type.xa),
       Level3(16, 7, '09082', 'Xã Yên Bình', Type.xa),
       Level3(16, 7, '09085', 'Xã Chấn Hưng', Type.xa),
@@ -3596,7 +3596,7 @@ const level1s = [
       Level3(16, 7, '09103', 'Xã Tân Tiến', Type.xa),
       Level3(16, 7, '09106', 'Xã Lũng Hoà', Type.xa),
       Level3(16, 7, '09109', 'Xã Cao Đại', Type.xa),
-      Level3(16, 7, '09112', 'Thị Trấn Thổ Tang', Type.thi_tran),
+      Level3(16, 7, '09112', 'Thị Trấn Thổ Tang', Type.thiTran),
       Level3(16, 7, '09115', 'Xã Vĩnh Sơn', Type.xa),
       Level3(16, 7, '09118', 'Xã Bình Dương', Type.xa),
       Level3(16, 7, '09124', 'Xã Tân Phú', Type.xa),
@@ -3606,7 +3606,7 @@ const level1s = [
       Level3(16, 7, '09136', 'Xã Tuân Chính', Type.xa),
       Level3(16, 7, '09139', 'Xã Vân Xuân', Type.xa),
       Level3(16, 7, '09142', 'Xã Tam Phúc', Type.xa),
-      Level3(16, 7, '09145', 'Thị trấn Tứ Trưng', Type.thi_tran),
+      Level3(16, 7, '09145', 'Thị trấn Tứ Trưng', Type.thiTran),
       Level3(16, 7, '09148', 'Xã Ngũ Kiên', Type.xa),
       Level3(16, 7, '09151', 'Xã An Tường', Type.xa),
       Level3(16, 7, '09154', 'Xã Vĩnh Thịnh', Type.xa),
@@ -3624,7 +3624,7 @@ const level1s = [
       Level3(16, 8, '08809', 'Xã Phương Khoan', Type.xa),
       Level3(16, 8, '08818', 'Xã Tân Lập', Type.xa),
       Level3(16, 8, '08821', 'Xã Nhạo Sơn', Type.xa),
-      Level3(16, 8, '08824', 'Thị trấn Tam Sơn', Type.thi_tran),
+      Level3(16, 8, '08824', 'Thị trấn Tam Sơn', Type.thiTran),
       Level3(16, 8, '08827', 'Xã Như Thụy', Type.xa),
       Level3(16, 8, '08830', 'Xã Yên Thạch', Type.xa),
       Level3(16, 8, '08848', 'Xã Đồng Thịnh', Type.xa),
@@ -3656,7 +3656,7 @@ const level1s = [
       Level3(17, 0, '09331', 'Phường Hạp Lĩnh', Type.phuong),
     ]),
     Level2(17, '258', 'Huyện Yên Phong', Type.huyen, [
-      Level3(17, 1, '09193', 'Thị trấn Chờ', Type.thi_tran),
+      Level3(17, 1, '09193', 'Thị trấn Chờ', Type.thiTran),
       Level3(17, 1, '09196', 'Xã Dũng Liệt', Type.xa),
       Level3(17, 1, '09199', 'Xã Tam Đa', Type.xa),
       Level3(17, 1, '09202', 'Xã Tam Giang', Type.xa),
@@ -3672,7 +3672,7 @@ const level1s = [
       Level3(17, 1, '09241', 'Xã Đông Thọ', Type.xa),
     ]),
     Level2(17, '259', 'Huyện Quế Võ', Type.huyen, [
-      Level3(17, 2, '09247', 'Thị trấn Phố Mới', Type.thi_tran),
+      Level3(17, 2, '09247', 'Thị trấn Phố Mới', Type.thiTran),
       Level3(17, 2, '09250', 'Xã Việt Thống', Type.xa),
       Level3(17, 2, '09253', 'Xã Đại Xuân', Type.xa),
       Level3(17, 2, '09259', 'Xã Nhân Hòa', Type.xa),
@@ -3695,7 +3695,7 @@ const level1s = [
       Level3(17, 2, '09316', 'Xã Hán Quảng', Type.xa),
     ]),
     Level2(17, '260', 'Huyện Tiên Du', Type.huyen, [
-      Level3(17, 3, '09319', 'Thị trấn Lim', Type.thi_tran),
+      Level3(17, 3, '09319', 'Thị trấn Lim', Type.thiTran),
       Level3(17, 3, '09322', 'Xã Phú Lâm', Type.xa),
       Level3(17, 3, '09328', 'Xã Nội Duệ', Type.xa),
       Level3(17, 3, '09334', 'Xã Liên Bão', Type.xa),
@@ -3725,7 +3725,7 @@ const level1s = [
       Level3(17, 4, '09397', 'Phường Phù Chẩn', Type.phuong),
     ]),
     Level2(17, '262', 'Huyện Thuận Thành', Type.huyen, [
-      Level3(17, 5, '09400', 'Thị trấn Hồ', Type.thi_tran),
+      Level3(17, 5, '09400', 'Thị trấn Hồ', Type.thiTran),
       Level3(17, 5, '09403', 'Xã Hoài Thượng', Type.xa),
       Level3(17, 5, '09406', 'Xã Đại Đồng Thành', Type.xa),
       Level3(17, 5, '09409', 'Xã Mão Điền', Type.xa),
@@ -3745,7 +3745,7 @@ const level1s = [
       Level3(17, 5, '09451', 'Xã Song Liễu', Type.xa),
     ]),
     Level2(17, '263', 'Huyện Gia Bình', Type.huyen, [
-      Level3(17, 6, '09454', 'Thị trấn Gia Bình', Type.thi_tran),
+      Level3(17, 6, '09454', 'Thị trấn Gia Bình', Type.thiTran),
       Level3(17, 6, '09457', 'Xã Vạn Ninh', Type.xa),
       Level3(17, 6, '09460', 'Xã Thái Bảo', Type.xa),
       Level3(17, 6, '09463', 'Xã Giang Sơn', Type.xa),
@@ -3761,7 +3761,7 @@ const level1s = [
       Level3(17, 6, '09493', 'Xã Quỳnh Phú', Type.xa),
     ]),
     Level2(17, '264', 'Huyện Lương Tài', Type.huyen, [
-      Level3(17, 7, '09496', 'Thị trấn Thứa', Type.thi_tran),
+      Level3(17, 7, '09496', 'Thị trấn Thứa', Type.thiTran),
       Level3(17, 7, '09499', 'Xã An Thịnh', Type.xa),
       Level3(17, 7, '09502', 'Xã Trung Kênh', Type.xa),
       Level3(17, 7, '09505', 'Xã Phú Hòa', Type.xa),
@@ -3827,7 +3827,7 @@ const level1s = [
       Level3(18, 1, '10603', 'Phường Tân Dân', Type.phuong),
     ]),
     Level2(18, '291', 'Huyện Nam Sách', Type.huyen, [
-      Level3(18, 2, '10606', 'Thị trấn Nam Sách', Type.thi_tran),
+      Level3(18, 2, '10606', 'Thị trấn Nam Sách', Type.thiTran),
       Level3(18, 2, '10609', 'Xã Nam Hưng', Type.xa),
       Level3(18, 2, '10612', 'Xã Nam Tân', Type.xa),
       Level3(18, 2, '10615', 'Xã Hợp Tiến', Type.xa),
@@ -3847,7 +3847,7 @@ const level1s = [
       Level3(18, 2, '10657', 'Xã Đồng Lạc', Type.xa),
       Level3(18, 2, '10666', 'Xã Minh Tân', Type.xa),
     ]),
-    Level2(18, '292', 'Thị xã Kinh Môn', Type.thi_xa, [
+    Level2(18, '292', 'Thị xã Kinh Môn', Type.thiXa, [
       Level3(18, 3, '10675', 'Phường An Lưu', Type.phuong),
       Level3(18, 3, '10678', 'Xã Bạch Đằng', Type.xa),
       Level3(18, 3, '10681', 'Phường Thất Hùng', Type.phuong),
@@ -3873,7 +3873,7 @@ const level1s = [
       Level3(18, 3, '10747', 'Xã Minh Hòa', Type.xa),
     ]),
     Level2(18, '293', 'Huyện Kim Thành', Type.huyen, [
-      Level3(18, 4, '10750', 'Thị trấn Phú Thái', Type.thi_tran),
+      Level3(18, 4, '10750', 'Thị trấn Phú Thái', Type.thiTran),
       Level3(18, 4, '10753', 'Xã Lai Vu', Type.xa),
       Level3(18, 4, '10756', 'Xã Cộng Hòa', Type.xa),
       Level3(18, 4, '10759', 'Xã Thượng Vũ', Type.xa),
@@ -3893,7 +3893,7 @@ const level1s = [
       Level3(18, 4, '10810', 'Xã Đại Đức', Type.xa),
     ]),
     Level2(18, '294', 'Huyện Thanh Hà', Type.huyen, [
-      Level3(18, 5, '10813', 'Thị trấn Thanh Hà', Type.thi_tran),
+      Level3(18, 5, '10813', 'Thị trấn Thanh Hà', Type.thiTran),
       Level3(18, 5, '10816', 'Xã Hồng Lạc', Type.xa),
       Level3(18, 5, '10819', 'Xã Việt Hồng', Type.xa),
       Level3(18, 5, '10825', 'Xã Tân Việt', Type.xa),
@@ -3915,8 +3915,8 @@ const level1s = [
       Level3(18, 5, '10885', 'Xã Vĩnh Lập', Type.xa),
     ]),
     Level2(18, '295', 'Huyện Cẩm Giàng', Type.huyen, [
-      Level3(18, 6, '10888', 'Thị trấn Cẩm Giang', Type.thi_tran),
-      Level3(18, 6, '10891', 'Thị trấn Lai Cách', Type.thi_tran),
+      Level3(18, 6, '10888', 'Thị trấn Cẩm Giang', Type.thiTran),
+      Level3(18, 6, '10891', 'Thị trấn Lai Cách', Type.thiTran),
       Level3(18, 6, '10894', 'Xã Cẩm Hưng', Type.xa),
       Level3(18, 6, '10897', 'Xã Cẩm Hoàng', Type.xa),
       Level3(18, 6, '10900', 'Xã Cẩm Văn', Type.xa),
@@ -3934,7 +3934,7 @@ const level1s = [
       Level3(18, 6, '10942', 'Xã Cẩm Đoài', Type.xa),
     ]),
     Level2(18, '296', 'Huyện Bình Giang', Type.huyen, [
-      Level3(18, 7, '10945', 'Thị trấn Kẻ Sặt', Type.thi_tran),
+      Level3(18, 7, '10945', 'Thị trấn Kẻ Sặt', Type.thiTran),
       Level3(18, 7, '10951', 'Xã Vĩnh Hưng', Type.xa),
       Level3(18, 7, '10954', 'Xã Hùng Thắng', Type.xa),
       Level3(18, 7, '10960', 'Xã Vĩnh Hồng', Type.xa),
@@ -3952,7 +3952,7 @@ const level1s = [
       Level3(18, 7, '10996', 'Xã Bình Xuyên', Type.xa),
     ]),
     Level2(18, '297', 'Huyện Gia Lộc', Type.huyen, [
-      Level3(18, 8, '10999', 'Thị trấn Gia Lộc', Type.thi_tran),
+      Level3(18, 8, '10999', 'Thị trấn Gia Lộc', Type.thiTran),
       Level3(18, 8, '11008', 'Xã Thống Nhất', Type.xa),
       Level3(18, 8, '11020', 'Xã Yết Kiêu', Type.xa),
       Level3(18, 8, '11029', 'Xã Gia Tân', Type.xa),
@@ -3972,7 +3972,7 @@ const level1s = [
       Level3(18, 8, '11071', 'Xã Đức Xương', Type.xa),
     ]),
     Level2(18, '298', 'Huyện Tứ Kỳ', Type.huyen, [
-      Level3(18, 9, '11074', 'Thị trấn Tứ Kỳ', Type.thi_tran),
+      Level3(18, 9, '11074', 'Thị trấn Tứ Kỳ', Type.thiTran),
       Level3(18, 9, '11083', 'Xã Đại Sơn', Type.xa),
       Level3(18, 9, '11086', 'Xã Hưng Đạo', Type.xa),
       Level3(18, 9, '11089', 'Xã Ngọc Kỳ', Type.xa),
@@ -3997,7 +3997,7 @@ const level1s = [
       Level3(18, 9, '11152', 'Xã Hà Thanh', Type.xa),
     ]),
     Level2(18, '299', 'Huyện Ninh Giang', Type.huyen, [
-      Level3(18, 10, '11155', 'Thị trấn Ninh Giang', Type.thi_tran),
+      Level3(18, 10, '11155', 'Thị trấn Ninh Giang', Type.thiTran),
       Level3(18, 10, '11161', 'Xã Ứng Hoè', Type.xa),
       Level3(18, 10, '11164', 'Xã Nghĩa An', Type.xa),
       Level3(18, 10, '11167', 'Xã Hồng Đức', Type.xa),
@@ -4019,7 +4019,7 @@ const level1s = [
       Level3(18, 10, '11233', 'Xã Hưng Long', Type.xa),
     ]),
     Level2(18, '300', 'Huyện Thanh Miện', Type.huyen, [
-      Level3(18, 11, '11239', 'Thị trấn Thanh Miện', Type.thi_tran),
+      Level3(18, 11, '11239', 'Thị trấn Thanh Miện', Type.thiTran),
       Level3(18, 11, '11242', 'Xã Thanh Tùng', Type.xa),
       Level3(18, 11, '11245', 'Xã Phạm Kha', Type.xa),
       Level3(18, 11, '11248', 'Xã Ngô Quyền', Type.xa),
@@ -4120,8 +4120,8 @@ const level1s = [
       Level3(19, 6, '11740', 'Phường Tân Thành', Type.phuong),
     ]),
     Level2(19, '311', 'Huyện Thuỷ Nguyên', Type.huyen, [
-      Level3(19, 7, '11470', 'Thị trấn Núi Đèo', Type.thi_tran),
-      Level3(19, 7, '11473', 'Thị trấn Minh Đức', Type.thi_tran),
+      Level3(19, 7, '11470', 'Thị trấn Núi Đèo', Type.thiTran),
+      Level3(19, 7, '11473', 'Thị trấn Minh Đức', Type.thiTran),
       Level3(19, 7, '11476', 'Xã Lại Xuân', Type.xa),
       Level3(19, 7, '11479', 'Xã An Sơn', Type.xa),
       Level3(19, 7, '11482', 'Xã Kỳ Sơn', Type.xa),
@@ -4159,7 +4159,7 @@ const level1s = [
       Level3(19, 7, '11578', 'Xã Dương Quan', Type.xa),
     ]),
     Level2(19, '312', 'Huyện An Dương', Type.huyen, [
-      Level3(19, 8, '11581', 'Thị trấn An Dương', Type.thi_tran),
+      Level3(19, 8, '11581', 'Thị trấn An Dương', Type.thiTran),
       Level3(19, 8, '11584', 'Xã Lê Thiện', Type.xa),
       Level3(19, 8, '11587', 'Xã Đại Bản', Type.xa),
       Level3(19, 8, '11590', 'Xã An Hoà', Type.xa),
@@ -4177,7 +4177,7 @@ const level1s = [
       Level3(19, 8, '11626', 'Xã Hồng Thái', Type.xa),
     ]),
     Level2(19, '313', 'Huyện An Lão', Type.huyen, [
-      Level3(19, 9, '11629', 'Thị trấn An Lão', Type.thi_tran),
+      Level3(19, 9, '11629', 'Thị trấn An Lão', Type.thiTran),
       Level3(19, 9, '11632', 'Xã Bát Trang', Type.xa),
       Level3(19, 9, '11635', 'Xã Trường Thọ', Type.xa),
       Level3(19, 9, '11638', 'Xã Trường Thành', Type.xa),
@@ -4186,7 +4186,7 @@ const level1s = [
       Level3(19, 9, '11647', 'Xã Quang Trung', Type.xa),
       Level3(19, 9, '11650', 'Xã Quốc Tuấn', Type.xa),
       Level3(19, 9, '11653', 'Xã An Thắng', Type.xa),
-      Level3(19, 9, '11656', 'Thị trấn Trường Sơn', Type.thi_tran),
+      Level3(19, 9, '11656', 'Thị trấn Trường Sơn', Type.thiTran),
       Level3(19, 9, '11659', 'Xã Tân Dân', Type.xa),
       Level3(19, 9, '11662', 'Xã Thái Sơn', Type.xa),
       Level3(19, 9, '11665', 'Xã Tân Viên', Type.xa),
@@ -4196,7 +4196,7 @@ const level1s = [
       Level3(19, 9, '11677', 'Xã An Thái', Type.xa),
     ]),
     Level2(19, '314', 'Huyện Kiến Thuỵ', Type.huyen, [
-      Level3(19, 10, '11680', 'Thị trấn Núi Đối', Type.thi_tran),
+      Level3(19, 10, '11680', 'Thị trấn Núi Đối', Type.thiTran),
       Level3(19, 10, '11695', 'Xã Đông Phương', Type.xa),
       Level3(19, 10, '11698', 'Xã Thuận Thiên', Type.xa),
       Level3(19, 10, '11701', 'Xã Hữu Bằng', Type.xa),
@@ -4216,7 +4216,7 @@ const level1s = [
       Level3(19, 10, '11752', 'Xã Đại Hợp', Type.xa),
     ]),
     Level2(19, '315', 'Huyện Tiên Lãng', Type.huyen, [
-      Level3(19, 11, '11755', 'Thị trấn Tiên Lãng', Type.thi_tran),
+      Level3(19, 11, '11755', 'Thị trấn Tiên Lãng', Type.thiTran),
       Level3(19, 11, '11758', 'Xã Đại Thắng', Type.xa),
       Level3(19, 11, '11761', 'Xã Tiên Cường', Type.xa),
       Level3(19, 11, '11764', 'Xã Tự Cường', Type.xa),
@@ -4239,7 +4239,7 @@ const level1s = [
       Level3(19, 11, '11821', 'Xã Vinh Quang', Type.xa),
     ]),
     Level2(19, '316', 'Huyện Vĩnh Bảo', Type.huyen, [
-      Level3(19, 12, '11824', 'Thị trấn Vĩnh Bảo', Type.thi_tran),
+      Level3(19, 12, '11824', 'Thị trấn Vĩnh Bảo', Type.thiTran),
       Level3(19, 12, '11827', 'Xã Dũng Tiến', Type.xa),
       Level3(19, 12, '11830', 'Xã Giang Biên', Type.xa),
       Level3(19, 12, '11833', 'Xã Thắng Thuỷ', Type.xa),
@@ -4271,8 +4271,8 @@ const level1s = [
       Level3(19, 12, '11911', 'Xã Trấn Dương', Type.xa),
     ]),
     Level2(19, '317', 'Huyện Cát Hải', Type.huyen, [
-      Level3(19, 13, '11914', 'Thị trấn Cát Bà', Type.thi_tran),
-      Level3(19, 13, '11917', 'Thị trấn Cát Hải', Type.thi_tran),
+      Level3(19, 13, '11914', 'Thị trấn Cát Bà', Type.thiTran),
+      Level3(19, 13, '11917', 'Thị trấn Cát Hải', Type.thiTran),
       Level3(19, 13, '11920', 'Xã Nghĩa Lộ', Type.xa),
       Level3(19, 13, '11923', 'Xã Đồng Bài', Type.xa),
       Level3(19, 13, '11926', 'Xã Hoàng Châu', Type.xa),
@@ -4307,7 +4307,7 @@ const level1s = [
       Level3(20, 0, '12388', 'Xã Hoàng Hanh', Type.xa),
     ]),
     Level2(20, '325', 'Huyện Văn Lâm', Type.huyen, [
-      Level3(20, 1, '11986', 'Thị trấn Như Quỳnh', Type.thi_tran),
+      Level3(20, 1, '11986', 'Thị trấn Như Quỳnh', Type.thiTran),
       Level3(20, 1, '11989', 'Xã Lạc Đạo', Type.xa),
       Level3(20, 1, '11992', 'Xã Chỉ Đạo', Type.xa),
       Level3(20, 1, '11995', 'Xã Đại Đồng', Type.xa),
@@ -4320,7 +4320,7 @@ const level1s = [
       Level3(20, 1, '12016', 'Xã Lạc Hồng', Type.xa),
     ]),
     Level2(20, '326', 'Huyện Văn Giang', Type.huyen, [
-      Level3(20, 2, '12019', 'Thị trấn Văn Giang', Type.thi_tran),
+      Level3(20, 2, '12019', 'Thị trấn Văn Giang', Type.thiTran),
       Level3(20, 2, '12022', 'Xã Xuân Quan', Type.xa),
       Level3(20, 2, '12025', 'Xã Cửu Cao', Type.xa),
       Level3(20, 2, '12028', 'Xã Phụng Công', Type.xa),
@@ -4333,7 +4333,7 @@ const level1s = [
       Level3(20, 2, '12049', 'Xã Mễ Sở', Type.xa),
     ]),
     Level2(20, '327', 'Huyện Yên Mỹ', Type.huyen, [
-      Level3(20, 3, '12052', 'Thị trấn Yên Mỹ', Type.thi_tran),
+      Level3(20, 3, '12052', 'Thị trấn Yên Mỹ', Type.thiTran),
       Level3(20, 3, '12055', 'Xã Giai Phạm', Type.xa),
       Level3(20, 3, '12058', 'Xã Nghĩa Hiệp', Type.xa),
       Level3(20, 3, '12061', 'Xã Đồng Than', Type.xa),
@@ -4351,7 +4351,7 @@ const level1s = [
       Level3(20, 3, '12097', 'Xã Lý Thường Kiệt', Type.xa),
       Level3(20, 3, '12100', 'Xã Tân Việt', Type.xa),
     ]),
-    Level2(20, '328', 'Thị xã Mỹ Hào', Type.thi_xa, [
+    Level2(20, '328', 'Thị xã Mỹ Hào', Type.thiXa, [
       Level3(20, 4, '12103', 'Phường Bần Yên Nhân', Type.phuong),
       Level3(20, 4, '12106', 'Phường Phan Đình Phùng', Type.phuong),
       Level3(20, 4, '12109', 'Xã Cẩm Xá', Type.xa),
@@ -4367,7 +4367,7 @@ const level1s = [
       Level3(20, 4, '12139', 'Xã Hưng Long', Type.xa),
     ]),
     Level2(20, '329', 'Huyện Ân Thi', Type.huyen, [
-      Level3(20, 5, '12142', 'Thị trấn Ân Thi', Type.thi_tran),
+      Level3(20, 5, '12142', 'Thị trấn Ân Thi', Type.thiTran),
       Level3(20, 5, '12145', 'Xã Phù Ủng', Type.xa),
       Level3(20, 5, '12148', 'Xã Bắc Sơn', Type.xa),
       Level3(20, 5, '12151', 'Xã Bãi Sậy', Type.xa),
@@ -4390,7 +4390,7 @@ const level1s = [
       Level3(20, 5, '12202', 'Xã Hạ Lễ', Type.xa),
     ]),
     Level2(20, '330', 'Huyện Khoái Châu', Type.huyen, [
-      Level3(20, 6, '12205', 'Thị trấn Khoái Châu', Type.thi_tran),
+      Level3(20, 6, '12205', 'Thị trấn Khoái Châu', Type.thiTran),
       Level3(20, 6, '12208', 'Xã Đông Tảo', Type.xa),
       Level3(20, 6, '12211', 'Xã Bình Minh', Type.xa),
       Level3(20, 6, '12214', 'Xã Dạ Trạch', Type.xa),
@@ -4417,7 +4417,7 @@ const level1s = [
       Level3(20, 6, '12277', 'Xã Nhuế Dương', Type.xa),
     ]),
     Level2(20, '331', 'Huyện Kim Động', Type.huyen, [
-      Level3(20, 7, '12280', 'Thị trấn Lương Bằng', Type.thi_tran),
+      Level3(20, 7, '12280', 'Thị trấn Lương Bằng', Type.thiTran),
       Level3(20, 7, '12283', 'Xã Nghĩa Dân', Type.xa),
       Level3(20, 7, '12286', 'Xã Toàn Thắng', Type.xa),
       Level3(20, 7, '12289', 'Xã Vĩnh Xá', Type.xa),
@@ -4436,7 +4436,7 @@ const level1s = [
       Level3(20, 7, '12328', 'Xã Hiệp Cường', Type.xa),
     ]),
     Level2(20, '332', 'Huyện Tiên Lữ', Type.huyen, [
-      Level3(20, 8, '12337', 'Thị trấn Vương', Type.thi_tran),
+      Level3(20, 8, '12337', 'Thị trấn Vương', Type.thiTran),
       Level3(20, 8, '12340', 'Xã Hưng Đạo', Type.xa),
       Level3(20, 8, '12343', 'Xã Ngô Quyền', Type.xa),
       Level3(20, 8, '12346', 'Xã Nhật Tân', Type.xa),
@@ -4453,7 +4453,7 @@ const level1s = [
       Level3(20, 8, '12379', 'Xã Minh Phượng', Type.xa),
     ]),
     Level2(20, '333', 'Huyện Phù Cừ', Type.huyen, [
-      Level3(20, 9, '12391', 'Thị trấn Trần Cao', Type.thi_tran),
+      Level3(20, 9, '12391', 'Thị trấn Trần Cao', Type.thiTran),
       Level3(20, 9, '12394', 'Xã Minh Tân', Type.xa),
       Level3(20, 9, '12397', 'Xã Phan Sào Nam', Type.xa),
       Level3(20, 9, '12400', 'Xã Quang Hưng', Type.xa),
@@ -4492,7 +4492,7 @@ const level1s = [
       Level3(21, 0, '13225', 'Xã Tân Bình', Type.xa),
     ]),
     Level2(21, '338', 'Huyện Quỳnh Phụ', Type.huyen, [
-      Level3(21, 1, '12472', 'Thị trấn Quỳnh Côi', Type.thi_tran),
+      Level3(21, 1, '12472', 'Thị trấn Quỳnh Côi', Type.thiTran),
       Level3(21, 1, '12475', 'Xã An Khê', Type.xa),
       Level3(21, 1, '12478', 'Xã An Đồng', Type.xa),
       Level3(21, 1, '12481', 'Xã Quỳnh Hoa', Type.xa),
@@ -4509,7 +4509,7 @@ const level1s = [
       Level3(21, 1, '12514', 'Xã An Ninh', Type.xa),
       Level3(21, 1, '12517', 'Xã Quỳnh Ngọc', Type.xa),
       Level3(21, 1, '12520', 'Xã Quỳnh Hải', Type.xa),
-      Level3(21, 1, '12523', 'Thị trấn An Bài', Type.thi_tran),
+      Level3(21, 1, '12523', 'Thị trấn An Bài', Type.thiTran),
       Level3(21, 1, '12526', 'Xã An Ấp', Type.xa),
       Level3(21, 1, '12529', 'Xã Quỳnh Hội', Type.xa),
       Level3(21, 1, '12532', 'Xã Châu Sơn', Type.xa),
@@ -4531,7 +4531,7 @@ const level1s = [
       Level3(21, 1, '12583', 'Xã Đồng Tiến', Type.xa),
     ]),
     Level2(21, '339', 'Huyện Hưng Hà', Type.huyen, [
-      Level3(21, 2, '12586', 'Thị trấn Hưng Hà', Type.thi_tran),
+      Level3(21, 2, '12586', 'Thị trấn Hưng Hà', Type.thiTran),
       Level3(21, 2, '12589', 'Xã Điệp Nông', Type.xa),
       Level3(21, 2, '12592', 'Xã Tân Lễ', Type.xa),
       Level3(21, 2, '12595', 'Xã Cộng Hòa', Type.xa),
@@ -4540,7 +4540,7 @@ const level1s = [
       Level3(21, 2, '12604', 'Xã Hòa Tiến', Type.xa),
       Level3(21, 2, '12607', 'Xã Hùng Dũng', Type.xa),
       Level3(21, 2, '12610', 'Xã Tân Tiến', Type.xa),
-      Level3(21, 2, '12613', 'Thị trấn Hưng Nhân', Type.thi_tran),
+      Level3(21, 2, '12613', 'Thị trấn Hưng Nhân', Type.thiTran),
       Level3(21, 2, '12616', 'Xã Đoan Hùng', Type.xa),
       Level3(21, 2, '12619', 'Xã Duyên Hải', Type.xa),
       Level3(21, 2, '12622', 'Xã Tân Hòa', Type.xa),
@@ -4568,7 +4568,7 @@ const level1s = [
       Level3(21, 2, '12685', 'Xã Hồng Minh', Type.xa),
     ]),
     Level2(21, '340', 'Huyện Đông Hưng', Type.huyen, [
-      Level3(21, 3, '12688', 'Thị trấn Đông Hưng', Type.thi_tran),
+      Level3(21, 3, '12688', 'Thị trấn Đông Hưng', Type.thiTran),
       Level3(21, 3, '12691', 'Xã Đô Lương', Type.xa),
       Level3(21, 3, '12694', 'Xã Đông Phương', Type.xa),
       Level3(21, 3, '12697', 'Xã Liên Giang', Type.xa),
@@ -4608,7 +4608,7 @@ const level1s = [
       Level3(21, 3, '12823', 'Xã Minh Phú', Type.xa),
     ]),
     Level2(21, '341', 'Huyện Thái Thụy', Type.huyen, [
-      Level3(21, 4, '12826', 'Thị trấn Diêm Điền', Type.thi_tran),
+      Level3(21, 4, '12826', 'Thị trấn Diêm Điền', Type.thiTran),
       Level3(21, 4, '12832', 'Xã Thụy Trường', Type.xa),
       Level3(21, 4, '12841', 'Xã Hồng Dũng', Type.xa),
       Level3(21, 4, '12844', 'Xã Thụy Quỳnh', Type.xa),
@@ -4646,7 +4646,7 @@ const level1s = [
       Level3(21, 4, '12967', 'Xã Thái Thọ', Type.xa),
     ]),
     Level2(21, '342', 'Huyện Tiền Hải', Type.huyen, [
-      Level3(21, 5, '12970', 'Thị trấn Tiền Hải', Type.thi_tran),
+      Level3(21, 5, '12970', 'Thị trấn Tiền Hải', Type.thiTran),
       Level3(21, 5, '12976', 'Xã Đông Trà', Type.xa),
       Level3(21, 5, '12979', 'Xã Đông Long', Type.xa),
       Level3(21, 5, '12982', 'Xã Đông Quí', Type.xa),
@@ -4680,7 +4680,7 @@ const level1s = [
       Level3(21, 5, '13072', 'Xã Nam Phú', Type.xa),
     ]),
     Level2(21, '343', 'Huyện Kiến Xương', Type.huyen, [
-      Level3(21, 6, '13075', 'Thị trấn Kiến Xương', Type.thi_tran),
+      Level3(21, 6, '13075', 'Thị trấn Kiến Xương', Type.thiTran),
       Level3(21, 6, '13078', 'Xã Trà Giang', Type.xa),
       Level3(21, 6, '13081', 'Xã Quốc Tuấn', Type.xa),
       Level3(21, 6, '13087', 'Xã An Bình', Type.xa),
@@ -4715,7 +4715,7 @@ const level1s = [
       Level3(21, 6, '13189', 'Xã Hồng Tiến', Type.xa),
     ]),
     Level2(21, '344', 'Huyện Vũ Thư', Type.huyen, [
-      Level3(21, 7, '13192', 'Thị trấn Vũ Thư', Type.thi_tran),
+      Level3(21, 7, '13192', 'Thị trấn Vũ Thư', Type.thiTran),
       Level3(21, 7, '13195', 'Xã Hồng Lý', Type.xa),
       Level3(21, 7, '13198', 'Xã Đồng Thanh', Type.xa),
       Level3(21, 7, '13201', 'Xã Xuân Hòa', Type.xa),
@@ -4771,7 +4771,7 @@ const level1s = [
       Level3(22, 0, '13507', 'Xã Đinh Xá', Type.xa),
       Level3(22, 0, '13513', 'Xã Trịnh Xá', Type.xa),
     ]),
-    Level2(22, '349', 'Thị xã Duy Tiên', Type.thi_xa, [
+    Level2(22, '349', 'Thị xã Duy Tiên', Type.thiXa, [
       Level3(22, 1, '13321', 'Phường Đồng Văn', Type.phuong),
       Level3(22, 1, '13324', 'Phường Hòa Mạc', Type.phuong),
       Level3(22, 1, '13327', 'Xã Mộc Bắc', Type.xa),
@@ -4790,7 +4790,7 @@ const level1s = [
       Level3(22, 1, '13369', 'Xã Tiên Sơn', Type.xa),
     ]),
     Level2(22, '350', 'Huyện Kim Bảng', Type.huyen, [
-      Level3(22, 2, '13384', 'Thị trấn Quế', Type.thi_tran),
+      Level3(22, 2, '13384', 'Thị trấn Quế', Type.thiTran),
       Level3(22, 2, '13387', 'Xã Nguyễn Úy', Type.xa),
       Level3(22, 2, '13390', 'Xã Đại Cương', Type.xa),
       Level3(22, 2, '13393', 'Xã Lê Hồ', Type.xa),
@@ -4804,20 +4804,20 @@ const level1s = [
       Level3(22, 2, '13417', 'Xã Văn Xá', Type.xa),
       Level3(22, 2, '13420', 'Xã Khả Phong', Type.xa),
       Level3(22, 2, '13423', 'Xã Ngọc Sơn', Type.xa),
-      Level3(22, 2, '13429', 'Thị trấn Ba Sao', Type.thi_tran),
+      Level3(22, 2, '13429', 'Thị trấn Ba Sao', Type.thiTran),
       Level3(22, 2, '13432', 'Xã Liên Sơn', Type.xa),
       Level3(22, 2, '13435', 'Xã Thi Sơn', Type.xa),
       Level3(22, 2, '13438', 'Xã Thanh Sơn', Type.xa),
     ]),
     Level2(22, '351', 'Huyện Thanh Liêm', Type.huyen, [
-      Level3(22, 3, '13441', 'Thị trấn Kiện Khê', Type.thi_tran),
+      Level3(22, 3, '13441', 'Thị trấn Kiện Khê', Type.thiTran),
       Level3(22, 3, '13450', 'Xã Liêm Phong', Type.xa),
       Level3(22, 3, '13453', 'Xã Thanh Hà', Type.xa),
       Level3(22, 3, '13456', 'Xã Liêm Cần', Type.xa),
       Level3(22, 3, '13465', 'Xã Liêm Thuận', Type.xa),
       Level3(22, 3, '13468', 'Xã Thanh Thủy', Type.xa),
       Level3(22, 3, '13471', 'Xã Thanh Phong', Type.xa),
-      Level3(22, 3, '13474', 'Thị trấn Tân Thanh', Type.thi_tran),
+      Level3(22, 3, '13474', 'Thị trấn Tân Thanh', Type.thiTran),
       Level3(22, 3, '13477', 'Xã Thanh Tân', Type.xa),
       Level3(22, 3, '13480', 'Xã Liêm Túc', Type.xa),
       Level3(22, 3, '13483', 'Xã Liêm Sơn', Type.xa),
@@ -4828,7 +4828,7 @@ const level1s = [
       Level3(22, 3, '13498', 'Xã Thanh Hải', Type.xa),
     ]),
     Level2(22, '352', 'Huyện Bình Lục', Type.huyen, [
-      Level3(22, 4, '13501', 'Thị trấn Bình Mỹ', Type.thi_tran),
+      Level3(22, 4, '13501', 'Thị trấn Bình Mỹ', Type.thiTran),
       Level3(22, 4, '13504', 'Xã Bình Nghĩa', Type.xa),
       Level3(22, 4, '13510', 'Xã Tràng An', Type.xa),
       Level3(22, 4, '13516', 'Xã Đồng Du', Type.xa),
@@ -4857,7 +4857,7 @@ const level1s = [
       Level3(22, 5, '13588', 'Xã Bắc Lý', Type.xa),
       Level3(22, 5, '13591', 'Xã Đức Lý', Type.xa),
       Level3(22, 5, '13594', 'Xã Trần Hưng Đạo', Type.xa),
-      Level3(22, 5, '13597', 'Thị trấn Vĩnh Trụ', Type.thi_tran),
+      Level3(22, 5, '13597', 'Thị trấn Vĩnh Trụ', Type.thiTran),
       Level3(22, 5, '13600', 'Xã Nhân Thịnh', Type.xa),
       Level3(22, 5, '13606', 'Xã Nhân Khang', Type.xa),
       Level3(22, 5, '13609', 'Xã Nhân Mỹ', Type.xa),
@@ -4899,7 +4899,7 @@ const level1s = [
       Level3(23, 0, '13705', 'Xã Nam Vân', Type.xa),
     ]),
     Level2(23, '358', 'Huyện Mỹ Lộc', Type.huyen, [
-      Level3(23, 1, '13708', 'Thị trấn Mỹ Lộc', Type.thi_tran),
+      Level3(23, 1, '13708', 'Thị trấn Mỹ Lộc', Type.thiTran),
       Level3(23, 1, '13711', 'Xã Mỹ Hà', Type.xa),
       Level3(23, 1, '13714', 'Xã Mỹ Tiến', Type.xa),
       Level3(23, 1, '13717', 'Xã Mỹ Thắng', Type.xa),
@@ -4912,7 +4912,7 @@ const level1s = [
       Level3(23, 1, '13738', 'Xã Mỹ Thành', Type.xa),
     ]),
     Level2(23, '359', 'Huyện Vụ Bản', Type.huyen, [
-      Level3(23, 2, '13741', 'Thị trấn Gôi', Type.thi_tran),
+      Level3(23, 2, '13741', 'Thị trấn Gôi', Type.thiTran),
       Level3(23, 2, '13744', 'Xã Minh Thuận', Type.xa),
       Level3(23, 2, '13747', 'Xã Hiển Khánh', Type.xa),
       Level3(23, 2, '13750', 'Xã Tân Khánh', Type.xa),
@@ -4932,7 +4932,7 @@ const level1s = [
       Level3(23, 2, '13792', 'Xã Vĩnh Hào', Type.xa),
     ]),
     Level2(23, '360', 'Huyện Ý Yên', Type.huyen, [
-      Level3(23, 3, '13795', 'Thị trấn Lâm', Type.thi_tran),
+      Level3(23, 3, '13795', 'Thị trấn Lâm', Type.thiTran),
       Level3(23, 3, '13798', 'Xã Yên Trung', Type.xa),
       Level3(23, 3, '13801', 'Xã Yên Thành', Type.xa),
       Level3(23, 3, '13804', 'Xã Yên Tân', Type.xa),
@@ -4965,8 +4965,8 @@ const level1s = [
       Level3(23, 3, '13888', 'Xã Yên Trị', Type.xa),
     ]),
     Level2(23, '361', 'Huyện Nghĩa Hưng', Type.huyen, [
-      Level3(23, 4, '13891', 'Thị trấn Liễu Đề', Type.thi_tran),
-      Level3(23, 4, '13894', 'Thị trấn Rạng Đông', Type.thi_tran),
+      Level3(23, 4, '13891', 'Thị trấn Liễu Đề', Type.thiTran),
+      Level3(23, 4, '13894', 'Thị trấn Rạng Đông', Type.thiTran),
       Level3(23, 4, '13897', 'Xã Nghĩa Đồng', Type.xa),
       Level3(23, 4, '13900', 'Xã Nghĩa Thịnh', Type.xa),
       Level3(23, 4, '13903', 'Xã Nghĩa Minh', Type.xa),
@@ -4980,7 +4980,7 @@ const level1s = [
       Level3(23, 4, '13927', 'Xã Nghĩa Phong', Type.xa),
       Level3(23, 4, '13930', 'Xã Nghĩa Phú', Type.xa),
       Level3(23, 4, '13933', 'Xã Nghĩa Bình', Type.xa),
-      Level3(23, 4, '13936', 'Thị trấn Quỹ Nhất', Type.thi_tran),
+      Level3(23, 4, '13936', 'Thị trấn Quỹ Nhất', Type.thiTran),
       Level3(23, 4, '13939', 'Xã Nghĩa Tân', Type.xa),
       Level3(23, 4, '13942', 'Xã Nghĩa Hùng', Type.xa),
       Level3(23, 4, '13945', 'Xã Nghĩa Lâm', Type.xa),
@@ -4991,7 +4991,7 @@ const level1s = [
       Level3(23, 4, '13963', 'Xã Nam Điền', Type.xa),
     ]),
     Level2(23, '362', 'Huyện Nam Trực', Type.huyen, [
-      Level3(23, 5, '13966', 'Thị trấn Nam Giang', Type.thi_tran),
+      Level3(23, 5, '13966', 'Thị trấn Nam Giang', Type.thiTran),
       Level3(23, 5, '13969', 'Xã Nam Mỹ', Type.xa),
       Level3(23, 5, '13972', 'Xã Điền Xá', Type.xa),
       Level3(23, 5, '13975', 'Xã Nghĩa An', Type.xa),
@@ -5013,7 +5013,7 @@ const level1s = [
       Level3(23, 5, '14023', 'Xã Nam Thái', Type.xa),
     ]),
     Level2(23, '363', 'Huyện Trực Ninh', Type.huyen, [
-      Level3(23, 6, '14026', 'Thị trấn Cổ Lễ', Type.thi_tran),
+      Level3(23, 6, '14026', 'Thị trấn Cổ Lễ', Type.thiTran),
       Level3(23, 6, '14029', 'Xã Phương Định', Type.xa),
       Level3(23, 6, '14032', 'Xã Trực Chính', Type.xa),
       Level3(23, 6, '14035', 'Xã Trung Đông', Type.xa),
@@ -5023,20 +5023,20 @@ const level1s = [
       Level3(23, 6, '14047', 'Xã Trực Đạo', Type.xa),
       Level3(23, 6, '14050', 'Xã Trực Hưng', Type.xa),
       Level3(23, 6, '14053', 'Xã Trực Nội', Type.xa),
-      Level3(23, 6, '14056', 'Thị trấn Cát Thành', Type.thi_tran),
+      Level3(23, 6, '14056', 'Thị trấn Cát Thành', Type.thiTran),
       Level3(23, 6, '14059', 'Xã Trực Thanh', Type.xa),
       Level3(23, 6, '14062', 'Xã Trực Khang', Type.xa),
       Level3(23, 6, '14065', 'Xã Trực Thuận', Type.xa),
       Level3(23, 6, '14068', 'Xã Trực Mỹ', Type.xa),
       Level3(23, 6, '14071', 'Xã Trực Đại', Type.xa),
       Level3(23, 6, '14074', 'Xã Trực Cường', Type.xa),
-      Level3(23, 6, '14077', 'Thị trấn Ninh Cường', Type.thi_tran),
+      Level3(23, 6, '14077', 'Thị trấn Ninh Cường', Type.thiTran),
       Level3(23, 6, '14080', 'Xã Trực Thái', Type.xa),
       Level3(23, 6, '14083', 'Xã Trực Hùng', Type.xa),
       Level3(23, 6, '14086', 'Xã Trực Thắng', Type.xa),
     ]),
     Level2(23, '364', 'Huyện Xuân Trường', Type.huyen, [
-      Level3(23, 7, '14089', 'Thị trấn Xuân Trường', Type.thi_tran),
+      Level3(23, 7, '14089', 'Thị trấn Xuân Trường', Type.thiTran),
       Level3(23, 7, '14092', 'Xã Xuân Châu', Type.xa),
       Level3(23, 7, '14095', 'Xã Xuân Hồng', Type.xa),
       Level3(23, 7, '14098', 'Xã Xuân Thành', Type.xa),
@@ -5058,8 +5058,8 @@ const level1s = [
       Level3(23, 7, '14146', 'Xã Xuân Hòa', Type.xa),
     ]),
     Level2(23, '365', 'Huyện Giao Thủy', Type.huyen, [
-      Level3(23, 8, '14149', 'Thị trấn Ngô Đồng', Type.thi_tran),
-      Level3(23, 8, '14152', 'Thị trấn Quất Lâm', Type.thi_tran),
+      Level3(23, 8, '14149', 'Thị trấn Ngô Đồng', Type.thiTran),
+      Level3(23, 8, '14152', 'Thị trấn Quất Lâm', Type.thiTran),
       Level3(23, 8, '14155', 'Xã Giao Hương', Type.xa),
       Level3(23, 8, '14158', 'Xã Hồng Thuận', Type.xa),
       Level3(23, 8, '14161', 'Xã Giao Thiện', Type.xa),
@@ -5082,9 +5082,9 @@ const level1s = [
       Level3(23, 8, '14212', 'Xã Giao Phong', Type.xa),
     ]),
     Level2(23, '366', 'Huyện Hải Hậu', Type.huyen, [
-      Level3(23, 9, '14215', 'Thị trấn Yên Định', Type.thi_tran),
-      Level3(23, 9, '14218', 'Thị trấn Cồn', Type.thi_tran),
-      Level3(23, 9, '14221', 'Thị trấn Thịnh Long', Type.thi_tran),
+      Level3(23, 9, '14215', 'Thị trấn Yên Định', Type.thiTran),
+      Level3(23, 9, '14218', 'Thị trấn Cồn', Type.thiTran),
+      Level3(23, 9, '14221', 'Thị trấn Thịnh Long', Type.thiTran),
       Level3(23, 9, '14224', 'Xã Hải Nam', Type.xa),
       Level3(23, 9, '14227', 'Xã Hải Trung', Type.xa),
       Level3(23, 9, '14230', 'Xã Hải Vân', Type.xa),
@@ -5147,7 +5147,7 @@ const level1s = [
       Level3(24, 1, '14380', 'Xã Đông Sơn', Type.xa),
     ]),
     Level2(24, '372', 'Huyện Nho Quan', Type.huyen, [
-      Level3(24, 2, '14383', 'Thị trấn Nho Quan', Type.thi_tran),
+      Level3(24, 2, '14383', 'Thị trấn Nho Quan', Type.thiTran),
       Level3(24, 2, '14386', 'Xã Xích Thổ', Type.xa),
       Level3(24, 2, '14389', 'Xã Gia Lâm', Type.xa),
       Level3(24, 2, '14392', 'Xã Gia Sơn', Type.xa),
@@ -5176,7 +5176,7 @@ const level1s = [
       Level3(24, 2, '14461', 'Xã Quảng Lạc', Type.xa),
     ]),
     Level2(24, '373', 'Huyện Gia Viễn', Type.huyen, [
-      Level3(24, 3, '14464', 'Thị trấn Me', Type.thi_tran),
+      Level3(24, 3, '14464', 'Thị trấn Me', Type.thiTran),
       Level3(24, 3, '14467', 'Xã Gia Hòa', Type.xa),
       Level3(24, 3, '14470', 'Xã Gia Hưng', Type.xa),
       Level3(24, 3, '14473', 'Xã Liên Sơn', Type.xa),
@@ -5199,7 +5199,7 @@ const level1s = [
       Level3(24, 3, '14524', 'Xã Gia Phong', Type.xa),
     ]),
     Level2(24, '374', 'Huyện Hoa Lư', Type.huyen, [
-      Level3(24, 4, '14527', 'Thị trấn Thiên Tôn', Type.thi_tran),
+      Level3(24, 4, '14527', 'Thị trấn Thiên Tôn', Type.thiTran),
       Level3(24, 4, '14530', 'Xã Ninh Giang', Type.xa),
       Level3(24, 4, '14533', 'Xã Trường Yên', Type.xa),
       Level3(24, 4, '14536', 'Xã Ninh Khang', Type.xa),
@@ -5212,7 +5212,7 @@ const level1s = [
       Level3(24, 4, '14557', 'Xã Ninh An', Type.xa),
     ]),
     Level2(24, '375', 'Huyện Yên Khánh', Type.huyen, [
-      Level3(24, 5, '14560', 'Thị trấn Yên Ninh', Type.thi_tran),
+      Level3(24, 5, '14560', 'Thị trấn Yên Ninh', Type.thiTran),
       Level3(24, 5, '14563', 'Xã Khánh Tiên', Type.xa),
       Level3(24, 5, '14566', 'Xã Khánh Phú', Type.xa),
       Level3(24, 5, '14569', 'Xã Khánh Hòa', Type.xa),
@@ -5233,8 +5233,8 @@ const level1s = [
       Level3(24, 5, '14617', 'Xã Khánh Hồng', Type.xa),
     ]),
     Level2(24, '376', 'Huyện Kim Sơn', Type.huyen, [
-      Level3(24, 6, '14620', 'Thị trấn Phát Diệm', Type.thi_tran),
-      Level3(24, 6, '14623', 'Thị trấn Bình Minh', Type.thi_tran),
+      Level3(24, 6, '14620', 'Thị trấn Phát Diệm', Type.thiTran),
+      Level3(24, 6, '14623', 'Thị trấn Bình Minh', Type.thiTran),
       Level3(24, 6, '14629', 'Xã Hồi Ninh', Type.xa),
       Level3(24, 6, '14632', 'Xã Xuân Chính', Type.xa),
       Level3(24, 6, '14635', 'Xã Kim Định', Type.xa),
@@ -5260,7 +5260,7 @@ const level1s = [
       Level3(24, 6, '14698', 'Xã Kim Đông', Type.xa),
     ]),
     Level2(24, '377', 'Huyện Yên Mô', Type.huyen, [
-      Level3(24, 7, '14701', 'Thị trấn Yên Thịnh', Type.thi_tran),
+      Level3(24, 7, '14701', 'Thị trấn Yên Thịnh', Type.thiTran),
       Level3(24, 7, '14704', 'Xã Khánh Thượng', Type.xa),
       Level3(24, 7, '14707', 'Xã Khánh Dương', Type.xa),
       Level3(24, 7, '14710', 'Xã Mai Sơn', Type.xa),
@@ -5316,7 +5316,7 @@ const level1s = [
       Level3(25, 0, '16522', 'Phường Quảng Phú', Type.phuong),
       Level3(25, 0, '16525', 'Phường Quảng Tâm', Type.phuong),
     ]),
-    Level2(25, '381', 'Thị xã Bỉm Sơn', Type.thi_xa, [
+    Level2(25, '381', 'Thị xã Bỉm Sơn', Type.thiXa, [
       Level3(25, 1, '14809', 'Phường Bắc Sơn', Type.phuong),
       Level3(25, 1, '14812', 'Phường Ba Đình', Type.phuong),
       Level3(25, 1, '14815', 'Phường Lam Sơn', Type.phuong),
@@ -5339,7 +5339,7 @@ const level1s = [
       Level3(25, 2, '16537', 'Xã Quảng Đại', Type.xa),
     ]),
     Level2(25, '384', 'Huyện Mường Lát', Type.huyen, [
-      Level3(25, 3, '14845', 'Thị trấn Mường Lát', Type.thi_tran),
+      Level3(25, 3, '14845', 'Thị trấn Mường Lát', Type.thiTran),
       Level3(25, 3, '14848', 'Xã Tam Chung', Type.xa),
       Level3(25, 3, '14854', 'Xã Mường Lý', Type.xa),
       Level3(25, 3, '14857', 'Xã Trung Lý', Type.xa),
@@ -5349,7 +5349,7 @@ const level1s = [
       Level3(25, 3, '14866', 'Xã Mường Chanh', Type.xa),
     ]),
     Level2(25, '385', 'Huyện Quan Hóa', Type.huyen, [
-      Level3(25, 4, '14869', 'Thị trấn Hồi Xuân', Type.thi_tran),
+      Level3(25, 4, '14869', 'Thị trấn Hồi Xuân', Type.thiTran),
       Level3(25, 4, '14872', 'Xã Thành Sơn', Type.xa),
       Level3(25, 4, '14875', 'Xã Trung Sơn', Type.xa),
       Level3(25, 4, '14878', 'Xã Phú Thanh', Type.xa),
@@ -5366,7 +5366,7 @@ const level1s = [
       Level3(25, 4, '14917', 'Xã Nam Động', Type.xa),
     ]),
     Level2(25, '386', 'Huyện Bá Thước', Type.huyen, [
-      Level3(25, 5, '14923', 'Thị trấn Cành Nàng', Type.thi_tran),
+      Level3(25, 5, '14923', 'Thị trấn Cành Nàng', Type.thiTran),
       Level3(25, 5, '14926', 'Xã Điền Thượng', Type.xa),
       Level3(25, 5, '14929', 'Xã Điền Hạ', Type.xa),
       Level3(25, 5, '14932', 'Xã Điền Quang', Type.xa),
@@ -5397,7 +5397,7 @@ const level1s = [
       Level3(25, 6, '15007', 'Xã Tam Thanh', Type.xa),
       Level3(25, 6, '15010', 'Xã Sơn Thủy', Type.xa),
       Level3(25, 6, '15013', 'Xã Na Mèo', Type.xa),
-      Level3(25, 6, '15016', 'Thị trấn Sơn Lư', Type.thi_tran),
+      Level3(25, 6, '15016', 'Thị trấn Sơn Lư', Type.thiTran),
       Level3(25, 6, '15019', 'Xã Tam Lư', Type.xa),
       Level3(25, 6, '15022', 'Xã Sơn Điện', Type.xa),
       Level3(25, 6, '15025', 'Xã Mường Mìn', Type.xa),
@@ -5411,11 +5411,11 @@ const level1s = [
       Level3(25, 7, '15046', 'Xã Tân Phúc', Type.xa),
       Level3(25, 7, '15049', 'Xã Tam Văn', Type.xa),
       Level3(25, 7, '15052', 'Xã Lâm Phú', Type.xa),
-      Level3(25, 7, '15055', 'Thị trấn Lang Chánh', Type.thi_tran),
+      Level3(25, 7, '15055', 'Thị trấn Lang Chánh', Type.thiTran),
       Level3(25, 7, '15058', 'Xã Đồng Lương', Type.xa),
     ]),
     Level2(25, '389', 'Huyện Ngọc Lặc', Type.huyen, [
-      Level3(25, 8, '15061', 'Thị Trấn Ngọc Lặc', Type.thi_tran),
+      Level3(25, 8, '15061', 'Thị Trấn Ngọc Lặc', Type.thiTran),
       Level3(25, 8, '15064', 'Xã Lam Sơn', Type.xa),
       Level3(25, 8, '15067', 'Xã Mỹ Tân', Type.xa),
       Level3(25, 8, '15070', 'Xã Thúy Sơn', Type.xa),
@@ -5438,7 +5438,7 @@ const level1s = [
       Level3(25, 8, '15124', 'Xã Minh Sơn', Type.xa),
     ]),
     Level2(25, '390', 'Huyện Cẩm Thủy', Type.huyen, [
-      Level3(25, 9, '15127', 'Thị trấn Phong Sơn', Type.thi_tran),
+      Level3(25, 9, '15127', 'Thị trấn Phong Sơn', Type.thiTran),
       Level3(25, 9, '15133', 'Xã Cẩm Thành', Type.xa),
       Level3(25, 9, '15136', 'Xã Cẩm Quý', Type.xa),
       Level3(25, 9, '15139', 'Xã Cẩm Lương', Type.xa),
@@ -5457,8 +5457,8 @@ const level1s = [
       Level3(25, 9, '15184', 'Xã Cẩm Vân', Type.xa),
     ]),
     Level2(25, '391', 'Huyện Thạch Thành', Type.huyen, [
-      Level3(25, 10, '15187', 'Thị trấn Kim Tân', Type.thi_tran),
-      Level3(25, 10, '15190', 'Thị trấn Vân Du', Type.thi_tran),
+      Level3(25, 10, '15187', 'Thị trấn Kim Tân', Type.thiTran),
+      Level3(25, 10, '15190', 'Thị trấn Vân Du', Type.thiTran),
       Level3(25, 10, '15196', 'Xã Thạch Lâm', Type.xa),
       Level3(25, 10, '15199', 'Xã Thạch Quảng', Type.xa),
       Level3(25, 10, '15202', 'Xã Thạch Tượng', Type.xa),
@@ -5484,7 +5484,7 @@ const level1s = [
       Level3(25, 10, '15268', 'Xã Ngọc Trạo', Type.xa),
     ]),
     Level2(25, '392', 'Huyện Hà Trung', Type.huyen, [
-      Level3(25, 11, '15271', 'Thị trấn Hà Trung', Type.thi_tran),
+      Level3(25, 11, '15271', 'Thị trấn Hà Trung', Type.thiTran),
       Level3(25, 11, '15274', 'Xã Hà Long', Type.xa),
       Level3(25, 11, '15277', 'Xã Hà Vinh', Type.xa),
       Level3(25, 11, '15280', 'Xã Hà Bắc', Type.xa),
@@ -5506,7 +5506,7 @@ const level1s = [
       Level3(25, 11, '15343', 'Xã Hà Hải', Type.xa),
     ]),
     Level2(25, '393', 'Huyện Vĩnh Lộc', Type.huyen, [
-      Level3(25, 12, '15349', 'Thị trấn Vĩnh Lộc', Type.thi_tran),
+      Level3(25, 12, '15349', 'Thị trấn Vĩnh Lộc', Type.thiTran),
       Level3(25, 12, '15352', 'Xã Vĩnh Quang', Type.xa),
       Level3(25, 12, '15355', 'Xã Vĩnh Yên', Type.xa),
       Level3(25, 12, '15358', 'Xã Vĩnh Tiến', Type.xa),
@@ -5521,11 +5521,11 @@ const level1s = [
       Level3(25, 12, '15391', 'Xã Vĩnh An', Type.xa),
     ]),
     Level2(25, '394', 'Huyện Yên Định', Type.huyen, [
-      Level3(25, 13, '15397', 'Thị trấn Thống Nhất', Type.thi_tran),
-      Level3(25, 13, '15403', 'Thị trấn Yên Lâm', Type.thi_tran),
+      Level3(25, 13, '15397', 'Thị trấn Thống Nhất', Type.thiTran),
+      Level3(25, 13, '15403', 'Thị trấn Yên Lâm', Type.thiTran),
       Level3(25, 13, '15406', 'Xã Yên Tâm', Type.xa),
       Level3(25, 13, '15409', 'Xã Yên Phú', Type.xa),
-      Level3(25, 13, '15412', 'Thị trấn Quý Lộc', Type.thi_tran),
+      Level3(25, 13, '15412', 'Thị trấn Quý Lộc', Type.thiTran),
       Level3(25, 13, '15415', 'Xã Yên Thọ', Type.xa),
       Level3(25, 13, '15418', 'Xã Yên Trung', Type.xa),
       Level3(25, 13, '15421', 'Xã Yên Trường', Type.xa),
@@ -5543,14 +5543,14 @@ const level1s = [
       Level3(25, 13, '15460', 'Xã Định Tiến', Type.xa),
       Level3(25, 13, '15463', 'Xã Định Long', Type.xa),
       Level3(25, 13, '15466', 'Xã Định Liên', Type.xa),
-      Level3(25, 13, '15469', 'Thị trấn Quán Lào', Type.thi_tran),
+      Level3(25, 13, '15469', 'Thị trấn Quán Lào', Type.thiTran),
       Level3(25, 13, '15472', 'Xã Định Hưng', Type.xa),
       Level3(25, 13, '15475', 'Xã Định Hải', Type.xa),
       Level3(25, 13, '15478', 'Xã Định Bình', Type.xa),
     ]),
     Level2(25, '395', 'Huyện Thọ Xuân', Type.huyen, [
       Level3(25, 14, '15493', 'Xã Xuân Hồng', Type.xa),
-      Level3(25, 14, '15499', 'Thị trấn Thọ Xuân', Type.thi_tran),
+      Level3(25, 14, '15499', 'Thị trấn Thọ Xuân', Type.thiTran),
       Level3(25, 14, '15502', 'Xã Bắc Lương', Type.xa),
       Level3(25, 14, '15505', 'Xã Nam Giang', Type.xa),
       Level3(25, 14, '15508', 'Xã Xuân Phong', Type.xa),
@@ -5567,8 +5567,8 @@ const level1s = [
       Level3(25, 14, '15544', 'Xã Thọ Xương', Type.xa),
       Level3(25, 14, '15547', 'Xã Xuân Bái', Type.xa),
       Level3(25, 14, '15550', 'Xã Xuân Phú', Type.xa),
-      Level3(25, 14, '15553', 'Thị trấn Sao Vàng', Type.thi_tran),
-      Level3(25, 14, '15556', 'Thị trấn Lam Sơn', Type.thi_tran),
+      Level3(25, 14, '15553', 'Thị trấn Sao Vàng', Type.thiTran),
+      Level3(25, 14, '15556', 'Thị trấn Lam Sơn', Type.thiTran),
       Level3(25, 14, '15559', 'Xã Xuân Thiên', Type.xa),
       Level3(25, 14, '15565', 'Xã Thuận Minh', Type.xa),
       Level3(25, 14, '15568', 'Xã Thọ Lập', Type.xa),
@@ -5591,7 +5591,7 @@ const level1s = [
       Level3(25, 15, '15637', 'Xã Luận Khê', Type.xa),
       Level3(25, 15, '15640', 'Xã Xuân Thắng', Type.xa),
       Level3(25, 15, '15643', 'Xã Xuân Lộc', Type.xa),
-      Level3(25, 15, '15646', 'Thị trấn Thường Xuân', Type.thi_tran),
+      Level3(25, 15, '15646', 'Thị trấn Thường Xuân', Type.thiTran),
       Level3(25, 15, '15649', 'Xã Xuân Dương', Type.xa),
       Level3(25, 15, '15652', 'Xã Thọ Thanh', Type.xa),
       Level3(25, 15, '15655', 'Xã Ngọc Phụng', Type.xa),
@@ -5599,7 +5599,7 @@ const level1s = [
       Level3(25, 15, '15661', 'Xã Tân Thành', Type.xa),
     ]),
     Level2(25, '397', 'Huyện Triệu Sơn', Type.huyen, [
-      Level3(25, 16, '15664', 'Thị trấn Triệu Sơn', Type.thi_tran),
+      Level3(25, 16, '15664', 'Thị trấn Triệu Sơn', Type.thiTran),
       Level3(25, 16, '15667', 'Xã Thọ Sơn', Type.xa),
       Level3(25, 16, '15670', 'Xã Thọ Bình', Type.xa),
       Level3(25, 16, '15673', 'Xã Thọ Tiến', Type.xa),
@@ -5615,7 +5615,7 @@ const level1s = [
       Level3(25, 16, '15709', 'Xã An Nông', Type.xa),
       Level3(25, 16, '15712', 'Xã Văn Sơn', Type.xa),
       Level3(25, 16, '15715', 'Xã Thái Hòa', Type.xa),
-      Level3(25, 16, '15718', 'Thị trấn Nưa', Type.thi_tran),
+      Level3(25, 16, '15718', 'Thị trấn Nưa', Type.thiTran),
       Level3(25, 16, '15721', 'Xã Đồng Lợi', Type.xa),
       Level3(25, 16, '15724', 'Xã Đồng Tiến', Type.xa),
       Level3(25, 16, '15727', 'Xã Đồng Thắng', Type.xa),
@@ -5635,7 +5635,7 @@ const level1s = [
       Level3(25, 16, '15769', 'Xã Bình Sơn', Type.xa),
     ]),
     Level2(25, '398', 'Huyện Thiệu Hóa', Type.huyen, [
-      Level3(25, 17, '15772', 'Thị trấn Thiệu Hóa', Type.thi_tran),
+      Level3(25, 17, '15772', 'Thị trấn Thiệu Hóa', Type.thiTran),
       Level3(25, 17, '15775', 'Xã Thiệu Ngọc', Type.xa),
       Level3(25, 17, '15778', 'Xã Thiệu Vũ', Type.xa),
       Level3(25, 17, '15781', 'Xã Thiệu Phúc', Type.xa),
@@ -5662,7 +5662,7 @@ const level1s = [
       Level3(25, 17, '15853', 'Xã Thiệu Giao', Type.xa),
     ]),
     Level2(25, '399', 'Huyện Hoằng Hóa', Type.huyen, [
-      Level3(25, 18, '15865', 'Thị trấn Bút Sơn', Type.thi_tran),
+      Level3(25, 18, '15865', 'Thị trấn Bút Sơn', Type.thiTran),
       Level3(25, 18, '15871', 'Xã Hoằng Giang', Type.xa),
       Level3(25, 18, '15877', 'Xã Hoằng Xuân', Type.xa),
       Level3(25, 18, '15880', 'Xã Hoằng Phượng', Type.xa),
@@ -5701,7 +5701,7 @@ const level1s = [
       Level3(25, 18, '16006', 'Xã Hoằng Trường', Type.xa),
     ]),
     Level2(25, '400', 'Huyện Hậu Lộc', Type.huyen, [
-      Level3(25, 19, '16012', 'Thị trấn Hậu Lộc', Type.thi_tran),
+      Level3(25, 19, '16012', 'Thị trấn Hậu Lộc', Type.thiTran),
       Level3(25, 19, '16015', 'Xã Đồng Lộc', Type.xa),
       Level3(25, 19, '16018', 'Xã Đại Lộc', Type.xa),
       Level3(25, 19, '16021', 'Xã Triệu Lộc', Type.xa),
@@ -5726,7 +5726,7 @@ const level1s = [
       Level3(25, 19, '16090', 'Xã Ngư Lộc', Type.xa),
     ]),
     Level2(25, '401', 'Huyện Nga Sơn', Type.huyen, [
-      Level3(25, 20, '16093', 'Thị trấn Nga Sơn', Type.thi_tran),
+      Level3(25, 20, '16093', 'Thị trấn Nga Sơn', Type.thiTran),
       Level3(25, 20, '16096', 'Xã Ba Đình', Type.xa),
       Level3(25, 20, '16099', 'Xã Nga Vịnh', Type.xa),
       Level3(25, 20, '16102', 'Xã Nga Văn', Type.xa),
@@ -5752,7 +5752,7 @@ const level1s = [
       Level3(25, 20, '16171', 'Xã Nga Trường', Type.xa),
     ]),
     Level2(25, '402', 'Huyện Như Xuân', Type.huyen, [
-      Level3(25, 21, '16174', 'Thị trấn Yên Cát', Type.thi_tran),
+      Level3(25, 21, '16174', 'Thị trấn Yên Cát', Type.thiTran),
       Level3(25, 21, '16177', 'Xã Bãi Trành', Type.xa),
       Level3(25, 21, '16180', 'Xã Xuân Hòa', Type.xa),
       Level3(25, 21, '16183', 'Xã Xuân Bình', Type.xa),
@@ -5770,7 +5770,7 @@ const level1s = [
       Level3(25, 21, '16225', 'Xã Thượng Ninh', Type.xa),
     ]),
     Level2(25, '403', 'Huyện Như Thanh', Type.huyen, [
-      Level3(25, 22, '16228', 'Thị trấn Bến Sung', Type.thi_tran),
+      Level3(25, 22, '16228', 'Thị trấn Bến Sung', Type.thiTran),
       Level3(25, 22, '16231', 'Xã Cán Khê', Type.xa),
       Level3(25, 22, '16234', 'Xã Xuân Du', Type.xa),
       Level3(25, 22, '16240', 'Xã Phượng Nghi', Type.xa),
@@ -5786,7 +5786,7 @@ const level1s = [
       Level3(25, 22, '16276', 'Xã Thanh Kỳ', Type.xa),
     ]),
     Level2(25, '404', 'Huyện Nông Cống', Type.huyen, [
-      Level3(25, 23, '16279', 'Thị trấn Nông Cống', Type.thi_tran),
+      Level3(25, 23, '16279', 'Thị trấn Nông Cống', Type.thiTran),
       Level3(25, 23, '16282', 'Xã Tân Phúc', Type.xa),
       Level3(25, 23, '16285', 'Xã Tân Thọ', Type.xa),
       Level3(25, 23, '16288', 'Xã Hoàng Sơn', Type.xa),
@@ -5817,7 +5817,7 @@ const level1s = [
       Level3(25, 23, '16375', 'Xã Yên Mỹ', Type.xa),
     ]),
     Level2(25, '405', 'Huyện Đông Sơn', Type.huyen, [
-      Level3(25, 24, '16378', 'Thị trấn Rừng Thông', Type.thi_tran),
+      Level3(25, 24, '16378', 'Thị trấn Rừng Thông', Type.thiTran),
       Level3(25, 24, '16381', 'Xã Đông Hoàng', Type.xa),
       Level3(25, 24, '16384', 'Xã Đông Ninh', Type.xa),
       Level3(25, 24, '16390', 'Xã Đông Hòa', Type.xa),
@@ -5833,7 +5833,7 @@ const level1s = [
       Level3(25, 24, '16426', 'Xã Đông Quang', Type.xa),
     ]),
     Level2(25, '406', 'Huyện Quảng Xương', Type.huyen, [
-      Level3(25, 25, '16438', 'Thị trấn Tân Phong', Type.thi_tran),
+      Level3(25, 25, '16438', 'Thị trấn Tân Phong', Type.thiTran),
       Level3(25, 25, '16447', 'Xã Quảng Trạch', Type.xa),
       Level3(25, 25, '16453', 'Xã Quảng Đức', Type.xa),
       Level3(25, 25, '16456', 'Xã Quảng Định', Type.xa),
@@ -5860,7 +5860,7 @@ const level1s = [
       Level3(25, 25, '16555', 'Xã Quảng Thạch', Type.xa),
       Level3(25, 25, '16558', 'Xã Quảng Thái', Type.xa),
     ]),
-    Level2(25, '407', 'Thị xã Nghi Sơn', Type.thi_xa, [
+    Level2(25, '407', 'Thị xã Nghi Sơn', Type.thiXa, [
       Level3(25, 26, '16561', 'Phường Hải Hòa', Type.phuong),
       Level3(25, 26, '16564', 'Phường Hải Châu', Type.phuong),
       Level3(25, 26, '16567', 'Xã Thanh Thủy', Type.xa),
@@ -5922,7 +5922,7 @@ const level1s = [
       Level3(26, 0, '17923', 'Xã Nghi Đức', Type.xa),
       Level3(26, 0, '18013', 'Xã Hưng Chính', Type.xa),
     ]),
-    Level2(26, '413', 'Thị xã Cửa Lò', Type.thi_xa, [
+    Level2(26, '413', 'Thị xã Cửa Lò', Type.thiXa, [
       Level3(26, 1, '16717', 'Phường Nghi Thuỷ', Type.phuong),
       Level3(26, 1, '16720', 'Phường Nghi Tân', Type.phuong),
       Level3(26, 1, '16723', 'Phường Thu Thuỷ', Type.phuong),
@@ -5931,7 +5931,7 @@ const level1s = [
       Level3(26, 1, '16732', 'Phường Nghi Hương', Type.phuong),
       Level3(26, 1, '16735', 'Phường Nghi Thu', Type.phuong),
     ]),
-    Level2(26, '414', 'Thị xã Thái Hoà', Type.thi_xa, [
+    Level2(26, '414', 'Thị xã Thái Hoà', Type.thiXa, [
       Level3(26, 2, '16939', 'Phường Hoà Hiếu', Type.phuong),
       Level3(26, 2, '16993', 'Phường Quang Phong', Type.phuong),
       Level3(26, 2, '16994', 'Phường Quang Tiến', Type.phuong),
@@ -5943,7 +5943,7 @@ const level1s = [
       Level3(26, 2, '17017', 'Xã Đông Hiếu', Type.xa),
     ]),
     Level2(26, '415', 'Huyện Quế Phong', Type.huyen, [
-      Level3(26, 3, '16738', 'Thị trấn Kim Sơn', Type.thi_tran),
+      Level3(26, 3, '16738', 'Thị trấn Kim Sơn', Type.thiTran),
       Level3(26, 3, '16741', 'Xã Thông Thụ', Type.xa),
       Level3(26, 3, '16744', 'Xã Đồng Văn', Type.xa),
       Level3(26, 3, '16747', 'Xã Hạnh Dịch', Type.xa),
@@ -5958,7 +5958,7 @@ const level1s = [
       Level3(26, 3, '16774', 'Xã Căm Muộn', Type.xa),
     ]),
     Level2(26, '416', 'Huyện Quỳ Châu', Type.huyen, [
-      Level3(26, 4, '16777', 'Thị trấn Tân Lạc', Type.thi_tran),
+      Level3(26, 4, '16777', 'Thị trấn Tân Lạc', Type.thiTran),
       Level3(26, 4, '16780', 'Xã Châu Bính', Type.xa),
       Level3(26, 4, '16783', 'Xã Châu Thuận', Type.xa),
       Level3(26, 4, '16786', 'Xã Châu Hội', Type.xa),
@@ -5972,7 +5972,7 @@ const level1s = [
       Level3(26, 4, '16810', 'Xã Diên Lãm', Type.xa),
     ]),
     Level2(26, '417', 'Huyện Kỳ Sơn', Type.huyen, [
-      Level3(26, 5, '16813', 'Thị trấn Mường Xén', Type.thi_tran),
+      Level3(26, 5, '16813', 'Thị trấn Mường Xén', Type.thiTran),
       Level3(26, 5, '16816', 'Xã Mỹ Lý', Type.xa),
       Level3(26, 5, '16819', 'Xã Bắc Lý', Type.xa),
       Level3(26, 5, '16822', 'Xã Keng Đu', Type.xa),
@@ -5995,7 +5995,7 @@ const level1s = [
       Level3(26, 5, '16873', 'Xã Nậm Càn', Type.xa),
     ]),
     Level2(26, '418', 'Huyện Tương Dương', Type.huyen, [
-      Level3(26, 6, '16876', 'Thị trấn Thạch Giám', Type.thi_tran),
+      Level3(26, 6, '16876', 'Thị trấn Thạch Giám', Type.thiTran),
       Level3(26, 6, '16879', 'Xã Mai Sơn', Type.xa),
       Level3(26, 6, '16882', 'Xã Nhôn Mai', Type.xa),
       Level3(26, 6, '16885', 'Xã Hữu Khuông', Type.xa),
@@ -6014,7 +6014,7 @@ const level1s = [
       Level3(26, 6, '16936', 'Xã Tam Hợp', Type.xa),
     ]),
     Level2(26, '419', 'Huyện Nghĩa Đàn', Type.huyen, [
-      Level3(26, 7, '16941', 'Thị trấn Nghĩa Đàn', Type.thi_tran),
+      Level3(26, 7, '16941', 'Thị trấn Nghĩa Đàn', Type.thiTran),
       Level3(26, 7, '16942', 'Xã Nghĩa Mai', Type.xa),
       Level3(26, 7, '16945', 'Xã Nghĩa Yên', Type.xa),
       Level3(26, 7, '16948', 'Xã Nghĩa Lạc', Type.xa),
@@ -6039,7 +6039,7 @@ const level1s = [
       Level3(26, 7, '17032', 'Xã Nghĩa Khánh', Type.xa),
     ]),
     Level2(26, '420', 'Huyện Quỳ Hợp', Type.huyen, [
-      Level3(26, 8, '17035', 'Thị trấn Quỳ Hợp', Type.thi_tran),
+      Level3(26, 8, '17035', 'Thị trấn Quỳ Hợp', Type.thiTran),
       Level3(26, 8, '17038', 'Xã Yên Hợp', Type.xa),
       Level3(26, 8, '17041', 'Xã Châu Tiến', Type.xa),
       Level3(26, 8, '17044', 'Xã Châu Hồng', Type.xa),
@@ -6062,7 +6062,7 @@ const level1s = [
       Level3(26, 8, '17095', 'Xã Bắc Sơn', Type.xa),
     ]),
     Level2(26, '421', 'Huyện Quỳnh Lưu', Type.huyen, [
-      Level3(26, 9, '17098', 'Thị trấn Cầu Giát', Type.thi_tran),
+      Level3(26, 9, '17098', 'Thị trấn Cầu Giát', Type.thiTran),
       Level3(26, 9, '17101', 'Xã Quỳnh Thắng', Type.xa),
       Level3(26, 9, '17119', 'Xã Quỳnh Tân', Type.xa),
       Level3(26, 9, '17122', 'Xã Quỳnh Châu', Type.xa),
@@ -6097,7 +6097,7 @@ const level1s = [
       Level3(26, 9, '17224', 'Xã Tân Thắng', Type.xa),
     ]),
     Level2(26, '422', 'Huyện Con Cuông', Type.huyen, [
-      Level3(26, 10, '17227', 'Thị trấn Con Cuông', Type.thi_tran),
+      Level3(26, 10, '17227', 'Thị trấn Con Cuông', Type.thiTran),
       Level3(26, 10, '17230', 'Xã Bình Chuẩn', Type.xa),
       Level3(26, 10, '17233', 'Xã Lạng Khê', Type.xa),
       Level3(26, 10, '17236', 'Xã Cam Lâm', Type.xa),
@@ -6112,7 +6112,7 @@ const level1s = [
       Level3(26, 10, '17263', 'Xã Môn Sơn', Type.xa),
     ]),
     Level2(26, '423', 'Huyện Tân Kỳ', Type.huyen, [
-      Level3(26, 11, '17266', 'Thị trấn Tân Kỳ', Type.thi_tran),
+      Level3(26, 11, '17266', 'Thị trấn Tân Kỳ', Type.thiTran),
       Level3(26, 11, '17269', 'Xã Tân Hợp', Type.xa),
       Level3(26, 11, '17272', 'Xã Tân Phú', Type.xa),
       Level3(26, 11, '17275', 'Xã Tân Xuân', Type.xa),
@@ -6136,7 +6136,7 @@ const level1s = [
       Level3(26, 11, '17326', 'Xã Nghĩa Hành', Type.xa),
     ]),
     Level2(26, '424', 'Huyện Anh Sơn', Type.huyen, [
-      Level3(26, 12, '17329', 'Thị trấn Anh Sơn', Type.thi_tran),
+      Level3(26, 12, '17329', 'Thị trấn Anh Sơn', Type.thiTran),
       Level3(26, 12, '17332', 'Xã Thọ Sơn', Type.xa),
       Level3(26, 12, '17335', 'Xã Thành Sơn', Type.xa),
       Level3(26, 12, '17338', 'Xã Bình Sơn', Type.xa),
@@ -6159,7 +6159,7 @@ const level1s = [
       Level3(26, 12, '17386', 'Xã Cao Sơn', Type.xa),
     ]),
     Level2(26, '425', 'Huyện Diễn Châu', Type.huyen, [
-      Level3(26, 13, '17389', 'Thị trấn Diễn Châu', Type.thi_tran),
+      Level3(26, 13, '17389', 'Thị trấn Diễn Châu', Type.thiTran),
       Level3(26, 13, '17392', 'Xã Diễn Lâm', Type.xa),
       Level3(26, 13, '17395', 'Xã Diễn Đoài', Type.xa),
       Level3(26, 13, '17398', 'Xã Diễn Trường', Type.xa),
@@ -6198,7 +6198,7 @@ const level1s = [
       Level3(26, 13, '17503', 'Xã Diễn Phú', Type.xa),
     ]),
     Level2(26, '426', 'Huyện Yên Thành', Type.huyen, [
-      Level3(26, 14, '17506', 'Thị trấn Yên Thành', Type.thi_tran),
+      Level3(26, 14, '17506', 'Thị trấn Yên Thành', Type.thiTran),
       Level3(26, 14, '17509', 'Xã Mã Thành', Type.xa),
       Level3(26, 14, '17510', 'Xã Tiến Thành', Type.xa),
       Level3(26, 14, '17512', 'Xã Lăng Thành', Type.xa),
@@ -6239,7 +6239,7 @@ const level1s = [
       Level3(26, 14, '17614', 'Xã Sơn Thành', Type.xa),
     ]),
     Level2(26, '427', 'Huyện Đô Lương', Type.huyen, [
-      Level3(26, 15, '17617', 'Thị trấn Đô Lương', Type.thi_tran),
+      Level3(26, 15, '17617', 'Thị trấn Đô Lương', Type.thiTran),
       Level3(26, 15, '17619', 'Xã Giang Sơn Đông', Type.xa),
       Level3(26, 15, '17620', 'Xã Giang Sơn Tây', Type.xa),
       Level3(26, 15, '17623', 'Xã Lam Sơn', Type.xa),
@@ -6274,7 +6274,7 @@ const level1s = [
       Level3(26, 15, '17710', 'Xã Đại Sơn', Type.xa),
     ]),
     Level2(26, '428', 'Huyện Thanh Chương', Type.huyen, [
-      Level3(26, 16, '17713', 'Thị trấn Thanh Chương', Type.thi_tran),
+      Level3(26, 16, '17713', 'Thị trấn Thanh Chương', Type.thiTran),
       Level3(26, 16, '17716', 'Xã Cát Văn', Type.xa),
       Level3(26, 16, '17719', 'Xã Thanh Nho', Type.xa),
       Level3(26, 16, '17722', 'Xã Hạnh Lâm', Type.xa),
@@ -6314,7 +6314,7 @@ const level1s = [
       Level3(26, 16, '17824', 'Xã Thanh Đức', Type.xa),
     ]),
     Level2(26, '429', 'Huyện Nghi Lộc', Type.huyen, [
-      Level3(26, 17, '17827', 'Thị trấn Quán Hành', Type.thi_tran),
+      Level3(26, 17, '17827', 'Thị trấn Quán Hành', Type.thiTran),
       Level3(26, 17, '17830', 'Xã Nghi Văn', Type.xa),
       Level3(26, 17, '17833', 'Xã Nghi Yên', Type.xa),
       Level3(26, 17, '17836', 'Xã Nghi Tiến', Type.xa),
@@ -6351,7 +6351,7 @@ const level1s = [
       Level3(26, 18, '17941', 'Xã Nam Anh', Type.xa),
       Level3(26, 18, '17944', 'Xã Nam Xuân', Type.xa),
       Level3(26, 18, '17947', 'Xã Nam Thái', Type.xa),
-      Level3(26, 18, '17950', 'Thị trấn Nam Đàn', Type.thi_tran),
+      Level3(26, 18, '17950', 'Thị trấn Nam Đàn', Type.thiTran),
       Level3(26, 18, '17953', 'Xã Nam Lĩnh', Type.xa),
       Level3(26, 18, '17956', 'Xã Nam Giang', Type.xa),
       Level3(26, 18, '17959', 'Xã Xuân Hòa', Type.xa),
@@ -6366,7 +6366,7 @@ const level1s = [
       Level3(26, 18, '17998', 'Xã Nam Kim', Type.xa),
     ]),
     Level2(26, '431', 'Huyện Hưng Nguyên', Type.huyen, [
-      Level3(26, 19, '18001', 'Thị trấn Hưng Nguyên', Type.thi_tran),
+      Level3(26, 19, '18001', 'Thị trấn Hưng Nguyên', Type.thiTran),
       Level3(26, 19, '18004', 'Xã Hưng Trung', Type.xa),
       Level3(26, 19, '18007', 'Xã Hưng Yên', Type.xa),
       Level3(26, 19, '18008', 'Xã Hưng Yên Bắc', Type.xa),
@@ -6385,7 +6385,7 @@ const level1s = [
       Level3(26, 19, '18055', 'Xã Xuân Lam', Type.xa),
       Level3(26, 19, '18064', 'Xã Hưng Thành', Type.xa),
     ]),
-    Level2(26, '432', 'Thị xã Hoàng Mai', Type.thi_xa, [
+    Level2(26, '432', 'Thị xã Hoàng Mai', Type.thiXa, [
       Level3(26, 20, '17104', 'Xã Quỳnh Vinh', Type.xa),
       Level3(26, 20, '17107', 'Xã Quỳnh Lộc', Type.xa),
       Level3(26, 20, '17110', 'Phường Quỳnh Thiện', Type.phuong),
@@ -6416,7 +6416,7 @@ const level1s = [
       Level3(27, 0, '18109', 'Xã Thạch Hưng', Type.xa),
       Level3(27, 0, '18112', 'Xã Thạch Bình', Type.xa),
     ]),
-    Level2(27, '437', 'Thị xã Hồng Lĩnh', Type.thi_xa, [
+    Level2(27, '437', 'Thị xã Hồng Lĩnh', Type.thiXa, [
       Level3(27, 1, '18115', 'Phường Bắc Hồng', Type.phuong),
       Level3(27, 1, '18118', 'Phường Nam Hồng', Type.phuong),
       Level3(27, 1, '18121', 'Phường Trung Lương', Type.phuong),
@@ -6425,8 +6425,8 @@ const level1s = [
       Level3(27, 1, '18130', 'Xã Thuận Lộc', Type.xa),
     ]),
     Level2(27, '439', 'Huyện Hương Sơn', Type.huyen, [
-      Level3(27, 2, '18133', 'Thị trấn Phố Châu', Type.thi_tran),
-      Level3(27, 2, '18136', 'Thị trấn  Tây Sơn', Type.thi_tran),
+      Level3(27, 2, '18133', 'Thị trấn Phố Châu', Type.thiTran),
+      Level3(27, 2, '18136', 'Thị trấn  Tây Sơn', Type.thiTran),
       Level3(27, 2, '18139', 'Xã Sơn Hồng', Type.xa),
       Level3(27, 2, '18142', 'Xã Sơn Tiến', Type.xa),
       Level3(27, 2, '18145', 'Xã Sơn Lâm', Type.xa),
@@ -6452,7 +6452,7 @@ const level1s = [
       Level3(27, 2, '18223', 'Xã Sơn Trường', Type.xa),
     ]),
     Level2(27, '440', 'Huyện Đức Thọ', Type.huyen, [
-      Level3(27, 3, '18229', 'Thị trấn Đức Thọ', Type.thi_tran),
+      Level3(27, 3, '18229', 'Thị trấn Đức Thọ', Type.thiTran),
       Level3(27, 3, '18235', 'Xã Quang Vĩnh', Type.xa),
       Level3(27, 3, '18241', 'Xã Tùng Châu', Type.xa),
       Level3(27, 3, '18244', 'Xã Trường Sơn', Type.xa),
@@ -6470,7 +6470,7 @@ const level1s = [
       Level3(27, 3, '18310', 'Xã Tân Hương', Type.xa),
     ]),
     Level2(27, '441', 'Huyện Vũ Quang', Type.huyen, [
-      Level3(27, 4, '18313', 'Thị trấn Vũ Quang', Type.thi_tran),
+      Level3(27, 4, '18313', 'Thị trấn Vũ Quang', Type.thiTran),
       Level3(27, 4, '18316', 'Xã Ân Phú', Type.xa),
       Level3(27, 4, '18319', 'Xã Đức Giang', Type.xa),
       Level3(27, 4, '18322', 'Xã Đức Lĩnh', Type.xa),
@@ -6482,13 +6482,13 @@ const level1s = [
       Level3(27, 4, '18343', 'Xã Quang Thọ', Type.xa),
     ]),
     Level2(27, '442', 'Huyện Nghi Xuân', Type.huyen, [
-      Level3(27, 5, '18352', 'Thị trấn Xuân An', Type.thi_tran),
+      Level3(27, 5, '18352', 'Thị trấn Xuân An', Type.thiTran),
       Level3(27, 5, '18355', 'Xã Xuân Hội', Type.xa),
       Level3(27, 5, '18358', 'Xã Đan Trường', Type.xa),
       Level3(27, 5, '18364', 'Xã Xuân Phổ', Type.xa),
       Level3(27, 5, '18367', 'Xã Xuân Hải', Type.xa),
       Level3(27, 5, '18370', 'Xã Xuân Giang', Type.xa),
-      Level3(27, 5, '18373', 'Thị trấn Tiên Điền', Type.thi_tran),
+      Level3(27, 5, '18373', 'Thị trấn Tiên Điền', Type.thiTran),
       Level3(27, 5, '18376', 'Xã Xuân Yên', Type.xa),
       Level3(27, 5, '18379', 'Xã Xuân Mỹ', Type.xa),
       Level3(27, 5, '18382', 'Xã Xuân Thành', Type.xa),
@@ -6501,7 +6501,7 @@ const level1s = [
       Level3(27, 5, '18403', 'Xã Cương Gián', Type.xa),
     ]),
     Level2(27, '443', 'Huyện Can Lộc', Type.huyen, [
-      Level3(27, 6, '18406', 'Thị trấn Nghèn', Type.thi_tran),
+      Level3(27, 6, '18406', 'Thị trấn Nghèn', Type.thiTran),
       Level3(27, 6, '18415', 'Xã Thiên Lộc', Type.xa),
       Level3(27, 6, '18418', 'Xã Thuần Thiện', Type.xa),
       Level3(27, 6, '18427', 'Xã Vượng Lộc', Type.xa),
@@ -6516,12 +6516,12 @@ const level1s = [
       Level3(27, 6, '18475', 'Xã Xuân Lộc', Type.xa),
       Level3(27, 6, '18478', 'Xã Thượng Lộc', Type.xa),
       Level3(27, 6, '18481', 'Xã Quang Lộc', Type.xa),
-      Level3(27, 6, '18484', 'Thị trấn Đồng Lộc', Type.thi_tran),
+      Level3(27, 6, '18484', 'Thị trấn Đồng Lộc', Type.thiTran),
       Level3(27, 6, '18487', 'Xã Mỹ Lộc', Type.xa),
       Level3(27, 6, '18490', 'Xã Sơn Lộc', Type.xa),
     ]),
     Level2(27, '444', 'Huyện Hương Khê', Type.huyen, [
-      Level3(27, 7, '18496', 'Thị trấn Hương Khê', Type.thi_tran),
+      Level3(27, 7, '18496', 'Thị trấn Hương Khê', Type.thiTran),
       Level3(27, 7, '18499', 'Xã Điền Mỹ', Type.xa),
       Level3(27, 7, '18502', 'Xã Hà Linh', Type.xa),
       Level3(27, 7, '18505', 'Xã Hương Thủy', Type.xa),
@@ -6544,7 +6544,7 @@ const level1s = [
       Level3(27, 7, '18559', 'Xã Hương Liên', Type.xa),
     ]),
     Level2(27, '445', 'Huyện Thạch Hà', Type.huyen, [
-      Level3(27, 8, '18562', 'Thị trấn Thạch Hà', Type.thi_tran),
+      Level3(27, 8, '18562', 'Thị trấn Thạch Hà', Type.thiTran),
       Level3(27, 8, '18565', 'Xã Ngọc Sơn', Type.xa),
       Level3(27, 8, '18571', 'Xã Thạch Hải', Type.xa),
       Level3(27, 8, '18586', 'Xã Thạch Kênh', Type.xa),
@@ -6568,8 +6568,8 @@ const level1s = [
       Level3(27, 8, '18667', 'Xã Nam Điền', Type.xa),
     ]),
     Level2(27, '446', 'Huyện Cẩm Xuyên', Type.huyen, [
-      Level3(27, 9, '18673', 'Thị trấn Cẩm Xuyên', Type.thi_tran),
-      Level3(27, 9, '18676', 'Thị trấn Thiên Cầm', Type.thi_tran),
+      Level3(27, 9, '18673', 'Thị trấn Cẩm Xuyên', Type.thiTran),
+      Level3(27, 9, '18676', 'Thị trấn Thiên Cầm', Type.thiTran),
       Level3(27, 9, '18679', 'Xã Yên Hòa', Type.xa),
       Level3(27, 9, '18682', 'Xã Cẩm Dương', Type.xa),
       Level3(27, 9, '18685', 'Xã Cẩm Bình', Type.xa),
@@ -6621,14 +6621,14 @@ const level1s = [
       Level3(27, 11, '18430', 'Xã Bình An', Type.xa),
       Level3(27, 11, '18457', 'Xã Ích Hậu', Type.xa),
       Level3(27, 11, '18493', 'Xã Phù Lưu', Type.xa),
-      Level3(27, 11, '18568', 'Thị trấn Lộc Hà', Type.thi_tran),
+      Level3(27, 11, '18568', 'Thị trấn Lộc Hà', Type.thiTran),
       Level3(27, 11, '18577', 'Xã Thạch Mỹ', Type.xa),
       Level3(27, 11, '18580', 'Xã Thạch Kim', Type.xa),
       Level3(27, 11, '18583', 'Xã Thạch Châu', Type.xa),
       Level3(27, 11, '18598', 'Xã Hộ Độ', Type.xa),
       Level3(27, 11, '18670', 'Xã Mai Phụ', Type.xa),
     ]),
-    Level2(27, '449', 'Thị xã Kỳ Anh', Type.thi_xa, [
+    Level2(27, '449', 'Thị xã Kỳ Anh', Type.thiXa, [
       Level3(27, 12, '18754', 'Phường Hưng Trí', Type.phuong),
       Level3(27, 12, '18781', 'Xã Kỳ Ninh', Type.xa),
       Level3(27, 12, '18796', 'Xã Kỳ Lợi', Type.xa),
@@ -6661,7 +6661,7 @@ const level1s = [
       Level3(28, 0, '18898', 'Xã Đức Ninh', Type.xa),
     ]),
     Level2(28, '452', 'Huyện Minh Hóa', Type.huyen, [
-      Level3(28, 1, '18901', 'Thị trấn Quy Đạt', Type.thi_tran),
+      Level3(28, 1, '18901', 'Thị trấn Quy Đạt', Type.thiTran),
       Level3(28, 1, '18904', 'Xã Dân Hóa', Type.xa),
       Level3(28, 1, '18907', 'Xã Trọng Hóa', Type.xa),
       Level3(28, 1, '18910', 'Xã Hóa Phúc', Type.xa),
@@ -6678,7 +6678,7 @@ const level1s = [
       Level3(28, 1, '18946', 'Xã Thượng Hóa', Type.xa),
     ]),
     Level2(28, '453', 'Huyện Tuyên Hóa', Type.huyen, [
-      Level3(28, 2, '18949', 'Thị trấn Đồng Lê', Type.thi_tran),
+      Level3(28, 2, '18949', 'Thị trấn Đồng Lê', Type.thiTran),
       Level3(28, 2, '18952', 'Xã Hương Hóa', Type.xa),
       Level3(28, 2, '18955', 'Xã Kim Hóa', Type.xa),
       Level3(28, 2, '18958', 'Xã Thanh Hóa', Type.xa),
@@ -6718,8 +6718,8 @@ const level1s = [
       Level3(28, 3, '19072', 'Xã Quảng Thanh', Type.xa),
     ]),
     Level2(28, '455', 'Huyện Bố Trạch', Type.huyen, [
-      Level3(28, 4, '19111', 'Thị trấn Hoàn Lão', Type.thi_tran),
-      Level3(28, 4, '19114', 'Thị trấn NT Việt Trung', Type.thi_tran),
+      Level3(28, 4, '19111', 'Thị trấn Hoàn Lão', Type.thiTran),
+      Level3(28, 4, '19114', 'Thị trấn NT Việt Trung', Type.thiTran),
       Level3(28, 4, '19117', 'Xã Xuân Trạch', Type.xa),
       Level3(28, 4, '19120', 'Xã Mỹ Trạch', Type.xa),
       Level3(28, 4, '19123', 'Xã Hạ Trạch', Type.xa),
@@ -6735,7 +6735,7 @@ const level1s = [
       Level3(28, 4, '19156', 'Xã Hưng Trạch', Type.xa),
       Level3(28, 4, '19159', 'Xã Đồng Trạch', Type.xa),
       Level3(28, 4, '19162', 'Xã Đức Trạch', Type.xa),
-      Level3(28, 4, '19165', 'Thị trấn Phong Nha', Type.thi_tran),
+      Level3(28, 4, '19165', 'Thị trấn Phong Nha', Type.thiTran),
       Level3(28, 4, '19168', 'Xã Vạn Trạch', Type.xa),
       Level3(28, 4, '19174', 'Xã Phú Định', Type.xa),
       Level3(28, 4, '19177', 'Xã Trung Trạch', Type.xa),
@@ -6748,7 +6748,7 @@ const level1s = [
       Level3(28, 4, '19198', 'Xã Lý Trạch', Type.xa),
     ]),
     Level2(28, '456', 'Huyện Quảng Ninh', Type.huyen, [
-      Level3(28, 5, '19201', 'Thị trấn Quán Hàu', Type.thi_tran),
+      Level3(28, 5, '19201', 'Thị trấn Quán Hàu', Type.thiTran),
       Level3(28, 5, '19204', 'Xã Trường Sơn', Type.xa),
       Level3(28, 5, '19207', 'Xã Lương Ninh', Type.xa),
       Level3(28, 5, '19210', 'Xã Vĩnh Ninh', Type.xa),
@@ -6765,8 +6765,8 @@ const level1s = [
       Level3(28, 5, '19243', 'Xã Vạn Ninh', Type.xa),
     ]),
     Level2(28, '457', 'Huyện Lệ Thủy', Type.huyen, [
-      Level3(28, 6, '19246', 'Thị trấn NT Lệ Ninh', Type.thi_tran),
-      Level3(28, 6, '19249', 'Thị trấn Kiến Giang', Type.thi_tran),
+      Level3(28, 6, '19246', 'Thị trấn NT Lệ Ninh', Type.thiTran),
+      Level3(28, 6, '19249', 'Thị trấn Kiến Giang', Type.thiTran),
       Level3(28, 6, '19252', 'Xã Hồng Thủy', Type.xa),
       Level3(28, 6, '19255', 'Xã Ngư Thủy Bắc', Type.xa),
       Level3(28, 6, '19258', 'Xã Hoa Thủy', Type.xa),
@@ -6792,7 +6792,7 @@ const level1s = [
       Level3(28, 6, '19321', 'Xã Trường Thủy', Type.xa),
       Level3(28, 6, '19327', 'Xã Lâm Thủy', Type.xa),
     ]),
-    Level2(28, '458', 'Thị xã Ba Đồn', Type.thi_xa, [
+    Level2(28, '458', 'Thị xã Ba Đồn', Type.thiXa, [
       Level3(28, 7, '19009', 'Phường Ba Đồn', Type.phuong),
       Level3(28, 7, '19060', 'Phường Quảng Long', Type.phuong),
       Level3(28, 7, '19066', 'Phường Quảng Thọ', Type.phuong),
@@ -6823,7 +6823,7 @@ const level1s = [
       Level3(29, 0, '19351', 'Phường Đông Lương', Type.phuong),
       Level3(29, 0, '19354', 'Phường 3', Type.phuong),
     ]),
-    Level2(29, '462', 'Thị xã Quảng Trị', Type.thi_xa, [
+    Level2(29, '462', 'Thị xã Quảng Trị', Type.thiXa, [
       Level3(29, 1, '19357', 'Phường 1', Type.phuong),
       Level3(29, 1, '19358', 'Phường An Đôn', Type.phuong),
       Level3(29, 1, '19360', 'Phường 2', Type.phuong),
@@ -6831,8 +6831,8 @@ const level1s = [
       Level3(29, 1, '19705', 'Xã Hải Lệ', Type.xa),
     ]),
     Level2(29, '464', 'Huyện Vĩnh Linh', Type.huyen, [
-      Level3(29, 2, '19363', 'Thị trấn Hồ Xá', Type.thi_tran),
-      Level3(29, 2, '19366', 'Thị trấn Bến Quan', Type.thi_tran),
+      Level3(29, 2, '19363', 'Thị trấn Hồ Xá', Type.thiTran),
+      Level3(29, 2, '19366', 'Thị trấn Bến Quan', Type.thiTran),
       Level3(29, 2, '19369', 'Xã Vĩnh Thái', Type.xa),
       Level3(29, 2, '19372', 'Xã Vĩnh Tú', Type.xa),
       Level3(29, 2, '19375', 'Xã Vĩnh Chấp', Type.xa),
@@ -6844,15 +6844,15 @@ const level1s = [
       Level3(29, 2, '19402', 'Xã Vĩnh Thủy', Type.xa),
       Level3(29, 2, '19405', 'Xã Vĩnh Lâm', Type.xa),
       Level3(29, 2, '19408', 'Xã Hiền Thành', Type.xa),
-      Level3(29, 2, '19414', 'Thị trấn Cửa Tùng', Type.thi_tran),
+      Level3(29, 2, '19414', 'Thị trấn Cửa Tùng', Type.thiTran),
       Level3(29, 2, '19417', 'Xã Vĩnh Hà', Type.xa),
       Level3(29, 2, '19420', 'Xã Vĩnh Sơn', Type.xa),
       Level3(29, 2, '19423', 'Xã Vĩnh Giang', Type.xa),
       Level3(29, 2, '19426', 'Xã Vĩnh Ô', Type.xa),
     ]),
     Level2(29, '465', 'Huyện Hướng Hóa', Type.huyen, [
-      Level3(29, 3, '19429', 'Thị trấn Khe Sanh', Type.thi_tran),
-      Level3(29, 3, '19432', 'Thị trấn Lao Bảo', Type.thi_tran),
+      Level3(29, 3, '19429', 'Thị trấn Khe Sanh', Type.thiTran),
+      Level3(29, 3, '19432', 'Thị trấn Lao Bảo', Type.thiTran),
       Level3(29, 3, '19435', 'Xã Hướng Lập', Type.xa),
       Level3(29, 3, '19438', 'Xã Hướng Việt', Type.xa),
       Level3(29, 3, '19441', 'Xã Hướng Phùng', Type.xa),
@@ -6874,8 +6874,8 @@ const level1s = [
       Level3(29, 3, '19492', 'Xã Xy', Type.xa),
     ]),
     Level2(29, '466', 'Huyện Gio Linh', Type.huyen, [
-      Level3(29, 4, '19495', 'Thị trấn Gio Linh', Type.thi_tran),
-      Level3(29, 4, '19496', 'Thị trấn Cửa Việt', Type.thi_tran),
+      Level3(29, 4, '19495', 'Thị trấn Gio Linh', Type.thiTran),
+      Level3(29, 4, '19496', 'Thị trấn Cửa Việt', Type.thiTran),
       Level3(29, 4, '19498', 'Xã Trung Giang', Type.xa),
       Level3(29, 4, '19501', 'Xã Trung Hải', Type.xa),
       Level3(29, 4, '19504', 'Xã Trung Sơn', Type.xa),
@@ -6893,7 +6893,7 @@ const level1s = [
       Level3(29, 4, '19552', 'Xã Gio Quang', Type.xa),
     ]),
     Level2(29, '467', 'Huyện Đa Krông', Type.huyen, [
-      Level3(29, 5, '19555', 'Thị trấn Krông Klang', Type.thi_tran),
+      Level3(29, 5, '19555', 'Thị trấn Krông Klang', Type.thiTran),
       Level3(29, 5, '19558', 'Xã Mò Ó', Type.xa),
       Level3(29, 5, '19561', 'Xã Hướng Hiệp', Type.xa),
       Level3(29, 5, '19564', 'Xã Đa Krông', Type.xa),
@@ -6908,7 +6908,7 @@ const level1s = [
       Level3(29, 5, '19594', 'Xã A Ngo', Type.xa),
     ]),
     Level2(29, '468', 'Huyện Cam Lộ', Type.huyen, [
-      Level3(29, 6, '19597', 'Thị trấn Cam Lộ', Type.thi_tran),
+      Level3(29, 6, '19597', 'Thị trấn Cam Lộ', Type.thiTran),
       Level3(29, 6, '19600', 'Xã Cam Tuyền', Type.xa),
       Level3(29, 6, '19603', 'Xã Thanh An', Type.xa),
       Level3(29, 6, '19606', 'Xã Cam Thủy', Type.xa),
@@ -6918,7 +6918,7 @@ const level1s = [
       Level3(29, 6, '19621', 'Xã Cam Nghĩa', Type.xa),
     ]),
     Level2(29, '469', 'Huyện Triệu Phong', Type.huyen, [
-      Level3(29, 7, '19624', 'Thị Trấn Ái Tử', Type.thi_tran),
+      Level3(29, 7, '19624', 'Thị Trấn Ái Tử', Type.thiTran),
       Level3(29, 7, '19627', 'Xã Triệu An', Type.xa),
       Level3(29, 7, '19630', 'Xã Triệu Vân', Type.xa),
       Level3(29, 7, '19633', 'Xã Triệu Phước', Type.xa),
@@ -6938,7 +6938,7 @@ const level1s = [
       Level3(29, 7, '19678', 'Xã Triệu Thành', Type.xa),
     ]),
     Level2(29, '470', 'Huyện Hải Lăng', Type.huyen, [
-      Level3(29, 8, '19681', 'Thị trấn Diên Sanh', Type.thi_tran),
+      Level3(29, 8, '19681', 'Thị trấn Diên Sanh', Type.thiTran),
       Level3(29, 8, '19684', 'Xã Hải An', Type.xa),
       Level3(29, 8, '19687', 'Xã Hải Ba', Type.xa),
       Level3(29, 8, '19693', 'Xã Hải Quy', Type.xa),
@@ -6997,7 +6997,7 @@ const level1s = [
       Level3(30, 0, '20032', 'Xã Hương Thọ', Type.xa),
     ]),
     Level2(30, '476', 'Huyện Phong Điền', Type.huyen, [
-      Level3(30, 1, '19819', 'Thị trấn Phong Điền', Type.thi_tran),
+      Level3(30, 1, '19819', 'Thị trấn Phong Điền', Type.thiTran),
       Level3(30, 1, '19822', 'Xã Điền Hương', Type.xa),
       Level3(30, 1, '19825', 'Xã Điền Môn', Type.xa),
       Level3(30, 1, '19828', 'Xã Điền Lộc', Type.xa),
@@ -7015,7 +7015,7 @@ const level1s = [
       Level3(30, 1, '19864', 'Xã Phong Sơn', Type.xa),
     ]),
     Level2(30, '477', 'Huyện Quảng Điền', Type.huyen, [
-      Level3(30, 2, '19867', 'Thị trấn Sịa', Type.thi_tran),
+      Level3(30, 2, '19867', 'Thị trấn Sịa', Type.thiTran),
       Level3(30, 2, '19870', 'Xã Quảng Thái', Type.xa),
       Level3(30, 2, '19873', 'Xã Quảng Ngạn', Type.xa),
       Level3(30, 2, '19876', 'Xã Quảng Lợi', Type.xa),
@@ -7037,13 +7037,13 @@ const level1s = [
       Level3(30, 3, '19933', 'Xã Phú Hồ', Type.xa),
       Level3(30, 3, '19936', 'Xã Vinh Xuân', Type.xa),
       Level3(30, 3, '19939', 'Xã Phú Lương', Type.xa),
-      Level3(30, 3, '19942', 'Thị trấn Phú Đa', Type.thi_tran),
+      Level3(30, 3, '19942', 'Thị trấn Phú Đa', Type.thiTran),
       Level3(30, 3, '19945', 'Xã Vinh Thanh', Type.xa),
       Level3(30, 3, '19948', 'Xã Vinh An', Type.xa),
       Level3(30, 3, '19954', 'Xã Phú Gia', Type.xa),
       Level3(30, 3, '19957', 'Xã Vinh Hà', Type.xa),
     ]),
-    Level2(30, '479', 'Thị xã Hương Thủy', Type.thi_xa, [
+    Level2(30, '479', 'Thị xã Hương Thủy', Type.thiXa, [
       Level3(30, 4, '19960', 'Phường Phú Bài', Type.phuong),
       Level3(30, 4, '19966', 'Xã Thủy Thanh', Type.xa),
       Level3(30, 4, '19969', 'Phường Thủy Dương', Type.phuong),
@@ -7055,7 +7055,7 @@ const level1s = [
       Level3(30, 4, '19990', 'Xã Phú Sơn', Type.xa),
       Level3(30, 4, '19993', 'Xã Dương Hòa', Type.xa),
     ]),
-    Level2(30, '480', 'Thị xã Hương Trà', Type.thi_xa, [
+    Level2(30, '480', 'Thị xã Hương Trà', Type.thiXa, [
       Level3(30, 5, '19996', 'Phường Tứ Hạ', Type.phuong),
       Level3(30, 5, '20005', 'Xã Hương Toàn', Type.xa),
       Level3(30, 5, '20008', 'Phường Hương Vân', Type.phuong),
@@ -7067,7 +7067,7 @@ const level1s = [
       Level3(30, 5, '20041', 'Xã Bình Thành', Type.xa),
     ]),
     Level2(30, '481', 'Huyện A Lưới', Type.huyen, [
-      Level3(30, 6, '20044', 'Thị trấn A Lưới', Type.thi_tran),
+      Level3(30, 6, '20044', 'Thị trấn A Lưới', Type.thiTran),
       Level3(30, 6, '20047', 'Xã Hồng Vân', Type.xa),
       Level3(30, 6, '20050', 'Xã Hồng Hạ', Type.xa),
       Level3(30, 6, '20053', 'Xã Hồng Kim', Type.xa),
@@ -7087,8 +7087,8 @@ const level1s = [
       Level3(30, 6, '20104', 'Xã Hồng Thủy', Type.xa),
     ]),
     Level2(30, '482', 'Huyện Phú Lộc', Type.huyen, [
-      Level3(30, 7, '20107', 'Thị trấn Phú Lộc', Type.thi_tran),
-      Level3(30, 7, '20110', 'Thị trấn Lăng Cô', Type.thi_tran),
+      Level3(30, 7, '20107', 'Thị trấn Phú Lộc', Type.thiTran),
+      Level3(30, 7, '20110', 'Thị trấn Lăng Cô', Type.thiTran),
       Level3(30, 7, '20113', 'Xã Vinh Mỹ', Type.xa),
       Level3(30, 7, '20116', 'Xã Vinh Hưng', Type.xa),
       Level3(30, 7, '20122', 'Xã Giang Hải', Type.xa),
@@ -7106,7 +7106,7 @@ const level1s = [
       Level3(30, 7, '20158', 'Xã Xuân Lộc', Type.xa),
     ]),
     Level2(30, '483', 'Huyện Nam Đông', Type.huyen, [
-      Level3(30, 8, '20161', 'Thị trấn Khe Tre', Type.thi_tran),
+      Level3(30, 8, '20161', 'Thị trấn Khe Tre', Type.thiTran),
       Level3(30, 8, '20164', 'Xã Hương Phú', Type.xa),
       Level3(30, 8, '20167', 'Xã Hương Sơn', Type.xa),
       Level3(30, 8, '20170', 'Xã Hương Lộc', Type.xa),
@@ -7235,7 +7235,7 @@ const level1s = [
       Level3(32, 2, '20464', 'Xã Dang', Type.xa),
     ]),
     Level2(32, '505', 'Huyện Đông Giang', Type.huyen, [
-      Level3(32, 3, '20467', 'Thị trấn P Rao', Type.thi_tran),
+      Level3(32, 3, '20467', 'Thị trấn P Rao', Type.thiTran),
       Level3(32, 3, '20470', 'Xã Tà Lu', Type.xa),
       Level3(32, 3, '20473', 'Xã Sông Kôn', Type.xa),
       Level3(32, 3, '20476', 'Xã Jơ Ngây', Type.xa),
@@ -7248,7 +7248,7 @@ const level1s = [
       Level3(32, 3, '20497', 'Xã Ka Dăng', Type.xa),
     ]),
     Level2(32, '506', 'Huyện Đại Lộc', Type.huyen, [
-      Level3(32, 4, '20500', 'Thị Trấn Ái Nghĩa', Type.thi_tran),
+      Level3(32, 4, '20500', 'Thị Trấn Ái Nghĩa', Type.thiTran),
       Level3(32, 4, '20503', 'Xã Đại Sơn', Type.xa),
       Level3(32, 4, '20506', 'Xã Đại Lãnh', Type.xa),
       Level3(32, 4, '20509', 'Xã Đại Hưng', Type.xa),
@@ -7267,7 +7267,7 @@ const level1s = [
       Level3(32, 4, '20547', 'Xã Đại An', Type.xa),
       Level3(32, 4, '20548', 'Xã Đại Hòa', Type.xa),
     ]),
-    Level2(32, '507', 'Thị xã Điện Bàn', Type.thi_xa, [
+    Level2(32, '507', 'Thị xã Điện Bàn', Type.thiXa, [
       Level3(32, 5, '20551', 'Phường Vĩnh Điện', Type.phuong),
       Level3(32, 5, '20554', 'Xã Điện Tiến', Type.xa),
       Level3(32, 5, '20557', 'Xã Điện Hòa', Type.xa),
@@ -7290,7 +7290,7 @@ const level1s = [
       Level3(32, 5, '20596', 'Xã Điện Phương', Type.xa),
     ]),
     Level2(32, '508', 'Huyện Duy Xuyên', Type.huyen, [
-      Level3(32, 6, '20599', 'Thị trấn Nam Phước', Type.thi_tran),
+      Level3(32, 6, '20599', 'Thị trấn Nam Phước', Type.thiTran),
       Level3(32, 6, '20602', 'Xã Duy Thu', Type.xa),
       Level3(32, 6, '20605', 'Xã Duy Phú', Type.xa),
       Level3(32, 6, '20608', 'Xã Duy Tân', Type.xa),
@@ -7306,11 +7306,11 @@ const level1s = [
       Level3(32, 6, '20638', 'Xã Duy Hải', Type.xa),
     ]),
     Level2(32, '509', 'Huyện Quế Sơn', Type.huyen, [
-      Level3(32, 7, '20641', 'Thị trấn Đông Phú', Type.thi_tran),
+      Level3(32, 7, '20641', 'Thị trấn Đông Phú', Type.thiTran),
       Level3(32, 7, '20644', 'Xã Quế Xuân 1', Type.xa),
       Level3(32, 7, '20647', 'Xã Quế Xuân 2', Type.xa),
       Level3(32, 7, '20650', 'Xã Quế Phú', Type.xa),
-      Level3(32, 7, '20651', 'Thị trấn Hương An', Type.thi_tran),
+      Level3(32, 7, '20651', 'Thị trấn Hương An', Type.thiTran),
       Level3(32, 7, '20659', 'Xã Quế Hiệp', Type.xa),
       Level3(32, 7, '20662', 'Xã Quế Thuận', Type.xa),
       Level3(32, 7, '20665', 'Xã Quế Mỹ', Type.xa),
@@ -7321,7 +7321,7 @@ const level1s = [
       Level3(32, 7, '20689', 'Xã Quế Minh', Type.xa),
     ]),
     Level2(32, '510', 'Huyện Nam Giang', Type.huyen, [
-      Level3(32, 8, '20695', 'Thị trấn Thạnh Mỹ', Type.thi_tran),
+      Level3(32, 8, '20695', 'Thị trấn Thạnh Mỹ', Type.thiTran),
       Level3(32, 8, '20698', 'Xã Laêê', Type.xa),
       Level3(32, 8, '20699', 'Xã Chơ Chun', Type.xa),
       Level3(32, 8, '20701', 'Xã Zuôich', Type.xa),
@@ -7335,7 +7335,7 @@ const level1s = [
       Level3(32, 8, '20719', 'Xã Đắc Pring', Type.xa),
     ]),
     Level2(32, '511', 'Huyện Phước Sơn', Type.huyen, [
-      Level3(32, 9, '20722', 'Thị trấn Khâm Đức', Type.thi_tran),
+      Level3(32, 9, '20722', 'Thị trấn Khâm Đức', Type.thiTran),
       Level3(32, 9, '20725', 'Xã Phước Xuân', Type.xa),
       Level3(32, 9, '20728', 'Xã Phước Hiệp', Type.xa),
       Level3(32, 9, '20729', 'Xã Phước Hoà', Type.xa),
@@ -7356,13 +7356,13 @@ const level1s = [
       Level3(32, 10, '20770', 'Xã Sông Trà', Type.xa),
       Level3(32, 10, '20773', 'Xã Phước Trà', Type.xa),
       Level3(32, 10, '20776', 'Xã Phước Gia', Type.xa),
-      Level3(32, 10, '20779', 'Thị trấn Tân Bình', Type.thi_tran),
+      Level3(32, 10, '20779', 'Thị trấn Tân Bình', Type.thiTran),
       Level3(32, 10, '20782', 'Xã Quế Lưu', Type.xa),
       Level3(32, 10, '20785', 'Xã Thăng Phước', Type.xa),
       Level3(32, 10, '20788', 'Xã Bình Sơn', Type.xa),
     ]),
     Level2(32, '513', 'Huyện Thăng Bình', Type.huyen, [
-      Level3(32, 11, '20791', 'Thị trấn Hà Lam', Type.thi_tran),
+      Level3(32, 11, '20791', 'Thị trấn Hà Lam', Type.thiTran),
       Level3(32, 11, '20794', 'Xã Bình Dương', Type.xa),
       Level3(32, 11, '20797', 'Xã Bình Giang', Type.xa),
       Level3(32, 11, '20800', 'Xã Bình Nguyên', Type.xa),
@@ -7386,7 +7386,7 @@ const level1s = [
       Level3(32, 11, '20851', 'Xã Bình Nam', Type.xa),
     ]),
     Level2(32, '514', 'Huyện Tiên Phước', Type.huyen, [
-      Level3(32, 12, '20854', 'Thị trấn Tiên Kỳ', Type.thi_tran),
+      Level3(32, 12, '20854', 'Thị trấn Tiên Kỳ', Type.thiTran),
       Level3(32, 12, '20857', 'Xã Tiên Sơn', Type.xa),
       Level3(32, 12, '20860', 'Xã Tiên Hà', Type.xa),
       Level3(32, 12, '20863', 'Xã Tiên Cẩm', Type.xa),
@@ -7403,7 +7403,7 @@ const level1s = [
       Level3(32, 12, '20896', 'Xã Tiên Lập', Type.xa),
     ]),
     Level2(32, '515', 'Huyện Bắc Trà My', Type.huyen, [
-      Level3(32, 13, '20899', 'Thị trấn Trà My', Type.thi_tran),
+      Level3(32, 13, '20899', 'Thị trấn Trà My', Type.thiTran),
       Level3(32, 13, '20900', 'Xã Trà Sơn', Type.xa),
       Level3(32, 13, '20902', 'Xã Trà Kót', Type.xa),
       Level3(32, 13, '20905', 'Xã Trà Nú', Type.xa),
@@ -7430,7 +7430,7 @@ const level1s = [
       Level3(32, 14, '20962', 'Xã Trà Vinh', Type.xa),
     ]),
     Level2(32, '517', 'Huyện Núi Thành', Type.huyen, [
-      Level3(32, 15, '20965', 'Thị trấn Núi Thành', Type.thi_tran),
+      Level3(32, 15, '20965', 'Thị trấn Núi Thành', Type.thiTran),
       Level3(32, 15, '20968', 'Xã Tam Xuân I', Type.xa),
       Level3(32, 15, '20971', 'Xã Tam Xuân II', Type.xa),
       Level3(32, 15, '20974', 'Xã Tam Tiến', Type.xa),
@@ -7449,7 +7449,7 @@ const level1s = [
       Level3(32, 15, '21007', 'Xã Tam Trà', Type.xa),
     ]),
     Level2(32, '518', 'Huyện Phú Ninh', Type.huyen, [
-      Level3(32, 16, '20364', 'Thị trấn Phú Thịnh', Type.thi_tran),
+      Level3(32, 16, '20364', 'Thị trấn Phú Thịnh', Type.thiTran),
       Level3(32, 16, '20365', 'Xã Tam Thành', Type.xa),
       Level3(32, 16, '20368', 'Xã Tam An', Type.xa),
       Level3(32, 16, '20374', 'Xã Tam Đàn', Type.xa),
@@ -7497,7 +7497,7 @@ const level1s = [
       Level3(33, 0, '21262', 'Xã Nghĩa An', Type.xa),
     ]),
     Level2(33, '524', 'Huyện Bình Sơn', Type.huyen, [
-      Level3(33, 1, '21040', 'Thị Trấn Châu Ổ', Type.thi_tran),
+      Level3(33, 1, '21040', 'Thị Trấn Châu Ổ', Type.thiTran),
       Level3(33, 1, '21043', 'Xã Bình Thuận', Type.xa),
       Level3(33, 1, '21046', 'Xã Bình Thạnh', Type.xa),
       Level3(33, 1, '21049', 'Xã Bình Đông', Type.xa),
@@ -7521,7 +7521,7 @@ const level1s = [
       Level3(33, 1, '21112', 'Xã Bình Châu', Type.xa),
     ]),
     Level2(33, '525', 'Huyện Trà Bồng', Type.huyen, [
-      Level3(33, 2, '21115', 'Thị trấn Trà Xuân', Type.thi_tran),
+      Level3(33, 2, '21115', 'Thị trấn Trà Xuân', Type.thiTran),
       Level3(33, 2, '21118', 'Xã Trà Giang', Type.xa),
       Level3(33, 2, '21121', 'Xã Trà Thủy', Type.xa),
       Level3(33, 2, '21124', 'Xã Trà Hiệp', Type.xa),
@@ -7552,8 +7552,8 @@ const level1s = [
       Level3(33, 3, '21229', 'Xã Tịnh Minh', Type.xa),
     ]),
     Level2(33, '528', 'Huyện Tư Nghĩa', Type.huyen, [
-      Level3(33, 4, '21235', 'Thị trấn La Hà', Type.thi_tran),
-      Level3(33, 4, '21238', 'Thị trấn Sông Vệ', Type.thi_tran),
+      Level3(33, 4, '21235', 'Thị trấn La Hà', Type.thiTran),
+      Level3(33, 4, '21238', 'Thị trấn Sông Vệ', Type.thiTran),
       Level3(33, 4, '21241', 'Xã Nghĩa Lâm', Type.xa),
       Level3(33, 4, '21244', 'Xã Nghĩa Thắng', Type.xa),
       Level3(33, 4, '21247', 'Xã Nghĩa Thuận', Type.xa),
@@ -7568,7 +7568,7 @@ const level1s = [
       Level3(33, 4, '21286', 'Xã Nghĩa Mỹ', Type.xa),
     ]),
     Level2(33, '529', 'Huyện Sơn Hà', Type.huyen, [
-      Level3(33, 5, '21289', 'Thị trấn Di Lăng', Type.thi_tran),
+      Level3(33, 5, '21289', 'Thị trấn Di Lăng', Type.thiTran),
       Level3(33, 5, '21292', 'Xã Sơn Hạ', Type.xa),
       Level3(33, 5, '21295', 'Xã Sơn Thành', Type.xa),
       Level3(33, 5, '21298', 'Xã Sơn Nham', Type.xa),
@@ -7602,7 +7602,7 @@ const level1s = [
       Level3(33, 7, '21361', 'Xã Long Hiệp', Type.xa),
     ]),
     Level2(33, '532', 'Huyện Nghĩa Hành', Type.huyen, [
-      Level3(33, 8, '21364', 'Thị trấn Chợ Chùa', Type.thi_tran),
+      Level3(33, 8, '21364', 'Thị trấn Chợ Chùa', Type.thiTran),
       Level3(33, 8, '21367', 'Xã Hành Thuận', Type.xa),
       Level3(33, 8, '21370', 'Xã Hành Dũng', Type.xa),
       Level3(33, 8, '21373', 'Xã Hành Trung', Type.xa),
@@ -7616,7 +7616,7 @@ const level1s = [
       Level3(33, 8, '21397', 'Xã Hành Tín  Đông', Type.xa),
     ]),
     Level2(33, '533', 'Huyện Mộ Đức', Type.huyen, [
-      Level3(33, 9, '21400', 'Thị trấn Mộ Đức', Type.thi_tran),
+      Level3(33, 9, '21400', 'Thị trấn Mộ Đức', Type.thiTran),
       Level3(33, 9, '21403', 'Xã Đức Lợi', Type.xa),
       Level3(33, 9, '21406', 'Xã Đức Thắng', Type.xa),
       Level3(33, 9, '21409', 'Xã Đức Nhuận', Type.xa),
@@ -7630,7 +7630,7 @@ const level1s = [
       Level3(33, 9, '21433', 'Xã Đức Phong', Type.xa),
       Level3(33, 9, '21436', 'Xã Đức Lân', Type.xa),
     ]),
-    Level2(33, '534', 'Thị xã Đức Phổ', Type.thi_xa, [
+    Level2(33, '534', 'Thị xã Đức Phổ', Type.thiXa, [
       Level3(33, 10, '21439', 'Phường Nguyễn Nghiêm', Type.phuong),
       Level3(33, 10, '21442', 'Xã Phổ An', Type.xa),
       Level3(33, 10, '21445', 'Xã Phổ Phong', Type.xa),
@@ -7648,7 +7648,7 @@ const level1s = [
       Level3(33, 10, '21481', 'Xã Phổ Châu', Type.xa),
     ]),
     Level2(33, '535', 'Huyện Ba Tơ', Type.huyen, [
-      Level3(33, 11, '21484', 'Thị trấn Ba Tơ', Type.thi_tran),
+      Level3(33, 11, '21484', 'Thị trấn Ba Tơ', Type.thiTran),
       Level3(33, 11, '21487', 'Xã Ba Điền', Type.xa),
       Level3(33, 11, '21490', 'Xã Ba Vinh', Type.xa),
       Level3(33, 11, '21493', 'Xã Ba Thành', Type.xa),
@@ -7695,7 +7695,7 @@ const level1s = [
       Level3(34, 0, '21991', 'Xã Phước Mỹ', Type.xa),
     ]),
     Level2(34, '542', 'Huyện An Lão', Type.huyen, [
-      Level3(34, 1, '21609', 'Thị trấn An Lão', Type.thi_tran),
+      Level3(34, 1, '21609', 'Thị trấn An Lão', Type.thiTran),
       Level3(34, 1, '21610', 'Xã An Hưng', Type.xa),
       Level3(34, 1, '21613', 'Xã An Trung', Type.xa),
       Level3(34, 1, '21616', 'Xã An Dũng', Type.xa),
@@ -7706,7 +7706,7 @@ const level1s = [
       Level3(34, 1, '21631', 'Xã An Quang', Type.xa),
       Level3(34, 1, '21634', 'Xã An Nghĩa', Type.xa),
     ]),
-    Level2(34, '543', 'Thị xã Hoài Nhơn', Type.thi_xa, [
+    Level2(34, '543', 'Thị xã Hoài Nhơn', Type.thiXa, [
       Level3(34, 2, '21637', 'Phường Tam Quan', Type.phuong),
       Level3(34, 2, '21640', 'Phường Bồng Sơn', Type.phuong),
       Level3(34, 2, '21643', 'Xã Hoài Sơn', Type.xa),
@@ -7726,7 +7726,7 @@ const level1s = [
       Level3(34, 2, '21685', 'Phường Hoài Đức', Type.phuong),
     ]),
     Level2(34, '544', 'Huyện Hoài Ân', Type.huyen, [
-      Level3(34, 3, '21688', 'Thị trấn Tăng Bạt Hổ', Type.thi_tran),
+      Level3(34, 3, '21688', 'Thị trấn Tăng Bạt Hổ', Type.thiTran),
       Level3(34, 3, '21690', 'Xã Ân Hảo Tây', Type.xa),
       Level3(34, 3, '21691', 'Xã Ân Hảo Đông', Type.xa),
       Level3(34, 3, '21694', 'Xã Ân Sơn', Type.xa),
@@ -7743,8 +7743,8 @@ const level1s = [
       Level3(34, 3, '21727', 'Xã Ân Nghĩa', Type.xa),
     ]),
     Level2(34, '545', 'Huyện Phù Mỹ', Type.huyen, [
-      Level3(34, 4, '21730', 'Thị trấn Phù Mỹ', Type.thi_tran),
-      Level3(34, 4, '21733', 'Thị trấn Bình Dương', Type.thi_tran),
+      Level3(34, 4, '21730', 'Thị trấn Phù Mỹ', Type.thiTran),
+      Level3(34, 4, '21733', 'Thị trấn Bình Dương', Type.thiTran),
       Level3(34, 4, '21736', 'Xã Mỹ Đức', Type.xa),
       Level3(34, 4, '21739', 'Xã Mỹ Châu', Type.xa),
       Level3(34, 4, '21742', 'Xã Mỹ Thắng', Type.xa),
@@ -7764,7 +7764,7 @@ const level1s = [
       Level3(34, 4, '21784', 'Xã Mỹ Chánh Tây', Type.xa),
     ]),
     Level2(34, '546', 'Huyện Vĩnh Thạnh', Type.huyen, [
-      Level3(34, 5, '21786', 'Thị trấn Vĩnh Thạnh', Type.thi_tran),
+      Level3(34, 5, '21786', 'Thị trấn Vĩnh Thạnh', Type.thiTran),
       Level3(34, 5, '21787', 'Xã Vĩnh Sơn', Type.xa),
       Level3(34, 5, '21790', 'Xã Vĩnh Kim', Type.xa),
       Level3(34, 5, '21796', 'Xã Vĩnh Hiệp', Type.xa),
@@ -7775,7 +7775,7 @@ const level1s = [
       Level3(34, 5, '21805', 'Xã Vĩnh Quang', Type.xa),
     ]),
     Level2(34, '547', 'Huyện Tây Sơn', Type.huyen, [
-      Level3(34, 6, '21808', 'Thị trấn Phú Phong', Type.thi_tran),
+      Level3(34, 6, '21808', 'Thị trấn Phú Phong', Type.thiTran),
       Level3(34, 6, '21811', 'Xã Bình Tân', Type.xa),
       Level3(34, 6, '21814', 'Xã Tây Thuận', Type.xa),
       Level3(34, 6, '21817', 'Xã Bình Thuận', Type.xa),
@@ -7792,7 +7792,7 @@ const level1s = [
       Level3(34, 6, '21850', 'Xã Tây Phú', Type.xa),
     ]),
     Level2(34, '548', 'Huyện Phù Cát', Type.huyen, [
-      Level3(34, 7, '21853', 'Thị trấn Ngô Mây', Type.thi_tran),
+      Level3(34, 7, '21853', 'Thị trấn Ngô Mây', Type.thiTran),
       Level3(34, 7, '21856', 'Xã Cát Sơn', Type.xa),
       Level3(34, 7, '21859', 'Xã Cát Minh', Type.xa),
       Level3(34, 7, '21862', 'Xã Cát Khánh', Type.xa),
@@ -7807,11 +7807,11 @@ const level1s = [
       Level3(34, 7, '21889', 'Xã Cát Hưng', Type.xa),
       Level3(34, 7, '21892', 'Xã Cát Tường', Type.xa),
       Level3(34, 7, '21895', 'Xã Cát Tân', Type.xa),
-      Level3(34, 7, '21898', 'Thị trấn Cát Tiến', Type.thi_tran),
+      Level3(34, 7, '21898', 'Thị trấn Cát Tiến', Type.thiTran),
       Level3(34, 7, '21901', 'Xã Cát Thắng', Type.xa),
       Level3(34, 7, '21904', 'Xã Cát Chánh', Type.xa),
     ]),
-    Level2(34, '549', 'Thị xã An Nhơn', Type.thi_xa, [
+    Level2(34, '549', 'Thị xã An Nhơn', Type.thiXa, [
       Level3(34, 8, '21907', 'Phường Bình Định', Type.phuong),
       Level3(34, 8, '21910', 'Phường Đập Đá', Type.phuong),
       Level3(34, 8, '21913', 'Xã Nhơn Mỹ', Type.xa),
@@ -7829,8 +7829,8 @@ const level1s = [
       Level3(34, 8, '21949', 'Xã Nhơn Thọ', Type.xa),
     ]),
     Level2(34, '550', 'Huyện Tuy Phước', Type.huyen, [
-      Level3(34, 9, '21952', 'Thị trấn Tuy Phước', Type.thi_tran),
-      Level3(34, 9, '21955', 'Thị trấn Diêu Trì', Type.thi_tran),
+      Level3(34, 9, '21952', 'Thị trấn Tuy Phước', Type.thiTran),
+      Level3(34, 9, '21955', 'Thị trấn Diêu Trì', Type.thiTran),
       Level3(34, 9, '21958', 'Xã Phước Thắng', Type.xa),
       Level3(34, 9, '21961', 'Xã Phước Hưng', Type.xa),
       Level3(34, 9, '21964', 'Xã Phước Quang', Type.xa),
@@ -7844,7 +7844,7 @@ const level1s = [
       Level3(34, 9, '21988', 'Xã Phước Thành', Type.xa),
     ]),
     Level2(34, '551', 'Huyện Vân Canh', Type.huyen, [
-      Level3(34, 10, '21994', 'Thị trấn Vân Canh', Type.thi_tran),
+      Level3(34, 10, '21994', 'Thị trấn Vân Canh', Type.thiTran),
       Level3(34, 10, '21997', 'Xã Canh Liên', Type.xa),
       Level3(34, 10, '22000', 'Xã Canh Hiệp', Type.xa),
       Level3(34, 10, '22003', 'Xã Canh Vinh', Type.xa),
@@ -7872,7 +7872,7 @@ const level1s = [
       Level3(35, 0, '22162', 'Xã An Phú', Type.xa),
       Level3(35, 0, '22240', 'Phường Phú Lâm', Type.phuong),
     ]),
-    Level2(35, '557', 'Thị xã Sông Cầu', Type.thi_xa, [
+    Level2(35, '557', 'Thị xã Sông Cầu', Type.thiXa, [
       Level3(35, 1, '22051', 'Phường Xuân Phú', Type.phuong),
       Level3(35, 1, '22052', 'Xã Xuân Lâm', Type.xa),
       Level3(35, 1, '22053', 'Phường Xuân Thành', Type.phuong),
@@ -7888,7 +7888,7 @@ const level1s = [
       Level3(35, 1, '22078', 'Xã Xuân Thọ 2', Type.xa),
     ]),
     Level2(35, '558', 'Huyện Đồng Xuân', Type.huyen, [
-      Level3(35, 2, '22081', 'Thị trấn La Hai', Type.thi_tran),
+      Level3(35, 2, '22081', 'Thị trấn La Hai', Type.thiTran),
       Level3(35, 2, '22084', 'Xã Đa Lộc', Type.xa),
       Level3(35, 2, '22087', 'Xã Phú Mỡ', Type.xa),
       Level3(35, 2, '22090', 'Xã Xuân Lãnh', Type.xa),
@@ -7901,7 +7901,7 @@ const level1s = [
       Level3(35, 2, '22111', 'Xã Xuân Phước', Type.xa),
     ]),
     Level2(35, '559', 'Huyện Tuy An', Type.huyen, [
-      Level3(35, 3, '22114', 'Thị trấn Chí Thạnh', Type.thi_tran),
+      Level3(35, 3, '22114', 'Thị trấn Chí Thạnh', Type.thiTran),
       Level3(35, 3, '22117', 'Xã An Dân', Type.xa),
       Level3(35, 3, '22120', 'Xã An Ninh Tây', Type.xa),
       Level3(35, 3, '22123', 'Xã An Ninh Đông', Type.xa),
@@ -7918,7 +7918,7 @@ const level1s = [
       Level3(35, 3, '22159', 'Xã An Thọ', Type.xa),
     ]),
     Level2(35, '560', 'Huyện Sơn Hòa', Type.huyen, [
-      Level3(35, 4, '22165', 'Thị trấn Củng Sơn', Type.thi_tran),
+      Level3(35, 4, '22165', 'Thị trấn Củng Sơn', Type.thiTran),
       Level3(35, 4, '22168', 'Xã Phước Tân', Type.xa),
       Level3(35, 4, '22171', 'Xã Sơn Hội', Type.xa),
       Level3(35, 4, '22174', 'Xã Sơn Định', Type.xa),
@@ -7934,7 +7934,7 @@ const level1s = [
       Level3(35, 4, '22204', 'Xã Suối Trai', Type.xa),
     ]),
     Level2(35, '561', 'Huyện Sông Hinh', Type.huyen, [
-      Level3(35, 5, '22207', 'Thị trấn Hai Riêng', Type.thi_tran),
+      Level3(35, 5, '22207', 'Thị trấn Hai Riêng', Type.thiTran),
       Level3(35, 5, '22210', 'Xã Ea Lâm', Type.xa),
       Level3(35, 5, '22213', 'Xã Đức Bình Tây', Type.xa),
       Level3(35, 5, '22216', 'Xã Ea Bá', Type.xa),
@@ -7950,7 +7950,7 @@ const level1s = [
       Level3(35, 6, '22249', 'Xã Sơn Thành Tây', Type.xa),
       Level3(35, 6, '22250', 'Xã Sơn Thành Đông', Type.xa),
       Level3(35, 6, '22252', 'Xã Hòa Bình 1', Type.xa),
-      Level3(35, 6, '22255', 'Thị trấn Phú Thứ', Type.thi_tran),
+      Level3(35, 6, '22255', 'Thị trấn Phú Thứ', Type.thiTran),
       Level3(35, 6, '22264', 'Xã Hòa Phong', Type.xa),
       Level3(35, 6, '22270', 'Xã Hòa Phú', Type.xa),
       Level3(35, 6, '22273', 'Xã Hòa Tân Tây', Type.xa),
@@ -7966,11 +7966,11 @@ const level1s = [
       Level3(35, 7, '22312', 'Xã Hòa Trị', Type.xa),
       Level3(35, 7, '22315', 'Xã Hòa An', Type.xa),
       Level3(35, 7, '22318', 'Xã Hòa Định Đông', Type.xa),
-      Level3(35, 7, '22319', 'Thị Trấn Phú Hoà', Type.thi_tran),
+      Level3(35, 7, '22319', 'Thị Trấn Phú Hoà', Type.thiTran),
       Level3(35, 7, '22321', 'Xã Hòa Định Tây', Type.xa),
       Level3(35, 7, '22324', 'Xã Hòa Thắng', Type.xa),
     ]),
-    Level2(35, '564', 'Thị xã Đông Hòa', Type.thi_xa, [
+    Level2(35, '564', 'Thị xã Đông Hòa', Type.thiXa, [
       Level3(35, 8, '22243', 'Xã Hòa Thành', Type.xa),
       Level3(35, 8, '22246', 'Phường Hòa Hiệp Bắc', Type.phuong),
       Level3(35, 8, '22258', 'Phường Hoà Vinh', Type.phuong),
@@ -8037,7 +8037,7 @@ const level1s = [
       Level3(36, 2, '22444', 'Xã Cam Hải Tây', Type.xa),
       Level3(36, 2, '22447', 'Xã Sơn Tân', Type.xa),
       Level3(36, 2, '22450', 'Xã Cam Hiệp Bắc', Type.xa),
-      Level3(36, 2, '22453', 'Thị trấn Cam Đức', Type.thi_tran),
+      Level3(36, 2, '22453', 'Thị trấn Cam Đức', Type.thiTran),
       Level3(36, 2, '22456', 'Xã Cam Hiệp Nam', Type.xa),
       Level3(36, 2, '22459', 'Xã Cam Phước Tây', Type.xa),
       Level3(36, 2, '22462', 'Xã Cam Thành Bắc', Type.xa),
@@ -8047,7 +8047,7 @@ const level1s = [
       Level3(36, 2, '22711', 'Xã Suối Tân', Type.xa),
     ]),
     Level2(36, '571', 'Huyện Vạn Ninh', Type.huyen, [
-      Level3(36, 3, '22489', 'Thị trấn Vạn Giã', Type.thi_tran),
+      Level3(36, 3, '22489', 'Thị trấn Vạn Giã', Type.thiTran),
       Level3(36, 3, '22492', 'Xã Đại Lãnh', Type.xa),
       Level3(36, 3, '22495', 'Xã Vạn Phước', Type.xa),
       Level3(36, 3, '22498', 'Xã Vạn Long', Type.xa),
@@ -8061,7 +8061,7 @@ const level1s = [
       Level3(36, 3, '22522', 'Xã Xuân Sơn', Type.xa),
       Level3(36, 3, '22525', 'Xã Vạn Hưng', Type.xa),
     ]),
-    Level2(36, '572', 'Thị xã Ninh Hòa', Type.thi_xa, [
+    Level2(36, '572', 'Thị xã Ninh Hòa', Type.thiXa, [
       Level3(36, 4, '22528', 'Phường Ninh Hiệp', Type.phuong),
       Level3(36, 4, '22531', 'Xã Ninh Sơn', Type.xa),
       Level3(36, 4, '22534', 'Xã Ninh Tây', Type.xa),
@@ -8091,7 +8091,7 @@ const level1s = [
       Level3(36, 4, '22606', 'Xã Ninh Vân', Type.xa),
     ]),
     Level2(36, '573', 'Huyện Khánh Vĩnh', Type.huyen, [
-      Level3(36, 5, '22609', 'Thị trấn Khánh Vĩnh', Type.thi_tran),
+      Level3(36, 5, '22609', 'Thị trấn Khánh Vĩnh', Type.thiTran),
       Level3(36, 5, '22612', 'Xã Khánh Hiệp', Type.xa),
       Level3(36, 5, '22615', 'Xã Khánh Bình', Type.xa),
       Level3(36, 5, '22618', 'Xã Khánh Trung', Type.xa),
@@ -8107,7 +8107,7 @@ const level1s = [
       Level3(36, 5, '22648', 'Xã Sơn Thái', Type.xa),
     ]),
     Level2(36, '574', 'Huyện Diên Khánh', Type.huyen, [
-      Level3(36, 6, '22651', 'Thị trấn Diên Khánh', Type.thi_tran),
+      Level3(36, 6, '22651', 'Thị trấn Diên Khánh', Type.thiTran),
       Level3(36, 6, '22654', 'Xã Diên Lâm', Type.xa),
       Level3(36, 6, '22657', 'Xã Diên Điền', Type.xa),
       Level3(36, 6, '22660', 'Xã Diên Xuân', Type.xa),
@@ -8127,7 +8127,7 @@ const level1s = [
       Level3(36, 6, '22705', 'Xã Suối Tiên', Type.xa),
     ]),
     Level2(36, '575', 'Huyện Khánh Sơn', Type.huyen, [
-      Level3(36, 7, '22714', 'Thị trấn Tô Hạp', Type.thi_tran),
+      Level3(36, 7, '22714', 'Thị trấn Tô Hạp', Type.thiTran),
       Level3(36, 7, '22717', 'Xã Thành Sơn', Type.xa),
       Level3(36, 7, '22720', 'Xã Sơn Lâm', Type.xa),
       Level3(36, 7, '22723', 'Xã Sơn Hiệp', Type.xa),
@@ -8137,7 +8137,7 @@ const level1s = [
       Level3(36, 7, '22735', 'Xã Ba Cụm Nam', Type.xa),
     ]),
     Level2(36, '576', 'Huyện Trường Sa', Type.huyen, [
-      Level3(36, 8, '22736', 'Thị trấn Trường Sa', Type.thi_tran),
+      Level3(36, 8, '22736', 'Thị trấn Trường Sa', Type.thiTran),
       Level3(36, 8, '22737', 'Xã Song Tử Tây', Type.xa),
       Level3(36, 8, '22739', 'Xã Sinh Tồn', Type.xa),
     ]),
@@ -8173,7 +8173,7 @@ const level1s = [
       Level3(37, 1, '22807', 'Xã Phước Trung', Type.xa),
     ]),
     Level2(37, '585', 'Huyện Ninh Sơn', Type.huyen, [
-      Level3(37, 2, '22810', 'Thị trấn Tân Sơn', Type.thi_tran),
+      Level3(37, 2, '22810', 'Thị trấn Tân Sơn', Type.thiTran),
       Level3(37, 2, '22813', 'Xã Lâm Sơn', Type.xa),
       Level3(37, 2, '22816', 'Xã Lương Sơn', Type.xa),
       Level3(37, 2, '22819', 'Xã Quảng Sơn', Type.xa),
@@ -8183,7 +8183,7 @@ const level1s = [
       Level3(37, 2, '22831', 'Xã Nhơn Sơn', Type.xa),
     ]),
     Level2(37, '586', 'Huyện Ninh Hải', Type.huyen, [
-      Level3(37, 3, '22834', 'Thị trấn Khánh Hải', Type.thi_tran),
+      Level3(37, 3, '22834', 'Thị trấn Khánh Hải', Type.thiTran),
       Level3(37, 3, '22846', 'Xã Vĩnh Hải', Type.xa),
       Level3(37, 3, '22852', 'Xã Phương Hải', Type.xa),
       Level3(37, 3, '22855', 'Xã Tân Hải', Type.xa),
@@ -8194,7 +8194,7 @@ const level1s = [
       Level3(37, 3, '22868', 'Xã Thanh Hải', Type.xa),
     ]),
     Level2(37, '587', 'Huyện Ninh Phước', Type.huyen, [
-      Level3(37, 4, '22870', 'Thị trấn Phước Dân', Type.thi_tran),
+      Level3(37, 4, '22870', 'Thị trấn Phước Dân', Type.thiTran),
       Level3(37, 4, '22873', 'Xã Phước Sơn', Type.xa),
       Level3(37, 4, '22876', 'Xã Phước Thái', Type.xa),
       Level3(37, 4, '22879', 'Xã Phước Hậu', Type.xa),
@@ -8244,7 +8244,7 @@ const level1s = [
       Level3(38, 0, '22963', 'Xã Tiến Lợi', Type.xa),
       Level3(38, 0, '22966', 'Xã Tiến Thành', Type.xa),
     ]),
-    Level2(38, '594', 'Thị xã La Gi', Type.thi_xa, [
+    Level2(38, '594', 'Thị xã La Gi', Type.thiXa, [
       Level3(38, 1, '23231', 'Phường Phước Hội', Type.phuong),
       Level3(38, 1, '23232', 'Phường Phước Lộc', Type.phuong),
       Level3(38, 1, '23234', 'Phường Tân Thiện', Type.phuong),
@@ -8256,8 +8256,8 @@ const level1s = [
       Level3(38, 1, '23268', 'Xã Tân Phước', Type.xa),
     ]),
     Level2(38, '595', 'Huyện Tuy Phong', Type.huyen, [
-      Level3(38, 2, '22969', 'Thị trấn Liên Hương', Type.thi_tran),
-      Level3(38, 2, '22972', 'Thị trấn Phan Rí Cửa', Type.thi_tran),
+      Level3(38, 2, '22969', 'Thị trấn Liên Hương', Type.thiTran),
+      Level3(38, 2, '22972', 'Thị trấn Phan Rí Cửa', Type.thiTran),
       Level3(38, 2, '22975', 'Xã Phan Dũng', Type.xa),
       Level3(38, 2, '22978', 'Xã Phong Phú', Type.xa),
       Level3(38, 2, '22981', 'Xã Vĩnh Hảo', Type.xa),
@@ -8269,7 +8269,7 @@ const level1s = [
       Level3(38, 2, '22999', 'Xã Bình Thạnh', Type.xa),
     ]),
     Level2(38, '596', 'Huyện Bắc Bình', Type.huyen, [
-      Level3(38, 3, '23005', 'Thị trấn Chợ Lầu', Type.thi_tran),
+      Level3(38, 3, '23005', 'Thị trấn Chợ Lầu', Type.thiTran),
       Level3(38, 3, '23008', 'Xã Phan Sơn', Type.xa),
       Level3(38, 3, '23011', 'Xã Phan Lâm', Type.xa),
       Level3(38, 3, '23014', 'Xã Bình An', Type.xa),
@@ -8278,7 +8278,7 @@ const level1s = [
       Level3(38, 3, '23023', 'Xã Sông Lũy', Type.xa),
       Level3(38, 3, '23026', 'Xã Phan Tiến', Type.xa),
       Level3(38, 3, '23029', 'Xã Sông Bình', Type.xa),
-      Level3(38, 3, '23032', 'Thị trấn Lương Sơn', Type.thi_tran),
+      Level3(38, 3, '23032', 'Thị trấn Lương Sơn', Type.thiTran),
       Level3(38, 3, '23035', 'Xã Phan Hòa', Type.xa),
       Level3(38, 3, '23038', 'Xã Phan Thanh', Type.xa),
       Level3(38, 3, '23041', 'Xã Hồng Thái', Type.xa),
@@ -8289,8 +8289,8 @@ const level1s = [
       Level3(38, 3, '23056', 'Xã Hồng Phong', Type.xa),
     ]),
     Level2(38, '597', 'Huyện Hàm Thuận Bắc', Type.huyen, [
-      Level3(38, 4, '23059', 'Thị trấn Ma Lâm', Type.thi_tran),
-      Level3(38, 4, '23062', 'Thị trấn Phú Long', Type.thi_tran),
+      Level3(38, 4, '23059', 'Thị trấn Ma Lâm', Type.thiTran),
+      Level3(38, 4, '23062', 'Thị trấn Phú Long', Type.thiTran),
       Level3(38, 4, '23065', 'Xã La Dạ', Type.xa),
       Level3(38, 4, '23068', 'Xã Đông Tiến', Type.xa),
       Level3(38, 4, '23071', 'Xã Thuận Hòa', Type.xa),
@@ -8308,7 +8308,7 @@ const level1s = [
       Level3(38, 4, '23107', 'Xã Đa Mi', Type.xa),
     ]),
     Level2(38, '598', 'Huyện Hàm Thuận Nam', Type.huyen, [
-      Level3(38, 5, '23110', 'Thị trấn Thuận Nam', Type.thi_tran),
+      Level3(38, 5, '23110', 'Thị trấn Thuận Nam', Type.thiTran),
       Level3(38, 5, '23113', 'Xã Mỹ Thạnh', Type.xa),
       Level3(38, 5, '23116', 'Xã Hàm Cần', Type.xa),
       Level3(38, 5, '23119', 'Xã Mương Mán', Type.xa),
@@ -8323,7 +8323,7 @@ const level1s = [
       Level3(38, 5, '23146', 'Xã Tân Thành', Type.xa),
     ]),
     Level2(38, '599', 'Huyện Tánh Linh', Type.huyen, [
-      Level3(38, 6, '23149', 'Thị trấn Lạc Tánh', Type.thi_tran),
+      Level3(38, 6, '23149', 'Thị trấn Lạc Tánh', Type.thiTran),
       Level3(38, 6, '23152', 'Xã Bắc Ruộng', Type.xa),
       Level3(38, 6, '23158', 'Xã Nghị Đức', Type.xa),
       Level3(38, 6, '23161', 'Xã La Ngâu', Type.xa),
@@ -8338,8 +8338,8 @@ const level1s = [
       Level3(38, 6, '23188', 'Xã Suối Kiết', Type.xa),
     ]),
     Level2(38, '600', 'Huyện Đức Linh', Type.huyen, [
-      Level3(38, 7, '23191', 'Thị trấn Võ Xu', Type.thi_tran),
-      Level3(38, 7, '23194', 'Thị trấn Đức Tài', Type.thi_tran),
+      Level3(38, 7, '23191', 'Thị trấn Võ Xu', Type.thiTran),
+      Level3(38, 7, '23194', 'Thị trấn Đức Tài', Type.thiTran),
       Level3(38, 7, '23197', 'Xã Đa Kai', Type.xa),
       Level3(38, 7, '23200', 'Xã Sùng Nhơn', Type.xa),
       Level3(38, 7, '23203', 'Xã Mê Pu', Type.xa),
@@ -8352,8 +8352,8 @@ const level1s = [
       Level3(38, 7, '23227', 'Xã Trà Tân', Type.xa),
     ]),
     Level2(38, '601', 'Huyện Hàm Tân', Type.huyen, [
-      Level3(38, 8, '23230', 'Thị trấn Tân Minh', Type.thi_tran),
-      Level3(38, 8, '23236', 'Thị trấn Tân Nghĩa', Type.thi_tran),
+      Level3(38, 8, '23230', 'Thị trấn Tân Minh', Type.thiTran),
+      Level3(38, 8, '23236', 'Thị trấn Tân Nghĩa', Type.thiTran),
       Level3(38, 8, '23239', 'Xã Sông Phan', Type.xa),
       Level3(38, 8, '23242', 'Xã Tân Phúc', Type.xa),
       Level3(38, 8, '23251', 'Xã Tân Đức', Type.xa),
@@ -8394,7 +8394,7 @@ const level1s = [
       Level3(39, 0, '23338', 'Xã Hòa Bình', Type.xa),
     ]),
     Level2(39, '610', 'Huyện Đắk Glei', Type.huyen, [
-      Level3(39, 1, '23341', 'Thị trấn Đắk Glei', Type.thi_tran),
+      Level3(39, 1, '23341', 'Thị trấn Đắk Glei', Type.thiTran),
       Level3(39, 1, '23344', 'Xã Đắk Blô', Type.xa),
       Level3(39, 1, '23347', 'Xã Đắk Man', Type.xa),
       Level3(39, 1, '23350', 'Xã Đắk Nhoong', Type.xa),
@@ -8408,7 +8408,7 @@ const level1s = [
       Level3(39, 1, '23374', 'Xã Đắk Môn', Type.xa),
     ]),
     Level2(39, '611', 'Huyện Ngọc Hồi', Type.huyen, [
-      Level3(39, 2, '23377', 'Thị trấn Plei Kần', Type.thi_tran),
+      Level3(39, 2, '23377', 'Thị trấn Plei Kần', Type.thiTran),
       Level3(39, 2, '23380', 'Xã Đắk Ang', Type.xa),
       Level3(39, 2, '23383', 'Xã Đắk Dục', Type.xa),
       Level3(39, 2, '23386', 'Xã Đắk Nông', Type.xa),
@@ -8418,7 +8418,7 @@ const level1s = [
       Level3(39, 2, '23398', 'Xã Sa Loong', Type.xa),
     ]),
     Level2(39, '612', 'Huyện Đắk Tô', Type.huyen, [
-      Level3(39, 3, '23401', 'Thị trấn Đắk Tô', Type.thi_tran),
+      Level3(39, 3, '23401', 'Thị trấn Đắk Tô', Type.thiTran),
       Level3(39, 3, '23427', 'Xã Đắk Rơ Nga', Type.xa),
       Level3(39, 3, '23428', 'Xã Ngọk Tụ', Type.xa),
       Level3(39, 3, '23430', 'Xã Đắk Trăm', Type.xa),
@@ -8436,11 +8436,11 @@ const level1s = [
       Level3(39, 4, '23464', 'Xã Ngok Tem', Type.xa),
       Level3(39, 4, '23467', 'Xã Pờ Ê', Type.xa),
       Level3(39, 4, '23470', 'Xã Măng Cành', Type.xa),
-      Level3(39, 4, '23473', 'Thị trấn Măng Đen', Type.thi_tran),
+      Level3(39, 4, '23473', 'Thị trấn Măng Đen', Type.thiTran),
       Level3(39, 4, '23476', 'Xã Hiếu', Type.xa),
     ]),
     Level2(39, '614', 'Huyện Kon Rẫy', Type.huyen, [
-      Level3(39, 5, '23479', 'Thị trấn Đắk Rve', Type.thi_tran),
+      Level3(39, 5, '23479', 'Thị trấn Đắk Rve', Type.thiTran),
       Level3(39, 5, '23482', 'Xã Đắk Kôi', Type.xa),
       Level3(39, 5, '23485', 'Xã Đắk Tơ Lung', Type.xa),
       Level3(39, 5, '23488', 'Xã Đắk Ruồng', Type.xa),
@@ -8449,7 +8449,7 @@ const level1s = [
       Level3(39, 5, '23497', 'Xã Tân Lập', Type.xa),
     ]),
     Level2(39, '615', 'Huyện Đắk Hà', Type.huyen, [
-      Level3(39, 6, '23500', 'Thị trấn Đắk Hà', Type.thi_tran),
+      Level3(39, 6, '23500', 'Thị trấn Đắk Hà', Type.thiTran),
       Level3(39, 6, '23503', 'Xã Đắk PXi', Type.xa),
       Level3(39, 6, '23504', 'Xã Đăk Long', Type.xa),
       Level3(39, 6, '23506', 'Xã Đắk HRing', Type.xa),
@@ -8462,7 +8462,7 @@ const level1s = [
       Level3(39, 6, '23524', 'Xã Đắk La', Type.xa),
     ]),
     Level2(39, '616', 'Huyện Sa Thầy', Type.huyen, [
-      Level3(39, 7, '23527', 'Thị trấn Sa Thầy', Type.thi_tran),
+      Level3(39, 7, '23527', 'Thị trấn Sa Thầy', Type.thiTran),
       Level3(39, 7, '23530', 'Xã Rơ Kơi', Type.xa),
       Level3(39, 7, '23533', 'Xã Sa Nhơn', Type.xa),
       Level3(39, 7, '23534', 'Xã Hơ Moong', Type.xa),
@@ -8518,7 +8518,7 @@ const level1s = [
       Level3(40, 0, '23608', 'Xã Ia Kênh', Type.xa),
       Level3(40, 0, '23611', 'Xã Gào', Type.xa),
     ]),
-    Level2(40, '623', 'Thị xã An Khê', Type.thi_xa, [
+    Level2(40, '623', 'Thị xã An Khê', Type.thiXa, [
       Level3(40, 1, '23614', 'Phường An Bình', Type.phuong),
       Level3(40, 1, '23617', 'Phường Tây Sơn', Type.phuong),
       Level3(40, 1, '23620', 'Phường An Phú', Type.phuong),
@@ -8531,7 +8531,7 @@ const level1s = [
       Level3(40, 1, '23633', 'Phường Ngô Mây', Type.phuong),
       Level3(40, 1, '23635', 'Xã Thành An', Type.xa),
     ]),
-    Level2(40, '624', 'Thị xã Ayun Pa', Type.thi_xa, [
+    Level2(40, '624', 'Thị xã Ayun Pa', Type.thiXa, [
       Level3(40, 2, '24041', 'Phường Cheo Reo', Type.phuong),
       Level3(40, 2, '24042', 'Phường Hòa Bình', Type.phuong),
       Level3(40, 2, '24044', 'Phường Đoàn Kết', Type.phuong),
@@ -8542,7 +8542,7 @@ const level1s = [
       Level3(40, 2, '24073', 'Xã Ia Sao', Type.xa),
     ]),
     Level2(40, '625', 'Huyện KBang', Type.huyen, [
-      Level3(40, 3, '23638', 'Thị trấn KBang', Type.thi_tran),
+      Level3(40, 3, '23638', 'Thị trấn KBang', Type.thiTran),
       Level3(40, 3, '23641', 'Xã Kon Pne', Type.xa),
       Level3(40, 3, '23644', 'Xã Đăk Roong', Type.xa),
       Level3(40, 3, '23647', 'Xã Sơn Lang', Type.xa),
@@ -8558,7 +8558,7 @@ const level1s = [
       Level3(40, 3, '23674', 'Xã Đăk HLơ', Type.xa),
     ]),
     Level2(40, '626', 'Huyện Đăk Đoa', Type.huyen, [
-      Level3(40, 4, '23677', 'Thị trấn Đăk Đoa', Type.thi_tran),
+      Level3(40, 4, '23677', 'Thị trấn Đăk Đoa', Type.thiTran),
       Level3(40, 4, '23680', 'Xã Hà Đông', Type.xa),
       Level3(40, 4, '23683', 'Xã Đăk Sơmei', Type.xa),
       Level3(40, 4, '23684', 'Xã Đăk Krong', Type.xa),
@@ -8577,11 +8577,11 @@ const level1s = [
       Level3(40, 4, '23719', 'Xã Ia Băng', Type.xa),
     ]),
     Level2(40, '627', 'Huyện Chư Păh', Type.huyen, [
-      Level3(40, 5, '23722', 'Thị trấn Phú Hòa', Type.thi_tran),
+      Level3(40, 5, '23722', 'Thị trấn Phú Hòa', Type.thiTran),
       Level3(40, 5, '23725', 'Xã Hà Tây', Type.xa),
       Level3(40, 5, '23728', 'Xã Ia Khươl', Type.xa),
       Level3(40, 5, '23731', 'Xã Ia Phí', Type.xa),
-      Level3(40, 5, '23734', 'Thị trấn Ia Ly', Type.thi_tran),
+      Level3(40, 5, '23734', 'Thị trấn Ia Ly', Type.thiTran),
       Level3(40, 5, '23737', 'Xã Ia Mơ Nông', Type.xa),
       Level3(40, 5, '23738', 'Xã Ia Kreng', Type.xa),
       Level3(40, 5, '23740', 'Xã Đăk Tơ Ver', Type.xa),
@@ -8593,7 +8593,7 @@ const level1s = [
       Level3(40, 5, '23761', 'Xã Nghĩa Hưng', Type.xa),
     ]),
     Level2(40, '628', 'Huyện Ia Grai', Type.huyen, [
-      Level3(40, 6, '23764', 'Thị trấn Ia Kha', Type.thi_tran),
+      Level3(40, 6, '23764', 'Thị trấn Ia Kha', Type.thiTran),
       Level3(40, 6, '23767', 'Xã Ia Sao', Type.xa),
       Level3(40, 6, '23768', 'Xã Ia Yok', Type.xa),
       Level3(40, 6, '23770', 'Xã Ia Hrung', Type.xa),
@@ -8608,7 +8608,7 @@ const level1s = [
       Level3(40, 6, '23791', 'Xã Ia Pếch', Type.xa),
     ]),
     Level2(40, '629', 'Huyện Mang Yang', Type.huyen, [
-      Level3(40, 7, '23794', 'Thị trấn Kon Dơng', Type.thi_tran),
+      Level3(40, 7, '23794', 'Thị trấn Kon Dơng', Type.thiTran),
       Level3(40, 7, '23797', 'Xã Ayun', Type.xa),
       Level3(40, 7, '23798', 'Xã Đak Jơ Ta', Type.xa),
       Level3(40, 7, '23799', 'Xã Đak Ta Ley', Type.xa),
@@ -8622,7 +8622,7 @@ const level1s = [
       Level3(40, 7, '23821', 'Xã Đăk Trôi', Type.xa),
     ]),
     Level2(40, '630', 'Huyện Kông Chro', Type.huyen, [
-      Level3(40, 8, '23824', 'Thị trấn Kông Chro', Type.thi_tran),
+      Level3(40, 8, '23824', 'Thị trấn Kông Chro', Type.thiTran),
       Level3(40, 8, '23827', 'Xã Chư Krêy', Type.xa),
       Level3(40, 8, '23830', 'Xã An Trung', Type.xa),
       Level3(40, 8, '23833', 'Xã Kông Yang', Type.xa),
@@ -8638,7 +8638,7 @@ const level1s = [
       Level3(40, 8, '23854', 'Xã Yang Nam', Type.xa),
     ]),
     Level2(40, '631', 'Huyện Đức Cơ', Type.huyen, [
-      Level3(40, 9, '23857', 'Thị trấn Chư Ty', Type.thi_tran),
+      Level3(40, 9, '23857', 'Thị trấn Chư Ty', Type.thiTran),
       Level3(40, 9, '23860', 'Xã Ia Dơk', Type.xa),
       Level3(40, 9, '23863', 'Xã Ia Krêl', Type.xa),
       Level3(40, 9, '23866', 'Xã Ia Din', Type.xa),
@@ -8650,7 +8650,7 @@ const level1s = [
       Level3(40, 9, '23884', 'Xã Ia Nan', Type.xa),
     ]),
     Level2(40, '632', 'Huyện Chư Prông', Type.huyen, [
-      Level3(40, 10, '23887', 'Thị trấn Chư Prông', Type.thi_tran),
+      Level3(40, 10, '23887', 'Thị trấn Chư Prông', Type.thiTran),
       Level3(40, 10, '23888', 'Xã Ia Kly', Type.xa),
       Level3(40, 10, '23890', 'Xã Bình Giáo', Type.xa),
       Level3(40, 10, '23893', 'Xã Ia Drăng', Type.xa),
@@ -8672,7 +8672,7 @@ const level1s = [
       Level3(40, 10, '23938', 'Xã Ia Mơ', Type.xa),
     ]),
     Level2(40, '633', 'Huyện Chư Sê', Type.huyen, [
-      Level3(40, 11, '23941', 'Thị trấn Chư Sê', Type.thi_tran),
+      Level3(40, 11, '23941', 'Thị trấn Chư Sê', Type.thiTran),
       Level3(40, 11, '23944', 'Xã Ia Tiêm', Type.xa),
       Level3(40, 11, '23945', 'Xã Chư Pơng', Type.xa),
       Level3(40, 11, '23946', 'Xã Bar Măih', Type.xa),
@@ -8691,7 +8691,7 @@ const level1s = [
     Level2(40, '634', 'Huyện Đăk Pơ', Type.huyen, [
       Level3(40, 12, '23989', 'Xã Hà Tam', Type.xa),
       Level3(40, 12, '23992', 'Xã An Thành', Type.xa),
-      Level3(40, 12, '23995', 'Thị trấn Đak Pơ', Type.thi_tran),
+      Level3(40, 12, '23995', 'Thị trấn Đak Pơ', Type.thiTran),
       Level3(40, 12, '23998', 'Xã Yang Bắc', Type.xa),
       Level3(40, 12, '24001', 'Xã Cư An', Type.xa),
       Level3(40, 12, '24004', 'Xã Tân An', Type.xa),
@@ -8710,7 +8710,7 @@ const level1s = [
       Level3(40, 13, '24037', 'Xã Ia Trok', Type.xa),
     ]),
     Level2(40, '637', 'Huyện Krông Pa', Type.huyen, [
-      Level3(40, 14, '24076', 'Thị trấn Phú Túc', Type.thi_tran),
+      Level3(40, 14, '24076', 'Thị trấn Phú Túc', Type.thiTran),
       Level3(40, 14, '24079', 'Xã Ia RSai', Type.xa),
       Level3(40, 14, '24082', 'Xã Ia RSươm', Type.xa),
       Level3(40, 14, '24085', 'Xã Chư Gu', Type.xa),
@@ -8726,7 +8726,7 @@ const level1s = [
       Level3(40, 14, '24115', 'Xã Krông Năng', Type.xa),
     ]),
     Level2(40, '638', 'Huyện Phú Thiện', Type.huyen, [
-      Level3(40, 15, '24043', 'Thị trấn Phú Thiện', Type.thi_tran),
+      Level3(40, 15, '24043', 'Thị trấn Phú Thiện', Type.thiTran),
       Level3(40, 15, '24046', 'Xã Chư A Thai', Type.xa),
       Level3(40, 15, '24048', 'Xã Ayun Hạ', Type.xa),
       Level3(40, 15, '24049', 'Xã Ia Ake', Type.xa),
@@ -8738,7 +8738,7 @@ const level1s = [
       Level3(40, 15, '24067', 'Xã Ia Yeng', Type.xa),
     ]),
     Level2(40, '639', 'Huyện Chư Pưh', Type.huyen, [
-      Level3(40, 16, '23942', 'Thị trấn Nhơn Hoà', Type.thi_tran),
+      Level3(40, 16, '23942', 'Thị trấn Nhơn Hoà', Type.thiTran),
       Level3(40, 16, '23971', 'Xã Ia Hrú', Type.xa),
       Level3(40, 16, '23972', 'Xã Ia Rong', Type.xa),
       Level3(40, 16, '23974', 'Xã Ia Dreng', Type.xa),
@@ -8773,7 +8773,7 @@ const level1s = [
       Level3(41, 0, '24175', 'Xã Hòa Khánh', Type.xa),
       Level3(41, 0, '24178', 'Xã Hòa Xuân', Type.xa),
     ]),
-    Level2(41, '644', 'Thị Xã Buôn Hồ', Type.thi_xa, [
+    Level2(41, '644', 'Thị Xã Buôn Hồ', Type.thiXa, [
       Level3(41, 1, '24305', 'Phường An Lạc', Type.phuong),
       Level3(41, 1, '24308', 'Phường An Bình', Type.phuong),
       Level3(41, 1, '24311', 'Phường Thiện An', Type.phuong),
@@ -8788,7 +8788,7 @@ const level1s = [
       Level3(41, 1, '24340', 'Xã Cư Bao', Type.xa),
     ]),
     Level2(41, '645', "Huyện Ea H'leo", Type.huyen, [
-      Level3(41, 2, '24181', 'Thị trấn Ea Drăng', Type.thi_tran),
+      Level3(41, 2, '24181', 'Thị trấn Ea Drăng', Type.thiTran),
       Level3(41, 2, '24184', "Xã Ea H'leo", Type.xa),
       Level3(41, 2, '24187', 'Xã Ea Sol', Type.xa),
       Level3(41, 2, '24190', 'Xã Ea Ral', Type.xa),
@@ -8802,7 +8802,7 @@ const level1s = [
       Level3(41, 2, '24208', 'Xã Ea Nam', Type.xa),
     ]),
     Level2(41, '646', 'Huyện Ea Súp', Type.huyen, [
-      Level3(41, 3, '24211', 'Thị trấn Ea Súp', Type.thi_tran),
+      Level3(41, 3, '24211', 'Thị trấn Ea Súp', Type.thiTran),
       Level3(41, 3, '24214', 'Xã Ia Lốp', Type.xa),
       Level3(41, 3, '24215', 'Xã Ia JLơi', Type.xa),
       Level3(41, 3, '24217', 'Xã Ea Rốk', Type.xa),
@@ -8823,8 +8823,8 @@ const level1s = [
       Level3(41, 4, '24253', 'Xã Ea Nuôl', Type.xa),
     ]),
     Level2(41, '648', "Huyện Cư M'gar", Type.huyen, [
-      Level3(41, 5, '24256', 'Thị trấn Ea Pốk', Type.thi_tran),
-      Level3(41, 5, '24259', 'Thị trấn Quảng Phú', Type.thi_tran),
+      Level3(41, 5, '24256', 'Thị trấn Ea Pốk', Type.thiTran),
+      Level3(41, 5, '24259', 'Thị trấn Quảng Phú', Type.thiTran),
       Level3(41, 5, '24262', 'Xã Quảng Tiến', Type.xa),
       Level3(41, 5, '24264', 'Xã Ea Kuêh', Type.xa),
       Level3(41, 5, '24265', 'Xã Ea Kiết', Type.xa),
@@ -8851,7 +8851,7 @@ const level1s = [
       Level3(41, 6, '24319', 'Xã Ea Ngai', Type.xa),
     ]),
     Level2(41, '650', 'Huyện Krông Năng', Type.huyen, [
-      Level3(41, 7, '24343', 'Thị trấn Krông Năng', Type.thi_tran),
+      Level3(41, 7, '24343', 'Thị trấn Krông Năng', Type.thiTran),
       Level3(41, 7, '24346', 'Xã ĐLiê Ya', Type.xa),
       Level3(41, 7, '24349', 'Xã Ea Tóh', Type.xa),
       Level3(41, 7, '24352', 'Xã Ea Tam', Type.xa),
@@ -8865,8 +8865,8 @@ const level1s = [
       Level3(41, 7, '24370', 'Xã Ea Tân', Type.xa),
     ]),
     Level2(41, '651', 'Huyện Ea Kar', Type.huyen, [
-      Level3(41, 8, '24373', 'Thị trấn Ea Kar', Type.thi_tran),
-      Level3(41, 8, '24376', 'Thị trấn Ea Knốp', Type.thi_tran),
+      Level3(41, 8, '24373', 'Thị trấn Ea Kar', Type.thiTran),
+      Level3(41, 8, '24376', 'Thị trấn Ea Knốp', Type.thiTran),
       Level3(41, 8, '24379', 'Xã Ea Sô', Type.xa),
       Level3(41, 8, '24380', 'Xã Ea Sar', Type.xa),
       Level3(41, 8, '24382', 'Xã Xuân Phú', Type.xa),
@@ -8883,7 +8883,7 @@ const level1s = [
       Level3(41, 8, '24409', 'Xã Cư Jang', Type.xa),
     ]),
     Level2(41, '652', "Huyện M'Đrắk", Type.huyen, [
-      Level3(41, 9, '24412', "Thị trấn M'Đrắk", Type.thi_tran),
+      Level3(41, 9, '24412', "Thị trấn M'Đrắk", Type.thiTran),
       Level3(41, 9, '24415', 'Xã Cư Prao', Type.xa),
       Level3(41, 9, '24418', 'Xã Ea Pil', Type.xa),
       Level3(41, 9, '24421', 'Xã Ea Lai', Type.xa),
@@ -8898,7 +8898,7 @@ const level1s = [
       Level3(41, 9, '24445', 'Xã Ea Trang', Type.xa),
     ]),
     Level2(41, '653', 'Huyện Krông Bông', Type.huyen, [
-      Level3(41, 10, '24448', 'Thị trấn Krông Kmar', Type.thi_tran),
+      Level3(41, 10, '24448', 'Thị trấn Krông Kmar', Type.thiTran),
       Level3(41, 10, '24451', 'Xã Dang Kang', Type.xa),
       Level3(41, 10, '24454', 'Xã Cư KTy', Type.xa),
       Level3(41, 10, '24457', 'Xã Hòa Thành', Type.xa),
@@ -8914,7 +8914,7 @@ const level1s = [
       Level3(41, 10, '24487', 'Xã Yang Mao', Type.xa),
     ]),
     Level2(41, '654', 'Huyện Krông Pắc', Type.huyen, [
-      Level3(41, 11, '24490', 'Thị trấn Phước An', Type.thi_tran),
+      Level3(41, 11, '24490', 'Thị trấn Phước An', Type.thiTran),
       Level3(41, 11, '24493', 'Xã KRông Búk', Type.xa),
       Level3(41, 11, '24496', 'Xã Ea Kly', Type.xa),
       Level3(41, 11, '24499', 'Xã Ea Kênh', Type.xa),
@@ -8932,7 +8932,7 @@ const level1s = [
       Level3(41, 11, '24535', 'Xã Ea Yiêng', Type.xa),
     ]),
     Level2(41, '655', 'Huyện Krông A Na', Type.huyen, [
-      Level3(41, 12, '24538', 'Thị trấn Buôn Trấp', Type.thi_tran),
+      Level3(41, 12, '24538', 'Thị trấn Buôn Trấp', Type.thiTran),
       Level3(41, 12, '24556', 'Xã Dray Sáp', Type.xa),
       Level3(41, 12, '24559', 'Xã Ea Na', Type.xa),
       Level3(41, 12, '24565', 'Xã Ea Bông', Type.xa),
@@ -8942,7 +8942,7 @@ const level1s = [
       Level3(41, 12, '24577', 'Xã Quảng Điền', Type.xa),
     ]),
     Level2(41, '656', 'Huyện Lắk', Type.huyen, [
-      Level3(41, 13, '24580', 'Thị trấn Liên Sơn', Type.thi_tran),
+      Level3(41, 13, '24580', 'Thị trấn Liên Sơn', Type.thiTran),
       Level3(41, 13, '24583', 'Xã Yang Tao', Type.xa),
       Level3(41, 13, '24586', 'Xã Bông Krang', Type.xa),
       Level3(41, 13, '24589', 'Xã Đắk Liêng', Type.xa),
@@ -8986,7 +8986,7 @@ const level1s = [
       Level3(42, 1, '24637', 'Xã Đắk Som', Type.xa),
     ]),
     Level2(42, '662', 'Huyện Cư Jút', Type.huyen, [
-      Level3(42, 2, '24640', "Thị trấn Ea T'Ling", Type.thi_tran),
+      Level3(42, 2, '24640', "Thị trấn Ea T'Ling", Type.thiTran),
       Level3(42, 2, '24643', 'Xã Đắk Wil', Type.xa),
       Level3(42, 2, '24646', 'Xã Ea Pô', Type.xa),
       Level3(42, 2, '24649', 'Xã Nam Dong', Type.xa),
@@ -8996,7 +8996,7 @@ const level1s = [
       Level3(42, 2, '24661', 'Xã Trúc Sơn', Type.xa),
     ]),
     Level2(42, '663', 'Huyện Đắk Mil', Type.huyen, [
-      Level3(42, 3, '24664', 'Thị trấn Đắk Mil', Type.thi_tran),
+      Level3(42, 3, '24664', 'Thị trấn Đắk Mil', Type.thiTran),
       Level3(42, 3, '24667', 'Xã  Đắk Lao', Type.xa),
       Level3(42, 3, '24670', "Xã Đắk R'La", Type.xa),
       Level3(42, 3, '24673', 'Xã Đắk Gằn', Type.xa),
@@ -9008,7 +9008,7 @@ const level1s = [
       Level3(42, 3, '24685', 'Xã Đức Minh', Type.xa),
     ]),
     Level2(42, '664', 'Huyện Krông Nô', Type.huyen, [
-      Level3(42, 4, '24688', 'Thị trấn Đắk Mâm', Type.thi_tran),
+      Level3(42, 4, '24688', 'Thị trấn Đắk Mâm', Type.thiTran),
       Level3(42, 4, '24691', 'Xã Đắk Sôr', Type.xa),
       Level3(42, 4, '24692', 'Xã Nam Xuân', Type.xa),
       Level3(42, 4, '24694', 'Xã Buôn Choah', Type.xa),
@@ -9022,7 +9022,7 @@ const level1s = [
       Level3(42, 4, '24715', "Xã Nâm N'Đir", Type.xa),
     ]),
     Level2(42, '665', 'Huyện Đắk Song', Type.huyen, [
-      Level3(42, 5, '24717', 'Thị trấn Đức An', Type.thi_tran),
+      Level3(42, 5, '24717', 'Thị trấn Đức An', Type.thiTran),
       Level3(42, 5, '24718', 'Xã Đắk Môl', Type.xa),
       Level3(42, 5, '24719', 'Xã Đắk Hòa', Type.xa),
       Level3(42, 5, '24721', 'Xã Nam Bình', Type.xa),
@@ -9033,7 +9033,7 @@ const level1s = [
       Level3(42, 5, '24730', 'Xã Trường Xuân', Type.xa),
     ]),
     Level2(42, '666', "Huyện Đắk R'Lấp", Type.huyen, [
-      Level3(42, 6, '24733', 'Thị trấn Kiến Đức', Type.thi_tran),
+      Level3(42, 6, '24733', 'Thị trấn Kiến Đức', Type.thiTran),
       Level3(42, 6, '24745', 'Xã Quảng Tín', Type.xa),
       Level3(42, 6, '24750', 'Xã Đắk Wer', Type.xa),
       Level3(42, 6, '24751', 'Xã Nhân Cơ', Type.xa),
@@ -9097,7 +9097,7 @@ const level1s = [
       Level3(43, 2, '24889', "Xã Đạ K' Nàng", Type.xa),
     ]),
     Level2(43, '675', 'Huyện Lạc Dương', Type.huyen, [
-      Level3(43, 3, '24846', 'Thị trấn Lạc Dương', Type.thi_tran),
+      Level3(43, 3, '24846', 'Thị trấn Lạc Dương', Type.thiTran),
       Level3(43, 3, '24847', 'Xã Đạ Chais', Type.xa),
       Level3(43, 3, '24848', 'Xã Đạ Nhim', Type.xa),
       Level3(43, 3, '24850', 'Xã Đưng KNớ', Type.xa),
@@ -9105,8 +9105,8 @@ const level1s = [
       Level3(43, 3, '24865', 'Xã Đạ Sar', Type.xa),
     ]),
     Level2(43, '676', 'Huyện Lâm Hà', Type.huyen, [
-      Level3(43, 4, '24868', 'Thị trấn Nam Ban', Type.thi_tran),
-      Level3(43, 4, '24871', 'Thị trấn Đinh Văn', Type.thi_tran),
+      Level3(43, 4, '24868', 'Thị trấn Nam Ban', Type.thiTran),
+      Level3(43, 4, '24871', 'Thị trấn Đinh Văn', Type.thiTran),
       Level3(43, 4, '24880', 'Xã Phú Sơn', Type.xa),
       Level3(43, 4, '24883', 'Xã Phi Tô', Type.xa),
       Level3(43, 4, '24892', 'Xã Mê Linh', Type.xa),
@@ -9123,8 +9123,8 @@ const level1s = [
       Level3(43, 4, '24925', 'Xã Nam Hà', Type.xa),
     ]),
     Level2(43, '677', 'Huyện Đơn Dương', Type.huyen, [
-      Level3(43, 5, '24928', "Thị trấn D'Ran", Type.thi_tran),
-      Level3(43, 5, '24931', 'Thị trấn Thạnh Mỹ', Type.thi_tran),
+      Level3(43, 5, '24928', "Thị trấn D'Ran", Type.thiTran),
+      Level3(43, 5, '24931', 'Thị trấn Thạnh Mỹ', Type.thiTran),
       Level3(43, 5, '24934', 'Xã Lạc Xuân', Type.xa),
       Level3(43, 5, '24937', 'Xã Đạ Ròn', Type.xa),
       Level3(43, 5, '24940', 'Xã Lạc Lâm', Type.xa),
@@ -9135,7 +9135,7 @@ const level1s = [
       Level3(43, 5, '24955', 'Xã Pró', Type.xa),
     ]),
     Level2(43, '678', 'Huyện Đức Trọng', Type.huyen, [
-      Level3(43, 6, '24958', 'Thị trấn Liên Nghĩa', Type.thi_tran),
+      Level3(43, 6, '24958', 'Thị trấn Liên Nghĩa', Type.thiTran),
       Level3(43, 6, '24961', 'Xã Hiệp An', Type.xa),
       Level3(43, 6, '24964', 'Xã Liên Hiệp', Type.xa),
       Level3(43, 6, '24967', 'Xã Hiệp Thạnh', Type.xa),
@@ -9152,7 +9152,7 @@ const level1s = [
       Level3(43, 6, '24997', 'Xã Ninh Loan', Type.xa),
     ]),
     Level2(43, '679', 'Huyện Di Linh', Type.huyen, [
-      Level3(43, 7, '25000', 'Thị trấn Di Linh', Type.thi_tran),
+      Level3(43, 7, '25000', 'Thị trấn Di Linh', Type.thiTran),
       Level3(43, 7, '25003', 'Xã Đinh Trang Thượng', Type.xa),
       Level3(43, 7, '25006', 'Xã Tân Thượng', Type.xa),
       Level3(43, 7, '25007', 'Xã Tân Lâm', Type.xa),
@@ -9173,7 +9173,7 @@ const level1s = [
       Level3(43, 7, '25051', 'Xã Gia Bắc', Type.xa),
     ]),
     Level2(43, '680', 'Huyện Bảo Lâm', Type.huyen, [
-      Level3(43, 8, '25054', 'Thị trấn Lộc Thắng', Type.thi_tran),
+      Level3(43, 8, '25054', 'Thị trấn Lộc Thắng', Type.thiTran),
       Level3(43, 8, '25057', 'Xã Lộc Bảo', Type.xa),
       Level3(43, 8, '25060', 'Xã Lộc Lâm', Type.xa),
       Level3(43, 8, '25063', 'Xã Lộc Phú', Type.xa),
@@ -9189,8 +9189,8 @@ const level1s = [
       Level3(43, 8, '25093', 'Xã Lộc Nam', Type.xa),
     ]),
     Level2(43, '681', 'Huyện Đạ Huoai', Type.huyen, [
-      Level3(43, 9, '25096', "Thị trấn Đạ M'ri", Type.thi_tran),
-      Level3(43, 9, '25099', 'Thị trấn Ma Đa Guôi', Type.thi_tran),
+      Level3(43, 9, '25096', "Thị trấn Đạ M'ri", Type.thiTran),
+      Level3(43, 9, '25099', 'Thị trấn Ma Đa Guôi', Type.thiTran),
       Level3(43, 9, '25105', 'Xã Hà Lâm', Type.xa),
       Level3(43, 9, '25108', 'Xã Đạ Tồn', Type.xa),
       Level3(43, 9, '25111', 'Xã Đạ Oai', Type.xa),
@@ -9200,7 +9200,7 @@ const level1s = [
       Level3(43, 9, '25123', 'Xã Phước Lộc', Type.xa),
     ]),
     Level2(43, '682', 'Huyện Đạ Tẻh', Type.huyen, [
-      Level3(43, 10, '25126', 'Thị trấn Đạ Tẻh', Type.thi_tran),
+      Level3(43, 10, '25126', 'Thị trấn Đạ Tẻh', Type.thiTran),
       Level3(43, 10, '25129', 'Xã An Nhơn', Type.xa),
       Level3(43, 10, '25132', 'Xã Quốc Oai', Type.xa),
       Level3(43, 10, '25135', 'Xã Mỹ Đức', Type.xa),
@@ -9211,19 +9211,19 @@ const level1s = [
       Level3(43, 10, '25156', 'Xã Đạ Pal', Type.xa),
     ]),
     Level2(43, '683', 'Huyện Cát Tiên', Type.huyen, [
-      Level3(43, 11, '25159', 'Thị trấn Cát Tiên', Type.thi_tran),
+      Level3(43, 11, '25159', 'Thị trấn Cát Tiên', Type.thiTran),
       Level3(43, 11, '25162', 'Xã Tiên Hoàng', Type.xa),
       Level3(43, 11, '25165', 'Xã Phước Cát 2', Type.xa),
       Level3(43, 11, '25168', 'Xã Gia Viễn', Type.xa),
       Level3(43, 11, '25171', 'Xã Nam Ninh', Type.xa),
-      Level3(43, 11, '25180', 'Thị trấn Phước Cát ', Type.thi_tran),
+      Level3(43, 11, '25180', 'Thị trấn Phước Cát ', Type.thiTran),
       Level3(43, 11, '25183', 'Xã Đức Phổ', Type.xa),
       Level3(43, 11, '25189', 'Xã Quảng Ngãi', Type.xa),
       Level3(43, 11, '25192', 'Xã Đồng Nai Thượng', Type.xa),
     ]),
   ]),
   Level1('70', 'Tỉnh Bình Phước', Type.tinh, [
-    Level2(44, '688', 'Thị xã Phước Long', Type.thi_xa, [
+    Level2(44, '688', 'Thị xã Phước Long', Type.thiXa, [
       Level3(44, 0, '25216', 'Phường Thác Mơ', Type.phuong),
       Level3(44, 0, '25217', 'Phường Long Thủy', Type.phuong),
       Level3(44, 0, '25219', 'Phường Phước Bình', Type.phuong),
@@ -9242,7 +9242,7 @@ const level1s = [
       Level3(44, 1, '25210', 'Phường Tiến Thành', Type.phuong),
       Level3(44, 1, '25213', 'Xã Tiến Hưng', Type.xa),
     ]),
-    Level2(44, '690', 'Thị xã Bình Long', Type.thi_xa, [
+    Level2(44, '690', 'Thị xã Bình Long', Type.thiXa, [
       Level3(44, 2, '25320', 'Phường Hưng Chiến', Type.phuong),
       Level3(44, 2, '25324', 'Phường An Lộc', Type.phuong),
       Level3(44, 2, '25325', 'Phường Phú Thịnh', Type.phuong),
@@ -9261,7 +9261,7 @@ const level1s = [
       Level3(44, 3, '25267', 'Xã Phú Nghĩa', Type.xa),
     ]),
     Level2(44, '692', 'Huyện Lộc Ninh', Type.huyen, [
-      Level3(44, 4, '25270', 'Thị trấn Lộc Ninh', Type.thi_tran),
+      Level3(44, 4, '25270', 'Thị trấn Lộc Ninh', Type.thiTran),
       Level3(44, 4, '25273', 'Xã Lộc Hòa', Type.xa),
       Level3(44, 4, '25276', 'Xã Lộc An', Type.xa),
       Level3(44, 4, '25279', 'Xã Lộc Tấn', Type.xa),
@@ -9279,7 +9279,7 @@ const level1s = [
       Level3(44, 4, '25306', 'Xã Lộc Khánh', Type.xa),
     ]),
     Level2(44, '693', 'Huyện Bù Đốp', Type.huyen, [
-      Level3(44, 5, '25308', 'Thị trấn Thanh Bình', Type.thi_tran),
+      Level3(44, 5, '25308', 'Thị trấn Thanh Bình', Type.thiTran),
       Level3(44, 5, '25309', 'Xã Hưng Phước', Type.xa),
       Level3(44, 5, '25310', 'Xã Phước Thiện', Type.xa),
       Level3(44, 5, '25312', 'Xã Thiện Hưng', Type.xa),
@@ -9297,13 +9297,13 @@ const level1s = [
       Level3(44, 6, '25349', 'Xã Minh Tâm', Type.xa),
       Level3(44, 6, '25351', 'Xã Phước An', Type.xa),
       Level3(44, 6, '25354', 'Xã Thanh Bình', Type.xa),
-      Level3(44, 6, '25357', 'Thị trấn Tân Khai', Type.thi_tran),
+      Level3(44, 6, '25357', 'Thị trấn Tân Khai', Type.thiTran),
       Level3(44, 6, '25360', 'Xã Đồng Nơ', Type.xa),
       Level3(44, 6, '25361', 'Xã Tân Hiệp', Type.xa),
       Level3(44, 6, '25438', 'Xã Tân Quan', Type.xa),
     ]),
     Level2(44, '695', 'Huyện Đồng Phú', Type.huyen, [
-      Level3(44, 7, '25363', 'Thị trấn Tân Phú', Type.thi_tran),
+      Level3(44, 7, '25363', 'Thị trấn Tân Phú', Type.thiTran),
       Level3(44, 7, '25366', 'Xã Thuận Lợi', Type.xa),
       Level3(44, 7, '25369', 'Xã Đồng Tâm', Type.xa),
       Level3(44, 7, '25372', 'Xã Tân Phước', Type.xa),
@@ -9316,7 +9316,7 @@ const level1s = [
       Level3(44, 7, '25393', 'Xã Tân Tiến', Type.xa),
     ]),
     Level2(44, '696', 'Huyện Bù Đăng', Type.huyen, [
-      Level3(44, 8, '25396', 'Thị trấn Đức Phong', Type.thi_tran),
+      Level3(44, 8, '25396', 'Thị trấn Đức Phong', Type.thiTran),
       Level3(44, 8, '25398', 'Xã Đường 10', Type.xa),
       Level3(44, 8, '25399', 'Xã Đak Nhau', Type.xa),
       Level3(44, 8, '25400', 'Xã Phú Sơn', Type.xa),
@@ -9334,7 +9334,7 @@ const level1s = [
       Level3(44, 8, '25429', 'Xã Phước Sơn', Type.xa),
     ]),
     Level2(44, '697', 'Huyện Chơn Thành', Type.huyen, [
-      Level3(44, 9, '25432', 'Thị trấn Chơn Thành', Type.thi_tran),
+      Level3(44, 9, '25432', 'Thị trấn Chơn Thành', Type.thiTran),
       Level3(44, 9, '25433', 'Xã Thành Tâm', Type.xa),
       Level3(44, 9, '25435', 'Xã Minh Lập', Type.xa),
       Level3(44, 9, '25439', 'Xã Quang Minh', Type.xa),
@@ -9371,7 +9371,7 @@ const level1s = [
       Level3(45, 0, '25483', 'Phường Ninh Thạnh', Type.phuong),
     ]),
     Level2(45, '705', 'Huyện Tân Biên', Type.huyen, [
-      Level3(45, 1, '25486', 'Thị trấn Tân Biên', Type.thi_tran),
+      Level3(45, 1, '25486', 'Thị trấn Tân Biên', Type.thiTran),
       Level3(45, 1, '25489', 'Xã Tân Lập', Type.xa),
       Level3(45, 1, '25492', 'Xã Thạnh Bắc', Type.xa),
       Level3(45, 1, '25495', 'Xã Tân Bình', Type.xa),
@@ -9383,7 +9383,7 @@ const level1s = [
       Level3(45, 1, '25513', 'Xã Trà Vong', Type.xa),
     ]),
     Level2(45, '706', 'Huyện Tân Châu', Type.huyen, [
-      Level3(45, 2, '25516', 'Thị trấn Tân Châu', Type.thi_tran),
+      Level3(45, 2, '25516', 'Thị trấn Tân Châu', Type.thiTran),
       Level3(45, 2, '25519', 'Xã Tân Hà', Type.xa),
       Level3(45, 2, '25522', 'Xã Tân Đông', Type.xa),
       Level3(45, 2, '25525', 'Xã Tân Hội', Type.xa),
@@ -9397,7 +9397,7 @@ const level1s = [
       Level3(45, 2, '25549', 'Xã Tân Hưng', Type.xa),
     ]),
     Level2(45, '707', 'Huyện Dương Minh Châu', Type.huyen, [
-      Level3(45, 3, '25552', 'Thị trấn Dương Minh Châu', Type.thi_tran),
+      Level3(45, 3, '25552', 'Thị trấn Dương Minh Châu', Type.thiTran),
       Level3(45, 3, '25555', 'Xã Suối Đá', Type.xa),
       Level3(45, 3, '25558', 'Xã Phan', Type.xa),
       Level3(45, 3, '25561', 'Xã Phước Ninh', Type.xa),
@@ -9410,7 +9410,7 @@ const level1s = [
       Level3(45, 3, '25582', 'Xã Truông Mít', Type.xa),
     ]),
     Level2(45, '708', 'Huyện Châu Thành', Type.huyen, [
-      Level3(45, 4, '25585', 'Thị trấn Châu Thành', Type.thi_tran),
+      Level3(45, 4, '25585', 'Thị trấn Châu Thành', Type.thiTran),
       Level3(45, 4, '25588', 'Xã Hảo Đước', Type.xa),
       Level3(45, 4, '25591', 'Xã Phước Vinh', Type.xa),
       Level3(45, 4, '25594', 'Xã Đồng Khởi', Type.xa),
@@ -9426,7 +9426,7 @@ const level1s = [
       Level3(45, 4, '25624', 'Xã Ninh Điền', Type.xa),
       Level3(45, 4, '25627', 'Xã Long Vĩnh', Type.xa),
     ]),
-    Level2(45, '709', 'Thị xã Hòa Thành', Type.thi_xa, [
+    Level2(45, '709', 'Thị xã Hòa Thành', Type.thiXa, [
       Level3(45, 5, '25630', 'Phường Long Hoa', Type.phuong),
       Level3(45, 5, '25633', 'Phường Hiệp Tân', Type.phuong),
       Level3(45, 5, '25636', 'Phường Long Thành Bắc', Type.phuong),
@@ -9437,7 +9437,7 @@ const level1s = [
       Level3(45, 5, '25651', 'Xã Long Thành Nam', Type.xa),
     ]),
     Level2(45, '710', 'Huyện Gò Dầu', Type.huyen, [
-      Level3(45, 6, '25654', 'Thị trấn Gò Dầu', Type.thi_tran),
+      Level3(45, 6, '25654', 'Thị trấn Gò Dầu', Type.thiTran),
       Level3(45, 6, '25657', 'Xã Thạnh Đức', Type.xa),
       Level3(45, 6, '25660', 'Xã Cẩm Giang', Type.xa),
       Level3(45, 6, '25663', 'Xã Hiệp Thạnh', Type.xa),
@@ -9448,7 +9448,7 @@ const level1s = [
       Level3(45, 6, '25678', 'Xã Thanh Phước', Type.xa),
     ]),
     Level2(45, '711', 'Huyện Bến Cầu', Type.huyen, [
-      Level3(45, 7, '25681', 'Thị trấn Bến Cầu', Type.thi_tran),
+      Level3(45, 7, '25681', 'Thị trấn Bến Cầu', Type.thiTran),
       Level3(45, 7, '25684', 'Xã Long Chữ', Type.xa),
       Level3(45, 7, '25687', 'Xã Long Phước', Type.xa),
       Level3(45, 7, '25690', 'Xã Long Giang', Type.xa),
@@ -9458,7 +9458,7 @@ const level1s = [
       Level3(45, 7, '25702', 'Xã Long Thuận', Type.xa),
       Level3(45, 7, '25705', 'Xã An Thạnh', Type.xa),
     ]),
-    Level2(45, '712', 'Thị xã Trảng Bàng', Type.thi_xa, [
+    Level2(45, '712', 'Thị xã Trảng Bàng', Type.thiXa, [
       Level3(45, 8, '25708', 'Phường Trảng Bàng', Type.phuong),
       Level3(45, 8, '25711', 'Xã Đôn Thuận', Type.xa),
       Level3(45, 8, '25714', 'Xã Hưng Thuận', Type.xa),
@@ -9491,14 +9491,14 @@ const level1s = [
     Level2(46, '719', 'Huyện Bàu Bàng', Type.huyen, [
       Level3(46, 1, '25816', 'Xã Trừ Văn Thố', Type.xa),
       Level3(46, 1, '25819', 'Xã Cây Trường II', Type.xa),
-      Level3(46, 1, '25822', 'Thị trấn Lai Uyên', Type.thi_tran),
+      Level3(46, 1, '25822', 'Thị trấn Lai Uyên', Type.thiTran),
       Level3(46, 1, '25825', 'Xã Tân Hưng', Type.xa),
       Level3(46, 1, '25828', 'Xã Long Nguyên', Type.xa),
       Level3(46, 1, '25831', 'Xã Hưng Hòa', Type.xa),
       Level3(46, 1, '25834', 'Xã Lai Hưng', Type.xa),
     ]),
     Level2(46, '720', 'Huyện Dầu Tiếng', Type.huyen, [
-      Level3(46, 2, '25777', 'Thị trấn Dầu Tiếng', Type.thi_tran),
+      Level3(46, 2, '25777', 'Thị trấn Dầu Tiếng', Type.thiTran),
       Level3(46, 2, '25780', 'Xã Minh Hoà', Type.xa),
       Level3(46, 2, '25783', 'Xã Minh Thạnh', Type.xa),
       Level3(46, 2, '25786', 'Xã Minh Tân', Type.xa),
@@ -9511,7 +9511,7 @@ const level1s = [
       Level3(46, 2, '25807', 'Xã Thanh An', Type.xa),
       Level3(46, 2, '25810', 'Xã Thanh Tuyền', Type.xa),
     ]),
-    Level2(46, '721', 'Thị xã Bến Cát', Type.thi_xa, [
+    Level2(46, '721', 'Thị xã Bến Cát', Type.thiXa, [
       Level3(46, 3, '25813', 'Phường Mỹ Phước', Type.phuong),
       Level3(46, 3, '25837', 'Phường Chánh Phú Hòa', Type.phuong),
       Level3(46, 3, '25840', 'Xã An Điền', Type.xa),
@@ -9522,7 +9522,7 @@ const level1s = [
       Level3(46, 3, '25855', 'Xã Phú An', Type.xa),
     ]),
     Level2(46, '722', 'Huyện Phú Giáo', Type.huyen, [
-      Level3(46, 4, '25858', 'Thị trấn Phước Vĩnh', Type.thi_tran),
+      Level3(46, 4, '25858', 'Thị trấn Phước Vĩnh', Type.thiTran),
       Level3(46, 4, '25861', 'Xã An Linh', Type.xa),
       Level3(46, 4, '25864', 'Xã Phước Sang', Type.xa),
       Level3(46, 4, '25865', 'Xã An Thái', Type.xa),
@@ -9534,7 +9534,7 @@ const level1s = [
       Level3(46, 4, '25882', 'Xã Vĩnh Hoà', Type.xa),
       Level3(46, 4, '25885', 'Xã Phước Hoà', Type.xa),
     ]),
-    Level2(46, '723', 'Thị xã Tân Uyên', Type.thi_xa, [
+    Level2(46, '723', 'Thị xã Tân Uyên', Type.thiXa, [
       Level3(46, 5, '25888', 'Phường Uyên Hưng', Type.phuong),
       Level3(46, 5, '25891', 'Phường Tân Phước Khánh', Type.phuong),
       Level3(46, 5, '25912', 'Phường Vĩnh Tân', Type.phuong),
@@ -9572,9 +9572,9 @@ const level1s = [
     Level2(46, '726', 'Huyện Bắc Tân Uyên', Type.huyen, [
       Level3(46, 8, '25894', 'Xã Tân Định', Type.xa),
       Level3(46, 8, '25897', 'Xã Bình Mỹ', Type.xa),
-      Level3(46, 8, '25900', 'Thị trấn Tân Bình', Type.thi_tran),
+      Level3(46, 8, '25900', 'Thị trấn Tân Bình', Type.thiTran),
       Level3(46, 8, '25903', 'Xã Tân Lập', Type.xa),
-      Level3(46, 8, '25906', 'Thị trấn Tân Thành', Type.thi_tran),
+      Level3(46, 8, '25906', 'Thị trấn Tân Thành', Type.thiTran),
       Level3(46, 8, '25907', 'Xã Đất Cuốc', Type.xa),
       Level3(46, 8, '25908', 'Xã Hiếu Liêm', Type.xa),
       Level3(46, 8, '25909', 'Xã Lạc An', Type.xa),
@@ -9633,7 +9633,7 @@ const level1s = [
       Level3(47, 1, '26113', 'Xã Hàng Gòn', Type.xa),
     ]),
     Level2(47, '734', 'Huyện Tân Phú', Type.huyen, [
-      Level3(47, 2, '26116', 'Thị trấn Tân Phú', Type.thi_tran),
+      Level3(47, 2, '26116', 'Thị trấn Tân Phú', Type.thiTran),
       Level3(47, 2, '26119', 'Xã Dak Lua', Type.xa),
       Level3(47, 2, '26122', 'Xã Nam Cát Tiên', Type.xa),
       Level3(47, 2, '26125', 'Xã Phú An', Type.xa),
@@ -9653,7 +9653,7 @@ const level1s = [
       Level3(47, 2, '26167', 'Xã Phú Điền', Type.xa),
     ]),
     Level2(47, '735', 'Huyện Vĩnh Cửu', Type.huyen, [
-      Level3(47, 3, '26170', 'Thị trấn Vĩnh An', Type.thi_tran),
+      Level3(47, 3, '26170', 'Thị trấn Vĩnh An', Type.thiTran),
       Level3(47, 3, '26173', 'Xã Phú Lý', Type.xa),
       Level3(47, 3, '26176', 'Xã Trị An', Type.xa),
       Level3(47, 3, '26179', 'Xã Tân An', Type.xa),
@@ -9667,7 +9667,7 @@ const level1s = [
       Level3(47, 3, '26203', 'Xã Hiếu Liêm', Type.xa),
     ]),
     Level2(47, '736', 'Huyện Định Quán', Type.huyen, [
-      Level3(47, 4, '26206', 'Thị trấn Định Quán', Type.thi_tran),
+      Level3(47, 4, '26206', 'Thị trấn Định Quán', Type.thiTran),
       Level3(47, 4, '26209', 'Xã Thanh Sơn', Type.xa),
       Level3(47, 4, '26212', 'Xã Phú Tân', Type.xa),
       Level3(47, 4, '26215', 'Xã Phú Vinh', Type.xa),
@@ -9683,7 +9683,7 @@ const level1s = [
       Level3(47, 4, '26245', 'Xã Suối Nho', Type.xa),
     ]),
     Level2(47, '737', 'Huyện Trảng Bom', Type.huyen, [
-      Level3(47, 5, '26248', 'Thị trấn Trảng Bom', Type.thi_tran),
+      Level3(47, 5, '26248', 'Thị trấn Trảng Bom', Type.thiTran),
       Level3(47, 5, '26251', 'Xã Thanh Bình', Type.xa),
       Level3(47, 5, '26254', 'Xã Cây Gáo', Type.xa),
       Level3(47, 5, '26257', 'Xã Bàu Hàm', Type.xa),
@@ -9711,14 +9711,14 @@ const level1s = [
       Level3(47, 6, '26317', 'Xã Hưng Lộc', Type.xa),
       Level3(47, 6, '26320', 'Xã Lộ 25', Type.xa),
       Level3(47, 6, '26323', 'Xã Xuân Thiện', Type.xa),
-      Level3(47, 6, '26326', 'Thị trấn Dầu Giây', Type.thi_tran),
+      Level3(47, 6, '26326', 'Thị trấn Dầu Giây', Type.thiTran),
     ]),
     Level2(47, '739', 'Huyện Cẩm Mỹ', Type.huyen, [
       Level3(47, 7, '26329', 'Xã Sông Nhạn', Type.xa),
       Level3(47, 7, '26332', 'Xã Xuân Quế', Type.xa),
       Level3(47, 7, '26335', 'Xã Nhân Nghĩa', Type.xa),
       Level3(47, 7, '26338', 'Xã Xuân Đường', Type.xa),
-      Level3(47, 7, '26341', 'Thị trấn Long Giao', Type.thi_tran),
+      Level3(47, 7, '26341', 'Thị trấn Long Giao', Type.thiTran),
       Level3(47, 7, '26344', 'Xã Xuân Mỹ', Type.xa),
       Level3(47, 7, '26347', 'Xã Thừa Đức', Type.xa),
       Level3(47, 7, '26350', 'Xã Bảo Bình', Type.xa),
@@ -9729,7 +9729,7 @@ const level1s = [
       Level3(47, 7, '26365', 'Xã Lâm San', Type.xa),
     ]),
     Level2(47, '740', 'Huyện Long Thành', Type.huyen, [
-      Level3(47, 8, '26368', 'Thị trấn Long Thành', Type.thi_tran),
+      Level3(47, 8, '26368', 'Thị trấn Long Thành', Type.thiTran),
       Level3(47, 8, '26383', 'Xã An Phước', Type.xa),
       Level3(47, 8, '26386', 'Xã Bình An', Type.xa),
       Level3(47, 8, '26389', 'Xã Long Đức', Type.xa),
@@ -9745,7 +9745,7 @@ const level1s = [
       Level3(47, 8, '26422', 'Xã Phước Thái', Type.xa),
     ]),
     Level2(47, '741', 'Huyện Xuân Lộc', Type.huyen, [
-      Level3(47, 9, '26425', 'Thị trấn Gia Ray', Type.thi_tran),
+      Level3(47, 9, '26425', 'Thị trấn Gia Ray', Type.thiTran),
       Level3(47, 9, '26428', 'Xã Xuân Bắc', Type.xa),
       Level3(47, 9, '26431', 'Xã Suối Cao', Type.xa),
       Level3(47, 9, '26434', 'Xã Xuân Thành', Type.xa),
@@ -9765,7 +9765,7 @@ const level1s = [
       Level3(47, 10, '26470', 'Xã Phước Thiền', Type.xa),
       Level3(47, 10, '26473', 'Xã Long Tân', Type.xa),
       Level3(47, 10, '26476', 'Xã Đại Phước', Type.xa),
-      Level3(47, 10, '26479', 'Thị trấn Hiệp Phước', Type.thi_tran),
+      Level3(47, 10, '26479', 'Thị trấn Hiệp Phước', Type.thiTran),
       Level3(47, 10, '26482', 'Xã Phú Hữu', Type.xa),
       Level3(47, 10, '26485', 'Xã Phú Hội', Type.xa),
       Level3(47, 10, '26488', 'Xã Phú Thạnh', Type.xa),
@@ -9811,7 +9811,7 @@ const level1s = [
     ]),
     Level2(48, '750', 'Huyện Châu Đức', Type.huyen, [
       Level3(48, 2, '26574', 'Xã Bàu Chinh', Type.xa),
-      Level3(48, 2, '26575', 'Thị trấn Ngãi Giao', Type.thi_tran),
+      Level3(48, 2, '26575', 'Thị trấn Ngãi Giao', Type.thiTran),
       Level3(48, 2, '26578', 'Xã Bình Ba', Type.xa),
       Level3(48, 2, '26581', 'Xã Suối Nghệ', Type.xa),
       Level3(48, 2, '26584', 'Xã Xuân Sơn', Type.xa),
@@ -9828,7 +9828,7 @@ const level1s = [
       Level3(48, 2, '26617', 'Xã Nghĩa Thành', Type.xa),
     ]),
     Level2(48, '751', 'Huyện Xuyên Mộc', Type.huyen, [
-      Level3(48, 3, '26620', 'Thị trấn Phước Bửu', Type.thi_tran),
+      Level3(48, 3, '26620', 'Thị trấn Phước Bửu', Type.thiTran),
       Level3(48, 3, '26623', 'Xã Phước Thuận', Type.xa),
       Level3(48, 3, '26626', 'Xã Phước Tân', Type.xa),
       Level3(48, 3, '26629', 'Xã Xuyên Mộc', Type.xa),
@@ -9843,8 +9843,8 @@ const level1s = [
       Level3(48, 3, '26656', 'Xã Bình Châu', Type.xa),
     ]),
     Level2(48, '752', 'Huyện Long Điền', Type.huyen, [
-      Level3(48, 4, '26659', 'Thị trấn Long Điền', Type.thi_tran),
-      Level3(48, 4, '26662', 'Thị trấn Long Hải', Type.thi_tran),
+      Level3(48, 4, '26659', 'Thị trấn Long Điền', Type.thiTran),
+      Level3(48, 4, '26662', 'Thị trấn Long Hải', Type.thiTran),
       Level3(48, 4, '26665', 'Xã An Ngãi', Type.xa),
       Level3(48, 4, '26668', 'Xã Tam Phước', Type.xa),
       Level3(48, 4, '26671', 'Xã An Nhứt', Type.xa),
@@ -9852,16 +9852,16 @@ const level1s = [
       Level3(48, 4, '26677', 'Xã Phước Hưng', Type.xa),
     ]),
     Level2(48, '753', 'Huyện Đất Đỏ', Type.huyen, [
-      Level3(48, 5, '26680', 'Thị trấn Đất Đỏ', Type.thi_tran),
+      Level3(48, 5, '26680', 'Thị trấn Đất Đỏ', Type.thiTran),
       Level3(48, 5, '26683', 'Xã Phước Long Thọ', Type.xa),
       Level3(48, 5, '26686', 'Xã Phước Hội', Type.xa),
       Level3(48, 5, '26689', 'Xã Long Mỹ', Type.xa),
-      Level3(48, 5, '26692', 'Thị trấn Phước Hải', Type.thi_tran),
+      Level3(48, 5, '26692', 'Thị trấn Phước Hải', Type.thiTran),
       Level3(48, 5, '26695', 'Xã Long Tân', Type.xa),
       Level3(48, 5, '26698', 'Xã Láng Dài', Type.xa),
       Level3(48, 5, '26701', 'Xã Lộc An', Type.xa),
     ]),
-    Level2(48, '754', 'Thị xã Phú Mỹ', Type.thi_xa, [
+    Level2(48, '754', 'Thị xã Phú Mỹ', Type.thiXa, [
       Level3(48, 6, '26704', 'Phường Phú Mỹ', Type.phuong),
       Level3(48, 6, '26707', 'Xã Tân Hoà', Type.xa),
       Level3(48, 6, '26710', 'Xã Tân Hải', Type.xa),
@@ -10160,7 +10160,7 @@ const level1s = [
       Level3(49, 16, '27493', 'Phường Phú Mỹ', Type.phuong),
     ]),
     Level2(49, '783', 'Huyện Củ Chi', Type.huyen, [
-      Level3(49, 17, '27496', 'Thị trấn Củ Chi', Type.thi_tran),
+      Level3(49, 17, '27496', 'Thị trấn Củ Chi', Type.thiTran),
       Level3(49, 17, '27499', 'Xã Phú Mỹ Hưng', Type.xa),
       Level3(49, 17, '27502', 'Xã An Phú', Type.xa),
       Level3(49, 17, '27505', 'Xã Trung Lập Thượng', Type.xa),
@@ -10183,7 +10183,7 @@ const level1s = [
       Level3(49, 17, '27556', 'Xã Tân Thông Hội', Type.xa),
     ]),
     Level2(49, '784', 'Huyện Hóc Môn', Type.huyen, [
-      Level3(49, 18, '27559', 'Thị trấn Hóc Môn', Type.thi_tran),
+      Level3(49, 18, '27559', 'Thị trấn Hóc Môn', Type.thiTran),
       Level3(49, 18, '27562', 'Xã Tân Hiệp', Type.xa),
       Level3(49, 18, '27565', 'Xã Nhị Bình', Type.xa),
       Level3(49, 18, '27568', 'Xã Đông Thạnh', Type.xa),
@@ -10197,7 +10197,7 @@ const level1s = [
       Level3(49, 18, '27592', 'Xã Bà Điểm', Type.xa),
     ]),
     Level2(49, '785', 'Huyện Bình Chánh', Type.huyen, [
-      Level3(49, 19, '27595', 'Thị trấn Tân Túc', Type.thi_tran),
+      Level3(49, 19, '27595', 'Thị trấn Tân Túc', Type.thiTran),
       Level3(49, 19, '27598', 'Xã Phạm Văn Hai', Type.xa),
       Level3(49, 19, '27601', 'Xã Vĩnh Lộc A', Type.xa),
       Level3(49, 19, '27604', 'Xã Vĩnh Lộc B', Type.xa),
@@ -10215,7 +10215,7 @@ const level1s = [
       Level3(49, 19, '27640', 'Xã Quy Đức', Type.xa),
     ]),
     Level2(49, '786', 'Huyện Nhà Bè', Type.huyen, [
-      Level3(49, 20, '27643', 'Thị trấn Nhà Bè', Type.thi_tran),
+      Level3(49, 20, '27643', 'Thị trấn Nhà Bè', Type.thiTran),
       Level3(49, 20, '27646', 'Xã Phước Kiển', Type.xa),
       Level3(49, 20, '27649', 'Xã Phước Lộc', Type.xa),
       Level3(49, 20, '27652', 'Xã Nhơn Đức', Type.xa),
@@ -10224,7 +10224,7 @@ const level1s = [
       Level3(49, 20, '27661', 'Xã Hiệp Phước', Type.xa),
     ]),
     Level2(49, '787', 'Huyện Cần Giờ', Type.huyen, [
-      Level3(49, 21, '27664', 'Thị trấn Cần Thạnh', Type.thi_tran),
+      Level3(49, 21, '27664', 'Thị trấn Cần Thạnh', Type.thiTran),
       Level3(49, 21, '27667', 'Xã Bình Khánh', Type.xa),
       Level3(49, 21, '27670', 'Xã Tam Thôn Hiệp', Type.xa),
       Level3(49, 21, '27673', 'Xã An Thới Đông', Type.xa),
@@ -10250,7 +10250,7 @@ const level1s = [
       Level3(50, 0, '27715', 'Phường Khánh Hậu', Type.phuong),
       Level3(50, 0, '27718', 'Xã An Vĩnh Ngãi', Type.xa),
     ]),
-    Level2(50, '795', 'Thị xã Kiến Tường', Type.thi_xa, [
+    Level2(50, '795', 'Thị xã Kiến Tường', Type.thiXa, [
       Level3(50, 1, '27787', 'Phường 1', Type.phuong),
       Level3(50, 1, '27788', 'Phường 2', Type.phuong),
       Level3(50, 1, '27790', 'Xã Thạnh Trị', Type.xa),
@@ -10261,7 +10261,7 @@ const level1s = [
       Level3(50, 1, '27817', 'Xã Thạnh Hưng', Type.xa),
     ]),
     Level2(50, '796', 'Huyện Tân Hưng', Type.huyen, [
-      Level3(50, 2, '27721', 'Thị trấn Tân Hưng', Type.thi_tran),
+      Level3(50, 2, '27721', 'Thị trấn Tân Hưng', Type.thiTran),
       Level3(50, 2, '27724', 'Xã Hưng Hà', Type.xa),
       Level3(50, 2, '27727', 'Xã Hưng Điền B', Type.xa),
       Level3(50, 2, '27730', 'Xã Hưng Điền', Type.xa),
@@ -10275,7 +10275,7 @@ const level1s = [
       Level3(50, 2, '27754', 'Xã Vĩnh Bửu', Type.xa),
     ]),
     Level2(50, '797', 'Huyện Vĩnh Hưng', Type.huyen, [
-      Level3(50, 3, '27757', 'Thị trấn Vĩnh Hưng', Type.thi_tran),
+      Level3(50, 3, '27757', 'Thị trấn Vĩnh Hưng', Type.thiTran),
       Level3(50, 3, '27760', 'Xã Hưng Điền A', Type.xa),
       Level3(50, 3, '27763', 'Xã Khánh Hưng', Type.xa),
       Level3(50, 3, '27766', 'Xã Thái Trị', Type.xa),
@@ -10291,12 +10291,12 @@ const level1s = [
       Level3(50, 4, '27802', 'Xã Bình Thạnh', Type.xa),
       Level3(50, 4, '27808', 'Xã Bình Hòa Trung', Type.xa),
       Level3(50, 4, '27811', 'Xã Bình Hòa Đông', Type.xa),
-      Level3(50, 4, '27814', 'Thị trấn Bình Phong Thạnh', Type.thi_tran),
+      Level3(50, 4, '27814', 'Thị trấn Bình Phong Thạnh', Type.thiTran),
       Level3(50, 4, '27820', 'Xã Tân Lập', Type.xa),
       Level3(50, 4, '27823', 'Xã Tân Thành', Type.xa),
     ]),
     Level2(50, '799', 'Huyện Tân Thạnh', Type.huyen, [
-      Level3(50, 5, '27826', 'Thị trấn Tân Thạnh', Type.thi_tran),
+      Level3(50, 5, '27826', 'Thị trấn Tân Thạnh', Type.thiTran),
       Level3(50, 5, '27829', 'Xã Bắc Hòa', Type.xa),
       Level3(50, 5, '27832', 'Xã Hậu Thạnh Tây', Type.xa),
       Level3(50, 5, '27835', 'Xã Nhơn Hòa Lập', Type.xa),
@@ -10311,7 +10311,7 @@ const level1s = [
       Level3(50, 5, '27862', 'Xã Tân Hòa', Type.xa),
     ]),
     Level2(50, '800', 'Huyện Thạnh Hóa', Type.huyen, [
-      Level3(50, 6, '27865', 'Thị trấn Thạnh Hóa', Type.thi_tran),
+      Level3(50, 6, '27865', 'Thị trấn Thạnh Hóa', Type.thiTran),
       Level3(50, 6, '27868', 'Xã Tân Hiệp', Type.xa),
       Level3(50, 6, '27871', 'Xã Thuận Bình', Type.xa),
       Level3(50, 6, '27874', 'Xã Thạnh Phước', Type.xa),
@@ -10324,7 +10324,7 @@ const level1s = [
       Level3(50, 6, '27895', 'Xã Thạnh An', Type.xa),
     ]),
     Level2(50, '801', 'Huyện Đức Huệ', Type.huyen, [
-      Level3(50, 7, '27898', 'Thị trấn Đông Thành', Type.thi_tran),
+      Level3(50, 7, '27898', 'Thị trấn Đông Thành', Type.thiTran),
       Level3(50, 7, '27901', 'Xã Mỹ Quý Đông', Type.xa),
       Level3(50, 7, '27904', 'Xã Mỹ Thạnh Bắc', Type.xa),
       Level3(50, 7, '27907', 'Xã Mỹ Quý Tây', Type.xa),
@@ -10337,9 +10337,9 @@ const level1s = [
       Level3(50, 7, '27928', 'Xã Mỹ Bình', Type.xa),
     ]),
     Level2(50, '802', 'Huyện Đức Hòa', Type.huyen, [
-      Level3(50, 8, '27931', 'Thị trấn Hậu Nghĩa', Type.thi_tran),
-      Level3(50, 8, '27934', 'Thị trấn Hiệp Hòa', Type.thi_tran),
-      Level3(50, 8, '27937', 'Thị trấn Đức Hòa', Type.thi_tran),
+      Level3(50, 8, '27931', 'Thị trấn Hậu Nghĩa', Type.thiTran),
+      Level3(50, 8, '27934', 'Thị trấn Hiệp Hòa', Type.thiTran),
+      Level3(50, 8, '27937', 'Thị trấn Đức Hòa', Type.thiTran),
       Level3(50, 8, '27940', 'Xã Lộc Giang', Type.xa),
       Level3(50, 8, '27943', 'Xã An Ninh Đông', Type.xa),
       Level3(50, 8, '27946', 'Xã An Ninh Tây', Type.xa),
@@ -10359,7 +10359,7 @@ const level1s = [
       Level3(50, 8, '27988', 'Xã Hựu Thạnh', Type.xa),
     ]),
     Level2(50, '803', 'Huyện Bến Lức', Type.huyen, [
-      Level3(50, 9, '27991', 'Thị trấn Bến Lức', Type.thi_tran),
+      Level3(50, 9, '27991', 'Thị trấn Bến Lức', Type.thiTran),
       Level3(50, 9, '27994', 'Xã Thạnh Lợi', Type.xa),
       Level3(50, 9, '27997', 'Xã Lương Bình', Type.xa),
       Level3(50, 9, '28000', 'Xã Thạnh Hòa', Type.xa),
@@ -10376,7 +10376,7 @@ const level1s = [
       Level3(50, 9, '28033', 'Xã Nhựt Chánh', Type.xa),
     ]),
     Level2(50, '804', 'Huyện Thủ Thừa', Type.huyen, [
-      Level3(50, 10, '28036', 'Thị trấn Thủ Thừa', Type.thi_tran),
+      Level3(50, 10, '28036', 'Thị trấn Thủ Thừa', Type.thiTran),
       Level3(50, 10, '28039', 'Xã Long Thạnh', Type.xa),
       Level3(50, 10, '28042', 'Xã Tân Thành', Type.xa),
       Level3(50, 10, '28045', 'Xã Long Thuận', Type.xa),
@@ -10390,7 +10390,7 @@ const level1s = [
       Level3(50, 10, '28072', 'Xã Tân Long', Type.xa),
     ]),
     Level2(50, '805', 'Huyện Tân Trụ', Type.huyen, [
-      Level3(50, 11, '28075', 'Thị trấn Tân Trụ', Type.thi_tran),
+      Level3(50, 11, '28075', 'Thị trấn Tân Trụ', Type.thiTran),
       Level3(50, 11, '28078', 'Xã Tân Bình', Type.xa),
       Level3(50, 11, '28084', 'Xã Quê Mỹ Thạnh', Type.xa),
       Level3(50, 11, '28087', 'Xã Lạc Tấn', Type.xa),
@@ -10402,7 +10402,7 @@ const level1s = [
       Level3(50, 11, '28105', 'Xã Nhựt Ninh', Type.xa),
     ]),
     Level2(50, '806', 'Huyện Cần Đước', Type.huyen, [
-      Level3(50, 12, '28108', 'Thị trấn Cần Đước', Type.thi_tran),
+      Level3(50, 12, '28108', 'Thị trấn Cần Đước', Type.thiTran),
       Level3(50, 12, '28111', 'Xã Long Trạch', Type.xa),
       Level3(50, 12, '28114', 'Xã Long Khê', Type.xa),
       Level3(50, 12, '28117', 'Xã Long Định', Type.xa),
@@ -10421,7 +10421,7 @@ const level1s = [
       Level3(50, 12, '28156', 'Xã Tân Chánh', Type.xa),
     ]),
     Level2(50, '807', 'Huyện Cần Giuộc', Type.huyen, [
-      Level3(50, 13, '28159', 'Thị trấn Cần Giuộc', Type.thi_tran),
+      Level3(50, 13, '28159', 'Thị trấn Cần Giuộc', Type.thiTran),
       Level3(50, 13, '28162', 'Xã Phước Lý', Type.xa),
       Level3(50, 13, '28165', 'Xã Long Thượng', Type.xa),
       Level3(50, 13, '28168', 'Xã Long Hậu', Type.xa),
@@ -10438,7 +10438,7 @@ const level1s = [
       Level3(50, 13, '28207', 'Xã Tân Tập', Type.xa),
     ]),
     Level2(50, '808', 'Huyện Châu Thành', Type.huyen, [
-      Level3(50, 14, '28210', 'Thị trấn Tầm Vu', Type.thi_tran),
+      Level3(50, 14, '28210', 'Thị trấn Tầm Vu', Type.thiTran),
       Level3(50, 14, '28213', 'Xã Bình Quới', Type.xa),
       Level3(50, 14, '28216', 'Xã Hòa Phú', Type.xa),
       Level3(50, 14, '28219', 'Xã Phú Ngãi Trị', Type.xa),
@@ -10473,7 +10473,7 @@ const level1s = [
       Level3(51, 0, '28567', 'Xã Phước Thạnh', Type.xa),
       Level3(51, 0, '28591', 'Xã Thới Sơn', Type.xa),
     ]),
-    Level2(51, '816', 'Thị xã Gò Công', Type.thi_xa, [
+    Level2(51, '816', 'Thị xã Gò Công', Type.thiXa, [
       Level3(51, 1, '28294', 'Phường 3', Type.phuong),
       Level3(51, 1, '28297', 'Phường 2', Type.phuong),
       Level3(51, 1, '28300', 'Phường 4', Type.phuong),
@@ -10487,7 +10487,7 @@ const level1s = [
       Level3(51, 1, '28717', 'Xã Bình Xuân', Type.xa),
       Level3(51, 1, '28729', 'Xã Tân Trung', Type.xa),
     ]),
-    Level2(51, '817', 'Thị xã Cai Lậy', Type.thi_xa, [
+    Level2(51, '817', 'Thị xã Cai Lậy', Type.thiXa, [
       Level3(51, 2, '28435', 'Phường 1', Type.phuong),
       Level3(51, 2, '28436', 'Phường 2', Type.phuong),
       Level3(51, 2, '28437', 'Phường 3', Type.phuong),
@@ -10506,7 +10506,7 @@ const level1s = [
       Level3(51, 2, '28486', 'Xã Long Khánh', Type.xa),
     ]),
     Level2(51, '818', 'Huyện Tân Phước', Type.huyen, [
-      Level3(51, 3, '28321', 'Thị trấn Mỹ Phước', Type.thi_tran),
+      Level3(51, 3, '28321', 'Thị trấn Mỹ Phước', Type.thiTran),
       Level3(51, 3, '28324', 'Xã Tân Hòa Đông', Type.xa),
       Level3(51, 3, '28327', 'Xã Thạnh Tân', Type.xa),
       Level3(51, 3, '28330', 'Xã Thạnh Mỹ', Type.xa),
@@ -10520,7 +10520,7 @@ const level1s = [
       Level3(51, 3, '28357', 'Xã Phước Lập', Type.xa),
     ]),
     Level2(51, '819', 'Huyện Cái Bè', Type.huyen, [
-      Level3(51, 4, '28360', 'Thị trấn Cái Bè', Type.thi_tran),
+      Level3(51, 4, '28360', 'Thị trấn Cái Bè', Type.thiTran),
       Level3(51, 4, '28363', 'Xã Hậu Mỹ Bắc B', Type.xa),
       Level3(51, 4, '28366', 'Xã Hậu Mỹ Bắc A', Type.xa),
       Level3(51, 4, '28369', 'Xã Mỹ Trung', Type.xa),
@@ -10565,7 +10565,7 @@ const level1s = [
       Level3(51, 5, '28516', 'Xã Ngũ Hiệp', Type.xa),
     ]),
     Level2(51, '821', 'Huyện Châu Thành', Type.huyen, [
-      Level3(51, 6, '28519', 'Thị trấn Tân Hiệp', Type.thi_tran),
+      Level3(51, 6, '28519', 'Thị trấn Tân Hiệp', Type.thiTran),
       Level3(51, 6, '28522', 'Xã Tân Hội Đông', Type.xa),
       Level3(51, 6, '28525', 'Xã Tân Hương', Type.xa),
       Level3(51, 6, '28528', 'Xã Tân Lý Đông', Type.xa),
@@ -10590,7 +10590,7 @@ const level1s = [
       Level3(51, 6, '28588', 'Xã Phú Phong', Type.xa),
     ]),
     Level2(51, '822', 'Huyện Chợ Gạo', Type.huyen, [
-      Level3(51, 7, '28594', 'Thị trấn Chợ Gạo', Type.thi_tran),
+      Level3(51, 7, '28594', 'Thị trấn Chợ Gạo', Type.thiTran),
       Level3(51, 7, '28597', 'Xã Trung Hòa', Type.xa),
       Level3(51, 7, '28600', 'Xã Hòa Tịnh', Type.xa),
       Level3(51, 7, '28603', 'Xã Mỹ Tịnh An', Type.xa),
@@ -10611,7 +10611,7 @@ const level1s = [
       Level3(51, 7, '28648', 'Xã Bình Ninh', Type.xa),
     ]),
     Level2(51, '823', 'Huyện Gò Công Tây', Type.huyen, [
-      Level3(51, 8, '28651', 'Thị trấn Vĩnh Bình', Type.thi_tran),
+      Level3(51, 8, '28651', 'Thị trấn Vĩnh Bình', Type.thiTran),
       Level3(51, 8, '28654', 'Xã Đồng Sơn', Type.xa),
       Level3(51, 8, '28657', 'Xã Bình Phú', Type.xa),
       Level3(51, 8, '28660', 'Xã Đồng Thạnh', Type.xa),
@@ -10626,11 +10626,11 @@ const level1s = [
       Level3(51, 8, '28687', 'Xã Long Bình', Type.xa),
     ]),
     Level2(51, '824', 'Huyện Gò Công Đông', Type.huyen, [
-      Level3(51, 9, '28702', 'Thị trấn Tân Hòa', Type.thi_tran),
+      Level3(51, 9, '28702', 'Thị trấn Tân Hòa', Type.thiTran),
       Level3(51, 9, '28705', 'Xã Tăng Hoà', Type.xa),
       Level3(51, 9, '28711', 'Xã Tân Phước', Type.xa),
       Level3(51, 9, '28714', 'Xã Gia Thuận', Type.xa),
-      Level3(51, 9, '28720', 'Thị trấn Vàm Láng', Type.thi_tran),
+      Level3(51, 9, '28720', 'Thị trấn Vàm Láng', Type.thiTran),
       Level3(51, 9, '28723', 'Xã Tân Tây', Type.xa),
       Level3(51, 9, '28726', 'Xã Kiểng Phước', Type.xa),
       Level3(51, 9, '28732', 'Xã Tân Đông', Type.xa),
@@ -10667,7 +10667,7 @@ const level1s = [
       Level3(52, 0, '28798', 'Xã Phú Nhuận', Type.xa),
     ]),
     Level2(52, '831', 'Huyện Châu Thành', Type.huyen, [
-      Level3(52, 1, '28801', 'Thị trấn Châu Thành', Type.thi_tran),
+      Level3(52, 1, '28801', 'Thị trấn Châu Thành', Type.thiTran),
       Level3(52, 1, '28804', 'Xã Tân Thạch', Type.xa),
       Level3(52, 1, '28807', 'Xã Qưới Sơn', Type.xa),
       Level3(52, 1, '28810', 'Xã An Khánh', Type.xa),
@@ -10690,7 +10690,7 @@ const level1s = [
       Level3(52, 1, '28864', 'Xã Sơn Hòa', Type.xa),
     ]),
     Level2(52, '832', 'Huyện Chợ Lách', Type.huyen, [
-      Level3(52, 2, '28870', 'Thị trấn Chợ Lách', Type.thi_tran),
+      Level3(52, 2, '28870', 'Thị trấn Chợ Lách', Type.thiTran),
       Level3(52, 2, '28873', 'Xã Phú Phụng', Type.xa),
       Level3(52, 2, '28876', 'Xã Sơn Định', Type.xa),
       Level3(52, 2, '28879', 'Xã Vĩnh Bình', Type.xa),
@@ -10703,7 +10703,7 @@ const level1s = [
       Level3(52, 2, '28900', 'Xã Hưng Khánh Trung B', Type.xa),
     ]),
     Level2(52, '833', 'Huyện Mỏ Cày Nam', Type.huyen, [
-      Level3(52, 3, '28903', 'Thị trấn Mỏ Cày', Type.thi_tran),
+      Level3(52, 3, '28903', 'Thị trấn Mỏ Cày', Type.thiTran),
       Level3(52, 3, '28930', 'Xã Định Thủy', Type.xa),
       Level3(52, 3, '28939', 'Xã Đa Phước Hội', Type.xa),
       Level3(52, 3, '28940', 'Xã Tân Hội', Type.xa),
@@ -10721,7 +10721,7 @@ const level1s = [
       Level3(52, 3, '28981', 'Xã Hương Mỹ', Type.xa),
     ]),
     Level2(52, '834', 'Huyện Giồng Trôm', Type.huyen, [
-      Level3(52, 4, '28984', 'Thị trấn Giồng Trôm', Type.thi_tran),
+      Level3(52, 4, '28984', 'Thị trấn Giồng Trôm', Type.thiTran),
       Level3(52, 4, '28987', 'Xã Phong Nẫm', Type.xa),
       Level3(52, 4, '28993', 'Xã Mỹ Thạnh', Type.xa),
       Level3(52, 4, '28996', 'Xã Châu Hòa', Type.xa),
@@ -10744,7 +10744,7 @@ const level1s = [
       Level3(52, 4, '29047', 'Xã Hưng Lễ', Type.xa),
     ]),
     Level2(52, '835', 'Huyện Bình Đại', Type.huyen, [
-      Level3(52, 5, '29050', 'Thị trấn Bình Đại', Type.thi_tran),
+      Level3(52, 5, '29050', 'Thị trấn Bình Đại', Type.thiTran),
       Level3(52, 5, '29053', 'Xã Tam Hiệp', Type.xa),
       Level3(52, 5, '29056', 'Xã Long Định', Type.xa),
       Level3(52, 5, '29059', 'Xã Long Hòa', Type.xa),
@@ -10766,7 +10766,7 @@ const level1s = [
       Level3(52, 5, '29107', 'Xã Thới Thuận', Type.xa),
     ]),
     Level2(52, '836', 'Huyện Ba Tri', Type.huyen, [
-      Level3(52, 6, '29110', 'Thị trấn Ba Tri', Type.thi_tran),
+      Level3(52, 6, '29110', 'Thị trấn Ba Tri', Type.thiTran),
       Level3(52, 6, '29113', 'Xã Tân Mỹ', Type.xa),
       Level3(52, 6, '29116', 'Xã Mỹ Hòa', Type.xa),
       Level3(52, 6, '29119', 'Xã Tân Xuân', Type.xa),
@@ -10791,7 +10791,7 @@ const level1s = [
       Level3(52, 6, '29179', 'Xã An Thủy', Type.xa),
     ]),
     Level2(52, '837', 'Huyện Thạnh Phú', Type.huyen, [
-      Level3(52, 7, '29182', 'Thị trấn Thạnh Phú', Type.thi_tran),
+      Level3(52, 7, '29182', 'Thị trấn Thạnh Phú', Type.thiTran),
       Level3(52, 7, '29185', 'Xã Phú Khánh', Type.xa),
       Level3(52, 7, '29188', 'Xã Đại Điền', Type.xa),
       Level3(52, 7, '29191', 'Xã Quới Điền', Type.xa),
@@ -10840,7 +10840,7 @@ const level1s = [
       Level3(53, 0, '29263', 'Xã Long Đức', Type.xa),
     ]),
     Level2(53, '844', 'Huyện Càng Long', Type.huyen, [
-      Level3(53, 1, '29266', 'Thị trấn Càng Long', Type.thi_tran),
+      Level3(53, 1, '29266', 'Thị trấn Càng Long', Type.thiTran),
       Level3(53, 1, '29269', 'Xã Mỹ Cẩm', Type.xa),
       Level3(53, 1, '29272', 'Xã An Trường A', Type.xa),
       Level3(53, 1, '29275', 'Xã An Trường', Type.xa),
@@ -10856,7 +10856,7 @@ const level1s = [
       Level3(53, 1, '29305', 'Xã Đức Mỹ', Type.xa),
     ]),
     Level2(53, '845', 'Huyện Cầu Kè', Type.huyen, [
-      Level3(53, 2, '29308', 'Thị trấn Cầu Kè', Type.thi_tran),
+      Level3(53, 2, '29308', 'Thị trấn Cầu Kè', Type.thiTran),
       Level3(53, 2, '29311', 'Xã Hòa Ân', Type.xa),
       Level3(53, 2, '29314', 'Xã Châu Điền', Type.xa),
       Level3(53, 2, '29317', 'Xã An Phú Tân', Type.xa),
@@ -10869,8 +10869,8 @@ const level1s = [
       Level3(53, 2, '29338', 'Xã Thạnh Phú', Type.xa),
     ]),
     Level2(53, '846', 'Huyện Tiểu Cần', Type.huyen, [
-      Level3(53, 3, '29341', 'Thị trấn Tiểu Cần', Type.thi_tran),
-      Level3(53, 3, '29344', 'Thị trấn Cầu Quan', Type.thi_tran),
+      Level3(53, 3, '29341', 'Thị trấn Tiểu Cần', Type.thiTran),
+      Level3(53, 3, '29344', 'Thị trấn Cầu Quan', Type.thiTran),
       Level3(53, 3, '29347', 'Xã Phú Cần', Type.xa),
       Level3(53, 3, '29350', 'Xã Hiếu Tử', Type.xa),
       Level3(53, 3, '29353', 'Xã Hiếu Trung', Type.xa),
@@ -10882,7 +10882,7 @@ const level1s = [
       Level3(53, 3, '29371', 'Xã Tân Hòa', Type.xa),
     ]),
     Level2(53, '847', 'Huyện Châu Thành', Type.huyen, [
-      Level3(53, 4, '29374', 'Thị trấn Châu Thành', Type.thi_tran),
+      Level3(53, 4, '29374', 'Thị trấn Châu Thành', Type.thiTran),
       Level3(53, 4, '29377', 'Xã Đa Lộc', Type.xa),
       Level3(53, 4, '29380', 'Xã Mỹ Chánh', Type.xa),
       Level3(53, 4, '29383', 'Xã Thanh Mỹ', Type.xa),
@@ -10898,8 +10898,8 @@ const level1s = [
       Level3(53, 4, '29413', 'Xã Long Hòa', Type.xa),
     ]),
     Level2(53, '848', 'Huyện Cầu Ngang', Type.huyen, [
-      Level3(53, 5, '29416', 'Thị trấn Cầu Ngang', Type.thi_tran),
-      Level3(53, 5, '29419', 'Thị trấn Mỹ Long', Type.thi_tran),
+      Level3(53, 5, '29416', 'Thị trấn Cầu Ngang', Type.thiTran),
+      Level3(53, 5, '29419', 'Thị trấn Mỹ Long', Type.thiTran),
       Level3(53, 5, '29422', 'Xã Mỹ Long Bắc', Type.xa),
       Level3(53, 5, '29425', 'Xã Mỹ Long Nam', Type.xa),
       Level3(53, 5, '29428', 'Xã Mỹ Hòa', Type.xa),
@@ -10915,8 +10915,8 @@ const level1s = [
       Level3(53, 5, '29458', 'Xã Thạnh Hòa Sơn', Type.xa),
     ]),
     Level2(53, '849', 'Huyện Trà Cú', Type.huyen, [
-      Level3(53, 6, '29461', 'Thị trấn Trà Cú', Type.thi_tran),
-      Level3(53, 6, '29462', 'Thị trấn Định An', Type.thi_tran),
+      Level3(53, 6, '29461', 'Thị trấn Trà Cú', Type.thiTran),
+      Level3(53, 6, '29462', 'Thị trấn Định An', Type.thiTran),
       Level3(53, 6, '29464', 'Xã Phước Hưng', Type.xa),
       Level3(53, 6, '29467', 'Xã Tập Sơn', Type.xa),
       Level3(53, 6, '29470', 'Xã Tân Sơn', Type.xa),
@@ -10936,13 +10936,13 @@ const level1s = [
     Level2(53, '850', 'Huyện Duyên Hải', Type.huyen, [
       Level3(53, 7, '29497', 'Xã Đôn Xuân', Type.xa),
       Level3(53, 7, '29500', 'Xã Đôn Châu', Type.xa),
-      Level3(53, 7, '29513', 'Thị trấn Long Thành', Type.thi_tran),
+      Level3(53, 7, '29513', 'Thị trấn Long Thành', Type.thiTran),
       Level3(53, 7, '29521', 'Xã Long Khánh', Type.xa),
       Level3(53, 7, '29530', 'Xã Ngũ Lạc', Type.xa),
       Level3(53, 7, '29533', 'Xã Long Vĩnh', Type.xa),
       Level3(53, 7, '29536', 'Xã Đông Hải', Type.xa),
     ]),
-    Level2(53, '851', 'Thị xã Duyên Hải', Type.thi_xa, [
+    Level2(53, '851', 'Thị xã Duyên Hải', Type.thiXa, [
       Level3(53, 8, '29512', 'Phường 1', Type.phuong),
       Level3(53, 8, '29515', 'Xã Long Toàn', Type.xa),
       Level3(53, 8, '29516', 'Phường 2', Type.phuong),
@@ -10967,7 +10967,7 @@ const level1s = [
       Level3(54, 0, '29572', 'Phường Trường An', Type.phuong),
     ]),
     Level2(54, '857', 'Huyện Long Hồ', Type.huyen, [
-      Level3(54, 1, '29575', 'Thị trấn Long Hồ', Type.thi_tran),
+      Level3(54, 1, '29575', 'Thị trấn Long Hồ', Type.thiTran),
       Level3(54, 1, '29578', 'Xã Đồng Phú', Type.xa),
       Level3(54, 1, '29581', 'Xã Bình Hòa Phước', Type.xa),
       Level3(54, 1, '29584', 'Xã Hòa Ninh', Type.xa),
@@ -10990,7 +10990,7 @@ const level1s = [
       Level3(54, 2, '29632', 'Xã Nhơn Phú', Type.xa),
       Level3(54, 2, '29635', 'Xã Long Mỹ', Type.xa),
       Level3(54, 2, '29638', 'Xã Hòa Tịnh', Type.xa),
-      Level3(54, 2, '29641', 'Thị trấn Cái Nhum', Type.thi_tran),
+      Level3(54, 2, '29641', 'Thị trấn Cái Nhum', Type.thiTran),
       Level3(54, 2, '29644', 'Xã Bình Phước', Type.xa),
       Level3(54, 2, '29647', 'Xã Chánh An', Type.xa),
       Level3(54, 2, '29650', 'Xã Tân An Hội', Type.xa),
@@ -10998,7 +10998,7 @@ const level1s = [
       Level3(54, 2, '29656', 'Xã Tân Long Hội', Type.xa),
     ]),
     Level2(54, '859', 'Huyện  Vũng Liêm', Type.huyen, [
-      Level3(54, 3, '29659', 'Thị trấn Vũng Liêm', Type.thi_tran),
+      Level3(54, 3, '29659', 'Thị trấn Vũng Liêm', Type.thiTran),
       Level3(54, 3, '29662', 'Xã Tân Quới Trung', Type.xa),
       Level3(54, 3, '29665', 'Xã Quới Thiện', Type.xa),
       Level3(54, 3, '29668', 'Xã Quới An', Type.xa),
@@ -11020,7 +11020,7 @@ const level1s = [
       Level3(54, 3, '29716', 'Xã Hiếu Nghĩa', Type.xa),
     ]),
     Level2(54, '860', 'Huyện Tam Bình', Type.huyen, [
-      Level3(54, 4, '29719', 'Thị trấn Tam Bình', Type.thi_tran),
+      Level3(54, 4, '29719', 'Thị trấn Tam Bình', Type.thiTran),
       Level3(54, 4, '29722', 'Xã Tân Lộc', Type.xa),
       Level3(54, 4, '29725', 'Xã Phú Thịnh', Type.xa),
       Level3(54, 4, '29728', 'Xã Hậu Lộc', Type.xa),
@@ -11038,7 +11038,7 @@ const level1s = [
       Level3(54, 4, '29764', 'Xã Ngãi Tứ', Type.xa),
       Level3(54, 4, '29767', 'Xã Bình Ninh', Type.xa),
     ]),
-    Level2(54, '861', 'Thị xã Bình Minh', Type.thi_xa, [
+    Level2(54, '861', 'Thị xã Bình Minh', Type.thiXa, [
       Level3(54, 5, '29770', 'Phường Cái Vồn', Type.phuong),
       Level3(54, 5, '29771', 'Phường Thành Phước', Type.phuong),
       Level3(54, 5, '29806', 'Xã Thuận An', Type.xa),
@@ -11049,7 +11049,7 @@ const level1s = [
       Level3(54, 5, '29818', 'Xã Đông Thành', Type.xa),
     ]),
     Level2(54, '862', 'Huyện Trà Ôn', Type.huyen, [
-      Level3(54, 6, '29821', 'Thị trấn Trà Ôn', Type.thi_tran),
+      Level3(54, 6, '29821', 'Thị trấn Trà Ôn', Type.thiTran),
       Level3(54, 6, '29824', 'Xã Xuân Hiệp', Type.xa),
       Level3(54, 6, '29827', 'Xã Nhơn Bình', Type.xa),
       Level3(54, 6, '29830', 'Xã Hòa Bình', Type.xa),
@@ -11074,7 +11074,7 @@ const level1s = [
       Level3(54, 7, '29791', 'Xã Thành Lợi', Type.xa),
       Level3(54, 7, '29794', 'Xã Mỹ Thuận', Type.xa),
       Level3(54, 7, '29797', 'Xã Tân Bình', Type.xa),
-      Level3(54, 7, '29800', 'Thị trấn Tân Quới', Type.thi_tran),
+      Level3(54, 7, '29800', 'Thị trấn Tân Quới', Type.thiTran),
     ]),
   ]),
   Level1('87', 'Tỉnh Đồng Tháp', Type.tinh, [
@@ -11116,7 +11116,7 @@ const level1s = [
       Level3(55, 2, '29989', 'Phường An Bình A', Type.phuong),
     ]),
     Level2(55, '869', 'Huyện Tân Hồng', Type.huyen, [
-      Level3(55, 3, '29926', 'Thị trấn Sa Rài', Type.thi_tran),
+      Level3(55, 3, '29926', 'Thị trấn Sa Rài', Type.thiTran),
       Level3(55, 3, '29929', 'Xã Tân Hộ Cơ', Type.xa),
       Level3(55, 3, '29932', 'Xã Thông Bình', Type.xa),
       Level3(55, 3, '29935', 'Xã Bình Phú', Type.xa),
@@ -11129,7 +11129,7 @@ const level1s = [
     Level2(55, '870', 'Huyện Hồng Ngự', Type.huyen, [
       Level3(55, 4, '29956', 'Xã Thường Phước 1', Type.xa),
       Level3(55, 4, '29962', 'Xã Thường Thới Hậu A', Type.xa),
-      Level3(55, 4, '29971', 'Thị trấn Thường Thới Tiền', Type.thi_tran),
+      Level3(55, 4, '29971', 'Thị trấn Thường Thới Tiền', Type.thiTran),
       Level3(55, 4, '29974', 'Xã Thường Phước 2', Type.xa),
       Level3(55, 4, '29977', 'Xã Thường Lạc', Type.xa),
       Level3(55, 4, '29980', 'Xã Long Khánh A', Type.xa),
@@ -11139,7 +11139,7 @@ const level1s = [
       Level3(55, 4, '29998', 'Xã Phú Thuận A', Type.xa),
     ]),
     Level2(55, '871', 'Huyện Tam Nông', Type.huyen, [
-      Level3(55, 5, '30001', 'Thị trấn Tràm Chim', Type.thi_tran),
+      Level3(55, 5, '30001', 'Thị trấn Tràm Chim', Type.thiTran),
       Level3(55, 5, '30004', 'Xã Hoà Bình', Type.xa),
       Level3(55, 5, '30007', 'Xã Tân Công Sính', Type.xa),
       Level3(55, 5, '30010', 'Xã Phú Hiệp', Type.xa),
@@ -11153,7 +11153,7 @@ const level1s = [
       Level3(55, 5, '30034', 'Xã Phú Thành A', Type.xa),
     ]),
     Level2(55, '872', 'Huyện Tháp Mười', Type.huyen, [
-      Level3(55, 6, '30037', 'Thị trấn Mỹ An', Type.thi_tran),
+      Level3(55, 6, '30037', 'Thị trấn Mỹ An', Type.thiTran),
       Level3(55, 6, '30040', 'Xã Thạnh Lợi', Type.xa),
       Level3(55, 6, '30043', 'Xã Hưng Thạnh', Type.xa),
       Level3(55, 6, '30046', 'Xã Trường Xuân', Type.xa),
@@ -11168,7 +11168,7 @@ const level1s = [
       Level3(55, 6, '30073', 'Xã Thanh Mỹ', Type.xa),
     ]),
     Level2(55, '873', 'Huyện Cao Lãnh', Type.huyen, [
-      Level3(55, 7, '30076', 'Thị trấn Mỹ Thọ', Type.thi_tran),
+      Level3(55, 7, '30076', 'Thị trấn Mỹ Thọ', Type.thiTran),
       Level3(55, 7, '30079', 'Xã Gáo Giồng', Type.xa),
       Level3(55, 7, '30082', 'Xã Phương Thịnh', Type.xa),
       Level3(55, 7, '30085', 'Xã Ba Sao', Type.xa),
@@ -11188,7 +11188,7 @@ const level1s = [
       Level3(55, 7, '30127', 'Xã Bình Thạnh', Type.xa),
     ]),
     Level2(55, '874', 'Huyện Thanh Bình', Type.huyen, [
-      Level3(55, 8, '30130', 'Thị trấn Thanh Bình', Type.thi_tran),
+      Level3(55, 8, '30130', 'Thị trấn Thanh Bình', Type.thiTran),
       Level3(55, 8, '30133', 'Xã Tân Quới', Type.xa),
       Level3(55, 8, '30136', 'Xã Tân Hòa', Type.xa),
       Level3(55, 8, '30139', 'Xã An Phong', Type.xa),
@@ -11203,7 +11203,7 @@ const level1s = [
       Level3(55, 8, '30166', 'Xã Tân Long', Type.xa),
     ]),
     Level2(55, '875', 'Huyện Lấp Vò', Type.huyen, [
-      Level3(55, 9, '30169', 'Thị trấn Lấp Vò', Type.thi_tran),
+      Level3(55, 9, '30169', 'Thị trấn Lấp Vò', Type.thiTran),
       Level3(55, 9, '30172', 'Xã Mỹ An Hưng A', Type.xa),
       Level3(55, 9, '30175', 'Xã Tân Mỹ', Type.xa),
       Level3(55, 9, '30178', 'Xã Mỹ An Hưng B', Type.xa),
@@ -11218,7 +11218,7 @@ const level1s = [
       Level3(55, 9, '30205', 'Xã Bình Thạnh Trung', Type.xa),
     ]),
     Level2(55, '876', 'Huyện Lai Vung', Type.huyen, [
-      Level3(55, 10, '30208', 'Thị trấn Lai Vung', Type.thi_tran),
+      Level3(55, 10, '30208', 'Thị trấn Lai Vung', Type.thiTran),
       Level3(55, 10, '30211', 'Xã Tân Dương', Type.xa),
       Level3(55, 10, '30214', 'Xã Hòa Thành', Type.xa),
       Level3(55, 10, '30217', 'Xã Long Hậu', Type.xa),
@@ -11232,7 +11232,7 @@ const level1s = [
       Level3(55, 10, '30241', 'Xã Phong Hòa', Type.xa),
     ]),
     Level2(55, '877', 'Huyện Châu Thành', Type.huyen, [
-      Level3(55, 11, '30244', 'Thị trấn Cái Tàu Hạ', Type.thi_tran),
+      Level3(55, 11, '30244', 'Thị trấn Cái Tàu Hạ', Type.thiTran),
       Level3(55, 11, '30247', 'Xã An Hiệp', Type.xa),
       Level3(55, 11, '30250', 'Xã An Nhơn', Type.xa),
       Level3(55, 11, '30253', 'Xã Tân Nhuận Đông', Type.xa),
@@ -11272,9 +11272,9 @@ const level1s = [
       Level3(56, 1, '30334', 'Xã Vĩnh Châu', Type.xa),
     ]),
     Level2(56, '886', 'Huyện An Phú', Type.huyen, [
-      Level3(56, 2, '30337', 'Thị trấn An Phú', Type.thi_tran),
+      Level3(56, 2, '30337', 'Thị trấn An Phú', Type.thiTran),
       Level3(56, 2, '30340', 'Xã Khánh An', Type.xa),
-      Level3(56, 2, '30341', 'Thị Trấn Long Bình', Type.thi_tran),
+      Level3(56, 2, '30341', 'Thị Trấn Long Bình', Type.thiTran),
       Level3(56, 2, '30343', 'Xã Khánh Bình', Type.xa),
       Level3(56, 2, '30346', 'Xã Quốc Thái', Type.xa),
       Level3(56, 2, '30349', 'Xã Nhơn Hội', Type.xa),
@@ -11287,7 +11287,7 @@ const level1s = [
       Level3(56, 2, '30370', 'Xã Vĩnh Hội Đông', Type.xa),
       Level3(56, 2, '30373', 'Xã Đa Phước', Type.xa),
     ]),
-    Level2(56, '887', 'Thị xã Tân Châu', Type.thi_xa, [
+    Level2(56, '887', 'Thị xã Tân Châu', Type.thiXa, [
       Level3(56, 3, '30376', 'Phường Long Thạnh', Type.phuong),
       Level3(56, 3, '30377', 'Phường Long Hưng', Type.phuong),
       Level3(56, 3, '30378', 'Phường Long Châu', Type.phuong),
@@ -11304,8 +11304,8 @@ const level1s = [
       Level3(56, 3, '30412', 'Phường Long Sơn', Type.phuong),
     ]),
     Level2(56, '888', 'Huyện Phú Tân', Type.huyen, [
-      Level3(56, 4, '30406', 'Thị trấn Phú Mỹ', Type.thi_tran),
-      Level3(56, 4, '30409', 'Thị trấn Chợ Vàm', Type.thi_tran),
+      Level3(56, 4, '30406', 'Thị trấn Phú Mỹ', Type.thiTran),
+      Level3(56, 4, '30409', 'Thị trấn Chợ Vàm', Type.thiTran),
       Level3(56, 4, '30415', 'Xã Long Hoà', Type.xa),
       Level3(56, 4, '30418', 'Xã Phú Long', Type.xa),
       Level3(56, 4, '30421', 'Xã Phú Lâm', Type.xa),
@@ -11324,12 +11324,12 @@ const level1s = [
       Level3(56, 4, '30460', 'Xã Tân Trung', Type.xa),
     ]),
     Level2(56, '889', 'Huyện Châu Phú', Type.huyen, [
-      Level3(56, 5, '30463', 'Thị trấn Cái Dầu', Type.thi_tran),
+      Level3(56, 5, '30463', 'Thị trấn Cái Dầu', Type.thiTran),
       Level3(56, 5, '30466', 'Xã Khánh Hòa', Type.xa),
       Level3(56, 5, '30469', 'Xã Mỹ Đức', Type.xa),
       Level3(56, 5, '30472', 'Xã Mỹ Phú', Type.xa),
       Level3(56, 5, '30475', 'Xã Ô Long Vỹ', Type.xa),
-      Level3(56, 5, '30478', 'Thị trấn Vĩnh Thạnh Trung', Type.thi_tran),
+      Level3(56, 5, '30478', 'Thị trấn Vĩnh Thạnh Trung', Type.thiTran),
       Level3(56, 5, '30481', 'Xã Thạnh Mỹ Tây', Type.xa),
       Level3(56, 5, '30484', 'Xã Bình Long', Type.xa),
       Level3(56, 5, '30487', 'Xã Bình Mỹ', Type.xa),
@@ -11339,13 +11339,13 @@ const level1s = [
       Level3(56, 5, '30499', 'Xã Bình Chánh', Type.xa),
     ]),
     Level2(56, '890', 'Huyện Tịnh Biên', Type.huyen, [
-      Level3(56, 6, '30502', 'Thị trấn Nhà Bàng', Type.thi_tran),
-      Level3(56, 6, '30505', 'Thị trấn Chi Lăng', Type.thi_tran),
+      Level3(56, 6, '30502', 'Thị trấn Nhà Bàng', Type.thiTran),
+      Level3(56, 6, '30505', 'Thị trấn Chi Lăng', Type.thiTran),
       Level3(56, 6, '30508', 'Xã Núi Voi', Type.xa),
       Level3(56, 6, '30511', 'Xã Nhơn Hưng', Type.xa),
       Level3(56, 6, '30514', 'Xã An Phú', Type.xa),
       Level3(56, 6, '30517', 'Xã Thới Sơn', Type.xa),
-      Level3(56, 6, '30520', 'Thị trấn Tịnh Biên', Type.thi_tran),
+      Level3(56, 6, '30520', 'Thị trấn Tịnh Biên', Type.thiTran),
       Level3(56, 6, '30523', 'Xã Văn Giáo', Type.xa),
       Level3(56, 6, '30526', 'Xã An Cư', Type.xa),
       Level3(56, 6, '30529', 'Xã An Nông', Type.xa),
@@ -11355,8 +11355,8 @@ const level1s = [
       Level3(56, 6, '30541', 'Xã Tân Lập', Type.xa),
     ]),
     Level2(56, '891', 'Huyện Tri Tôn', Type.huyen, [
-      Level3(56, 7, '30544', 'Thị trấn Tri Tôn', Type.thi_tran),
-      Level3(56, 7, '30547', 'Thị trấn Ba Chúc', Type.thi_tran),
+      Level3(56, 7, '30544', 'Thị trấn Tri Tôn', Type.thiTran),
+      Level3(56, 7, '30547', 'Thị trấn Ba Chúc', Type.thiTran),
       Level3(56, 7, '30550', 'Xã Lạc Quới', Type.xa),
       Level3(56, 7, '30553', 'Xã Lê Trì', Type.xa),
       Level3(56, 7, '30556', 'Xã Vĩnh Gia', Type.xa),
@@ -11367,17 +11367,17 @@ const level1s = [
       Level3(56, 7, '30571', 'Xã Tà Đảnh', Type.xa),
       Level3(56, 7, '30574', 'Xã Núi Tô', Type.xa),
       Level3(56, 7, '30577', 'Xã An Tức', Type.xa),
-      Level3(56, 7, '30580', 'Thị trấn Cô Tô', Type.thi_tran),
+      Level3(56, 7, '30580', 'Thị trấn Cô Tô', Type.thiTran),
       Level3(56, 7, '30583', 'Xã Tân Tuyến', Type.xa),
       Level3(56, 7, '30586', 'Xã Ô Lâm', Type.xa),
     ]),
     Level2(56, '892', 'Huyện Châu Thành', Type.huyen, [
-      Level3(56, 8, '30589', 'Thị trấn An Châu', Type.thi_tran),
+      Level3(56, 8, '30589', 'Thị trấn An Châu', Type.thiTran),
       Level3(56, 8, '30592', 'Xã An Hòa', Type.xa),
       Level3(56, 8, '30595', 'Xã Cần Đăng', Type.xa),
       Level3(56, 8, '30598', 'Xã Vĩnh Hanh', Type.xa),
       Level3(56, 8, '30601', 'Xã Bình Thạnh', Type.xa),
-      Level3(56, 8, '30604', 'Thị trấn Vĩnh Bình', Type.thi_tran),
+      Level3(56, 8, '30604', 'Thị trấn Vĩnh Bình', Type.thiTran),
       Level3(56, 8, '30607', 'Xã Bình Hòa', Type.xa),
       Level3(56, 8, '30610', 'Xã Vĩnh An', Type.xa),
       Level3(56, 8, '30613', 'Xã Hòa Bình Thạnh', Type.xa),
@@ -11387,8 +11387,8 @@ const level1s = [
       Level3(56, 8, '30625', 'Xã Vĩnh Thành', Type.xa),
     ]),
     Level2(56, '893', 'Huyện Chợ Mới', Type.huyen, [
-      Level3(56, 9, '30628', 'Thị trấn Chợ Mới', Type.thi_tran),
-      Level3(56, 9, '30631', 'Thị trấn Mỹ Luông', Type.thi_tran),
+      Level3(56, 9, '30628', 'Thị trấn Chợ Mới', Type.thiTran),
+      Level3(56, 9, '30631', 'Thị trấn Mỹ Luông', Type.thiTran),
       Level3(56, 9, '30634', 'Xã Kiến An', Type.xa),
       Level3(56, 9, '30637', 'Xã Mỹ Hội Đông', Type.xa),
       Level3(56, 9, '30640', 'Xã Long Điền A', Type.xa),
@@ -11407,9 +11407,9 @@ const level1s = [
       Level3(56, 9, '30679', 'Xã Hòa An', Type.xa),
     ]),
     Level2(56, '894', 'Huyện Thoại Sơn', Type.huyen, [
-      Level3(56, 10, '30682', 'Thị trấn Núi Sập', Type.thi_tran),
-      Level3(56, 10, '30685', 'Thị trấn Phú Hoà', Type.thi_tran),
-      Level3(56, 10, '30688', 'Thị Trấn Óc Eo', Type.thi_tran),
+      Level3(56, 10, '30682', 'Thị trấn Núi Sập', Type.thiTran),
+      Level3(56, 10, '30685', 'Thị trấn Phú Hoà', Type.thiTran),
+      Level3(56, 10, '30688', 'Thị Trấn Óc Eo', Type.thiTran),
       Level3(56, 10, '30691', 'Xã Tây Phú', Type.xa),
       Level3(56, 10, '30692', 'Xã An Bình', Type.xa),
       Level3(56, 10, '30694', 'Xã Vĩnh Phú', Type.xa),
@@ -11451,7 +11451,7 @@ const level1s = [
       Level3(57, 1, '30784', 'Xã Thuận Yên', Type.xa),
     ]),
     Level2(57, '902', 'Huyện Kiên Lương', Type.huyen, [
-      Level3(57, 2, '30787', 'Thị trấn Kiên Lương', Type.thi_tran),
+      Level3(57, 2, '30787', 'Thị trấn Kiên Lương', Type.thiTran),
       Level3(57, 2, '30790', 'Xã Kiên Bình', Type.xa),
       Level3(57, 2, '30802', 'Xã Hòa Điền', Type.xa),
       Level3(57, 2, '30805', 'Xã Dương Hòa', Type.xa),
@@ -11461,8 +11461,8 @@ const level1s = [
       Level3(57, 2, '30814', 'Xã Hòn Nghệ', Type.xa),
     ]),
     Level2(57, '903', 'Huyện Hòn Đất', Type.huyen, [
-      Level3(57, 3, '30817', 'Thị trấn Hòn Đất', Type.thi_tran),
-      Level3(57, 3, '30820', 'Thị trấn Sóc Sơn', Type.thi_tran),
+      Level3(57, 3, '30817', 'Thị trấn Hòn Đất', Type.thiTran),
+      Level3(57, 3, '30820', 'Thị trấn Sóc Sơn', Type.thiTran),
       Level3(57, 3, '30823', 'Xã Bình Sơn', Type.xa),
       Level3(57, 3, '30826', 'Xã Bình Giang', Type.xa),
       Level3(57, 3, '30828', 'Xã Mỹ Thái', Type.xa),
@@ -11477,7 +11477,7 @@ const level1s = [
       Level3(57, 3, '30847', 'Xã Mỹ Phước', Type.xa),
     ]),
     Level2(57, '904', 'Huyện Tân Hiệp', Type.huyen, [
-      Level3(57, 4, '30850', 'Thị trấn Tân Hiệp', Type.thi_tran),
+      Level3(57, 4, '30850', 'Thị trấn Tân Hiệp', Type.thiTran),
       Level3(57, 4, '30853', 'Xã Tân Hội', Type.xa),
       Level3(57, 4, '30856', 'Xã Tân Thành', Type.xa),
       Level3(57, 4, '30859', 'Xã Tân Hiệp B', Type.xa),
@@ -11490,7 +11490,7 @@ const level1s = [
       Level3(57, 4, '30877', 'Xã Thạnh Trị', Type.xa),
     ]),
     Level2(57, '905', 'Huyện Châu Thành', Type.huyen, [
-      Level3(57, 5, '30880', 'Thị trấn Minh Lương', Type.thi_tran),
+      Level3(57, 5, '30880', 'Thị trấn Minh Lương', Type.thiTran),
       Level3(57, 5, '30883', 'Xã Mong Thọ A', Type.xa),
       Level3(57, 5, '30886', 'Xã Mong Thọ B', Type.xa),
       Level3(57, 5, '30887', 'Xã Mong Thọ', Type.xa),
@@ -11502,7 +11502,7 @@ const level1s = [
       Level3(57, 5, '30901', 'Xã Thạnh Lộc', Type.xa),
     ]),
     Level2(57, '906', 'Huyện Giồng Riềng', Type.huyen, [
-      Level3(57, 6, '30904', 'Thị Trấn Giồng Riềng', Type.thi_tran),
+      Level3(57, 6, '30904', 'Thị Trấn Giồng Riềng', Type.thiTran),
       Level3(57, 6, '30907', 'Xã Thạnh Hưng', Type.xa),
       Level3(57, 6, '30910', 'Xã Thạnh Phước', Type.xa),
       Level3(57, 6, '30913', 'Xã Thạnh Lộc', Type.xa),
@@ -11523,7 +11523,7 @@ const level1s = [
       Level3(57, 6, '30950', 'Xã Ngọc Hoà', Type.xa),
     ]),
     Level2(57, '907', 'Huyện Gò Quao', Type.huyen, [
-      Level3(57, 7, '30952', 'Thị trấn Gò Quao', Type.thi_tran),
+      Level3(57, 7, '30952', 'Thị trấn Gò Quao', Type.thiTran),
       Level3(57, 7, '30955', 'Xã Vĩnh Hòa Hưng Bắc', Type.xa),
       Level3(57, 7, '30958', 'Xã Định Hòa', Type.xa),
       Level3(57, 7, '30961', 'Xã Thới Quản', Type.xa),
@@ -11536,7 +11536,7 @@ const level1s = [
       Level3(57, 7, '30982', 'Xã Vĩnh Thắng', Type.xa),
     ]),
     Level2(57, '908', 'Huyện An Biên', Type.huyen, [
-      Level3(57, 8, '30985', 'Thị trấn Thứ Ba', Type.thi_tran),
+      Level3(57, 8, '30985', 'Thị trấn Thứ Ba', Type.thiTran),
       Level3(57, 8, '30988', 'Xã Tây Yên', Type.xa),
       Level3(57, 8, '30991', 'Xã Tây Yên A', Type.xa),
       Level3(57, 8, '30994', 'Xã Nam Yên', Type.xa),
@@ -11547,7 +11547,7 @@ const level1s = [
       Level3(57, 8, '31009', 'Xã Đông Yên', Type.xa),
     ]),
     Level2(57, '909', 'Huyện An Minh', Type.huyen, [
-      Level3(57, 9, '31018', 'Thị trấn Thứ Mười Một', Type.thi_tran),
+      Level3(57, 9, '31018', 'Thị trấn Thứ Mười Một', Type.thiTran),
       Level3(57, 9, '31021', 'Xã Thuận Hoà', Type.xa),
       Level3(57, 9, '31024', 'Xã Đông Hòa', Type.xa),
       Level3(57, 9, '31030', 'Xã Đông Thạnh', Type.xa),
@@ -11560,7 +11560,7 @@ const level1s = [
       Level3(57, 9, '31048', 'Xã Vân Khánh Tây', Type.xa),
     ]),
     Level2(57, '910', 'Huyện Vĩnh Thuận', Type.huyen, [
-      Level3(57, 10, '31051', 'Thị trấn Vĩnh Thuận', Type.thi_tran),
+      Level3(57, 10, '31051', 'Thị trấn Vĩnh Thuận', Type.thiTran),
       Level3(57, 10, '31060', 'Xã Vĩnh Bình Bắc', Type.xa),
       Level3(57, 10, '31063', 'Xã Vĩnh Bình Nam', Type.xa),
       Level3(57, 10, '31064', 'Xã Bình Minh', Type.xa),
@@ -11657,8 +11657,8 @@ const level1s = [
     ]),
     Level2(58, '924', 'Huyện Vĩnh Thạnh', Type.huyen, [
       Level3(58, 5, '31211', 'Xã Vĩnh Bình', Type.xa),
-      Level3(58, 5, '31231', 'Thị trấn Thanh An', Type.thi_tran),
-      Level3(58, 5, '31232', 'Thị trấn Vĩnh Thạnh', Type.thi_tran),
+      Level3(58, 5, '31231', 'Thị trấn Thanh An', Type.thiTran),
+      Level3(58, 5, '31232', 'Thị trấn Vĩnh Thạnh', Type.thiTran),
       Level3(58, 5, '31234', 'Xã Thạnh Mỹ', Type.xa),
       Level3(58, 5, '31237', 'Xã Vĩnh Trinh', Type.xa),
       Level3(58, 5, '31240', 'Xã Thạnh An', Type.xa),
@@ -11673,7 +11673,7 @@ const level1s = [
       Level3(58, 6, '31225', 'Xã Trung Thạnh', Type.xa),
       Level3(58, 6, '31249', 'Xã Thạnh Phú', Type.xa),
       Level3(58, 6, '31255', 'Xã Trung Hưng', Type.xa),
-      Level3(58, 6, '31261', 'Thị trấn Cờ Đỏ', Type.thi_tran),
+      Level3(58, 6, '31261', 'Thị trấn Cờ Đỏ', Type.thiTran),
       Level3(58, 6, '31264', 'Xã Thới Hưng', Type.xa),
       Level3(58, 6, '31273', 'Xã Đông Hiệp', Type.xa),
       Level3(58, 6, '31274', 'Xã Đông Thắng', Type.xa),
@@ -11681,7 +11681,7 @@ const level1s = [
       Level3(58, 6, '31277', 'Xã Thới Xuân', Type.xa),
     ]),
     Level2(58, '926', 'Huyện Phong Điền', Type.huyen, [
-      Level3(58, 7, '31299', 'Thị trấn Phong Điền', Type.thi_tran),
+      Level3(58, 7, '31299', 'Thị trấn Phong Điền', Type.thiTran),
       Level3(58, 7, '31300', 'Xã Nhơn Ái', Type.xa),
       Level3(58, 7, '31303', 'Xã Giai Xuân', Type.xa),
       Level3(58, 7, '31306', 'Xã Tân Thới', Type.xa),
@@ -11690,7 +11690,7 @@ const level1s = [
       Level3(58, 7, '31315', 'Xã Nhơn Nghĩa', Type.xa),
     ]),
     Level2(58, '927', 'Huyện Thới Lai', Type.huyen, [
-      Level3(58, 8, '31258', 'Thị trấn Thới Lai', Type.thi_tran),
+      Level3(58, 8, '31258', 'Thị trấn Thới Lai', Type.thiTran),
       Level3(58, 8, '31267', 'Xã Thới Thạnh', Type.xa),
       Level3(58, 8, '31268', 'Xã Tân Thạnh', Type.xa),
       Level3(58, 8, '31270', 'Xã Xuân Thắng', Type.xa),
@@ -11726,30 +11726,30 @@ const level1s = [
       Level3(59, 1, '31414', 'Xã Tân Thành', Type.xa),
     ]),
     Level2(59, '932', 'Huyện Châu Thành A', Type.huyen, [
-      Level3(59, 2, '31342', 'Thị trấn Một Ngàn', Type.thi_tran),
+      Level3(59, 2, '31342', 'Thị trấn Một Ngàn', Type.thiTran),
       Level3(59, 2, '31345', 'Xã Tân Hoà', Type.xa),
-      Level3(59, 2, '31346', 'Thị trấn Bảy Ngàn', Type.thi_tran),
+      Level3(59, 2, '31346', 'Thị trấn Bảy Ngàn', Type.thiTran),
       Level3(59, 2, '31348', 'Xã Trường Long Tây', Type.xa),
       Level3(59, 2, '31351', 'Xã Trường Long A', Type.xa),
       Level3(59, 2, '31357', 'Xã Nhơn Nghĩa A', Type.xa),
-      Level3(59, 2, '31359', 'Thị trấn Rạch Gòi', Type.thi_tran),
+      Level3(59, 2, '31359', 'Thị trấn Rạch Gòi', Type.thiTran),
       Level3(59, 2, '31360', 'Xã Thạnh Xuân', Type.xa),
-      Level3(59, 2, '31362', 'Thị trấn Cái Tắc', Type.thi_tran),
+      Level3(59, 2, '31362', 'Thị trấn Cái Tắc', Type.thiTran),
       Level3(59, 2, '31363', 'Xã Tân Phú Thạnh', Type.xa),
     ]),
     Level2(59, '933', 'Huyện Châu Thành', Type.huyen, [
-      Level3(59, 3, '31366', 'Thị Trấn Ngã Sáu', Type.thi_tran),
+      Level3(59, 3, '31366', 'Thị Trấn Ngã Sáu', Type.thiTran),
       Level3(59, 3, '31369', 'Xã Đông Thạnh', Type.xa),
       Level3(59, 3, '31375', 'Xã Đông Phú', Type.xa),
       Level3(59, 3, '31378', 'Xã Phú Hữu', Type.xa),
       Level3(59, 3, '31379', 'Xã Phú Tân', Type.xa),
-      Level3(59, 3, '31381', 'Thị trấn Mái Dầm', Type.thi_tran),
+      Level3(59, 3, '31381', 'Thị trấn Mái Dầm', Type.thiTran),
       Level3(59, 3, '31384', 'Xã Đông Phước', Type.xa),
       Level3(59, 3, '31387', 'Xã Đông Phước A', Type.xa),
     ]),
     Level2(59, '934', 'Huyện Phụng Hiệp', Type.huyen, [
-      Level3(59, 4, '31393', 'Thị trấn Kinh Cùng', Type.thi_tran),
-      Level3(59, 4, '31396', 'Thị trấn Cây Dương', Type.thi_tran),
+      Level3(59, 4, '31393', 'Thị trấn Kinh Cùng', Type.thiTran),
+      Level3(59, 4, '31396', 'Thị trấn Cây Dương', Type.thiTran),
       Level3(59, 4, '31399', 'Xã Tân Bình', Type.xa),
       Level3(59, 4, '31402', 'Xã Bình Thành', Type.xa),
       Level3(59, 4, '31405', 'Xã Thạnh Hòa', Type.xa),
@@ -11760,12 +11760,12 @@ const level1s = [
       Level3(59, 4, '31426', 'Xã Phương Bình', Type.xa),
       Level3(59, 4, '31429', 'Xã Hiệp Hưng', Type.xa),
       Level3(59, 4, '31432', 'Xã Tân Phước Hưng', Type.xa),
-      Level3(59, 4, '31433', 'Thị trấn Búng Tàu', Type.thi_tran),
+      Level3(59, 4, '31433', 'Thị trấn Búng Tàu', Type.thiTran),
       Level3(59, 4, '31435', 'Xã Phương Phú', Type.xa),
       Level3(59, 4, '31438', 'Xã Tân Long', Type.xa),
     ]),
     Level2(59, '935', 'Huyện Vị Thuỷ', Type.huyen, [
-      Level3(59, 5, '31441', 'Thị trấn Nàng Mau', Type.thi_tran),
+      Level3(59, 5, '31441', 'Thị trấn Nàng Mau', Type.thiTran),
       Level3(59, 5, '31444', 'Xã Vị Trung', Type.xa),
       Level3(59, 5, '31447', 'Xã Vị Thuỷ', Type.xa),
       Level3(59, 5, '31450', 'Xã Vị Thắng', Type.xa),
@@ -11780,13 +11780,13 @@ const level1s = [
       Level3(59, 6, '31483', 'Xã Thuận Hưng', Type.xa),
       Level3(59, 6, '31484', 'Xã Thuận Hòa', Type.xa),
       Level3(59, 6, '31486', 'Xã Vĩnh Thuận Đông', Type.xa),
-      Level3(59, 6, '31489', 'Thị trấn Vĩnh Viễn', Type.thi_tran),
+      Level3(59, 6, '31489', 'Thị trấn Vĩnh Viễn', Type.thiTran),
       Level3(59, 6, '31490', 'Xã Vĩnh Viễn A', Type.xa),
       Level3(59, 6, '31492', 'Xã Lương Tâm', Type.xa),
       Level3(59, 6, '31493', 'Xã Lương Nghĩa', Type.xa),
       Level3(59, 6, '31495', 'Xã Xà Phiên', Type.xa),
     ]),
-    Level2(59, '937', 'Thị xã Long Mỹ', Type.thi_xa, [
+    Level2(59, '937', 'Thị xã Long Mỹ', Type.thiXa, [
       Level3(59, 7, '31471', 'Phường Thuận An', Type.phuong),
       Level3(59, 7, '31472', 'Phường Trà Lồng', Type.phuong),
       Level3(59, 7, '31473', 'Phường Bình Thạnh', Type.phuong),
@@ -11812,7 +11812,7 @@ const level1s = [
       Level3(60, 0, '31525', 'Phường 10', Type.phuong),
     ]),
     Level2(60, '942', 'Huyện Châu Thành', Type.huyen, [
-      Level3(60, 1, '31569', 'Thị trấn Châu Thành', Type.thi_tran),
+      Level3(60, 1, '31569', 'Thị trấn Châu Thành', Type.thiTran),
       Level3(60, 1, '31570', 'Xã Hồ Đắc Kiện', Type.xa),
       Level3(60, 1, '31573', 'Xã Phú Tâm', Type.xa),
       Level3(60, 1, '31576', 'Xã Thuận Hòa', Type.xa),
@@ -11822,8 +11822,8 @@ const level1s = [
       Level3(60, 1, '31600', 'Xã An Ninh', Type.xa),
     ]),
     Level2(60, '943', 'Huyện Kế Sách', Type.huyen, [
-      Level3(60, 2, '31528', 'Thị trấn Kế Sách', Type.thi_tran),
-      Level3(60, 2, '31531', 'Thị trấn An Lạc Thôn', Type.thi_tran),
+      Level3(60, 2, '31528', 'Thị trấn Kế Sách', Type.thiTran),
+      Level3(60, 2, '31531', 'Thị trấn An Lạc Thôn', Type.thiTran),
       Level3(60, 2, '31534', 'Xã Xuân Hòa', Type.xa),
       Level3(60, 2, '31537', 'Xã Phong Nẫm', Type.xa),
       Level3(60, 2, '31540', 'Xã An Lạc Tây', Type.xa),
@@ -11837,7 +11837,7 @@ const level1s = [
       Level3(60, 2, '31564', 'Xã An Mỹ', Type.xa),
     ]),
     Level2(60, '944', 'Huyện Mỹ Tú', Type.huyen, [
-      Level3(60, 3, '31567', 'Thị trấn Huỳnh Hữu Nghĩa', Type.thi_tran),
+      Level3(60, 3, '31567', 'Thị trấn Huỳnh Hữu Nghĩa', Type.thiTran),
       Level3(60, 3, '31579', 'Xã Long Hưng', Type.xa),
       Level3(60, 3, '31588', 'Xã Hưng Phú', Type.xa),
       Level3(60, 3, '31591', 'Xã Mỹ Hương', Type.xa),
@@ -11848,7 +11848,7 @@ const level1s = [
       Level3(60, 3, '31612', 'Xã Phú Mỹ', Type.xa),
     ]),
     Level2(60, '945', 'Huyện Cù Lao Dung', Type.huyen, [
-      Level3(60, 4, '31615', 'Thị trấn Cù Lao Dung', Type.thi_tran),
+      Level3(60, 4, '31615', 'Thị trấn Cù Lao Dung', Type.thiTran),
       Level3(60, 4, '31618', 'Xã An Thạnh 1', Type.xa),
       Level3(60, 4, '31621', 'Xã An Thạnh Tây', Type.xa),
       Level3(60, 4, '31624', 'Xã An Thạnh Đông', Type.xa),
@@ -11858,9 +11858,9 @@ const level1s = [
       Level3(60, 4, '31636', 'Xã An Thạnh Nam', Type.xa),
     ]),
     Level2(60, '946', 'Huyện Long Phú', Type.huyen, [
-      Level3(60, 5, '31639', 'Thị trấn Long Phú', Type.thi_tran),
+      Level3(60, 5, '31639', 'Thị trấn Long Phú', Type.thiTran),
       Level3(60, 5, '31642', 'Xã Song Phụng', Type.xa),
-      Level3(60, 5, '31645', 'Thị trấn Đại Ngãi', Type.thi_tran),
+      Level3(60, 5, '31645', 'Thị trấn Đại Ngãi', Type.thiTran),
       Level3(60, 5, '31648', 'Xã Hậu Thạnh', Type.xa),
       Level3(60, 5, '31651', 'Xã Long Đức', Type.xa),
       Level3(60, 5, '31654', 'Xã Trường Khánh', Type.xa),
@@ -11871,7 +11871,7 @@ const level1s = [
       Level3(60, 5, '31669', 'Xã Long Phú', Type.xa),
     ]),
     Level2(60, '947', 'Huyện Mỹ Xuyên', Type.huyen, [
-      Level3(60, 6, '31684', 'Thị trấn Mỹ Xuyên', Type.thi_tran),
+      Level3(60, 6, '31684', 'Thị trấn Mỹ Xuyên', Type.thiTran),
       Level3(60, 6, '31690', 'Xã Đại Tâm', Type.xa),
       Level3(60, 6, '31693', 'Xã Tham Đôn', Type.xa),
       Level3(60, 6, '31708', 'Xã Thạnh Phú', Type.xa),
@@ -11883,7 +11883,7 @@ const level1s = [
       Level3(60, 6, '31726', 'Xã Gia Hòa 2', Type.xa),
       Level3(60, 6, '31729', 'Xã Hòa Tú II', Type.xa),
     ]),
-    Level2(60, '948', 'Thị xã Ngã Năm', Type.thi_xa, [
+    Level2(60, '948', 'Thị xã Ngã Năm', Type.thiXa, [
       Level3(60, 7, '31732', 'Phường 1', Type.phuong),
       Level3(60, 7, '31735', 'Phường 2', Type.phuong),
       Level3(60, 7, '31738', 'Xã Vĩnh Quới', Type.xa),
@@ -11894,8 +11894,8 @@ const level1s = [
       Level3(60, 7, '31753', 'Xã Mỹ Quới', Type.xa),
     ]),
     Level2(60, '949', 'Huyện Thạnh Trị', Type.huyen, [
-      Level3(60, 8, '31756', 'Thị trấn Phú Lộc', Type.thi_tran),
-      Level3(60, 8, '31757', 'Thị trấn Hưng Lợi', Type.thi_tran),
+      Level3(60, 8, '31756', 'Thị trấn Phú Lộc', Type.thiTran),
+      Level3(60, 8, '31757', 'Thị trấn Hưng Lợi', Type.thiTran),
       Level3(60, 8, '31759', 'Xã Lâm Tân', Type.xa),
       Level3(60, 8, '31762', 'Xã Thạnh Tân', Type.xa),
       Level3(60, 8, '31765', 'Xã Lâm Kiết', Type.xa),
@@ -11905,7 +11905,7 @@ const level1s = [
       Level3(60, 8, '31777', 'Xã Vĩnh Lợi', Type.xa),
       Level3(60, 8, '31780', 'Xã Châu Hưng', Type.xa),
     ]),
-    Level2(60, '950', 'Thị xã Vĩnh Châu', Type.thi_xa, [
+    Level2(60, '950', 'Thị xã Vĩnh Châu', Type.thiXa, [
       Level3(60, 9, '31783', 'Phường 1', Type.phuong),
       Level3(60, 9, '31786', 'Xã Hòa Đông', Type.xa),
       Level3(60, 9, '31789', 'Phường Khánh Hòa', Type.phuong),
@@ -11919,10 +11919,10 @@ const level1s = [
     ]),
     Level2(60, '951', 'Huyện Trần Đề', Type.huyen, [
       Level3(60, 10, '31672', 'Xã Đại Ân  2', Type.xa),
-      Level3(60, 10, '31673', 'Thị trấn Trần Đề', Type.thi_tran),
+      Level3(60, 10, '31673', 'Thị trấn Trần Đề', Type.thiTran),
       Level3(60, 10, '31675', 'Xã Liêu Tú', Type.xa),
       Level3(60, 10, '31678', 'Xã Lịch Hội Thượng', Type.xa),
-      Level3(60, 10, '31679', 'Thị trấn Lịch Hội Thượng', Type.thi_tran),
+      Level3(60, 10, '31679', 'Thị trấn Lịch Hội Thượng', Type.thiTran),
       Level3(60, 10, '31681', 'Xã Trung Bình', Type.xa),
       Level3(60, 10, '31687', 'Xã Tài Văn', Type.xa),
       Level3(60, 10, '31696', 'Xã Viên An', Type.xa),
@@ -11945,7 +11945,7 @@ const level1s = [
       Level3(61, 0, '31840', 'Xã Hiệp Thành', Type.xa),
     ]),
     Level2(61, '956', 'Huyện Hồng Dân', Type.huyen, [
-      Level3(61, 1, '31843', 'Thị trấn Ngan Dừa', Type.thi_tran),
+      Level3(61, 1, '31843', 'Thị trấn Ngan Dừa', Type.thiTran),
       Level3(61, 1, '31846', 'Xã Ninh Quới', Type.xa),
       Level3(61, 1, '31849', 'Xã Ninh Quới A', Type.xa),
       Level3(61, 1, '31852', 'Xã Ninh Hòa', Type.xa),
@@ -11956,7 +11956,7 @@ const level1s = [
       Level3(61, 1, '31864', 'Xã Ninh Thạnh Lợi', Type.xa),
     ]),
     Level2(61, '957', 'Huyện Phước Long', Type.huyen, [
-      Level3(61, 2, '31867', 'Thị trấn Phước Long', Type.thi_tran),
+      Level3(61, 2, '31867', 'Thị trấn Phước Long', Type.thiTran),
       Level3(61, 2, '31870', 'Xã Vĩnh Phú Đông', Type.xa),
       Level3(61, 2, '31873', 'Xã Vĩnh Phú Tây', Type.xa),
       Level3(61, 2, '31876', 'Xã Phước Long', Type.xa),
@@ -11968,14 +11968,14 @@ const level1s = [
     Level2(61, '958', 'Huyện Vĩnh Lợi', Type.huyen, [
       Level3(61, 3, '31894', 'Xã Vĩnh Hưng', Type.xa),
       Level3(61, 3, '31897', 'Xã Vĩnh Hưng A', Type.xa),
-      Level3(61, 3, '31900', 'Thị trấn Châu Hưng', Type.thi_tran),
+      Level3(61, 3, '31900', 'Thị trấn Châu Hưng', Type.thiTran),
       Level3(61, 3, '31903', 'Xã Châu Hưng A', Type.xa),
       Level3(61, 3, '31906', 'Xã Hưng Thành', Type.xa),
       Level3(61, 3, '31909', 'Xã Hưng Hội', Type.xa),
       Level3(61, 3, '31912', 'Xã Châu Thới', Type.xa),
       Level3(61, 3, '31921', 'Xã Long Thạnh', Type.xa),
     ]),
-    Level2(61, '959', 'Thị xã Giá Rai', Type.thi_xa, [
+    Level2(61, '959', 'Thị xã Giá Rai', Type.thiXa, [
       Level3(61, 4, '31942', 'Phường 1', Type.phuong),
       Level3(61, 4, '31945', 'Phường Hộ Phòng', Type.phuong),
       Level3(61, 4, '31948', 'Xã Phong Thạnh Đông', Type.xa),
@@ -11988,7 +11988,7 @@ const level1s = [
       Level3(61, 4, '31969', 'Xã Tân Thạnh', Type.xa),
     ]),
     Level2(61, '960', 'Huyện Đông Hải', Type.huyen, [
-      Level3(61, 5, '31972', 'Thị trấn Gành Hào', Type.thi_tran),
+      Level3(61, 5, '31972', 'Thị trấn Gành Hào', Type.thiTran),
       Level3(61, 5, '31975', 'Xã Long Điền Đông', Type.xa),
       Level3(61, 5, '31978', 'Xã Long Điền Đông A', Type.xa),
       Level3(61, 5, '31981', 'Xã Long Điền', Type.xa),
@@ -12001,7 +12001,7 @@ const level1s = [
       Level3(61, 5, '31996', 'Xã Định Thành A', Type.xa),
     ]),
     Level2(61, '961', 'Huyện Hoà Bình', Type.huyen, [
-      Level3(61, 6, '31891', 'Thị trấn Hòa Bình', Type.thi_tran),
+      Level3(61, 6, '31891', 'Thị trấn Hòa Bình', Type.thiTran),
       Level3(61, 6, '31915', 'Xã Minh Diệu', Type.xa),
       Level3(61, 6, '31918', 'Xã Vĩnh Bình', Type.xa),
       Level3(61, 6, '31924', 'Xã Vĩnh Mỹ B', Type.xa),
@@ -12032,7 +12032,7 @@ const level1s = [
       Level3(62, 0, '32041', 'Xã Hòa Tân', Type.xa),
     ]),
     Level2(62, '966', 'Huyện U Minh', Type.huyen, [
-      Level3(62, 1, '32044', 'Thị trấn U Minh', Type.thi_tran),
+      Level3(62, 1, '32044', 'Thị trấn U Minh', Type.thiTran),
       Level3(62, 1, '32047', 'Xã Khánh Hòa', Type.xa),
       Level3(62, 1, '32048', 'Xã Khánh Thuận', Type.xa),
       Level3(62, 1, '32050', 'Xã Khánh Tiến', Type.xa),
@@ -12042,7 +12042,7 @@ const level1s = [
       Level3(62, 1, '32062', 'Xã Khánh Hội', Type.xa),
     ]),
     Level2(62, '967', 'Huyện Thới Bình', Type.huyen, [
-      Level3(62, 2, '32065', 'Thị trấn Thới Bình', Type.thi_tran),
+      Level3(62, 2, '32065', 'Thị trấn Thới Bình', Type.thiTran),
       Level3(62, 2, '32068', 'Xã Biển Bạch', Type.xa),
       Level3(62, 2, '32069', 'Xã Tân Bằng', Type.xa),
       Level3(62, 2, '32071', 'Xã Trí Phải', Type.xa),
@@ -12056,8 +12056,8 @@ const level1s = [
       Level3(62, 2, '32092', 'Xã Hồ Thị Kỷ', Type.xa),
     ]),
     Level2(62, '968', 'Huyện Trần Văn Thời', Type.huyen, [
-      Level3(62, 3, '32095', 'Thị trấn Trần Văn Thời', Type.thi_tran),
-      Level3(62, 3, '32098', 'Thị trấn Sông Đốc', Type.thi_tran),
+      Level3(62, 3, '32095', 'Thị trấn Trần Văn Thời', Type.thiTran),
+      Level3(62, 3, '32098', 'Thị trấn Sông Đốc', Type.thiTran),
       Level3(62, 3, '32101', 'Xã Khánh Bình Tây Bắc', Type.xa),
       Level3(62, 3, '32104', 'Xã Khánh Bình Tây', Type.xa),
       Level3(62, 3, '32107', 'Xã Trần Hợi', Type.xa),
@@ -12071,7 +12071,7 @@ const level1s = [
       Level3(62, 3, '32125', 'Xã Phong Lạc', Type.xa),
     ]),
     Level2(62, '969', 'Huyện Cái Nước', Type.huyen, [
-      Level3(62, 4, '32128', 'Thị trấn Cái Nước', Type.thi_tran),
+      Level3(62, 4, '32128', 'Thị trấn Cái Nước', Type.thiTran),
       Level3(62, 4, '32130', 'Xã Thạnh Phú', Type.xa),
       Level3(62, 4, '32131', 'Xã Lương Thế Trân', Type.xa),
       Level3(62, 4, '32134', 'Xã Phú Hưng', Type.xa),
@@ -12084,7 +12084,7 @@ const level1s = [
       Level3(62, 4, '32149', 'Xã Trần Thới', Type.xa),
     ]),
     Level2(62, '970', 'Huyện Đầm Dơi', Type.huyen, [
-      Level3(62, 5, '32152', 'Thị trấn Đầm Dơi', Type.thi_tran),
+      Level3(62, 5, '32152', 'Thị trấn Đầm Dơi', Type.thiTran),
       Level3(62, 5, '32155', 'Xã Tạ An Khương', Type.xa),
       Level3(62, 5, '32158', 'Xã Tạ An Khương  Đông', Type.xa),
       Level3(62, 5, '32161', 'Xã Trần Phán', Type.xa),
@@ -12102,7 +12102,7 @@ const level1s = [
       Level3(62, 5, '32188', 'Xã Nguyễn Huân', Type.xa),
     ]),
     Level2(62, '971', 'Huyện Năm Căn', Type.huyen, [
-      Level3(62, 6, '32191', 'Thị Trấn Năm Căn', Type.thi_tran),
+      Level3(62, 6, '32191', 'Thị Trấn Năm Căn', Type.thiTran),
       Level3(62, 6, '32194', 'Xã Hàm Rồng', Type.xa),
       Level3(62, 6, '32197', 'Xã Hiệp Tùng', Type.xa),
       Level3(62, 6, '32200', 'Xã Đất Mới', Type.xa),
@@ -12112,7 +12112,7 @@ const level1s = [
       Level3(62, 6, '32209', 'Xã Tam Giang Đông', Type.xa),
     ]),
     Level2(62, '972', 'Huyện Phú Tân', Type.huyen, [
-      Level3(62, 7, '32212', 'Thị trấn Cái Đôi Vàm', Type.thi_tran),
+      Level3(62, 7, '32212', 'Thị trấn Cái Đôi Vàm', Type.thiTran),
       Level3(62, 7, '32214', 'Xã Phú Thuận', Type.xa),
       Level3(62, 7, '32215', 'Xã Phú Mỹ', Type.xa),
       Level3(62, 7, '32218', 'Xã Phú Tân', Type.xa),
@@ -12127,7 +12127,7 @@ const level1s = [
       Level3(62, 8, '32236', 'Xã Tân Ân Tây', Type.xa),
       Level3(62, 8, '32239', 'Xã Viên An Đông', Type.xa),
       Level3(62, 8, '32242', 'Xã Viên An', Type.xa),
-      Level3(62, 8, '32244', 'Thị trấn Rạch Gốc', Type.thi_tran),
+      Level3(62, 8, '32244', 'Thị trấn Rạch Gốc', Type.thiTran),
       Level3(62, 8, '32245', 'Xã Tân Ân', Type.xa),
       Level3(62, 8, '32248', 'Xã Đất Mũi', Type.xa),
     ]),
