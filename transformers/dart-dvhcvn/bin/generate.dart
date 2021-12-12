@@ -36,12 +36,10 @@ String _getString(String str) {
   return "'${str.replaceAll("'", "\\'")}'";
 }
 
-// ignore: missing_return
-String? _getType(String str) {
+String _getType(String str) {
   if (types.containsKey(str)) return 'Type.${types[str]}';
 
-  stderr.writeln('Type not found: $str');
-  exit(1);
+  throw ArgumentError('Type not found: $str');
 }
 
 void _processLevel1(int level1Index, Map level1) {
