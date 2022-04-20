@@ -8,8 +8,8 @@ _gsoPath='data/dvhcvn.json'
 _gsoDatePath='data/date.txt'
 _gisPath='data/gis.json'
 
-# 387/NQ-UBTVQH15
-_date=01/11/2021
+# 469/NQ-UBTVQH15
+_date=10/04/2022
 
 if [ ! -f $_gsoPath ]; then
   echo "Generating $_gsoPath..."

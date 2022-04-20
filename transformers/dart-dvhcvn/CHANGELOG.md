@@ -1,3 +1,7 @@
+## 2.0.20220410
+
+* 469/NQ-UBTVQH15: Nghị quyết về việc thành lập các phường thuộc thị xã Phổ Yên và thành lập thành phố Phổ Yên, tỉnh Thái Nguyên;
+
 ## 2.0.20211101
 
 * Migrate to null safety (#23, authored by @definev)

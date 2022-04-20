@@ -5756,7 +5756,7 @@
             [
                 "304", "Ngô Quyền", "Quận", "Ngo Quyen",
                 [
-                    ["11353", "Cầu Đất", "Phường", "Cau Dat"],
+                    ["11344", "Cầu Đất", "Phường", "Cau Dat"],
                     ["11338", "Cầu Tre", "Phường", "Cau Tre"],
                     ["11359", "Đằng Giang", "Phường", "Dang Giang"],
                     ["11350", "Đông Khê", "Phường", "Dong Khe"],
@@ -12275,25 +12275,25 @@
                 ]
             ],
             [
-                "172", "Phổ Yên", "Thị xã", "Pho Yen",
+                "172", "Phổ Yên", "Thành phố", "Pho Yen",
                 [
                     ["05860", "Ba Hàng", "Phường", "Ba Hang"],
                     ["05857", "Bắc Sơn", "Phường", "Bac Son"],
                     ["05854", "Bãi Bông", "Phường", "Bai Bong"],
-                    ["05875", "Đắc Sơn", "Xã", "Dac Son"],
-                    ["05896", "Đông Cao", "Xã", "Dong Cao"],
+                    ["05875", "Đắc Sơn", "Phường", "Dac Son"],
+                    ["05896", "Đông Cao", "Phường", "Dong Cao"],
                     ["05878", "Đồng Tiến", "Phường", "Dong Tien"],
-                    ["05869", "Hồng Tiến", "Xã", "Hong Tien"],
+                    ["05869", "Hồng Tiến", "Phường", "Hong Tien"],
                     ["05872", "Minh Đức", "Xã", "Minh Duc"],
-                    ["05890", "Nam Tiến", "Xã", "Nam Tien"],
+                    ["05890", "Nam Tiến", "Phường", "Nam Tien"],
                     ["05863", "Phúc Tân", "Xã", "Phuc Tan"],
                     ["05866", "Phúc Thuận", "Xã", "Phuc Thuan"],
-                    ["05893", "Tân Hương", "Xã", "Tan Huong"],
-                    ["05902", "Tân Phú", "Xã", "Tan Phu"],
+                    ["05893", "Tân Hương", "Phường", "Tan Huong"],
+                    ["05902", "Tân Phú", "Phường", "Tan Phu"],
                     ["05881", "Thành Công", "Xã", "Thanh Cong"],
-                    ["05905", "Thuận Thành", "Xã", "Thuan Thanh"],
-                    ["05884", "Tiên Phong", "Xã", "Tien Phong"],
-                    ["05899", "Trung Thành", "Xã", "Trung Thanh"],
+                    ["05905", "Thuận Thành", "Phường", "Thuan Thanh"],
+                    ["05884", "Tiên Phong", "Phường", "Tien Phong"],
+                    ["05899", "Trung Thành", "Phường", "Trung Thanh"],
                     ["05887", "Vạn Phái", "Xã", "Van Phai"]
                 ]
             ],
