@@ -1,5 +1,5 @@
-import 'data.dart';
-import 'internal.dart';
+import 'package:dvhcvn/src/data.dart';
+import 'package:dvhcvn/src/internal.dart';
 
 /// An entity.
 abstract class Entity<ParentType, ChildType> {
