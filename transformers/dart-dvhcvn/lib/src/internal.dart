@@ -1,4 +1,4 @@
-import 'model.dart';
+import 'package:dvhcvn/src/model.dart';
 
 T? findById<T extends Entity>(List<T> list, String id) {
   for (final item in list) {

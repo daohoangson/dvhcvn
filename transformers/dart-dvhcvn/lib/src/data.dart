@@ -1,4 +1,4 @@
-import 'model.dart';
+import 'package:dvhcvn/src/model.dart';
 
 /// Level 1 entities.
 const level1s = [
@@ -3090,7 +3090,7 @@ const level1s = [
       Level3(14, 4, '07465', 'Xã Thanh Lâm', Type.xa),
       Level3(14, 4, '07468', 'Xã Tiên Nha', Type.xa),
       Level3(14, 4, '07471', 'Xã Trường Giang', Type.xa),
-      Level3(14, 4, '07477', 'Xã Phương Sơn', Type.xa),
+      Level3(14, 4, '07477', 'Thị trấn Phương Sơn', Type.thiTran),
       Level3(14, 4, '07480', 'Xã Chu Điện', Type.xa),
       Level3(14, 4, '07483', 'Xã Cương Sơn', Type.xa),
       Level3(14, 4, '07486', 'Xã Nghĩa Phương', Type.xa),
@@ -3216,7 +3216,7 @@ const level1s = [
       Level3(14, 9, '07861', 'Xã Danh Thắng', Type.xa),
       Level3(14, 9, '07864', 'Xã Mai Trung', Type.xa),
       Level3(14, 9, '07867', 'Xã Đoan Bái', Type.xa),
-      Level3(14, 9, '07870', 'Xã Bắc Lý', Type.xa),
+      Level3(14, 9, '07870', 'Thị trấn Bắc Lý', Type.thiTran),
       Level3(14, 9, '07873', 'Xã Xuân Cẩm', Type.xa),
       Level3(14, 9, '07876', 'Xã Hương Lâm', Type.xa),
       Level3(14, 9, '07879', 'Xã Đông Lỗ', Type.xa),
@@ -9333,14 +9333,14 @@ const level1s = [
       Level3(44, 8, '25426', 'Xã Đăng Hà', Type.xa),
       Level3(44, 8, '25429', 'Xã Phước Sơn', Type.xa),
     ]),
-    Level2(44, '697', 'Huyện Chơn Thành', Type.huyen, [
-      Level3(44, 9, '25432', 'Thị trấn Chơn Thành', Type.thiTran),
-      Level3(44, 9, '25433', 'Xã Thành Tâm', Type.xa),
+    Level2(44, '697', 'Thị xã Chơn Thành', Type.thiXa, [
+      Level3(44, 9, '25432', 'Phường Hưng Long', Type.phuong),
+      Level3(44, 9, '25433', 'Phường Thành Tâm', Type.phuong),
       Level3(44, 9, '25435', 'Xã Minh Lập', Type.xa),
       Level3(44, 9, '25439', 'Xã Quang Minh', Type.xa),
-      Level3(44, 9, '25441', 'Xã Minh Hưng', Type.xa),
-      Level3(44, 9, '25444', 'Xã Minh Long', Type.xa),
-      Level3(44, 9, '25447', 'Xã Minh Thành', Type.xa),
+      Level3(44, 9, '25441', 'Phường Minh Hưng', Type.phuong),
+      Level3(44, 9, '25444', 'Phường Minh Long', Type.phuong),
+      Level3(44, 9, '25447', 'Phường Minh Thành', Type.phuong),
       Level3(44, 9, '25450', 'Xã Nha Bích', Type.xa),
       Level3(44, 9, '25453', 'Xã Minh Thắng', Type.xa),
     ]),
@@ -10552,7 +10552,7 @@ const level1s = [
       Level3(51, 5, '28444', 'Xã Phú Cường', Type.xa),
       Level3(51, 5, '28456', 'Xã Mỹ Thành Nam', Type.xa),
       Level3(51, 5, '28465', 'Xã Phú Nhuận', Type.xa),
-      Level3(51, 5, '28471', 'Xã Bình Phú', Type.xa),
+      Level3(51, 5, '28471', 'Thị trấn Bình Phú', Type.thiTran),
       Level3(51, 5, '28489', 'Xã Cẩm Sơn', Type.xa),
       Level3(51, 5, '28492', 'Xã Phú An', Type.xa),
       Level3(51, 5, '28495', 'Xã Mỹ Long', Type.xa),

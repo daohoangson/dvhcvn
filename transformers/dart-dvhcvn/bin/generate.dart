@@ -14,7 +14,7 @@ const types = {
 };
 
 void main(List<String> args) {
-  stdout.writeln("import 'model.dart';");
+  stdout.writeln("import 'package:dvhcvn/src/model.dart';");
   stdout.writeln();
 
   stdout.writeln('/// Level 1 entities.');

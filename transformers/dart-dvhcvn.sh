@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 _dir=$( cd $( dirname $BASH_SOURCE[0] ) && pwd )
 
@@ -44,7 +44,7 @@ dart format $_dataDartPath
 
 ( \
   cd  "$_dir/dart-dvhcvn" && \
-  pub get && \
+  dart pub get && \
   dart analyze && \
-  pub run test \
+  dart run test \
 )

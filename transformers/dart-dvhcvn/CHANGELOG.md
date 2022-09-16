@@ -1,3 +1,9 @@
+## 2.0.20221001
+
+* 510/NQ-UBTVQH15: Nghị quyết thành lập thị trấn Phương Sơn thuộc huyện Lục Nam và thị trấn Bắc Lý thuộc huyện Hiệp Hòa, tỉnh Bắc Giang;
+* 569/NQ-UBTVQH15: Nghị quyết về việc thành lập thị trấn Bình Phú thuộc huyện Cai Lậy, tỉnh Tiền Giang;
+* 570/NQ-UBTVQH15: Nghị quyết về việc thành lập thị xã Chơn Thành và các phường thuộc thị xã Chơn Thành, tỉnh Bình Phước;
+
 ## 2.0.20220410
 
 * 469/NQ-UBTVQH15: Nghị quyết về việc thành lập các phường thuộc thị xã Phổ Yên và thành lập thành phố Phổ Yên, tỉnh Thái Nguyên;
