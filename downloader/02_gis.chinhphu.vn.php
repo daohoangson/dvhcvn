@@ -74,6 +74,24 @@ function main()
 
 function _requestData(string $areaCode): array
 {
+    $remap = [
+        "34344" => "34334", // Tỉnh Thái Bình > Huyện Vũ Thư
+        "86" => "85", // Tỉnh Vĩnh Long
+        "86855" => "85855", // Thành phố Vĩnh Long
+        "86857" => "85857", // Huyện Long Hồ
+        "86858" => "85858", // Huyện Mang Thít
+        "86859" => "85859", // Huyện  Vũng Liêm
+        "86860" => "85860", // Huyện Tam Bình
+        "86861" => "85861", // Thị xã Bình Minh
+        "86862" => "85862", // Huyện Trà Ôn
+        "86863" => "85863", // Huyện Bình Tân
+    ];
+    if (isset($remap[$areaCode])) {
+        $originalAreaCode = $areaCode;
+        $areaCode = $remap[$areaCode];
+        fwrite(STDERR, "areaCode $originalAreaCode -> $areaCode\n");
+    }
+
     $json = _request('Region/GetGeoJson', [
         'areaCode' => $areaCode,
         '__RequestVerificationToken' => REQUEST_VERIFICATION_TOKEN,
