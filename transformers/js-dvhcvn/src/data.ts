@@ -1088,7 +1088,7 @@ new Level1('06', 'Tỉnh Bắc Kạn', Type.tinh, [
     new Level3(3, 3, '01945', 'Xã Cốc Đán', Type.xa),
     new Level3(3, 3, '01948', 'Xã Trung Hoà', Type.xa),
     new Level3(3, 3, '01951', 'Xã Đức Vân', Type.xa),
-    new Level3(3, 3, '01954', 'Xã Vân Tùng', Type.xa),
+    new Level3(3, 3, '01954', 'Thị trấn Vân Tùng', Type.thi_tran),
     new Level3(3, 3, '01957', 'Xã Thượng Quan', Type.xa),
     new Level3(3, 3, '01960', 'Xã Hiệp Lực', Type.xa),
     new Level3(3, 3, '01963', 'Xã Thuần Mang', Type.xa)
@@ -2465,7 +2465,7 @@ new Level1('19', 'Tỉnh Thái Nguyên', Type.tinh, [
     new Level3(11, 4, '05683', 'Xã Hóa Trung', Type.xa),
     new Level3(11, 4, '05686', 'Xã Khe Mo', Type.xa),
     new Level3(11, 4, '05689', 'Xã Cây Thị', Type.xa),
-    new Level3(11, 4, '05692', 'Xã Hóa Thượng', Type.xa),
+    new Level3(11, 4, '05692', 'Thị trấn Hóa Thượng', Type.thi_tran),
     new Level3(11, 4, '05698', 'Xã Hợp Tiến', Type.xa),
     new Level3(11, 4, '05704', 'Xã Tân Lợi', Type.xa),
     new Level3(11, 4, '05707', 'Xã Nam Hòa', Type.xa)
@@ -2489,7 +2489,6 @@ new Level1('19', 'Tỉnh Thái Nguyên', Type.tinh, [
   ]),
   new Level2(11, '171', 'Huyện Đại Từ', Type.huyen, [
     new Level3(11, 6, '05761', 'Thị trấn Hùng Sơn', Type.thi_tran),
-    new Level3(11, 6, '05764', 'Thị trấn Quân Chu', Type.thi_tran),
     new Level3(11, 6, '05767', 'Xã Phúc Lương', Type.xa),
     new Level3(11, 6, '05770', 'Xã Minh Tiến', Type.xa),
     new Level3(11, 6, '05773', 'Xã Yên Lãng', Type.xa),
@@ -2517,7 +2516,7 @@ new Level1('19', 'Tỉnh Thái Nguyên', Type.tinh, [
     new Level3(11, 6, '05842', 'Xã Văn Yên', Type.xa),
     new Level3(11, 6, '05845', 'Xã Ký Phú', Type.xa),
     new Level3(11, 6, '05848', 'Xã Cát Nê', Type.xa),
-    new Level3(11, 6, '05851', 'Xã Quân Chu', Type.xa)
+    new Level3(11, 6, '05851', 'Thị trấn Quân Chu', Type.thi_tran)
   ]),
   new Level2(11, '172', 'Thành phố Phổ Yên', Type.tp, [
     new Level3(11, 7, '05854', 'Phường Bãi Bông', Type.phuong),
@@ -3483,7 +3482,7 @@ new Level1('26', 'Tỉnh Vĩnh Phúc', Type.tinh, [
     new Level3(16, 0, '08716', 'Phường Đống Đa', Type.phuong),
     new Level3(16, 0, '08719', 'Phường Ngô Quyền', Type.phuong),
     new Level3(16, 0, '08722', 'Phường Đồng Tâm', Type.phuong),
-    new Level3(16, 0, '08725', 'Xã Định Trung', Type.xa),
+    new Level3(16, 0, '08725', 'Phường Định Trung', Type.phuong),
     new Level3(16, 0, '08728', 'Phường Khai Quang', Type.phuong),
     new Level3(16, 0, '08731', 'Xã Thanh Trù', Type.xa)
   ]),
@@ -3525,7 +3524,7 @@ new Level1('26', 'Tỉnh Vĩnh Phúc', Type.tinh, [
     new Level3(16, 3, '08869', 'Thị trấn Hợp Hòa', Type.thi_tran),
     new Level3(16, 3, '08872', 'Xã Hoàng Hoa', Type.xa),
     new Level3(16, 3, '08875', 'Xã Đồng Tĩnh', Type.xa),
-    new Level3(16, 3, '08878', 'Xã Kim Long', Type.xa),
+    new Level3(16, 3, '08878', 'Thị trấn Kim Long', Type.thi_tran),
     new Level3(16, 3, '08881', 'Xã Hướng Đạo', Type.xa),
     new Level3(16, 3, '08884', 'Xã Đạo Tú', Type.xa),
     new Level3(16, 3, '08887', 'Xã An Hòa', Type.xa),
@@ -3569,7 +3568,7 @@ new Level1('26', 'Tỉnh Vĩnh Phúc', Type.tinh, [
     new Level3(16, 6, '09034', 'Xã Bình Định', Type.xa),
     new Level3(16, 6, '09037', 'Xã Trung Nguyên', Type.xa),
     new Level3(16, 6, '09040', 'Xã Tề Lỗ', Type.xa),
-    new Level3(16, 6, '09043', 'Xã Tam Hồng', Type.xa),
+    new Level3(16, 6, '09043', 'Thị trấn Tam Hồng', Type.thi_tran),
     new Level3(16, 6, '09046', 'Xã Yên Đồng', Type.xa),
     new Level3(16, 6, '09049', 'Xã Văn Tiến', Type.xa),
     new Level3(16, 6, '09052', 'Xã Nguyệt Đức', Type.xa),
@@ -3669,22 +3668,22 @@ new Level1('27', 'Tỉnh Bắc Ninh', Type.tinh, [
     new Level3(17, 1, '09238', 'Xã Văn Môn', Type.xa),
     new Level3(17, 1, '09241', 'Xã Đông Thọ', Type.xa)
   ]),
-  new Level2(17, '259', 'Huyện Quế Võ', Type.huyen, [
-    new Level3(17, 2, '09247', 'Thị trấn Phố Mới', Type.thi_tran),
+  new Level2(17, '259', 'Thị xã Quế Võ', Type.thi_xa, [
+    new Level3(17, 2, '09247', 'Phường Phố Mới', Type.phuong),
     new Level3(17, 2, '09250', 'Xã Việt Thống', Type.xa),
-    new Level3(17, 2, '09253', 'Xã Đại Xuân', Type.xa),
-    new Level3(17, 2, '09259', 'Xã Nhân Hòa', Type.xa),
-    new Level3(17, 2, '09262', 'Xã Bằng An', Type.xa),
-    new Level3(17, 2, '09265', 'Xã Phương Liễu', Type.xa),
-    new Level3(17, 2, '09268', 'Xã Quế Tân', Type.xa),
-    new Level3(17, 2, '09274', 'Xã Phù Lương', Type.xa),
+    new Level3(17, 2, '09253', 'Phường Đại Xuân', Type.phuong),
+    new Level3(17, 2, '09259', 'Phường Nhân Hòa', Type.phuong),
+    new Level3(17, 2, '09262', 'Phường Bằng An', Type.phuong),
+    new Level3(17, 2, '09265', 'Phường Phương Liễu', Type.phuong),
+    new Level3(17, 2, '09268', 'Phường Quế Tân', Type.phuong),
+    new Level3(17, 2, '09274', 'Phường Phù Lương', Type.phuong),
     new Level3(17, 2, '09277', 'Xã Phù Lãng', Type.xa),
-    new Level3(17, 2, '09280', 'Xã Phượng Mao', Type.xa),
-    new Level3(17, 2, '09283', 'Xã Việt Hùng', Type.xa),
+    new Level3(17, 2, '09280', 'Phường Phượng Mao', Type.phuong),
+    new Level3(17, 2, '09283', 'Phường Việt Hùng', Type.phuong),
     new Level3(17, 2, '09289', 'Xã Ngọc Xá', Type.xa),
     new Level3(17, 2, '09292', 'Xã Châu Phong', Type.xa),
-    new Level3(17, 2, '09295', 'Xã Bồng Lai', Type.xa),
-    new Level3(17, 2, '09298', 'Xã Cách Bi', Type.xa),
+    new Level3(17, 2, '09295', 'Phường Bồng Lai', Type.phuong),
+    new Level3(17, 2, '09298', 'Phường Cách Bi', Type.phuong),
     new Level3(17, 2, '09301', 'Xã Đào Viên', Type.xa),
     new Level3(17, 2, '09304', 'Xã Yên Giả', Type.xa),
     new Level3(17, 2, '09307', 'Xã Mộ Đạo', Type.xa),
@@ -3722,23 +3721,23 @@ new Level1('27', 'Tỉnh Bắc Ninh', Type.tinh, [
     new Level3(17, 4, '09394', 'Phường Đình Bảng', Type.phuong),
     new Level3(17, 4, '09397', 'Phường Phù Chẩn', Type.phuong)
   ]),
-  new Level2(17, '262', 'Huyện Thuận Thành', Type.huyen, [
-    new Level3(17, 5, '09400', 'Thị trấn Hồ', Type.thi_tran),
+  new Level2(17, '262', 'Thị xã Thuận Thành', Type.thi_xa, [
+    new Level3(17, 5, '09400', 'Phường Hồ', Type.phuong),
     new Level3(17, 5, '09403', 'Xã Hoài Thượng', Type.xa),
     new Level3(17, 5, '09406', 'Xã Đại Đồng Thành', Type.xa),
     new Level3(17, 5, '09409', 'Xã Mão Điền', Type.xa),
-    new Level3(17, 5, '09412', 'Xã Song Hồ', Type.xa),
+    new Level3(17, 5, '09412', 'Phường Song Hồ', Type.phuong),
     new Level3(17, 5, '09415', 'Xã Đình Tổ', Type.xa),
-    new Level3(17, 5, '09418', 'Xã An Bình', Type.xa),
-    new Level3(17, 5, '09421', 'Xã Trí Quả', Type.xa),
-    new Level3(17, 5, '09424', 'Xã Gia Đông', Type.xa),
-    new Level3(17, 5, '09427', 'Xã Thanh Khương', Type.xa),
-    new Level3(17, 5, '09430', 'Xã Trạm Lộ', Type.xa),
-    new Level3(17, 5, '09433', 'Xã Xuân Lâm', Type.xa),
-    new Level3(17, 5, '09436', 'Xã Hà Mãn', Type.xa),
+    new Level3(17, 5, '09418', 'Phường An Bình', Type.phuong),
+    new Level3(17, 5, '09421', 'Phường Trí Quả', Type.phuong),
+    new Level3(17, 5, '09424', 'Phường Gia Đông', Type.phuong),
+    new Level3(17, 5, '09427', 'Phường Thanh Khương', Type.phuong),
+    new Level3(17, 5, '09430', 'Phường Trạm Lộ', Type.phuong),
+    new Level3(17, 5, '09433', 'Phường Xuân Lâm', Type.phuong),
+    new Level3(17, 5, '09436', 'Phường Hà Mãn', Type.phuong),
     new Level3(17, 5, '09439', 'Xã Ngũ Thái', Type.xa),
     new Level3(17, 5, '09442', 'Xã Nguyệt Đức', Type.xa),
-    new Level3(17, 5, '09445', 'Xã Ninh Xá', Type.xa),
+    new Level3(17, 5, '09445', 'Phường Ninh Xá', Type.phuong),
     new Level3(17, 5, '09448', 'Xã Nghĩa Đạo', Type.xa),
     new Level3(17, 5, '09451', 'Xã Song Liễu', Type.xa)
   ]),
@@ -7272,9 +7271,9 @@ new Level1('49', 'Tỉnh Quảng Nam', Type.tinh, [
     new Level3(32, 5, '20551', 'Phường Vĩnh Điện', Type.phuong),
     new Level3(32, 5, '20554', 'Xã Điện Tiến', Type.xa),
     new Level3(32, 5, '20557', 'Xã Điện Hòa', Type.xa),
-    new Level3(32, 5, '20560', 'Xã Điện Thắng Bắc', Type.xa),
-    new Level3(32, 5, '20561', 'Xã Điện Thắng Trung', Type.xa),
-    new Level3(32, 5, '20562', 'Xã Điện Thắng Nam', Type.xa),
+    new Level3(32, 5, '20560', 'Phường Điện Thắng Bắc', Type.phuong),
+    new Level3(32, 5, '20561', 'Phường Điện Thắng Trung', Type.phuong),
+    new Level3(32, 5, '20562', 'Phường Điện Thắng Nam', Type.phuong),
     new Level3(32, 5, '20563', 'Phường Điện Ngọc', Type.phuong),
     new Level3(32, 5, '20566', 'Xã Điện Hồng', Type.xa),
     new Level3(32, 5, '20569', 'Xã Điện Thọ', Type.xa),
@@ -7287,8 +7286,8 @@ new Level1('49', 'Tỉnh Quảng Nam', Type.tinh, [
     new Level3(32, 5, '20584', 'Xã Điện Quang', Type.xa),
     new Level3(32, 5, '20587', 'Xã Điện Trung', Type.xa),
     new Level3(32, 5, '20590', 'Xã Điện Phong', Type.xa),
-    new Level3(32, 5, '20593', 'Xã Điện Minh', Type.xa),
-    new Level3(32, 5, '20596', 'Xã Điện Phương', Type.xa)
+    new Level3(32, 5, '20593', 'Phường Điện Minh', Type.phuong),
+    new Level3(32, 5, '20596', 'Phường Điện Phương', Type.phuong)
   ]),
   new Level2(32, '508', 'Huyện Duy Xuyên', Type.huyen, [
     new Level3(32, 6, '20599', 'Thị trấn Nam Phước', Type.thi_tran),
@@ -7463,7 +7462,7 @@ new Level1('49', 'Tỉnh Quảng Nam', Type.tinh, [
     new Level3(32, 16, '20395', 'Xã Tam Lãnh', Type.xa)
   ]),
   new Level2(32, '519', 'Huyện Nông Sơn', Type.huyen, [
-    new Level3(32, 17, '20656', 'Xã Quế Trung', Type.xa),
+    new Level3(32, 17, '20656', 'Thị trấn Trung Phước', Type.thi_tran),
     new Level3(32, 17, '20668', 'Xã Ninh Phước', Type.xa),
     new Level3(32, 17, '20669', 'Xã Phước Ninh', Type.xa),
     new Level3(32, 17, '20671', 'Xã Quế Lộc', Type.xa),
@@ -8848,7 +8847,7 @@ new Level1('66', 'Tỉnh Đắk Lắk', Type.tinh, [
     new Level3(41, 6, '24310', 'Xã Chư KBô', Type.xa),
     new Level3(41, 6, '24313', 'Xã Cư Pơng', Type.xa),
     new Level3(41, 6, '24314', 'Xã Ea Sin', Type.xa),
-    new Level3(41, 6, '24316', 'Xã Pơng Drang', Type.xa),
+    new Level3(41, 6, '24316', 'Thị trấn Pơng Drang', Type.thi_tran),
     new Level3(41, 6, '24317', 'Xã Tân Lập', Type.xa),
     new Level3(41, 6, '24319', 'Xã Ea Ngai', Type.xa)
   ]),
@@ -9536,7 +9535,7 @@ new Level1('74', 'Tỉnh Bình Dương', Type.tinh, [
     new Level3(46, 4, '25882', 'Xã Vĩnh Hoà', Type.xa),
     new Level3(46, 4, '25885', 'Xã Phước Hoà', Type.xa)
   ]),
-  new Level2(46, '723', 'Thị xã Tân Uyên', Type.thi_xa, [
+  new Level2(46, '723', 'Thành phố Tân Uyên', Type.tp, [
     new Level3(46, 5, '25888', 'Phường Uyên Hưng', Type.phuong),
     new Level3(46, 5, '25891', 'Phường Tân Phước Khánh', Type.phuong),
     new Level3(46, 5, '25912', 'Phường Vĩnh Tân', Type.phuong),
@@ -10689,7 +10688,7 @@ new Level1('83', 'Tỉnh Bến Tre', Type.tinh, [
     new Level3(52, 1, '28852', 'Xã Tiên Long', Type.xa),
     new Level3(52, 1, '28855', 'Xã An Hiệp', Type.xa),
     new Level3(52, 1, '28858', 'Xã Hữu Định', Type.xa),
-    new Level3(52, 1, '28861', 'Xã Tiên Thủy', Type.xa),
+    new Level3(52, 1, '28861', 'Thị trấn Tiên Thủy', Type.thi_tran),
     new Level3(52, 1, '28864', 'Xã Sơn Hòa', Type.xa)
   ]),
   new Level2(52, '832', 'Huyện Chợ Lách', Type.huyen, [
@@ -10791,7 +10790,7 @@ new Level1('83', 'Tỉnh Bến Tre', Type.tinh, [
     new Level3(52, 6, '29170', 'Xã Vĩnh An', Type.xa),
     new Level3(52, 6, '29173', 'Xã An Đức', Type.xa),
     new Level3(52, 6, '29176', 'Xã An Hòa Tây', Type.xa),
-    new Level3(52, 6, '29179', 'Xã An Thủy', Type.xa)
+    new Level3(52, 6, '29179', 'Thị trấn Tiệm Tôm', Type.thi_tran)
   ]),
   new Level2(52, '837', 'Huyện Thạnh Phú', Type.huyen, [
     new Level3(52, 7, '29182', 'Thị trấn Thạnh Phú', Type.thi_tran),
@@ -10819,7 +10818,7 @@ new Level1('83', 'Tỉnh Bến Tre', Type.tinh, [
     new Level3(52, 8, '28906', 'Xã Thanh Tân', Type.xa),
     new Level3(52, 8, '28909', 'Xã Thạnh Ngãi', Type.xa),
     new Level3(52, 8, '28912', 'Xã Tân Phú Tây', Type.xa),
-    new Level3(52, 8, '28915', 'Xã Phước Mỹ Trung', Type.xa),
+    new Level3(52, 8, '28915', 'Thị trấn Phước Mỹ Trung', Type.thi_tran),
     new Level3(52, 8, '28918', 'Xã Tân Thành Bình', Type.xa),
     new Level3(52, 8, '28921', 'Xã Thành An', Type.xa),
     new Level3(52, 8, '28924', 'Xã Hòa Lộc', Type.xa),
@@ -11288,7 +11287,7 @@ new Level1('89', 'Tỉnh An Giang', Type.tinh, [
     new Level3(56, 2, '30364', 'Xã Vĩnh Hậu', Type.xa),
     new Level3(56, 2, '30367', 'Xã Vĩnh Trường', Type.xa),
     new Level3(56, 2, '30370', 'Xã Vĩnh Hội Đông', Type.xa),
-    new Level3(56, 2, '30373', 'Xã Đa Phước', Type.xa)
+    new Level3(56, 2, '30373', 'Thị trấn Đa Phước', Type.thi_tran)
   ]),
   new Level2(56, '887', 'Thị xã Tân Châu', Type.thi_xa, [
     new Level3(56, 3, '30376', 'Phường Long Thạnh', Type.phuong),
@@ -11341,14 +11340,14 @@ new Level1('89', 'Tỉnh An Giang', Type.tinh, [
     new Level3(56, 5, '30496', 'Xã Bình Phú', Type.xa),
     new Level3(56, 5, '30499', 'Xã Bình Chánh', Type.xa)
   ]),
-  new Level2(56, '890', 'Huyện Tịnh Biên', Type.huyen, [
-    new Level3(56, 6, '30502', 'Thị trấn Nhà Bàng', Type.thi_tran),
-    new Level3(56, 6, '30505', 'Thị trấn Chi Lăng', Type.thi_tran),
-    new Level3(56, 6, '30508', 'Xã Núi Voi', Type.xa),
-    new Level3(56, 6, '30511', 'Xã Nhơn Hưng', Type.xa),
-    new Level3(56, 6, '30514', 'Xã An Phú', Type.xa),
-    new Level3(56, 6, '30517', 'Xã Thới Sơn', Type.xa),
-    new Level3(56, 6, '30520', 'Thị trấn Tịnh Biên', Type.thi_tran),
+  new Level2(56, '890', 'Thị xã Tịnh Biên', Type.thi_xa, [
+    new Level3(56, 6, '30502', 'Phường Nhà Bàng', Type.phuong),
+    new Level3(56, 6, '30505', 'Phường Chi Lăng', Type.phuong),
+    new Level3(56, 6, '30508', 'Phường Núi Voi', Type.phuong),
+    new Level3(56, 6, '30511', 'Phường Nhơn Hưng', Type.phuong),
+    new Level3(56, 6, '30514', 'Phường An Phú', Type.phuong),
+    new Level3(56, 6, '30517', 'Phường Thới Sơn', Type.phuong),
+    new Level3(56, 6, '30520', 'Phường Tịnh Biên', Type.phuong),
     new Level3(56, 6, '30523', 'Xã Văn Giáo', Type.xa),
     new Level3(56, 6, '30526', 'Xã An Cư', Type.xa),
     new Level3(56, 6, '30529', 'Xã An Nông', Type.xa),
@@ -11405,7 +11404,7 @@ new Level1('89', 'Tỉnh An Giang', Type.tinh, [
     new Level3(56, 9, '30664', 'Xã Long Kiến', Type.xa),
     new Level3(56, 9, '30667', 'Xã Bình Phước Xuân', Type.xa),
     new Level3(56, 9, '30670', 'Xã An Thạnh Trung', Type.xa),
-    new Level3(56, 9, '30673', 'Xã Hội An', Type.xa),
+    new Level3(56, 9, '30673', 'Thị trấn Hội An', Type.thi_tran),
     new Level3(56, 9, '30676', 'Xã Hòa Bình', Type.xa),
     new Level3(56, 9, '30679', 'Xã Hòa An', Type.xa)
   ]),

@@ -2,14 +2,14 @@
 
 set -e
 
-_dir=$( cd $( dirname $BASH_SOURCE[0] ) && pwd )
+_dir=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
 
 _gsoPath='data/dvhcvn.json'
 _gsoDatePath='data/date.txt'
 _gisPath='data/gis.json'
 
-# 569/NQ-UBTVQH15
-_date=01/10/2022
+# 721/NQ-UBTVQH15
+_date=10/04/2023
 
 if [ ! -f $_gsoPath ]; then
   echo "Generating $_gsoPath..."
