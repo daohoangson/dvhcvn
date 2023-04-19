@@ -238,6 +238,7 @@ export default class Matcher {
     _.matches = [...matches, found];
     _.scores = [
       ...scores,
+      entity.status === 'Deleted' ? 0.001 : 0.009,
       full.length * scorePerChar,
       scoreDelta,
       entity.parent != previous.entity ? scoreDeltaSkip * entity.level : 0
