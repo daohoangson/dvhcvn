@@ -1,6 +1,7 @@
 {
   "name": "parser",
   "scripts": {
+    "format": "prettier --write '*/**/*.{js,ts,tsx}'",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "now-build": "/bin/bash ./api/now-build.sh",
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
