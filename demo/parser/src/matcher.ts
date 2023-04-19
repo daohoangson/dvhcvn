@@ -187,7 +187,7 @@ export default class Matcher {
         : null;
       if (
         otherLast &&
-        thisLast.name == otherLast.name &&
+        normalize(`${thisLast.name}`) === normalize(`${otherLast.name}`) &&
         thisLast.parent === otherLast.parent
       ) {
         // special case: one parent has more than one entity
