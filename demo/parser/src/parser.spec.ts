@@ -560,7 +560,8 @@ describe("Parser", () => {
       "thanh pho tuy hoa tinh phu yen": ["Thành phố Tuy Hoà", "Tỉnh Phú Yên"],
       "Xã Trung Thịnh huyện Xín Mần tỉnh Hà Giang": ["01117", "033", "02"],
       "Huyện Kỳ Anh tỉnh Hà Tĩnh": ["447", "42"],
-      "Thị xã Kỳ Anh tỉnh Hà Tĩnh": ["449", "42"]
+      "Thị xã Kỳ Anh tỉnh Hà Tĩnh": ["449", "42"],
+      "Xã Đại Ân 2, Huyện Trần Đề, Tỉnh Sóc Trăng": ["31672", "951", "94"]
     };
 
     Object.keys(map).forEach(input =>

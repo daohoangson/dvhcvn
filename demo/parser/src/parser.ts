@@ -2,7 +2,7 @@ import Entity from "./entity";
 import Matcher, { Matches } from "./matcher";
 
 const numberRegExp = new RegExp("[0-9]{4,}", "g");
-const spaceRegExp = new RegExp("\\s{2,}", "g");
+export const spaceRegExp = new RegExp("\\s{2,}", "g");
 const alternateRegExp1Parentheses = new RegExp("\\([^)]+\\)$");
 const alternateRegExp2Slash = new RegExp("/[^/]+$");
 const alternateRegExp3Dash = new RegExp("-[^-]+$");

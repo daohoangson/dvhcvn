@@ -1,3 +1,4 @@
+import { spaceRegExp } from "./parser";
 import { deaccent, initials, normalize } from "./vietnamese";
 
 const entitiesById: { [id: string]: Entity[] } = {};
@@ -151,7 +152,7 @@ export default class Entity {
       : m[2].trim();
     if (!this.type) this.type = thisType;
     if (!this.name) this.name = thisName;
-    const name2 = deaccent(thisName.toString());
+    const name2 = deaccent(thisName.toString()).replace(spaceRegExp, " ");
 
     let nameInitials2: string;
     const namePatterns: string[] = [];
