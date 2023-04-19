@@ -51,11 +51,11 @@ describe("Parser", () => {
         "Quận 4",
         "Thành phố Hồ Chí Minh"
       ],
-      "Q2, Tp HCM": ["Quận 2", "Thành phố Hồ Chí Minh"],
+      "Q2, Tp HCM": ["Thành phố Thủ Đức", "Thành phố Hồ Chí Minh"],
       "0908464524": [],
       "7 Tạ Hiện, P. Thạnh Mỹ Lợi, Q2": [
         "Phường Thạnh Mỹ Lợi",
-        "Quận 2",
+        "Thành phố Thủ Đức",
         "Thành phố Hồ Chí Minh"
       ],
       "130-132 Hồng Hà, Phường 9, Phú Nhuận": [
@@ -128,7 +128,7 @@ describe("Parser", () => {
       ],
       "38B34 đường Cây Keo, phường Tam Phú, Thủ Đức Tp.HCM": [
         "Phường Tam Phú",
-        "Quận Thủ Đức",
+        "Thành phố Thủ Đức",
         "Thành phố Hồ Chí Minh"
       ],
       "19/30 Hồ Văn Huê, Ho Chi Minh City, Ho Chi Minh, Vietnam": [
@@ -158,7 +158,7 @@ describe("Parser", () => {
       "Định Công": [],
       "Cầu Giấy, Hanoi, Vietnam": ["Quận Cầu Giấy", "Thành phố Hà Nội"],
       "Hà Nội": ["Thành phố Hà Nội"],
-      "336 tô ngọc vân thủ đức": ["Quận Thủ Đức", "Thành phố Hồ Chí Minh"],
+      "336 tô ngọc vân thủ đức": ["Thành phố Thủ Đức", "Thành phố Hồ Chí Minh"],
       "Nhà số 3 hẻm 79/18 (Cạnh trường tiểu học La Thành), Ngõ Thổ Quan, Khâm Thiên, Quảng Đại, TP Hà Nội": [
         "Thành phố Hà Nội"
       ],
@@ -224,7 +224,7 @@ describe("Parser", () => {
         "Quận Hoàn Kiếm",
         "Thành phố Hà Nội"
       ],
-      "Quận 2 - Hồ Chí Minh": ["Quận 2", "Thành phố Hồ Chí Minh"],
+      "Quận 2 - Hồ Chí Minh": ["Thành phố Thủ Đức", "Thành phố Hồ Chí Minh"],
       "270B/72 Lý Thường Kiệt P.6 ,Q.Tân Bình": [
         "Phường 6",
         "Quận Tân Bình",
@@ -443,7 +443,7 @@ describe("Parser", () => {
       "Tầng 13 Toà B5 - 234 Phạm Văn Đồng - HN": [],
       "640 Quốc Lộ 13, KP4, P. Hiệp  Bình Phước, Q. Thủ Đức": [
         "Phường Hiệp Bình Phước",
-        "Quận Thủ Đức",
+        "Thành phố Thủ Đức",
         "Thành phố Hồ Chí Minh"
       ],
       "585 Huỳnh Tấn Phát, Q.7": ["Quận 7", "Thành phố Hồ Chí Minh"],
@@ -525,8 +525,8 @@ describe("Parser", () => {
         "Thành phố Hà Nội"
       ],
       "49 vũ tông phan": [],
-      "Quy Nhon Binh Dinh": ["Thành phố Qui Nhơn", "Tỉnh Bình Định"],
-      "tp. Quy Nhơn Bình Định": ["Thành phố Qui Nhơn", "Tỉnh Bình Định"],
+      "Quy Nhon Binh Dinh": ["Thành phố Quy Nhơn", "Tỉnh Bình Định"],
+      "tp. Quy Nhơn Bình Định": ["Thành phố Quy Nhơn", "Tỉnh Bình Định"],
       "Xài Đồng, Long Biên": [
         "Phường Sài Đồng",
         "Quận Long Biên",
@@ -560,7 +560,17 @@ describe("Parser", () => {
       "thanh pho tuy hoa tinh phu yen": ["Thành phố Tuy Hoà", "Tỉnh Phú Yên"],
       "Xã Trung Thịnh huyện Xín Mần tỉnh Hà Giang": ["01117", "033", "02"],
       "Huyện Kỳ Anh tỉnh Hà Tĩnh": ["447", "42"],
-      "Thị xã Kỳ Anh tỉnh Hà Tĩnh": ["449", "42"]
+      "Thị xã Kỳ Anh tỉnh Hà Tĩnh": ["449", "42"],
+      "Xã Đại Ân 2, Huyện Trần Đề, Tỉnh Sóc Trăng": ["31672", "951", "94"],
+      "Xã Tân Hòa, Huyện Châu Thành A, Tỉnh Hậu Giang": ["31345", "932", "93"],
+      "Phường Cầu Mây, Sa Pa, Tỉnh Lào Cai": ["03028", "088", "10"],
+      "Xã Hòa Tú 2, Huyện Mỹ Xuyên, Tỉnh Sóc Trăng": ["31729", "947", "94"],
+      "Phường Xuân Phương, Quận Bắc Từ Liêm, Thành phố Hà Nội": [
+        "00622",
+        "019",
+        "01"
+      ],
+      "Phường Hải Châu 1, Hải Châu, Thành phố Đà Nẵng": ["20236", "492", "48"]
     };
 
     Object.keys(map).forEach(input =>

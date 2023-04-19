@@ -187,7 +187,7 @@ export default class Matcher {
         : null;
       if (
         otherLast &&
-        thisLast.name == otherLast.name &&
+        normalize(`${thisLast.name}`) === normalize(`${otherLast.name}`) &&
         thisLast.parent === otherLast.parent
       ) {
         // special case: one parent has more than one entity
@@ -238,6 +238,7 @@ export default class Matcher {
     _.matches = [...matches, found];
     _.scores = [
       ...scores,
+      entity.status === "Deleted" ? 0.001 : 0.009,
       full.length * scorePerChar,
       scoreDelta,
       entity.parent != previous.entity ? scoreDeltaSkip * entity.level : 0

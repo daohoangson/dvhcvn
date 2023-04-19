@@ -1,7 +1,8 @@
 {
   "name": "parser",
   "scripts": {
-    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "format": "prettier --write '*.json' && prettier --write '*/**/*.{ts,tsx}'",
+    "lint": "tsc --noEmit && eslint '*/**/*.{ts,tsx}' --quiet --fix",
     "now-build": "/bin/bash ./api/now-build.sh",
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
