@@ -1,4 +1,4 @@
-import { normalize } from "./vietnamese";
+import { generateVariations, normalize } from "./vietnamese";
 import { expect } from "chai";
 
 describe("normalize", () => {
@@ -31,4 +31,35 @@ describe("normalize", () => {
       expect(result).to.equal(map[input]);
     })
   );
+});
+
+describe("generateVariations", () => {
+  const map: Record<string, string> = {
+    "choi voi": "troi voi",
+    "trang treo": "chang cheo",
+    "gia dinh": "da giinh",
+    "bac si": "bac sy",
+    "vat ly": "vat li",
+    "long lanh": "nong nanh",
+    "no ne": "lo le",
+    "san xuat": "xan suat",
+    "quan 1": "quan i",
+    "quan 2": "quan ii",
+    "quan 3": "quan iii",
+    "quan 4": "quan iv",
+    "quan 5": "quan v",
+    "quan 6": "quan vi",
+    "quan 7": "quan vii",
+    "quan 8": "quan viii",
+    "quan 9": "quan ix",
+    "quan 10": "quan x",
+    "quan 11": "quan xi",
+    "quan 12": "quan xii"
+  };
+
+  Object.keys(map).forEach(k => {
+    const v = map[k];
+    it(`${k} -> ${v}`, () => expect(generateVariations(k)).to.contain(v));
+    it(`${v} -> ${k}`, () => expect(generateVariations(v)).to.contain(k));
+  });
 });

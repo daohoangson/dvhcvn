@@ -563,7 +563,14 @@ describe("Parser", () => {
       "Thị xã Kỳ Anh tỉnh Hà Tĩnh": ["449", "42"],
       "Xã Đại Ân 2, Huyện Trần Đề, Tỉnh Sóc Trăng": ["31672", "951", "94"],
       "Xã Tân Hòa, Huyện Châu Thành A, Tỉnh Hậu Giang": ["31345", "932", "93"],
-      "Phường Cầu Mây, Sa Pa, Tỉnh Lào Cai": ["03028", "088", "10"]
+      "Phường Cầu Mây, Sa Pa, Tỉnh Lào Cai": ["03028", "088", "10"],
+      "Xã Hòa Tú 2, Huyện Mỹ Xuyên, Tỉnh Sóc Trăng": ["31729", "947", "94"],
+      "Phường Xuân Phương, Quận Bắc Từ Liêm, Thành phố Hà Nội": [
+        "00622",
+        "019",
+        "01"
+      ],
+      "Phường Hải Châu 1, Hải Châu, Thành phố Đà Nẵng": ["20236", "492", "48"]
     };
 
     Object.keys(map).forEach(input =>

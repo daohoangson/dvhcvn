@@ -1,5 +1,10 @@
 import { spaceRegExp } from "./parser";
-import { deaccent, initials, normalize } from "./vietnamese";
+import {
+  deaccent,
+  generateVariations,
+  initials,
+  normalize
+} from "./vietnamese";
 
 const entitiesById: { [id: string]: Entity[] } = {};
 
@@ -9,20 +14,6 @@ export const getEntityById = (id: string) =>
     : null;
 
 const nameNumericRegExp = new RegExp("^[0-9]+$");
-
-const romanNumbers = [
-  "",
-  "i",
-  "ii",
-  "iii",
-  "iv",
-  "v",
-  "vi",
-  "vii",
-  "viii",
-  "ix",
-  "x"
-];
 
 const typeGlue = "[ .:]*";
 
@@ -160,12 +151,6 @@ export default class Entity {
     if (typeof thisName === "number") {
       namePatterns.push(`0*${thisName}`);
       this.names.push(thisName.toString());
-
-      const romanNumber = romanNumbers[thisName];
-      if (romanNumber) {
-        namePatterns.push(romanNumber);
-        this.names.push(romanNumber);
-      }
     } else {
       namePatterns.push(name2);
       patterns.push(name2);
@@ -237,6 +222,14 @@ export default class Entity {
         }
       });
     });
+
+    const name2Variations = generateVariations(name2);
+    for (const name2Variation of name2Variations) {
+      if (name2Variation !== name2) {
+        namePatterns.push(name2Variation);
+        this.names2.push(name2Variation);
+      }
+    }
 
     const namePattern = `(${namePatterns.join("|")})`;
     patterns.push(
