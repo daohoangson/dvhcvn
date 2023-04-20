@@ -158,8 +158,7 @@ export default class Entity {
       this.names.push(nameNormalized);
       this.names2.push(name2);
 
-      if (this.level < 3 && thisName.indexOf(" ") > -1) {
-        // special case: name initials for level 1+2
+      if (thisName.indexOf(" ") > -1) {
         // Hà Nội -> HN
         // Hồ Chí Minh -> HCM
         const nameInitials = initials(thisName);

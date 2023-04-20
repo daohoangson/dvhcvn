@@ -198,11 +198,6 @@ describe("Parser", () => {
         "Quận 3",
         "Thành phố Hồ Chí Minh"
       ],
-      "961/51 Nguyễn Kiệm P. 3 GV": [
-        "Phường 3",
-        "Quận Gò Vấp",
-        "Thành phố Hồ Chí Minh"
-      ],
       "Số 7 ngõ 1 Tô Vĩnh Diện": [],
       "Toàn quốc": [],
       "Thanh Khê, Đà Nẵng, Việt Nam": ["Quận Thanh Khê", "Thành phố Đà Nẵng"],
@@ -317,11 +312,6 @@ describe("Parser", () => {
         "Phường Cát Bi",
         "Quận Hải An",
         "Thành phố Hải Phòng"
-      ],
-      "20 Trần Văn Hoàng P9 Q.TB (Gần ĐH Bách Khoa-Lý thuong kiệt Q10)": [
-        "Phường 9",
-        "Quận Tân Bình",
-        "Thành phố Hồ Chí Minh"
       ],
       "Ngã 4 lạc long quân , q. tân bình , hcm ( nhà trong hẻm )": [
         "Quận Tân Bình",
@@ -452,11 +442,6 @@ describe("Parser", () => {
       "Tp. Hải Dương, Hải Dương, Việt Nam": [
         "Thành phố Hải Dương",
         "Tỉnh Hải Dương"
-      ],
-      "114/32 - Phạm Văn Chiêu - P.09 - GV": [
-        "Phường 9",
-        "Quận Gò Vấp",
-        "Thành phố Hồ Chí Minh"
       ],
       "14 Hạc Thành, tp. Thanh Hoá, Thanh Hoa, Vietnam": [
         "Thành phố Thanh Hóa",

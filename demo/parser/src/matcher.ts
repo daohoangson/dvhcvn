@@ -101,12 +101,12 @@ export default class Matcher {
 
   try(entity: Entity) {
     const { address, address2, previous } = this;
+    const { entity: pe } = previous;
     const { initials, names, names2, regExp, typePatterns } = entity.prepare();
     if (!regExp) return null;
 
     const regExpMatch = address2.match(regExp);
     if (!regExpMatch) {
-      const { entity: pe } = previous;
       const nameSimilarity = deaccent(`${entity.name}`);
       if (nameSimilarity.length > 12 || (pe && pe.level === entity.level - 1)) {
         // perform fuzzy match if: (1) name is lengthy or (2) there's a direct parent match
@@ -166,13 +166,16 @@ export default class Matcher {
         scoreDeltaName2 + this.calculateScoreDeltaType(typePatterns, match2)
       );
 
-    const initialsFound = initials.reduce((prev, i) => {
-      if (prev && prev.length > i.length) return prev;
-      if (match.indexOf(i) > -1) return i;
-      return prev;
-    }, null);
-    if (initialsFound)
-      return this.done(entity, [match, initialsFound], scoreDeltaInitials);
+    const acceptInitials = entity.level === 1 || pe; // first level only, or has previous match
+    if (acceptInitials) {
+      const initialsFound = initials.reduce((prev, i) => {
+        if (prev && prev.length > i.length) return prev;
+        if (match.indexOf(i) > -1) return i;
+        return prev;
+      }, null);
+      if (initialsFound)
+        return this.done(entity, [match, initialsFound], scoreDeltaInitials);
+    }
 
     return null;
   }
