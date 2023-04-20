@@ -1,4 +1,10 @@
-import { deaccent, initials, normalize } from "./vietnamese";
+import { spaceRegExp } from "./parser";
+import {
+  deaccent,
+  generateVariations,
+  initials,
+  normalize,
+} from "./vietnamese";
 
 const entitiesById: { [id: string]: Entity[] } = {};
 
@@ -9,20 +15,6 @@ export const getEntityById = (id: string) =>
 
 const nameNumericRegExp = new RegExp("^[0-9]+$");
 
-const romanNumbers = [
-  "",
-  "i",
-  "ii",
-  "iii",
-  "iv",
-  "v",
-  "vi",
-  "vii",
-  "viii",
-  "ix",
-  "x"
-];
-
 const typeGlue = "[ .:]*";
 
 const typeTranslations: { [key: string]: string[] } = {
@@ -30,18 +22,18 @@ const typeTranslations: { [key: string]: string[] } = {
   "thanh pho": ["city"],
   quan: ["district", "dist"],
   huyen: ["district", "dist"],
-  phuong: ["ward"]
+  phuong: ["ward"],
 };
 
 const types: string[][] = [
   ["Nước"],
   ["Tỉnh", "Thành phố"],
   ["Quận", "Huyện", "Thành phố", "Thị xã"],
-  ["Phường", "Thị trấn", "Xã"]
+  ["Phường", "Thị trấn", "Xã"],
 ];
 
 const typeRegExp = new RegExp(
-  "^(" + types.map(ts => ts.join("|")).join("|") + ")\\s+(.+)$",
+  "^(" + types.map((ts) => ts.join("|")).join("|") + ")\\s+(.+)$",
   "i"
 );
 
@@ -110,7 +102,7 @@ export default class Entity {
         names: this.names,
         names2: this.names2,
         regExp: this.regExp,
-        typePatterns: this.typePatterns
+        typePatterns: this.typePatterns,
       };
 
     this.initials = [];
@@ -132,7 +124,7 @@ export default class Entity {
       names: this.names,
       names2: this.names2,
       regExp: this.regExp,
-      typePatterns: this.typePatterns
+      typePatterns: this.typePatterns,
     };
   }
 
@@ -151,7 +143,7 @@ export default class Entity {
       : m[2].trim();
     if (!this.type) this.type = thisType;
     if (!this.name) this.name = thisName;
-    const name2 = deaccent(thisName.toString());
+    const name2 = deaccent(thisName.toString().replace(spaceRegExp, " "));
 
     let nameInitials2: string;
     const namePatterns: string[] = [];
@@ -159,12 +151,6 @@ export default class Entity {
     if (typeof thisName === "number") {
       namePatterns.push(`0*${thisName}`);
       this.names.push(thisName.toString());
-
-      const romanNumber = romanNumbers[thisName];
-      if (romanNumber) {
-        namePatterns.push(romanNumber);
-        this.names.push(romanNumber);
-      }
     } else {
       namePatterns.push(name2);
       patterns.push(name2);
@@ -172,8 +158,7 @@ export default class Entity {
       this.names.push(nameNormalized);
       this.names2.push(name2);
 
-      if (this.level < 3 && thisName.indexOf(" ") > -1) {
-        // special case: name initials for level 1+2
+      if (thisName.indexOf(" ") > -1) {
         // Hà Nội -> HN
         // Hồ Chí Minh -> HCM
         const nameInitials = initials(thisName);
@@ -202,7 +187,7 @@ export default class Entity {
     const sameLevelTypePatterns: string[] = [];
     const sameLevelTypeRightPatterns: string[] = [];
     const thisType2 = deaccent(thisType);
-    types[this.level].forEach(type => {
+    types[this.level].forEach((type) => {
       const type2 = deaccent(type);
       const pushTypePattern = (t: string) => {
         sameLevelTypePatterns.push(t);
@@ -211,7 +196,7 @@ export default class Entity {
       pushTypePattern(type2);
 
       if (typeTranslations[type2]) {
-        typeTranslations[type2].forEach(translation => {
+        typeTranslations[type2].forEach((translation) => {
           pushTypePattern(translation);
           sameLevelTypeRightPatterns.push(translation);
 
@@ -227,7 +212,7 @@ export default class Entity {
         // special case: phường -> "p" or "f"
         typeInitials.push("f");
       }
-      typeInitials.forEach(typeInitial => {
+      typeInitials.forEach((typeInitial) => {
         pushTypePattern(typeInitial);
 
         if (nameInitials2) {
@@ -236,6 +221,14 @@ export default class Entity {
         }
       });
     });
+
+    const name2Variations = generateVariations(name2);
+    for (const name2Variation of name2Variations) {
+      if (name2Variation !== name2) {
+        namePatterns.push(name2Variation);
+        this.names2.push(name2Variation);
+      }
+    }
 
     const namePattern = `(${namePatterns.join("|")})`;
     patterns.push(

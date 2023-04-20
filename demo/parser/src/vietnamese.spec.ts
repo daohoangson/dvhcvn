@@ -1,4 +1,4 @@
-import { normalize } from "./vietnamese";
+import { generateVariations, normalize } from "./vietnamese";
 import { expect } from "chai";
 
 describe("normalize", () => {
@@ -22,13 +22,44 @@ describe("normalize", () => {
     "luộc hột vịt lộn luộc lộn hột vịt lạc ăn lộn hột vịt lạc luộc lại hột vịt lộn lại lộn hột vịt lạc":
       "luo^c._ ho^t._ vit._ lo^n._ luo^c._ lo^n._ ho^t._ vit._ lac._ a(n_ lo^n._ ho^t._ vit._ lac._ luo^c._ lai._ ho^t._ vit._ lo^n._ lai._ lo^n._ ho^t._ vit._ lac._",
     "nếu nói lầm lẫn lần này thì lại nói lại nói lầm lẫn lần nữa thì lại nói lại nói cho đến lúc luôn luôn lưu loát hết lầm lẫn mới thôi":
-      "ne^u'_ noi'_ la^m`_ la^n~_ la^n`_ nay`_ thi`_ lai._ noi'_ lai._ noi'_ la^m`_ la^n~_ la^n`_ nu*a~_ thi`_ lai._ noi'_ lai._ noi'_ cho_ d-e^n'_ luc'_ luo^n_ luo^n_ lu*u_ loat'_ he^t'_ la^m`_ la^n~_ mo*i'_ tho^i_"
+      "ne^u'_ noi'_ la^m`_ la^n~_ la^n`_ nay`_ thi`_ lai._ noi'_ lai._ noi'_ la^m`_ la^n~_ la^n`_ nu*a~_ thi`_ lai._ noi'_ lai._ noi'_ cho_ d-e^n'_ luc'_ luo^n_ luo^n_ lu*u_ loat'_ he^t'_ la^m`_ la^n~_ mo*i'_ tho^i_",
   };
 
-  Object.keys(map).forEach(input =>
+  Object.keys(map).forEach((input) =>
     it(input, () => {
       const result = normalize(input);
       expect(result).to.equal(map[input]);
     })
   );
+});
+
+describe("generateVariations", () => {
+  const map: Record<string, string> = {
+    "choi voi": "troi voi",
+    "trang treo": "chang cheo",
+    "gia dinh": "da giinh",
+    "bac si": "bac sy",
+    "vat ly": "vat li",
+    "long lanh": "nong nanh",
+    "no ne": "lo le",
+    "san xuat": "xan suat",
+    "quan 1": "quan i",
+    "quan 2": "quan ii",
+    "quan 3": "quan iii",
+    "quan 4": "quan iv",
+    "quan 5": "quan v",
+    "quan 6": "quan vi",
+    "quan 7": "quan vii",
+    "quan 8": "quan viii",
+    "quan 9": "quan ix",
+    "quan 10": "quan x",
+    "quan 11": "quan xi",
+    "quan 12": "quan xii",
+  };
+
+  Object.keys(map).forEach((k) => {
+    const v = map[k];
+    it(`${k} -> ${v}`, () => expect(generateVariations(k)).to.contain(v));
+    it(`${v} -> ${k}`, () => expect(generateVariations(v)).to.contain(k));
+  });
 });

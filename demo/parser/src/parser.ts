@@ -2,10 +2,14 @@ import Entity from "./entity";
 import Matcher, { Matches } from "./matcher";
 
 const numberRegExp = new RegExp("[0-9]{4,}", "g");
-const spaceRegExp = new RegExp("\\s{2,}", "g");
 const alternateRegExp1Parentheses = new RegExp("\\([^)]+\\)$");
 const alternateRegExp2Slash = new RegExp("/[^/]+$");
 const alternateRegExp3Dash = new RegExp("-[^-]+$");
+
+// Consider all of these as a single space character:
+// - More than one continous space
+// - En-dash
+export const spaceRegExp = new RegExp("(\\s{2,}|–+)", "g");
 
 type ParserOptions = {
   debug?: boolean;
@@ -52,7 +56,7 @@ export default class Parser {
 
   private log(...args: any[]) {
     if (!this.debug) return;
-    console.log(...args.map(v => (v && v.describe ? v.describe() : v)));
+    console.log(...args.map((v) => (v && v.describe ? v.describe() : v)));
   }
 
   private resolve(
@@ -67,7 +71,7 @@ export default class Parser {
     const nextOptions = { fromId: id };
 
     let before = matcher.best();
-    entities.forEach(e => {
+    entities.forEach((e) => {
       const current = matcher.try(e);
       if (!current) return;
       this.log("resolve[%d->%d]: matched", opts.fromId, id, current);
@@ -119,7 +123,7 @@ export default class Parser {
     const level = parent ? parent.level : -1;
 
     let before = matches;
-    entities.forEach(e => {
+    entities.forEach((e) => {
       // do not skip too far from the last parent
       if (e.level > level + 2) return;
       if (!e.hasChildren()) return;
