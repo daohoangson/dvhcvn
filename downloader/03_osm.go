@@ -74,13 +74,15 @@ func writeRelation(dir string, relation *osm.Relation) error {
 	}
 
 	bbox := coordinates.Bound()
-	outputBytes, _ := json.Marshal(map[string]interface{}{
+	output := map[string]interface{}{
 		"id":          fmt.Sprintf("%d", relation.ID),
 		"name":        getTagValue(relation.Tags, "name"),
 		"coordinates": coordinates,
 		"bbox":        []float64{bbox.Left(), bbox.Bottom(), bbox.Right(), bbox.Top()},
+		"tags":        relation.Tags,
 		"type":        coordinates.GeoJSONType(),
-	})
+	}
+	outputBytes, _ := json.Marshal(output)
 
 	outputPath := dir
 	for _, r := range getParentsAndSelf(relation) {
