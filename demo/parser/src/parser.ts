@@ -56,7 +56,7 @@ export default class Parser {
 
   private log(...args: any[]) {
     if (!this.debug) return;
-    console.log(...args.map(v => (v && v.describe ? v.describe() : v)));
+    console.log(...args.map((v) => (v && v.describe ? v.describe() : v)));
   }
 
   private resolve(
@@ -71,7 +71,7 @@ export default class Parser {
     const nextOptions = { fromId: id };
 
     let before = matcher.best();
-    entities.forEach(e => {
+    entities.forEach((e) => {
       const current = matcher.try(e);
       if (!current) return;
       this.log("resolve[%d->%d]: matched", opts.fromId, id, current);
@@ -123,7 +123,7 @@ export default class Parser {
     const level = parent ? parent.level : -1;
 
     let before = matches;
-    entities.forEach(e => {
+    entities.forEach((e) => {
       // do not skip too far from the last parent
       if (e.level > level + 2) return;
       if (!e.hasChildren()) return;

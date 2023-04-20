@@ -3,7 +3,7 @@ import {
   deaccent,
   generateVariations,
   initials,
-  normalize
+  normalize,
 } from "./vietnamese";
 
 const entitiesById: { [id: string]: Entity[] } = {};
@@ -22,18 +22,18 @@ const typeTranslations: { [key: string]: string[] } = {
   "thanh pho": ["city"],
   quan: ["district", "dist"],
   huyen: ["district", "dist"],
-  phuong: ["ward"]
+  phuong: ["ward"],
 };
 
 const types: string[][] = [
   ["Nước"],
   ["Tỉnh", "Thành phố"],
   ["Quận", "Huyện", "Thành phố", "Thị xã"],
-  ["Phường", "Thị trấn", "Xã"]
+  ["Phường", "Thị trấn", "Xã"],
 ];
 
 const typeRegExp = new RegExp(
-  "^(" + types.map(ts => ts.join("|")).join("|") + ")\\s+(.+)$",
+  "^(" + types.map((ts) => ts.join("|")).join("|") + ")\\s+(.+)$",
   "i"
 );
 
@@ -102,7 +102,7 @@ export default class Entity {
         names: this.names,
         names2: this.names2,
         regExp: this.regExp,
-        typePatterns: this.typePatterns
+        typePatterns: this.typePatterns,
       };
 
     this.initials = [];
@@ -124,7 +124,7 @@ export default class Entity {
       names: this.names,
       names2: this.names2,
       regExp: this.regExp,
-      typePatterns: this.typePatterns
+      typePatterns: this.typePatterns,
     };
   }
 
@@ -187,7 +187,7 @@ export default class Entity {
     const sameLevelTypePatterns: string[] = [];
     const sameLevelTypeRightPatterns: string[] = [];
     const thisType2 = deaccent(thisType);
-    types[this.level].forEach(type => {
+    types[this.level].forEach((type) => {
       const type2 = deaccent(type);
       const pushTypePattern = (t: string) => {
         sameLevelTypePatterns.push(t);
@@ -196,7 +196,7 @@ export default class Entity {
       pushTypePattern(type2);
 
       if (typeTranslations[type2]) {
-        typeTranslations[type2].forEach(translation => {
+        typeTranslations[type2].forEach((translation) => {
           pushTypePattern(translation);
           sameLevelTypeRightPatterns.push(translation);
 
@@ -212,7 +212,7 @@ export default class Entity {
         // special case: phường -> "p" or "f"
         typeInitials.push("f");
       }
-      typeInitials.forEach(typeInitial => {
+      typeInitials.forEach((typeInitial) => {
         pushTypePattern(typeInitial);
 
         if (nameInitials2) {
