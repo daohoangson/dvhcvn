@@ -238,7 +238,8 @@ export default class Matcher {
     _.matches = [...matches, found];
     _.scores = [
       ...scores,
-      entity.status === "Deleted" ? 0.001 : 0.009,
+      0.1 + similarText(full, entity.name, true) / 10000, // range 0.1000..0.1100, perfect match should should rank higher than typo
+      entity.status === "Deleted" ? 0.0001 : 0.9999,
       full.length * scorePerChar,
       scoreDelta,
       entity.parent != previous.entity ? scoreDeltaSkip * entity.level : 0
