@@ -570,7 +570,8 @@ describe("Parser", () => {
         "019",
         "01"
       ],
-      "Phường Hải Châu 1, Hải Châu, Thành phố Đà Nẵng": ["20236", "492", "48"]
+      "Phường Hải Châu 1, Hải Châu, Thành phố Đà Nẵng": ["20236", "492", "48"],
+      "Phan Rang–Tháp Chàm, Tỉnh Ninh Thuận ": ["582", "58"]
     };
 
     Object.keys(map).forEach(input =>
