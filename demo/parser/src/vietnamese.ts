@@ -1,11 +1,11 @@
 export const initials = (text: string) =>
   text
     .split(/\s+/)
-    .map(word => word.charAt(0))
+    .map((word) => word.charAt(0))
     .join("");
 
 const marks = ["`", "'", ".", "?", "~"];
-const markString = `[${marks.map(mark => `\\${mark}`).join("")}]`;
+const markString = `[${marks.map((mark) => `\\${mark}`).join("")}]`;
 const markOnlyRegExp = new RegExp(markString, "g");
 const markInWordRegExp = new RegExp(`^(.*)(${markString})(.*)$`);
 const reorderMark = (word: string) =>
@@ -61,7 +61,7 @@ const typos: Typo[] = [
   [/(^|\s)xii(\s|$)/, (_, s1, s2) => `${s1}12${s2}`],
   // nam <-> bac
   [/(^|\s)nam(\s|$)/, (_, s1, s2) => `${s1}bac${s2}`],
-  [/(^|\s)bac(\s|$)/, (_, s1, s2) => `${s1}nam${s2}`]
+  [/(^|\s)bac(\s|$)/, (_, s1, s2) => `${s1}nam${s2}`],
 ];
 
 export const normalize = (text: string) =>

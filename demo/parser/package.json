@@ -7,26 +7,26 @@
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.3",
-    "@types/locutus": "0.0.5",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.11.2",
+    "@types/chai": "^4.3.4",
+    "@types/locutus": "0.0.6",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.15.12",
     "@types/unidecode": "^0.1.1",
-    "@types/yargs": "^13.0.3",
-    "@typescript-eslint/eslint-plugin": "^2.5.0",
-    "@typescript-eslint/parser": "^2.5.0",
+    "@types/yargs": "^17.0.24",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
     "@vercel/node": "^2.11.0",
-    "chai": "^4.2.0",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "mocha": "^6.2.2",
-    "prettier": "^1.18.2",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.4"
+    "chai": "^4.3.7",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "locutus": "^2.0.11",
-    "yargs": "^14.2.0"
+    "locutus": "^2.0.16",
+    "yargs": "^17.7.1"
   }
 }

@@ -32,7 +32,7 @@ export class Matches {
   describe = () => ({
     match: this.entity ? this.entity.describe() : undefined,
     scores: this.scores,
-    address: [this.address, ...this.matches]
+    address: [this.address, ...this.matches],
   });
 
   results() {
@@ -73,7 +73,7 @@ export default class Matcher {
   best(): Matches {
     let scoreMaxFloat = 0.0;
     let scoreMaxString = "";
-    Object.keys(this.count).forEach(score => {
+    Object.keys(this.count).forEach((score) => {
       const scoreFloat = parseFloat(score);
       if (scoreFloat > scoreMaxFloat) {
         scoreMaxFloat = scoreFloat;
@@ -112,9 +112,9 @@ export default class Matcher {
         // perform fuzzy match if: (1) name is lengthy or (2) there's a direct parent match
         // this cpu intensive processing works as a last resort to catch typos etc.
         const matchSimilarityArray = address2.match(
-          `([^a-z]| |^)(((${typePatterns.join(
-            "|"
-          )})[ .:])?([a-z '-]{1,${nameSimilarity.length + 2}}))$`
+          `([^a-z]| |^)(((${typePatterns.join("|")})[ .:])?([a-z '-]{1,${
+            nameSimilarity.length + 2
+          }}))$`
         );
         if (matchSimilarityArray) {
           const matchSimilarity = matchSimilarityArray[2].trimLeft();
@@ -245,7 +245,7 @@ export default class Matcher {
       entity.status === "Deleted" ? 0.0001 : 0.9999,
       full.length * scorePerChar,
       scoreDelta,
-      entity.parent != previous.entity ? scoreDeltaSkip * entity.level : 0
+      entity.parent != previous.entity ? scoreDeltaSkip * entity.level : 0,
     ];
 
     return _;
