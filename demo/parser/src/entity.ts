@@ -143,7 +143,7 @@ export default class Entity {
       : m[2].trim();
     if (!this.type) this.type = thisType;
     if (!this.name) this.name = thisName;
-    const name2 = deaccent(thisName.toString()).replace(spaceRegExp, " ");
+    const name2 = deaccent(thisName.toString().replace(spaceRegExp, " "));
 
     let nameInitials2: string;
     const namePatterns: string[] = [];
