@@ -9,8 +9,8 @@ function main()
     $cwd = getcwd();
     $inDir = "$cwd/downloader/osm";
     $outDir = "$cwd/data/osm";
-    $splittingFileName = 'splitting.json';
-    $splittingPath = "$inDir/$splittingFileName";
+    $workingFileName = 'working.json';
+    $workingFilePath = "$inDir/$workingFileName";
     _dieOnAnyError();
 
     $parserDir = realpath("$cwd/demo/parser");
@@ -18,12 +18,11 @@ function main()
         throw new RuntimeException("parser dir not found");
     }
 
-    $splittingWrittenOsmIds = [];
-    $splittingWrittenPaths = [];
-    if (file_exists($splittingPath)) {
-        $splitting = file_get_contents($splittingPath);
-        if ($splitting !== false) {
-            foreach (json_decode($splitting) as $key => $value) {
+    $workingWrittenPaths = [];
+    if (file_exists($workingFilePath)) {
+        $workingData = file_get_contents($workingFilePath);
+        if ($workingData !== false) {
+            foreach (json_decode($workingData, true) as $key => $value) {
                 $$key = $value;
             }
         }
@@ -34,8 +33,8 @@ function main()
     $pathCount = 0;
     foreach ($paths as $path) {
         $pathCount++;
-        if (basename($path) === $splittingFileName) continue;
-        if (in_array($path, $splittingWrittenPaths, true)) {
+        if (basename($path) === $workingFileName) continue;
+        if (isset($workingWrittenPaths[$path])) {
             fwrite(STDOUT, 'w'); // already written
             continue;
         }
@@ -57,12 +56,7 @@ function main()
 
     fwrite(STDOUT, sprintf("Paths: %d -> items: %d\n", $pathCount, count($array)));
 
-    foreach ($array as $osmId => $item) {
-        if (in_array($osmId, $splittingWrittenOsmIds, true)) {
-            fwrite(STDOUT, 'w'); // already written
-            continue;
-        }
-
+    foreach ($array as $item) {
         $fullName = getFullName($item);
         if (strpos($fullName, ',') === false) {
             fwrite(STDOUT, 'n'); // bad name
@@ -76,10 +70,8 @@ function main()
         )), true);
         $output = $response['output'];
         if (count($output) == $item['level']) {
-            writeJson($outDir, $item, $output);
+            $workingWrittenPaths[$item['path']] = writeJson($outDir, $item, $output);
             fwrite(STDOUT, '.');
-            $splittingWrittenOsmIds[] = $osmId;
-            $splittingWrittenPaths[] = $item['path'];
             continue;
         }
 
@@ -90,9 +82,9 @@ function main()
         fwrite(STDERR, sprintf("%s (level %d) -> %s\n", $fullName, $item['level'], join(', ', $outputNames)));
     }
 
-    file_put_contents($splittingPath, json_encode(compact('splittingWrittenOsmIds', 'splittingWrittenPaths')));
+    file_put_contents($workingFilePath, json_encode(compact('workingWrittenPaths')));
 
-    fwrite(STDOUT, sprintf("Written: %d / %d\n", count($splittingWrittenOsmIds), count($array)));
+    fwrite(STDOUT, sprintf("Written: %d / %d\n", count($workingWrittenPaths), count($array)));
 }
 
 function getFullName($item): string
@@ -106,7 +98,7 @@ function getFullName($item): string
     return join(', ', $names);
 }
 
-function writeJson(string $outDir, $item, $parsed)
+function writeJson(string $outDir, $item, $parsed): string
 {
     $jsonPath = $outDir;
     foreach (array_reverse($parsed) as $outputItem) {
@@ -126,6 +118,7 @@ function writeJson(string $outDir, $item, $parsed)
 
     $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     file_put_contents($jsonPath, $json);
+    return $jsonPath;
 }
 
 function _dieOnAnyError()
