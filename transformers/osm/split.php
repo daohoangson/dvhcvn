@@ -58,8 +58,8 @@ function main()
 
     foreach ($array as $item) {
         $fullName = getFullName($item);
-        if (strpos($fullName, ',') === false) {
-            fwrite(STDOUT, 'n'); // bad name
+        if ((substr_count($fullName, ',') + 1) !== $item['level']) {
+            fwrite(STDERR, sprintf("%s: bad name\n", $item['path']));
             continue;
         }
 
