@@ -1,6 +1,6 @@
-import axios from 'axios';
-import * as FormData from 'form-data';
 import * as functions from 'firebase-functions';
+import * as FormData from 'form-data';
+import fetch from 'node-fetch-commonjs';
 
 export const send = (text: string, options: { png?: Buffer } = {}) => {
   const config = functions.config() as { telegram: { token: string | undefined, chat_id: string | undefined } };
@@ -22,8 +22,6 @@ export const send = (text: string, options: { png?: Buffer } = {}) => {
     data.append('photo', options.png, { filename: 'photo.png' });
   }
 
-  const headers = { 'Content-Type': `multipart/form-data; boundary=${data.getBoundary()}` };
   const url = `https://api.telegram.org/bot${token}/${action}`;
-
-  return axios.post(url, data, { headers });
+  return fetch(url, { body: data, method: 'POST' });
 }
