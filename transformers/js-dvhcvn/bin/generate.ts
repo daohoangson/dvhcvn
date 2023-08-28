@@ -36,7 +36,7 @@ function main (args: string[]): void {
 function _getString (str: string): string {
   if (!str.includes("'")) return `'${str}'`
   if (!str.includes('"')) return `"${str}"`
-  return "'" + str.replace("'", "\\'") + "'"
+  return "'" + str.replaceAll("'", "\\'") + "'"
 }
 
 function _getType (str: string): string {
