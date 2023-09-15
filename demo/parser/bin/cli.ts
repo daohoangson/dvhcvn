@@ -1,5 +1,3 @@
-#!npx ts-node
-
 import process from "node:process";
 import readline from "node:readline";
 import minimist from "minimist";

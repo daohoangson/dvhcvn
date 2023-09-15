@@ -1,5 +1,5 @@
-import { generateVariations, normalize } from "./vietnamese";
-import { expect } from "chai";
+import { describe, expect, test } from "vitest";
+import { generateVariations, normalize } from "./vietnamese.ts";
 
 describe("normalize", () => {
   const map = {
@@ -26,9 +26,9 @@ describe("normalize", () => {
   };
 
   Object.keys(map).forEach((input) =>
-    it(input, () => {
+    test(input, () => {
       const result = normalize(input);
-      expect(result).to.equal(map[input]);
+      expect(result).toBe(map[input]);
     })
   );
 });
@@ -59,7 +59,7 @@ describe("generateVariations", () => {
 
   Object.keys(map).forEach((k) => {
     const v = map[k];
-    it(`${k} -> ${v}`, () => expect(generateVariations(k)).to.contain(v));
-    it(`${v} -> ${k}`, () => expect(generateVariations(v)).to.contain(k));
+    test(`${k} -> ${v}`, () => expect(generateVariations(k)).toContain(v));
+    test(`${v} -> ${k}`, () => expect(generateVariations(v)).toContain(k));
   });
 });
