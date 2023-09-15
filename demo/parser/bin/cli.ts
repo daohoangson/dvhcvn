@@ -1,12 +1,14 @@
 #!npx ts-node
 
-import readline from "readline";
+import process from "node:process";
+import readline from "node:readline";
 import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 
-import Parser from "../src/parser";
+import Parser from "../src/parser.ts";
 
 async function main() {
-  const argv = await yargs
+  const argv = await yargs(hideBin(process.argv))
     .help()
     .option("debug", {
       boolean: true,

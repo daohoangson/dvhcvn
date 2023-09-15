@@ -1,6 +1,6 @@
-import { similar_text as similarText } from "locutus/php/strings";
-import Entity, { getEntityById } from "./entity";
-import { deaccent, normalize } from "./vietnamese";
+import Entity, { getEntityById } from "./entity.ts";
+import { similarText } from "./locutus.ts";
+import { deaccent, normalize } from "./vietnamese.ts";
 
 const scorePerChar = 10;
 const scoreDeltaType = 9;
@@ -245,7 +245,7 @@ export default class Matcher {
     _.matches = [...matches, found];
     _.scores = [
       ...scores,
-      0.1 + similarText(full, entity.name, true) / 10000, // range 0.1000..0.1100, perfect match should should rank higher than typo
+      0.1 + similarText(full, `${entity.name}`, true) / 10000, // range 0.1000..0.1100, perfect match should should rank higher than typo
       entity.status === "Deleted" ? 0.0001 : 0.9999,
       full.length * scorePerChar,
       scoreDelta,

@@ -1,5 +1,6 @@
-import Entity from "./entity";
-import Matcher, { Matches } from "./matcher";
+import Entity, { EntityJson } from "./entity.ts";
+import Matcher, { Matches } from "./matcher.ts";
+import sorted from "../../../history/data/tree.json" assert { type: "json" };
 
 const numberRegExp = new RegExp("[0-9]{4,}", "g");
 const alternateRegExp1Parentheses = new RegExp("\\([^)]+\\)$");
@@ -24,9 +25,13 @@ export default class Parser {
   private entities: Entity[];
 
   constructor(options?: ParserOptions) {
-    // eslint-disable-next-line
-    const sorted = require("../../../history/data/tree");
-    this.entities = [new Entity("root", [["Nước Việt Nam"], sorted, ""])];
+    this.entities = [
+      new Entity("root", [
+        ["Nước Việt Nam"],
+        sorted as any as { [key: string]: EntityJson },
+        "",
+      ]),
+    ];
 
     if (options) {
       this.debug = !!options.debug;

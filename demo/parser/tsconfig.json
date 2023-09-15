@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "esModuleInterop": true,
-    "lib": ["DOM", "ES2021"]
+    "lib": ["DOM", "ES2021"],
+    "module": "ESNext",
+    "noEmit": true,
+    "resolveJsonModule": true ,
   }
 }

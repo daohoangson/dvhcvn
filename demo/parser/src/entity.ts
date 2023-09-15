@@ -1,10 +1,10 @@
-import { spaceRegExp } from "./parser";
+import { spaceRegExp } from "./parser.ts";
 import {
   deaccent,
   generateVariations,
   initials,
   normalize,
-} from "./vietnamese";
+} from "./vietnamese.ts";
 
 const entitiesById: { [id: string]: Entity[] } = {};
 
