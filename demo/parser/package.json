@@ -1,12 +1,13 @@
 {
   "name": "parser",
   "scripts": {
-    "build": "rollup --config",
+    "build:api": "rollup --config ./api/rollup.config.mjs",
+    "build:bin": "rollup --config ./bin/rollup.config.mjs",
     "deno:run": "deno run --allow-read bin/cli.ts",
-    "format": "prettier --write '**/*.{js,json,ts,tsx}'",
-    "lint": "tsc && eslint '*/**/*.{ts,tsx}' --quiet --fix",
-    "now-build": "/bin/bash ./api/now-build.sh",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+    "format": "prettier --write '**/*.{mjs,js,json,ts}'",
+    "lint": "tsc && eslint '**/*.{mjs,js,ts}' --quiet --fix",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "vercel-build": "npm run build:api"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.0",
