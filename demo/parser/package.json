@@ -3,6 +3,8 @@
   "scripts": {
     "build:api": "rollup --config ./api/rollup.config.mjs",
     "build:bin": "rollup --config ./bin/rollup.config.mjs",
+    "bun:build": "bun build --compile --outfile bin/cli bin/cli.ts",
+    "bun:run": "bun run bin/cli.ts",
     "deno:compile": "deno compile --node-modules-dir=false --output bin/cli bin/cli.ts",
     "deno:run": "deno run --node-modules-dir=false bin/cli.ts",
     "format": "prettier --write '**/*.{mjs,js,json,ts}'",
