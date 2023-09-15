@@ -1,4 +1,4 @@
-import Entity, { EntityJson } from "./entity.ts";
+import Entity, { EntityJson, spaceRegExp } from "./entity.ts";
 import Matcher, { Matches } from "./matcher.ts";
 import sorted from "../../../history/data/tree.json" assert { type: "json" };
 
@@ -6,11 +6,6 @@ const numberRegExp = new RegExp("[0-9]{4,}", "g");
 const alternateRegExp1Parentheses = new RegExp("\\([^)]+\\)$");
 const alternateRegExp2Slash = new RegExp("/[^/]+$");
 const alternateRegExp3Dash = new RegExp("-[^-]+$");
-
-// Consider all of these as a single space character:
-// - More than one continous space
-// - En-dash
-export const spaceRegExp = new RegExp("(\\s{2,}|–+)", "g");
 
 type ParserOptions = {
   debug?: boolean;

@@ -1,4 +1,3 @@
-import { spaceRegExp } from "./parser.ts";
 import {
   deaccent,
   generateVariations,
@@ -7,6 +6,11 @@ import {
 } from "./vietnamese.ts";
 
 const entitiesById: { [id: string]: Entity[] } = {};
+
+// Consider all of these as a single space character:
+// - More than one continous space
+// - En-dash
+export const spaceRegExp = new RegExp("(\\s{2,}|–+)", "g");
 
 export const getEntityById = (id: string) =>
   entitiesById[id]
