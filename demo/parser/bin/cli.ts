@@ -1,34 +1,15 @@
-#!npx ts-node
+import process from "node:process";
+import readline from "node:readline";
+import minimist from "minimist";
 
-import readline from "readline";
-import yargs from "yargs";
-
-import Parser from "../src/parser";
+import Parser from "../src/parser.ts";
 
 async function main() {
-  const argv = await yargs
-    .help()
-    .option("debug", {
-      boolean: true,
-      description: "Run with debug output",
-    })
-    .option("json", {
-      boolean: true,
-      description: "Json decode input before parsing",
-    })
-    .alias("h", "help").argv;
+  const argv = minimist(process.argv.slice(2));
+  const { debug } = argv;
+  const parser = new Parser({ debug: debug === true });
 
-  const { debug, json } = argv;
-  const parser = new Parser({ debug });
-
-  const parseInput = (input) => {
-    if (json) {
-      const decoded = JSON.parse(input);
-      if (decoded && typeof decoded.input === "string") {
-        input = decoded.input;
-      }
-    }
-
+  const parseInput = (input: string) => {
     process.stdout.write(
       JSON.stringify({ input, output: parser.parse(input) }) + "\n"
     );

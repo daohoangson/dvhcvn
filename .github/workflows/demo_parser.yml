@@ -1,0 +1,78 @@
+name: demo/parser
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  bun:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demo/parser
+
+    steps:
+      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        with:
+          submodules: recursive
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@a1800f471a0bc25cddac36bb13e6f436ddf341d7 # v1
+      - run: bun install
+
+      - run: npm run bun:build
+      - run: ./bin/cli --debug -- hanoi
+
+      - run: npm run bun:run -- --debug -- hanoi
+
+  deno:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demo/parser
+
+    steps:
+      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        with:
+          submodules: recursive
+      - name: Setup Deno
+        uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31 # v1.1.2
+
+      - run: npm run deno:compile
+      - run: ./bin/cli --debug -- hanoi
+
+      - run: npm run deno:run -- --debug -- hanoi
+
+  node:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demo/parser
+
+    strategy:
+      matrix:
+        node-version:
+          # TODO: re-enable v16, v18 when OOM is fixed
+          # - 16.x
+          # - 18.x
+          - 20.x
+
+    steps:
+      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        with:
+          submodules: recursive
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          cache: npm
+          cache-dependency-path: ./demo/parser/package-lock.json
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+
+      - run: npm run build:bin
+      - run: node bin/cli.js --debug -- hanoi
