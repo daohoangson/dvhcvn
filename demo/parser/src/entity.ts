@@ -10,7 +10,10 @@ const entitiesById: { [id: string]: Entity[] } = {};
 
 export const getEntityById = (id: string) =>
   entitiesById[id]
-    ? entitiesById[id].reduce((p, e) => (p ? p : e.status ? p : e), null)
+    ? entitiesById[id].reduce<Entity | null>(
+        (p, e) => (p ? p : e.status ? p : e),
+        null
+      )
     : null;
 
 const nameNumericRegExp = new RegExp("^[0-9]+$");
@@ -37,26 +40,26 @@ const typeRegExp = new RegExp(
   "i"
 );
 
-type EntityJson = [string[], { [key: string]: EntityJson }, string];
+export type EntityJson = [string[], { [key: string]: EntityJson }, string];
 
 export default class Entity {
   id: string;
   level: number;
-  name: string | number;
-  parent: Entity;
+  name: string | number | undefined;
+  parent: Entity | null;
   status: "Deleted" | "Moved" | undefined;
-  type: string;
+  type: string | undefined;
 
-  private fullNames: string[];
-  private initials: string[];
-  private names: string[];
-  private names2: string[];
-  private regExp: RegExp;
-  private typePatterns: string[];
+  private fullNames: string[] = [];
+  private initials: string[] = [];
+  private names: string[] = [];
+  private names2: string[] = [];
+  private regExp: RegExp | undefined;
+  private typePatterns: string[] = [];
 
   private _children: Entity[];
 
-  constructor(id: string, json: EntityJson, parent: Entity = null) {
+  constructor(id: string, json: EntityJson, parent: Entity | null = null) {
     this.id = id;
     this.level = parent ? parent.level + 1 : 0;
     this.parent = parent;
@@ -66,7 +69,7 @@ export default class Entity {
 
     this._children = children
       ? Object.entries(children).map(([i, j]) => new Entity(i, j, this))
-      : null;
+      : [];
 
     switch (status) {
       case "Deleted":
@@ -79,24 +82,24 @@ export default class Entity {
   }
 
   children() {
-    return this._children || [];
+    return this._children;
   }
 
   describe() {
-    const { id, name, parent } = this;
-    if (!name) this.prepare();
+    const { id, parent } = this;
+    if (!this.name) this.prepare();
 
-    const parentStr =
-      parent && parent.id !== "root" ? ` ${parent.describe()}` : "";
-    return `#${id} ${name}${parentStr}`;
+    const parentStr: string =
+      parent !== null && parent.id !== "root" ? ` ${parent.describe()}` : "";
+    return `#${id} ${this.name}${parentStr}`;
   }
 
   hasChildren() {
-    return this._children && this._children.length > 0;
+    return this._children.length > 0;
   }
 
   prepare() {
-    if (this.regExp)
+    if (this.regExp) {
       return {
         initials: this.initials,
         names: this.names,
@@ -104,6 +107,7 @@ export default class Entity {
         regExp: this.regExp,
         typePatterns: this.typePatterns,
       };
+    }
 
     this.initials = [];
     this.names = [];
@@ -111,7 +115,7 @@ export default class Entity {
     this.typePatterns = [];
     const patterns = this.fullNames
       .reverse()
-      .reduce((p, n) => [...p, ...this.p(n)], []);
+      .reduce<string[]>((p, n) => [...p, ...this.p(n)], []);
     if (patterns.length === 0) {
       console.error("Cannot prepare Entity", this);
       return {};

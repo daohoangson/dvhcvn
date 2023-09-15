@@ -21,7 +21,7 @@ async function main() {
   const { debug, json } = argv;
   const parser = new Parser({ debug });
 
-  const parseInput = (input) => {
+  const parseInput = (input: string) => {
     if (json) {
       const decoded = JSON.parse(input);
       if (decoded && typeof decoded.input === "string") {

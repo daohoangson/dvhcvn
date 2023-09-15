@@ -21,7 +21,7 @@ function substrByDeaccentLength(str: string, length: number) {
 
 export class Matches {
   address: string;
-  entity: Entity = null;
+  entity: Entity | null = null;
   matches: string[][] = [];
   scores: number[] = [];
 
@@ -30,7 +30,7 @@ export class Matches {
   }
 
   describe = () => ({
-    match: this.entity ? this.entity.describe() : undefined,
+    match: this.entity?.describe(),
     scores: this.scores,
     address: [this.address, ...this.matches],
   });
@@ -59,8 +59,8 @@ export default class Matcher {
 
   address: string;
   private address2: string;
-  private count: { [score: number]: number } = {};
-  private histories: { [score: number]: Matches } = {};
+  private count: { [score: string]: number } = {};
+  private histories: { [score: string]: Matches } = {};
   private previous: Matches;
 
   constructor(address: string, matches: Matches) {
@@ -70,7 +70,7 @@ export default class Matcher {
     this.previous = matches;
   }
 
-  best(): Matches {
+  best(): Matches | null {
     let scoreMaxFloat = 0.0;
     let scoreMaxString = "";
     Object.keys(this.count).forEach((score) => {
@@ -143,38 +143,41 @@ export default class Matcher {
 
     const matchNormalized = normalize(match);
     const nameFound = names.reduce((prev, n) => {
-      if (prev && prev.length > n.length) return prev;
+      if (prev.length > n.length) return prev;
       if (matchNormalized.indexOf(n) > -1) return n;
       return prev;
-    }, null);
-    if (nameFound)
+    }, "");
+    if (nameFound.length > 0) {
       return this.done(
         entity,
         [match, nameFound],
         this.calculateScoreDeltaType(typePatterns, match2)
       );
+    }
 
     const name2Found = names2.reduce((prev, n) => {
-      if (prev && prev.length > n.length) return prev;
+      if (prev.length > n.length) return prev;
       if (match2.indexOf(n) > -1) return n;
       return prev;
-    }, null);
-    if (name2Found)
+    }, "");
+    if (name2Found.length > 0) {
       return this.done(
         entity,
         [match2, name2Found],
         scoreDeltaName2 + this.calculateScoreDeltaType(typePatterns, match2)
       );
+    }
 
     const acceptInitials = entity.level === 1 || pe; // first level only, or has previous match
     if (acceptInitials) {
-      const initialsFound = initials.reduce((prev, i) => {
-        if (prev && prev.length > i.length) return prev;
-        if (match.indexOf(i) > -1) return i;
+      const initialsFound = initials.reduce((prev, initial) => {
+        if (prev.length > initial.length) return prev;
+        if (match.indexOf(initial) > -1) return initial;
         return prev;
-      }, null);
-      if (initialsFound)
+      }, "");
+      if (initialsFound.length > 0) {
         return this.done(entity, [match, initialsFound], scoreDeltaInitials);
+      }
     }
 
     return null;
@@ -189,6 +192,7 @@ export default class Matcher {
         ? this.histories[score].entity
         : null;
       if (
+        thisLast &&
         otherLast &&
         normalize(`${thisLast.name}`) === normalize(`${otherLast.name}`) &&
         thisLast.parent === otherLast.parent

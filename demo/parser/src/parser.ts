@@ -122,7 +122,7 @@ export default class Parser {
     const parent = matches.entity ? matches.entity : null;
     const level = parent ? parent.level : -1;
 
-    let before = matches;
+    let before: Matches | null = matches;
     entities.forEach((e) => {
       // do not skip too far from the last parent
       if (e.level > level + 2) return;
@@ -131,8 +131,9 @@ export default class Parser {
       this.resolve(matcher, e.children(), matches, opts);
 
       const b = matcher.best();
-      if (b !== before)
+      if (b !== before) {
         this.log("skipOneLevel[%d->%d]: best@loop", opts.fromId, id, e, b);
+      }
       before = b;
     });
 
