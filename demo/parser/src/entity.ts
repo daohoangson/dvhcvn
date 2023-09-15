@@ -10,10 +10,13 @@ const entitiesById: { [id: string]: Entity[] } = {};
 
 export const getEntityById = (id: string) =>
   entitiesById[id]
-    ? entitiesById[id].reduce<Entity | null>(
-        (p, e) => (p ? p : e.status ? p : e),
-        null
-      )
+    ? entitiesById[id].reduce<Entity | null>((prev, entity) => {
+        if (prev) {
+          return prev;
+        } else {
+          return entity.status ? prev : entity;
+        }
+      }, null)
     : null;
 
 const nameNumericRegExp = new RegExp("^[0-9]+$");

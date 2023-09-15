@@ -548,7 +548,6 @@ describe("Parser", () => {
 
     Object.keys(map).forEach((input) =>
       it(input, function () {
-        this.timeout(10000);
         const expected = map[input];
         let parse = parseForFullNames;
 
