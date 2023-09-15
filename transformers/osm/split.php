@@ -71,6 +71,7 @@ function main()
         $output = $response['output'];
         if (count($output) == $item['level']) {
             $workingWrittenPaths[$item['path']] = writeJson($outDir, $item, $output);
+            file_put_contents($workingFilePath, json_encode(compact('workingWrittenPaths')));
             fwrite(STDOUT, '.');
             continue;
         }
@@ -82,15 +83,19 @@ function main()
         fwrite(STDERR, sprintf("%s (level %d) -> %s\n", $fullName, $item['level'], join(', ', $outputNames)));
     }
 
-    file_put_contents($workingFilePath, json_encode(compact('workingWrittenPaths')));
-
     fwrite(STDOUT, sprintf("Written: %d / %d\n", count($workingWrittenPaths), count($array)));
 }
 
 function getFullName($item): string
 {
     global $array;
-    $names = [$item["tags"]["name"]];
+    
+    $names = [];
+    $tags = $item["tags"];
+    if (isset($tags["name"])) {
+        $names[] = $tags["name"];
+    }
+
     if (!empty($item['parent']) && !empty($array[$item['parent']])) {
         $parent = $array[$item['parent']];
         $names[] = getFullName($parent);

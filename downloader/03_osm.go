@@ -17,6 +17,7 @@ import (
 func main() {
 	url := "https://download.geofabrik.de/asia/vietnam-latest.osm.pbf"
 	fmt.Printf("Downloading %s...\n", url)
+	// this will take some time, there are about 40m points, 4m ways and a few thoudsand relations
 	httpResponse, _ := http.Get(url)
 	_ = pbf.Scan(httpResponse.Body)
 
