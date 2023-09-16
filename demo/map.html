@@ -71,11 +71,11 @@
             });
           });
         };
-        select2.onchange = _ =>
-          (window.location =
-            `/demo/map.html` +
-            `?level1_id=${select1.value}` +
-            `&level2_id=${select2.value}`);
+        select2.onchange = _ => {
+          const level1Id = `${select1.value}`.replace(/[^0-9]/g, '')
+          const level2Id = `${select2.value}`.replace(/[^0-9]/g, '')
+          window.location = `/demo/map.html?level1_id=${level1Id}&level2_id=${level2Id}`;
+        };
 
         updateSelect2(initialLevel2Id);
       };

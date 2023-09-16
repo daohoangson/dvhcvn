@@ -1,5 +1,5 @@
-import axios from 'axios';
 import * as functions from 'firebase-functions';
+import fetch from 'node-fetch-commonjs';
 import { launch } from 'puppeteer';
 
 import { send } from './telegram';
@@ -31,9 +31,10 @@ const getDateFromSource = async () => {
   return { date, error, png };
 }
 
-const getDateFromRepo = async () => {
-  const response = await axios('https://raw.githubusercontent.com/daohoangson/dvhcvn/master/data/date.txt');
-  const date = (response.data as string).trim();
+export const getDateFromRepo = async () => {
+  const response = await fetch('https://raw.githubusercontent.com/daohoangson/dvhcvn/master/data/date.txt');
+  const text = await response.text();
+  const date = text.trim();
   return { date, error: undefined };
 }
 

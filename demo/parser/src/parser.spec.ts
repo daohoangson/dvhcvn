@@ -1,5 +1,5 @@
-import Parser from "./parser";
-import { expect } from "chai";
+import { describe, expect, test } from "vitest";
+import Parser from "./parser.ts";
 
 describe("Parser", () => {
   describe("parse", () => {
@@ -546,19 +546,18 @@ describe("Parser", () => {
       "Huyện Mỏ Cày Bắc, Tỉnh Bến Tre": ["838", "83"],
     };
 
-    Object.keys(map).forEach((input) =>
-      it(input, function () {
-        const expected = map[input];
+    Object.keys(map).forEach((input) => {
+      const expected = map[input];
+      const testOrSkip = expected[0] === "TODO" ? test.skip : test;
+      testOrSkip(input, function () {
         let parse = parseForFullNames;
-
         if (expected.length > 0) {
-          if (expected[0] === "TODO") return this.skip();
           if (expected[0].match(/^[0-9]+$/)) parse = parseForIds;
         }
 
         const actual = parse(input);
-        expect(actual).to.deep.equal(expected);
-      })
-    );
+        expect(actual).toStrictEqual(expected);
+      });
+    });
   });
 });

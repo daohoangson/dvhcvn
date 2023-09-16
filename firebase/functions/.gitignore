@@ -1,3 +1,6 @@
+# npm run shell:config
+.runtimeconfig.json
+
 ## Compiled JavaScript files
 **/*.js
 **/*.js.map
