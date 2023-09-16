@@ -13,8 +13,8 @@ function main()
     $workingFilePath = "$inDir/$workingFileName";
     _dieOnAnyError();
 
-    $parserDir = realpath("$cwd/demo/parser");
-    if ($parserDir === false) {
+    $parserCliPath = realpath("$cwd/demo/parser/bin/cli");
+    if ($parserCliPath === false) {
         throw new RuntimeException("parser dir not found");
     }
 
@@ -64,8 +64,8 @@ function main()
         }
 
         $response = json_decode(exec(sprintf(
-            'cd %s && node bin/cli.js %s',
-            escapeshellarg($parserDir),
+            '%s %s',
+            $parserCliPath,
             escapeshellarg($fullName)
         )), true);
         $output = $response['output'];
