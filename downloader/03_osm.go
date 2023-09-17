@@ -150,11 +150,14 @@ func (s *pbfScanner) Scan(r io.Reader) error {
 }
 
 func (s *pbfScanner) appendRelationIfTypeBoundaryAdministrative(relation *osm.Relation) {
-	if getTagValue(relation.Tags, "type") == "boundary" &&
-		getTagValue(relation.Tags, "boundary") == "administrative" {
-		for _, member := range relation.Members {
+	for _, member := range relation.Members {
+		if member.Type == osm.TypeRelation {
 			s.parentIds[member.Ref] = relation.ID
 		}
+	}
+
+	if getTagValue(relation.Tags, "type") == "boundary" &&
+		getTagValue(relation.Tags, "boundary") == "administrative" {
 		s.relations[relation.ID] = relation
 	}
 }
