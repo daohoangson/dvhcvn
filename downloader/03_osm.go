@@ -77,6 +77,19 @@ func getTagValue(tags osm.Tags, key string) string {
 	return tag.Value
 }
 
+func pointsApproxEquals(a orb.Point, b orb.Point) bool {
+	// we have two data sources: pbf file and live API
+	// because of floating point inconsistency, strict equality may fail unexpectedly
+	const epsilon = .00000001
+	if math.Abs(a.Lat()-b.Lat()) > epsilon {
+		return false
+	}
+	if math.Abs(a.Lon()-b.Lon()) > epsilon {
+		return false
+	}
+	return true
+}
+
 func writeRelation(dir string, relation *osm.Relation) error {
 	coordinates, buildError := buildRelationCoordinates(relation)
 	if buildError != nil {
@@ -195,10 +208,10 @@ func (b *multiPolygonBuilder) loop(lines []orb.LineString, wayIds []osm.WayID) (
 					b.success(lineId)
 				} else {
 					ringLast := ring[len(ring)-1]
-					if line[0].Equal(ringLast) {
+					if pointsApproxEquals(line[0], ringLast) {
 						ring = append(ring, line...) // good ordering, just append the ids
 						b.success(lineId)
-					} else if line[len(line)-1].Equal(ringLast) {
+					} else if pointsApproxEquals(line[len(line)-1], ringLast) {
 						for j := len(line) - 1; j >= 0; j-- {
 							ring = append(ring, line[j]) // out of order, reverse before appending...
 						}
@@ -212,7 +225,7 @@ func (b *multiPolygonBuilder) loop(lines []orb.LineString, wayIds []osm.WayID) (
 			return nil, fmt.Errorf("dead loop detected wayIds=%v position=%v", wayIds, b.position)
 		}
 
-		if ring[0].Equal(ring[len(ring)-1]) {
+		if pointsApproxEquals(ring[0], ring[len(ring)-1]) {
 			output = append(output, orb.Polygon{ring}) // ring is closed, that's great!
 			ring = nil
 		}
