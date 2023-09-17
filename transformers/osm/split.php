@@ -65,7 +65,7 @@ function main()
 
         $fullName = getFullName($item);
         if ((substr_count($fullName, ',') + 1) !== $item['level']) {
-            fwrite(STDERR, sprintf("%s: bad name\n", $item['path']));
+            fwrite(STDERR, sprintf("%s: bad name %s\n", $item['path'], $fullName));
             continue;
         }
 
@@ -88,7 +88,7 @@ function main()
         foreach ($output as $outputItem) {
             $outputNames[] = $outputItem['name'];
         }
-        fwrite(STDERR, sprintf("%s (level %d) -> %s\n", $fullName, $item['level'], join(', ', $outputNames)));
+        fwrite(STDERR, sprintf("%s: bad parse input=%s output=%s\n", $item['path'], $fullName, join(', ', $outputNames)));
     }
 
     statisticsPrint();
@@ -100,8 +100,21 @@ function getFullName($item): string
 
     $names = [];
     $tags = $item["tags"];
-    if (isset($tags["name"])) {
-        $names[] = $tags["name"];
+
+    $nameKeys = ['short_name', 'name:vi', 'name', 'name:en'];
+    foreach ($nameKeys as $nameKey) {
+        if (isset($tags[$nameKey])) {
+            $names[] = $tags[$nameKey];
+            break;
+        }
+    }
+    if (empty($names)) {
+        foreach ($tags as $tagKey => $tagValue) {
+            if (substr($tagKey, 0, 5) === 'name:') {
+                $names[] = $tagValue;
+                break;
+            }
+        }
     }
 
     if (!empty($item['parent']) && !empty($array[$item['parent']])) {
@@ -236,7 +249,7 @@ function writeJson(string $outDir, $item, $parsed): string
     $data = array_intersect_key($item, ['bbox' => true, 'coordinates' => true, 'type' => true]);
     $data['osm_id'] = $item['id'];
     $data[sprintf("level%d_id", count($parsed))] = $parsed[0]["id"];
-    $data['name'] = $item['tags']['name'];
+    $data['name'] = $parsed[0]['name'];
 
     $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     file_put_contents($jsonPath, $json);
