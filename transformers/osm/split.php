@@ -32,16 +32,12 @@ function main()
     }
 
     // get all json files in this directory and sub
-    $paths = glob("$inDir/{*,*/*,*/*/*}.json", GLOB_BRACE);
     $pathCount = 0;
-    foreach ($paths as $path) {
+    foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator(realpath($inDir))) as $fileInfo) {
         $pathCount++;
+        $path = $fileInfo->getPathName();
+        if (substr($path, -5) !== '.json') continue;
         if (basename($path) === $workingFileName) continue;
-        if (isset($workingWrittenPaths[$path])) {
-            statisticsTrack($outDir, $workingWrittenPaths[$path]);
-            fwrite(STDOUT, 'w'); // already written
-            continue;
-        }
 
         $item = json_decode(file_get_contents($path), true);
         $item['path'] = $path;
@@ -61,6 +57,12 @@ function main()
     fwrite(STDOUT, sprintf("Paths: %d -> items: %d\n", $pathCount, count($array)));
 
     foreach ($array as $item) {
+        if (isset($workingWrittenPaths[$item['path']])) {
+            statisticsTrack($outDir, $workingWrittenPaths[$item['path']]);
+            fwrite(STDOUT, 'w'); // already written
+            continue;
+        }
+
         $fullName = getFullName($item);
         if ((substr_count($fullName, ',') + 1) !== $item['level']) {
             fwrite(STDERR, sprintf("%s: bad name\n", $item['path']));

@@ -6,12 +6,16 @@ import (
 	"fmt"
 	"github.com/paulmach/orb"
 	"github.com/paulmach/osm"
+	"github.com/paulmach/osm/osmapi"
 	"github.com/paulmach/osm/osmpbf"
 	"io"
+	"math"
 	"net/http"
 	"os"
 	"path"
 	"runtime"
+	"slices"
+	"strconv"
 )
 
 func main() {
@@ -38,35 +42,99 @@ func main() {
 	}
 }
 
-func buildRelationCoordinates(relation *osm.Relation) (*orb.MultiPolygon, error) {
+func buildRelationCoordinates(relation *osm.Relation, shouldUseApi bool) (*orb.MultiPolygon, error) {
 	var lines []orb.LineString
 	var wayIds []osm.WayID
 	for _, member := range relation.Members {
 		if member.Type == osm.TypeWay && member.Role == "outer" {
-			if way, ok := pbf.ways[osm.WayID(member.Ref)]; ok {
+			wayId := osm.WayID(member.Ref)
+			if way, ok := pbf.ways[wayId]; ok {
 				line := make(orb.LineString, len(way.Nodes))
 				for i, wayNode := range way.Nodes {
 					if wayNodePoint, ok := pbf.points[wayNode.ID]; ok {
 						line[i] = wayNodePoint
 					} else {
-						return nil, fmt.Errorf("way.id=%d: nodePoints[%d] does not exist", way.ID, wayNode.ID)
+						// if the way exists in the data dump, its nodes must be
+						panic(fmt.Errorf("relation.id=%d: way.id=%d points[%d] does not exist", relation.ID, way.ID, wayNode.ID))
 					}
 				}
 				lines = append(lines, line)
 				wayIds = append(wayIds, way.ID)
+			} else {
+				if !shouldUseApi {
+					return nil, fmt.Errorf("relation.id=%d: ways[%d] does not exist", relation.ID, wayId)
+				}
+
+				line, apiError := buildRelationCoordinatesByWayId(relation, wayId)
+				if apiError != nil {
+					return nil, fmt.Errorf("relation.id=%d: way.id=%d %w", relation.ID, wayId, apiError)
+				}
+				lines = append(lines, *line)
+				wayIds = append(wayIds, wayId)
 			}
 		}
 	}
 	return (&multiPolygonBuilder{}).loop(lines, wayIds)
 }
 
-func getParentsAndSelf(relation *osm.Relation) (result []*osm.Relation) {
-	if parentId, ok := pbf.parentIds[int64(relation.ID)]; ok {
-		if parent, ok := pbf.relations[parentId]; ok {
-			result = append(result, getParentsAndSelf(parent)...)
+func buildRelationCoordinatesByWayId(relation *osm.Relation, wayId osm.WayID) (*orb.LineString, error) {
+	ctx := context.Background()
+	fmt.Printf("Downloading way#%d for relation#%d...\n", wayId, relation.ID)
+	way, wayError := osmapi.Way(ctx, wayId)
+	if wayError != nil {
+		return nil, fmt.Errorf("osmapi.Way(%d): %w", wayId, wayError)
+	}
+
+	nodeIds := make([]osm.NodeID, len(way.Nodes))
+	for i, wayNode := range way.Nodes {
+		nodeIds[i] = wayNode.ID
+	}
+	line := make(orb.LineString, len(nodeIds))
+	lineError := buildRelationCoordinatesByNodeIds(ctx, line, nodeIds, 0)
+	if lineError != nil {
+		return nil, lineError
+	}
+	return &line, nil
+}
+
+func buildRelationCoordinatesByNodeIds(ctx context.Context, line orb.LineString, nodeIds []osm.NodeID, offset int) error {
+	// maximum URI length is about 2k, node ids are 10 characters in average
+	// that means we can fit about 200 ids per request, let's buffer a bit to be safe
+	const maxNodeIds = 150
+	if len(nodeIds) > maxNodeIds {
+		firstError := buildRelationCoordinatesByNodeIds(ctx, line, nodeIds[:maxNodeIds], offset)
+		if firstError != nil {
+			return firstError
+		}
+		secondError := buildRelationCoordinatesByNodeIds(ctx, line, nodeIds[maxNodeIds:], offset+maxNodeIds)
+		if secondError != nil {
+			return secondError
+		}
+		return nil
+	}
+
+	nodes, nodesError := osmapi.Nodes(ctx, nodeIds)
+	if nodesError != nil {
+		return fmt.Errorf("osmapi.Nodes(%v): %w", nodeIds, nodesError)
+	}
+
+	for i, nodeId := range nodeIds {
+		// loop twice because the API doesn't return nodes in the requested order
+		for _, node := range nodes {
+			if node.ID == nodeId {
+				line[offset+i] = node.Point()
+			}
 		}
 	}
-	return append(result, relation)
+
+	return nil
+}
+
+func getParentsAndSelf(relationId osm.RelationID) (result []string) {
+	if parentId, ok := pbf.parentIds[int64(relationId)]; ok {
+		result = append(result, getParentsAndSelf(parentId)...)
+	}
+	return append(result, strconv.FormatInt(int64(relationId), 10))
 }
 
 func getTagValue(tags osm.Tags, key string) string {
@@ -91,9 +159,26 @@ func pointsApproxEquals(a orb.Point, b orb.Point) bool {
 }
 
 func writeRelation(dir string, relation *osm.Relation) error {
-	coordinates, buildError := buildRelationCoordinates(relation)
+	ids := getParentsAndSelf(relation.ID)
+	outputPath := fmt.Sprintf("%s.json", path.Join(dir, path.Join(ids...)))
+	_, statError := os.Stat(outputPath)
+	if statError == nil {
+		// file already exists
+		return nil
+	}
+
+	vietnamId := "49915"
+	isPartOfVietnam := slices.Index(ids, vietnamId) > -1
+	isVietnam := ids[len(ids)-1] == vietnamId
+	shouldUseApi := isPartOfVietnam && !isVietnam // do not fetch the country's coordinates, it's huge
+	coordinates, buildError := buildRelationCoordinates(relation, shouldUseApi)
 	if buildError != nil {
 		return buildError
+	}
+
+	var parent string
+	if len(ids) > 2 {
+		parent = ids[len(ids)-2]
 	}
 
 	bbox := coordinates.Bound()
@@ -101,19 +186,11 @@ func writeRelation(dir string, relation *osm.Relation) error {
 		"bbox":        []float64{bbox.Left(), bbox.Bottom(), bbox.Right(), bbox.Top()},
 		"coordinates": coordinates,
 		"id":          relation.ID,
-		"parent":      "",
+		"parent":      parent,
 		"tags":        relation.Tags,
 		"type":        coordinates.GeoJSONType(),
 	}
 
-	outputPath := dir
-	for _, r := range getParentsAndSelf(relation) {
-		outputPath = path.Join(outputPath, fmt.Sprintf("%d", r.ID))
-		if r.ID != relation.ID {
-			output["parent"] = r.ID
-		}
-	}
-	outputPath = fmt.Sprintf("%s.json", outputPath)
 	_ = os.MkdirAll(path.Dir(outputPath), 0755)
 
 	outputBytes, _ := json.Marshal(output)
