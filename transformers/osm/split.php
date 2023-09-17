@@ -5,6 +5,10 @@ declare(strict_types=1);
 $array = [];
 $statistics = [];
 
+const KEY_STATISTICS_LEVEL2S = 'level2s';
+const KEY_STATISTICS_LEVEL3S = 'level3s';
+const KEY_STATISTICS_RELATION_ID = 'relationId';
+
 function main()
 {
     global $array;
@@ -58,7 +62,7 @@ function main()
 
     foreach ($array as $item) {
         if (isset($workingWrittenPaths[$item['path']])) {
-            statisticsTrack($outDir, $workingWrittenPaths[$item['path']]);
+            statisticsTrack($outDir, $item['path'], $workingWrittenPaths[$item['path']]);
             fwrite(STDOUT, 'w'); // already written
             continue;
         }
@@ -78,7 +82,7 @@ function main()
         if (count($output) == $item['level']) {
             $jsonFullPath = writeJson($outDir, $item, $output);
             $workingWrittenPaths[$item['path']] = $jsonFullPath;
-            statisticsTrack($outDir, $jsonFullPath);
+            statisticsTrack($outDir, $path, $jsonFullPath);
             file_put_contents($workingFilePath, json_encode(compact('workingWrittenPaths')));
             fwrite(STDOUT, '.');
             continue;
@@ -91,7 +95,7 @@ function main()
         fwrite(STDERR, sprintf("%s: bad parse input=%s output=%s\n", $item['path'], $fullName, join(', ', $outputNames)));
     }
 
-    statisticsPrint();
+    statisticsPrint($outDir);
 }
 
 function getFullName($item): string
@@ -124,12 +128,23 @@ function getFullName($item): string
     return join(', ', $names);
 }
 
-function statisticsPrint()
+function statisticsCsvNormalize($str): string
+{
+    return trim(str_replace(',', '', $str));
+}
+
+function statisticsCsvResult($relationId): string
+{
+    return strlen($relationId) > 0 ? 'Success' : 'Failure';
+}
+
+function statisticsPrint(string $outDir)
 {
     global $statistics;
 
-    $countsByLevel1Id = [];
     $countGlobal = ['expected' => 0, 'actual' => 0, 'level1' => 0, 'level2' => 0, 'level3' => 0];
+    $countsByLevel1Id = [];
+    $reports = [];
     $cwd = getcwd();
     $dvhcvn = json_decode(file_get_contents("$cwd/data/dvhcvn.json"), true);
     foreach ($dvhcvn['data'] as $level1) {
@@ -146,40 +161,69 @@ function statisticsPrint()
         ];
 
         $level1Statistics = $statistics[$level1Id] ?? [];
-        if (!empty($level1Statistics['parsed'])) {
+        $level1RelationId = $level1Statistics[KEY_STATISTICS_RELATION_ID] ?? '';
+        if (strlen($level1RelationId) > 0) {
             $countGlobal['actual']++;
             $countGlobal['level1']++;
             $countsByLevel1Id[$level1Id]['actual']++;
             $countsByLevel1Id[$level1Id]['level1']++;
         }
+        $reports[] = sprintf(
+            '%s-000-00000,%s,,,%s,%s',
+            statisticsCsvNormalize($level1['level1_id']),
+            statisticsCsvNormalize($level1['name']),
+            statisticsCsvNormalize($level1RelationId),
+            statisticsCsvResult($level1RelationId)
+        );
 
-        if (!empty($level1['level2s'])) {
-            foreach ($level1['level2s'] as $level2) {
-                $level2Id = $level2['level2_id'];
+        if (!isset($level1['level2s'])) {
+            continue;
+        }
+        foreach ($level1['level2s'] as $level2) {
+            $level2Id = $level2['level2_id'];
+            $countGlobal['expected']++;
+            $countsByLevel1Id[$level1Id]['expected']++;
+            $level2Statistics = $level1Statistics[KEY_STATISTICS_LEVEL2S][$level2Id] ?? [];
+            $level2RelationId = $level2Statistics[KEY_STATISTICS_RELATION_ID] ?? '';
+            if (strlen($level2RelationId) > 0) {
+                $countGlobal['actual']++;
+                $countGlobal['level2']++;
+                $countsByLevel1Id[$level1Id]['actual']++;
+                $countsByLevel1Id[$level1Id]['level2']++;
+            }
+            $reports[] = sprintf(
+                '%s-%s-00000,,%s,,%s,%s',
+                statisticsCsvNormalize($level1['level1_id']),
+                statisticsCsvNormalize($level2['level2_id']),
+                statisticsCsvNormalize($level2['name']),
+                statisticsCsvNormalize($level2RelationId),
+                statisticsCsvResult($level2RelationId)
+            );
+
+            if (!isset($level2['level3s'])) {
+                continue;
+            }
+            foreach ($level2['level3s'] as $level3) {
+                $level3Id = $level3['level3_id'];
                 $countGlobal['expected']++;
                 $countsByLevel1Id[$level1Id]['expected']++;
-                $level2Statistics = !empty($level1Statistics['level2s'][$level2Id]) ? $level1Statistics['level2s'][$level2Id] : [];
-                if (!empty($level2Statistics['parsed'])) {
+                $level3Statistics = $level2Statistics[KEY_STATISTICS_LEVEL3S][$level3Id] ?? [];
+                $level3RelationId = $level3Statistics[KEY_STATISTICS_RELATION_ID] ?? '';
+                if (strlen($level3RelationId) > 0) {
                     $countGlobal['actual']++;
-                    $countGlobal['level2']++;
+                    $countGlobal['level3']++;
                     $countsByLevel1Id[$level1Id]['actual']++;
-                    $countsByLevel1Id[$level1Id]['level2']++;
+                    $countsByLevel1Id[$level1Id]['level3']++;
                 }
-
-                if (!empty($level2['level3s'])) {
-                    foreach ($level2['level3s'] as $level3) {
-                        $level3Id = $level3['level3_id'];
-                        $countGlobal['expected']++;
-                        $countsByLevel1Id[$level1Id]['expected']++;
-                        $level3Statistics = !empty($level2Statistics['level3s'][$level3Id]) ? $level2Statistics['level3s'][$level3Id] : [];
-                        if (!empty($level3Statistics['parsed'])) {
-                            $countGlobal['actual']++;
-                            $countGlobal['level3']++;
-                            $countsByLevel1Id[$level1Id]['actual']++;
-                            $countsByLevel1Id[$level1Id]['level3']++;
-                        }
-                    }
-                }
+                $reports[] = sprintf(
+                    '%s-%s-%s,,,%s,%s,%s',
+                    statisticsCsvNormalize($level1['level1_id']),
+                    statisticsCsvNormalize($level2['level2_id']),
+                    statisticsCsvNormalize($level3['level3_id']),
+                    statisticsCsvNormalize($level3['name']),
+                    statisticsCsvNormalize($level3RelationId),
+                    statisticsCsvResult($level3RelationId)
+                );
             }
         }
     }
@@ -198,37 +242,46 @@ function statisticsPrint()
         fwrite(STDOUT, sprintf("%s: %d+%d+%d of %d = %.2f%%\n", $count['name'], $count['level1'], $count['level2'], $count['level3'], $count['expected'], $count['percentage'] * 100));
     }
     fwrite(STDOUT, sprintf("Việt Nam: %d+%d+%d of %d = %.2f%%\n", $countGlobal['level1'], $countGlobal['level2'], $countGlobal['level3'], $countGlobal['expected'], $countGlobal['actual'] / $countGlobal['expected'] * 100));
+
+    file_put_contents("$outDir.csv", join("\n", $reports));
 }
 
-function statisticsTrack(string $outDir, string $jsonFullPath)
+function statisticsTrack(string $outDir, $osmFullPath, string $jsonFullPath)
 {
     global $statistics;
 
+    $osmBaseName = basename($osmFullPath);
+    if (!preg_match('/^(\d+)\.json$/', $osmBaseName, $relationIdMatches)) {
+        fwrite(STDERR, sprintf("Unexpected OSM path: %s\n", $osmFullPath));
+        return;
+    }
+    $relationId = $relationIdMatches[1];
+
     $jsonRelativePath = substr($jsonFullPath, strlen($outDir));
-    if (!preg_match('/^\/([\d\/]+)\.json$/', $jsonRelativePath, $matches)) {
+    if (!preg_match('/^\/([\d\/]+)\.json$/', $jsonRelativePath, $idMatches)) {
         fwrite(STDERR, sprintf("Unexpected json path: %s\n", $jsonFullPath));
         return;
     }
-    $ids = explode('/', $matches[1]);
+    $ids = explode('/', $idMatches[1]);
     $level1Id = '';
     $level2Id = '';
 
     if (count($ids) > 0) {
         $level1Id = $ids[0];
         if (count($ids) == 1) {
-            $statistics[$level1Id]['parsed'] = true;
+            $statistics[$level1Id][KEY_STATISTICS_RELATION_ID] = $relationId;
         }
     }
     if (count($ids) > 1) {
         $level2Id = $ids[1];
         if (count($ids) == 2) {
-            $statistics[$level1Id]['level2s'][$level2Id]['parsed'] = true;
+            $statistics[$level1Id][KEY_STATISTICS_LEVEL2S][$level2Id][KEY_STATISTICS_RELATION_ID] = $relationId;
         }
     }
     if (count($ids) > 2) {
         $level3Id = $ids[2];
         if (count($ids) == 3) {
-            $statistics[$level1Id]['level2s'][$level2Id]['level3s'][$level3Id]['parsed'] = true;
+            $statistics[$level1Id][KEY_STATISTICS_LEVEL2S][$level2Id][KEY_STATISTICS_LEVEL3S][$level3Id][KEY_STATISTICS_RELATION_ID] = $relationId;
         }
     }
 }
