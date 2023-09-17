@@ -7,7 +7,7 @@ $statistics = [];
 
 function main()
 {
-    global $array, $statistics;
+    global $array;
 
     $cwd = getcwd();
     $inDir = "$cwd/downloader/osm";
@@ -18,7 +18,7 @@ function main()
 
     $parserCliPath = realpath("$cwd/demo/parser/bin/cli");
     if ($parserCliPath === false) {
-        throw new RuntimeException("parser dir not found");
+        throw new RuntimeException('parser dir not found');
     }
 
     $workingWrittenPaths = [];
@@ -42,8 +42,8 @@ function main()
         $item = json_decode(file_get_contents($path), true);
         $item['path'] = $path;
 
-        $osmAdminLevel = $item['tags']['admin_level'] ?? "";
-        $dvhcvnLevels = ["8" => 3, "6" => 2, "4" => 1];
+        $osmAdminLevel = $item['tags']['admin_level'] ?? '';
+        $dvhcvnLevels = ['8' => 3, '6' => 2, '4' => 1];
         $dvhcvnLevel = $dvhcvnLevels[$osmAdminLevel] ?? null;
         if ($dvhcvnLevel === null) {
             fwrite(STDERR, sprintf("%s: unexpected admin level %s\n", $path, $osmAdminLevel));
@@ -99,7 +99,7 @@ function getFullName($item): string
     global $array;
 
     $names = [];
-    $tags = $item["tags"];
+    $tags = $item['tags'];
 
     $nameKeys = ['short_name', 'name:vi', 'name', 'name:en'];
     foreach ($nameKeys as $nameKey) {
@@ -145,7 +145,7 @@ function statisticsPrint()
             'level3' => 0,
         ];
 
-        $level1Statistics = isset($statistics[$level1Id]) ? $statistics[$level1Id] : [];
+        $level1Statistics = $statistics[$level1Id] ?? [];
         if (!empty($level1Statistics['parsed'])) {
             $countGlobal['actual']++;
             $countGlobal['level1']++;
@@ -194,7 +194,7 @@ function statisticsPrint()
         }
         return $result;
     });
-    foreach ($countsByLevel1Id as $_ => $count) {
+    foreach ($countsByLevel1Id as $count) {
         fwrite(STDOUT, sprintf("%s: %d+%d+%d of %d = %.2f%%\n", $count['name'], $count['level1'], $count['level2'], $count['level3'], $count['expected'], $count['percentage'] * 100));
     }
     fwrite(STDOUT, sprintf("Việt Nam: %d+%d+%d of %d = %.2f%%\n", $countGlobal['level1'], $countGlobal['level2'], $countGlobal['level3'], $countGlobal['expected'], $countGlobal['actual'] / $countGlobal['expected'] * 100));
@@ -239,7 +239,7 @@ function writeJson(string $outDir, $item, $parsed): string
     foreach (array_reverse($parsed) as $outputItem) {
         $jsonPath = "$jsonPath/$outputItem[id]";
     }
-    $jsonPath .= ".json";
+    $jsonPath .= '.json';
 
     $jsonDir = dirname($jsonPath);
     if (!is_dir($jsonDir)) {
@@ -248,7 +248,7 @@ function writeJson(string $outDir, $item, $parsed): string
 
     $data = array_intersect_key($item, ['bbox' => true, 'coordinates' => true, 'type' => true]);
     $data['osm_id'] = $item['id'];
-    $data[sprintf("level%d_id", count($parsed))] = $parsed[0]["id"];
+    $data[sprintf('level%d_id', count($parsed))] = $parsed[0]['id'];
     $data['name'] = $parsed[0]['name'];
 
     $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
