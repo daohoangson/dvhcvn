@@ -30,9 +30,11 @@ const typeGlue = "[ .:]*";
 const typeTranslations: { [key: string]: string[] } = {
   tinh: ["province"],
   "thanh pho": ["city"],
+  "thi tran": ["town"],
   quan: ["district", "dist"],
   huyen: ["district", "dist"],
   phuong: ["ward"],
+  xa: ["commune"],
 };
 
 const types: string[][] = [
