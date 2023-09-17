@@ -15,14 +15,23 @@ import (
 )
 
 func main() {
-	url := "https://download.geofabrik.de/asia/vietnam-latest.osm.pbf"
-	fmt.Printf("Downloading %s...\n", url)
-	// this will take some time, there are about 40m points, 4m ways and a few thoudsand relations
-	httpResponse, _ := http.Get(url)
-	_ = pbf.Scan(httpResponse.Body)
+	var reader io.Reader
 
+	osmPbfPath := os.Getenv("OSM_PBF_PATH")
+	if len(osmPbfPath) > 0 {
+		reader, _ = os.Open(osmPbfPath)
+	} else {
+		url := "https://download.geofabrik.de/asia/vietnam-latest.osm.pbf"
+		fmt.Printf("Downloading %s...\n", url)
+		// this will take some time, there are about 40m points, 4m ways and a few thousand relations
+		httpResponse, _ := http.Get(url)
+		reader = httpResponse.Body
+	}
+	_ = pbf.Scan(reader)
+
+	writeDir := os.Args[len(os.Args)-1]
 	for _, relation := range pbf.relations {
-		writeError := writeRelation(os.Args[len(os.Args)-1], relation)
+		writeError := writeRelation(writeDir, relation)
 		if writeError != nil {
 			fmt.Println(fmt.Errorf("relation.id=%d name=%s: %w", relation.ID, getTagValue(relation.Tags, "name"), writeError))
 		}
