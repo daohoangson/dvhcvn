@@ -2419,9 +2419,9 @@
 20-178-05971,,,Phường Hoàng Văn Thụ,,Failure
 20-178-05974,,,Phường Tam Thanh,,Failure
 20-178-05977,,,Phường Vĩnh Trại,,Failure
-20-178-05980,,,Phường Đông Kinh,,Failure
-20-178-05983,,,Phường Chi Lăng,,Failure
-20-178-05986,,,Xã Hoàng Đồng,,Failure
+20-178-05980,,,Phường Đông Kinh,9964104,Success
+20-178-05983,,,Phường Chi Lăng,9964105,Success
+20-178-05986,,,Xã Hoàng Đồng,9964101,Success
 20-178-05989,,,Xã Quảng Lạc,,Failure
 20-178-05992,,,Xã Mai Pha,,Failure
 20-180-00000,,Huyện Tràng Định,,6882024,Success
@@ -6632,7 +6632,7 @@
 46-476-19852,,,Xã Phong Hiền,,Failure
 46-476-19855,,,Xã Phong Mỹ,,Failure
 46-476-19858,,,Xã Phong An,,Failure
-46-476-19861,,,Xã Phong Xuân,,Failure
+46-476-19861,,,Xã Phong Xuân,11757877,Success
 46-476-19864,,,Xã Phong Sơn,,Failure
 46-477-00000,,Huyện Quảng Điền,,7051227,Success
 46-477-19867,,,Thị trấn Sịa,,Failure

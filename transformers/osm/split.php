@@ -82,7 +82,7 @@ function main()
         if (count($output) == $item['level']) {
             $jsonFullPath = writeJson($outDir, $item, $output);
             $workingWrittenPaths[$item['path']] = $jsonFullPath;
-            statisticsTrack($outDir, $path, $jsonFullPath);
+            statisticsTrack($outDir, $item['path'], $jsonFullPath);
             file_put_contents($workingFilePath, json_encode(compact('workingWrittenPaths')));
             fwrite(STDOUT, '.');
             continue;
