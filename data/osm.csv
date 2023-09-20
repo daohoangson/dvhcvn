@@ -61,7 +61,7 @@
 01-005-00157,,,Phường Nghĩa Đô,16170506,Success
 01-005-00160,,,Phường Nghĩa Tân,16170519,Success
 01-005-00163,,,Phường Mai Dịch,16170412,Success
-01-005-00166,,,Phường Dịch Vọng,,Failure
+01-005-00166,,,Phường Dịch Vọng,16170436,Success
 01-005-00167,,,Phường Dịch Vọng Hậu,16170432,Success
 01-005-00169,,,Phường Quan Hoa,16170523,Success
 01-005-00172,,,Phường Yên Hoà,16170323,Success
@@ -105,7 +105,7 @@
 01-007-00286,,,Phường Bạch Mai,11367535,Success
 01-007-00289,,,Phường Quỳnh Mai,11367533,Success
 01-007-00292,,,Phường Quỳnh Lôi,11367534,Success
-01-007-00295,,,Phường Minh Khai,,Failure
+01-007-00295,,,Phường Minh Khai,11367532,Success
 01-007-00298,,,Phường Trương Định,11367530,Success
 01-008-00000,,Quận Hoàng Mai,,9421133,Success
 01-008-00301,,,Phường Thanh Trì,15619284,Success
@@ -203,7 +203,7 @@
 01-018-00565,,,Thị trấn Trâu Quỳ,13825102,Success
 01-018-00568,,,Xã Dương Quang,13825101,Success
 01-018-00571,,,Xã Dương Xá,13825100,Success
-01-018-00574,,,Xã Đông Dư,,Failure
+01-018-00574,,,Xã Đông Dư,13817542,Success
 01-018-00577,,,Xã Đa Tốn,13825099,Success
 01-018-00580,,,Xã Kiêu Kỵ,13825098,Success
 01-018-00583,,,Xã Bát Tràng,13817541,Success
@@ -338,24 +338,24 @@
 01-271-09712,,,Xã Khánh Thượng,16013142,Success
 01-272-00000,,Huyện Phúc Thọ,,7114829,Success
 01-272-09715,,,Thị trấn Phúc Thọ,,Failure
-01-272-09718,,,Xã Vân Hà,,Failure
-01-272-09721,,,Xã Vân Phúc,,Failure
-01-272-09724,,,Xã Vân Nam,,Failure
-01-272-09727,,,Xã Xuân Đình,,Failure
+01-272-09718,,,Xã Vân Hà,14038300,Success
+01-272-09721,,,Xã Vân Phúc,14038285,Success
+01-272-09724,,,Xã Vân Nam,14038301,Success
+01-272-09727,,,Xã Xuân Đình,14038287,Success
 01-272-09733,,,Xã Sen Phương,,Failure
-01-272-09739,,,Xã Võng Xuyên,,Failure
+01-272-09739,,,Xã Võng Xuyên,14038291,Success
 01-272-09742,,,Xã Thọ Lộc,,Failure
 01-272-09745,,,Xã Long Xuyên,,Failure
-01-272-09748,,,Xã Thượng Cốc,,Failure
+01-272-09748,,,Xã Thượng Cốc,14038286,Success
 01-272-09751,,,Xã Hát Môn,,Failure
-01-272-09754,,,Xã Tích Giang,,Failure
+01-272-09754,,,Xã Tích Giang,14038290,Success
 01-272-09757,,,Xã Thanh Đa,,Failure
 01-272-09760,,,Xã Trạch Mỹ Lộc,,Failure
-01-272-09763,,,Xã Phúc Hòa,,Failure
+01-272-09763,,,Xã Phúc Hòa,14038293,Success
 01-272-09766,,,Xã Ngọc Tảo,,Failure
 01-272-09769,,,Xã Phụng Thượng,,Failure
-01-272-09772,,,Xã Tam Thuấn,,Failure
-01-272-09775,,,Xã Tam Hiệp,,Failure
+01-272-09772,,,Xã Tam Thuấn,14038297,Success
+01-272-09775,,,Xã Tam Hiệp,14038296,Success
 01-272-09778,,,Xã Hiệp Thuận,,Failure
 01-272-09781,,,Xã Liên Hiệp,,Failure
 01-273-00000,,Huyện Đan Phượng,,7115780,Success
@@ -443,7 +443,7 @@
 01-276-10009,,,Xã Hạ Bằng,11632154,Success
 01-276-10012,,,Xã Đồng Trúc,11632153,Success
 01-277-00000,,Huyện Chương Mỹ,,7115367,Success
-01-277-10015,,,Thị trấn Chúc Sơn,,Failure
+01-277-10015,,,Thị trấn Chúc Sơn,13261468,Success
 01-277-10018,,,Thị trấn Xuân Mai,,Failure
 01-277-10021,,,Xã Phụng Châu,,Failure
 01-277-10024,,,Xã Tiên Phương,,Failure
@@ -624,15 +624,15 @@
 02-026-00718,,,Xã Má Lé,11720024,Success
 02-026-00721,,,Thị trấn Đồng Văn,11720025,Success
 02-026-00724,,,Xã Lũng Táo,11720023,Success
-02-026-00727,,,Xã Phố Là,,Failure
-02-026-00730,,,Xã Thài Phìn Tủng,,Failure
-02-026-00733,,,Xã Sủng Là,,Failure
-02-026-00736,,,Xã Xà Phìn,,Failure
+02-026-00727,,,Xã Phố Là,11775352,Success
+02-026-00730,,,Xã Thài Phìn Tủng,11787923,Success
+02-026-00733,,,Xã Sủng Là,11787925,Success
+02-026-00736,,,Xã Xà Phìn,11787924,Success
 02-026-00739,,,Xã Tả Phìn,,Failure
 02-026-00742,,,Xã Tả Lủng,,Failure
 02-026-00745,,,Xã Phố Cáo,,Failure
 02-026-00748,,,Xã Sính Lủng,,Failure
-02-026-00751,,,Xã Sảng Tủng,,Failure
+02-026-00751,,,Xã Sảng Tủng,11787922,Success
 02-026-00754,,,Xã Lũng Thầu,,Failure
 02-026-00757,,,Xã Hố Quáng Phìn,,Failure
 02-026-00760,,,Xã Vần Chải,,Failure
@@ -1466,7 +1466,7 @@
 11-098-03244,,,Xã Sáng Nhè,,Failure
 11-098-03247,,,Xã Mường Đun,,Failure
 11-098-03250,,,Xã Mường Báng,,Failure
-11-099-00000,,Huyện Tuần Giáo,,,Failure
+11-099-00000,,Huyện Tuần Giáo,,7094992,Success
 11-099-03253,,,Thị trấn Tuần Giáo,,Failure
 11-099-03259,,,Xã Phình Sáng,,Failure
 11-099-03260,,,Xã Rạng Đông,,Failure
@@ -1553,21 +1553,21 @@
 12-000-00000,Tỉnh Lai Châu,,,1903322,Success
 12-105-00000,,Thành phố Lai Châu,,7094297,Success
 12-105-03386,,,Phường Quyết Thắng,,Failure
-12-105-03387,,,Phường Tân Phong,,Failure
+12-105-03387,,,Phường Tân Phong,9933225,Success
 12-105-03388,,,Phường Quyết Tiến,,Failure
-12-105-03389,,,Phường Đoàn Kết,,Failure
+12-105-03389,,,Phường Đoàn Kết,9933224,Success
 12-105-03403,,,Xã Sùng Phài,11659779,Success
-12-105-03408,,,Phường Đông Phong,,Failure
+12-105-03408,,,Phường Đông Phong,9906825,Success
 12-105-03409,,,Xã San Thàng,,Failure
 12-106-00000,,Huyện Tam Đường,,7094347,Success
-12-106-03390,,,Thị trấn Tam Đường,,Failure
+12-106-03390,,,Thị trấn Tam Đường,9923858,Success
 12-106-03394,,,Xã Thèn Sin,,Failure
 12-106-03400,,,Xã Tả Lèng,,Failure
-12-106-03405,,,Xã Giang Ma,,Failure
-12-106-03406,,,Xã Hồ Thầu,,Failure
+12-106-03405,,,Xã Giang Ma,9905970,Success
+12-106-03406,,,Xã Hồ Thầu,9923859,Success
 12-106-03412,,,Xã Bình Lư,,Failure
 12-106-03413,,,Xã Sơn Bình,,Failure
-12-106-03415,,,Xã Nùng Nàng,,Failure
+12-106-03415,,,Xã Nùng Nàng,9906824,Success
 12-106-03418,,,Xã Bản Giang,,Failure
 12-106-03421,,,Xã Bản Hon,,Failure
 12-106-03424,,,Xã Bản Bo,,Failure
@@ -1613,21 +1613,21 @@
 12-108-03547,,,Xã Nậm Hăn,,Failure
 12-109-00000,,Huyện Phong Thổ,,6929157,Success
 12-109-03391,,,Xã Lả Nhì Thàng,,Failure
-12-109-03490,,,Xã Huổi Luông,,Failure
+12-109-03490,,,Xã Huổi Luông,9937082,Success
 12-109-03549,,,Thị trấn Phong Thổ,,Failure
 12-109-03550,,,Xã Sì Lở Lầu,,Failure
 12-109-03553,,,Xã Mồ Sì San,,Failure
-12-109-03559,,,Xã Pa Vây Sử,,Failure
+12-109-03559,,,Xã Pa Vây Sử,9959126,Success
 12-109-03562,,,Xã Vàng Ma Chải,,Failure
-12-109-03565,,,Xã Tông Qua Lìn,,Failure
-12-109-03568,,,Xã Mù Sang,,Failure
-12-109-03571,,,Xã Dào San,,Failure
+12-109-03565,,,Xã Tông Qua Lìn,9959127,Success
+12-109-03568,,,Xã Mù Sang,9937083,Success
+12-109-03571,,,Xã Dào San,9953927,Success
 12-109-03574,,,Xã Ma Ly Pho,,Failure
-12-109-03577,,,Xã Bản Lang,,Failure
+12-109-03577,,,Xã Bản Lang,9953926,Success
 12-109-03580,,,Xã Hoang Thèn,,Failure
-12-109-03583,,,Xã Khổng Lào,,Failure
+12-109-03583,,,Xã Khổng Lào,9935138,Success
 12-109-03586,,,Xã Nậm Xe,,Failure
-12-109-03589,,,Xã Mường So,,Failure
+12-109-03589,,,Xã Mường So,9935139,Success
 12-109-03592,,,Xã Sin Suối Hồ,,Failure
 12-110-00000,,Huyện Than Uyên,,7094614,Success
 12-110-03595,,,Thị trấn Than Uyên,,Failure
@@ -2417,13 +2417,13 @@
 20-000-00000,Tỉnh Lạng Sơn,,,5522596,Success
 20-178-00000,,Thành phố Lạng Sơn,,7106070,Success
 20-178-05971,,,Phường Hoàng Văn Thụ,,Failure
-20-178-05974,,,Phường Tam Thanh,,Failure
+20-178-05974,,,Phường Tam Thanh,9964100,Success
 20-178-05977,,,Phường Vĩnh Trại,,Failure
 20-178-05980,,,Phường Đông Kinh,9964104,Success
 20-178-05983,,,Phường Chi Lăng,9964105,Success
 20-178-05986,,,Xã Hoàng Đồng,9964101,Success
 20-178-05989,,,Xã Quảng Lạc,,Failure
-20-178-05992,,,Xã Mai Pha,,Failure
+20-178-05992,,,Xã Mai Pha,9992757,Success
 20-180-00000,,Huyện Tràng Định,,6882024,Success
 20-180-05995,,,Thị trấn Thất Khê,,Failure
 20-180-05998,,,Xã Khánh Long,,Failure
@@ -2494,9 +2494,9 @@
 20-183-06199,,,Xã Thạch Đạn,,Failure
 20-183-06202,,,Xã Xuất Lễ,,Failure
 20-183-06205,,,Xã Hồng Phong,,Failure
-20-183-06208,,,Xã Thụy Hùng,,Failure
+20-183-06208,,,Xã Thụy Hùng,10013194,Success
 20-183-06211,,,Xã Lộc Yên,,Failure
-20-183-06214,,,Xã Phú Xá,,Failure
+20-183-06214,,,Xã Phú Xá,10013195,Success
 20-183-06217,,,Xã Bình Trung,,Failure
 20-183-06220,,,Xã Hải Yến,,Failure
 20-183-06223,,,Xã Hòa Cư,,Failure
@@ -2596,7 +2596,7 @@
 20-188-06529,,,Thị trấn Lộc Bình,10038601,Success
 20-188-06532,,,Xã Mẫu Sơn,10047272,Success
 20-188-06541,,,Xã Yên Khoái,10054075,Success
-20-188-06544,,,Xã Khánh Xuân,,Failure
+20-188-06544,,,Xã Khánh Xuân,10047273,Success
 20-188-06547,,,Xã Tú Mịch,,Failure
 20-188-06550,,,Xã Hữu Khánh,10038605,Success
 20-188-06553,,,Xã Đồng Bục,10038604,Success
@@ -3031,7 +3031,7 @@
 24-223-07861,,,Xã Danh Thắng,,Failure
 24-223-07864,,,Xã Mai Trung,,Failure
 24-223-07867,,,Xã Đoan Bái,,Failure
-24-223-07870,,,Thị trấn Bắc Lý,,Failure
+24-223-07870,,,Thị trấn Bắc Lý,16190351,Success
 24-223-07873,,,Xã Xuân Cẩm,,Failure
 24-223-07876,,,Xã Hương Lâm,,Failure
 24-223-07879,,,Xã Đông Lỗ,,Failure
@@ -6358,7 +6358,7 @@
 44-455-19111,,,Thị trấn Hoàn Lão,,Failure
 44-455-19114,,,Thị trấn NT Việt Trung,,Failure
 44-455-19117,,,Xã Xuân Trạch,,Failure
-44-455-19120,,,Xã Mỹ Trạch,,Failure
+44-455-19120,,,Xã Mỹ Trạch,7039392,Success
 44-455-19123,,,Xã Hạ Trạch,,Failure
 44-455-19126,,,Xã Bắc Trạch,,Failure
 44-455-19129,,,Xã Lâm Trạch,,Failure
@@ -6484,7 +6484,7 @@
 45-465-19432,,,Thị trấn Lao Bảo,,Failure
 45-465-19435,,,Xã Hướng Lập,,Failure
 45-465-19438,,,Xã Hướng Việt,,Failure
-45-465-19441,,,Xã Hướng Phùng,,Failure
+45-465-19441,,,Xã Hướng Phùng,11768059,Success
 45-465-19444,,,Xã Hướng Sơn,,Failure
 45-465-19447,,,Xã Hướng Linh,,Failure
 45-465-19450,,,Xã Tân Hợp,,Failure
@@ -7008,7 +7008,7 @@
 49-515-20929,,,Xã Trà Giáp,,Failure
 49-515-20932,,,Xã Trà Ka,,Failure
 49-516-00000,,Huyện Nam Trà My,,7060408,Success
-49-516-20935,,,Xã Trà Leng,,Failure
+49-516-20935,,,Xã Trà Leng,11808033,Success
 49-516-20938,,,Xã Trà Dơn,,Failure
 49-516-20941,,,Xã Trà Tập,,Failure
 49-516-20944,,,Xã Trà Mai,,Failure
