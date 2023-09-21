@@ -24,6 +24,10 @@ function main()
     if ($parserCliPath === false) {
         throw new RuntimeException('parser dir not found');
     }
+    $parserProcess = proc_open($parserCliPath, [0 => ['pipe', 'r'], 1 => ['pipe', 'w']], $parserPipes);
+    if (!is_resource($parserProcess)) {
+        throw new RuntimeException('parser could not be started');
+    }
 
     $workingWrittenPaths = [];
     if (file_exists($workingFilePath)) {
@@ -75,11 +79,8 @@ function main()
             continue;
         }
 
-        $response = json_decode(exec(sprintf(
-            '%s %s',
-            $parserCliPath,
-            escapeshellarg($fullName)
-        )), true);
+        fwrite($parserPipes[0], "$fullName\n");
+        $response = json_decode(trim(fgets($parserPipes[1])), true);
         $output = $response['output'];
         if (count($output) == $item['level']) {
             $jsonFullPath = writeJson($outDir, $item, $output);
@@ -98,6 +99,7 @@ function main()
     }
 
     statisticsPrint($outDir);
+    proc_close($parserProcess);
 }
 
 function getFullName($item): string
