@@ -1,6 +1,6 @@
 module github.com/daohoangson/dvhcvn
 
-go 1.20
+go 1.21
 
 require (
 	github.com/paulmach/orb v0.1.3
