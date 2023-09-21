@@ -176,17 +176,11 @@ func writeRelation(dir string, relation *osm.Relation) error {
 		return buildError
 	}
 
-	var parent string
-	if len(ids) > 2 {
-		parent = ids[len(ids)-2]
-	}
-
 	bbox := coordinates.Bound()
 	output := map[string]interface{}{
 		"bbox":        []float64{bbox.Left(), bbox.Bottom(), bbox.Right(), bbox.Top()},
 		"coordinates": coordinates,
 		"id":          relation.ID,
-		"parent":      parent,
 		"tags":        relation.Tags,
 		"type":        coordinates.GeoJSONType(),
 	}

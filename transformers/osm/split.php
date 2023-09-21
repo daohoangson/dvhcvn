@@ -121,8 +121,9 @@ function getFullName($item): string
         }
     }
 
-    if (!empty($item['parent']) && !empty($array[$item['parent']])) {
-        $parent = $array[$item['parent']];
+    $maybeParentId = basename(dirname($item['path']));
+    if (is_numeric($maybeParentId) && !empty($array[$maybeParentId])) {
+        $parent = $array[$maybeParentId];
         $names[] = getFullName($parent);
     }
     return join(', ', $names);
