@@ -23,4 +23,21 @@ jobs:
       - name: Build demo/parser CLI
         run: bun install && npm run bun:build
         working-directory: demo/parser
-      - run: php transformers/osm/split.php
+      - run: php transformers/osm/split.php | tee split.log
+
+      - name: Prepare GitHub comment
+        id: comment
+        run: printf 'BODY<<EOF\n%s\nEOF\n' "$(cat split.log)" >> $GITHUB_OUTPUT
+      - name: Post GitHub comment
+        uses: daohoangson/comment-on-github@35b21121fdbadf807678bec8210cdd7f22a934fe # v2.2.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          body: |
+            ${{ github.sha }}
+
+            ``` 
+            ${{ steps.comment.outputs.BODY }}
+            ```
+          fingerprint: "### Statistics"
+          replace: please

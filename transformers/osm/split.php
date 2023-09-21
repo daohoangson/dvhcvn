@@ -58,12 +58,14 @@ function main()
         $array[$item['id']] = $item;
     }
 
-    fwrite(STDOUT, sprintf("Paths: %d -> items: %d\n", $pathCount, count($array)));
+    fwrite(STDERR, sprintf("Paths: %d -> items: %d\n", $pathCount, count($array)));
 
+    $i = $j = 0;
     foreach ($array as $item) {
+        $j++;
         if (isset($workingWrittenPaths[$item['path']])) {
             statisticsTrack($outDir, $item['path'], $workingWrittenPaths[$item['path']]);
-            fwrite(STDOUT, 'w'); // already written
+            fwrite(STDERR, ++$i % 50 > 0 ? 'w' : sprintf(" %.2f%%\n", $j / count($array) * 100));
             continue;
         }
 
@@ -84,7 +86,7 @@ function main()
             $workingWrittenPaths[$item['path']] = $jsonFullPath;
             statisticsTrack($outDir, $item['path'], $jsonFullPath);
             file_put_contents($workingFilePath, json_encode(compact('workingWrittenPaths')));
-            fwrite(STDOUT, '.');
+            fwrite(STDERR, ++$i % 50 > 0 ? '.' : sprintf(" %.2f%%\n", $j / count($array) * 100));
             continue;
         }
 

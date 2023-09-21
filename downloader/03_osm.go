@@ -247,9 +247,9 @@ func (s *pbfScanner) appendRelationIfTypeBoundaryAdministrative(relation *osm.Re
 }
 
 func (s *pbfScanner) printDot(format string, a ...any) {
-	if s.i%25000 == 0 {
+	if s.i%50000 == 0 {
 		fmt.Printf("%d: %s\n", s.i, fmt.Sprintf(format, a...))
-	} else if s.i%500 == 0 {
+	} else if s.i%1000 == 0 {
 		fmt.Print(".")
 	}
 }
