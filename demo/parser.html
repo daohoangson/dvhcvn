@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <title>dvhcvn: Parser demo</title>
     <script src="/demo/demo.js"></script>
   </head>
   <body>
@@ -19,21 +20,21 @@
       const input = document.getElementById("input");
       const output = document.getElementById("output");
 
-      const parse = value =>
+      const parse = (value) =>
         fetch("/demo/parser/api", {
           method: "POST",
           headers: { "Content-Type": "text/plain" },
-          body: value
+          body: value,
         })
-          .then(r => r.json())
+          .then((r) => r.json())
           .then(
-            parsed => {
+            (parsed) => {
               console.log("parse(%s)", value, parsed);
               if (value !== input.value) return;
 
               output.innerHTML = JSON.stringify(parsed, null, "  ");
             },
-            reason => {
+            (reason) => {
               console.log("parse(%s)", value, reason);
               if (value !== input.value) return;
 
@@ -42,7 +43,7 @@
           );
 
       let timeout = null;
-      input.onkeyup = e => {
+      input.onkeyup = (e) => {
         clearTimeout(timeout);
         timeout = setTimeout(() => parse(input.value), 200);
       };
