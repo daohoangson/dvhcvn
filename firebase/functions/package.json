@@ -16,7 +16,7 @@
   "dependencies": {
     "firebase-admin": "^11.10.1",
     "firebase-functions": "^4.4.1",
-    "form-data": "^4.0.0",
+    "formdata-node": "^4.4.1",
     "node-fetch-commonjs": "^3.3.1",
     "puppeteer": "^5.5.0"
   },

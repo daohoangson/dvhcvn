@@ -1,5 +1,5 @@
 import * as functions from "firebase-functions";
-import * as FormData from "form-data";
+import { Blob, FormData } from "formdata-node";
 import fetch from "node-fetch-commonjs";
 
 export const send = (text: string, options: { png?: Buffer } = {}) => {
@@ -22,7 +22,11 @@ export const send = (text: string, options: { png?: Buffer } = {}) => {
   } else {
     action = "sendPhoto";
     data.append("caption", text);
-    data.append("photo", options.png, { filename: "photo.png" });
+    data.append(
+      "photo",
+      new Blob([options.png], { type: "image/png" }),
+      "photo.png"
+    );
   }
 
   const url = `https://api.telegram.org/bot${token}/${action}`;
