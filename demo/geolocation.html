@@ -102,10 +102,11 @@
             (r) => r.json(),
             (reason) => log(reason)
           );
-          if (!e1 || !e1.level2s) return log(`Unexpected data: ${e1}`);
+          const level2s = (e1 || {}).level2s;
+          if (!Array.isArray(level2s)) return log(`Unexpected data: ${e1}`);
           log(`${e1.name}...`);
 
-          e1.level2s.forEach((level2) => {
+          level2s.forEach((level2) => {
             const coords =
               level2.type === "Polygon"
                 ? [level2.coordinates]
