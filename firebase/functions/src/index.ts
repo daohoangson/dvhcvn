@@ -1,3 +1,3 @@
-import cron from './cron';
+import cron from "./cron";
 
 export const compareDateValuesBetweenSourceAndRepo = cron;
