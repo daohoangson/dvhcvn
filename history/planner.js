@@ -16,8 +16,7 @@ const getData = async () => {
     const rows = document.getElementsByClassName(className);
 
     const data = {};
-    for (let i = 0; i < rows.length; i++) {
-      const row = rows[i];
+    for (const row of rows) {
       if (!row.cells || row.cells < 4) continue;
 
       const { cells } = row;
@@ -44,13 +43,13 @@ const getData = async () => {
 };
 
 const getKey = () =>
-  new Promise(resolve =>
+  new Promise((resolve) =>
     fs.readFile("./data/key.txt", { encoding: "utf8" }, (err, data) =>
       resolve(err ? "" : data)
     )
   );
 
-const _ = lines => {
+const _ = (lines) => {
   if (typeof lines === "string") lines = [lines];
   process.stdout.write(lines.join("\n") + "\n");
 };
@@ -61,21 +60,21 @@ _([
   `_message=""`,
   `_pathKey=./key.txt`,
   `_pathJson=./data.json`,
-  `_pathTree=./tree.json`
+  `_pathTree=./tree.json`,
 ]);
 
 _([
   ``,
   `_latestPath=../../data/dvhcvn.json`,
   `_latestDate=$( cat $_latestPath | jq -r .data_date )`,
-  `echo Latest date from $_latestPath: $_latestDate`
+  `echo Latest date from $_latestPath: $_latestDate`,
 ]);
 
 Promise.all([getData(), getKey()]).then(([data, key]) =>
   Object.keys(data)
     .sort()
-    .filter(dataKey => dataKey > key)
-    .forEach(dataKey => {
+    .filter((dataKey) => dataKey > key)
+    .forEach((dataKey) => {
       const dateData = data[dataKey];
       const { date, docs } = dateData;
       const { day, month, year } = date;
@@ -85,9 +84,9 @@ Promise.all([getData(), getKey()]).then(([data, key]) =>
         ``,
         `_date=${day}/${month}/${year}`,
         `_stderr=../logs/${dataKey}.log`,
-        `_stdout=../logs/${dataKey}.txt`
+        `_stdout=../logs/${dataKey}.txt`,
       ]);
-      docs.forEach(d => _(`_message=$( echo "$_message" && echo "${d}" )`));
+      docs.forEach((d) => _(`_message=$( echo "$_message" && echo "${d}" )`));
       _([
         `if [ "x$_date" = "x$_latestDate" ]; then`,
         `  echo Using latest data from $_latestPath for $_date...`,
@@ -106,14 +105,14 @@ Promise.all([getData(), getKey()]).then(([data, key]) =>
         `if [ ! -z "$_diff" ]; then`,
         `  git add $_pathJson`,
         `  echo ${dataKey} >$_pathKey\n  git add $_pathKey`,
-        `  php ../tree.php >$\{_pathTree\}.tmp\n  mv $\{_pathTree\}.tmp $_pathTree && git add $_pathTree`,
+        `  php ../tree.php >\${_pathTree}.tmp\n  mv \${_pathTree}.tmp $_pathTree && git add $_pathTree`,
         `  export GIT_AUTHOR_DATE="${year}-${month}-${day} 00:00:00"`,
         `  export GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE`,
         `  git commit -m "$_message"`,
         `  _message=""`,
         `else`,
         `  echo Diff is empty`,
-        `fi`
+        `fi`,
       ]);
     })
 );
