@@ -552,7 +552,7 @@ describe("Parser", () => {
       testOrSkip(input, function () {
         let parse = parseForFullNames;
         if (expected.length > 0) {
-          if (expected[0].match(/^[0-9]+$/)) parse = parseForIds;
+          if (/^\d+$/.exec(expected[0])) parse = parseForIds;
         }
 
         const actual = parse(input);
