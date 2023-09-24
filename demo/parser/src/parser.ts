@@ -2,10 +2,10 @@ import Entity, { EntityJson, spaceRegExp } from "./entity.ts";
 import Matcher, { Matches } from "./matcher.ts";
 import sorted from "../../../history/data/tree.json" assert { type: "json" };
 
-const numberRegExp = new RegExp("[0-9]{4,}", "g");
-const alternateRegExp1Parentheses = new RegExp("\\([^)]+\\)$");
-const alternateRegExp2Slash = new RegExp("/[^/]+$");
-const alternateRegExp3Dash = new RegExp("-[^-]+$");
+const numberRegExp = /\d{4,}/g;
+const alternateRegExp1Parentheses = /\([^)]+\)$/;
+const alternateRegExp2Slash = /\/[^\/]+$/;
+const alternateRegExp3Dash = /-[^-]+$/;
 
 type ParserOptions = {
   debug?: boolean;
@@ -15,6 +15,16 @@ type ResolveOptions = {
   fromId: number;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function describeValueIfDefined(value: any) {
+  const describe = value?.describe;
+  if (typeof describe === "function") {
+    return describe.call(value);
+  } else {
+    return value;
+  }
+}
+
 export default class Parser {
   private debug = false;
   private entities: Entity[];
@@ -23,6 +33,7 @@ export default class Parser {
     this.entities = [
       new Entity("root", [
         ["Nước Việt Nam"],
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         sorted as any as { [key: string]: EntityJson },
         "",
       ]),
@@ -54,9 +65,10 @@ export default class Parser {
     return best ? best.results() : [];
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private log(...args: any[]) {
     if (!this.debug) return;
-    console.log(...args.map((v) => (v && v.describe ? v.describe() : v)));
+    console.log(...args.map(describeValueIfDefined));
   }
 
   private resolve(
