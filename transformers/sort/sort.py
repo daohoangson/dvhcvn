@@ -28,12 +28,12 @@ def process_name(e):
     return [name_without_prefix, name_prefix_only, name_normalized]
 
 
-def sort_by_normalized(l):
-    return sorted(l, key=lambda k: "%03d" % int(k[3]) if k[3].isnumeric() else k[3])
+def sort_by_normalized(normalized_level1s):
+    return sorted(normalized_level1s, key=lambda k: "%03d" % int(k[3]) if k[3].isnumeric() else k[3])
 
 
-def serialize_json(data):
-    dump = json.dumps(output, ensure_ascii=False, indent=4)
+def serialize_json(obj):
+    dump = json.dumps(obj, ensure_ascii=False, indent=4)
     dump = re.sub(
         r'("[^"]+"),\s+("[^"]+"),\s+("[^"]+"),\s+("[^"]+"),', r"\1, \2, \3, \4,", dump)
     dump = re.sub(
@@ -67,5 +67,5 @@ if __name__ == "__main__":
             [sort_by_normalized(level2s)]
         )
 
-    output = sort_by_normalized(level1s)
-    print(serialize_json(output))
+    sorted_level1s = sort_by_normalized(level1s)
+    print(serialize_json(sorted_level1s))
