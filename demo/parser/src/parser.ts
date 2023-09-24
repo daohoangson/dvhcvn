@@ -4,7 +4,7 @@ import sorted from "../../../history/data/tree.json" assert { type: "json" };
 
 const numberRegExp = /\d{4,}/g;
 const alternateRegExp1Parentheses = /\([^)]+\)$/;
-const alternateRegExp2Slash = /\/[^\/]+$/;
+const alternateRegExp2Slash = /\/[^/]+$/;
 const alternateRegExp3Dash = /-[^-]+$/;
 
 type ParserOptions = {
