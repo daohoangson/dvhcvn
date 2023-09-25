@@ -5,7 +5,10 @@ import { launch } from "puppeteer";
 import { send } from "./telegram";
 
 const getDateFromSource = async () => {
-  const browser = await launch({ args: ["--no-sandbox"] });
+  const browser = await launch({
+    args: ["--no-sandbox"],
+    headless: "new",
+  });
   const page = await browser.newPage();
   await page.goto("https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx");
 
@@ -49,7 +52,7 @@ export const getDateFromRepo = async () => {
 export default functions
   .runWith({ memory: "512MB" })
   .pubsub.schedule("every 24 hours")
-  .onRun(async (_) => {
+  .onRun(async () => {
     const [
       { date: source, error: errorSource, png },
       { date: repo, error: errorRepo },
