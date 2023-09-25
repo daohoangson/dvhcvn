@@ -1,8 +1,9 @@
 import { readFileSync } from "fs";
+import { stdout as STDOUT } from "process";
 
 const stdout = {
-  write: (msg: string) => process.stdout.write(msg),
-  writeln: (msg: string = "") => process.stdout.write(`${msg}\n`),
+  write: (msg: string) => STDOUT.write(msg),
+  writeln: (msg: string = "") => STDOUT.write(msg + "\n"),
 };
 
 const types: { [key: string]: string } = {
@@ -17,7 +18,7 @@ const types: { [key: string]: string } = {
   "Thị xã": "thi_xa",
 };
 
-function main(args: string[]): void {
+export function main(args: string[]): void {
   stdout.writeln("import { Level1, Level2, Level3, Type } from './model';");
   stdout.writeln();
 
@@ -27,7 +28,7 @@ function main(args: string[]): void {
   const json = JSON.parse(txt);
   const data = json.data as any[];
   for (let i = 0; i < data.length; i++) {
-    _processLevel1(i, data[i]);
+    processLevel1(i, data[i]);
   }
 
   stdout.write("];");
@@ -44,7 +45,7 @@ function _getType(str: string): string {
   throw new Error(`Type not found: ${str}`);
 }
 
-function _processLevel1(level1Index: number, level1: any): void {
+export function processLevel1(level1Index: number, level1: any): void {
   const id = _getString(level1.level1_id);
   const name = _getString(level1.name);
   const type = _getType(level1.type);
@@ -52,13 +53,13 @@ function _processLevel1(level1Index: number, level1: any): void {
 
   const level2s = level1.level2s as any[];
   for (let i = 0; i < level2s.length; i++) {
-    _processLevel2(level1Index, i, level2s[i]);
+    processLevel2(level1Index, i, level2s[i]);
   }
 
   stdout.writeln("]),");
 }
 
-function _processLevel2(
+export function processLevel2(
   level1Index: number,
   level2Index: number,
   level2: any
@@ -70,13 +71,13 @@ function _processLevel2(
 
   const level3s = level2.level3s as any[];
   for (const level3 of level3s) {
-    _processLevel3(level1Index, level2Index, level3);
+    processLevel3(level1Index, level2Index, level3);
   }
 
   stdout.writeln("]),");
 }
 
-function _processLevel3(
+export function processLevel3(
   level1Index: number,
   level2Index: number,
   level3: any
