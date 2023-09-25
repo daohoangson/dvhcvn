@@ -24,6 +24,13 @@ jobs:
           npm run test:coverage
         working-directory: demo/parser
 
+      - name: transformers/js-dvhcvn
+        run: |
+          set -e
+          npm ci --ignore-scripts
+          npm run test:coverage
+        working-directory: transformers/js-dvhcvn
+
       - uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
