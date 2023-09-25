@@ -2,15 +2,14 @@ import * as functions from "firebase-functions";
 import { Blob, FormData } from "formdata-node";
 import fetch from "node-fetch-commonjs";
 
-export const send = (text: string, options: { png?: Buffer } = {}) => {
+export const send = async (text: string, options: { png?: Buffer } = {}) => {
   const config = functions.config() as {
     telegram?: { token: string | undefined; chat_id: string | undefined };
   };
   const token = config.telegram?.token;
   const chatId = config.telegram?.chat_id;
   if (typeof token !== "string" || typeof chatId !== "string") {
-    console.error("Telegram config is incomplete!");
-    return;
+    throw new Error("Telegram config is incomplete!");
   }
 
   const data = new FormData();
@@ -30,5 +29,11 @@ export const send = (text: string, options: { png?: Buffer } = {}) => {
   }
 
   const url = `https://api.telegram.org/bot${token}/${action}`;
-  return fetch(url, { body: data, method: "POST" });
+  const response = await fetch(url, { body: data, method: "POST" });
+  const json = (await response.json()) as any;
+  const success = json?.ok === true;
+  if (!success) {
+    console.log({ text, json });
+  }
+  return success;
 };

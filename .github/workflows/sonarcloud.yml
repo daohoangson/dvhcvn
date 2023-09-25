@@ -12,6 +12,18 @@ jobs:
           fetch-depth: 0
           submodules: recursive
 
+      - name: Setup Node 18
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          node-version: 18.x
+
+      - name: firebase/functions
+        run: |
+          set -e
+          npm ci
+          npm run test:coverage
+        working-directory: firebase/functions
+
       - name: Setup Node 20
         uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
         with:
