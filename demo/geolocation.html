@@ -102,7 +102,7 @@
             (r) => r.json(),
             (reason) => log(reason)
           );
-          const level2s = (e1 || {}).level2s;
+          const level2s = e1?.level2s;
           if (!Array.isArray(level2s)) return log(`Unexpected data: ${e1}`);
           log(`${e1.name}...`);
 
