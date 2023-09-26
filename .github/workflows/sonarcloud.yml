@@ -36,6 +36,13 @@ jobs:
           npm run test:coverage
         working-directory: demo/parser
 
+      - name: history
+        run: |
+          set -e
+          npm ci
+          npm run test:coverage
+        working-directory: history
+
       - name: transformers/js-dvhcvn
         run: |
           set -e
