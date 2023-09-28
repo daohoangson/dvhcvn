@@ -50,7 +50,7 @@ function main()
         ],
     ];
 
-    echo(json_encode($output, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    echo json_encode($output, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 }
 
 function getLevel1(): array
@@ -118,13 +118,13 @@ function _request($soapAction, array $params = []): array
         $soapBody .= "<$paramKey>$paramValue</$paramKey>";
     }
     $xmlRequest = <<<EOF
-<?xml version="1.0" encoding="utf-8"?>    
+<?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
-    <$soapAction xmlns="http://tempuri.org/">     
+    <$soapAction xmlns="http://tempuri.org/">
       $soapBody
     </$soapAction>
-  </soap:Body>                           
+  </soap:Body>
 </soap:Envelope>
 EOF;
 
@@ -142,6 +142,10 @@ EOF;
     $xmlResponse = curl_exec($ch);
     curl_close($ch);
 
+    if (!is_string($xmlResponse)) {
+        return $onError("Unexpected response $xmlResponse");
+    }
+
     $xmlTree = simplexml_load_string($xmlResponse);
     $soapBody = $xmlTree->children('soap', true)->Body;
     if (empty($soapBody)) {
@@ -154,12 +158,12 @@ EOF;
         return $onError("No $resultKey");
     }
 
-    $diffgram = $result->children('diffgr', true)->diffgram->children()[0];
-    if (empty($diffgram)) {
-        return $onError('No diffgram');
+    $diffGram = $result->children('diffgr', true)->diffgram->children()[0];
+    if (empty($diffGram)) {
+        return $onError('No diff gram');
     }
 
-    $rows = $diffgram->xpath('TABLE');
+    $rows = $diffGram->xpath('TABLE');
     if (empty($rows)) {
         return $onError('No TABLE');
     }

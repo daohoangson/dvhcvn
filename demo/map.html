@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <title>dvhcvn: Map demo</title>
+
     <style>
       html,
       body {
@@ -27,9 +29,15 @@
     <script src="/demo/demo.js"></script>
 
     <!-- https://docs.goong.io/example/geojson-polygon/ -->
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.6/dist/goong-js.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.6/dist/goong-js.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.6/dist/goong-js.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav>
@@ -40,29 +48,29 @@
 
     <script>
       const populateNav = async (initialLevel1Id, initialLevel2Id) => {
-        const sorted = await fetch("/data/sorted.json").then(r => r.json());
+        const sorted = await fetch("/data/sorted.json").then((r) => r.json());
         if (!sorted) return console.error("Unexpected data", sorted);
 
         const select1 = document.getElementById("level1");
-        sorted.forEach(level1 => {
+        sorted.forEach((level1) => {
           const option1 = document.createElement("OPTION");
           option1.value = level1[0];
           option1.innerText = `${level1[2]} ${level1[1]}`;
           option1.selected = option1.value === initialLevel1Id;
           select1.appendChild(option1);
         });
-        select1.onchange = _ => updateSelect2();
+        select1.onchange = (_) => updateSelect2();
 
         const select2 = document.getElementById("level2");
-        const updateSelect2 = level2Id => {
+        const updateSelect2 = (level2Id) => {
           select2.innerHTML = "";
 
           const option2Zero = document.createElement("OPTION");
           select2.appendChild(option2Zero);
 
-          sorted.forEach(level1 => {
+          sorted.forEach((level1) => {
             if (level1[0] !== select1.value) return;
-            level1[4].forEach(level2 => {
+            level1[4].forEach((level2) => {
               const option2 = document.createElement("OPTION");
               option2.value = level2[0];
               option2.innerText = `${level2[2]} ${level2[1]}`;
@@ -71,9 +79,9 @@
             });
           });
         };
-        select2.onchange = _ => {
-          const level1Id = `${select1.value}`.replace(/[^0-9]/g, '')
-          const level2Id = `${select2.value}`.replace(/[^0-9]/g, '')
+        select2.onchange = (_) => {
+          const level1Id = `${select1.value}`.replace(/\D/g, "");
+          const level2Id = `${select2.value}`.replace(/\D/g, "");
           window.location = `/demo/map.html?level1_id=${level1Id}&level2_id=${level2Id}`;
         };
 
@@ -87,13 +95,13 @@
 
         const jsonPath = `/data/gis/${level1Id}.json`;
         const e1 = await fetch(jsonPath).then(
-          r => r.json(),
-          reason => console.error(reason)
+          (r) => r.json(),
+          (reason) => console.error(reason)
         );
         if (!e1 || !e1.level2s) return console.error("Unexpected data", e1);
 
         let level1, level2;
-        e1.level2s.forEach(e2 => {
+        e1.level2s.forEach((e2) => {
           if (e2.level2_id === level2Id) {
             level1 = e1;
             level2 = e2;
@@ -115,10 +123,10 @@
           container: "map",
           center: [
             (level2.bbox[0] + level2.bbox[2]) / 2,
-            (level2.bbox[1] + level2.bbox[3]) / 2
+            (level2.bbox[1] + level2.bbox[3]) / 2,
           ],
           style: "https://tiles.goong.io/assets/goong_map_web.json",
-          zoom: 8
+          zoom: 8,
         });
 
         map.on("load", () => {
@@ -131,8 +139,8 @@
               source: id,
               paint: {
                 "fill-color": color,
-                "fill-opacity": .5
-              }
+                "fill-opacity": 0.5,
+              },
             });
           };
           polygon(level1, "#00f");
@@ -140,7 +148,9 @@
 
           const bbox = (e, color) => {
             const id = `bbox-${e.level1_id}`;
-            const { bbox: [west, north, east, south] } = e;
+            const {
+              bbox: [west, north, east, south],
+            } = e;
 
             map.addSource(id, {
               type: "geojson",
@@ -154,11 +164,11 @@
                       [east, north],
                       [east, south],
                       [west, south],
-                      [west, north]
-                    ]
-                  ]
-                }
-              }
+                      [west, north],
+                    ],
+                  ],
+                },
+              },
             });
             map.addLayer({
               id,
@@ -166,8 +176,8 @@
               source: id,
               paint: {
                 "line-color": color,
-                "line-width": 2
-              }
+                "line-width": 2,
+              },
             });
           };
           bbox(level1, "#aaa");

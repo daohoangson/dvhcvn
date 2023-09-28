@@ -1,1 +1,7 @@
+.vercel/
+coverage/
 node_modules/
+
+# firebase/functions
+/firebase/functions/.cache/puppeteer
+.runtimeconfig.json

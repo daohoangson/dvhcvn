@@ -12,7 +12,7 @@ const scoreDeltaName2 = -1;
 function substrByDeaccentLength(str: string, length: number) {
   const lMax = str.length;
   for (let l = length; l < lMax; l++) {
-    const substr = str.substr(lMax - l);
+    const substr = str.substring(lMax - l);
     if (deaccent(substr).length == length) return substr;
   }
 
@@ -52,7 +52,7 @@ export class Matches {
 }
 
 let matcherCount = 0;
-const delimsRegExp = new RegExp("[ _.,/–-]+$");
+const delimsRegExp = /[ _.,/–-]+$/;
 
 export default class Matcher {
   id = ++matcherCount;
@@ -105,20 +105,21 @@ export default class Matcher {
     const { initials, names, names2, regExp, typePatterns } = entity.prepare();
     if (!regExp) return null;
 
-    const regExpMatch = address2.match(regExp);
+    const regExpMatch = regExp.exec(address2);
     if (!regExpMatch) {
       const nameSimilarity = deaccent(`${entity.name}`);
       if (nameSimilarity.length > 12 || (pe && pe.level === entity.level - 1)) {
         // perform fuzzy match if: (1) name is lengthy or (2) there's a direct parent match
         // this cpu intensive processing works as a last resort to catch typos etc.
-        const matchSimilarityArray = address2.match(
+        const similarityRegExp = new RegExp(
           `([^a-z]| |^)(((${typePatterns.join("|")})[ .:])?([a-z '-]{1,${
             nameSimilarity.length + 2
           }}))$`
         );
+        const matchSimilarityArray = similarityRegExp.exec(address2);
         if (matchSimilarityArray) {
-          const matchSimilarity = matchSimilarityArray[2].trimLeft();
-          const matchSimilarityName = matchSimilarityArray[5].trimLeft();
+          const matchSimilarity = matchSimilarityArray[2].trimStart();
+          const matchSimilarityName = matchSimilarityArray[5].trimStart();
           const similarity = similarText(
             nameSimilarity,
             matchSimilarityName,
@@ -139,7 +140,7 @@ export default class Matcher {
 
     const { length } = regExpMatch[0];
     const match = substrByDeaccentLength(address, length);
-    const match2 = address2.substr(address2.length - length);
+    const match2 = address2.substring(address2.length - length);
 
     const matchNormalized = normalize(match);
     const nameFound = names.reduce((prev, n) => {
@@ -220,9 +221,8 @@ export default class Matcher {
     let score = scoreDeltaType;
     const step = score / typePatterns.length / 2;
 
-    for (let i = 0; i < typePatterns.length; i++) {
-      if (match2.startsWith(typePatterns[i])) return score;
-
+    for (const typePattern of typePatterns) {
+      if (match2.startsWith(typePattern)) return score;
       score -= step;
     }
 
@@ -233,7 +233,7 @@ export default class Matcher {
     const { address, previous } = this;
     const { matches, scores } = previous;
     const [full] = found;
-    const addressLeft = address.substr(0, address.length - full.length);
+    const addressLeft = address.substring(0, address.length - full.length);
     const _ = new Matches(addressLeft);
 
     if (entity.status) {

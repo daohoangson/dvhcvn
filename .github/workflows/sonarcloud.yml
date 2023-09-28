@@ -1,0 +1,56 @@
+name: SonarCloud
+
+on:
+  push:
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup Node 18
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          node-version: 18.x
+
+      - name: firebase/functions
+        run: |
+          set -e
+          npm ci
+          npm run test:coverage
+        working-directory: firebase/functions
+
+      - name: Setup Node 20
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          node-version: 20.x
+
+      - name: demo/parser
+        run: |
+          set -e
+          npm ci
+          npm run test:coverage
+        working-directory: demo/parser
+
+      - name: history
+        run: |
+          set -e
+          npm ci
+          npm run test:coverage
+        working-directory: history
+
+      - name: transformers/js-dvhcvn
+        run: |
+          set -e
+          npm ci --ignore-scripts
+          npm run test:coverage
+        working-directory: transformers/js-dvhcvn
+
+      - uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

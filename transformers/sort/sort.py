@@ -4,7 +4,7 @@ import sys
 from unidecode import unidecode
 
 
-def processName(e):
+def process_name(e):
     prefix = e["type"]
     if e["type"] == "Thành phố Trung ương":
         prefix = "Thành phố"
@@ -16,24 +16,24 @@ def processName(e):
     pattern = "^{} ".format(prefix)
     match = re.match(pattern, e['name'], re.IGNORECASE)
 
-    nameFull = e['name']
-    namePrefixOnly = match.group(0).strip()
-    nameWithoutPrefix = nameFull[match.end(0):]
-    if len(nameWithoutPrefix) == 0 or nameWithoutPrefix == nameFull:
+    name_full = e['name']
+    name_prefix_only = match.group(0).strip()
+    name_without_prefix = name_full[match.end(0):]
+    if len(name_without_prefix) == 0 or name_without_prefix == name_full:
         raise Exception("Cannot strip '{}' from '{}'".format(
             prefix, e['name']))
 
-    nameNormalized = unidecode(nameWithoutPrefix)
+    name_normalized = unidecode(name_without_prefix)
 
-    return [nameWithoutPrefix, namePrefixOnly, nameNormalized]
-
-
-def sortByNormalized(l):
-    return sorted(l, key=lambda k: "%03d" % int(k[3]) if k[3].isnumeric() else k[3])
+    return [name_without_prefix, name_prefix_only, name_normalized]
 
 
-def serializeJson(data):
-    dump = json.dumps(output, ensure_ascii=False, indent=4)
+def sort_by_normalized(normalized_level1s):
+    return sorted(normalized_level1s, key=lambda k: "%03d" % int(k[3]) if k[3].isnumeric() else k[3])
+
+
+def serialize_json(obj):
+    dump = json.dumps(obj, ensure_ascii=False, indent=4)
     dump = re.sub(
         r'("[^"]+"),\s+("[^"]+"),\s+("[^"]+"),\s+("[^"]+"),', r"\1, \2, \3, \4,", dump)
     dump = re.sub(
@@ -52,20 +52,20 @@ if __name__ == "__main__":
             for _level3 in _level2['level3s']:
                 level3s.append(
                     [_level3['level3_id']] +
-                    processName(_level3)
+                    process_name(_level3)
                 )
 
             level2s.append(
                 [_level2['level2_id']] +
-                processName(_level2) +
-                [sortByNormalized(level3s)]
+                process_name(_level2) +
+                [sort_by_normalized(level3s)]
             )
 
         level1s.append(
             [_level1['level1_id']] +
-            processName(_level1) +
-            [sortByNormalized(level2s)]
+            process_name(_level1) +
+            [sort_by_normalized(level2s)]
         )
 
-    output = sortByNormalized(level1s)
-    print(serializeJson(output))
+    sorted_level1s = sort_by_normalized(level1s)
+    print(serialize_json(sorted_level1s))

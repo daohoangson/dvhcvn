@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <title>dvhcvn: Geolocation demo</title>
     <script src="/demo/demo.js"></script>
     <script src="https://unpkg.com/geolib@3.0.4/lib/index.js"></script>
   </head>
@@ -30,11 +31,11 @@
     <script>
       const getCurrentPosition = () => {
         navigator.geolocation.getCurrentPosition(
-          position => {
+          (position) => {
             document.getElementById("lat").value = position.coords.latitude;
             document.getElementById("lng").value = position.coords.longitude;
           },
-          reason => console.error(reason)
+          (reason) => console.error(reason)
         );
       };
 
@@ -57,11 +58,11 @@
         const [longitude, latitude] = point;
         const libPoint = { latitude, longitude };
 
-        coords.forEach(c0 => {
-          c0.forEach(c1 => {
-            const libPolygon = c1.map(c2 => ({
+        coords.forEach((c0) => {
+          c0.forEach((c1) => {
+            const libPolygon = c1.map((c2) => ({
               latitude: c2[1],
-              longitude: c2[0]
+              longitude: c2[0],
             }));
 
             if (geolib.isPointInPolygon(libPoint, libPolygon)) result = true;
@@ -80,31 +81,32 @@
 
         document.getElementById("result").style.display = "block";
         const output = document.getElementById("output");
-        const log = message => {
+        const log = (message) => {
           output.innerHTML = `${output.innerHTML}${message}\n`;
         };
         log(`Latitude: ${lat}\nLongitude: ${lng}\n`);
 
         const level1sBboxPath = `/data/gis/level1s_bbox.json`;
         const level1sBbox = await fetch(level1sBboxPath).then(
-          r => r.json(),
-          reason => log(reason)
+          (r) => r.json(),
+          (reason) => log(reason)
         );
-        if (!level1sBbox) return log("Unexpected data", level1sBbox);
+        if (!level1sBbox) return log(`Unexpected data: ${level1sBbox}`);
 
-        Object.keys(level1sBbox).forEach(async level1Id => {
+        Object.keys(level1sBbox).forEach(async (level1Id) => {
           const bbox = level1sBbox[level1Id];
           if (!isPointInBbox(point, bbox)) return;
 
           const jsonPath = `/data/gis/${level1Id}.json`;
           const e1 = await fetch(jsonPath).then(
-            r => r.json(),
-            reason => log(reason)
+            (r) => r.json(),
+            (reason) => log(reason)
           );
-          if (!e1 || !e1.level2s) return log("Unexpected data", e1);
+          const level2s = e1?.level2s;
+          if (!Array.isArray(level2s)) return log(`Unexpected data: ${e1}`);
           log(`${e1.name}...`);
 
-          e1.level2s.forEach(level2 => {
+          level2s.forEach((level2) => {
             const coords =
               level2.type === "Polygon"
                 ? [level2.coordinates]
