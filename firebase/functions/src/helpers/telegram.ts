@@ -31,9 +31,15 @@ export async function send(text: string, options: { png?: Buffer } = {}) {
   const url = `https://api.telegram.org/bot${token}/${action}`;
   const response = await fetch(url, { body: data, method: "POST" });
   const json = (await response.json()) as any;
-  const success = json?.ok === true;
-  if (!success) {
+  const ok = json?.ok;
+  if (typeof ok !== "boolean") {
+    throw new Error(
+      `Unexpected response from Telegram: ${JSON.stringify(json)})}`
+    );
+  }
+
+  if (!ok) {
     console.log({ text, json });
   }
-  return success;
+  return ok;
 }
