@@ -29,7 +29,7 @@ function main()
 
     compareCities($repoCities, $cities);
 
-    echo(implode("\n", $output));
+    echo implode("\n", $output);
 }
 
 function compareCities(array $old, array $new)
@@ -62,7 +62,8 @@ function compareCities(array $old, array $new)
 
 function getRepoCities(): array
 {
-    $repoContents = file_get_contents('https://raw.githubusercontent.com/htdat/woo-viet/master/inc/class-wooviet-cities.php');
+    $repoUrl = 'https://raw.githubusercontent.com/htdat/woo-viet/master/inc/class-wooviet-cities.php';
+    $repoContents = file_get_contents($repoUrl);
     $repoContents = preg_replace('/^<\?php/', '', $repoContents);
     $repoContents = str_replace('public function add_cities', 'public static function add_cities', $repoContents);
 

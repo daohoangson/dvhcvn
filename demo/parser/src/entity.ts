@@ -10,7 +10,7 @@ const entitiesById: { [id: string]: Entity[] } = {};
 // Consider all of these as a single space character:
 // - More than one continous space
 // - En-dash
-export const spaceRegExp = new RegExp("(\\s{2,}|–+)", "g");
+export const spaceRegExp = /(\s{2,}|–+)/g;
 
 export const getEntityById = (id: string) =>
   entitiesById[id]
@@ -23,7 +23,7 @@ export const getEntityById = (id: string) =>
       }, null)
     : null;
 
-const nameNumericRegExp = new RegExp("^[0-9]+$");
+const nameNumericRegExp = /^\d+$/;
 
 const typeGlue = "[ .:]*";
 
@@ -122,9 +122,11 @@ export default class Entity {
     this.names = [];
     this.names2 = [];
     this.typePatterns = [];
-    const patterns = this.fullNames
-      .reverse()
-      .reduce<string[]>((p, n) => [...p, ...this.p(n)], []);
+    const fullNamesReversed = [...this.fullNames].reverse();
+    const patterns = fullNamesReversed.reduce<string[]>(
+      (p, n) => [...p, ...this.p(n)],
+      []
+    );
     if (patterns.length === 0) {
       console.error("Cannot prepare Entity", this);
       return {};
@@ -144,14 +146,14 @@ export default class Entity {
   private p(fullName: string) {
     const patterns: string[] = [];
 
-    const m = fullName.match(typeRegExp);
+    const m = typeRegExp.exec(fullName);
     if (!m) {
       console.error("Cannot extract type from Entity full name: %s", fullName);
       return patterns;
     }
 
     const thisType = m[1];
-    const thisName = m[2].match(nameNumericRegExp)
+    const thisName = nameNumericRegExp.exec(m[2])
       ? parseInt(m[2])
       : m[2].trim();
     if (!this.type) this.type = thisType;

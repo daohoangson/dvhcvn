@@ -5,7 +5,7 @@ export const initials = (text: string) =>
     .join("");
 
 const marks = ["`", "'", ".", "?", "~"];
-const markString = `[${marks.map((mark) => `\\${mark}`).join("")}]`;
+const markString = `[${marks.map((mark) => "\\" + mark).join("")}]`;
 const markOnlyRegExp = new RegExp(markString, "g");
 const markInWordRegExp = new RegExp(`^(.*)(${markString})(.*)$`);
 const reorderMark = (word: string) =>

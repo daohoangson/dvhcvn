@@ -72,7 +72,7 @@ function main()
     $json = preg_replace('/\[\s+("[^"]+")\s+\]/', '[$1]', $json);
     $json = preg_replace('/\[\s+(\[[^]]+\])\s+\]/', '[$1]', $json);
 
-    echo($json);
+    echo $json;
 }
 
 function appendName(array &$namesRef, string $name): void
@@ -111,10 +111,11 @@ function updateOutputFromPath(
     array &$outputRef,
     array &$pathsRef,
     array &$existingData,
-    $level1Id,
-    $level2Id = null,
-    $level3Id = null
-): void {
+          $level1Id,
+          $level2Id = null,
+          $level3Id = null
+): void
+{
     if (count($existingData) >= 3 && !empty($existingData[2])) {
         // already updated
         return;
