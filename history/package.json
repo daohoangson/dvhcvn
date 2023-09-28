@@ -1,6 +1,9 @@
 {
   "name": "history",
   "private": true,
+  "engines": {
+    "node": "20"
+  },
   "scripts": {
     "format": "prettier --write '**/*.{js,mjs}'",
     "start": "node bin/plan.mjs",
