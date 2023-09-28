@@ -1,8 +1,5 @@
 {
   "name": "parser",
-  "engines": {
-    "node": "20"
-  },
   "scripts": {
     "build:api": "rollup --config ./api/rollup.config.mjs",
     "build:bin": "rollup --config ./bin/rollup.config.mjs",
