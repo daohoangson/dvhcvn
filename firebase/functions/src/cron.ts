@@ -2,7 +2,7 @@ import { getDateFromRepo } from "./helpers/github";
 import { getDateFromSource } from "./helpers/puppeteer";
 import { send } from "./helpers/telegram";
 
-export const compareDateValuesBetweenSourceAndRepo = async () => {
+export async function compareDateValuesBetweenSourceAndRepo() {
   const [
     { date: source, error: errorSource, png },
     { date: repo, error: errorRepo },
@@ -35,4 +35,4 @@ export const compareDateValuesBetweenSourceAndRepo = async () => {
   const warnMessage = `${source} ❌ ${repo}`;
   console.warn(warnMessage);
   await sendMessage(warnMessage);
-};
+}

@@ -2,7 +2,7 @@ import * as functions from "firebase-functions";
 import { Blob, FormData } from "formdata-node";
 import fetch from "node-fetch-commonjs";
 
-export const send = async (text: string, options: { png?: Buffer } = {}) => {
+export async function send(text: string, options: { png?: Buffer } = {}) {
   const config = functions.config() as {
     telegram?: { token: string | undefined; chat_id: string | undefined };
   };
@@ -36,4 +36,4 @@ export const send = async (text: string, options: { png?: Buffer } = {}) => {
     console.log({ text, json });
   }
   return success;
-};
+}
