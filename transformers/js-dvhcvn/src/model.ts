@@ -1,5 +1,5 @@
 import { level1s } from "./data";
-import { Entity, findById, findByName } from "./internal";
+import { Entity, findLevelXById, findLevelXByName } from "./internal";
 
 export class Level1 extends Entity<undefined, Level2> {
   public get parent(): undefined {
@@ -7,11 +7,11 @@ export class Level1 extends Entity<undefined, Level2> {
   }
 
   public findLevel2ById(id: string): Level2 | undefined {
-    return findById<Level2>(this.children, id);
+    return findLevelXById<Level2>(this.children, id);
   }
 
   public findLevel2ByName(name: string): Level2 | undefined {
-    return findByName<Level2>(this.children, name);
+    return findLevelXByName<Level2>(this.children, name);
   }
 }
 
@@ -31,11 +31,11 @@ export class Level2 extends Entity<Level1, Level3> {
   }
 
   public findLevel3ById(id: string): Level3 | undefined {
-    return findById<Level3>(this.children, id);
+    return findLevelXById<Level3>(this.children, id);
   }
 
   public findLevel3ByName(name: string): Level3 | undefined {
-    return findByName<Level3>(this.children, name);
+    return findLevelXByName<Level3>(this.children, name);
   }
 }
 

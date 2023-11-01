@@ -18,6 +18,8 @@ const types: { [key: string]: string } = {
   "Thị xã": "thi_xa",
 };
 
+type Parents = Record<string, string>;
+
 export function main(args: string[]): void {
   stdout.writeln("import { Level1, Level2, Level3, Type } from './model';");
   stdout.writeln();
@@ -27,11 +29,18 @@ export function main(args: string[]): void {
   const txt = readFileSync(args[0], "utf8");
   const json = JSON.parse(txt);
   const data = json.data as any[];
+  const parents: Parents = {};
   for (let i = 0; i < data.length; i++) {
-    processLevel1(i, data[i]);
+    processLevel1(parents, i, data[i]);
   }
 
   stdout.write("];");
+
+  stdout.write(
+    `\n\nexport const parents: Record<string,string> = ${JSON.stringify(
+      parents
+    )};`
+  );
 }
 
 function _getString(str: string): string {
@@ -45,7 +54,11 @@ function _getType(str: string): string {
   throw new Error(`Type not found: ${str}`);
 }
 
-export function processLevel1(level1Index: number, level1: any): void {
+export function processLevel1(
+  parents: Parents,
+  level1Index: number,
+  level1: any
+): void {
   const id = _getString(level1.level1_id);
   const name = _getString(level1.name);
   const type = _getType(level1.type);
@@ -53,13 +66,16 @@ export function processLevel1(level1Index: number, level1: any): void {
 
   const level2s = level1.level2s as any[];
   for (let i = 0; i < level2s.length; i++) {
-    processLevel2(level1Index, i, level2s[i]);
+    const level2 = level2s[i];
+    parents[level2.level2_id] = level1.level1_id;
+    processLevel2(parents, level1Index, i, level2);
   }
 
   stdout.writeln("]),");
 }
 
 export function processLevel2(
+  parents: Parents,
   level1Index: number,
   level2Index: number,
   level2: any
@@ -71,6 +87,7 @@ export function processLevel2(
 
   const level3s = level2.level3s as any[];
   for (const level3 of level3s) {
+    parents[level3.level3_id] = level2.level2_id;
     processLevel3(level1Index, level2Index, level3);
   }
 

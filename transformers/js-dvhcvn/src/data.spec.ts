@@ -5,6 +5,23 @@ test("level1s is not empty", () => {
   expect(dvhcvn.level1s.length).toBeGreaterThan(0);
 });
 
+describe("findByLevel", () => {
+  test("returns level 1", () => {
+    const level1 = dvhcvn.findById("01");
+    expect(level1?.name).toBe("Thành phố Hà Nội");
+  });
+
+  test("returns level 2", () => {
+    const level2 = dvhcvn.findById("001");
+    expect(level2?.name).toBe("Quận Ba Đình");
+  });
+
+  test("returns level 3", () => {
+    const level3 = dvhcvn.findById("00001");
+    expect(level3?.name).toBe("Phường Phúc Xá");
+  });
+});
+
 test("findLevel1ById returns", () => {
   const level1 = dvhcvn.findLevel1ById("01");
   expect(level1?.name).toBe("Thành phố Hà Nội");
