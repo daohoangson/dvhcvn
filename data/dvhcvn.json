@@ -15335,8 +15335,8 @@
                 },
                 {
                     "level2_id": "222",
-                    "name": "Huyện Việt Yên",
-                    "type": "Huyện",
+                    "name": "Thị Xã Việt Yên",
+                    "type": "Thị xã",
                     "level3s": [
                         {
                             "level3_id": "07759",
@@ -15365,13 +15365,13 @@
                         },
                         {
                             "level3_id": "07774",
-                            "name": "Xã Tự Lạn",
-                            "type": "Xã"
+                            "name": "Phường Tự Lạn",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "07777",
-                            "name": "Thị trấn Bích Động",
-                            "type": "Thị trấn"
+                            "name": "Phường Bích Động",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "07780",
@@ -15380,8 +15380,8 @@
                         },
                         {
                             "level3_id": "07783",
-                            "name": "Xã Hồng Thái",
-                            "type": "Xã"
+                            "name": "Phường Hồng Thái",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "07786",
@@ -15390,28 +15390,28 @@
                         },
                         {
                             "level3_id": "07789",
-                            "name": "Xã Tăng Tiến",
-                            "type": "Xã"
+                            "name": "Phường Tăng Tiến",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "07792",
-                            "name": "Xã Quảng Minh",
-                            "type": "Xã"
+                            "name": "Phường Quảng Minh",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "07795",
-                            "name": "Thị trấn Nếnh",
-                            "type": "Thị trấn"
+                            "name": "Phường Nếnh",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "07798",
-                            "name": "Xã Ninh Sơn",
-                            "type": "Xã"
+                            "name": "Phường Ninh Sơn",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "07801",
-                            "name": "Xã Vân Trung",
-                            "type": "Xã"
+                            "name": "Phường Vân Trung",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "07804",
@@ -15420,8 +15420,8 @@
                         },
                         {
                             "level3_id": "07807",
-                            "name": "Xã Quang Châu",
-                            "type": "Xã"
+                            "name": "Phường Quang Châu",
+                            "type": "Phường"
                         }
                     ]
                 },
@@ -58362,10 +58362,10 @@
             ]
         }
     ],
-    "data_date": "10\/04\/2023",
-    "generate_date": 1681135390,
+    "data_date": "01\/02\/2024",
+    "generate_date": 1704125085,
     "stats": {
-        "elapsed_time": 21.396399974822998,
+        "elapsed_time": 16.553498029708862,
         "level1_count": 63,
         "level2_count": 705,
         "level3_count": 10598
