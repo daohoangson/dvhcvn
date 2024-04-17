@@ -27271,11 +27271,6 @@
                             "type": "Xã"
                         },
                         {
-                            "level3_id": "15790",
-                            "name": "Xã Thiệu Phú",
-                            "type": "Xã"
-                        },
-                        {
                             "level3_id": "15793",
                             "name": "Xã Thiệu Long",
                             "type": "Xã"
@@ -27332,8 +27327,8 @@
                         },
                         {
                             "level3_id": "15829",
-                            "name": "Xã Minh Tâm",
-                            "type": "Xã"
+                            "name": "Thị trấn Hậu Hiền",
+                            "type": "Thị trấn"
                         },
                         {
                             "level3_id": "15832",
@@ -45848,8 +45843,8 @@
                 },
                 {
                     "level2_id": "721",
-                    "name": "Thị xã Bến Cát",
-                    "type": "Thị xã",
+                    "name": "Thành phố Bến Cát",
+                    "type": "Thành phố",
                     "level3s": [
                         {
                             "level3_id": "25813",
@@ -45863,13 +45858,13 @@
                         },
                         {
                             "level3_id": "25840",
-                            "name": "Xã An Điền",
-                            "type": "Xã"
+                            "name": "Phường An Điền",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "25843",
-                            "name": "Xã An Tây",
-                            "type": "Xã"
+                            "name": "Phường An Tây",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "25846",
@@ -50458,14 +50453,9 @@
                 },
                 {
                     "level2_id": "816",
-                    "name": "Thị xã Gò Công",
-                    "type": "Thị xã",
+                    "name": "Thành phố Gò Công",
+                    "type": "Thành phố",
                     "level3s": [
-                        {
-                            "level3_id": "28294",
-                            "name": "Phường 3",
-                            "type": "Phường"
-                        },
                         {
                             "level3_id": "28297",
                             "name": "Phường 2",
@@ -50473,11 +50463,6 @@
                         },
                         {
                             "level3_id": "28300",
-                            "name": "Phường 4",
-                            "type": "Phường"
-                        },
-                        {
-                            "level3_id": "28303",
                             "name": "Phường 1",
                             "type": "Phường"
                         },
@@ -50488,23 +50473,23 @@
                         },
                         {
                             "level3_id": "28309",
-                            "name": "Xã Long Hưng",
-                            "type": "Xã"
+                            "name": "Phường Long Hưng",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "28312",
-                            "name": "Xã Long Thuận",
-                            "type": "Xã"
+                            "name": "Phường Long Thuận",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "28315",
-                            "name": "Xã Long Chánh",
-                            "type": "Xã"
+                            "name": "Phường Long Chánh",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "28318",
-                            "name": "Xã Long Hòa",
-                            "type": "Xã"
+                            "name": "Phường Long Hòa",
+                            "type": "Phường"
                         },
                         {
                             "level3_id": "28708",
@@ -58362,12 +58347,12 @@
             ]
         }
     ],
-    "data_date": "01\/02\/2024",
-    "generate_date": 1704125085,
+    "data_date": "01\/05\/2024",
+    "generate_date": 1713371524,
     "stats": {
-        "elapsed_time": 16.553498029708862,
+        "elapsed_time": 17.30678915977478,
         "level1_count": 63,
         "level2_count": 705,
-        "level3_count": 10598
+        "level3_count": 10595
     }
 }

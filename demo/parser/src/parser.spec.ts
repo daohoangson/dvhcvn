@@ -83,11 +83,7 @@ describe("Parser", () => {
         "Quận Tân Phú",
         "Thành phố Hồ Chí Minh",
       ],
-      "Mỹ Phước, tx. Bến Cát, Bình Dương, Việt Nam": [
-        "Phường Mỹ Phước",
-        "Thị xã Bến Cát",
-        "Tỉnh Bình Dương",
-      ],
+      "Mỹ Phước, tx. Bến Cát, Bình Dương, Việt Nam": ["25813", "721", "74"],
       "ketsatketbac@yahoo.com.vn": [],
       "533/15 Nguyễn Tri Phương P8 Q10": [
         "Phường 8",
