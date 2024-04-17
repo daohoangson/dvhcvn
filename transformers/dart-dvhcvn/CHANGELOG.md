@@ -1,3 +1,8 @@
+## 2.0.20240501
+
+- 1012/NQ-UBTVQH15: Nghị quyết vv thành lập phường An Điền, phường An Tây thuộc thị xã Bến Cát và thành lập thành phố Bến Cát, tỉnh Bình Dương;
+- 1013/NQ-UBTVQH15: Nghị quyết về việc sắp xếp, thành lập các phường thuộc thị xã Gò Công và thành lập thành phố Gò Công, tỉnh Tiền Giang;
+
 ## 2.0.20240201
 
 - 938/NQ-UBTVQH15: Nghị quyết về việc thành lập thị xã Việt Yên và các phường thuộc thị xã Việt Yên, tỉnh Bắc Giang;
