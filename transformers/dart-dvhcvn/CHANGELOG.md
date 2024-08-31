@@ -1,3 +1,9 @@
+## 2.0.20240901
+
+- 1105/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã giai đoạn 2023-2025 của tỉnh Sóc Trăng;
+- 1106/NQ-UBTVQH15: Nghị quyết sắp xếp đơn vị hành chính cấp xã giai đoạn 2023-2025 của tỉnh Tuyên Quang;
+- 1104/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã giai đoạn 2023-2025 của tỉnh Nam Định;
+
 ## 2.0.20240501
 
 - 1012/NQ-UBTVQH15: Nghị quyết vv thành lập phường An Điền, phường An Tây thuộc thị xã Bến Cát và thành lập thành phố Bến Cát, tỉnh Bình Dương;
