@@ -11,7 +11,7 @@
     "test:coverage": "vitest --coverage --no-watch"
   },
   "dependencies": {
-    "puppeteer": "^21.3.4"
+    "puppeteer": "^23.2.1"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.3",
