@@ -1,7 +1,7 @@
 {
   "name": "dvhcvn",
-  "version": "1.1.20240501",
-  "description": "Three tiers of Vietnam's administrative units (last update: 01/05/2024)",
+  "version": "1.1.20240901",
+  "description": "Three tiers of Vietnam's administrative units (last update: 01/09/2024)",
   "files": [
     "lib/*"
   ],
