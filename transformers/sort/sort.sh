@@ -15,4 +15,9 @@ fi
 rm -f $_outputPath
 
 echo "Generating $_outputPath..."
+
+python3 -m venv "$_dir/venv"
+source "$_dir/venv/bin/activate"
+python3 -m pip install unidecode
+
 python3 "$_dir/sort.py" <$_inputPath >$_outputPath
