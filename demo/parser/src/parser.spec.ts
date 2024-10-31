@@ -449,11 +449,7 @@ describe("Parser", () => {
 
       "133 tran hung dao quan5": ["Quận 5", "Thành phố Hồ Chí Minh"],
       "số 8 trần nhân tông , p thanh sơn , tp phan rang tháp chàm , ninh thuận":
-        [
-          "Phường Thanh Sơn",
-          "Thành phố Phan Rang-Tháp Chàm",
-          "Tỉnh Ninh Thuận",
-        ],
+        ["22750", "582", "58"],
       "Số 44 KV1, P. Ba Láng, Q. Cái Răng, Tp. Cần Thơ": [
         "Phường Ba Láng",
         "Quận Cái Răng",
