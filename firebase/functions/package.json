@@ -24,7 +24,7 @@
     "firebase-functions": "^4.9.0",
     "formdata-node": "^4.4.1",
     "node-fetch-commonjs": "^3.3.1",
-    "puppeteer": "^21.3.4",
+    "puppeteer": "^23.6.1",
     "valibot": "^0.42.1"
   },
   "devDependencies": {
