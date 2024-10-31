@@ -18,7 +18,7 @@ describe("telegram/send", () => {
       },
     });
 
-    const actual = await send("Hello");
+    const actual = await send(`[${new Date().toISOString()}] ${__filename}`);
     expect(actual).toBeTruthy();
   });
 

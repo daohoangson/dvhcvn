@@ -29,7 +29,7 @@ describe("getDateInBrowserContext", () => {
   });
 
   it("should return undefined", () => {
-    const dom = new JSDOM(`<p>Foo</p>`);
+    const dom = new JSDOM("<p>Foo</p>");
     vi.stubGlobal("document", dom.window.document);
 
     const date = getDateInBrowserContext();
