@@ -6,5 +6,11 @@
     { "src": "demo/*.html", "use": "@now/static" },
     { "src": "demo/*.js", "use": "@now/static" }
   ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://github.com/daohoangson/dvhcvn#demo"
+    }
+  ],
   "version": 2
 }
