@@ -9,7 +9,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "https://github.com/daohoangson/dvhcvn"
+      "destination": "https://github.com/daohoangson/dvhcvn#demo"
     }
   ],
   "version": 2
