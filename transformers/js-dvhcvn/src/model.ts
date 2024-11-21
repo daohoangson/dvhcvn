@@ -21,7 +21,7 @@ export class Level2 extends Entity<Level1, Level3> {
     id: string,
     name: string,
     type: Type,
-    children: Level3[]
+    children: Level3[],
   ) {
     super(id, name, type, children);
   }
@@ -45,7 +45,7 @@ export class Level3 extends Entity<Level2, undefined> {
     private readonly _level2Index: number,
     id: string,
     name: string,
-    type: Type
+    type: Type,
   ) {
     super(id, name, type);
   }
