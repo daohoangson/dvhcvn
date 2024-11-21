@@ -2,7 +2,7 @@ import { Type } from "./model";
 
 export abstract class Entity<
   ParentType extends Entity<any, any> | undefined,
-  ChildType extends Entity<any, any> | undefined
+  ChildType extends Entity<any, any> | undefined,
 > {
   public abstract get parent(): ParentType;
 
@@ -10,7 +10,7 @@ export abstract class Entity<
     public id: string,
     public name: string,
     public type: Type,
-    public children?: ChildType[]
+    public children?: ChildType[],
   ) {}
 
   public get typeAsString(): string {
@@ -45,7 +45,7 @@ export abstract class Entity<
 
 export function findLevelXById<T extends Entity<any, any>>(
   list: T[] | undefined,
-  id: string
+  id: string,
 ): T | undefined {
   for (const item of list ?? []) {
     if (item.id === id) {
@@ -56,7 +56,7 @@ export function findLevelXById<T extends Entity<any, any>>(
 
 export function findLevelXByName<T extends Entity<any, any>>(
   list: T[] | undefined,
-  name: string
+  name: string,
 ): T | undefined {
   for (const item of list ?? []) {
     if (item.name === name) {

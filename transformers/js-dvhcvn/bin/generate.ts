@@ -38,8 +38,8 @@ export function main(args: string[]): void {
 
   stdout.write(
     `\n\nexport const parents: Record<string,string> = ${JSON.stringify(
-      parents
-    )};`
+      parents,
+    )};`,
   );
 }
 
@@ -57,7 +57,7 @@ function _getType(str: string): string {
 export function processLevel1(
   parents: Parents,
   level1Index: number,
-  level1: any
+  level1: any,
 ): void {
   const id = _getString(level1.level1_id);
   const name = _getString(level1.name);
@@ -78,7 +78,7 @@ export function processLevel2(
   parents: Parents,
   level1Index: number,
   level2Index: number,
-  level2: any
+  level2: any,
 ): void {
   const id = _getString(level2.level2_id);
   const name = _getString(level2.name);
@@ -97,13 +97,13 @@ export function processLevel2(
 export function processLevel3(
   level1Index: number,
   level2Index: number,
-  level3: any
+  level3: any,
 ): void {
   const id = _getString(level3.level3_id);
   const name = _getString(level3.name);
   const type = _getType(level3.type);
   stdout.writeln(
-    `new Level3(${level1Index}, ${level2Index}, ${id}, ${name}, ${type}),`
+    `new Level3(${level1Index}, ${level2Index}, ${id}, ${name}, ${type}),`,
   );
 }
 
