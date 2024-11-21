@@ -10,8 +10,8 @@ _gsoDatePath='data/date.txt'
 _gisPath='data/gis.json'
 _osmPath='downloader/osm'
 
-# 721/NQ-UBTVQH15
-_date=10/04/2023
+# 1202/NQ-UBTVQH15
+_date=01/11/2024
 
 if [ ! -f $_gsoPath ]; then
   echo "Generating $_gsoPath..."

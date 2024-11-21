@@ -7,7 +7,8 @@ _scriptPath=./data/tmp.sh
 
 echo Generating an execution plan...
 npm install >./logs/npm-install.txt 2>./logs/npm-install.log
-node ./planner.js >$_scriptPath
+npx puppeteer browsers install chrome
+node ./bin/plan.mjs >$_scriptPath
 
 echo Running $_scriptPath...
 bash $_scriptPath

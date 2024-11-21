@@ -43,7 +43,7 @@ export abstract class Entity<
   }
 }
 
-export function findById<T extends Entity<any, any>>(
+export function findLevelXById<T extends Entity<any, any>>(
   list: T[] | undefined,
   id: string
 ): T | undefined {
@@ -54,7 +54,7 @@ export function findById<T extends Entity<any, any>>(
   }
 }
 
-export function findByName<T extends Entity<any, any>>(
+export function findLevelXByName<T extends Entity<any, any>>(
   list: T[] | undefined,
   name: string
 ): T | undefined {

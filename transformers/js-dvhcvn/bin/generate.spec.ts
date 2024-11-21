@@ -27,7 +27,7 @@ describe("generate", () => {
   });
 
   it("should process level 1", () => {
-    processLevel1(0, {
+    processLevel1({}, 0, {
       level1_id: "01",
       name: "Thành phố Hà Nội",
       type: "Thành phố Trung ương",
@@ -39,7 +39,7 @@ describe("generate", () => {
   });
 
   it("should process level 2", () => {
-    processLevel2(0, 0, {
+    processLevel2({}, 0, 0, {
       level2_id: "001",
       name: "Quận Ba Đình",
       type: "Quận",
@@ -103,12 +103,14 @@ describe("generate", () => {
         "new Level3(0, 0, '00001', 'Phường Phúc Xá', Type.phuong),\n" +
         "]),\n" +
         "]),\n" +
-        "];"
+        "];\n" +
+        "\n" +
+        'export const parents: Record<string,string> = {"001":"01","00001":"001"};'
     );
   });
 
   it("should handle name with single quote", () => {
-    processLevel1(0, {
+    processLevel1({}, 0, {
       level1_id: "foo",
       name: "Tỉnh Foo's",
       type: "Tỉnh",
@@ -120,7 +122,7 @@ describe("generate", () => {
   });
 
   it("should handle name with double quote", () => {
-    processLevel1(0, {
+    processLevel1({}, 0, {
       level1_id: "foo",
       name: 'Tỉnh Foo"bar',
       type: "Tỉnh",
@@ -132,7 +134,7 @@ describe("generate", () => {
   });
 
   it("should handle name with single and double quotes", () => {
-    processLevel1(0, {
+    processLevel1({}, 0, {
       level1_id: "foo",
       name: "Tỉnh 'Foo\"bar",
       type: "Tỉnh",
@@ -145,7 +147,7 @@ describe("generate", () => {
 
   it("should handle invalid type", () => {
     const fn = () =>
-      processLevel1(0, {
+      processLevel1({}, 0, {
         level1_id: "foo",
         name: "Bar Foo",
         type: "Bar",

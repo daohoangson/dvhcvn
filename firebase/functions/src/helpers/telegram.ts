@@ -1,6 +1,9 @@
 import * as functions from "firebase-functions";
 import { Blob, FormData } from "formdata-node";
 import fetch from "node-fetch-commonjs";
+import { boolean, object, safeParse } from "valibot";
+
+const ResponseSchema = object({ ok: boolean() });
 
 export async function send(text: string, options: { png?: Buffer } = {}) {
   const config = functions.config() as {
@@ -30,14 +33,15 @@ export async function send(text: string, options: { png?: Buffer } = {}) {
 
   const url = `https://api.telegram.org/bot${token}/${action}`;
   const response = await fetch(url, { body: data, method: "POST" });
-  const json = (await response.json()) as any;
-  const ok = json?.ok;
-  if (typeof ok !== "boolean") {
+  const json = (await response.json()) as unknown;
+  const { output, success } = safeParse(ResponseSchema, json);
+  if (!success) {
     throw new Error(
       `Unexpected response from Telegram: ${JSON.stringify(json)})}`
     );
   }
 
+  const ok = output.ok;
   if (!ok) {
     console.log({ text, json });
   }
