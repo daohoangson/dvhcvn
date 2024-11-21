@@ -227,7 +227,6 @@
                     ["26569", "Long Phước", "Xã", "Long Phuoc"],
                     ["26558", "Long Tâm", "Phường", "Long Tam"],
                     ["26557", "Long Toàn", "Phường", "Long Toan"],
-                    ["26551", "Phước Hiệp", "Phường", "Phuoc Hiep"],
                     ["26548", "Phước Hưng", "Phường", "Phuoc Hung"],
                     ["26554", "Phước Nguyên", "Phường", "Phuoc Nguyen"],
                     ["26560", "Phước Trung", "Phường", "Phuoc Trung"],
@@ -243,7 +242,7 @@
                     ["26593", "Bình Trung", "Xã", "Binh Trung"],
                     ["26599", "Cù Bị", "Xã", "Cu Bi"],
                     ["26614", "Đá Bạc", "Xã", "Da Bac"],
-                    ["26608", "Kim Long", "Xã", "Kim Long"],
+                    ["26608", "Kim Long", "Thị trấn", "Kim Long"],
                     ["26602", "Láng Lớn", "Xã", "Lang Lon"],
                     ["26575", "Ngãi Giao", "Thị trấn", "Ngai Giao"],
                     ["26617", "Nghĩa Thành", "Xã", "Nghia Thanh"],
@@ -260,28 +259,19 @@
                 []
             ],
             [
-                "753", "Đất Đỏ", "Huyện", "Dat Do",
+                "753", "Long Đất", "Huyện", "Long Dat",
                 [
                     ["26680", "Đất Đỏ", "Thị trấn", "Dat Do"],
                     ["26698", "Láng Dài", "Xã", "Lang Dai"],
-                    ["26701", "Lộc An", "Xã", "Loc An"],
-                    ["26689", "Long Mỹ", "Xã", "Long My"],
-                    ["26695", "Long Tân", "Xã", "Long Tan"],
-                    ["26692", "Phước Hải", "Thị trấn", "Phuoc Hai"],
-                    ["26686", "Phước Hội", "Xã", "Phuoc Hoi"],
-                    ["26683", "Phước Long Thọ", "Xã", "Phuoc Long Tho"]
-                ]
-            ],
-            [
-                "752", "Long Điền", "Huyện", "Long Dien",
-                [
-                    ["26665", "An Ngãi", "Xã", "An Ngai"],
-                    ["26671", "An Nhứt", "Xã", "An Nhut"],
                     ["26659", "Long Điền", "Thị trấn", "Long Dien"],
                     ["26662", "Long Hải", "Thị trấn", "Long Hai"],
+                    ["26695", "Long Tân", "Xã", "Long Tan"],
+                    ["26689", "Phước Hải", "Thị trấn", "Phuoc Hai"],
+                    ["26686", "Phước Hội", "Xã", "Phuoc Hoi"],
                     ["26677", "Phước Hưng", "Xã", "Phuoc Hung"],
+                    ["26683", "Phước Long Thọ", "Xã", "Phuoc Long Tho"],
                     ["26674", "Phước Tỉnh", "Xã", "Phuoc Tinh"],
-                    ["26668", "Tam Phước", "Xã", "Tam Phuoc"]
+                    ["26668", "Tam An", "Xã", "Tam An"]
                 ]
             ],
             [
@@ -351,6 +341,8 @@
                     ["07231", "Dĩnh Kế", "Phường", "Dinh Ke"],
                     ["07441", "Dĩnh Trì", "Xã", "Dinh Tri"],
                     ["07696", "Đồng Sơn", "Xã", "Dong Son"],
+                    ["07747", "Đồng Việt", "Xã", "Dong Viet"],
+                    ["07735", "Đức Giang", "Xã", "Duc Giang"],
                     ["07210", "Hoàng Văn Thụ", "Phường", "Hoang Van Thu"],
                     ["07219", "Lê Lợi", "Phường", "Le Loi"],
                     ["07216", "Mỹ Độ", "Phường", "My Do"],
@@ -370,28 +362,22 @@
                 [
                     ["07870", "Bắc Lý", "Thị trấn", "Bac Ly"],
                     ["07882", "Châu Minh", "Xã", "Chau Minh"],
-                    ["07852", "Đại Thành", "Xã", "Dai Thanh"],
                     ["07861", "Danh Thắng", "Xã", "Danh Thang"],
                     ["07867", "Đoan Bái", "Xã", "Doan Bai"],
                     ["07879", "Đông Lỗ", "Xã", "Dong Lo"],
-                    ["07813", "Đồng Tân", "Xã", "Dong Tan"],
-                    ["07837", "Hòa Sơn", "Xã", "Hoa Son"],
-                    ["07828", "Hoàng An", "Xã", "Hoang An"],
-                    ["07819", "Hoàng Lương", "Xã", "Hoang Luong"],
-                    ["07825", "Hoàng Thanh", "Xã", "Hoang Thanh"],
+                    ["07816", "Đồng Tiến", "Xã", "Dong Tien"],
                     ["07822", "Hoàng Vân", "Xã", "Hoang Van"],
                     ["07858", "Hợp Thịnh", "Xã", "Hop Thinh"],
-                    ["07849", "Hùng Sơn", "Xã", "Hung Son"],
+                    ["07849", "Hùng Thái", "Xã", "Hung Thai"],
                     ["07876", "Hương Lâm", "Xã", "Huong Lam"],
                     ["07846", "Lương Phong", "Xã", "Luong Phong"],
                     ["07885", "Mai Đình", "Xã", "Mai Dinh"],
                     ["07864", "Mai Trung", "Xã", "Mai Trung"],
                     ["07831", "Ngọc Sơn", "Xã", "Ngoc Son"],
-                    ["07843", "Quang Minh", "Xã", "Quang Minh"],
-                    ["07834", "Thái Sơn", "Xã", "Thai Son"],
+                    ["07843", "Sơn Thịnh", "Xã", "Son Thinh"],
                     ["07840", "Thắng", "Thị trấn", "Thang"],
-                    ["07816", "Thanh Vân", "Xã", "Thanh Van"],
                     ["07855", "Thường Thắng", "Xã", "Thuong Thang"],
+                    ["07825", "Toàn Thắng", "Xã", "Toan Thang"],
                     ["07873", "Xuân Cẩm", "Xã", "Xuan Cam"]
                 ]
             ],
@@ -405,7 +391,6 @@
                     ["07405", "Hương Lạc", "Xã", "Huong Lac"],
                     ["07387", "Hương Sơn", "Xã", "Huong Son"],
                     ["07399", "Kép", "Thị trấn", "Kep"],
-                    ["07402", "Mỹ Hà", "Xã", "My Ha"],
                     ["07420", "Mỹ Thái", "Xã", "My Thai"],
                     ["07378", "Nghĩa Hòa", "Xã", "Nghia Hoa"],
                     ["07381", "Nghĩa Hưng", "Xã", "Nghia Hung"],
@@ -417,8 +402,7 @@
                     ["07393", "Tiên Lục", "Xã", "Tien Luc"],
                     ["07375", "Vôi", "Thị trấn", "Voi"],
                     ["07429", "Xuân Hương", "Xã", "Xuan Huong"],
-                    ["07426", "Xương Lâm", "Xã", "Xuong Lam"],
-                    ["07414", "Yên Mỹ", "Xã", "Yen My"]
+                    ["07426", "Xương Lâm", "Xã", "Xuong Lam"]
                 ]
             ],
             [
@@ -447,7 +431,6 @@
                     ["07471", "Trường Giang", "Xã", "Truong Giang"],
                     ["07507", "Trường Sơn", "Xã", "Truong Son"],
                     ["07489", "Vô Tranh", "Xã", "Vo Tranh"],
-                    ["07516", "Vũ Xá", "Xã", "Vu Xa"],
                     ["07498", "Yên Sơn", "Xã", "Yen Son"]
                 ]
             ],
@@ -513,10 +496,8 @@
                     ["07321", "An Dương", "Xã", "An Duong"],
                     ["07339", "Cao Thượng", "Thị trấn", "Cao Thuong"],
                     ["07336", "Cao Xá", "Xã", "Cao Xa"],
-                    ["07312", "Đại Hóa", "Xã", "Dai Hoa"],
                     ["07330", "Hợp Đức", "Xã", "Hop Duc"],
-                    ["07333", "Lam Cốt", "Xã", "Lam Cot"],
-                    ["07303", "Lan Giới", "Xã", "Lan Gioi"],
+                    ["07333", "Lam Sơn", "Xã", "Lam Son"],
                     ["07357", "Liên Chung", "Xã", "Lien Chung"],
                     ["07327", "Liên Sơn", "Xã", "Lien Son"],
                     ["07348", "Ngọc Châu", "Xã", "Ngoc Chau"],
@@ -525,8 +506,7 @@
                     ["07351", "Ngọc Vân", "Xã", "Ngoc Van"],
                     ["07306", "Nhã Nam", "Thị trấn", "Nha Nam"],
                     ["07324", "Phúc Hòa", "Xã", "Phuc Hoa"],
-                    ["07318", "Phúc Sơn", "Xã", "Phuc Son"],
-                    ["07315", "Quang Tiến", "Xã", "Quang Tien"],
+                    ["07315", "Quang Trung", "Xã", "Quang Trung"],
                     ["07366", "Quế Nham", "Xã", "Que Nham"],
                     ["07345", "Song Vân", "Xã", "Song Van"],
                     ["07309", "Tân Trung", "Xã", "Tan Trung"],
@@ -561,8 +541,6 @@
                 [
                     ["07738", "Cảnh Thụy", "Xã", "Canh Thuy"],
                     ["07750", "Đồng Phúc", "Xã", "Dong Phuc"],
-                    ["07747", "Đồng Việt", "Xã", "Dong Viet"],
-                    ["07735", "Đức Giang", "Xã", "Duc Giang"],
                     ["07690", "Hương Gián", "Xã", "Huong Gian"],
                     ["07723", "Lãng Sơn", "Xã", "Lang Son"],
                     ["07684", "Lão Hộ", "Xã", "Lao Ho"],
@@ -592,12 +570,10 @@
                     ["07260", "Đồng Tâm", "Xã", "Dong Tam"],
                     ["07243", "Đồng Tiến", "Xã", "Dong Tien"],
                     ["07255", "Đồng Vương", "Xã", "Dong Vuong"],
-                    ["07267", "Hồng Kỳ", "Xã", "Hong Ky"],
                     ["07279", "Hương Vĩ", "Xã", "Huong Vi"],
                     ["07288", "Phồn Xương", "Thị trấn", "Phon Xuong"],
-                    ["07261", "Tam Hiệp", "Xã", "Tam Hiep"],
                     ["07252", "Tam Tiến", "Xã", "Tam Tien"],
-                    ["07276", "Tân Hiệp", "Xã", "Tan Hiep"],
+                    ["07261", "Tân Hiệp", "Xã", "Tan Hiep"],
                     ["07291", "Tân Sỏi", "Xã", "Tan Soi"],
                     ["07264", "Tiến Thắng", "Xã", "Tien Thang"],
                     ["07249", "Xuân Lương", "Xã", "Xuan Luong"]
@@ -1328,7 +1304,7 @@
                     ["21871", "Cát Hanh", "Xã", "Cat Hanh"],
                     ["21883", "Cát Hiệp", "Xã", "Cat Hiep"],
                     ["21889", "Cát Hưng", "Xã", "Cat Hung"],
-                    ["21862", "Cát Khánh", "Xã", "Cat Khanh"],
+                    ["21862", "Cát Khánh", "Thị trấn", "Cat Khanh"],
                     ["21868", "Cát Lâm", "Xã", "Cat Lam"],
                     ["21859", "Cát Minh", "Xã", "Cat Minh"],
                     ["21886", "Cát Nhơn", "Xã", "Cat Nhon"],
@@ -1374,9 +1350,6 @@
                     ["21556", "Đống Đa", "Phường", "Dong Da"],
                     ["21595", "Ghềnh Ráng", "Phường", "Ghenh Rang"],
                     ["21562", "Hải Cảng", "Phường", "Hai Cang"],
-                    ["21571", "Lê Hồng Phong", "Phường", "Le Hong Phong"],
-                    ["21583", "Lê Lợi", "Phường", "Le Loi"],
-                    ["21580", "Lý Thường Kiệt", "Phường", "Ly Thuong Kiet"],
                     ["21577", "Ngô Mây", "Phường", "Ngo May"],
                     ["21592", "Nguyễn Văn Cừ", "Phường", "Nguyen Van Cu"],
                     ["21550", "Nhơn Bình", "Phường", "Nhon Binh"],
@@ -1387,9 +1360,8 @@
                     ["21553", "Nhơn Phú", "Phường", "Nhon Phu"],
                     ["21991", "Phước Mỹ", "Xã", "Phuoc My"],
                     ["21565", "Quang Trung", "Phường", "Quang Trung"],
-                    ["21568", "Thị Nại", "Phường", "Thi Nai"],
-                    ["21574", "Trần Hưng Đạo", "Phường", "Tran Hung Dao"],
-                    ["21586", "Trần Phú", "Phường", "Tran Phu"],
+                    ["21583", "Thị Nại", "Phường", "Thi Nai"],
+                    ["21580", "Trần Phú", "Phường", "Tran Phu"],
                     ["21559", "Trần Quang Diệu", "Phường", "Tran Quang Dieu"]
                 ]
             ],
@@ -1886,12 +1858,9 @@
             [
                 "593", "Phan Thiết", "Thành phố", "Phan Thiet",
                 [
-                    ["22939", "Bình Hưng", "Phường", "Binh Hung"],
+                    ["22951", "Bình Hưng", "Phường", "Binh Hung"],
                     ["22954", "Đức Long", "Phường", "Duc Long"],
-                    ["22942", "Đức Nghĩa", "Phường", "Duc Nghia"],
-                    ["22948", "Đức Thắng", "Phường", "Duc Thang"],
                     ["22918", "Hàm Tiến", "Phường", "Ham Tien"],
-                    ["22951", "Hưng Long", "Phường", "Hung Long"],
                     ["22945", "Lạc Đạo", "Phường", "Lac Dao"],
                     ["22915", "Mũi Né", "Phường", "Mui Ne"],
                     ["22960", "Phong Nẫm", "Xã", "Phong Nam"],
@@ -5751,18 +5720,18 @@
                 ]
             ],
             [
-                "311", "Thuỷ Nguyên", "Huyện", "Thuy Nguyen",
+                "311", "Thuỷ Nguyên", "Thành phố", "Thuy Nguyen",
                 [
-                    ["11533", "An Lư", "Xã", "An Lu"],
+                    ["11533", "An Lư", "Phường", "An Lu"],
                     ["11479", "An Sơn", "Xã", "An Son"],
                     ["11518", "Cao Nhân", "Xã", "Cao Nhan"],
                     ["11509", "Chính Mỹ", "Xã", "Chinh My"],
                     ["11524", "Đông Sơn", "Xã", "Dong Son"],
-                    ["11578", "Dương Quan", "Xã", "Duong Quan"],
+                    ["11578", "Dương Quan", "Phường", "Duong Quan"],
                     ["11497", "Gia Đức", "Xã", "Gia Duc"],
                     ["11494", "Gia Minh", "Xã", "Gia Minh"],
-                    ["11527", "Hoà Bình", "Xã", "Hoa Binh"],
-                    ["11572", "Hoa Động", "Xã", "Hoa Dong"],
+                    ["11527", "Hoà Bình", "Phường", "Hoa Binh"],
+                    ["11572", "Hoa Động", "Phường", "Hoa Dong"],
                     ["11566", "Hoàng Động", "Xã", "Hoang Dong"],
                     ["11515", "Hợp Thành", "Xã", "Hop Thanh"],
                     ["11512", "Kênh Giang", "Xã", "Kenh Giang"],
@@ -5774,18 +5743,17 @@
                     ["11485", "Liên Khê", "Xã", "Lien Khe"],
                     ["11488", "Lưu Kiếm", "Xã", "Luu Kiem"],
                     ["11491", "Lưu Kỳ", "Xã", "Luu Ky"],
-                    ["11473", "Minh Đức", "Thị trấn", "Minh Duc"],
+                    ["11473", "Minh Đức", "Phường", "Minh Duc"],
                     ["11500", "Minh Tân", "Xã", "Minh Tan"],
                     ["11521", "Mỹ Đồng", "Xã", "My Dong"],
-                    ["11539", "Ngũ Lão", "Xã", "Ngu Lao"],
                     ["11470", "Núi Đèo", "Thị trấn", "Nui Deo"],
                     ["11548", "Phả Lễ", "Xã", "Pha Le"],
+                    ["11539", "Phạm Ngũ Lão", "Phường", "Pham Ngu Lao"],
                     ["11503", "Phù Ninh", "Xã", "Phu Ninh"],
                     ["11542", "Phục Lễ", "Xã", "Phuc Le"],
-                    ["11506", "Quảng Thanh", "Xã", "Quang Thanh"],
+                    ["11506", "Quảng Thanh", "Phường", "Quang Thanh"],
                     ["11545", "Tam Hưng", "Xã", "Tam Hung"],
-                    ["11575", "Tân Dương", "Xã", "Tan Duong"],
-                    ["11557", "Thiên Hương", "Xã", "Thien Huong"],
+                    ["11557", "Thiên Hương", "Phường", "Thien Huong"],
                     ["11563", "Thuỷ Đường", "Xã", "Thuy Duong"],
                     ["11560", "Thuỷ Sơn", "Xã", "Thuy Son"],
                     ["11536", "Thuỷ Triều", "Xã", "Thuy Trieu"],
@@ -7178,13 +7146,12 @@
                     ["30748", "An Hòa", "Phường", "An Hoa"],
                     ["30763", "Phi Thông", "Xã", "Phi Thong"],
                     ["30754", "Rạch Sỏi", "Phường", "Rach Soi"],
-                    ["30742", "Vĩnh Bảo", "Phường", "Vinh Bao"],
                     ["30739", "Vĩnh Hiệp", "Phường", "Vinh Hiep"],
                     ["30745", "Vĩnh Lạc", "Phường", "Vinh Lac"],
                     ["30757", "Vĩnh Lợi", "Phường", "Vinh Loi"],
                     ["30736", "Vĩnh Quang", "Phường", "Vinh Quang"],
                     ["30733", "Vĩnh Thanh", "Phường", "Vinh Thanh"],
-                    ["30730", "Vĩnh Thanh Vân", "Phường", "Vinh Thanh Van"],
+                    ["30742", "Vĩnh Thanh Vân", "Phường", "Vinh Thanh Van"],
                     ["30760", "Vĩnh Thông", "Phường", "Vinh Thong"]
                 ]
             ],
@@ -7578,31 +7545,11 @@
             ],
             [
                 "683", "Cát Tiên", "Huyện", "Cat Tien",
-                [
-                    ["25159", "Cát Tiên", "Thị trấn", "Cat Tien"],
-                    ["25192", "Đồng Nai Thượng", "Xã", "Dong Nai Thuong"],
-                    ["25183", "Đức Phổ", "Xã", "Duc Pho"],
-                    ["25168", "Gia Viễn", "Xã", "Gia Vien"],
-                    ["25171", "Nam Ninh", "Xã", "Nam Ninh"],
-                    ["25180", "Phước Cát ", "Thị trấn", "Phuoc Cat "],
-                    ["25165", "Phước Cát 2", "Xã", "Phuoc Cat 2"],
-                    ["25189", "Quảng Ngãi", "Xã", "Quang Ngai"],
-                    ["25162", "Tiên Hoàng", "Xã", "Tien Hoang"]
-                ]
+                []
             ],
             [
                 "681", "Đạ Huoai", "Huyện", "Da Huoai",
-                [
-                    ["25096", "Đạ M'ri", "Thị trấn", "Da M'ri"],
-                    ["25111", "Đạ Oai", "Xã", "Da Oai"],
-                    ["25114", "Đạ Ploa", "Xã", "Da Ploa"],
-                    ["25108", "Đạ Tồn", "Xã", "Da Ton"],
-                    ["25120", "Đoàn Kết", "Xã", "Doan Ket"],
-                    ["25105", "Hà Lâm", "Xã", "Ha Lam"],
-                    ["25099", "Ma Đa Guôi", "Thị trấn", "Ma Da Guoi"],
-                    ["25117", "Ma Đa Guôi", "Xã", "Ma Da Guoi"],
-                    ["25123", "Phước Lộc", "Xã", "Phuoc Loc"]
-                ]
+                []
             ],
             [
                 "672", "Đà Lạt", "Thành phố", "Da Lat",
@@ -7629,14 +7576,32 @@
                 "682", "Đạ Tẻh", "Huyện", "Da Teh",
                 [
                     ["25129", "An Nhơn", "Xã", "An Nhon"],
+                    ["25114", "Bà Gia", "Xã", "Ba Gia"],
+                    ["25159", "Cát Tiên", "Thị trấn", "Cat Tien"],
                     ["25153", "Đạ Kho", "Xã", "Da Kho"],
                     ["25141", "Đạ Lây", "Xã", "Da Lay"],
+                    ["25096", "Đạ M'ri", "Thị trấn", "Da M'ri"],
+                    ["25102", "Đạ M'ri", "Xã", "Da M'ri"],
+                    ["25111", "Đạ Oai", "Xã", "Da Oai"],
                     ["25156", "Đạ Pal", "Xã", "Da Pal"],
                     ["25126", "Đạ Tẻh", "Thị trấn", "Da Teh"],
+                    ["25192", "Đồng Nai Thượng", "Xã", "Dong Nai Thuong"],
+                    ["25183", "Đức Phổ", "Xã", "Duc Pho"],
+                    ["25168", "Gia Viễn", "Xã", "Gia Vien"],
+                    ["25105", "Hà Lâm", "Xã", "Ha Lam"],
+                    ["25099", "Ma Đa Guôi", "Thị trấn", "Ma Da Guoi"],
+                    ["25117", "Ma Đa Guôi", "Xã", "Ma Da Guoi"],
                     ["25135", "Mỹ Đức", "Xã", "My Duc"],
+                    ["25174", "Mỹ Lâm", "Xã", "My Lam"],
+                    ["25171", "Nam Ninh", "Xã", "Nam Ninh"],
+                    ["25186", "Phù Mỹ", "Xã", "Phu My"],
+                    ["25180", "Phước Cát ", "Thị trấn", "Phuoc Cat "],
+                    ["25165", "Phước Cát 2", "Xã", "Phuoc Cat 2"],
+                    ["25189", "Quảng Ngãi", "Xã", "Quang Ngai"],
                     ["25138", "Quảng Trị", "Xã", "Quang Tri"],
                     ["25132", "Quốc Oai", "Xã", "Quoc Oai"],
-                    ["25147", "Triệu Hải", "Xã", "Trieu Hai"]
+                    ["25162", "Tiên Hoàng", "Xã", "Tien Hoang"],
+                    ["25177", "Tư Nghĩa", "Xã", "Tu Nghia"]
                 ]
             ],
             [
@@ -7685,8 +7650,7 @@
                     ["24949", "Ka Đơn", "Xã", "Ka Don"],
                     ["24940", "Lạc Lâm", "Xã", "Lac Lam"],
                     ["24934", "Lạc Xuân", "Xã", "Lac Xuan"],
-                    ["24955", "Pró", "Xã", "Pro"],
-                    ["24946", "Quảng Lập", "Xã", "Quang Lap"],
+                    ["24955", "Quảng Lập", "Xã", "Quang Lap"],
                     ["24931", "Thạnh Mỹ", "Thị trấn", "Thanh My"],
                     ["24952", "Tu Tra", "Xã", "Tu Tra"]
                 ]
@@ -7882,7 +7846,6 @@
                     ["06415", "Minh Tiến", "Xã", "Minh Tien"],
                     ["06418", "Nhật Tiến", "Xã", "Nhat Tien"],
                     ["06394", "Quyết Thắng", "Xã", "Quyet Thang"],
-                    ["06454", "Sơn Hà", "Xã", "Son Ha"],
                     ["06442", "Tân Thành", "Xã", "Tan Thanh"],
                     ["06421", "Thanh Sơn", "Xã", "Thanh Son"],
                     ["06406", "Thiện Tân", "Xã", "Thien Tan"],
@@ -7925,7 +7888,6 @@
                     ["06589", "Sàn Viên", "Xã", "San Vien"],
                     ["06559", "Tam Gia", "Xã", "Tam Gia"],
                     ["06577", "Thống Nhất", "Xã", "Thong Nhat"],
-                    ["06574", "Tĩnh Bắc", "Xã", "Tinh Bac"],
                     ["06562", "Tú Đoạn", "Xã", "Tu Doan"],
                     ["06547", "Tú Mịch", "Xã", "Tu Mich"],
                     ["06607", "Xuân Dương", "Xã", "Xuan Duong"],
@@ -7938,7 +7900,6 @@
                     ["06010", "Cao Minh", "Xã", "Cao Minh"],
                     ["06034", "Chi Lăng", "Xã", "Chi Lang"],
                     ["06013", "Chí Minh", "Xã", "Chi Minh"],
-                    ["06040", "Đại Đồng", "Xã", "Dai Dong"],
                     ["06043", "Đào Viên", "Xã", "Dao Vien"],
                     ["06046", "Đề Thám", "Xã", "De Tham"],
                     ["06001", "Đoàn Kết", "Xã", "Doan Ket"],
@@ -7953,10 +7914,9 @@
                     ["06028", "Tân Minh", "Xã", "Tan Minh"],
                     ["06019", "Tân Tiến", "Xã", "Tan Tien"],
                     ["06022", "Tân Yên", "Xã", "Tan Yen"],
-                    ["05995", "Thất Khê", "Thị trấn", "That Khe"],
+                    ["06040", "Thất Khê", "Thị trấn", "That Khe"],
                     ["06016", "Tri Phương", "Xã", "Tri Phuong"],
-                    ["06037", "Trung Thành", "Xã", "Trung Thanh"],
-                    ["06007", "Vĩnh Tiến", "Xã", "Vinh Tien"]
+                    ["06037", "Trung Thành", "Xã", "Trung Thanh"]
                 ]
             ],
             [
@@ -7987,7 +7947,6 @@
                     ["06283", "An Sơn", "Xã", "An Son"],
                     ["06298", "Bình Phúc", "Xã", "Binh Phuc"],
                     ["06280", "Điềm He", "Xã", "Diem He"],
-                    ["06295", "Đồng Giáp", "Xã", "Dong Giap"],
                     ["06274", "Hòa Bình", "Xã", "Hoa Binh"],
                     ["06322", "Hữu Lễ", "Xã", "Huu Le"],
                     ["06286", "Khánh Khê", "Xã", "Khanh Khe"],
@@ -7995,7 +7954,6 @@
                     ["06292", "Lương Năng", "Xã", "Luong Nang"],
                     ["06307", "Tân Đoàn", "Xã", "Tan Doan"],
                     ["06256", "Trấn Ninh", "Xã", "Tran Ninh"],
-                    ["06301", "Tràng Các", "Xã", "Trang Cac"],
                     ["06316", "Tràng Phái", "Xã", "Trang Phai"],
                     ["06313", "Tri Lễ", "Xã", "Tri Le"],
                     ["06277", "Tú Xuyên", "Xã", "Tu Xuyen"],
@@ -8222,7 +8180,6 @@
                     ["28033", "Nhựt Chánh", "Xã", "Nhut Chanh"],
                     ["28030", "Phước Lợi", "Xã", "Phuoc Loi"],
                     ["28009", "Tân Bửu", "Xã", "Tan Buu"],
-                    ["28006", "Tân Hòa", "Xã", "Tan Hoa"],
                     ["28027", "Thạnh Đức", "Xã", "Thanh Duc"],
                     ["28000", "Thạnh Hòa", "Xã", "Thanh Hoa"],
                     ["27994", "Thạnh Lợi", "Xã", "Thanh Loi"],
@@ -8359,7 +8316,6 @@
                 "794", "Tân An", "Thành phố", "Tan An",
                 [
                     ["27694", "1", "Phường", "1"],
-                    ["27688", "2", "Phường", "2"],
                     ["27697", "3", "Phường", "3"],
                     ["27691", "4", "Phường", "4"],
                     ["27685", "5", "Phường", "5"],
@@ -9995,7 +9951,7 @@
                 "555", "Tuy Hoà", "Thành phố", "Tuy Hoa",
                 [
                     ["22015", "1", "Phường", "1"],
-                    ["22021", "2", "Phường", "2"],
+                    ["22018", "2", "Phường", "2"],
                     ["22030", "4", "Phường", "4"],
                     ["22033", "5", "Phường", "5"],
                     ["22036", "7", "Phường", "7"],
@@ -12088,12 +12044,10 @@
                     ["05818", "Hoàng Nông", "Xã", "Hoang Nong"],
                     ["05761", "Hùng Sơn", "Thị trấn", "Hung Son"],
                     ["05821", "Khôi Kỳ", "Xã", "Khoi Ky"],
-                    ["05845", "Ký Phú", "Xã", "Ky Phu"],
                     ["05815", "La Bằng", "Xã", "La Bang"],
                     ["05833", "Lục Ba", "Xã", "Luc Ba"],
                     ["05770", "Minh Tiến", "Xã", "Minh Tien"],
                     ["05836", "Mỹ Yên", "Xã", "My Yen"],
-                    ["05782", "Na Mao", "Xã", "Na Mao"],
                     ["05779", "Phú Cường", "Xã", "Phu Cuong"],
                     ["05785", "Phú Lạc", "Xã", "Phu Lac"],
                     ["05791", "Phú Thịnh", "Xã", "Phu Thinh"],
@@ -12104,7 +12058,7 @@
                     ["05788", "Tân Linh", "Xã", "Tan Linh"],
                     ["05827", "Tân Thái", "Xã", "Tan Thai"],
                     ["05803", "Tiên Hội", "Xã", "Tien Hoi"],
-                    ["05839", "Vạn Thọ", "Xã", "Van Tho"],
+                    ["05845", "Vạn Phú", "Xã", "Van Phu"],
                     ["05842", "Văn Yên", "Xã", "Van Yen"],
                     ["05773", "Yên Lãng", "Xã", "Yen Lang"]
                 ]
@@ -12112,12 +12066,11 @@
             [
                 "167", "Định Hóa", "Huyện", "Dinh Hoa",
                 [
-                    ["05569", "Bảo Cường", "Xã", "Bao Cuong"],
                     ["05554", "Bảo Linh", "Xã", "Bao Linh"],
                     ["05605", "Bình Thành", "Xã", "Binh Thanh"],
                     ["05587", "Bình Yên", "Xã", "Binh Yen"],
                     ["05596", "Bộc Nhiêu", "Xã", "Boc Nhieu"],
-                    ["05536", "Chợ Chu", "Thị trấn", "Cho Chu"],
+                    ["05569", "Chợ Chu", "Thị trấn", "Cho Chu"],
                     ["05590", "Điềm Mặc", "Xã", "Diem Mac"],
                     ["05575", "Định Biên", "Xã", "Dinh Bien"],
                     ["05572", "Đồng Thịnh", "Xã", "Dong Thinh"],
@@ -12150,7 +12103,6 @@
                     ["05707", "Nam Hòa", "Xã", "Nam Hoa"],
                     ["05674", "Quang Sơn", "Xã", "Quang Son"],
                     ["05656", "Sông Cầu", "Thị trấn", "Song Cau"],
-                    ["05704", "Tân Lợi", "Xã", "Tan Loi"],
                     ["05668", "Tân Long", "Xã", "Tan Long"],
                     ["05662", "Trại Cau", "Thị trấn", "Trai Cau"],
                     ["05680", "Văn Hán", "Xã", "Van Han"],

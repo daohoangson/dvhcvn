@@ -1,3 +1,16 @@
+## 2.0.20250101
+
+- 1256/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Bà Rịa-Vũng Tàu giai đoạn 2023-2025;
+- 1232/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của thành phố Hải Phòng giai đoạn 2023 - 2025;
+- 1191/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Bắc Giang giai đoạn 2023-2025;
+- 1253/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Bình Thuận giai đoạn 2023-2025;
+- 1240/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Thái Nguyên giai đoạn 2023-2025;
+- 1257/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Bình Định giai đoạn 2023-2025;
+- 1244/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Long An giai đoạn 2023-2025;
+- 1247/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Kiên Giang giai đoạn 2023-2025;
+- 1245/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Lâm Đồng giai đoạn 2023-2025;
+- 1246/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Lạng Sơn giai đoạn 2023-2025;
+
 ## 2.0.20241101
 
 - 1202/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Tiền Giang giai đoạn 2023-2025;

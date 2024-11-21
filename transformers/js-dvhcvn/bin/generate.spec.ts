@@ -34,7 +34,7 @@ describe("generate", () => {
       level2s: [],
     });
     expect(written.trim()).toEqual(
-      "new Level1('01', 'Thành phố Hà Nội', Type.tptw, [\n]),"
+      "new Level1('01', 'Thành phố Hà Nội', Type.tptw, [\n]),",
     );
   });
 
@@ -46,7 +46,7 @@ describe("generate", () => {
       level3s: [],
     });
     expect(written.trim()).toEqual(
-      "new Level2(0, '001', 'Quận Ba Đình', Type.quan, [\n]),"
+      "new Level2(0, '001', 'Quận Ba Đình', Type.quan, [\n]),",
     );
   });
 
@@ -57,7 +57,7 @@ describe("generate", () => {
       type: "Phường",
     });
     expect(written.trim()).toEqual(
-      "new Level3(0, 0, '00001', 'Phường Phúc Xá', Type.phuong),"
+      "new Level3(0, 0, '00001', 'Phường Phúc Xá', Type.phuong),",
     );
   });
 
@@ -85,14 +85,14 @@ describe("generate", () => {
             ],
           },
         ],
-      })
+      }),
     );
 
     main(["/path/to/file.json"]);
 
     expect(mocks.readFileSync).toHaveBeenCalledWith(
       "/path/to/file.json",
-      expect.anything()
+      expect.anything(),
     );
 
     expect(written).toEqual(
@@ -105,7 +105,7 @@ describe("generate", () => {
         "]),\n" +
         "];\n" +
         "\n" +
-        'export const parents: Record<string,string> = {"001":"01","00001":"001"};'
+        'export const parents: Record<string,string> = {"001":"01","00001":"001"};',
     );
   });
 
@@ -117,7 +117,7 @@ describe("generate", () => {
       level2s: [],
     });
     expect(written.trim()).toEqual(
-      "new Level1('foo', \"Tỉnh Foo's\", Type.tinh, [\n]),"
+      "new Level1('foo', \"Tỉnh Foo's\", Type.tinh, [\n]),",
     );
   });
 
@@ -129,7 +129,7 @@ describe("generate", () => {
       level2s: [],
     });
     expect(written.trim()).toEqual(
-      "new Level1('foo', 'Tỉnh Foo\"bar', Type.tinh, [\n]),"
+      "new Level1('foo', 'Tỉnh Foo\"bar', Type.tinh, [\n]),",
     );
   });
 
@@ -141,7 +141,7 @@ describe("generate", () => {
       level2s: [],
     });
     expect(written.trim()).toEqual(
-      "new Level1('foo', 'Tỉnh \\'Foo\"bar', Type.tinh, [\n]),"
+      "new Level1('foo', 'Tỉnh \\'Foo\"bar', Type.tinh, [\n]),",
     );
   });
 
