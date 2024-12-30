@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-_dir=$( cd $( dirname $BASH_SOURCE[0] ) && pwd )
+_dir=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
 
 _dataDir="$_dir/../data"
 _datePath="$_dataDir/date.txt"
@@ -14,21 +14,21 @@ if [ ! -f $_datePath ]; then
   echo "$_datePath does not exist!" >&2
   exit 1
 fi
-_date=$( cat $_datePath )
-_dateVersion=$( cat $_datePath | tr '/' " " | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }' | sed 's# ##g' )
+_date=$(cat $_datePath)
+_dateVersion=$(cat $_datePath | tr '/' " " | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }' | sed 's# ##g')
 
-{ \
-  echo 'name: dvhcvn'; \
-  echo "version: 2.0.$_dateVersion"; \
-  echo "description: \"Three tiers of Vietnam's administrative units (last update: $_date)\""; \
-  echo 'homepage: https://github.com/daohoangson/dvhcvn'; \
-  echo ''; \
-  echo 'environment:'; \
-  echo '  sdk: ">=2.12.0 <4.0.0"'; \
-  echo ''; \
-  echo 'dev_dependencies:'; \
-  echo '  lint: ^2.3.0'; \
-  echo '  test:'; \
+{
+  echo 'name: dvhcvn'
+  echo "version: 2.1.$_dateVersion"
+  echo "description: \"Three tiers of Vietnam's administrative units (last update: $_date)\""
+  echo 'homepage: https://github.com/daohoangson/dvhcvn'
+  echo ''
+  echo 'environment:'
+  echo '  sdk: ">=2.12.0 <4.0.0"'
+  echo ''
+  echo 'dev_dependencies:'
+  echo '  lint: ^2.3.0'
+  echo '  test:'
 } >"$_dartPath/pubspec.yaml"
 echo 'Generated pubspec'
 
@@ -42,9 +42,9 @@ echo 'Generated OK'
 
 dart format $_dataDartPath
 
-( \
-  cd  "$_dir/dart-dvhcvn" && \
-  dart pub get && \
-  dart analyze && \
-  dart run test \
+(
+  cd "$_dir/dart-dvhcvn" &&
+    dart pub get &&
+    dart analyze &&
+    dart run test
 )

@@ -1,3 +1,22 @@
+## 2.1.20250101
+
+- 1318/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Ninh Bình giai đoạn 2023 - 2025;
+- 175/2024/QH15: Về việc thành lập thành phố Huế trực thuộc trung ương;
+- 1314/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của thành phố Huế giai đoạn 2023-2025;
+- 1283/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Hà Tĩnh giai đoạn 2023 - 2025;
+- 1284/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Đồng Tháp giai đoạn 2023 – 2025.;
+- 1285/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh An Giang giai đoạn 2023 – 2025.;
+- 1277/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Trà Vinh giai đoạn 2023 – 2025.;
+- 1288/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Hà Nam giai đoạn 2023 – 2025.;
+- 1279/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Quảng Ngãi giai đoạn 2023-2025.;
+- 1282/NQ-UBTVQH15: Nghị quyết vv sắp xếp đơn vị hành chính cấp xã của tỉnh Phú Thọ giai đoạn 2023-2025;
+- 1286/NQ-UBTVQH15: Nghị quyết vv sắp xếp đơn vị hành chính cấp xã của thành phố Hà Nội giai đoạn 2023-2025;
+- 1287/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của tỉnh Vĩnh Phúc giai đoạn 2023-2025;
+- 1278/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp xã của thành phố Hồ Chí Minh giai đoạn 2023-2025;
+- 1251/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của thành phố Đà Nẵng giai đoạn 2023-2025;
+- 1238/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Thanh Hóa giai đoạn 2023 - 2025.;
+- 1241/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Quảng Nam giai đoạn 2023 - 2025;
+
 ## 2.0.20250101
 
 - 1256/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Bà Rịa-Vũng Tàu giai đoạn 2023-2025;
