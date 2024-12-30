@@ -47,9 +47,9 @@ describe("Parser", () => {
       ],
       "10/3a Đỗ Ngọc Thạnh, Hồ Chí Minh, Việt Nam": ["Thành phố Hồ Chí Minh"],
       "số 2 đường 32 phường 6 quận 4": [
-        "Phường 6",
-        "Quận 4",
-        "Thành phố Hồ Chí Minh",
+        "27265", // 1278/NQ-UBTVQH15 sát nhập phường 6 vào phường 9
+        "773",
+        "79",
       ],
       "Q2, Tp HCM": ["Thành phố Thủ Đức", "Thành phố Hồ Chí Minh"],
       "0908464524": [],
@@ -404,11 +404,7 @@ describe("Parser", () => {
         "Thành phố Kon Tum",
         "Tỉnh Kon Tum",
       ],
-      "31 Đặng Văn Ngữ, Trung Tự, Hà Nội, Việt Nam": [
-        "Phường Trung Tự",
-        "Quận Đống Đa",
-        "Thành phố Hà Nội",
-      ],
+      "31 Đặng Văn Ngữ, Trung Tự, Hà Nội, Việt Nam": ["00226", "006", "01"],
       "Tòa nhà VNPT, 57 Huỳnh Thúc Kháng": [],
       "Tp. Thái Bình, Thái Bình, Việt Nam": [
         "Thành phố Thái Bình",
@@ -516,8 +512,8 @@ describe("Parser", () => {
         "Quận Kiến An",
         "Thành phố Hải Phòng",
       ],
-      "Tỉnh Thừa Thiên - Huế": ["Tỉnh Thừa Thiên Huế"],
-      "49 - Tỉnh Thừa Thiên - Huế": ["Tỉnh Thừa Thiên Huế"],
+      "Tỉnh Thừa Thiên - Huế": ["46"],
+      "49 - Tỉnh Thừa Thiên - Huế": ["46"],
       "Huyện Ia H'Drai tỉnh Kon Tum": ["Huyện Ia H' Drai", "Tỉnh Kon Tum"],
       "Thành phố Tuy Hoà tỉnh Phú Yên": ["Thành phố Tuy Hoà", "Tỉnh Phú Yên"],
       "thanh pho tuy hoa tinh phu yen": ["Thành phố Tuy Hoà", "Tỉnh Phú Yên"],
