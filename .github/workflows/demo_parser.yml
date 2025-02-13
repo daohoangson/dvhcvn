@@ -39,7 +39,7 @@ jobs:
         with:
           submodules: recursive
       - name: Setup Deno
-        uses: denoland/setup-deno@5e01c016a857a4dbb5afe9d0f9733cd472cba985 # v1.5.1
+        uses: denoland/setup-deno@11b63cf76cfcafb4e43f97b6cad24d8e8438f62d # v1.5.2
 
       - run: npm run deno:compile
       - run: ./bin/cli --debug -- hanoi
