@@ -10,7 +10,7 @@ _gsoDatePath='data/date.txt'
 _gisPath='data/gis.json'
 _osmPath='downloader/osm'
 
-# 1256/NQ-UBTVQH15
+# 1318/NQ-UBTVQH15
 _date=01/01/2025
 
 if [ ! -f $_gsoPath ]; then

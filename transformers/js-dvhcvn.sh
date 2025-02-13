@@ -18,7 +18,7 @@ _dateVersion=$(cat $_datePath | tr '/' " " | awk '{ for (i=NF; i>1; i--) printf(
 
 _packageJson=$(cat $_packageJsonPath)
 echo "$_packageJson" |
-  jq ".version = \"1.1.$_dateVersion\"" |
+  jq ".version = \"1.2.$_dateVersion\"" |
   jq ".description = \"Three tiers of Vietnam's administrative units (last update: $_date)\"" |
   tee $_packageJsonPath
 

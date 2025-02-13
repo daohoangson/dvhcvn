@@ -1,6 +1,6 @@
 {
   "name": "dvhcvn",
-  "version": "1.1.20250101",
+  "version": "1.2.20250101",
   "description": "Three tiers of Vietnam's administrative units (last update: 01/01/2025)",
   "files": [
     "lib/*"
@@ -33,14 +33,14 @@
   },
   "homepage": "https://github.com/daohoangson/dvhcvn#readme",
   "devDependencies": {
-    "@rollup/plugin-typescript": "^12.1.1",
-    "@types/node": "^22.9.1",
-    "@vitest/coverage-v8": "^2.1.5",
-    "prettier": "^3.3.3",
-    "rollup": "^4.27.3",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/node": "^22.10.2",
+    "@vitest/coverage-v8": "^2.1.8",
+    "prettier": "^3.4.2",
+    "rollup": "^4.29.1",
     "tslib": "^2.8.1",
     "tsx": "^4.19.2",
-    "typescript": "^5.6.3",
-    "vitest": "^2.1.5"
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   }
 }
