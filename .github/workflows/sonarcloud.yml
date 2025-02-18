@@ -59,7 +59,7 @@ jobs:
           dart pub global run coverage:test_with_coverage
         working-directory: transformers/dart-dvhcvn
 
-      - uses: SonarSource/sonarcloud-github-action@master
+      - uses: SonarSource/sonarqube-scan-action@0303d6b62e310685c0e34d0b9cde218036885c4d # v5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
