@@ -20,7 +20,7 @@ jobs:
         with:
           submodules: recursive
       - name: Setup Bun
-        uses: oven-sh/setup-bun@f4d14e03ff726c06358e5557344e1da148b56cf7 # v1
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
       - run: bun install
 
       - run: npm run bun:build
@@ -39,7 +39,7 @@ jobs:
         with:
           submodules: recursive
       - name: Setup Deno
-        uses: denoland/setup-deno@5e01c016a857a4dbb5afe9d0f9733cd472cba985 # v1.5.1
+        uses: denoland/setup-deno@11b63cf76cfcafb4e43f97b6cad24d8e8438f62d # v1.5.2
 
       - run: npm run deno:compile
       - run: ./bin/cli --debug -- hanoi
@@ -65,7 +65,7 @@ jobs:
         with:
           submodules: recursive
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
           cache: npm
           cache-dependency-path: ./demo/parser/package-lock.json

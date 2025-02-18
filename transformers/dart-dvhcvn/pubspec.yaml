@@ -1,6 +1,6 @@
 name: dvhcvn
-version: 2.1.20250101
-description: "Three tiers of Vietnam's administrative units (last update: 01/01/2025)"
+version: 2.1.20250301
+description: "Three tiers of Vietnam's administrative units (last update: 01/03/2025)"
 homepage: https://github.com/daohoangson/dvhcvn
 
 environment:

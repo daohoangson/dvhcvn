@@ -1,3 +1,8 @@
+## 2.1.20250301
+
+- 1365/NQ-UBTVQH15: Nghị quyết về việc thành lập các phường thuộc thị xã Phú Mỹ và thành lập thành phố Phú Mỹ, tỉnh Bà Rịa - Vũng Tàu;
+- 1280/NQ-UBTVQH15: Vv sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Sơn La giai đoạn 2023-2025;
+
 ## 2.1.20250101
 
 - 1318/NQ-UBTVQH15: Nghị quyết về việc sắp xếp đơn vị hành chính cấp huyện, cấp xã của tỉnh Ninh Bình giai đoạn 2023 - 2025;

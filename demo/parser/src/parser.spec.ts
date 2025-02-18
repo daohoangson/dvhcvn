@@ -29,15 +29,15 @@ describe("Parser", () => {
         "Thành phố Hồ Chí Minh",
       ],
       "123 bến bãi sậy f4 q6 hcmc": [
-        "Phường 4",
-        "Quận 6",
-        "Thành phố Hồ Chí Minh",
+        "27373", // 1278/NQ-UBTVQH15 sát nhập phường 4 vào phường 1
+        "775",
+        "79",
       ],
       "bình dương": ["Tỉnh Bình Dương"],
       "123 bạch Đằng P.24 Q.Bình Thạnh": [
-        "Phường 24",
-        "Quận Bình Thạnh",
-        "Thành phố Hồ Chí Minh",
+        "26929", // 1278/NQ-UBTVQH15 sát nhập phường 24 vào phường 14
+        "765",
+        "79",
       ],
       "123 Lê Lợi, Hóc môn": ["Huyện Hóc Môn", "Thành phố Hồ Chí Minh"],
       "123 Lê Văn Quới, Bình Trị Đông, Ho Chi Minh, Vietnam": [

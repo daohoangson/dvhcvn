@@ -13,7 +13,7 @@ jobs:
           submodules: recursive
 
       - name: Setup Node 18
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
           node-version: 18.x
 
@@ -25,7 +25,7 @@ jobs:
         working-directory: firebase/functions
 
       - name: Setup Node 20
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
           node-version: 20.x
 
@@ -50,7 +50,7 @@ jobs:
           npm run test:coverage
         working-directory: transformers/js-dvhcvn
 
-      - uses: dart-lang/setup-dart@e630b99d28a3b71860378cafdc2a067c71107f94 # v1.7.0
+      - uses: dart-lang/setup-dart@e51d8e571e22473a2ddebf0ef8a2123f0ab2c02c # v1.7.1
       - name: transformers/dart-dvhcvn
         run: |
           set -e
@@ -59,7 +59,7 @@ jobs:
           dart pub global run coverage:test_with_coverage
         working-directory: transformers/dart-dvhcvn
 
-      - uses: SonarSource/sonarcloud-github-action@master
+      - uses: SonarSource/sonarqube-scan-action@0303d6b62e310685c0e34d0b9cde218036885c4d # v5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
