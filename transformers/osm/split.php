@@ -20,11 +20,11 @@ function main()
     $workingFilePath = "$inDir/$workingFileName";
     _dieOnAnyError();
 
-    $parserCliPath = realpath("$cwd/demo/parser/bin/cli");
-    if ($parserCliPath === false) {
-        throw new RuntimeException('parser dir not found');
-    }
-    $parserProcess = proc_open($parserCliPath, [0 => ['pipe', 'r'], 1 => ['pipe', 'w']], $parserPipes);
+    $parserProcess = proc_open(
+        "npx tsx $cwd/demo/parser/bin/cli.ts",
+        [0 => ['pipe', 'r'], 1 => ['pipe', 'w']],
+        $parserPipes
+    );
     if (!is_resource($parserProcess)) {
         throw new RuntimeException('parser could not be started');
     }
