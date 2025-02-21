@@ -18,6 +18,11 @@ jobs:
           go-version: ^1.21.0
       - run: go run ./downloader/03_osm.go ./downloader/osm
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@a1800f471a0bc25cddac36bb13e6f436ddf341d7 # v1
+      - name: Build demo/parser CLI
+        run: bun install && npm run bun:build
+        working-directory: demo/parser
       - run: php transformers/osm/split.php | tee split.log
 
       - name: Prepare GitHub comment
