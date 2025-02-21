@@ -40,6 +40,11 @@ func main() {
 			fmt.Println(fmt.Errorf("relation.id=%d name=%s: %w", relation.ID, getTagValue(relation.Tags, "name"), writeError))
 		}
 	}
+
+	hoangSa, _ := osmapi.Relation(context.Background(), 17296617)
+	hoangSa.Tags = append(hoangSa.Tags, osm.Tag{Key: "admin_level", Value: "6"})
+	pbf.parentIds[int64(hoangSa.ID)] = 1891418 // Thành phố Đà Nẵng
+	writeRelation(writeDir, hoangSa)
 }
 
 func buildRelationCoordinates(relation *osm.Relation, shouldUseApi bool) (*orb.MultiPolygon, error) {
