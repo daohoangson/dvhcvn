@@ -20,7 +20,7 @@ export function getDateInBrowserContext() {
 export async function getDateFromSource() {
   const browser = await launch({
     args: ["--no-sandbox"],
-    headless: "new",
+    headless: true,
   });
   const page = await browser.newPage();
   await page.goto("https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx");
