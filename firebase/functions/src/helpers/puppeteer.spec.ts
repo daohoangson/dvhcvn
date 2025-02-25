@@ -49,6 +49,6 @@ describe("getDateFromSource", () => {
     {
       // CI is slow, especially here because we are connecting to some local DC
       timeout: 30000,
-    }
+    },
   );
 });

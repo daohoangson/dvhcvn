@@ -25,7 +25,7 @@ export async function send(text: string, options: { png?: Uint8Array } = {}) {
     data.append(
       "photo",
       new Blob([options.png], { type: "image/png" }),
-      "photo.png"
+      "photo.png",
     );
   }
 
@@ -35,7 +35,7 @@ export async function send(text: string, options: { png?: Uint8Array } = {}) {
   const { output, success } = safeParse(ResponseSchema, json);
   if (!success) {
     throw new Error(
-      `Unexpected response from Telegram: ${JSON.stringify(json)})}`
+      `Unexpected response from Telegram: ${JSON.stringify(json)})}`,
     );
   }
 

@@ -9,5 +9,5 @@ export const compareDateValuesBetweenSourceAndRepoDailyGen2 = onSchedule(
     secrets: [telegramToken],
     timeZone: "Asia/Saigon",
   },
-  compareDateValuesBetweenSourceAndRepo
+  compareDateValuesBetweenSourceAndRepo,
 );

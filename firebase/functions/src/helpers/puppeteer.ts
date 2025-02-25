@@ -2,7 +2,7 @@ import { launch } from "puppeteer";
 
 export function getDateInBrowserContext() {
   const dateCell = document.querySelector(
-    "#ctl00_PlaceHolderMain_ASPxGridView1_DXDataRow0 > td:nth-child(3)"
+    "#ctl00_PlaceHolderMain_ASPxGridView1_DXDataRow0 > td:nth-child(3)",
   );
   if (dateCell === null) {
     return undefined;
