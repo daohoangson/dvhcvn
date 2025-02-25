@@ -20,7 +20,7 @@ describe("compareDateValuesBetweenSourceAndRepo", () => {
 
     expect(vi.mocked(sendTelegram)).toHaveBeenCalledWith(
       "❌❌❌\n[getDateFromSource] Error: source\n[getDateFromRepo] Error: repo",
-      expect.anything()
+      expect.anything(),
     );
   });
 
@@ -38,7 +38,7 @@ describe("compareDateValuesBetweenSourceAndRepo", () => {
 
     expect(vi.mocked(sendTelegram)).toHaveBeenCalledWith(
       "2023-01-01 ❌ 2023-01-02",
-      expect.anything()
+      expect.anything(),
     );
   });
 

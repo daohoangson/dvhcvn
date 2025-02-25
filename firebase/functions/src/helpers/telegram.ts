@@ -1,17 +1,15 @@
-import * as functions from "firebase-functions";
-import { Blob, FormData } from "formdata-node";
-import fetch from "node-fetch-commonjs";
+import { defineSecret, defineString } from "firebase-functions/params";
 import { boolean, object, safeParse } from "valibot";
+
+export const telegramToken = defineSecret("TELEGRAM_TOKEN");
+const telegramChatId = defineString("TELEGRAM_CHAT_ID");
 
 const ResponseSchema = object({ ok: boolean() });
 
-export async function send(text: string, options: { png?: Buffer } = {}) {
-  const config = functions.config() as {
-    telegram?: { token: string | undefined; chat_id: string | undefined };
-  };
-  const token = config.telegram?.token;
-  const chatId = config.telegram?.chat_id;
-  if (typeof token !== "string" || typeof chatId !== "string") {
+export async function send(text: string, options: { png?: Uint8Array } = {}) {
+  const token = telegramToken.value();
+  const chatId = telegramChatId.value();
+  if (token.length === 0 || chatId.length === 0) {
     throw new Error("Telegram config is incomplete!");
   }
 
@@ -27,7 +25,7 @@ export async function send(text: string, options: { png?: Buffer } = {}) {
     data.append(
       "photo",
       new Blob([options.png], { type: "image/png" }),
-      "photo.png"
+      "photo.png",
     );
   }
 
@@ -37,7 +35,7 @@ export async function send(text: string, options: { png?: Buffer } = {}) {
   const { output, success } = safeParse(ResponseSchema, json);
   if (!success) {
     throw new Error(
-      `Unexpected response from Telegram: ${JSON.stringify(json)})}`
+      `Unexpected response from Telegram: ${JSON.stringify(json)})}`,
     );
   }
 
