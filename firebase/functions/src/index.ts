@@ -2,10 +2,10 @@ import { onSchedule } from "firebase-functions/v2/scheduler";
 import { compareDateValuesBetweenSourceAndRepo } from "./cron";
 import { telegramToken } from "./helpers/telegram";
 
-export const compareDateValuesBetweenSourceAndRepoDaily = onSchedule(
+export const compareDateValuesBetweenSourceAndRepoDailyGen2 = onSchedule(
   {
-    schedule: "every 24 hours",
     memory: "512MiB",
+    schedule: "every day 23:00",
     secrets: [telegramToken],
     timeZone: "Asia/Saigon",
   },
