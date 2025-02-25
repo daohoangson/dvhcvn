@@ -8,7 +8,6 @@
     "format": "prettier --write '**/*.{js,json,ts}'",
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
-    "shell:config": "firebase functions:config:get > .runtimeconfig.json",
     "start": "npm run shell",
     "test": "vitest",
     "test:coverage": "vitest --coverage --no-watch",
