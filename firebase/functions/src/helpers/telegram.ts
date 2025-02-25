@@ -1,14 +1,14 @@
-import * as functions from "firebase-functions";
+import { config } from "firebase-functions/v1";
 import { boolean, object, safeParse } from "valibot";
 
 const ResponseSchema = object({ ok: boolean() });
 
 export async function send(text: string, options: { png?: Buffer } = {}) {
-  const config = functions.config() as {
+  const { telegram } = config() as {
     telegram?: { token: string | undefined; chat_id: string | undefined };
   };
-  const token = config.telegram?.token;
-  const chatId = config.telegram?.chat_id;
+  const token = telegram?.token;
+  const chatId = telegram?.chat_id;
   if (typeof token !== "string" || typeof chatId !== "string") {
     throw new Error("Telegram config is incomplete!");
   }

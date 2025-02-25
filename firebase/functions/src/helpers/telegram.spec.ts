@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { send } from "./telegram";
 import { config } from "firebase-functions/v1";
 
-vi.mock("firebase-functions", async (importActual) => {
+vi.mock("firebase-functions/v1", async (importActual) => {
   const actual = await importActual<typeof import("firebase-functions")>();
   return { ...actual, config: vi.fn() };
 });
