@@ -1,6 +1,4 @@
 import * as functions from "firebase-functions";
-import { Blob, FormData } from "formdata-node";
-import fetch from "node-fetch-commonjs";
 import { boolean, object, safeParse } from "valibot";
 
 const ResponseSchema = object({ ok: boolean() });

@@ -1,5 +1,3 @@
-import fetch from "node-fetch-commonjs";
-
 export async function getDateFromRepo() {
   const url =
     "https://raw.githubusercontent.com/daohoangson/dvhcvn/master/data/date.txt";
