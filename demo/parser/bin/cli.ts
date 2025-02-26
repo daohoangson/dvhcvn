@@ -11,7 +11,7 @@ async function main() {
 
   const parseInput = (input: string) => {
     process.stdout.write(
-      JSON.stringify({ input, output: parser.parse(input) }) + "\n"
+      JSON.stringify({ input, output: parser.parse(input) }) + "\n",
     );
   };
 

@@ -46,7 +46,7 @@ const types: string[][] = [
 
 const typeRegExp = new RegExp(
   "^(" + types.map((ts) => ts.join("|")).join("|") + ")\\s+(.+)$",
-  "i"
+  "i",
 );
 
 export type EntityJson = [string[], { [key: string]: EntityJson }, string];
@@ -125,7 +125,7 @@ export default class Entity {
     const fullNamesReversed = [...this.fullNames].reverse();
     const patterns = fullNamesReversed.reduce<string[]>(
       (p, n) => [...p, ...this.p(n)],
-      []
+      [],
     );
     if (patterns.length === 0) {
       console.error("Cannot prepare Entity", this);
@@ -247,11 +247,11 @@ export default class Entity {
 
     const namePattern = `(${namePatterns.join("|")})`;
     patterns.push(
-      `(${sameLevelTypePatterns.join("|")})${typeGlue}${namePattern}`
+      `(${sameLevelTypePatterns.join("|")})${typeGlue}${namePattern}`,
     );
     if (sameLevelTypeRightPatterns.length > 0) {
       patterns.push(
-        `${namePattern}${typeGlue}(${sameLevelTypeRightPatterns.join("|")})`
+        `${namePattern}${typeGlue}(${sameLevelTypeRightPatterns.join("|")})`,
       );
     }
 

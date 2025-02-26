@@ -29,7 +29,7 @@ describe("normalize", () => {
     test(input, () => {
       const result = normalize(input);
       expect(result).toBe(map[input]);
-    })
+    }),
   );
 });
 

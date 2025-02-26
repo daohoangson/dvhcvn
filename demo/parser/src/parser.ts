@@ -75,7 +75,7 @@ export default class Parser {
     input: string | Matcher,
     entities: Entity[],
     matches: Matches,
-    opts: ResolveOptions = { fromId: 0 }
+    opts: ResolveOptions = { fromId: 0 },
   ) {
     const matcher =
       typeof input === "string" ? new Matcher(input, matches) : input;
@@ -100,7 +100,7 @@ export default class Parser {
             dedup.address,
             e.children(),
             current,
-            nextOptions
+            nextOptions,
           );
         }
       }
@@ -113,7 +113,7 @@ export default class Parser {
     });
 
     matcher.update(
-      this.skipOneLevel(matcher.address, entities, matches, nextOptions)
+      this.skipOneLevel(matcher.address, entities, matches, nextOptions),
     );
 
     const b = matcher.best();
@@ -127,7 +127,7 @@ export default class Parser {
     address: string,
     entities: Entity[],
     matches: Matches,
-    opts: ResolveOptions
+    opts: ResolveOptions,
   ) {
     const matcher = new Matcher(address, matches);
     const { id } = matcher;
