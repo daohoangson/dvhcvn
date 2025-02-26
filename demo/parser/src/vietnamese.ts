@@ -17,7 +17,7 @@ const map = JSON.parse(
 const normalizeRegExp = new RegExp(`[${Object.keys(map).join("")}]`, "g");
 const normalizer = (str: string) => map[str];
 
-type Typo = [RegExp, (substring: string, ...args: any[]) => string];
+type Typo = [RegExp, (substring: string, ...args: string[]) => string];
 const typos: Typo[] = [
   // ch <-> tr
   [/ch/, () => "tr"],
