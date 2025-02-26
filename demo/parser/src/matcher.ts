@@ -89,7 +89,7 @@ export default class Matcher {
         return this.done(
           previous.entity,
           ["", ""],
-          scoreMaxFloat - previous.score()
+          scoreMaxFloat - previous.score(),
         );
       } else {
         return null;
@@ -114,7 +114,7 @@ export default class Matcher {
         const similarityRegExp = new RegExp(
           `([^a-z]| |^)(((${typePatterns.join("|")})[ .:])?([a-z '-]{1,${
             nameSimilarity.length + 2
-          }}))$`
+          }}))$`,
         );
         const matchSimilarityArray = similarityRegExp.exec(address2);
         if (matchSimilarityArray) {
@@ -123,13 +123,13 @@ export default class Matcher {
           const similarity = similarText(
             nameSimilarity,
             matchSimilarityName,
-            true
+            true,
           );
           if (similarity > 80) {
             return this.done(
               entity,
               [matchSimilarity, nameSimilarity],
-              scoreDeltaSimilarity + similarity / 100
+              scoreDeltaSimilarity + similarity / 100,
             );
           }
         }
@@ -152,7 +152,7 @@ export default class Matcher {
       return this.done(
         entity,
         [match, nameFound],
-        this.calculateScoreDeltaType(typePatterns, match2)
+        this.calculateScoreDeltaType(typePatterns, match2),
       );
     }
 
@@ -165,7 +165,7 @@ export default class Matcher {
       return this.done(
         entity,
         [match2, name2Found],
-        scoreDeltaName2 + this.calculateScoreDeltaType(typePatterns, match2)
+        scoreDeltaName2 + this.calculateScoreDeltaType(typePatterns, match2),
       );
     }
 
@@ -216,7 +216,7 @@ export default class Matcher {
 
   private calculateScoreDeltaType(
     typePatterns: string[],
-    match2: string
+    match2: string,
   ): number {
     let score = scoreDeltaType;
     const step = score / typePatterns.length / 2;

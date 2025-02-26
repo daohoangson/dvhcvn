@@ -4,8 +4,9 @@
     "esModuleInterop": true,
     "lib": ["DOM", "ES2021"],
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "noEmit": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   }
 }

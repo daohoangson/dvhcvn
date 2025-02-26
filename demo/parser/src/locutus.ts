@@ -52,7 +52,7 @@ export function similarText(first: string, second: string, percent = false) {
     if (pos1 + max < firstLength && pos2 + max < secondLength) {
       sum += similarText(
         first.substr(pos1 + max, firstLength - pos1 - max),
-        second.substr(pos2 + max, secondLength - pos2 - max)
+        second.substr(pos2 + max, secondLength - pos2 - max),
       );
     }
   }
