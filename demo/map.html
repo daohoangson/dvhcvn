@@ -112,12 +112,7 @@
         if (!level1 || !level2) return console.error("Data missing");
         populateNav(level1Id, level2Id);
 
-        /*
-          The Maptiles key has been restricted to these domains:
-          - http://dvhcvn.local.hoangson.vn/*
-          - https://dvhcvn.vercel.app/*
-          - *-daohoangson.vercel.app/*
-        */
+        // this key has been domain restricted
         goongjs.accessToken = "84HpwEr9FSs9EURBGcBuOaK9bTFMrKzPQI7d1pdh";
         const map = new goongjs.Map({
           container: "map",
