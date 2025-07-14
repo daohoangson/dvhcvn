@@ -2,7 +2,7 @@
   "name": "history",
   "private": true,
   "engines": {
-    "node": "20"
+    "node": "22"
   },
   "scripts": {
     "format": "prettier --write '**/*.{js,mjs}'",
