@@ -21,7 +21,7 @@
   "dependencies": {
     "firebase-functions": "^6.3.2",
     "puppeteer": "^24.3.0",
-    "valibot": "^1.0.0-rc.2"
+    "valibot": "^1.2.0"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.3",
