@@ -22,18 +22,21 @@ export async function getDateFromSource() {
     args: ["--no-sandbox"],
     headless: true,
   });
-  const page = await browser.newPage();
-  await page.goto("https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx");
+  try {
+    const page = await browser.newPage();
+    await page.goto("https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx");
 
-  const date = await page.evaluate(getDateInBrowserContext);
+    const date = await page.evaluate(getDateInBrowserContext);
 
-  const png = await page.screenshot({
-    encoding: "binary",
-    fullPage: true,
-    type: "png",
-  });
-  await browser.close();
+    const png = await page.screenshot({
+      encoding: "binary",
+      fullPage: true,
+      type: "png",
+    });
 
-  const error = date ? undefined : "Date cell could not be found";
-  return { date, error, png };
+    const error = date ? undefined : "Date cell could not be found";
+    return { date, error, png };
+  } finally {
+    await browser.close();
+  }
 }
