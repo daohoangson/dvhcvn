@@ -56,17 +56,18 @@ export async function getData(customUrl) {
     args: ["--no-sandbox"],
     headless: "new",
   });
-  const page = await browser.newPage();
-  const url = customUrl || "https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx";
-
   try {
-    await page.goto(url);
-  } catch (gotoError) {
-    console.error("Could not go to URL", { url, gotoError });
-    return {};
-  }
+    const page = await browser.newPage();
+    const url =
+      customUrl || "https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx";
 
-  try {
+    try {
+      await page.goto(url);
+    } catch (gotoError) {
+      console.error("Could not go to URL", { url, gotoError });
+      return {};
+    }
+
     const data = await page.evaluate(getDataInBrowserContext);
     return data;
   } finally {

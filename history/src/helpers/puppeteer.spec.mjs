@@ -1,6 +1,11 @@
 import { JSDOM } from "jsdom";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { launch } from "puppeteer";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { getData, getDataInBrowserContext } from "./puppeteer.mjs";
+
+vi.mock("puppeteer", () => ({
+  launch: vi.fn(),
+}));
 
 describe("getDataInBrowserContext", () => {
   afterEach(() => {
@@ -95,46 +100,42 @@ describe("getDataInBrowserContext", () => {
 });
 
 describe("getData", () => {
-  it(
-    "should return data",
-    async () => {
-      const data = await getData();
-      expect(data).toMatchObject({
-        19790329: {
-          date: {
-            day: "29",
-            month: "03",
-            year: "1979",
-          },
-          docs: expect.arrayContaining([
-            expect.stringContaining(
-              // Chia một số huyện thuộc tỉnh Lâm Đồng
-              "116-CP"
-            ),
-          ]),
-        },
-        20230410: {
-          date: {
-            day: "10",
-            month: "04",
-            year: "2023",
-          },
-          docs: expect.arrayContaining([
-            expect.stringContaining(
-              // Nghị quyết về việc thành lập thị trấn Kim Long thuộc huyện Tam Dương,
-              // thị trấn Tam Hồng thuộc huyện Yên Lạc và phường Định Trung thuộc
-              // thành phố Vĩnh Yên, tỉnh Vĩnh Phúc
-              "730/NQ-UBTVQH15"
-            ),
-          ]),
-        },
-      });
+  const close = vi.fn();
+  const evaluate = vi.fn();
+  const goto = vi.fn();
+  const newPage = vi.fn();
+  const sourceData = {
+    20230410: {
+      date: { day: "10", month: "04", year: "2023" },
+      docs: ["730/NQ-UBTVQH15: Document;"],
     },
-    { timeout: 30000 }
-  );
+  };
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    evaluate.mockResolvedValue(sourceData);
+    newPage.mockResolvedValue({ evaluate, goto });
+    vi.mocked(launch).mockResolvedValue({ close, newPage });
+  });
+
+  it("should return data", async () => {
+    const data = await getData();
+
+    expect(goto).toHaveBeenCalledWith(
+      "https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx",
+    );
+    expect(evaluate).toHaveBeenCalledWith(getDataInBrowserContext);
+    expect(data).toStrictEqual(sourceData);
+    expect(close).toHaveBeenCalledOnce();
+  });
 
   it("should handle bad URL", async () => {
+    goto.mockRejectedValue(new Error("Source unavailable"));
+
     const data = await getData("https://NXDOMAIN.hoangson.vn");
+
+    expect(goto).toHaveBeenCalledWith("https://NXDOMAIN.hoangson.vn");
     expect(data).toStrictEqual({});
+    expect(close).toHaveBeenCalledOnce();
   });
 });
