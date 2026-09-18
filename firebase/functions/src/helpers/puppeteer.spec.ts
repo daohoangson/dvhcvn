@@ -1,6 +1,11 @@
 import { JSDOM } from "jsdom";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { launch } from "puppeteer";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { getDateFromSource, getDateInBrowserContext } from "./puppeteer";
+
+vi.mock("puppeteer", () => ({
+  launch: vi.fn(),
+}));
 
 describe("getDateInBrowserContext", () => {
   afterEach(() => {
@@ -38,17 +43,61 @@ describe("getDateInBrowserContext", () => {
 });
 
 describe("getDateFromSource", () => {
-  it(
-    "should return date",
-    async () => {
-      const actual = await getDateFromSource();
-      expect(actual).toMatchObject({
-        date: expect.stringMatching(/^\d{2}\/\d{2}\/\d{4}$/),
-      });
-    },
-    {
-      // CI is slow, especially here because we are connecting to some local DC
-      timeout: 30000,
-    },
-  );
+  const close = vi.fn();
+  const evaluate = vi.fn();
+  const goto = vi.fn();
+  const newPage = vi.fn();
+  const png = new Uint8Array([137, 80, 78, 71]);
+  const screenshot = vi.fn();
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    evaluate.mockResolvedValue("10/04/2023");
+    screenshot.mockResolvedValue(png);
+    newPage.mockResolvedValue({ evaluate, goto, screenshot });
+    vi.mocked(launch).mockResolvedValue({
+      close,
+      newPage,
+    } as unknown as Awaited<ReturnType<typeof launch>>);
+  });
+
+  it("should return date", async () => {
+    const actual = await getDateFromSource();
+
+    expect(goto).toHaveBeenCalledWith(
+      "https://danhmuchanhchinh.gso.gov.vn/NghiDinh.aspx",
+    );
+    expect(evaluate).toHaveBeenCalledWith(getDateInBrowserContext);
+    expect(screenshot).toHaveBeenCalledWith({
+      encoding: "binary",
+      fullPage: true,
+      type: "png",
+    });
+    expect(actual).toStrictEqual({
+      date: "10/04/2023",
+      error: undefined,
+      png,
+    });
+    expect(close).toHaveBeenCalledOnce();
+  });
+
+  it("should report a missing date", async () => {
+    evaluate.mockResolvedValue(undefined);
+
+    const actual = await getDateFromSource();
+
+    expect(actual).toStrictEqual({
+      date: undefined,
+      error: "Date cell could not be found",
+      png,
+    });
+    expect(close).toHaveBeenCalledOnce();
+  });
+
+  it("should close the browser when navigation fails", async () => {
+    goto.mockRejectedValue(new Error("Source unavailable"));
+
+    await expect(getDateFromSource()).rejects.toThrow("Source unavailable");
+    expect(close).toHaveBeenCalledOnce();
+  });
 });
