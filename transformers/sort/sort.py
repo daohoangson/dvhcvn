@@ -48,18 +48,19 @@ if __name__ == "__main__":
     for _level1 in data['data']:
         level2s = []
         for _level2 in _level1['level2s']:
-            level3s = []
-            for _level3 in _level2['level3s']:
-                level3s.append(
-                    [_level3['level3_id']] +
-                    process_name(_level3)
-                )
+            level2 = [_level2['level2_id']] + process_name(_level2)
 
-            level2s.append(
-                [_level2['level2_id']] +
-                process_name(_level2) +
-                [sort_by_normalized(level3s)]
-            )
+            # since 01/07/2025 there are only two levels, communes are level 2
+            if 'level3s' in _level2:
+                level3s = []
+                for _level3 in _level2['level3s']:
+                    level3s.append(
+                        [_level3['level3_id']] +
+                        process_name(_level3)
+                    )
+                level2.append(sort_by_normalized(level3s))
+
+            level2s.append(level2)
 
         level1s.append(
             [_level1['level1_id']] +

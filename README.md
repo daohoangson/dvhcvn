@@ -1,27 +1,26 @@
 # Các đơn vị hành chính Việt Nam
 
-Dữ liệu được cập nhật từ trang [Danh mục hành chính](https://danhmuchanhchinh.gso.gov.vn/) của Tổng cục thống kê và [Hệ thống bản đồ hành chính](http://gis.chinhphu.vn) của Cổng thông tin điện tử Chính phủ.
+Từ ngày 01/07/2025, Việt Nam còn 2 cấp đơn vị hành chính: 34 tỉnh thành và 3.321 xã, phường, đặc khu.
+Dữ liệu hiện tại lấy từ danh mục mã số của Cục Thống kê (Công văn [915/CTK-CSCL](/downloader/2025/915_CTK-CSCL.csv) và [1027/CTK-CSCL](/downloader/2025/1027_CTK-CSCL.md)), được chuyển từ PDF sang văn bản bởi [dvhcvn/20250701](https://github.com/dvhcvn/20250701).
+Dữ liệu 3 cấp trước sáp nhập vẫn có ở tag [v20250301](https://github.com/daohoangson/dvhcvn/tree/v20250301).
+
+Dữ liệu 3 cấp trước đây được cập nhật từ trang [Danh mục hành chính](https://danhmuchanhchinh.gso.gov.vn/) của Tổng cục thống kê và [Hệ thống bản đồ hành chính](http://gis.chinhphu.vn) của Cổng thông tin điện tử Chính phủ.
 
 ## Các tập dữ liệu
 
 ### dvhcvn.json
 
-Thông tin 3 cấp đơn vị hành chính trả về từ [web service của TCTK](https://danhmuchanhchinh.gso.gov.vn/DMDVHC.asmx):
+Thông tin 2 cấp đơn vị hành chính, tạo bởi [downloader/2025/convert.py](/downloader/2025/convert.py):
 
 - Tỉnh thành:
   - `level1_id`
   - `name`
   - `type`: Thành phố Trung ương | Tỉnh
   - `level2s`
-- Quận huyện
+- Xã phường
   - `level2_id`
   - `name`
-  - `type`: Quận | Huyện | Thành phố | Thị xã
-  - `level3s`
-- Phường xã
-  - `level3_id`
-  - `name`
-  - `type`: Phường | Xã | Thị trấn
+  - `type`: Phường | Xã | Đặc khu
 
 Ví dụ:
 
@@ -32,25 +31,27 @@ Ví dụ:
   "type": "Tỉnh",
   "level2s": [
     {
-      "level2_id": "568",
-      "name": "Thành phố Nha Trang",
-      "type": "Thành phố",
-      "level3s": [
-        {
-          "level3_id": "22363",
-          "name": "Phường Lộc Thọ",
-          "type": "Phường"
-        },
-        "..."
-      ]
+      "level2_id": "22366",
+      "name": "Phường Nha Trang",
+      "type": "Phường"
+    },
+    {
+      "level2_id": "22736",
+      "name": "Đặc khu Trường Sa",
+      "type": "Đặc khu"
     },
     "..."
   ]
+}
 ```
+
+Mã xã giữ nguyên mã 5 chữ số của Cục Thống kê, nên `level2_id` của xã có độ dài khác `level2_id` của quận huyện trong dữ liệu cũ.
 
 ### [gis/\*.json](/data/gis/)
 
 Thông tin địa giới trích xuất từ [Hệ thống bản đồ hành chính](http://gis.chinhphu.vn) cho 2 cấp: tỉnh thành và quận huyện.
+
+> Lưu ý: tập dữ liệu này vẫn là địa giới 63 tỉnh thành và các quận huyện trước ngày 01/07/2025, chưa được cập nhật theo dữ liệu 2 cấp mới.
 
 #### <level1_id>.json
 
@@ -106,7 +107,7 @@ Riêng dữ liệu `bbox` của tỉnh thành được lưu riêng với nội d
 
 ### [sorted.json](/data/sorted.json)
 
-Thông tin 3 cấp đơn vị hành chính đã được sắp xếp theo tên riêng.
+Thông tin 2 cấp đơn vị hành chính đã được sắp xếp theo tên riêng.
 Để tiết kiệm dung lượng, mỗi đơn vị hành chính là một mảng có các thành phần theo thứ tự như sau:
 
 0. Mã đơn vị
@@ -120,17 +121,11 @@ Ví dụ:
 ```json
 [
   [
-    "89", "An Giang", "Tỉnh", "An Giang",
+    "91", "An Giang", "Tỉnh", "An Giang",
     [
-      [
-        "886", "An Phú", "Huyện", "An Phu",
-        [
-          ["30337", "An Phú", "Thị trấn", "An Phu"],
-          ["30373", "Đa Phước", "Xã", "Da Phuoc"],
-          ["30340", "Khánh An", "Xã", "Khanh An"],
-          "..."
-        ]
-      ],
+      ["30985", "An Biên", "Xã", "An Bien"],
+      ["30589", "An Châu", "Xã", "An Chau"],
+      ["30292", "Bình Đức", "Phường", "Binh Duc"],
       "..."
     ]
   ],
@@ -142,6 +137,8 @@ Ví dụ:
 
 - Dart [pub.dev](https://pub.dev/packages/dvhcvn)
 - JavaScript [npm](https://www.npmjs.com/package/dvhcvn)
+
+Các thư viện hiện vẫn dùng dữ liệu 3 cấp trước ngày 01/07/2025.
 
 ## Demo
 
@@ -166,15 +163,14 @@ Nếu vì lý do nào đó bạn không muốn dùng dữ liệu có sẵn tại
 git clone https://github.com/daohoangson/dvhcvn.git
 cd dvhcvn
 
-# xoá dữ liệu có sẵn
-rm -rf ./data/*
+# tạo dvhcvn.json từ danh mục của Cục Thống kê
+python3 ./downloader/2025/convert.py > ./data/dvhcvn.json
 
-# bắt đầu tải
-./downloader/download.sh
-
-# chạy các đoạn mã chuyển đổi
-./transformers/transform-all.sh
+# tạo sorted.json
+./transformers/sort/sort.sh
 ```
+
+Dữ liệu 3 cấp trước ngày 01/07/2025 được tải bằng `./downloader/download.sh` từ web service của Tổng cục thống kê, hiện không còn truy cập được.
 
 ## Nguồn tham khảo
 
